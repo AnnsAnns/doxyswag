@@ -1,0 +1,9 @@
+<map id="boards/msba2/include/board.h" name="boards/msba2/include/board.h">
+<area shape="rect" id="Node000001" title="Basic definitions for the MSB&#45;A2 board." alt="" coords="10,5,175,50"/>
+<area shape="rect" id="Node000002" href="$bitarithm_8h.html" title="Helper functions for bit arithmetic." alt="" coords="46,98,139,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,50,95,82,90,82,90,50"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,174,76,201"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="85,128,61,163,56,159,81,125"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="99,174,190,201"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="104,125,129,159,124,163,100,128"/>
+</map>

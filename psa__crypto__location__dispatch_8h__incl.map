@@ -1,0 +1,50 @@
+<map id="sys/psa_crypto/include/psa_crypto_location_dispatch.h" name="sys/psa_crypto/include/psa_crypto_location_dispatch.h">
+<area shape="rect" id="Node000001" title="Function declarations for the PSA Crypto location dispatcher." alt="" coords="67,5,296,50"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="147,174,216,201"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,50,184,158,179,158,179,50"/>
+<area shape="rect" id="Node000003" href="$kernel__defines_8h.html" title="Common macros and compiler attributes/pragmas configuration." alt="" coords="187,325,315,353"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="170,52,154,82,139,119,132,160,133,181,138,200,154,234,177,265,225,313,221,317,173,268,150,237,133,202,127,181,127,160,134,118,149,80,165,49"/>
+<area shape="rect" id="Node000011" href="$crypto_8h.html" title="Function declarations for PSA Crypto." alt="" coords="416,98,518,126"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="258,48,407,91,406,96,257,53"/>
+<area shape="rect" id="Node000004" href="$modules_8h.html" title="Common macros and compiler attributes/pragmas configuration." alt="" coords="85,401,174,428"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="231,356,166,395,163,390,228,351"/>
+<area shape="rect" id="Node000005" href="$riot__version_8h.html" title="Common macros and compiler attributes/pragmas configuration." alt="" coords="5,476,116,504"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="187,348,157,355,127,365,98,381,75,402,67,415,62,430,60,461,55,461,57,429,62,413,70,399,95,377,124,360,156,349,186,343"/>
+<area shape="rect" id="Node000007" href="$compiler__hints_8h.html" title="Common macros and compiler attributes/pragmas configuration." alt="" coords="198,401,328,428"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="256,353,261,385,256,386,251,354"/>
+<area shape="rect" id="Node000009" href="$container_8h.html" title="Common macros and compiler attributes/pragmas configuration." alt="" coords="352,401,446,428"/>
+<area shape="poly" id="edge10_Node000003_Node000009" title=" " alt="" coords="279,351,361,391,358,396,276,356"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="303,552,373,580"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="111,502,288,549,287,554,109,507"/>
+<area shape="poly" id="edge9_Node000007_Node000006" title=" " alt="" coords="268,428,277,463,292,503,317,539,313,542,287,505,272,465,263,430"/>
+<area shape="rect" id="Node000008" href="$assert_8h.html" title="POSIX.1&#45;2008 compliant version of the assert macro." alt="" coords="152,476,225,504"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="252,431,215,467,211,463,248,427"/>
+<area shape="poly" id="edge8_Node000008_Node000006" title=" " alt="" coords="216,502,299,542,297,547,214,507"/>
+<area shape="poly" id="edge12_Node000009_Node000006" title=" " alt="" coords="402,429,400,464,390,505,378,525,365,542,360,539,374,522,385,503,395,463,397,429"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="301,476,374,504"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="390,431,360,466,356,463,386,427"/>
+<area shape="poly" id="edge14_Node000011_Node000002" title=" " alt="" coords="417,129,232,176,231,171,415,124"/>
+<area shape="poly" id="edge16_Node000011_Node000003" title=" " alt="" coords="417,128,370,145,319,170,272,205,252,227,236,250,232,265,231,280,240,310,235,312,226,281,226,264,231,248,248,223,268,201,316,166,368,140,415,123"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="697,174,768,201"/>
+<area shape="poly" id="edge15_Node000011_Node000012" title=" " alt="" coords="515,124,683,170,681,175,514,129"/>
+<area shape="rect" id="Node000013" href="$crypto__sizes_8h.html" title="Size definitions for PSA Crypto." alt="" coords="458,249,572,277"/>
+<area shape="poly" id="edge17_Node000011_Node000013" title=" " alt="" coords="475,125,492,173,510,234,505,235,487,175,470,127"/>
+<area shape="rect" id="Node000014" href="$crypto__values_8h.html" title="Value definitions for PSA Crypto." alt="" coords="488,325,612,353"/>
+<area shape="poly" id="edge29_Node000011_Node000014" title=" " alt="" coords="486,124,539,174,567,209,587,248,590,266,587,283,572,314,568,311,582,281,585,266,582,250,562,212,535,178,483,128"/>
+<area shape="rect" id="Node000015" href="$crypto__types_8h.html" title="Type definitions for PSA Crypto." alt="" coords="491,401,608,428"/>
+<area shape="poly" id="edge30_Node000011_Node000015" title=" " alt="" coords="499,124,534,144,568,172,583,191,592,208,607,248,631,301,635,325,627,354,611,376,590,394,587,390,607,373,622,352,630,325,626,302,602,250,587,210,579,194,564,176,531,148,496,129"/>
+<area shape="rect" id="Node000017" href="$crypto__struct_8h.html" title="Structure definitions for PSA Crypto." alt="" coords="360,174,478,201"/>
+<area shape="poly" id="edge24_Node000011_Node000017" title=" " alt="" coords="461,128,438,162,434,159,456,125"/>
+<area shape="poly" id="edge18_Node000013_Node000003" title=" " alt="" coords="469,280,314,323,312,318,467,275"/>
+<area shape="poly" id="edge19_Node000013_Node000014" title=" " alt="" coords="524,276,540,310,535,312,519,279"/>
+<area shape="poly" id="edge20_Node000014_Node000015" title=" " alt="" coords="552,353,552,385,547,385,547,353"/>
+<area shape="poly" id="edge21_Node000015_Node000006" title=" " alt="" coords="557,428,565,465,563,486,555,506,528,524,485,540,389,560,387,555,483,534,525,520,550,502,558,485,560,465,552,429"/>
+<area shape="rect" id="Node000016" href="$psa__crypto_2psa_2error_8h.html" title="Error definitions for the PSA Crypto API." alt="" coords="450,476,541,504"/>
+<area shape="poly" id="edge22_Node000015_Node000016" title=" " alt="" coords="542,430,516,465,512,462,538,427"/>
+<area shape="poly" id="edge23_Node000016_Node000006" title=" " alt="" coords="468,507,380,548,378,543,466,502"/>
+<area shape="poly" id="edge26_Node000017_Node000013" title=" " alt="" coords="438,200,488,238,484,242,435,204"/>
+<area shape="poly" id="edge25_Node000017_Node000015" title=" " alt="" coords="424,201,439,269,455,312,477,351,496,372,518,389,514,394,493,376,473,354,450,314,434,271,418,203"/>
+<area shape="rect" id="Node000018" href="$crypto__contexts_8h.html" title="Context definitions for PSA Crypto." alt="" coords="245,249,382,277"/>
+<area shape="poly" id="edge27_Node000017_Node000018" title=" " alt="" coords="402,204,346,243,343,238,399,200"/>
+<area shape="poly" id="edge28_Node000018_Node000003" title=" " alt="" coords="305,279,274,315,270,311,301,276"/>
+</map>

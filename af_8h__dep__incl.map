@@ -1,0 +1,124 @@
+<map id="sys/include/net/af.h" name="sys/include/net/af.h">
+<area shape="rect" id="Node000001" title="Global UNIX address family definitions." alt="" coords="2560,5,2707,33"/>
+<area shape="rect" id="Node000002" href="$pkg_2lwip_2include_2sock__types_8h.html" title="lwIP&#45;specific types" alt="" coords="1699,81,1861,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2544,27,2248,45,2065,61,1880,84,1862,87,1861,81,1880,78,2064,56,2248,39,2544,21"/>
+<area shape="rect" id="Node000003" href="$pkg_2openwsn_2sock_2sock__types_8h.html" title="OpenWSN&#45;specific types." alt="" coords="238,342,413,387"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="2545,35,1509,180,883,271,424,345,414,347,413,341,424,339,883,266,1508,175,2544,30"/>
+<area shape="rect" id="Node000004" href="$sock_2udp_8h.html" title="UDP sock definitions." alt="" coords="1937,249,2090,294"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="2588,42,2068,251,2066,246,2586,37"/>
+<area shape="rect" id="Node000044" href="$sys_2net_2gnrc_2sock_2include_2sock__types_8h.html" title="GNRC&#45;specific types and function definitions." alt="" coords="2899,342,3085,387"/>
+<area shape="poly" id="edge67_Node000001_Node000044" title=" " alt="" coords="2722,25,2792,43,2826,58,2856,79,2886,109,2912,143,2934,179,2952,217,2977,288,2990,341,2985,342,2972,289,2947,219,2929,182,2908,146,2882,112,2853,83,2823,63,2790,48,2721,30"/>
+<area shape="rect" id="Node000045" href="$gnrc__sock__internal_8h.html" title="Internal GNRC&#45;specific types and function definitions." alt="" coords="3353,443,3538,488"/>
+<area shape="poly" id="edge66_Node000001_Node000045" title=" " alt="" coords="2723,19,2909,28,3017,38,3125,53,3224,74,3305,103,3337,120,3361,139,3376,161,3381,186,3381,273,3387,321,3401,368,3435,442,3430,444,3396,370,3382,322,3376,273,3376,186,3371,164,3357,143,3334,124,3303,107,3222,80,3124,59,3017,44,2908,34,2722,24"/>
+<area shape="rect" id="Node000046" href="$inet_8h.html" title="Definitions for internet operations." alt="" coords="2693,249,2859,294"/>
+<area shape="poly" id="edge68_Node000001_Node000046" title=" " alt="" coords="2633,49,2632,82,2634,122,2643,162,2661,200,2687,227,2719,247,2716,251,2683,231,2656,203,2638,164,2629,122,2626,82,2627,49"/>
+<area shape="rect" id="Node000048" href="$socket_8h.html" title="Main socket header." alt="" coords="2683,81,2842,126"/>
+<area shape="poly" id="edge71_Node000001_Node000048" title=" " alt="" coords="2668,39,2730,78,2727,83,2665,44"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="1922,296,1918,297,1691,319,1499,327,1329,327,1171,321,1012,316,843,315,651,323,424,345,414,346,413,341,424,339,650,318,843,310,1012,311,1171,316,1329,321,1499,322,1691,314,1917,291,1921,291"/>
+<area shape="rect" id="Node000005" href="$sock__dtls__types_8h.html" title="tinydtls&#45;specific types and functions definitions" alt="" coords="5,443,155,488"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="1922,296,1918,297,1828,302,1678,304,1278,306,1069,310,880,316,733,327,681,335,648,344,634,354,626,366,617,378,603,389,541,414,486,426,437,430,389,429,290,424,233,427,167,437,138,445,137,440,166,432,232,421,290,418,389,423,437,425,486,421,539,408,600,384,614,374,622,362,630,350,646,340,680,330,732,322,880,311,1069,304,1278,301,1678,298,1828,296,1917,291,1921,291"/>
+<area shape="rect" id="Node000006" href="$lwm2m__client_8h.html" title="Definitions and public API for a LwM2M client using Wakaama." alt="" coords="716,342,881,387"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="1922,296,1918,297,1762,313,1630,321,1513,322,1405,320,1296,318,1179,320,1048,328,892,345,882,346,881,341,892,339,1047,322,1179,314,1296,313,1405,315,1513,317,1630,315,1762,308,1917,291,1921,291"/>
+<area shape="rect" id="Node000007" href="$lwm2m__client__connection_8h.html" title="Public API and definitions of the connection handle for LwM2M client implementation using Wakaama." alt="" coords="179,443,386,488"/>
+<area shape="poly" id="edge25_Node000004_Node000007" title=" " alt="" coords="1922,296,1918,297,1799,305,1650,306,1305,299,1129,298,963,303,818,317,757,329,705,344,688,354,677,365,665,378,648,389,584,412,531,422,477,426,410,437,375,445,373,440,409,432,477,421,530,416,582,407,645,384,662,374,673,362,685,350,703,340,756,324,818,312,963,298,1129,292,1305,293,1650,300,1799,299,1917,291,1921,291"/>
+<area shape="rect" id="Node000019" href="$asymcute_8h.html" title="Asymcute MQTT&#45;SN interface definition." alt="" coords="2302,452,2501,479"/>
+<area shape="poly" id="edge26_Node000004_Node000019" title=" " alt="" coords="2106,276,2185,283,2267,296,2338,314,2365,326,2385,340,2401,367,2408,398,2409,428,2406,451,2401,451,2403,428,2403,399,2396,369,2381,344,2363,331,2336,319,2266,301,2184,289,2105,281"/>
+<area shape="rect" id="Node000020" href="$ep_8h.html" title="CoRE Resource Directory endpoint interface." alt="" coords="904,350,1088,378"/>
+<area shape="poly" id="edge27_Node000004_Node000020" title=" " alt="" coords="1922,296,1918,297,1794,311,1688,319,1509,322,1329,324,1224,331,1100,345,1054,353,1053,347,1100,339,1224,326,1329,319,1509,316,1688,313,1793,306,1917,291,1921,291"/>
+<area shape="rect" id="Node000021" href="$epsim_8h.html" title="Interface for the CoRE RD simple registration endpoint." alt="" coords="1112,342,1264,387"/>
+<area shape="poly" id="edge28_Node000004_Node000021" title=" " alt="" coords="1922,296,1918,297,1820,309,1738,315,1597,320,1456,324,1373,332,1276,345,1265,347,1264,341,1276,339,1373,326,1455,319,1596,314,1737,310,1820,303,1917,291,1921,291"/>
+<area shape="rect" id="Node000022" href="$lc_8h.html" title="CoRE Resource Directory lookup interface." alt="" coords="2627,452,2805,479"/>
+<area shape="poly" id="edge29_Node000004_Node000022" title=" " alt="" coords="2106,273,2233,280,2379,292,2514,311,2569,324,2609,340,2644,364,2673,395,2711,450,2707,453,2669,398,2641,368,2607,344,2567,329,2513,316,2379,297,2233,285,2105,278"/>
+<area shape="rect" id="Node000023" href="$emcute_8h.html" title="emCute MQTT&#45;SN interface definition" alt="" coords="1288,350,1472,378"/>
+<area shape="poly" id="edge30_Node000004_Node000023" title=" " alt="" coords="1922,296,1918,297,1796,313,1701,321,1606,329,1484,345,1441,352,1440,347,1484,339,1605,324,1701,316,1796,308,1917,291,1921,291"/>
+<area shape="rect" id="Node000024" href="$gcoap_8h.html" title="gcoap definition" alt="" coords="2756,553,2930,580"/>
+<area shape="poly" id="edge31_Node000004_Node000024" title=" " alt="" coords="2106,271,2225,275,2358,286,2421,295,2478,306,2525,321,2559,340,2576,358,2586,378,2590,417,2594,457,2602,476,2617,494,2647,518,2683,535,2720,547,2756,555,2755,560,2718,552,2681,540,2645,522,2613,498,2597,479,2589,458,2585,418,2580,379,2572,361,2556,344,2523,326,2477,311,2420,300,2357,291,2224,280,2106,276"/>
+<area shape="rect" id="Node000028" href="$forward__proxy__internal_8h.html" title="Definitions for the GCoAP forward proxy internal communication." alt="" coords="2548,637,2737,699"/>
+<area shape="poly" id="edge63_Node000004_Node000028" title=" " alt="" coords="2069,301,2089,319,2104,341,2109,364,2104,388,2092,414,2073,447,2050,478,2030,498,2007,511,1984,517,1942,517,1923,517,1904,520,1887,529,1870,546,1861,567,1863,577,1870,587,1884,596,1909,604,1984,615,2083,622,2194,626,2409,629,2538,634,2549,636,2548,642,2537,640,2409,634,2194,631,2083,627,1983,620,1908,609,1882,601,1866,591,1858,579,1856,567,1866,543,1884,525,1902,515,1922,512,1942,512,1984,511,2005,506,2026,494,2046,474,2068,444,2087,412,2099,386,2104,364,2099,343,2085,323,2066,305"/>
+<area shape="rect" id="Node000029" href="$nanocoap_8h.html" title="nanocoap API" alt="" coords="2677,350,2875,378"/>
+<area shape="poly" id="edge36_Node000004_Node000029" title=" " alt="" coords="2106,278,2356,302,2659,339,2708,347,2707,352,2658,345,2355,308,2105,283"/>
+<area shape="rect" id="Node000032" href="$nanocoap__sock_8h.html" title="nanocoap high&#45;level API" alt="" coords="2091,443,2277,488"/>
+<area shape="poly" id="edge47_Node000004_Node000032" title=" " alt="" coords="2094,299,2123,317,2149,340,2165,365,2175,393,2185,442,2180,443,2170,394,2160,368,2145,344,2120,321,2091,303"/>
+<area shape="rect" id="Node000036" href="$sntp_8h.html" title="SNTP definitions." alt="" coords="1496,350,1659,378"/>
+<area shape="poly" id="edge48_Node000004_Node000036" title=" " alt="" coords="1922,296,1918,297,1671,345,1635,352,1634,347,1670,339,1917,291,1921,291"/>
+<area shape="rect" id="Node000037" href="$net_2sock_2async_2event_8h.html" title="Asynchronous sock using Event Queue definitions." alt="" coords="1683,342,1837,387"/>
+<area shape="poly" id="edge49_Node000004_Node000037" title=" " alt="" coords="1940,302,1822,344,1820,339,1938,297"/>
+<area shape="rect" id="Node000038" href="$sock_2dns_8h.html" title="DNS sock definitions." alt="" coords="2371,646,2525,690"/>
+<area shape="poly" id="edge51_Node000004_Node000038" title=" " alt="" coords="2106,272,2175,277,2254,289,2336,309,2413,340,2448,358,2475,376,2496,399,2516,433,2527,463,2530,487,2529,544,2533,567,2529,590,2508,622,2482,647,2478,643,2504,619,2524,588,2527,567,2524,545,2525,488,2522,464,2511,436,2491,403,2471,380,2446,362,2411,344,2334,314,2253,295,2175,283,2105,277"/>
+<area shape="rect" id="Node000039" href="$dodtls_8h.html" title="DNS over DTLS sock definitions." alt="" coords="1675,443,1829,488"/>
+<area shape="poly" id="edge53_Node000004_Node000039" title=" " alt="" coords="1975,306,1926,344,1874,389,1790,445,1787,440,1870,385,1922,340,1971,301"/>
+<area shape="rect" id="Node000040" href="$sock_2dtls_8h.html" title="DTLS sock definitions." alt="" coords="1937,342,2090,387"/>
+<area shape="poly" id="edge55_Node000004_Node000040" title=" " alt="" coords="2016,310,2016,342,2011,342,2011,310"/>
+<area shape="rect" id="Node000042" href="$creds_8h.html" title="DTLS sock definitions." alt="" coords="437,342,590,387"/>
+<area shape="poly" id="edge58_Node000004_Node000042" title=" " alt="" coords="1922,296,1918,297,1719,317,1551,325,1402,325,1263,321,1125,317,976,317,808,325,610,345,591,348,590,342,609,339,807,319,976,311,1125,311,1263,315,1402,319,1551,319,1719,311,1917,291,1921,291"/>
+<area shape="rect" id="Node000043" href="$util_8h.html" title="sock utility function definitions" alt="" coords="2217,342,2370,387"/>
+<area shape="poly" id="edge60_Node000004_Node000043" title=" " alt="" coords="2096,297,2227,339,2226,344,2094,302"/>
+<area shape="poly" id="edge64_Node000004_Node000044" title=" " alt="" coords="2105,274,2450,295,2668,314,2887,339,2899,341,2899,346,2886,345,2667,319,2449,300,2105,279"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="702,389,698,389,552,413,406,437,370,445,368,440,405,432,551,407,697,384,701,383"/>
+<area shape="rect" id="Node000008" href="$lwm2m__client__objects_8h.html" title="Public API and definitions for the helper functions to interact with basic objects from a LwM2M clien..." alt="" coords="1315,443,1498,488"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="896,385,1011,399,1102,406,1192,414,1305,432,1338,440,1337,445,1303,437,1191,419,1101,411,1011,405,896,390"/>
+<area shape="rect" id="Node000009" href="$barometer_8h.html" title=" " alt="" coords="848,544,1013,589"/>
+<area shape="poly" id="edge9_Node000006_Node000009" title=" " alt="" coords="897,384,1034,389,1230,393,1412,406,1477,417,1499,424,1513,433,1524,449,1527,465,1523,482,1512,498,1492,506,1448,515,1315,532,1014,561,1013,556,1314,527,1448,509,1490,501,1509,494,1519,480,1522,465,1519,451,1509,437,1497,429,1476,422,1412,411,1229,399,1034,394,897,389"/>
+<area shape="rect" id="Node000010" href="$pkg_2wakaama_2include_2objects_2common_8h.html" title=" " alt="" coords="751,443,916,488"/>
+<area shape="poly" id="edge10_Node000006_Node000010" title=" " alt="" coords="814,400,828,442,823,444,809,402"/>
+<area shape="rect" id="Node000011" href="$current_8h.html" title=" " alt="" coords="1240,544,1405,589"/>
+<area shape="poly" id="edge11_Node000006_Node000011" title=" " alt="" coords="897,384,1039,388,1243,393,1344,397,1433,405,1501,416,1524,424,1538,433,1549,449,1552,465,1548,481,1538,498,1511,525,1478,544,1442,557,1406,564,1405,559,1440,551,1476,539,1508,521,1534,495,1543,479,1546,465,1544,451,1534,437,1521,428,1499,421,1433,410,1344,403,1242,398,1039,394,896,389"/>
+<area shape="rect" id="Node000012" href="$pkg_2wakaama_2include_2objects_2device_8h.html" title=" " alt="" coords="939,443,1104,488"/>
+<area shape="poly" id="edge12_Node000006_Node000012" title=" " alt="" coords="862,391,974,440,972,445,860,396"/>
+<area shape="rect" id="Node000013" href="$humidity_8h.html" title=" " alt="" coords="1530,544,1694,589"/>
+<area shape="poly" id="edge13_Node000006_Node000013" title=" " alt="" coords="897,384,1043,390,1252,396,1450,408,1522,418,1547,425,1563,433,1586,457,1600,487,1609,517,1613,544,1608,544,1604,519,1595,489,1581,460,1560,437,1545,430,1521,424,1450,413,1252,401,1043,395,896,389"/>
+<area shape="rect" id="Node000014" href="$illuminance_8h.html" title=" " alt="" coords="252,544,417,589"/>
+<area shape="poly" id="edge14_Node000006_Node000014" title=" " alt="" coords="702,389,584,417,510,437,466,462,424,491,359,546,355,542,421,487,463,457,508,432,583,411,701,384"/>
+<area shape="rect" id="Node000015" href="$ipso__sensor__base_8h.html" title=" " alt="" coords="563,435,728,496"/>
+<area shape="poly" id="edge15_Node000006_Node000015" title=" " alt="" coords="754,398,694,436,691,432,751,393"/>
+<area shape="rect" id="Node000016" href="$temperature_8h.html" title=" " alt="" coords="441,544,610,589"/>
+<area shape="poly" id="edge23_Node000006_Node000016" title=" " alt="" coords="702,391,592,418,535,437,522,462,517,490,518,519,522,544,517,545,513,520,512,490,517,460,532,433,591,413,700,386"/>
+<area shape="rect" id="Node000017" href="$voltage_8h.html" title=" " alt="" coords="634,544,798,589"/>
+<area shape="poly" id="edge24_Node000006_Node000017" title=" " alt="" coords="702,389,606,414,570,426,553,437,544,451,541,465,544,479,553,495,566,507,588,519,644,541,642,546,585,524,563,511,549,498,539,481,536,465,539,449,549,433,568,422,604,409,701,384"/>
+<area shape="rect" id="Node000018" href="$security_8h.html" title=" " alt="" coords="1127,443,1292,488"/>
+<area shape="poly" id="edge22_Node000006_Node000018" title=" " alt="" coords="897,385,1008,407,1117,432,1145,440,1143,445,1115,437,1007,412,896,390"/>
+<area shape="poly" id="edge16_Node000015_Node000009" title=" " alt="" coords="743,498,869,541,867,546,741,503"/>
+<area shape="poly" id="edge17_Node000015_Node000011" title=" " alt="" coords="743,494,883,519,1019,538,1240,558,1240,563,1018,543,882,525,742,500"/>
+<area shape="poly" id="edge18_Node000015_Node000013" title=" " alt="" coords="743,494,845,511,931,521,1080,529,1229,531,1418,542,1529,553,1529,558,1417,547,1228,536,1080,534,931,526,844,516,742,499"/>
+<area shape="poly" id="edge19_Node000015_Node000014" title=" " alt="" coords="549,500,404,546,402,541,548,495"/>
+<area shape="poly" id="edge20_Node000015_Node000016" title=" " alt="" coords="599,509,553,546,550,542,595,504"/>
+<area shape="poly" id="edge21_Node000015_Node000017" title=" " alt="" coords="678,508,703,542,698,545,673,511"/>
+<area shape="rect" id="Node000025" href="$gcoap_2dns_8h.html" title="gcoap_dns definitions" alt="" coords="2762,646,2924,690"/>
+<area shape="poly" id="edge32_Node000024_Node000025" title=" " alt="" coords="2845,596,2845,645,2840,645,2840,596"/>
+<area shape="rect" id="Node000027" href="$forward__proxy_8h.html" title="Definitions for the GCoAP forward proxy." alt="" coords="3091,646,3253,690"/>
+<area shape="poly" id="edge34_Node000024_Node000027" title=" " alt="" coords="2902,583,3100,642,3099,647,2900,588"/>
+<area shape="poly" id="edge35_Node000024_Node000028" title=" " alt="" coords="2804,590,2705,639,2703,634,2801,585"/>
+<area shape="rect" id="Node000026" href="$dns_8h.html" title="Generic DNS values." alt="" coords="2369,747,2527,774"/>
+<area shape="poly" id="edge33_Node000025_Node000026" title=" " alt="" coords="2764,698,2750,701,2633,728,2526,749,2525,743,2631,723,2749,696,2762,692"/>
+<area shape="poly" id="edge37_Node000029_Node000022" title=" " alt="" coords="2763,393,2726,453,2721,450,2758,390"/>
+<area shape="poly" id="edge38_Node000029_Node000024" title=" " alt="" coords="2797,390,2820,434,2837,499,2844,552,2839,553,2832,500,2815,436,2792,393"/>
+<area shape="poly" id="edge39_Node000029_Node000027" title=" " alt="" coords="2858,379,2888,384,2980,388,3100,388,3160,391,3215,398,3260,411,3277,421,3291,433,3307,460,3310,490,3302,520,3287,550,3244,605,3200,647,3196,643,3240,601,3282,547,3297,518,3304,489,3302,462,3287,436,3274,425,3258,416,3213,403,3159,396,3100,393,2980,393,2888,389,2857,384"/>
+<area shape="rect" id="Node000030" href="$nanocoap_2cache_8h.html" title="nanocoap&#45;cache API" alt="" coords="2880,443,3066,488"/>
+<area shape="poly" id="edge40_Node000029_Node000030" title=" " alt="" coords="2817,383,2931,440,2929,445,2815,388"/>
+<area shape="rect" id="Node000031" href="$fileserver_8h.html" title="Resource handler for the CoAP file system server." alt="" coords="3091,443,3277,488"/>
+<area shape="poly" id="edge42_Node000029_Node000031" title=" " alt="" coords="2853,379,3079,432,3109,440,3108,445,3078,437,2852,385"/>
+<area shape="poly" id="edge43_Node000029_Node000032" title=" " alt="" coords="2662,380,2486,403,2290,437,2257,445,2256,440,2289,432,2485,398,2661,375"/>
+<area shape="poly" id="edge41_Node000030_Node000024" title=" " alt="" coords="2934,500,2861,555,2858,550,2931,495"/>
+<area shape="rect" id="Node000033" href="$fs_8h.html" title="nanoCoAP virtual file system" alt="" coords="2301,553,2515,580"/>
+<area shape="poly" id="edge44_Node000032_Node000033" title=" " alt="" coords="2248,492,2379,550,2377,555,2246,497"/>
+<area shape="rect" id="Node000034" href="$link__format_8h.html" title="NanoCoAP Link Format helper functions." alt="" coords="1880,544,2066,589"/>
+<area shape="poly" id="edge45_Node000032_Node000034" title=" " alt="" coords="2125,497,2021,546,2018,541,2123,492"/>
+<area shape="rect" id="Node000035" href="$nanocoap__vfs_8h.html" title="VFS NanoCoAP helper functions." alt="" coords="2091,544,2277,589"/>
+<area shape="poly" id="edge46_Node000032_Node000035" title=" " alt="" coords="2187,503,2187,544,2181,544,2181,503"/>
+<area shape="poly" id="edge50_Node000037_Node000037" title=" " alt="" coords="1853,350,1860,356,1863,365,1856,377,1838,383,1836,378,1852,373,1858,364,1856,359,1850,354"/>
+<area shape="poly" id="edge52_Node000038_Node000026" title=" " alt="" coords="2451,706,2451,746,2445,746,2445,706"/>
+<area shape="poly" id="edge54_Node000039_Node000026" title=" " alt="" coords="1767,501,1790,546,1806,568,1826,587,1891,630,1962,665,2036,692,2111,714,2184,730,2253,742,2368,754,2368,759,2252,747,2183,735,2109,719,2034,698,1960,670,1888,634,1822,591,1802,572,1785,549,1762,504"/>
+<area shape="poly" id="edge57_Node000040_Node000039" title=" " alt="" coords="1943,395,1810,445,1808,440,1941,390"/>
+<area shape="rect" id="Node000041" href="$dsm_8h.html" title="DTLS session management module definition." alt="" coords="1853,452,2016,479"/>
+<area shape="poly" id="edge56_Node000040_Node000041" title=" " alt="" coords="1989,401,1947,453,1943,450,1985,397"/>
+<area shape="poly" id="edge59_Node000042_Node000005" title=" " alt="" coords="422,390,293,412,237,421,167,437,141,445,139,440,166,432,236,416,292,406,421,385"/>
+<area shape="poly" id="edge61_Node000043_Node000019" title=" " alt="" coords="2330,395,2389,450,2386,454,2326,399"/>
+<area shape="poly" id="edge62_Node000043_Node000032" title=" " alt="" coords="2260,399,2209,445,2206,441,2257,395"/>
+<area shape="poly" id="edge65_Node000044_Node000045" title=" " alt="" coords="3100,385,3334,432,3367,440,3365,445,3333,437,3099,390"/>
+<area shape="poly" id="edge69_Node000046_Node000029" title=" " alt="" coords="2779,310,2779,350,2773,350,2773,310"/>
+<area shape="rect" id="Node000047" href="$uhcp_8h.html" title="UHCP header." alt="" coords="3109,350,3275,378"/>
+<area shape="poly" id="edge70_Node000046_Node000047" title=" " alt="" coords="2875,291,3098,339,3134,347,3133,353,3097,345,2874,297"/>
+<area shape="rect" id="Node000049" href="$in_8h.html" title="Main socket header." alt="" coords="2670,174,2882,201"/>
+<area shape="poly" id="edge72_Node000048_Node000049" title=" " alt="" coords="2771,141,2776,173,2771,173,2766,141"/>
+<area shape="poly" id="edge73_Node000049_Node000046" title=" " alt="" coords="2779,217,2779,249,2773,249,2773,217"/>
+</map>

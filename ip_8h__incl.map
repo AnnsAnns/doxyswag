@@ -1,0 +1,20 @@
+<map id="sys/include/net/sock/ip.h" name="sys/include/net/sock/ip.h">
+<area shape="rect" id="Node000001" title="Raw IPv4/IPv6 sock definitions." alt="" coords="144,5,326,33"/>
+<area shape="rect" id="Node000002" href="$errno_8h.html" title=" " alt="" coords="5,81,73,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,36,88,78,86,73,199,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="174,157,245,184"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="196,36,163,54,149,67,137,82,134,100,141,116,155,132,173,146,170,150,151,136,136,119,129,100,133,80,145,63,160,50,194,31"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="147,81,216,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="228,35,202,70,198,67,223,32"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="241,81,336,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="247,32,272,67,268,70,242,35"/>
+<area shape="rect" id="Node000006" href="$sock_8h.html" title="Common sock API definitions." alt="" coords="360,81,448,109"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="266,31,362,72,359,77,264,36"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="472,81,579,109"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="288,31,459,74,458,79,287,36"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="370,112,259,153,257,148,369,107"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="321,157,394,184"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="398,111,376,145,372,142,394,108"/>
+<area shape="rect" id="Node000008" href="$iolist_8h.html" title="iolist scatter / gather IO" alt="" coords="418,157,484,184"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="415,108,437,142,432,145,410,111"/>
+</map>

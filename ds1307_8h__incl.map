@@ -1,0 +1,26 @@
+<map id="drivers/include/ds1307.h" name="drivers/include/ds1307.h">
+<area shape="rect" id="Node000001" title="DS1307 definitions." alt="" coords="113,5,294,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,81,87,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,36,89,77,86,72,174,31"/>
+<area shape="rect" id="Node000003" href="$nvram_8h.html" title="Generic non&#45;volatile RAM driver interface." alt="" coords="111,81,186,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="196,35,170,70,165,67,191,32"/>
+<area shape="rect" id="Node000006" href="$i2c_8h.html" title="Low&#45;level I2C peripheral driver interface definition." alt="" coords="211,81,308,109"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="215,32,242,67,238,70,211,35"/>
+<area shape="rect" id="Node000010" href="$drivers_2include_2periph_2gpio_8h.html" title="Low&#45;level GPIO peripheral driver interface definitions." alt="" coords="332,81,438,109"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="237,31,340,72,338,77,235,36"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="135,157,205,184"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="155,108,165,141,159,142,150,110"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="37,157,111,184"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="137,111,100,147,96,144,133,107"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="245,111,199,149,196,145,242,107"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="227,112,122,153,120,148,225,107"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="230,157,300,184"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="263,109,265,141,260,141,258,109"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="324,157,432,184"/>
+<area shape="poly" id="edge9_Node000006_Node000008" title=" " alt="" coords="282,107,346,146,343,151,279,111"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="456,157,561,184"/>
+<area shape="poly" id="edge10_Node000006_Node000009" title=" " alt="" coords="305,107,450,149,449,154,303,112"/>
+<area shape="poly" id="edge12_Node000010_Node000007" title=" " alt="" coords="365,111,300,151,297,146,362,107"/>
+<area shape="poly" id="edge14_Node000010_Node000008" title=" " alt="" coords="386,109,383,141,378,141,381,109"/>
+<area shape="poly" id="edge13_Node000010_Node000009" title=" " alt="" coords="408,107,475,146,472,151,405,112"/>
+</map>
