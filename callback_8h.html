@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -149,7 +146,24 @@ $(function(){initNavTree('callback_8h.html',''); initResizable(true); });
 
 <p>Provides a callback-with-argument event type.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;event.h&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Provides a callback-with-argument event type. </p>
+<p>Example:</p>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> callback(<span class="keywordtype">void</span> *arg)</div>
+<div class="line">{</div>
+<div class="line">    <a class="code hl_define" href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a>(<span class="stringliteral">&quot;%s called with arg %p\n&quot;</span>, __func__, arg);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line">[...]</div>
+<div class="line"><a class="code hl_struct" href="structevent__callback__t.html">event_callback_t</a> event_callback = <a class="code hl_define" href="#a231648c47d62d58aa4b336dbe31125c0">EVENT_CALLBACK_INIT</a>(callback, 0x12345678);</div>
+<div class="line"><a class="code hl_function" href="group__sys__event.html#ga2053ce1facf709fffd024bee9e2383ba">event_post</a>(&amp;queue, &amp;event_callback);</div>
+<div class="ttc" id="acallback_8h_html_a231648c47d62d58aa4b336dbe31125c0"><div class="ttname"><a href="#a231648c47d62d58aa4b336dbe31125c0">EVENT_CALLBACK_INIT</a></div><div class="ttdeci">#define EVENT_CALLBACK_INIT(_cb, _arg)</div><div class="ttdoc">Callback Event static initializer.</div><div class="ttdef"><b>Definition</b> callback.h:96</div></div>
+<div class="ttc" id="agroup__cpu__avr8__common__stdio__wrapper_html_gad2eb277496af160238e7306fff780ad2"><div class="ttname"><a href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a></div><div class="ttdeci">#define printf(...)</div><div class="ttdoc">A wrapper for the printf() function that passes arguments through unmodified, but fails to compile if...</div><div class="ttdef"><b>Definition</b> stdio.h:60</div></div>
+<div class="ttc" id="agroup__sys__event_html_ga2053ce1facf709fffd024bee9e2383ba"><div class="ttname"><a href="group__sys__event.html#ga2053ce1facf709fffd024bee9e2383ba">event_post</a></div><div class="ttdeci">void event_post(event_queue_t *queue, event_t *event)</div><div class="ttdoc">Queue an event.</div></div>
+<div class="ttc" id="astructevent__callback__t_html"><div class="ttname"><a href="structevent__callback__t.html">event_callback_t</a></div><div class="ttdoc">Callback Event structure definition.</div><div class="ttdef"><b>Definition</b> callback.h:48</div></div>
+</div><!-- fragment --><p>Event Callback API</p>
+<dl class="section author"><dt>Author</dt><dd>Kaspar Schleiser <a href="#" onclick="location.href='mai'+'lto:'+'kas'+'pa'+'r@s'+'ch'+'lei'+'se'+'r.d'+'e'; return false;">kaspa<span class="obfuscator">.nosp@m.</span>r@sc<span class="obfuscator">.nosp@m.</span>hleis<span class="obfuscator">.nosp@m.</span>er.d<span class="obfuscator">.nosp@m.</span>e</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;event.h&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for callback.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -184,24 +198,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>_event_callback_handl
 <tr class="memdesc:af81b2075003ddd6319474e238e82db52"><td class="mdescLeft">&#160;</td><td class="mdescRight">event callback handler function (used internally) <br /></td></tr>
 <tr class="separator:af81b2075003ddd6319474e238e82db52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Provides a callback-with-argument event type. </p>
-<p>Example:</p>
-<div class="fragment"><div class="line"><span class="keywordtype">void</span> callback(<span class="keywordtype">void</span> *arg)</div>
-<div class="line">{</div>
-<div class="line">    <a class="code hl_define" href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a>(<span class="stringliteral">&quot;%s called with arg %p\n&quot;</span>, __func__, arg);</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line">[...]</div>
-<div class="line"><a class="code hl_struct" href="structevent__callback__t.html">event_callback_t</a> event_callback = <a class="code hl_define" href="#a231648c47d62d58aa4b336dbe31125c0">EVENT_CALLBACK_INIT</a>(callback, 0x12345678);</div>
-<div class="line"><a class="code hl_function" href="group__sys__event.html#ga2053ce1facf709fffd024bee9e2383ba">event_post</a>(&amp;queue, &amp;event_callback);</div>
-<div class="ttc" id="acallback_8h_html_a231648c47d62d58aa4b336dbe31125c0"><div class="ttname"><a href="#a231648c47d62d58aa4b336dbe31125c0">EVENT_CALLBACK_INIT</a></div><div class="ttdeci">#define EVENT_CALLBACK_INIT(_cb, _arg)</div><div class="ttdoc">Callback Event static initializer.</div><div class="ttdef"><b>Definition</b> callback.h:96</div></div>
-<div class="ttc" id="agroup__cpu__avr8__common__stdio__wrapper_html_gad2eb277496af160238e7306fff780ad2"><div class="ttname"><a href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a></div><div class="ttdeci">#define printf(...)</div><div class="ttdoc">A wrapper for the printf() function that passes arguments through unmodified, but fails to compile if...</div><div class="ttdef"><b>Definition</b> stdio.h:60</div></div>
-<div class="ttc" id="agroup__sys__event_html_ga2053ce1facf709fffd024bee9e2383ba"><div class="ttname"><a href="group__sys__event.html#ga2053ce1facf709fffd024bee9e2383ba">event_post</a></div><div class="ttdeci">void event_post(event_queue_t *queue, event_t *event)</div><div class="ttdoc">Queue an event.</div></div>
-<div class="ttc" id="astructevent__callback__t_html"><div class="ttname"><a href="structevent__callback__t.html">event_callback_t</a></div><div class="ttdoc">Callback Event structure definition.</div><div class="ttdef"><b>Definition</b> callback.h:48</div></div>
-</div><!-- fragment --><p>Event Callback API</p>
-<dl class="section author"><dt>Author</dt><dd>Kaspar Schleiser <a href="#" onclick="location.href='mai'+'lto:'+'kas'+'pa'+'r@s'+'ch'+'lei'+'se'+'r.d'+'e'; return false;">kaspa<span class="obfuscator">.nosp@m.</span>r@sc<span class="obfuscator">.nosp@m.</span>hleis<span class="obfuscator">.nosp@m.</span>er.d<span class="obfuscator">.nosp@m.</span>e</a> </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a231648c47d62d58aa4b336dbe31125c0" name="a231648c47d62d58aa4b336dbe31125c0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a231648c47d62d58aa4b336dbe31125c0">&#9670;&#160;</a></span>EVENT_CALLBACK_INIT</h2>
 
@@ -334,7 +331,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>_event_callback_handl
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a408b6d3a4a484720bc3ecfeac8947e3.html">sys</a></li><li class="navelem"><a class="el" href="dir_e9e107fc86bbb4b6a326076a6808b9f5.html">include</a></li><li class="navelem"><a class="el" href="dir_16bd925a5206111e6116d92c1371f9d2.html">event</a></li><li class="navelem"><a class="el" href="callback_8h.html">callback.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

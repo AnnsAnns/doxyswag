@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -143,13 +140,15 @@ $(function(){initNavTree('structgnrc__sock__reg.html',''); initResizable(true); 
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
-  <div class="headertitle"><div class="title">gnrc_sock_reg Struct Reference<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__sock.html">GNRC-specific implementation of the sock API</a></div></div></div>
+  <div class="headertitle"><div class="title">gnrc_sock_reg Struct Reference<div class="ingroups"><a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__sock.html">GNRC-specific implementation of the sock API</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>sock <a class="el" href="group__net__gnrc__netreg.html">Network protocol registry</a> info  
  <a href="#details">More...</a></p>
-
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>sock <a class="el" href="group__net__gnrc__netreg.html">Network protocol registry</a> info </p>
+</div>
 <p><code>#include &lt;sock_types.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -167,9 +166,7 @@ Data Fields</h2></td></tr>
 <tr class="memdesc:a22b4f3045ba6f81ffb81e8de42bfcf55"><td class="mdescLeft">&#160;</td><td class="mdescRight">queue for <a class="el" href="#a936a208fd08628a446e3775288fdd4d0" title="Mailboxes target for the sock">gnrc_sock_reg_t::mbox</a> <br /></td></tr>
 <tr class="separator:a22b4f3045ba6f81ffb81e8de42bfcf55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>sock <a class="el" href="group__net__gnrc__netreg.html">Network protocol registry</a> info </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>sys/net/gnrc/sock/include/<a class="el" href="sys_2net_2gnrc_2sock_2include_2sock__types_8h.html">sock_types.h</a></li>
 </ul>
 </div><!-- contents -->
@@ -180,7 +177,7 @@ Data Fields</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structgnrc__sock__reg.html">gnrc_sock_reg</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:32 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:11 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

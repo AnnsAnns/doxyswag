@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,13 @@ $(function(){initNavTree('esp32-mh-et-live-minikit_2include_2board_8h.html','');
 
 <p>Board specific definitions for MH-ET LIVE MiniKit for ESP32.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Board specific definitions for MH-ET LIVE MiniKit for ESP32. </p>
+<p>The MH-ET LIVE MiniKit for ESP32 uses the ESP32-WROOM-32 module. It is a very interesting development kit as it is available in the stackable Wemos D1 Mini format. Thus, all shields for Wemos D1 mini (ESP8266 platform) can also be used with ESP32. All GPIOs are broken out so that it can be configured very flexibly.</p>
+<p>For detailed information about the configuration of ESP32 boards, see section <a class="el" href="group__cpu__esp32.html#esp32_peripherals">Common Peripherals</a>.</p>
+<dl class="section note"><dt>Note</dt><dd>Most definitions can be overridden by an <a class="el" href="group__cpu__esp32.html#esp32_application_specific_configurations">application-specific board configuration</a>.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span class="obfuscator">.nosp@m.</span>@sch<span class="obfuscator">.nosp@m.</span>orcht<span class="obfuscator">.nosp@m.</span>.net</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;board_common.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="esp32-mh-et-live-minikit_2include_2board__modules_8h.html">board_modules.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -177,13 +180,7 @@ $(function(){initNavTree('esp32-mh-et-live-minikit_2include_2board_8h.html','');
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>LED_BLUE_PIN</b>&#160;&#160;&#160;GPIO2</td></tr>
 <tr class="separator:a5aec9d3b503fb1a30a21b16c7be86cff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Board specific definitions for MH-ET LIVE MiniKit for ESP32. </p>
-<p>The MH-ET LIVE MiniKit for ESP32 uses the ESP32-WROOM-32 module. It is a very interesting development kit as it is available in the stackable Wemos D1 Mini format. Thus, all shields for Wemos D1 mini (ESP8266 platform) can also be used with ESP32. All GPIOs are broken out so that it can be configured very flexibly.</p>
-<p>For detailed information about the configuration of ESP32 boards, see section <a class="el" href="group__cpu__esp32.html#esp32_peripherals">Common Peripherals</a>.</p>
-<dl class="section note"><dt>Note</dt><dd>Most definitions can be overridden by an <a class="el" href="group__cpu__esp32.html#esp32_application_specific_configurations">application-specific board configuration</a>.</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span class="obfuscator">.nosp@m.</span>@sch<span class="obfuscator">.nosp@m.</span>orcht<span class="obfuscator">.nosp@m.</span>.net</a> </dd></dl>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
@@ -191,7 +188,7 @@ $(function(){initNavTree('esp32-mh-et-live-minikit_2include_2board_8h.html','');
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6c8313236d9db5b969ca7d150fe527de.html">boards</a></li><li class="navelem"><a class="el" href="dir_ef6886499ba4f864b9ecf222466f611b.html">esp32-mh-et-live-minikit</a></li><li class="navelem"><a class="el" href="dir_f4920269aad97046a71f8bdf67673e2a.html">include</a></li><li class="navelem"><a class="el" href="esp32-mh-et-live-minikit_2include_2board_8h.html">board.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:28 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

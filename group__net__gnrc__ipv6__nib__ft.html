@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -145,9 +142,10 @@ $(function(){initNavTree('group__net__gnrc__ipv6__nib__ft.html',''); initResizab
 <a href="#files">Files</a> &#124;
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">Forwarding table<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__ipv6.html">IPv6</a> &raquo; <a class="el" href="group__net__gnrc__ipv6__nib.html">Neighbor Information Base for IPv6</a></div></div></div>
+  <div class="headertitle"><div class="title">Forwarding table<div class="ingroups"><a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__ipv6.html">IPv6</a> &raquo; <a class="el" href="group__net__gnrc__ipv6__nib.html">Neighbor Information Base for IPv6</a></div></div></div>
 </div><!--header-->
 <div class="contents">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -179,7 +177,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:gacd9098b4d88c6ee642569999d1311d6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a forwarding table entry.  <br /></td></tr>
 <tr class="separator:gacd9098b4d88c6ee642569999d1311d6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="gaae03867939ba18c864ef69eec6c7b8fc" name="gaae03867939ba18c864ef69eec6c7b8fc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaae03867939ba18c864ef69eec6c7b8fc">&#9670;&#160;</a></span>gnrc_ipv6_nib_ft_add()</h2>
@@ -346,7 +343,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>The iteration over all forwarding table entries in the NIB includes all entries added via <code><a class="el" href="#gaae03867939ba18c864ef69eec6c7b8fc" title="Adds a new route to the forwarding table.">gnrc_ipv6_nib_ft_add()</a></code> and entries that are currently in the Destination Cache, in the Prefix List, and in the Default Router List.</p>
+<p>The iteration over all forwarding table entries in the NIB includes all entries added via <code><a class="el" href="#gaae03867939ba18c864ef69eec6c7b8fc" title="Adds a new route to the forwarding table.">gnrc_ipv6_nib_ft_add()</a></code> and entries that are currently in the Destination Cache, in the Prefix List (only if they're on-link), and in the Default Router List.</p>
 <p>Usage example:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="ft_8h.html">net/gnrc/ipv6/nib/ft.h</a>&quot;</span></div>
 <div class="line"> </div>
@@ -404,7 +401,7 @@ false, if <code>fte</code> is the last neighbor cache entry in the NIB. </dd></d
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

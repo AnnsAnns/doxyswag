@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -153,6 +150,11 @@ $(function(){initNavTree('group__drivers__lis2dh12.html',''); initResizable(true
 
 <p>Driver for the STM LIS2DH12 accelerometer  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Driver for the STM LIS2DH12 accelerometer </p>
+<p>This device driver provides a minimal interface to LIS2DH12 devices. As of now, it only provides very basic access to the device. The driver configures the device to continuously read the acceleration data with statically defined scale and rate, and with a fixed 10-bit resolution. The LIS2DH12's FIFO is bypassed, so the driver might not be sufficient for use cases where the complete history of readings is of interest.</p>
+<p>Also, the current version of the driver supports only interfacing the sensor via SPI. The driver is however written in a way, that adding I2C interface support is quite simple, as all bus related functions (acquire, release, read, write) are cleanly separated in the code.</p>
+<p>This driver provides <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> capabilities. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -365,11 +367,6 @@ const <a class="el" href="structsaul__driver__t.html">saul_driver_t</a>&#160;</t
 const <a class="el" href="structsaul__driver__t.html">saul_driver_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>lis2dh12_saul_temp_driver</b></td></tr>
 <tr class="separator:ga1fdae0de1b539ffc73ed83c11da7a5cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Driver for the STM LIS2DH12 accelerometer </p>
-<p>This device driver provides a minimal interface to LIS2DH12 devices. As of now, it only provides very basic access to the device. The driver configures the device to continuously read the acceleration data with statically defined scale and rate, and with a fixed 10-bit resolution. The LIS2DH12's FIFO is bypassed, so the driver might not be sufficient for use cases where the complete history of readings is of interest.</p>
-<p>Also, the current version of the driver supports only interfacing the sensor via SPI. The driver is however written in a way, that adding I2C interface support is quite simple, as all bus related functions (acquire, release, read, write) are cleanly separated in the code.</p>
-<p>This driver provides <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> capabilities. </p>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="gad4a9934b75947f1fae21deee31688bb7" name="gad4a9934b75947f1fae21deee31688bb7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gad4a9934b75947f1fae21deee31688bb7">&#9670;&#160;</a></span>anonymous enum</h2>
@@ -1293,7 +1290,7 @@ positive LIS2DH12_INT_SRC bit mask on success </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

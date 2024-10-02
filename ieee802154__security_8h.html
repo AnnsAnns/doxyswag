@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -148,13 +145,17 @@ $(function(){initNavTree('ieee802154__security_8h.html',''); initResizable(true)
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
-  <div class="headertitle"><div class="title">ieee802154_security.h File Reference<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__ieee802154.html">IEEE 802.15.4</a> &raquo; <a class="el" href="group__net__ieee802154__security.html">IEEE 802.15.4 security</a></div></div></div>
+  <div class="headertitle"><div class="title">ieee802154_security.h File Reference<div class="ingroups"><a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__net__ieee802154.html">IEEE 802.15.4</a> &raquo; <a class="el" href="group__net__ieee802154__security.html">IEEE 802.15.4 security</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>IEEE 802.15.4 security interface.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>IEEE 802.15.4 security interface. </p>
+<p>Specification: IEEE 802.15.4 - 2015 <a href="https://www.silabs.com/content/usergenerated/asi/cloud/attachments/siliconlabs/en/community/wireless/proprietary/forum/jcr:content/content/primary/qna/802_15_4_promiscuous-tbzR/hivukadin_vukadi-iTXQ/802.15.4-2015.pdf">https://www.silabs.com/content/usergenerated/asi/cloud/attachments/siliconlabs/en/community/wireless/proprietary/forum/jcr:content/content/primary/qna/802_15_4_promiscuous-tbzR/hivukadin_vukadi-iTXQ/802.15.4-2015.pdf</a></p>
+<dl class="section author"><dt>Author</dt><dd>Fabian Hüßler <a href="#" onclick="location.href='mai'+'lto:'+'fab'+'ia'+'n.h'+'ue'+'ssl'+'er'+'@ov'+'gu'+'.de'; return false;">fabia<span class="obfuscator">.nosp@m.</span>n.hu<span class="obfuscator">.nosp@m.</span>essle<span class="obfuscator">.nosp@m.</span>r@ov<span class="obfuscator">.nosp@m.</span>gu.de</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="sys_2include_2net_2ieee802154_8h.html">ieee802154.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ciphers_8h.html">crypto/ciphers.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -301,11 +302,7 @@ const <a class="el" href="group__net__ieee802154__security.html#gac63f58c82deafa
 <tr class="memdesc:gaccaa4f8abee10f3ffaf8a3ab3fbc129a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default descriptor that will fallback to default implementations. <br /></td></tr>
 <tr class="separator:gaccaa4f8abee10f3ffaf8a3ab3fbc129a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>IEEE 802.15.4 security interface. </p>
-<p>Specification: IEEE 802.15.4 - 2015 <a href="https://www.silabs.com/content/usergenerated/asi/cloud/attachments/siliconlabs/en/community/wireless/proprietary/forum/jcr:content/content/primary/qna/802_15_4_promiscuous-tbzR/hivukadin_vukadi-iTXQ/802.15.4-2015.pdf">https://www.silabs.com/content/usergenerated/asi/cloud/attachments/siliconlabs/en/community/wireless/proprietary/forum/jcr:content/content/primary/qna/802_15_4_promiscuous-tbzR/hivukadin_vukadi-iTXQ/802.15.4-2015.pdf</a></p>
-<dl class="section author"><dt>Author</dt><dd>Fabian Hüßler <a href="#" onclick="location.href='mai'+'lto:'+'fab'+'ia'+'n.h'+'ue'+'ssl'+'er'+'@ov'+'gu'+'.de'; return false;">fabia<span class="obfuscator">.nosp@m.</span>n.hu<span class="obfuscator">.nosp@m.</span>essle<span class="obfuscator">.nosp@m.</span>r@ov<span class="obfuscator">.nosp@m.</span>gu.de</a> </dd></dl>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
@@ -313,7 +310,7 @@ const <a class="el" href="group__net__ieee802154__security.html#gac63f58c82deafa
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a408b6d3a4a484720bc3ecfeac8947e3.html">sys</a></li><li class="navelem"><a class="el" href="dir_e9e107fc86bbb4b6a326076a6808b9f5.html">include</a></li><li class="navelem"><a class="el" href="dir_7afc5d30923bebdd1513d1cc48150ca7.html">net</a></li><li class="navelem"><a class="el" href="ieee802154__security_8h.html">ieee802154_security.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -141,10 +138,14 @@ $(function(){initNavTree('openwsn_8h.html',''); initResizable(true); });
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">openwsn.h File Reference<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__pkg__openwsn.html">OpenWSN network stack</a></div></div></div>
+  <div class="headertitle"><div class="title">openwsn.h File Reference<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__pkg__openwsn.html">OpenWSN network stack</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;thread.h&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Peter Kietzmann <a href="#" onclick="location.href='mai'+'lto:'+'pet'+'er'+'.ki'+'et'+'zma'+'nn'+'@ha'+'w-'+'ham'+'bu'+'rg.'+'de'; return false;">peter<span class="obfuscator">.nosp@m.</span>.kie<span class="obfuscator">.nosp@m.</span>tzman<span class="obfuscator">.nosp@m.</span>n@ha<span class="obfuscator">.nosp@m.</span>w-ham<span class="obfuscator">.nosp@m.</span>burg<span class="obfuscator">.nosp@m.</span>.de</a> </dd>
+<dd>
+Francisco Molina <a href="#" onclick="location.href='mai'+'lto:'+'fra'+'nc'+'ois'+'-x'+'avi'+'er'+'.mo'+'li'+'na@'+'in'+'ria'+'.f'+'r'; return false;">franc<span class="obfuscator">.nosp@m.</span>ois-<span class="obfuscator">.nosp@m.</span>xavie<span class="obfuscator">.nosp@m.</span>r.mo<span class="obfuscator">.nosp@m.</span>lina@<span class="obfuscator">.nosp@m.</span>inri<span class="obfuscator">.nosp@m.</span>a.fr</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;thread.h&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for openwsn.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -167,11 +168,7 @@ $(function(){initNavTree('openwsn_8h.html',''); initResizable(true); });
 <tr class="memdesc:a51078fcd9442ebaab5ef8e63c7ac164b"><td class="mdescLeft">&#160;</td><td class="mdescRight">get PID of OpenWsn thread.  <br /></td></tr>
 <tr class="separator:a51078fcd9442ebaab5ef8e63c7ac164b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Peter Kietzmann <a href="#" onclick="location.href='mai'+'lto:'+'pet'+'er'+'.ki'+'et'+'zma'+'nn'+'@ha'+'w-'+'ham'+'bu'+'rg.'+'de'; return false;">peter<span class="obfuscator">.nosp@m.</span>.kie<span class="obfuscator">.nosp@m.</span>tzman<span class="obfuscator">.nosp@m.</span>n@ha<span class="obfuscator">.nosp@m.</span>w-ham<span class="obfuscator">.nosp@m.</span>burg<span class="obfuscator">.nosp@m.</span>.de</a> </dd>
-<dd>
-Francisco Molina <a href="#" onclick="location.href='mai'+'lto:'+'fra'+'nc'+'ois'+'-x'+'avi'+'er'+'.mo'+'li'+'na@'+'in'+'ria'+'.f'+'r'; return false;">franc<span class="obfuscator">.nosp@m.</span>ois-<span class="obfuscator">.nosp@m.</span>xavie<span class="obfuscator">.nosp@m.</span>r.mo<span class="obfuscator">.nosp@m.</span>lina@<span class="obfuscator">.nosp@m.</span>inri<span class="obfuscator">.nosp@m.</span>a.fr</a> </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="aef24a8d4b137e4429dd4f1a05c3b900c" name="aef24a8d4b137e4429dd4f1a05c3b900c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aef24a8d4b137e4429dd4f1a05c3b900c">&#9670;&#160;</a></span>CONFIG_OPENWSN_NETIF_ID</h2>
 
@@ -240,7 +237,7 @@ Francisco Molina <a href="#" onclick="location.href='mai'+'lto:'+'fra'+'nc'+'ois
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_1b757248df2f96757224e5c7d0d8f21a.html">pkg</a></li><li class="navelem"><a class="el" href="dir_a73ac54a2ba9b7ee7568ad4b08fa0066.html">openwsn</a></li><li class="navelem"><a class="el" href="dir_7b67b52597893d9e58440d8c4c9b78e8.html">include</a></li><li class="navelem"><a class="el" href="openwsn_8h.html">openwsn.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

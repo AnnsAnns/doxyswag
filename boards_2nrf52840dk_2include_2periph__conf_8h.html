@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,10 @@ $(function(){initNavTree('boards_2nrf52840dk_2include_2periph__conf_8h.html','')
 
 <p>Peripheral configuration for the nRF52840 DK.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="kernel__defines_8h.html">kernel_defines.h</a>&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Peripheral configuration for the nRF52840 DK. </p>
+<dl class="section author"><dt>Author</dt><dd>Alexandre Abadie <a href="#" onclick="location.href='mai'+'lto:'+'ale'+'xa'+'ndr'+'e.'+'aba'+'di'+'e@i'+'nr'+'ia.'+'fr'; return false;">alexa<span class="obfuscator">.nosp@m.</span>ndre<span class="obfuscator">.nosp@m.</span>.abad<span class="obfuscator">.nosp@m.</span>ie@i<span class="obfuscator">.nosp@m.</span>nria.<span class="obfuscator">.nosp@m.</span>fr</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;<a class="el" href="kernel__defines_8h.html">kernel_defines.h</a>&quot;</code><br />
 <code>#include &quot;periph_conf_common.h&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for periph_conf.h:</div>
@@ -177,10 +177,7 @@ $(function(){initNavTree('boards_2nrf52840dk_2include_2periph__conf_8h.html','')
 <tr class="memitem:a1643cfc64589407fb96b4cbf908689a5" id="r_a1643cfc64589407fb96b4cbf908689a5"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structuart__conf__t.html">uart_conf_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1643cfc64589407fb96b4cbf908689a5">uart_config</a> []</td></tr>
 <tr class="separator:a1643cfc64589407fb96b4cbf908689a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Peripheral configuration for the nRF52840 DK. </p>
-<dl class="section author"><dt>Author</dt><dd>Alexandre Abadie <a href="#" onclick="location.href='mai'+'lto:'+'ale'+'xa'+'ndr'+'e.'+'aba'+'di'+'e@i'+'nr'+'ia.'+'fr'; return false;">alexa<span class="obfuscator">.nosp@m.</span>ndre<span class="obfuscator">.nosp@m.</span>.abad<span class="obfuscator">.nosp@m.</span>ie@i<span class="obfuscator">.nosp@m.</span>nria.<span class="obfuscator">.nosp@m.</span>fr</a> </dd></dl>
-</div><h2 class="groupheader">Variable Documentation</h2>
+<h2 class="groupheader">Variable Documentation</h2>
 <a id="a873188d7292e07499dcde9674b1e849c" name="a873188d7292e07499dcde9674b1e849c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a873188d7292e07499dcde9674b1e849c">&#9670;&#160;</a></span>spi_config</h2>
 
@@ -270,7 +267,7 @@ $(function(){initNavTree('boards_2nrf52840dk_2include_2periph__conf_8h.html','')
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6c8313236d9db5b969ca7d150fe527de.html">boards</a></li><li class="navelem"><a class="el" href="dir_46d9d7b96dc1506082855d5b52cf47a8.html">nrf52840dk</a></li><li class="navelem"><a class="el" href="dir_5120defdab66240194a9c4af8a54ca95.html">include</a></li><li class="navelem"><a class="el" href="boards_2nrf52840dk_2include_2periph__conf_8h.html">periph_conf.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -151,7 +148,12 @@ $(function(){initNavTree('nrf802154_8h.html',''); initResizable(true); });
 
 <p>Driver interface for using the nRF52 in IEEE802.15.4 mode.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;net/ieee802154/radio.h&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Driver interface for using the nRF52 in IEEE802.15.4 mode. </p>
+<dl class="section author"><dt>Author</dt><dd>Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
+<dd>
+Semjon Kerner <a href="#" onclick="location.href='mai'+'lto:'+'sem'+'jo'+'n.k'+'er'+'ner'+'@f'+'u-b'+'er'+'lin'+'.d'+'e'; return false;">semjo<span class="obfuscator">.nosp@m.</span>n.ke<span class="obfuscator">.nosp@m.</span>rner@<span class="obfuscator">.nosp@m.</span>fu-b<span class="obfuscator">.nosp@m.</span>erlin<span class="obfuscator">.nosp@m.</span>.de</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;net/ieee802154/radio.h&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
@@ -181,12 +183,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga7f474ec5f8c81050e12bf2edd991c9e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup a NRF802154 radio device.  <br /></td></tr>
 <tr class="separator:ga7f474ec5f8c81050e12bf2edd991c9e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Driver interface for using the nRF52 in IEEE802.15.4 mode. </p>
-<dl class="section author"><dt>Author</dt><dd>Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
-<dd>
-Semjon Kerner <a href="#" onclick="location.href='mai'+'lto:'+'sem'+'jo'+'n.k'+'er'+'ner'+'@f'+'u-b'+'er'+'lin'+'.d'+'e'; return false;">semjo<span class="obfuscator">.nosp@m.</span>n.ke<span class="obfuscator">.nosp@m.</span>rner@<span class="obfuscator">.nosp@m.</span>fu-b<span class="obfuscator">.nosp@m.</span>erlin<span class="obfuscator">.nosp@m.</span>.de</a> </dd></dl>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
@@ -194,7 +191,7 @@ Semjon Kerner <a href="#" onclick="location.href='mai'+'lto:'+'sem'+'jo'+'n.k'+'
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_c433b04169c945a1c7f0848f853d4379.html">cpu</a></li><li class="navelem"><a class="el" href="dir_a0cfb7d419cb0d0adc367489497db559.html">nrf52</a></li><li class="navelem"><a class="el" href="dir_5332a4dc0528cb87a823fe4d9bb65b03.html">include</a></li><li class="navelem"><a class="el" href="nrf802154_8h.html">nrf802154.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

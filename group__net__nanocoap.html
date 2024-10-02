@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -148,12 +145,30 @@ $(function(){initNavTree('group__net__nanocoap.html',''); initResizable(true); }
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">nanoCoAP small CoAP library<div class="ingroups"><a class="el" href="group__net.html">Networking</a></div></div></div>
+  <div class="headertitle"><div class="title">nanoCoAP small CoAP library<div class="ingroups"><a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>CoAP library optimized for minimal resource usage  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>CoAP library optimized for minimal resource usage </p>
+<p>nanocoap is a toolbox for reading and writing CoAP messages. It provides functions for core header attributes like message type and code. It also provides high and low level interfaces to CoAP options, including Block.</p>
+<p>nanocoap includes the core structs to store message information. It also provides helper functions for use before sending and after receiving a message, such as <a class="el" href="#gad60d02b4df6c510da7931ac15e430378" title="Parse a CoAP PDU.">coap_parse()</a> to read an incoming message.</p>
+<h2><a class="anchor" id="autotoc_md2049"></a>
+Application APIs</h2>
+<p>This page provides reference documentation for the contents of nanocoap. To use nanocoap in an application, see the functional APIs that are built with it. <a href="group__net__nanosock.html">nanocoap sock</a> is for a targeted client or server with lesser resource requirements, and <a href="group__net__gcoap.html">gcoap</a> provides a more featureful messaging hub.</p>
+<h3><a class="anchor" id="autotoc_md2050"></a>
+Option APIs</h3>
+<p>For both server responses and client requests, CoAP uses an Option mechanism to encode message metadata that is not required for each message. For example, the resource URI path is required only for a request, and is encoded as the Uri-Path option.</p>
+<p>nanocoap sock uses the simpler Buffer API, described in the section <em>Options Write Buffer API</em>. gcoap uses the more convenient Packet API, described in the section <em>Options Write Packet API</em>.</p>
+<p>For either API, the caller <em>must</em> write options in order by option number (see "CoAP option numbers" in <a href="group__net__coap.html">CoAP defines</a>).</p>
+<h2><a class="anchor" id="autotoc_md2051"></a>
+Server path matching</h2>
+<p>By default the URI-path of an incoming request should match exactly one of the registered resources. But also, a resource can be configured to match just a prefix of the URI-path of the request by adding the <a class="el" href="#ga8c87dddfffd38c7c88c32b49fad9cb26">COAP_MATCH_SUBTREE</a> option to <a class="el" href="structcoap__resource__t.html#a5aa955ab88b29ad7e1d481bffa843fe3" title="OR&#39;ed methods this resource allows.">coap_resource_t::methods</a>.</p>
+<p>For example, if a resource is configured with a <a class="el" href="structcoap__resource__t.html#a1d11fb4d19d132be8091d6ba43558b79">path</a> <code>/resource01</code> and the <a class="el" href="#ga8c87dddfffd38c7c88c32b49fad9cb26">COAP_MATCH_SUBTREE</a> option is used it would match any of <code>/resource01/</code>, <code>/resource01/sub/path</code>, <code>/resource01alt</code>.</p>
+<p>If the behavior of matching <code>/resource01alt</code> is not wanted and only subtrees are wanted to match, the path should be <code>/resource01/</code>.</p>
+<p>If in addition just <code>/resource01</code> is wanted to match, together with any subtrees of <code>/resource01/</code>, then a first resource with the path <code>/resource01</code> and exact matching should be register, and then a second one with the path <code>/resource01/</code> and subtree matching. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -641,24 +656,6 @@ ssize_t&#160;</td><td class="memItemRight" valign="bottom"><b>coap_well_known_co
 <tr class="memdesc:gadd9f00151231a6abfaf1f2bb2e046c1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">expect a payload to follow <br /></td></tr>
 <tr class="separator:gadd9f00151231a6abfaf1f2bb2e046c1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>CoAP library optimized for minimal resource usage </p>
-<p>nanocoap is a toolbox for reading and writing CoAP messages. It provides functions for core header attributes like message type and code. It also provides high and low level interfaces to CoAP options, including Block.</p>
-<p>nanocoap includes the core structs to store message information. It also provides helper functions for use before sending and after receiving a message, such as <a class="el" href="#gad60d02b4df6c510da7931ac15e430378" title="Parse a CoAP PDU.">coap_parse()</a> to read an incoming message.</p>
-<h2><a class="anchor" id="autotoc_md2049"></a>
-Application APIs</h2>
-<p>This page provides reference documentation for the contents of nanocoap. To use nanocoap in an application, see the functional APIs that are built with it. <a href="group__net__nanosock.html">nanocoap sock</a> is for a targeted client or server with lesser resource requirements, and <a href="group__net__gcoap.html">gcoap</a> provides a more featureful messaging hub.</p>
-<h3><a class="anchor" id="autotoc_md2050"></a>
-Option APIs</h3>
-<p>For both server responses and client requests, CoAP uses an Option mechanism to encode message metadata that is not required for each message. For example, the resource URI path is required only for a request, and is encoded as the Uri-Path option.</p>
-<p>nanocoap sock uses the simpler Buffer API, described in the section <em>Options Write Buffer API</em>. gcoap uses the more convenient Packet API, described in the section <em>Options Write Packet API</em>.</p>
-<p>For either API, the caller <em>must</em> write options in order by option number (see "CoAP option numbers" in <a href="group__net__coap.html">CoAP defines</a>).</p>
-<h2><a class="anchor" id="autotoc_md2051"></a>
-Server path matching</h2>
-<p>By default the URI-path of an incoming request should match exactly one of the registered resources. But also, a resource can be configured to match just a prefix of the URI-path of the request by adding the <a class="el" href="#ga8c87dddfffd38c7c88c32b49fad9cb26">COAP_MATCH_SUBTREE</a> option to <a class="el" href="structcoap__resource__t.html#a5aa955ab88b29ad7e1d481bffa843fe3" title="OR&#39;ed methods this resource allows.">coap_resource_t::methods</a>.</p>
-<p>For example, if a resource is configured with a <a class="el" href="structcoap__resource__t.html#a1d11fb4d19d132be8091d6ba43558b79">path</a> <code>/resource01</code> and the <a class="el" href="#ga8c87dddfffd38c7c88c32b49fad9cb26">COAP_MATCH_SUBTREE</a> option is used it would match any of <code>/resource01/</code>, <code>/resource01/sub/path</code>, <code>/resource01alt</code>.</p>
-<p>If the behavior of matching <code>/resource01alt</code> is not wanted and only subtrees are wanted to match, the path should be <code>/resource01/</code>.</p>
-<p>If in addition just <code>/resource01</code> is wanted to match, together with any subtrees of <code>/resource01/</code>, then a first resource with the path <code>/resource01</code> and exact matching should be register, and then a second one with the path <code>/resource01/</code> and subtree matching. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga990f13bc60e75847019003a6b4492e9f" name="ga990f13bc60e75847019003a6b4492e9f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga990f13bc60e75847019003a6b4492e9f">&#9670;&#160;</a></span>coap_szx2size</h2>
@@ -5336,7 +5333,7 @@ NULL The request was not received via UDP </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

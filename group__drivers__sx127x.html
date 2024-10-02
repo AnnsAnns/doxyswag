@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -154,6 +151,42 @@ $(function(){initNavTree('group__drivers__sx127x.html',''); initResizable(true);
 
 <p>Driver for Semtech SX1272 and SX1276 radios.  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Driver for Semtech SX1272 and SX1276 radios. </p>
+<p>This module contains the driver for radio devices of the Semtech SX127x series (SX1272 and SX1276). Only LoRa long range modem is supported at the moment.</p>
+<p>SX127x modules are designed to be used in the ISM radio frequency (RF) band. This RF band depends on different regional regulations worldwide. Be careful to configure the device to use a RF frequency allowed in your region. Here is the list of allowed frequencies for your region (see <a href="https://www.lora-alliance.org/for-developers">LoRaWAN regional parameters document available online</a>):</p><ul>
+<li>Europe has 2 allowed bands (ETSI):<ul>
+<li>EU863-870</li>
+<li>EU433 (from 433.175MHZ to 434.665MHZ exactly)</li>
+</ul>
+</li>
+<li>US is US902-928</li>
+<li>China has 2 allowed bands:<ul>
+<li>CN779-787 (from 779.5MHz to 786.5MHz exactly)</li>
+<li>CN470-510 (from 470.3MHz to 509.7MHz exactly)</li>
+</ul>
+</li>
+<li>Australia is AU915-928</li>
+<li>South asia, AS923:<ul>
+<li>Bruneï [923-925 MHz]</li>
+<li>Cambodia [923-925 MHz]</li>
+<li>Hong Kong [920-925 MHz]</li>
+<li>Indonesia [923-925 MHz]</li>
+<li>Japan [920-928 MHz]</li>
+<li>Laos [923-925 MHz]</li>
+<li>New Zealand [915-928 MHz]</li>
+<li>Singapore [920-925 MHz]</li>
+<li>Taiwan [922-928 MHz]</li>
+<li>Thailand [920-925 MHz]</li>
+<li>Vietnam [920-925 MHz]</li>
+</ul>
+</li>
+<li>South Korea: KR920-923 (from 920.9MHz to 923.3MHz exactly)</li>
+</ul>
+<p>For more information on Semtech SX1272 and SX1276 modules see:</p><ul>
+<li><a href="https://semtech.my.salesforce.com/sfc/p/E0000000JelG/a/440000001NCE/v_VBhk1IolDgxwwnOpcS_vTFxPfSEPQbuneK3mWsXlU">SX1272/73 datasheet</a></li>
+<li><a href="https://semtech.my.salesforce.com/sfc/p/E0000000JelG/a/2R0000001OKs/Bs97dmPXeatnbdoJNVMIDaKDlQz8q1N_gxDcgqi7g2o">SX1276/77/78/79 datasheet</a> </li>
+</ul>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -491,42 +524,6 @@ Functions</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>SX127X_RX_CONTINUOUS_FLAG</b>&#160;&#160;&#160;(1 &lt;&lt; 5)</td></tr>
 <tr class="separator:ga562c0a720dc4dc6e058b5abf80971771"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Driver for Semtech SX1272 and SX1276 radios. </p>
-<p>This module contains the driver for radio devices of the Semtech SX127x series (SX1272 and SX1276). Only LoRa long range modem is supported at the moment.</p>
-<p>SX127x modules are designed to be used in the ISM radio frequency (RF) band. This RF band depends on different regional regulations worldwide. Be careful to configure the device to use a RF frequency allowed in your region. Here is the list of allowed frequencies for your region (see <a href="https://www.lora-alliance.org/for-developers">LoRaWAN regional parameters document available online</a>):</p><ul>
-<li>Europe has 2 allowed bands (ETSI):<ul>
-<li>EU863-870</li>
-<li>EU433 (from 433.175MHZ to 434.665MHZ exactly)</li>
-</ul>
-</li>
-<li>US is US902-928</li>
-<li>China has 2 allowed bands:<ul>
-<li>CN779-787 (from 779.5MHz to 786.5MHz exactly)</li>
-<li>CN470-510 (from 470.3MHz to 509.7MHz exactly)</li>
-</ul>
-</li>
-<li>Australia is AU915-928</li>
-<li>South asia, AS923:<ul>
-<li>Bruneï [923-925 MHz]</li>
-<li>Cambodia [923-925 MHz]</li>
-<li>Hong Kong [920-925 MHz]</li>
-<li>Indonesia [923-925 MHz]</li>
-<li>Japan [920-928 MHz]</li>
-<li>Laos [923-925 MHz]</li>
-<li>New Zealand [915-928 MHz]</li>
-<li>Singapore [920-925 MHz]</li>
-<li>Taiwan [922-928 MHz]</li>
-<li>Thailand [920-925 MHz]</li>
-<li>Vietnam [920-925 MHz]</li>
-</ul>
-</li>
-<li>South Korea: KR920-923 (from 920.9MHz to 923.3MHz exactly)</li>
-</ul>
-<p>For more information on Semtech SX1272 and SX1276 modules see:</p><ul>
-<li><a href="https://semtech.my.salesforce.com/sfc/p/E0000000JelG/a/440000001NCE/v_VBhk1IolDgxwwnOpcS_vTFxPfSEPQbuneK3mWsXlU">SX1272/73 datasheet</a></li>
-<li><a href="https://semtech.my.salesforce.com/sfc/p/E0000000JelG/a/2R0000001OKs/Bs97dmPXeatnbdoJNVMIDaKDlQz8q1N_gxDcgqi7g2o">SX1276/77/78/79 datasheet</a> </li>
-</ul>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="ga18efc29f05f292310db38a8c7e81dcda" name="ga18efc29f05f292310db38a8c7e81dcda"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga18efc29f05f292310db38a8c7e81dcda">&#9670;&#160;</a></span>anonymous enum</h2>
@@ -2072,7 +2069,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -143,13 +140,15 @@ $(function(){initNavTree('structcord__lc__rd__t.html',''); initResizable(true); 
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
-  <div class="headertitle"><div class="title">cord_lc_rd_t Struct Reference<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__cord.html">CoRE RD Endpoint and Lookup Client</a> &raquo; <a class="el" href="group__net__cord__lc.html">CoRE RD Lookup Client</a></div></div></div>
+  <div class="headertitle"><div class="title">cord_lc_rd_t Struct Reference<div class="ingroups"><a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__net__cord.html">CoRE RD Endpoint and Lookup Client</a> &raquo; <a class="el" href="group__net__cord__lc.html">CoRE RD Lookup Client</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Information about RD server and its lookup interface resources.  
  <a href="#details">More...</a></p>
-
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Information about RD server and its lookup interface resources. </p>
+</div>
 <p><code>#include &lt;lc.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -175,9 +174,7 @@ unsigned&#160;</td><td class="memItemRight" valign="bottom"><b>ep_last_page</b><
 <tr class="memdesc:abde3d06b339f8558f288c52dc175fd3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Page of last endpoint lookup. <br /></td></tr>
 <tr class="separator:abde3d06b339f8558f288c52dc175fd3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Information about RD server and its lookup interface resources. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>sys/include/net/cord/<a class="el" href="lc_8h.html">lc.h</a></li>
 </ul>
 </div><!-- contents -->
@@ -188,7 +185,7 @@ unsigned&#160;</td><td class="memItemRight" valign="bottom"><b>ep_last_page</b><
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structcord__lc__rd__t.html">cord_lc_rd_t</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:32 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:11 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

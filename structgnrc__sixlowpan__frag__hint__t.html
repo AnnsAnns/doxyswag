@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -143,13 +140,15 @@ $(function(){initNavTree('structgnrc__sixlowpan__frag__hint__t.html',''); initRe
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
-  <div class="headertitle"><div class="title">gnrc_sixlowpan_frag_hint_t Struct Reference<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__sixlowpan.html">6LoWPAN</a> &raquo; <a class="el" href="group__net__gnrc__sixlowpan__frag.html">6LoWPAN Fragmentation</a> &raquo; <a class="el" href="group__net__gnrc__sixlowpan__frag__hint.html">Fragment size hint</a></div></div></div>
+  <div class="headertitle"><div class="title">gnrc_sixlowpan_frag_hint_t Struct Reference<div class="ingroups"><a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__sixlowpan.html">6LoWPAN</a> &raquo; <a class="el" href="group__net__gnrc__sixlowpan__frag.html">6LoWPAN Fragmentation</a> &raquo; <a class="el" href="group__net__gnrc__sixlowpan__frag__hint.html">Fragment size hint</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>A fragment size hint.  
  <a href="#details">More...</a></p>
-
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A fragment size hint. </p>
+</div>
 <p><code>#include &lt;hint.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -161,9 +160,7 @@ Data Fields</h2></td></tr>
 <tr class="memdesc:a9c7e33873d0e587d53726b30d7b86897"><td class="mdescLeft">&#160;</td><td class="mdescRight">The size of the data bound by <a class="el" href="#a298f928acf7fb9b48c3007a32a94dbcc" title="Provides a hint of the size for the next fragment to send.">gnrc_sixlowpan_frag_hint_t::fragsz</a> uncompressed.  <br /></td></tr>
 <tr class="separator:a9c7e33873d0e587d53726b30d7b86897"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A fragment size hint. </p>
-</div><h2 class="groupheader">Field Documentation</h2>
+<h2 class="groupheader">Field Documentation</h2>
 <a id="a298f928acf7fb9b48c3007a32a94dbcc" name="a298f928acf7fb9b48c3007a32a94dbcc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a298f928acf7fb9b48c3007a32a94dbcc">&#9670;&#160;</a></span>fragsz</h2>
 
@@ -210,7 +207,7 @@ Data Fields</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structgnrc__sixlowpan__frag__hint__t.html">gnrc_sixlowpan_frag_hint_t</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:32 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:11 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

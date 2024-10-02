@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -149,7 +146,10 @@ $(function(){initNavTree('structsdmmc__conf__t.html',''); initResizable(true); }
 
 <p>SDMMC slot configuration.  
  <a href="#details">More...</a></p>
-
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>SDMMC slot configuration. </p>
+<p>If the ESP32x variant uses the GPIO matrix to route the SDMMC signals to arbitrary pins (i.e. <code>SOC_SDMMC_USE_GPIO_MATRIX</code> is defined in SoC capabilities file), the pins must be configured. The bus width is then determined from the defined pins. Define the pins for the DAT lines as <code>GPIO_UNDEF</code> to use a smaller data bus width. If the ESP32x variant uses direct I/O (i.e. <code>SOC_SDMMC_USE_IOMUX</code> is defined in SoC capabilities file), the bus width has to be specified instead. </p>
+</div>
 <p><code>#include &lt;periph_cpu.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -207,10 +207,7 @@ Data Fields</h2></td></tr>
 <tr class="memdesc:aa8a61f9694fb26417c656e18769645bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">DAT[7] pin (GPIO_UNDEF if not connected) <br /></td></tr>
 <tr class="separator:aa8a61f9694fb26417c656e18769645bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>SDMMC slot configuration. </p>
-<p>If the ESP32x variant uses the GPIO matrix to route the SDMMC signals to arbitrary pins (i.e. <code>SOC_SDMMC_USE_GPIO_MATRIX</code> is defined in SoC capabilities file), the pins must be configured. The bus width is then determined from the defined pins. Define the pins for the DAT lines as <code>GPIO_UNDEF</code> to use a smaller data bus width. If the ESP32x variant uses direct I/O (i.e. <code>SOC_SDMMC_USE_IOMUX</code> is defined in SoC capabilities file), the bus width has to be specified instead. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>cpu/esp32/include/<a class="el" href="esp32_2include_2periph__cpu_8h.html">periph_cpu.h</a></li>
 </ul>
 </div><!-- contents -->
@@ -221,7 +218,7 @@ Data Fields</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structsdmmc__conf__t.html">sdmmc_conf_t</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:32 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:11 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

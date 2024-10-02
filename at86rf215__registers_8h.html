@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -150,7 +147,10 @@ $(function(){initNavTree('at86rf215__registers_8h.html',''); initResizable(true)
 
 <p>Register Definitions for the AT86RF215 chip.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Register Definitions for the AT86RF215 chip. </p>
+<dl class="section author"><dt>Author</dt><dd>Benjamin Valentin <a href="#" onclick="location.href='mai'+'lto:'+'ben'+'ja'+'min'+'.v'+'ale'+'nt'+'in@'+'ml'+'-pa'+'.c'+'om'; return false;">benja<span class="obfuscator">.nosp@m.</span>min.<span class="obfuscator">.nosp@m.</span>valen<span class="obfuscator">.nosp@m.</span>tin@<span class="obfuscator">.nosp@m.</span>ml-pa<span class="obfuscator">.nosp@m.</span>.com</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;vendor/at86rf215.h&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for at86rf215_registers.h:</div>
@@ -452,10 +452,7 @@ static const struct <a class="el" href="structat86rf215__RF__regs.html">at86rf21
 static const struct <a class="el" href="structat86rf215__BBC__regs.html">at86rf215_BBC_regs</a>&#160;</td><td class="memItemRight" valign="bottom"><b>BBC1_regs</b></td></tr>
 <tr class="separator:a8312f5515b6ab079a9471fc52dc73f82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Register Definitions for the AT86RF215 chip. </p>
-<dl class="section author"><dt>Author</dt><dd>Benjamin Valentin <a href="#" onclick="location.href='mai'+'lto:'+'ben'+'ja'+'min'+'.v'+'ale'+'nt'+'in@'+'ml'+'-pa'+'.c'+'om'; return false;">benja<span class="obfuscator">.nosp@m.</span>min.<span class="obfuscator">.nosp@m.</span>valen<span class="obfuscator">.nosp@m.</span>tin@<span class="obfuscator">.nosp@m.</span>ml-pa<span class="obfuscator">.nosp@m.</span>.com</a> </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a9c243621dac53be58c1073d85bdf3208" name="a9c243621dac53be58c1073d85bdf3208"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9c243621dac53be58c1073d85bdf3208">&#9670;&#160;</a></span>CMD_RF_RESET</h2>
 
@@ -538,7 +535,7 @@ static const struct <a class="el" href="structat86rf215__BBC__regs.html">at86rf2
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_14bc92f4b96c8519b376567118ac28b3.html">drivers</a></li><li class="navelem"><a class="el" href="dir_65ae045de305000bef20b9cadc2d2afb.html">at86rf215</a></li><li class="navelem"><a class="el" href="dir_0b08502ca8a2e79e76b4531f3032e3e8.html">include</a></li><li class="navelem"><a class="el" href="at86rf215__registers_8h.html">at86rf215_registers.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

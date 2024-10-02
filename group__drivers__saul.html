@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -153,6 +150,15 @@ $(function(){initNavTree('group__drivers__saul.html',''); initResizable(true); }
 
 <p>Generic sensor/actuator abstraction layer for RIOT  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Generic sensor/actuator abstraction layer for RIOT </p>
+<p>SAUL is a generic actuator/sensor interface in RIOT. Its purpose is to enable unified interaction with a wide range of sensors and actuators through a set of defined access functions and a common data structure.</p>
+<p>Each device driver implementing this interface has to expose a set of predefined functions and it has to register itself to the central SAUL registry. From here devices can be found, listed, and accessed.</p>
+<p>Each device has further to expose a name and its type. This information can be used for automated searching and matching of devices (e.g. connect light sensor automatically with the color of an RGB LED...).</p>
+<p>The SAUL module enables further the automated initialization of preconfigured actuators/sensor via auto_init and the access to all available devices via one unified shell command.</p>
+<p>SAUL drivers may rely on being called from a thread, and often block for short amounts of time to obtain a value. Conversely, requests through the <a class="el" href="group__sys__saul__reg.html">SAUL registry</a> must not be issued from an interrupt context.</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000013">Todo</a></b></dt><dd>So far, the interface only supports simple read and set operations. It probably needs to be extended to handling events, thresholds, and so on.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__sys__saul__reg.html">SAUL registry</a> </dd></dl>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -502,15 +508,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga421f1923368b3e67d5e38f7e1100884f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitmask to retrieve the class ID and intra-category ID from a SAUL class.  <a href="#ga421f1923368b3e67d5e38f7e1100884f">More...</a><br /></td></tr>
 <tr class="separator:ga421f1923368b3e67d5e38f7e1100884f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Generic sensor/actuator abstraction layer for RIOT </p>
-<p>SAUL is a generic actuator/sensor interface in RIOT. Its purpose is to enable unified interaction with a wide range of sensors and actuators through a set of defined access functions and a common data structure.</p>
-<p>Each device driver implementing this interface has to expose a set of predefined functions and it has to register itself to the central SAUL registry. From here devices can be found, listed, and accessed.</p>
-<p>Each device has further to expose a name and its type. This information can be used for automated searching and matching of devices (e.g. connect light sensor automatically with the color of an RGB LED...).</p>
-<p>The SAUL module enables further the automated initialization of preconfigured actuators/sensor via auto_init and the access to all available devices via one unified shell command.</p>
-<p>SAUL drivers may rely on being called from a thread, and often block for short amounts of time to obtain a value. Conversely, requests through the <a class="el" href="group__sys__saul__reg.html">SAUL registry</a> must not be issued from an interrupt context.</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000013">Todo</a></b></dt><dd>So far, the interface only supports simple read and set operations. It probably needs to be extended to handling events, thresholds, and so on.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__sys__saul__reg.html">SAUL registry</a> </dd></dl>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="gac3882b034e8e751cfb95742a9100ecf2" name="gac3882b034e8e751cfb95742a9100ecf2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gac3882b034e8e751cfb95742a9100ecf2">&#9670;&#160;</a></span>saul_read_t</h2>
@@ -1002,7 +999,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

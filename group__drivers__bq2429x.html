@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -153,6 +150,20 @@ $(function(){initNavTree('group__drivers__bq2429x.html',''); initResizable(true)
 
 <p>Device driver interface for the BQ2429x Single-Cell USB Charger  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Device driver interface for the BQ2429x Single-Cell USB Charger </p>
+<p>BQ2429x series power management ICs by Texas Instruments are controllable by I2C, allowing to change charge parameters in the runtime.</p>
+<p>For more information, see the datasheets:</p><ul>
+<li><a href="https://www.ti.com/lit/ds/symlink/bq24295.pdf">BQ24295</a></li>
+<li><a href="https://www.ti.com/lit/ds/symlink/bq24296.pdf">BQ24296</a></li>
+<li><a href="https://www.ti.com/lit/ds/symlink/bq24297.pdf">BQ24297</a></li>
+<li><a href="https://www.ti.com/lit/ds/symlink/bq24298.pdf">BQ24298</a></li>
+<li><a href="https://www.ti.com/lit/ds/symlink/bq24292i.pdf">BQ24292I</a></li>
+<li><a href="https://www.ti.com/lit/ds/symlink/bq24296m.pdf">BQ24296M</a></li>
+</ul>
+<p>It can be used for USB OTG to power other devices, see the <a class="el" href="#gace8cdea31d18cb7a80e38a5988c1e264">bq2429x_enable_otg</a> and <a class="el" href="#ga8bbcb8046bd0f063e29c7d9bec238434">bq2429x_disable_otg</a> functions, an additional pin <a class="el" href="structbq2429x__params__t.html#ab194b9668d28a0777d0e40fdc27536d9">bq2429x_params_t::otg_pin</a> can be set to control it also by hardware and these functions will take care of setting it.</p>
+<p>To enable/disable charge the functions <a class="el" href="#ga1fc029a25cabccd8d0494432cbd88b97">bq2429x_enable_charge</a> and <a class="el" href="#ga429d05ad56c12511157d1c99bf8a2f70">bq2429x_disable_charge</a> can be used, and as with the OTG an additional pin <a class="el" href="structbq2429x__params__t.html#aadf8a81bb7e2e60fab663cba86f5bd8a">bq2429x_params_t::ce_pin</a> can be set to control it also by hardware and these functions will take care of setting it.</p>
+<p>When a change happens on the FAULT registers of the device the BQ2429x device generates an interrupt to inform when that happens, this functionality has to be enabled with the <code>bq2429x_int</code> module and can be used with the <a class="el" href="#ga5e91e0e04a7d5a7bb2c7a4334092a2ef">bq2429x_init_int</a> functions. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -336,20 +347,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga505269e63ed5e478b421a10130cc358d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Charge Voltage Limit.  <br /></td></tr>
 <tr class="separator:ga505269e63ed5e478b421a10130cc358d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Device driver interface for the BQ2429x Single-Cell USB Charger </p>
-<p>BQ2429x series power management ICs by Texas Instruments are controllable by I2C, allowing to change charge parameters in the runtime.</p>
-<p>For more information, see the datasheets:</p><ul>
-<li><a href="https://www.ti.com/lit/ds/symlink/bq24295.pdf">BQ24295</a></li>
-<li><a href="https://www.ti.com/lit/ds/symlink/bq24296.pdf">BQ24296</a></li>
-<li><a href="https://www.ti.com/lit/ds/symlink/bq24297.pdf">BQ24297</a></li>
-<li><a href="https://www.ti.com/lit/ds/symlink/bq24298.pdf">BQ24298</a></li>
-<li><a href="https://www.ti.com/lit/ds/symlink/bq24292i.pdf">BQ24292I</a></li>
-<li><a href="https://www.ti.com/lit/ds/symlink/bq24296m.pdf">BQ24296M</a></li>
-</ul>
-<p>It can be used for USB OTG to power other devices, see the <a class="el" href="#gace8cdea31d18cb7a80e38a5988c1e264">bq2429x_enable_otg</a> and <a class="el" href="#ga8bbcb8046bd0f063e29c7d9bec238434">bq2429x_disable_otg</a> functions, an additional pin <a class="el" href="structbq2429x__params__t.html#ab194b9668d28a0777d0e40fdc27536d9">bq2429x_params_t::otg_pin</a> can be set to control it also by hardware and these functions will take care of setting it.</p>
-<p>To enable/disable charge the functions <a class="el" href="#ga1fc029a25cabccd8d0494432cbd88b97">bq2429x_enable_charge</a> and <a class="el" href="#ga429d05ad56c12511157d1c99bf8a2f70">bq2429x_disable_charge</a> can be used, and as with the OTG an additional pin <a class="el" href="structbq2429x__params__t.html#aadf8a81bb7e2e60fab663cba86f5bd8a">bq2429x_params_t::ce_pin</a> can be set to control it also by hardware and these functions will take care of setting it.</p>
-<p>When a change happens on the FAULT registers of the device the BQ2429x device generates an interrupt to inform when that happens, this functionality has to be enabled with the <code>bq2429x_int</code> module and can be used with the <a class="el" href="#ga5e91e0e04a7d5a7bb2c7a4334092a2ef">bq2429x_init_int</a> functions. </p>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="ga6739788b75165c40c5fa298fbd9c18bd" name="ga6739788b75165c40c5fa298fbd9c18bd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga6739788b75165c40c5fa298fbd9c18bd">&#9670;&#160;</a></span>anonymous enum</h2>
@@ -1149,7 +1146,7 @@ BQ2429X_ERR_I2C on I2C failure. </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

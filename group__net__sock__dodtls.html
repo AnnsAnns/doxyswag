@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -145,12 +142,17 @@ $(function(){initNavTree('group__net__sock__dodtls.html',''); initResizable(true
 <a href="#groups">Topics</a> &#124;
 <a href="#files">Files</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">DNS over DTLS sock API<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__sock.html">Sock API</a></div></div></div>
+  <div class="headertitle"><div class="title">DNS over DTLS sock API<div class="ingroups"><a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__net__sock.html">Sock API</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Sock DNS over DTLS client  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Sock DNS over DTLS client </p>
+<dl class="section see"><dt>See also</dt><dd><a href="https://datatracker.ietf.org/doc/html/rfc8094">RFC 8094</a></dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd><b class="text-danger">This feature is experimental!</b><br  />
+ This implementation is in an experimental state. RFC 8094 requires DNS over TLS (DoT) as a fall-back for the <a href="https://datatracker.ietf.org/doc/html/rfc8094#section-5">PMTU issues</a>). This fallback is not in place in this implementation. Consequently, <a href="https://datatracker.ietf.org/doc/html/rfc6891">EDNS(0)</a> to negotiate maximum response size is also not in place. </dd></dl>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -196,11 +198,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:gaeaad8a9f86387f78f8ecb5d0bae1b210"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timeout for DNS over DTLS queries in milliseconds. <br /></td></tr>
 <tr class="separator:gaeaad8a9f86387f78f8ecb5d0bae1b210"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Sock DNS over DTLS client </p>
-<dl class="section see"><dt>See also</dt><dd><a href="https://datatracker.ietf.org/doc/html/rfc8094">RFC 8094</a></dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd><b class="text-danger">This feature is experimental!</b><br  />
- This implementation is in an experimental state. RFC 8094 requires DNS over TLS (DoT) as a fall-back for the <a href="https://datatracker.ietf.org/doc/html/rfc8094#section-5">PMTU issues</a>). This fallback is not in place in this implementation. Consequently, <a href="https://datatracker.ietf.org/doc/html/rfc6891">EDNS(0)</a> to negotiate maximum response size is also not in place. </dd></dl>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="gac3b32c48c756c9e8e0f564e3ef1a88f0" name="gac3b32c48c756c9e8e0f564e3ef1a88f0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gac3b32c48c756c9e8e0f564e3ef1a88f0">&#9670;&#160;</a></span>sock_dodtls_get_dtls_sock()</h2>
@@ -361,7 +358,7 @@ Any other negative errno potentially returned by <a class="el" href="group__net_
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

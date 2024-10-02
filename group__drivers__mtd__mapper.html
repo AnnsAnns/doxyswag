@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -151,29 +148,6 @@ $(function(){initNavTree('group__drivers__mtd__mapper.html',''); initResizable(t
 
 <p>Driver for address remap for flash devices  
 <a href="#details">More...</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmtd__mapper__parent__t.html">mtd_mapper_parent_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">MTD mapper backing device context.  <a href="structmtd__mapper__parent__t.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmtd__mapper__region__t.html">mtd_mapper_region_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">MTD mapped region.  <a href="structmtd__mapper__region__t.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ga35f0f9dde0c457059a8b2d2f27b7a9c2" id="r_ga35f0f9dde0c457059a8b2d2f27b7a9c2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga35f0f9dde0c457059a8b2d2f27b7a9c2">MTD_PARENT_INIT</a>(_parent)</td></tr>
-<tr class="memdesc:ga35f0f9dde0c457059a8b2d2f27b7a9c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shortcut macro for initializing the members of an <a class="el" href="structmtd__mapper__parent__t.html">mtd_mapper_parent_t</a> struct.  <br /></td></tr>
-<tr class="separator:ga35f0f9dde0c457059a8b2d2f27b7a9c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ga3aa8c8a85800fedb5444843873a74bde" id="r_ga3aa8c8a85800fedb5444843873a74bde"><td class="memItemLeft" align="right" valign="top"><a id="ga3aa8c8a85800fedb5444843873a74bde" name="ga3aa8c8a85800fedb5444843873a74bde"></a>
-const <a class="el" href="group__drivers__mtd.html#ga016431acc3cc8d6f5a40149225dabc05">mtd_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mtd_mapper_driver</b></td></tr>
-<tr class="memdesc:ga3aa8c8a85800fedb5444843873a74bde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mapper MTD device operations table. <br /></td></tr>
-<tr class="separator:ga3aa8c8a85800fedb5444843873a74bde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Driver for address remap for flash devices </p>
 <p>This MTD module allows for remapping multiple different regions on a single MTD device and present them as separate MTD devices. This is similar to partitions on a hard drive, although this system only allows hardcoded partitions and lacks a partition table.</p>
@@ -208,6 +182,29 @@ Usage</h2>
 <dl class="section warning"><dt>Warning</dt><dd>Please ensure that the different configured regions do not overlap.</dd></dl>
 <p>Interface definitions for mtd mapper support</p>
 <dl class="section author"><dt>Author</dt><dd>Koen Zandberg <a href="#" onclick="location.href='mai'+'lto:'+'koe'+'n@'+'ber'+'gz'+'and'+'.n'+'et'; return false;">koen@<span class="obfuscator">.nosp@m.</span>berg<span class="obfuscator">.nosp@m.</span>zand.<span class="obfuscator">.nosp@m.</span>net</a> </dd></dl>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmtd__mapper__parent__t.html">mtd_mapper_parent_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">MTD mapper backing device context.  <a href="structmtd__mapper__parent__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmtd__mapper__region__t.html">mtd_mapper_region_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">MTD mapped region.  <a href="structmtd__mapper__region__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga35f0f9dde0c457059a8b2d2f27b7a9c2" id="r_ga35f0f9dde0c457059a8b2d2f27b7a9c2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga35f0f9dde0c457059a8b2d2f27b7a9c2">MTD_PARENT_INIT</a>(_parent)</td></tr>
+<tr class="memdesc:ga35f0f9dde0c457059a8b2d2f27b7a9c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shortcut macro for initializing the members of an <a class="el" href="structmtd__mapper__parent__t.html">mtd_mapper_parent_t</a> struct.  <br /></td></tr>
+<tr class="separator:ga35f0f9dde0c457059a8b2d2f27b7a9c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ga3aa8c8a85800fedb5444843873a74bde" id="r_ga3aa8c8a85800fedb5444843873a74bde"><td class="memItemLeft" align="right" valign="top"><a id="ga3aa8c8a85800fedb5444843873a74bde" name="ga3aa8c8a85800fedb5444843873a74bde"></a>
+const <a class="el" href="group__drivers__mtd.html#ga016431acc3cc8d6f5a40149225dabc05">mtd_desc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mtd_mapper_driver</b></td></tr>
+<tr class="memdesc:ga3aa8c8a85800fedb5444843873a74bde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mapper MTD device operations table. <br /></td></tr>
+<tr class="separator:ga3aa8c8a85800fedb5444843873a74bde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga35f0f9dde0c457059a8b2d2f27b7a9c2" name="ga35f0f9dde0c457059a8b2d2f27b7a9c2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga35f0f9dde0c457059a8b2d2f27b7a9c2">&#9670;&#160;</a></span>MTD_PARENT_INIT</h2>
@@ -241,7 +238,7 @@ Usage</h2>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

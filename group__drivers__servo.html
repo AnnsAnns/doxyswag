@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -155,6 +152,13 @@ $(function(){initNavTree('group__drivers__servo.html',''); initResizable(true); 
 
 <p>High-level driver for servo motors  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>High-level driver for servo motors </p>
+<h1><a class="anchor" id="autotoc_md1731"></a>
+Usage</h1>
+<p>Select a flavor of the driver, e.g. <code>USEMODULE += servo_pwm</code> for <a class="el" href="group__drivers__servo__pwm.html">PWM based servo driver</a> or <code>USEMODULE += servo_timer</code> for <a class="el" href="group__drivers__servo__timer.html">periph_timer_periodic based servo driver</a> to use. Typically, the PWM implementation is the preferred one, but some MCU (e.g. nRF52xxx) cannot configure the PWM peripheral to run anywhere close to the 50 Hz to 100 Hz required.</p>
+<p>In addition, you many need to extend or adapt <a class="el" href="servo__params_8h.html#a3209a97704b4d0535daa0abccec29c7f">servo_params</a> and, depending on the selected implementation, <a class="el" href="servo__params_8h.html#a8f9ebace6a1d4d53f151a41065e63ec5">servo_pwm_params</a> or <a class="el" href="servo__params_8h.html#acad6fc28f55ac61aada767de377ada5c">servo_timer_params</a> to match your hardware configuration.</p>
+<p>The test application in <code>tests/drivers/servo</code> can serve as starting point for users. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -228,13 +232,6 @@ const <a class="el" href="structsaul__driver__t.html">saul_driver_t</a>&#160;</t
 <tr class="memdesc:ga54ae1f745bc6bf7296f185d5014f8879"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default timer context. <br /></td></tr>
 <tr class="separator:ga54ae1f745bc6bf7296f185d5014f8879"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>High-level driver for servo motors </p>
-<h1><a class="anchor" id="autotoc_md1731"></a>
-Usage</h1>
-<p>Select a flavor of the driver, e.g. <code>USEMODULE += servo_pwm</code> for <a class="el" href="group__drivers__servo__pwm.html">PWM based servo driver</a> or <code>USEMODULE += servo_timer</code> for <a class="el" href="group__drivers__servo__timer.html">periph_timer_periodic based servo driver</a> to use. Typically, the PWM implementation is the preferred one, but some MCU (e.g. nRF52xxx) cannot configure the PWM peripheral to run anywhere close to the 50 Hz to 100 Hz required.</p>
-<p>In addition, you many need to extend or adapt <a class="el" href="servo__params_8h.html#a3209a97704b4d0535daa0abccec29c7f">servo_params</a> and, depending on the selected implementation, <a class="el" href="servo__params_8h.html#a8f9ebace6a1d4d53f151a41065e63ec5">servo_pwm_params</a> or <a class="el" href="servo__params_8h.html#acad6fc28f55ac61aada767de377ada5c">servo_timer_params</a> to match your hardware configuration.</p>
-<p>The test application in <code>tests/drivers/servo</code> can serve as starting point for users. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="gabb89b2229e011288b5c031b188c1432a" name="gabb89b2229e011288b5c031b188c1432a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gabb89b2229e011288b5c031b188c1432a">&#9670;&#160;</a></span>SERVO_TIMER_MAX_CHAN</h2>
@@ -331,7 +328,7 @@ Usage</h1>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -143,13 +140,16 @@ $(function(){initNavTree('wifi__scan__list_8h.html',''); initResizable(true); })
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">wifi_scan_list.h File Reference<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__wifi__scan__list.html">List of scanned WiFis access points</a></div></div></div>
+  <div class="headertitle"><div class="title">wifi_scan_list.h File Reference<div class="ingroups"><a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__net__wifi__scan__list.html">List of scanned WiFis access points</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Thin wrapper around l2scan list to support WiFi scan results.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stddef.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Thin wrapper around l2scan list to support WiFi scan results. </p>
+<dl class="section author"><dt>Author</dt><dd>Fabian Hüßler <a href="#" onclick="location.href='mai'+'lto:'+'fab'+'ia'+'n.h'+'ue'+'ssl'+'er'+'@ml'+'-p'+'a.c'+'om'; return false;">fabia<span class="obfuscator">.nosp@m.</span>n.hu<span class="obfuscator">.nosp@m.</span>essle<span class="obfuscator">.nosp@m.</span>r@ml<span class="obfuscator">.nosp@m.</span>-pa.c<span class="obfuscator">.nosp@m.</span>om</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;stddef.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="l2scan__list_8h.html">l2scan_list.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="drivers_2include_2net_2netdev_2wifi_8h.html">net/netdev/wifi.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -172,10 +172,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:gad6c3a34623aa8b64beea03c4c4bc1220"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the content of a WiFi scan list to an array to get rid of the list overhead.  <br /></td></tr>
 <tr class="separator:gad6c3a34623aa8b64beea03c4c4bc1220"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Thin wrapper around l2scan list to support WiFi scan results. </p>
-<dl class="section author"><dt>Author</dt><dd>Fabian Hüßler <a href="#" onclick="location.href='mai'+'lto:'+'fab'+'ia'+'n.h'+'ue'+'ssl'+'er'+'@ml'+'-p'+'a.c'+'om'; return false;">fabia<span class="obfuscator">.nosp@m.</span>n.hu<span class="obfuscator">.nosp@m.</span>essle<span class="obfuscator">.nosp@m.</span>r@ml<span class="obfuscator">.nosp@m.</span>-pa.c<span class="obfuscator">.nosp@m.</span>om</a> </dd></dl>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
@@ -183,7 +180,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a408b6d3a4a484720bc3ecfeac8947e3.html">sys</a></li><li class="navelem"><a class="el" href="dir_e9e107fc86bbb4b6a326076a6808b9f5.html">include</a></li><li class="navelem"><a class="el" href="dir_7afc5d30923bebdd1513d1cc48150ca7.html">net</a></li><li class="navelem"><a class="el" href="wifi__scan__list_8h.html">wifi_scan_list.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

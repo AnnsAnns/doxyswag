@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -149,7 +146,12 @@ $(function(){initNavTree('esp__now__netdev_8h.html',''); initResizable(true); })
 
 <p>Netdev interface for the ESP-NOW WiFi P2P protocol.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="drivers_2include_2net_2netdev_8h.html">net/netdev.h</a>&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Netdev interface for the ESP-NOW WiFi P2P protocol. </p>
+<dl class="section author"><dt>Author</dt><dd>Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span class="obfuscator">.nosp@m.</span>@sch<span class="obfuscator">.nosp@m.</span>orcht<span class="obfuscator">.nosp@m.</span>.net</a> </dd>
+<dd>
+Timo Rothenpieler <a href="#" onclick="location.href='mai'+'lto:'+'tim'+'o.'+'rot'+'he'+'npi'+'el'+'er@'+'un'+'i-b'+'re'+'men'+'.d'+'e'; return false;">timo.<span class="obfuscator">.nosp@m.</span>roth<span class="obfuscator">.nosp@m.</span>enpie<span class="obfuscator">.nosp@m.</span>ler@<span class="obfuscator">.nosp@m.</span>uni-b<span class="obfuscator">.nosp@m.</span>reme<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;<a class="el" href="drivers_2include_2net_2netdev_8h.html">net/netdev.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="mutex_8h.html">mutex.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="net_2ethernet_2hdr_8h.html">net/ethernet/hdr.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -202,12 +204,7 @@ const <a class="el" href="group__drivers__netdev__api.html#gace9c281c047e2e2a985
 <tr class="memdesc:a30701cb3d07bc03f1cd11f2b3e25fb1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the channel used by ESP-NOW netdev.  <br /></td></tr>
 <tr class="separator:a30701cb3d07bc03f1cd11f2b3e25fb1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Netdev interface for the ESP-NOW WiFi P2P protocol. </p>
-<dl class="section author"><dt>Author</dt><dd>Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span class="obfuscator">.nosp@m.</span>@sch<span class="obfuscator">.nosp@m.</span>orcht<span class="obfuscator">.nosp@m.</span>.net</a> </dd>
-<dd>
-Timo Rothenpieler <a href="#" onclick="location.href='mai'+'lto:'+'tim'+'o.'+'rot'+'he'+'npi'+'el'+'er@'+'un'+'i-b'+'re'+'men'+'.d'+'e'; return false;">timo.<span class="obfuscator">.nosp@m.</span>roth<span class="obfuscator">.nosp@m.</span>enpie<span class="obfuscator">.nosp@m.</span>ler@<span class="obfuscator">.nosp@m.</span>uni-b<span class="obfuscator">.nosp@m.</span>reme<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a3cad386d381acc5fc57f638babe14a80" name="a3cad386d381acc5fc57f638babe14a80"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3cad386d381acc5fc57f638babe14a80">&#9670;&#160;</a></span>ESP_NOW_BUFSIZE</h2>
 
@@ -280,7 +277,7 @@ Timo Rothenpieler <a href="#" onclick="location.href='mai'+'lto:'+'tim'+'o.'+'ro
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_c433b04169c945a1c7f0848f853d4379.html">cpu</a></li><li class="navelem"><a class="el" href="dir_1df31c3d15931c99096dc7cc5c370796.html">esp_common</a></li><li class="navelem"><a class="el" href="dir_84722b9caaa2f693cff4b9ee4569ec6c.html">esp-now</a></li><li class="navelem"><a class="el" href="esp__now__netdev_8h.html">esp_now_netdev.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

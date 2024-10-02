@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -144,53 +141,12 @@ $(function(){initNavTree('group__pkg__openwsn.html',''); initResizable(true); })
   <div class="summary">
 <a href="#groups">Topics</a> &#124;
 <a href="#files">Files</a>  </div>
-  <div class="headertitle"><div class="title">OpenWSN network stack<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__net.html">Networking</a></div></div></div>
+  <div class="headertitle"><div class="title">OpenWSN network stack<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Provides a RIOT adaption of the OpenWSN network stack  
 <a href="#details">More...</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
-Topics</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__openwsn__sock.html">OpenWSN-specific implementation of the sock API</a></td></tr>
-<tr class="memdesc:group__pkg__openwsn__sock"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides an implementation of the <a class="el" href="group__net__sock.html">Sock API</a> by the <a class="el" href="group__pkg__openwsn.html">OpenWSN network stack</a> <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="board__info_8h.html">board_info.h</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn_8h.html">openwsn.h</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn__board_8h.html">openwsn_board.h</a></td></tr>
-<tr class="memdesc:openwsn__board_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">RIOT HAL is provided as a new "board", a "RIOT board" to OpenWSN hardware abstraction interfaces. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn__debugpins_8h.html">openwsn_debugpins.h</a></td></tr>
-<tr class="memdesc:openwsn__debugpins_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides an adaption of OpenWSN debug pin handling to RIOTs handling of GPIOs. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn__debugpins__params_8h.html">openwsn_debugpins_params.h</a></td></tr>
-<tr class="memdesc:openwsn__debugpins__params_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default configuration for the OpenWSN debugpins. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn__leds_8h.html">openwsn_leds.h</a></td></tr>
-<tr class="memdesc:openwsn__leds_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides an adaption of OpenWSN led handling to RIOTs handling of LEDs and/or GPIOs. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn__leds__params_8h.html">openwsn_leds_params.h</a></td></tr>
-<tr class="memdesc:openwsn__leds__params_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default configuration for the OpenWSN leds. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn__log_8h.html">openwsn_log.h</a></td></tr>
-<tr class="memdesc:openwsn__log_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">System logging header OpenWSN definitions. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn__radio_8h.html">openwsn_radio.h</a></td></tr>
-<tr class="memdesc:openwsn__radio_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">RIOT adaption of the "radio" bsp module definitions. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn__uart_8h.html">openwsn_uart.h</a></td></tr>
-<tr class="memdesc:openwsn__uart_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">For details on the implementation check pkg/openwsn/doc.txt. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scheduler__types_8h.html">scheduler_types.h</a></td></tr>
-<tr class="memdesc:scheduler__types_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">RIOT scheduler types variable declaration. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Provides a RIOT adaption of the OpenWSN network stack </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://github.com/openwsn-berkeley/openwsn-fw">https://github.com/openwsn-berkeley/openwsn-fw</a> </dd></dl>
@@ -384,6 +340,47 @@ Todos</h2>
 <h2><a class="anchor" id="autotoc_md1897"></a>
 Future Steps</h2>
 <p>It would be desirable to achieve an extraction of the MAC layer. </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
+Topics</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__openwsn__sock.html">OpenWSN-specific implementation of the sock API</a></td></tr>
+<tr class="memdesc:group__pkg__openwsn__sock"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides an implementation of the <a class="el" href="group__net__sock.html">Sock API</a> by the <a class="el" href="group__pkg__openwsn.html">OpenWSN network stack</a> <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="board__info_8h.html">board_info.h</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn_8h.html">openwsn.h</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn__board_8h.html">openwsn_board.h</a></td></tr>
+<tr class="memdesc:openwsn__board_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">RIOT HAL is provided as a new "board", a "RIOT board" to OpenWSN hardware abstraction interfaces. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn__debugpins_8h.html">openwsn_debugpins.h</a></td></tr>
+<tr class="memdesc:openwsn__debugpins_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides an adaption of OpenWSN debug pin handling to RIOTs handling of GPIOs. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn__debugpins__params_8h.html">openwsn_debugpins_params.h</a></td></tr>
+<tr class="memdesc:openwsn__debugpins__params_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default configuration for the OpenWSN debugpins. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn__leds_8h.html">openwsn_leds.h</a></td></tr>
+<tr class="memdesc:openwsn__leds_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides an adaption of OpenWSN led handling to RIOTs handling of LEDs and/or GPIOs. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn__leds__params_8h.html">openwsn_leds_params.h</a></td></tr>
+<tr class="memdesc:openwsn__leds__params_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default configuration for the OpenWSN leds. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn__log_8h.html">openwsn_log.h</a></td></tr>
+<tr class="memdesc:openwsn__log_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">System logging header OpenWSN definitions. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn__radio_8h.html">openwsn_radio.h</a></td></tr>
+<tr class="memdesc:openwsn__radio_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">RIOT adaption of the "radio" bsp module definitions. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn__uart_8h.html">openwsn_uart.h</a></td></tr>
+<tr class="memdesc:openwsn__uart_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">For details on the implementation check pkg/openwsn/doc.txt. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scheduler__types_8h.html">scheduler_types.h</a></td></tr>
+<tr class="memdesc:scheduler__types_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">RIOT scheduler types variable declaration. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
@@ -391,7 +388,7 @@ Future Steps</h2>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

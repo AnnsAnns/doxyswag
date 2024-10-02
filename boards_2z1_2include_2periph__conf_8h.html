@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,12 @@ $(function(){initNavTree('boards_2z1_2include_2periph__conf_8h.html',''); initRe
 
 <p>Zolertia Z1 peripheral configuration.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="units_8h.html">macros/units.h</a>&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Zolertia Z1 peripheral configuration. </p>
+<dl class="section author"><dt>Author</dt><dd>Oliver Hahm <a href="#" onclick="location.href='mai'+'lto:'+'oli'+'ve'+'r.h'+'ah'+'m@i'+'nr'+'ia.'+'fr'; return false;">olive<span class="obfuscator">.nosp@m.</span>r.ha<span class="obfuscator">.nosp@m.</span>hm@in<span class="obfuscator">.nosp@m.</span>ria.<span class="obfuscator">.nosp@m.</span>fr</a> </dd>
+<dd>
+Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;<a class="el" href="units_8h.html">macros/units.h</a>&quot;</code><br />
 <code>#include &quot;periph_cpu.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="cfg__timer__a__smclk__b__aclk_8h.html">cfg_timer_a_smclk_b_aclk.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -183,12 +185,7 @@ $(function(){initNavTree('boards_2z1_2include_2periph__conf_8h.html',''); initRe
 <tr class="memitem:a873188d7292e07499dcde9674b1e849c" id="r_a873188d7292e07499dcde9674b1e849c"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structspi__conf__t.html">spi_conf_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a873188d7292e07499dcde9674b1e849c">spi_config</a> []</td></tr>
 <tr class="separator:a873188d7292e07499dcde9674b1e849c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Zolertia Z1 peripheral configuration. </p>
-<dl class="section author"><dt>Author</dt><dd>Oliver Hahm <a href="#" onclick="location.href='mai'+'lto:'+'oli'+'ve'+'r.h'+'ah'+'m@i'+'nr'+'ia.'+'fr'; return false;">olive<span class="obfuscator">.nosp@m.</span>r.ha<span class="obfuscator">.nosp@m.</span>hm@in<span class="obfuscator">.nosp@m.</span>ria.<span class="obfuscator">.nosp@m.</span>fr</a> </dd>
-<dd>
-Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
-</div><h2 class="groupheader">Variable Documentation</h2>
+<h2 class="groupheader">Variable Documentation</h2>
 <a id="a129935db1187d9b898569525aafcb716" name="a129935db1187d9b898569525aafcb716"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a129935db1187d9b898569525aafcb716">&#9670;&#160;</a></span>clock_params</h2>
 
@@ -292,7 +289,7 @@ Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6c8313236d9db5b969ca7d150fe527de.html">boards</a></li><li class="navelem"><a class="el" href="dir_e7161a45421c2479b7c595cebdd04bd4.html">z1</a></li><li class="navelem"><a class="el" href="dir_cc83659ad6323ae2d568927c41576873.html">include</a></li><li class="navelem"><a class="el" href="boards_2z1_2include_2periph__conf_8h.html">periph_conf.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

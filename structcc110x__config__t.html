@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -149,7 +146,13 @@ $(function(){initNavTree('structcc110x__config__t.html',''); initResizable(true)
 
 <p>Configuration of the transceiver to use.  
  <a href="#details">More...</a></p>
-
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Configuration of the transceiver to use. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Two transceivers with different configurations will be unable to communicate.</dd></dl>
+<p>The data uploaded into configuration registers are stored in <a class="el" href="cc110x__settings_8h.html#a0204d58a7479f32890a720c3235c5432">cc110x_conf</a>. Most of them cannot be changed, as the driver relies on their values. However, the base frequency, the symbol rate (which equals the bit rate for the chosen modulation and error correction) and the channel bandwidth can be configured using this data structure.</p>
+<p>Please note that while the CC1100/CC1101 chip is compatible with a huge frequency range (300 MHz - 928 MHz), the complete circuit is optimized to a narrow frequency band. So make sure the configured base frequency is within that frequency band that is compatible with that circuit. (Most break out board will operate at the 433 MHz band. In the EU the 868 MHz band would be more interesting, but 433 MHz is license free as well. In the USA the 915 MHz band is license free.</p>
+<p>Please verify that the driver is configured in a way that allows legal operation according to rules and laws that apply for you. </p>
+</div>
 <p><code>#include &lt;cc110x.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -171,13 +174,7 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>base_freq</b> [3]<
 <tr class="memdesc:a92a4d7d617ecd5df5f81c118799634a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">DEVIANT configuration register that affects the amount by which the radio frequency is shifted in FSK/GFSK modulation.  <br /></td></tr>
 <tr class="separator:a92a4d7d617ecd5df5f81c118799634a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Configuration of the transceiver to use. </p>
-<dl class="section warning"><dt>Warning</dt><dd>Two transceivers with different configurations will be unable to communicate.</dd></dl>
-<p>The data uploaded into configuration registers are stored in <a class="el" href="cc110x__settings_8h.html#a0204d58a7479f32890a720c3235c5432">cc110x_conf</a>. Most of them cannot be changed, as the driver relies on their values. However, the base frequency, the symbol rate (which equals the bit rate for the chosen modulation and error correction) and the channel bandwidth can be configured using this data structure.</p>
-<p>Please note that while the CC1100/CC1101 chip is compatible with a huge frequency range (300 MHz - 928 MHz), the complete circuit is optimized to a narrow frequency band. So make sure the configured base frequency is within that frequency band that is compatible with that circuit. (Most break out board will operate at the 433 MHz band. In the EU the 868 MHz band would be more interesting, but 433 MHz is license free as well. In the USA the 915 MHz band is license free.</p>
-<p>Please verify that the driver is configured in a way that allows legal operation according to rules and laws that apply for you. </p>
-</div><h2 class="groupheader">Field Documentation</h2>
+<h2 class="groupheader">Field Documentation</h2>
 <a id="a92a4d7d617ecd5df5f81c118799634a9" name="a92a4d7d617ecd5df5f81c118799634a9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a92a4d7d617ecd5df5f81c118799634a9">&#9670;&#160;</a></span>deviatn</h2>
 
@@ -277,7 +274,7 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>base_freq</b> [3]<
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structcc110x__config__t.html">cc110x_config_t</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:32 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:11 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,14 @@ $(function(){initNavTree('boards_2samd20-xpro_2include_2periph__conf_8h.html',''
 
 <p>Configuration of CPU peripherals for the Atmel SAM D20 Xplained Pro board.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Configuration of CPU peripherals for the Atmel SAM D20 Xplained Pro board. </p>
+<dl class="section author"><dt>Author</dt><dd>Travis Griggs <a href="#" onclick="location.href='mai'+'lto:'+'tra'+'vi'+'sgr'+'ig'+'gs@'+'gm'+'ail'+'.c'+'om'; return false;">travi<span class="obfuscator">.nosp@m.</span>sgri<span class="obfuscator">.nosp@m.</span>ggs@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> </dd>
+<dd>
+Dan Evans <a href="#" onclick="location.href='mai'+'lto:'+'pho'+'to'+'nth'+'un'+'der'+'@g'+'mai'+'l.'+'com'; return false;">photo<span class="obfuscator">.nosp@m.</span>nthu<span class="obfuscator">.nosp@m.</span>nder@<span class="obfuscator">.nosp@m.</span>gmai<span class="obfuscator">.nosp@m.</span>l.com</a> </dd>
+<dd>
+Benjamin Valentin <a href="#" onclick="location.href='mai'+'lto:'+'ben'+'ja'+'min'+'.v'+'ale'+'nt'+'in@'+'ml'+'-pa'+'.c'+'om'; return false;">benja<span class="obfuscator">.nosp@m.</span>min.<span class="obfuscator">.nosp@m.</span>valen<span class="obfuscator">.nosp@m.</span>tin@<span class="obfuscator">.nosp@m.</span>ml-pa<span class="obfuscator">.nosp@m.</span>.com</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;cpu.h&quot;</code><br />
 <code>#include &quot;periph_cpu.h&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -283,14 +287,7 @@ static const <a class="el" href="structspi__conf__t.html">spi_conf_t</a>&#160;</
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>DAC_VREF</b>&#160;&#160;&#160;DAC_CTRLB_REFSEL_AVCC</td></tr>
 <tr class="separator:a5afd9690184542986af3376d1dd88957"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Configuration of CPU peripherals for the Atmel SAM D20 Xplained Pro board. </p>
-<dl class="section author"><dt>Author</dt><dd>Travis Griggs <a href="#" onclick="location.href='mai'+'lto:'+'tra'+'vi'+'sgr'+'ig'+'gs@'+'gm'+'ail'+'.c'+'om'; return false;">travi<span class="obfuscator">.nosp@m.</span>sgri<span class="obfuscator">.nosp@m.</span>ggs@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a> </dd>
-<dd>
-Dan Evans <a href="#" onclick="location.href='mai'+'lto:'+'pho'+'to'+'nth'+'un'+'der'+'@g'+'mai'+'l.'+'com'; return false;">photo<span class="obfuscator">.nosp@m.</span>nthu<span class="obfuscator">.nosp@m.</span>nder@<span class="obfuscator">.nosp@m.</span>gmai<span class="obfuscator">.nosp@m.</span>l.com</a> </dd>
-<dd>
-Benjamin Valentin <a href="#" onclick="location.href='mai'+'lto:'+'ben'+'ja'+'min'+'.v'+'ale'+'nt'+'in@'+'ml'+'-pa'+'.c'+'om'; return false;">benja<span class="obfuscator">.nosp@m.</span>min.<span class="obfuscator">.nosp@m.</span>valen<span class="obfuscator">.nosp@m.</span>tin@<span class="obfuscator">.nosp@m.</span>ml-pa<span class="obfuscator">.nosp@m.</span>.com</a> </dd></dl>
-</div><h2 class="groupheader">Variable Documentation</h2>
+<h2 class="groupheader">Variable Documentation</h2>
 <a id="a22877cb675e55db16cb1227b62dc9404" name="a22877cb675e55db16cb1227b62dc9404"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a22877cb675e55db16cb1227b62dc9404">&#9670;&#160;</a></span>adc_channels</h2>
 
@@ -454,7 +451,7 @@ Benjamin Valentin <a href="#" onclick="location.href='mai'+'lto:'+'ben'+'ja'+'mi
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6c8313236d9db5b969ca7d150fe527de.html">boards</a></li><li class="navelem"><a class="el" href="dir_437f7fd83b50b4970474dcd6fbde3a99.html">samd20-xpro</a></li><li class="navelem"><a class="el" href="dir_0b8cb4b1b7ed3ddd5c11813b853f5413.html">include</a></li><li class="navelem"><a class="el" href="boards_2samd20-xpro_2include_2periph__conf_8h.html">periph_conf.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,6 +144,17 @@ $(function(){initNavTree('group__se__cipher.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">Secure Element Symmetric Ciphers<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__sys__psa__crypto.html">PSA Cryptographic API</a> &raquo; <a class="el" href="group__sys__psa__crypto__se__driver.html">PSA Crypto Secure Element Wrapper</a></div></div></div>
 </div><!--header-->
 <div class="contents">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Encryption and Decryption using secure element keys in block modes other than ECB must be done in multiple parts, using the following flow:</p><ul>
+<li><a class="el" href="#ga7d31744990222cf99a02bcd905996a3a">psa_drv_se_cipher_setup_t</a></li>
+<li><a class="el" href="#ga4c603c3ee2f0f98a09d9df1e9a0c86bf">psa_drv_se_cipher_set_iv_t</a> (optional depending upon block mode)</li>
+<li><a class="el" href="#gaeca34a7a7afd10ba9c79f3eaaf20d96b">psa_drv_se_cipher_update_t</a></li>
+<li><a class="el" href="#gaeca34a7a7afd10ba9c79f3eaaf20d96b">psa_drv_se_cipher_update_t</a></li>
+<li>...</li>
+<li><a class="el" href="#ga06bf0bfbf55291d0bf5a411175a0350b">psa_drv_se_cipher_finish_t</a></li>
+</ul>
+<p>If a previously started secure element Cipher operation needs to be terminated, it should be done so by the <a class="el" href="#ga1cb204afa81012e4c561e0731792cae9">psa_drv_se_cipher_abort_t</a>. Failure to do so may result in allocated resources not being freed or in other undefined behavior.</p>
+<p>In situations where a PSA Cryptographic API implementation is using a block mode not-supported by the underlying hardware or driver, it can construct the block mode itself, while calling the <a class="el" href="#gaec35ce527439186d9f7e283e24c63a75">psa_drv_se_cipher_ecb_t</a> function for the cipher operations. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
@@ -175,17 +183,6 @@ Typedefs</h2></td></tr>
 <tr class="memdesc:gaec35ce527439186d9f7e283e24c63a75"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that performs the ECB block mode for secure element cipher operations.  <br /></td></tr>
 <tr class="separator:gaec35ce527439186d9f7e283e24c63a75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Encryption and Decryption using secure element keys in block modes other than ECB must be done in multiple parts, using the following flow:</p><ul>
-<li><a class="el" href="#ga7d31744990222cf99a02bcd905996a3a">psa_drv_se_cipher_setup_t</a></li>
-<li><a class="el" href="#ga4c603c3ee2f0f98a09d9df1e9a0c86bf">psa_drv_se_cipher_set_iv_t</a> (optional depending upon block mode)</li>
-<li><a class="el" href="#gaeca34a7a7afd10ba9c79f3eaaf20d96b">psa_drv_se_cipher_update_t</a></li>
-<li><a class="el" href="#gaeca34a7a7afd10ba9c79f3eaaf20d96b">psa_drv_se_cipher_update_t</a></li>
-<li>...</li>
-<li><a class="el" href="#ga06bf0bfbf55291d0bf5a411175a0350b">psa_drv_se_cipher_finish_t</a></li>
-</ul>
-<p>If a previously started secure element Cipher operation needs to be terminated, it should be done so by the <a class="el" href="#ga1cb204afa81012e4c561e0731792cae9">psa_drv_se_cipher_abort_t</a>. Failure to do so may result in allocated resources not being freed or in other undefined behavior.</p>
-<p>In situations where a PSA Cryptographic API implementation is using a block mode not-supported by the underlying hardware or driver, it can construct the block mode itself, while calling the <a class="el" href="#gaec35ce527439186d9f7e283e24c63a75">psa_drv_se_cipher_ecb_t</a> function for the cipher operations. </p>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ga1cb204afa81012e4c561e0731792cae9" name="ga1cb204afa81012e4c561e0731792cae9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga1cb204afa81012e4c561e0731792cae9">&#9670;&#160;</a></span>psa_drv_se_cipher_abort_t</h2>
@@ -354,7 +351,7 @@ Typedefs</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

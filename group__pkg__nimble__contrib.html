@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,12 +144,15 @@ $(function(){initNavTree('group__pkg__nimble__contrib.html',''); initResizable(t
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
-  <div class="headertitle"><div class="title">RIOT Integration<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__ble.html">Bluetooth Low Energy (BLE)</a> &raquo; <a class="el" href="group__pkg__nimble.html">NimBLE</a></div></div></div>
+  <div class="headertitle"><div class="title">RIOT Integration<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__ble.html">Bluetooth Low Energy (BLE)</a> &raquo; <a class="el" href="group__pkg__nimble.html">NimBLE</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Basic RIOT integration of NimBLE, including e.g.  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Basic RIOT integration of NimBLE, including e.g. </p>
+<p>stack configuration and (auto)initialization code </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -200,9 +200,6 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>nimble_riot_own_ad
 <tr class="memdesc:ga2b0fbe354c121ee58e8672d14e39b2a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export our own address type for later usage. <br /></td></tr>
 <tr class="separator:ga2b0fbe354c121ee58e8672d14e39b2a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Basic RIOT integration of NimBLE, including e.g. </p>
-<p>stack configuration and (auto)initialization code </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="gac62ee3b94aac3c877c8418b7a9726353" name="gac62ee3b94aac3c877c8418b7a9726353"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gac62ee3b94aac3c877c8418b7a9726353">&#9670;&#160;</a></span>NIMBLE_CONTROLLER_PRIO</h2>
@@ -251,7 +248,7 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>nimble_riot_own_ad
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

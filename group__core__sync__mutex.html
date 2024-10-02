@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -152,62 +149,6 @@ $(function(){initNavTree('group__core__sync__mutex.html',''); initResizable(true
 
 <p><a class="el" href="structMutex.html" title="Mutex struct within mqtt paho.">Mutex</a> for thread synchronization  
 <a href="#details">More...</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mutex_8h.html">mutex.h</a></td></tr>
-<tr class="memdesc:mutex_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structMutex.html" title="Mutex struct within mqtt paho.">Mutex</a> for thread synchronization. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmutex__t.html">mutex_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structMutex.html" title="Mutex struct within mqtt paho.">Mutex</a> structure.  <a href="structmutex__t.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmutex__cancel__t.html">mutex_cancel_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A cancellation structure for use with <a class="el" href="#ga43956ba0c5f17a235917a0f165c3c535">mutex_lock_cancelable</a> and <a class="el" href="#ga11d0c4f5c85caba5bea75de8c9c0b954">mutex_cancel</a>.  <a href="structmutex__cancel__t.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ga96be0bfc33e7e113099c7546798bec99" id="r_ga96be0bfc33e7e113099c7546798bec99"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga96be0bfc33e7e113099c7546798bec99">MUTEX_INIT</a>&#160;&#160;&#160;{ .queue = { .next = NULL } }</td></tr>
-<tr class="memdesc:ga96be0bfc33e7e113099c7546798bec99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static initializer for <a class="el" href="structmutex__t.html" title="Mutex structure.">mutex_t</a>.  <br /></td></tr>
-<tr class="separator:ga96be0bfc33e7e113099c7546798bec99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5ca0fa72dfde3f969c5c3eae33fc67cc" id="r_ga5ca0fa72dfde3f969c5c3eae33fc67cc"><td class="memItemLeft" align="right" valign="top"><a id="ga5ca0fa72dfde3f969c5c3eae33fc67cc" name="ga5ca0fa72dfde3f969c5c3eae33fc67cc"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MUTEX_INIT_LOCKED</b>&#160;&#160;&#160;{ .queue = { .next = MUTEX_LOCKED } }</td></tr>
-<tr class="memdesc:ga5ca0fa72dfde3f969c5c3eae33fc67cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static initializer for <a class="el" href="structmutex__t.html" title="Mutex structure.">mutex_t</a> with a locked mutex. <br /></td></tr>
-<tr class="separator:ga5ca0fa72dfde3f969c5c3eae33fc67cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:gae431f4c9893728f5744c2c330824ff05" id="r_gae431f4c9893728f5744c2c330824ff05"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae431f4c9893728f5744c2c330824ff05">mutex_lock_internal</a> (<a class="el" href="structmutex__t.html">mutex_t</a> *mutex, bool block)</td></tr>
-<tr class="memdesc:gae431f4c9893728f5744c2c330824ff05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal function implementing <a class="el" href="#gac50891b4f3d2930d34c173567d739201">mutex_lock</a> and <a class="el" href="#gadece3a92e8921da1468368dd041c40fe">mutex_trylock</a>.  <br /></td></tr>
-<tr class="separator:gae431f4c9893728f5744c2c330824ff05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga863625fd3252b5ebdadafaa6509ddb6d" id="r_ga863625fd3252b5ebdadafaa6509ddb6d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga863625fd3252b5ebdadafaa6509ddb6d">mutex_init</a> (<a class="el" href="structmutex__t.html">mutex_t</a> *mutex)</td></tr>
-<tr class="memdesc:ga863625fd3252b5ebdadafaa6509ddb6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a mutex object.  <br /></td></tr>
-<tr class="separator:ga863625fd3252b5ebdadafaa6509ddb6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga21c96cf5c177e4262fdc86157f44f5c0" id="r_ga21c96cf5c177e4262fdc86157f44f5c0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structmutex__cancel__t.html">mutex_cancel_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga21c96cf5c177e4262fdc86157f44f5c0">mutex_cancel_init</a> (<a class="el" href="structmutex__t.html">mutex_t</a> *mutex)</td></tr>
-<tr class="memdesc:ga21c96cf5c177e4262fdc86157f44f5c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a mutex cancellation structure.  <br /></td></tr>
-<tr class="separator:ga21c96cf5c177e4262fdc86157f44f5c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadece3a92e8921da1468368dd041c40fe" id="r_gadece3a92e8921da1468368dd041c40fe"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadece3a92e8921da1468368dd041c40fe">mutex_trylock</a> (<a class="el" href="structmutex__t.html">mutex_t</a> *mutex)</td></tr>
-<tr class="memdesc:gadece3a92e8921da1468368dd041c40fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to get a mutex, non-blocking.  <br /></td></tr>
-<tr class="separator:gadece3a92e8921da1468368dd041c40fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac50891b4f3d2930d34c173567d739201" id="r_gac50891b4f3d2930d34c173567d739201"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac50891b4f3d2930d34c173567d739201">mutex_lock</a> (<a class="el" href="structmutex__t.html">mutex_t</a> *mutex)</td></tr>
-<tr class="memdesc:gac50891b4f3d2930d34c173567d739201"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locks a mutex, blocking.  <br /></td></tr>
-<tr class="separator:gac50891b4f3d2930d34c173567d739201"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga43956ba0c5f17a235917a0f165c3c535" id="r_ga43956ba0c5f17a235917a0f165c3c535"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga43956ba0c5f17a235917a0f165c3c535">mutex_lock_cancelable</a> (<a class="el" href="structmutex__cancel__t.html">mutex_cancel_t</a> *mc)</td></tr>
-<tr class="memdesc:ga43956ba0c5f17a235917a0f165c3c535"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locks a mutex, blocking.  <br /></td></tr>
-<tr class="separator:ga43956ba0c5f17a235917a0f165c3c535"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga05ccabe849d63b032f6317323da60187" id="r_ga05ccabe849d63b032f6317323da60187"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga05ccabe849d63b032f6317323da60187">mutex_unlock</a> (<a class="el" href="structmutex__t.html">mutex_t</a> *mutex)</td></tr>
-<tr class="memdesc:ga05ccabe849d63b032f6317323da60187"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlocks the mutex.  <br /></td></tr>
-<tr class="separator:ga05ccabe849d63b032f6317323da60187"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab7d277fbba41acd77cb81fa52bc17b92" id="r_gab7d277fbba41acd77cb81fa52bc17b92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab7d277fbba41acd77cb81fa52bc17b92">mutex_unlock_and_sleep</a> (<a class="el" href="structmutex__t.html">mutex_t</a> *mutex)</td></tr>
-<tr class="memdesc:gab7d277fbba41acd77cb81fa52bc17b92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlocks the mutex and sends the current thread to sleep.  <br /></td></tr>
-<tr class="separator:gab7d277fbba41acd77cb81fa52bc17b92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga11d0c4f5c85caba5bea75de8c9c0b954" id="r_ga11d0c4f5c85caba5bea75de8c9c0b954"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga11d0c4f5c85caba5bea75de8c9c0b954">mutex_cancel</a> (<a class="el" href="structmutex__cancel__t.html">mutex_cancel_t</a> *mc)</td></tr>
-<tr class="memdesc:ga11d0c4f5c85caba5bea75de8c9c0b954"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancels a call to <a class="el" href="#ga43956ba0c5f17a235917a0f165c3c535">mutex_lock_cancelable</a>.  <br /></td></tr>
-<tr class="separator:ga11d0c4f5c85caba5bea75de8c9c0b954"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p><a class="el" href="structMutex.html" title="Mutex struct within mqtt paho.">Mutex</a> for thread synchronization </p>
 <dl class="section warning"><dt>Warning</dt><dd>By default, no mitigation against priority inversion is employed. If your application is subject to priority inversion and cannot tolerate the additional delay this can cause, use module <code>core_mutex_priority_inheritance</code> to employ priority inheritance as mitigation.</dd></dl>
@@ -273,6 +214,62 @@ Debugging deadlocks</h2>
 <li>The function <code>cpu_get_caller_pc()</code> is implemented for the target architecture. (The thread ID will remain valid, though.)</li>
 <li>The caller PC is briefly 0 when the current owner passes over ownership to the next thread, but that thread didn't get CPU time yet to write its PC into the data structure. Even worse, on architectures where an aligned function-pointer-sized write is not atomic, the value may briefly be bogus. Chances are close to zero this ever hits and since this only effects debug output, the ostrich algorithm was chosen here. </li>
 </ul>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mutex_8h.html">mutex.h</a></td></tr>
+<tr class="memdesc:mutex_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structMutex.html" title="Mutex struct within mqtt paho.">Mutex</a> for thread synchronization. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmutex__t.html">mutex_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structMutex.html" title="Mutex struct within mqtt paho.">Mutex</a> structure.  <a href="structmutex__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmutex__cancel__t.html">mutex_cancel_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A cancellation structure for use with <a class="el" href="#ga43956ba0c5f17a235917a0f165c3c535">mutex_lock_cancelable</a> and <a class="el" href="#ga11d0c4f5c85caba5bea75de8c9c0b954">mutex_cancel</a>.  <a href="structmutex__cancel__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga96be0bfc33e7e113099c7546798bec99" id="r_ga96be0bfc33e7e113099c7546798bec99"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga96be0bfc33e7e113099c7546798bec99">MUTEX_INIT</a>&#160;&#160;&#160;{ .queue = { .next = NULL } }</td></tr>
+<tr class="memdesc:ga96be0bfc33e7e113099c7546798bec99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static initializer for <a class="el" href="structmutex__t.html" title="Mutex structure.">mutex_t</a>.  <br /></td></tr>
+<tr class="separator:ga96be0bfc33e7e113099c7546798bec99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5ca0fa72dfde3f969c5c3eae33fc67cc" id="r_ga5ca0fa72dfde3f969c5c3eae33fc67cc"><td class="memItemLeft" align="right" valign="top"><a id="ga5ca0fa72dfde3f969c5c3eae33fc67cc" name="ga5ca0fa72dfde3f969c5c3eae33fc67cc"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MUTEX_INIT_LOCKED</b>&#160;&#160;&#160;{ .queue = { .next = MUTEX_LOCKED } }</td></tr>
+<tr class="memdesc:ga5ca0fa72dfde3f969c5c3eae33fc67cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static initializer for <a class="el" href="structmutex__t.html" title="Mutex structure.">mutex_t</a> with a locked mutex. <br /></td></tr>
+<tr class="separator:ga5ca0fa72dfde3f969c5c3eae33fc67cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gae431f4c9893728f5744c2c330824ff05" id="r_gae431f4c9893728f5744c2c330824ff05"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae431f4c9893728f5744c2c330824ff05">mutex_lock_internal</a> (<a class="el" href="structmutex__t.html">mutex_t</a> *mutex, bool block)</td></tr>
+<tr class="memdesc:gae431f4c9893728f5744c2c330824ff05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal function implementing <a class="el" href="#gac50891b4f3d2930d34c173567d739201">mutex_lock</a> and <a class="el" href="#gadece3a92e8921da1468368dd041c40fe">mutex_trylock</a>.  <br /></td></tr>
+<tr class="separator:gae431f4c9893728f5744c2c330824ff05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga863625fd3252b5ebdadafaa6509ddb6d" id="r_ga863625fd3252b5ebdadafaa6509ddb6d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga863625fd3252b5ebdadafaa6509ddb6d">mutex_init</a> (<a class="el" href="structmutex__t.html">mutex_t</a> *mutex)</td></tr>
+<tr class="memdesc:ga863625fd3252b5ebdadafaa6509ddb6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a mutex object.  <br /></td></tr>
+<tr class="separator:ga863625fd3252b5ebdadafaa6509ddb6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga21c96cf5c177e4262fdc86157f44f5c0" id="r_ga21c96cf5c177e4262fdc86157f44f5c0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structmutex__cancel__t.html">mutex_cancel_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga21c96cf5c177e4262fdc86157f44f5c0">mutex_cancel_init</a> (<a class="el" href="structmutex__t.html">mutex_t</a> *mutex)</td></tr>
+<tr class="memdesc:ga21c96cf5c177e4262fdc86157f44f5c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a mutex cancellation structure.  <br /></td></tr>
+<tr class="separator:ga21c96cf5c177e4262fdc86157f44f5c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadece3a92e8921da1468368dd041c40fe" id="r_gadece3a92e8921da1468368dd041c40fe"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadece3a92e8921da1468368dd041c40fe">mutex_trylock</a> (<a class="el" href="structmutex__t.html">mutex_t</a> *mutex)</td></tr>
+<tr class="memdesc:gadece3a92e8921da1468368dd041c40fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to get a mutex, non-blocking.  <br /></td></tr>
+<tr class="separator:gadece3a92e8921da1468368dd041c40fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac50891b4f3d2930d34c173567d739201" id="r_gac50891b4f3d2930d34c173567d739201"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac50891b4f3d2930d34c173567d739201">mutex_lock</a> (<a class="el" href="structmutex__t.html">mutex_t</a> *mutex)</td></tr>
+<tr class="memdesc:gac50891b4f3d2930d34c173567d739201"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locks a mutex, blocking.  <br /></td></tr>
+<tr class="separator:gac50891b4f3d2930d34c173567d739201"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga43956ba0c5f17a235917a0f165c3c535" id="r_ga43956ba0c5f17a235917a0f165c3c535"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga43956ba0c5f17a235917a0f165c3c535">mutex_lock_cancelable</a> (<a class="el" href="structmutex__cancel__t.html">mutex_cancel_t</a> *mc)</td></tr>
+<tr class="memdesc:ga43956ba0c5f17a235917a0f165c3c535"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locks a mutex, blocking.  <br /></td></tr>
+<tr class="separator:ga43956ba0c5f17a235917a0f165c3c535"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga05ccabe849d63b032f6317323da60187" id="r_ga05ccabe849d63b032f6317323da60187"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga05ccabe849d63b032f6317323da60187">mutex_unlock</a> (<a class="el" href="structmutex__t.html">mutex_t</a> *mutex)</td></tr>
+<tr class="memdesc:ga05ccabe849d63b032f6317323da60187"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlocks the mutex.  <br /></td></tr>
+<tr class="separator:ga05ccabe849d63b032f6317323da60187"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab7d277fbba41acd77cb81fa52bc17b92" id="r_gab7d277fbba41acd77cb81fa52bc17b92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab7d277fbba41acd77cb81fa52bc17b92">mutex_unlock_and_sleep</a> (<a class="el" href="structmutex__t.html">mutex_t</a> *mutex)</td></tr>
+<tr class="memdesc:gab7d277fbba41acd77cb81fa52bc17b92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlocks the mutex and sends the current thread to sleep.  <br /></td></tr>
+<tr class="separator:gab7d277fbba41acd77cb81fa52bc17b92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga11d0c4f5c85caba5bea75de8c9c0b954" id="r_ga11d0c4f5c85caba5bea75de8c9c0b954"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga11d0c4f5c85caba5bea75de8c9c0b954">mutex_cancel</a> (<a class="el" href="structmutex__cancel__t.html">mutex_cancel_t</a> *mc)</td></tr>
+<tr class="memdesc:ga11d0c4f5c85caba5bea75de8c9c0b954"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancels a call to <a class="el" href="#ga43956ba0c5f17a235917a0f165c3c535">mutex_lock_cancelable</a>.  <br /></td></tr>
+<tr class="separator:ga11d0c4f5c85caba5bea75de8c9c0b954"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga96be0bfc33e7e113099c7546798bec99" name="ga96be0bfc33e7e113099c7546798bec99"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga96be0bfc33e7e113099c7546798bec99">&#9670;&#160;</a></span>MUTEX_INIT</h2>
@@ -658,7 +655,7 @@ Must be called in thread context. </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

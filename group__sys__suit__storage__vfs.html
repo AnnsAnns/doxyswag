@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -150,6 +147,20 @@ $(function(){initNavTree('group__sys__suit__storage__vfs.html',''); initResizabl
 
 <p>SUIT riotboot firmware storage backend  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>SUIT riotboot firmware storage backend </p>
+<p>VFS storage can service different files mounted on the filesystem. Serviceable FILES must be registered:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;suit/storage/vfs.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="xfa_8h.html">xfa.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="xfa_8h.html#a8dc93f63b40737e1bad5b72ba349a775">XFA_USE</a>(<span class="keywordtype">char</span>*, suit_storage_files_reg);</div>
+<div class="line"><a class="code hl_define" href="xfa_8h.html#ab5992a606f8e105e3544c0abf2902bb6">XFA</a>(suit_storage_files_reg, 0) char* _firmware_0 = <a class="code hl_define" href="vfs__default_8h.html#a8216c827a1aedb0d69c7be433396d793">VFS_DEFAULT_DATA</a> &quot;/FW0.TXT&quot;;</div>
+<div class="ttc" id="avfs__default_8h_html_a8216c827a1aedb0d69c7be433396d793"><div class="ttname"><a href="vfs__default_8h.html#a8216c827a1aedb0d69c7be433396d793">VFS_DEFAULT_DATA</a></div><div class="ttdeci">#define VFS_DEFAULT_DATA</div><div class="ttdoc">Default data directory This can be written to by applications.</div><div class="ttdef"><b>Definition</b> vfs_default.h:78</div></div>
+<div class="ttc" id="axfa_8h_html"><div class="ttname"><a href="xfa_8h.html">xfa.h</a></div><div class="ttdoc">Cross File Arrays.</div></div>
+<div class="ttc" id="axfa_8h_html_a8dc93f63b40737e1bad5b72ba349a775"><div class="ttname"><a href="xfa_8h.html#a8dc93f63b40737e1bad5b72ba349a775">XFA_USE</a></div><div class="ttdeci">#define XFA_USE(type, name)</div><div class="ttdoc">Declare an external writable cross-file array.</div><div class="ttdef"><b>Definition</b> xfa.h:128</div></div>
+<div class="ttc" id="axfa_8h_html_ab5992a606f8e105e3544c0abf2902bb6"><div class="ttname"><a href="xfa_8h.html#ab5992a606f8e105e3544c0abf2902bb6">XFA</a></div><div class="ttdeci">#define XFA(xfa_name, prio)</div><div class="ttdoc">Define variable in writable cross-file array.</div><div class="ttdef"><b>Definition</b> xfa.h:144</div></div>
+</div><!-- fragment --><p>Once registered its content may be securely updated via SUIT by specifying the "install-id" as the filepath.</p>
+<p>riotboot vfs storage backend functions for SUIT manifests </p><dl class="section author"><dt>Author</dt><dd>Koen Zandberg <a href="#" onclick="location.href='mai'+'lto:'+'koe'+'n@'+'ber'+'gz'+'and'+'.n'+'et'; return false;">koen@<span class="obfuscator">.nosp@m.</span>berg<span class="obfuscator">.nosp@m.</span>zand.<span class="obfuscator">.nosp@m.</span>net</a> </dd></dl>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
@@ -168,20 +179,6 @@ Macros</h2></td></tr>
 <tr class="memdesc:gad9501f16242d609c55dc4f4f20a1a253"><td class="mdescLeft">&#160;</td><td class="mdescRight">Storage location string separators. <br /></td></tr>
 <tr class="separator:gad9501f16242d609c55dc4f4f20a1a253"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>SUIT riotboot firmware storage backend </p>
-<p>VFS storage can service different files mounted on the filesystem. Serviceable FILES must be registered:</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;suit/storage/vfs.h&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="xfa_8h.html">xfa.h</a>&quot;</span></div>
-<div class="line"> </div>
-<div class="line"><a class="code hl_define" href="xfa_8h.html#a8dc93f63b40737e1bad5b72ba349a775">XFA_USE</a>(<span class="keywordtype">char</span>*, suit_storage_files_reg);</div>
-<div class="line"><a class="code hl_define" href="xfa_8h.html#ab5992a606f8e105e3544c0abf2902bb6">XFA</a>(suit_storage_files_reg, 0) char* _firmware_0 = <a class="code hl_define" href="vfs__default_8h.html#a8216c827a1aedb0d69c7be433396d793">VFS_DEFAULT_DATA</a> &quot;/FW0.TXT&quot;;</div>
-<div class="ttc" id="avfs__default_8h_html_a8216c827a1aedb0d69c7be433396d793"><div class="ttname"><a href="vfs__default_8h.html#a8216c827a1aedb0d69c7be433396d793">VFS_DEFAULT_DATA</a></div><div class="ttdeci">#define VFS_DEFAULT_DATA</div><div class="ttdoc">Default data directory This can be written to by applications.</div><div class="ttdef"><b>Definition</b> vfs_default.h:78</div></div>
-<div class="ttc" id="axfa_8h_html"><div class="ttname"><a href="xfa_8h.html">xfa.h</a></div><div class="ttdoc">Cross File Arrays.</div></div>
-<div class="ttc" id="axfa_8h_html_a8dc93f63b40737e1bad5b72ba349a775"><div class="ttname"><a href="xfa_8h.html#a8dc93f63b40737e1bad5b72ba349a775">XFA_USE</a></div><div class="ttdeci">#define XFA_USE(type, name)</div><div class="ttdoc">Declare an external writable cross-file array.</div><div class="ttdef"><b>Definition</b> xfa.h:128</div></div>
-<div class="ttc" id="axfa_8h_html_ab5992a606f8e105e3544c0abf2902bb6"><div class="ttname"><a href="xfa_8h.html#ab5992a606f8e105e3544c0abf2902bb6">XFA</a></div><div class="ttdeci">#define XFA(xfa_name, prio)</div><div class="ttdoc">Define variable in writable cross-file array.</div><div class="ttdef"><b>Definition</b> xfa.h:144</div></div>
-</div><!-- fragment --><p>Once registered its content may be securely updated via SUIT by specifying the "install-id" as the filepath.</p>
-<p>riotboot vfs storage backend functions for SUIT manifests </p><dl class="section author"><dt>Author</dt><dd>Koen Zandberg <a href="#" onclick="location.href='mai'+'lto:'+'koe'+'n@'+'ber'+'gz'+'and'+'.n'+'et'; return false;">koen@<span class="obfuscator">.nosp@m.</span>berg<span class="obfuscator">.nosp@m.</span>zand.<span class="obfuscator">.nosp@m.</span>net</a> </dd></dl>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
@@ -189,7 +186,7 @@ Macros</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

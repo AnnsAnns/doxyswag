@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -153,7 +150,12 @@ $(function(){initNavTree('cc2420_8h.html',''); initResizable(true); });
 
 <p>Interface definition for the CC2420 driver.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Interface definition for the CC2420 driver. </p>
+<dl class="section author"><dt>Author</dt><dd>Thomas Eichinger <a href="#" onclick="location.href='mai'+'lto:'+'tho'+'ma'+'s.e'+'ic'+'hin'+'ge'+'r@f'+'u-'+'ber'+'li'+'n.d'+'e'; return false;">thoma<span class="obfuscator">.nosp@m.</span>s.ei<span class="obfuscator">.nosp@m.</span>ching<span class="obfuscator">.nosp@m.</span>er@f<span class="obfuscator">.nosp@m.</span>u-ber<span class="obfuscator">.nosp@m.</span>lin.<span class="obfuscator">.nosp@m.</span>de</a> </dd>
+<dd>
+Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="spi_8h.html">periph/spi.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="drivers_2include_2periph_2gpio_8h.html">periph/gpio.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="drivers_2include_2net_2netdev_8h.html">net/netdev.h</a>&quot;</code><br />
@@ -295,12 +297,7 @@ Functions</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CC2420_TXPOWER_DEFAULT</b>&#160;&#160;&#160;(<a class="el" href="group__net__ieee802154__conf.html#gad1056c7e3357b51a711f7a20a632c1af">CONFIG_IEEE802154_DEFAULT_TXPOWER</a>)</td></tr>
 <tr class="separator:gad9a9de440f20fc71a70509750f953280"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Interface definition for the CC2420 driver. </p>
-<dl class="section author"><dt>Author</dt><dd>Thomas Eichinger <a href="#" onclick="location.href='mai'+'lto:'+'tho'+'ma'+'s.e'+'ic'+'hin'+'ge'+'r@f'+'u-'+'ber'+'li'+'n.d'+'e'; return false;">thoma<span class="obfuscator">.nosp@m.</span>s.ei<span class="obfuscator">.nosp@m.</span>ching<span class="obfuscator">.nosp@m.</span>er@f<span class="obfuscator">.nosp@m.</span>u-ber<span class="obfuscator">.nosp@m.</span>lin.<span class="obfuscator">.nosp@m.</span>de</a> </dd>
-<dd>
-Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
@@ -308,7 +305,7 @@ Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_14bc92f4b96c8519b376567118ac28b3.html">drivers</a></li><li class="navelem"><a class="el" href="dir_ee023d43c33bfccc31aa50a48a76892b.html">include</a></li><li class="navelem"><a class="el" href="cc2420_8h.html">cc2420.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

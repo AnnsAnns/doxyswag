@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -148,31 +145,6 @@ $(function(){initNavTree('group__sys__ptrtag.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">Helpers for pointer tagging<div class="ingroups"><a class="el" href="group__sys.html">System</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ptrtag_8h.html">ptrtag.h</a></td></tr>
-<tr class="memdesc:ptrtag_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer Tagging Helpers. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:gadf582752ab291dd35ccf02c188f65d16" id="r_gadf582752ab291dd35ccf02c188f65d16"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadf582752ab291dd35ccf02c188f65d16">PTRTAG</a>&#160;&#160;&#160;__attribute__((aligned(4)))</td></tr>
-<tr class="memdesc:gadf582752ab291dd35ccf02c188f65d16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointers to data marked with this attribute will be tag-able.  <br /></td></tr>
-<tr class="separator:gadf582752ab291dd35ccf02c188f65d16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:gab7eebd12ebd7c7103e25c5061bdbb681" id="r_gab7eebd12ebd7c7103e25c5061bdbb681"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab7eebd12ebd7c7103e25c5061bdbb681">ptrtag</a> (void *ptr, uint8_t tag)</td></tr>
-<tr class="memdesc:gab7eebd12ebd7c7103e25c5061bdbb681"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a tagged pointer.  <br /></td></tr>
-<tr class="separator:gab7eebd12ebd7c7103e25c5061bdbb681"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6a059f384d13a1fffc068efdb06647c6" id="r_ga6a059f384d13a1fffc068efdb06647c6"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6a059f384d13a1fffc068efdb06647c6">ptrtag_ptr</a> (void *tagged_ptr)</td></tr>
-<tr class="memdesc:ga6a059f384d13a1fffc068efdb06647c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract the original pointer from a tagged pointer.  <br /></td></tr>
-<tr class="separator:ga6a059f384d13a1fffc068efdb06647c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga31600722dd3fa9490e2b8fbf9ce21de6" id="r_ga31600722dd3fa9490e2b8fbf9ce21de6"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga31600722dd3fa9490e2b8fbf9ce21de6">ptrtag_tag</a> (void *tagged_ptr)</td></tr>
-<tr class="memdesc:ga31600722dd3fa9490e2b8fbf9ce21de6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract the tag from a tagged pointer.  <br /></td></tr>
-<tr class="separator:ga31600722dd3fa9490e2b8fbf9ce21de6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h1><a class="anchor" id="autotoc_md2093"></a>
 Concept</h1>
@@ -206,7 +178,32 @@ Usage</h1>
 <div class="ttc" id="agroup__sys__ptrtag_html_ga6a059f384d13a1fffc068efdb06647c6"><div class="ttname"><a href="#ga6a059f384d13a1fffc068efdb06647c6">ptrtag_ptr</a></div><div class="ttdeci">static void * ptrtag_ptr(void *tagged_ptr)</div><div class="ttdoc">Extract the original pointer from a tagged pointer.</div><div class="ttdef"><b>Definition</b> ptrtag.h:103</div></div>
 <div class="ttc" id="agroup__sys__ptrtag_html_gab7eebd12ebd7c7103e25c5061bdbb681"><div class="ttname"><a href="#gab7eebd12ebd7c7103e25c5061bdbb681">ptrtag</a></div><div class="ttdeci">static void * ptrtag(void *ptr, uint8_t tag)</div><div class="ttdoc">Create a tagged pointer.</div><div class="ttdef"><b>Definition</b> ptrtag.h:90</div></div>
 <div class="ttc" id="astructPTRTAG_html"><div class="ttname"><a href="structPTRTAG.html">PTRTAG</a></div><div class="ttdoc">event queue structure</div><div class="ttdef"><b>Definition</b> event.h:156</div></div>
-</div><!-- fragment --> <h2 class="groupheader">Macro Definition Documentation</h2>
+</div><!-- fragment --> <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ptrtag_8h.html">ptrtag.h</a></td></tr>
+<tr class="memdesc:ptrtag_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer Tagging Helpers. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:gadf582752ab291dd35ccf02c188f65d16" id="r_gadf582752ab291dd35ccf02c188f65d16"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadf582752ab291dd35ccf02c188f65d16">PTRTAG</a>&#160;&#160;&#160;__attribute__((aligned(4)))</td></tr>
+<tr class="memdesc:gadf582752ab291dd35ccf02c188f65d16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointers to data marked with this attribute will be tag-able.  <br /></td></tr>
+<tr class="separator:gadf582752ab291dd35ccf02c188f65d16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gab7eebd12ebd7c7103e25c5061bdbb681" id="r_gab7eebd12ebd7c7103e25c5061bdbb681"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab7eebd12ebd7c7103e25c5061bdbb681">ptrtag</a> (void *ptr, uint8_t tag)</td></tr>
+<tr class="memdesc:gab7eebd12ebd7c7103e25c5061bdbb681"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a tagged pointer.  <br /></td></tr>
+<tr class="separator:gab7eebd12ebd7c7103e25c5061bdbb681"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6a059f384d13a1fffc068efdb06647c6" id="r_ga6a059f384d13a1fffc068efdb06647c6"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6a059f384d13a1fffc068efdb06647c6">ptrtag_ptr</a> (void *tagged_ptr)</td></tr>
+<tr class="memdesc:ga6a059f384d13a1fffc068efdb06647c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract the original pointer from a tagged pointer.  <br /></td></tr>
+<tr class="separator:ga6a059f384d13a1fffc068efdb06647c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga31600722dd3fa9490e2b8fbf9ce21de6" id="r_ga31600722dd3fa9490e2b8fbf9ce21de6"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga31600722dd3fa9490e2b8fbf9ce21de6">ptrtag_tag</a> (void *tagged_ptr)</td></tr>
+<tr class="memdesc:ga31600722dd3fa9490e2b8fbf9ce21de6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract the tag from a tagged pointer.  <br /></td></tr>
+<tr class="separator:ga31600722dd3fa9490e2b8fbf9ce21de6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="gadf582752ab291dd35ccf02c188f65d16" name="gadf582752ab291dd35ccf02c188f65d16"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gadf582752ab291dd35ccf02c188f65d16">&#9670;&#160;</a></span>PTRTAG</h2>
 
@@ -343,7 +340,7 @@ Usage</h1>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

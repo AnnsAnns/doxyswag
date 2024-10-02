@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,12 @@ $(function(){initNavTree('boards_2openmote-cc2538_2include_2periph__conf_8h.html
 
 <p>Peripheral MCU configuration for the OpenMote-cc2538 board.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="cc2538__gpio_8h.html">cc2538_gpio.h</a>&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Peripheral MCU configuration for the OpenMote-cc2538 board. </p>
+<dl class="section author"><dt>Author</dt><dd>Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
+<dd>
+Sebastian Meiling <a href="#" onclick="location.href='mai'+'lto:'+'s@m'+'ln'+'g.n'+'et'; return false;">s@mln<span class="obfuscator">.nosp@m.</span>g.ne<span class="obfuscator">.nosp@m.</span>t</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;<a class="el" href="cc2538__gpio_8h.html">cc2538_gpio.h</a>&quot;</code><br />
 <code>#include &quot;periph_cpu.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="cfg__clk__default_8h.html">cfg_clk_default.h</a>&quot;</code><br />
 <code>#include &quot;cfg_timer_default.h&quot;</code><br />
@@ -196,12 +198,7 @@ $(function(){initNavTree('boards_2openmote-cc2538_2include_2periph__conf_8h.html
 <tr class="memitem:a873188d7292e07499dcde9674b1e849c" id="r_a873188d7292e07499dcde9674b1e849c"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structspi__conf__t.html">spi_conf_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a873188d7292e07499dcde9674b1e849c">spi_config</a> []</td></tr>
 <tr class="separator:a873188d7292e07499dcde9674b1e849c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Peripheral MCU configuration for the OpenMote-cc2538 board. </p>
-<dl class="section author"><dt>Author</dt><dd>Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
-<dd>
-Sebastian Meiling <a href="#" onclick="location.href='mai'+'lto:'+'s@m'+'ln'+'g.n'+'et'; return false;">s@mln<span class="obfuscator">.nosp@m.</span>g.ne<span class="obfuscator">.nosp@m.</span>t</a> </dd></dl>
-</div><h2 class="groupheader">Variable Documentation</h2>
+<h2 class="groupheader">Variable Documentation</h2>
 <a id="a160c7b1c3bc13c7cb5ac4ed375f4e21d" name="a160c7b1c3bc13c7cb5ac4ed375f4e21d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a160c7b1c3bc13c7cb5ac4ed375f4e21d">&#9670;&#160;</a></span>adc_config</h2>
 
@@ -335,7 +332,7 @@ Sebastian Meiling <a href="#" onclick="location.href='mai'+'lto:'+'s@m'+'ln'+'g.
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6c8313236d9db5b969ca7d150fe527de.html">boards</a></li><li class="navelem"><a class="el" href="dir_a850317f9af443c254cd2dfe3accfc12.html">openmote-cc2538</a></li><li class="navelem"><a class="el" href="dir_057bddb3db4977eddb35d49deb560f3e.html">include</a></li><li class="navelem"><a class="el" href="boards_2openmote-cc2538_2include_2periph__conf_8h.html">periph_conf.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -144,13 +141,17 @@ $(function(){initNavTree('vrb_8h.html',''); initResizable(true); });
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">vrb.h File Reference<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__sixlowpan.html">6LoWPAN</a> &raquo; <a class="el" href="group__net__gnrc__sixlowpan__frag.html">6LoWPAN Fragmentation</a> &raquo; <a class="el" href="group__net__gnrc__sixlowpan__frag__vrb.html">Virtual reassembly buffer</a></div></div></div>
+  <div class="headertitle"><div class="title">vrb.h File Reference<div class="ingroups"><a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__sixlowpan.html">6LoWPAN</a> &raquo; <a class="el" href="group__net__gnrc__sixlowpan__frag.html">6LoWPAN Fragmentation</a> &raquo; <a class="el" href="group__net__gnrc__sixlowpan__frag__vrb.html">Virtual reassembly buffer</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Virtual reassembly buffer definitions.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stddef.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Virtual reassembly buffer definitions. </p>
+<dl class="section see"><dt>See also</dt><dd><a href="https://tools.ietf.org/html/draft-ietf-lwig-6lowpan-virtual-reassembly-01">https://tools.ietf.org/html/draft-ietf-lwig-6lowpan-virtual-reassembly-01</a></dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Martine Lenders <a href="#" onclick="location.href='mai'+'lto:'+'m.l'+'en'+'der'+'s@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">m.len<span class="obfuscator">.nosp@m.</span>ders<span class="obfuscator">.nosp@m.</span>@fu-b<span class="obfuscator">.nosp@m.</span>erli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;stddef.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="modules_8h.html">modules.h</a>&quot;</code><br />
@@ -207,11 +208,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>gnrc_sixlowpan_frag_v
 <tr class="memdesc:ga07e60be1551d6768570c9bb6ed63abd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the VRB to a clean state.  <br /></td></tr>
 <tr class="separator:ga07e60be1551d6768570c9bb6ed63abd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Virtual reassembly buffer definitions. </p>
-<dl class="section see"><dt>See also</dt><dd><a href="https://tools.ietf.org/html/draft-ietf-lwig-6lowpan-virtual-reassembly-01">https://tools.ietf.org/html/draft-ietf-lwig-6lowpan-virtual-reassembly-01</a></dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Martine Lenders <a href="#" onclick="location.href='mai'+'lto:'+'m.l'+'en'+'der'+'s@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">m.len<span class="obfuscator">.nosp@m.</span>ders<span class="obfuscator">.nosp@m.</span>@fu-b<span class="obfuscator">.nosp@m.</span>erli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
@@ -219,7 +216,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>gnrc_sixlowpan_frag_v
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a408b6d3a4a484720bc3ecfeac8947e3.html">sys</a></li><li class="navelem"><a class="el" href="dir_e9e107fc86bbb4b6a326076a6808b9f5.html">include</a></li><li class="navelem"><a class="el" href="dir_7afc5d30923bebdd1513d1cc48150ca7.html">net</a></li><li class="navelem"><a class="el" href="dir_cf159672c4bc64dfd629cfa389a5bd8d.html">gnrc</a></li><li class="navelem"><a class="el" href="dir_63c99b6fdd54c13a25ea524c0e4a5571.html">sixlowpan</a></li><li class="navelem"><a class="el" href="dir_52ac9da33555836ede2b93f24ab50aeb.html">frag</a></li><li class="navelem"><a class="el" href="vrb_8h.html">vrb.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

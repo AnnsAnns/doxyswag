@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -151,7 +148,13 @@ $(function(){initNavTree('auto__init__utils_8h.html',''); initResizable(true); }
 
 <p>Auto-initialization utilities.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Auto-initialization utilities. </p>
+<p>A module priority value in RIOTs auto-initialization sequence is, as of now, a hard coded 4-digit number, but is likely to be changed and automatically generated in the future. Modules are initialized in ascending (alpha)numerical order of their priority, which means that modules with lower priorities are initialized first, as long as their priorities comply with the current rules.</p>
+<dl class="section warning"><dt>Warning</dt><dd><b class="text-danger">This feature is experimental!</b><br  />
+</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Fabian Hüßler <a href="#" onclick="location.href='mai'+'lto:'+'fab'+'ia'+'n.h'+'ue'+'ssl'+'er'+'@ov'+'gu'+'.de'; return false;">fabia<span class="obfuscator">.nosp@m.</span>n.hu<span class="obfuscator">.nosp@m.</span>essle<span class="obfuscator">.nosp@m.</span>r@ov<span class="obfuscator">.nosp@m.</span>gu.de</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="xfa_8h.html">xfa.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="xtstr_8h.html">macros/xtstr.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="modules_8h.html">modules.h</a>&quot;</code><br />
@@ -193,13 +196,7 @@ typedef uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>auto_init
 <tr class="memdesc:gaf32f3d3aee54717322effd50a50ce77f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data type to store the priority of a module. <br /></td></tr>
 <tr class="separator:gaf32f3d3aee54717322effd50a50ce77f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Auto-initialization utilities. </p>
-<p>A module priority value in RIOTs auto-initialization sequence is, as of now, a hard coded 4-digit number, but is likely to be changed and automatically generated in the future. Modules are initialized in ascending (alpha)numerical order of their priority, which means that modules with lower priorities are initialized first, as long as their priorities comply with the current rules.</p>
-<dl class="section warning"><dt>Warning</dt><dd><b class="text-danger">This feature is experimental!</b><br  />
-</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Fabian Hüßler <a href="#" onclick="location.href='mai'+'lto:'+'fab'+'ia'+'n.h'+'ue'+'ssl'+'er'+'@ov'+'gu'+'.de'; return false;">fabia<span class="obfuscator">.nosp@m.</span>n.hu<span class="obfuscator">.nosp@m.</span>essle<span class="obfuscator">.nosp@m.</span>r@ov<span class="obfuscator">.nosp@m.</span>gu.de</a> </dd></dl>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
@@ -207,7 +204,7 @@ typedef uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>auto_init
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a408b6d3a4a484720bc3ecfeac8947e3.html">sys</a></li><li class="navelem"><a class="el" href="dir_e9e107fc86bbb4b6a326076a6808b9f5.html">include</a></li><li class="navelem"><a class="el" href="auto__init__utils_8h.html">auto_init_utils.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

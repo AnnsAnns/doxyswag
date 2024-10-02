@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -149,6 +146,24 @@ $(function(){initNavTree('group__pkg__lvgl.html',''); initResizable(true); });
 
 <p>LVGL package for RIOT  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>LVGL package for RIOT </p>
+<dl class="section see"><dt>See also</dt><dd><a href="https://github.com/LVGL/lvgl">https://github.com/LVGL/lvgl</a></dd></dl>
+<h2><a class="anchor" id="autotoc_md1812"></a>
+Configuration options</h2>
+<p>The package can be configured with using several variables. These variables can either be configured using CFLAGS or using Kconfig (via <code>make menuconfig</code>). LVGL_TASK_THREAD_PRIO cannot be configured via Kconfig.</p>
+<h3><a class="anchor" id="autotoc_md1813"></a>
+Engine settings</h3>
+<ul>
+<li><code>CONFIG_LVGL_INACTIVITY_PERIOD_MS</code>: maximum inactivity period before going to sleep in ms. (default: 5s)</li>
+<li><code>CONFIG_LVGL_TASK_HANDLER_DELAY_MS</code>: delay between lvgl task handle call in us. (default: 5ms)</li>
+<li><code>LVGL_TASK_THREAD_PRIO</code>: lvgl task handler thread priority. (default: THREAD_PRIORITY_MAIN - 1)</li>
+</ul>
+<p>Example of command line for changing the max activity period to 5s:</p>
+<div class="fragment"><div class="line">CFLAGS=-DCONFIG_LVGL_ACTIVITY_PERIOD=5000 make -C tests/pkg/lvgl</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md1814"></a>
+SDL Usage</h3>
+<p>See <a class="el" href="group__pkg__lv__drivers.html">LVGL Drivers</a>. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -307,24 +322,6 @@ Files</h2></td></tr>
 <tr class="memdesc:gab08a0881df87b2bdbab392455bf2847c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extend the default -32k..32k coordinate range to -4M..4M by using int32_t for coordinates instead of int16_t. <br /></td></tr>
 <tr class="separator:gab08a0881df87b2bdbab392455bf2847c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>LVGL package for RIOT </p>
-<dl class="section see"><dt>See also</dt><dd><a href="https://github.com/LVGL/lvgl">https://github.com/LVGL/lvgl</a></dd></dl>
-<h2><a class="anchor" id="autotoc_md1812"></a>
-Configuration options</h2>
-<p>The package can be configured with using several variables. These variables can either be configured using CFLAGS or using Kconfig (via <code>make menuconfig</code>). LVGL_TASK_THREAD_PRIO cannot be configured via Kconfig.</p>
-<h3><a class="anchor" id="autotoc_md1813"></a>
-Engine settings</h3>
-<ul>
-<li><code>CONFIG_LVGL_INACTIVITY_PERIOD_MS</code>: maximum inactivity period before going to sleep in ms. (default: 5s)</li>
-<li><code>CONFIG_LVGL_TASK_HANDLER_DELAY_MS</code>: delay between lvgl task handle call in us. (default: 5ms)</li>
-<li><code>LVGL_TASK_THREAD_PRIO</code>: lvgl task handler thread priority. (default: THREAD_PRIORITY_MAIN - 1)</li>
-</ul>
-<p>Example of command line for changing the max activity period to 5s:</p>
-<div class="fragment"><div class="line">CFLAGS=-DCONFIG_LVGL_ACTIVITY_PERIOD=5000 make -C tests/pkg/lvgl</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md1814"></a>
-SDL Usage</h3>
-<p>See <a class="el" href="group__pkg__lv__drivers.html">LVGL Drivers</a>. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="gaa4d75719785838a72b61c58e920fc8f8" name="gaa4d75719785838a72b61c58e920fc8f8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaa4d75719785838a72b61c58e920fc8f8">&#9670;&#160;</a></span>LV_ASSERT_HANDLER_INCLUDE</h2>
@@ -572,7 +569,7 @@ SDL Usage</h3>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

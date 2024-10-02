@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,14 @@ $(function(){initNavTree('assert_8h.html',''); initResizable(true); });
 
 <p>POSIX.1-2008 compliant version of the assert macro.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>POSIX.1-2008 compliant version of the assert macro. </p>
+<dl class="section author"><dt>Author</dt><dd>Oliver Hahm <a href="#" onclick="location.href='mai'+'lto:'+'oli'+'ve'+'r.h'+'ah'+'m@i'+'nr'+'ia.'+'fr'; return false;">olive<span class="obfuscator">.nosp@m.</span>r.ha<span class="obfuscator">.nosp@m.</span>hm@in<span class="obfuscator">.nosp@m.</span>ria.<span class="obfuscator">.nosp@m.</span>fr</a> </dd>
+<dd>
+René Kijewski <a href="#" onclick="location.href='mai'+'lto:'+'ren'+'e.'+'kij'+'ew'+'ski'+'@f'+'u-b'+'er'+'lin'+'.d'+'e'; return false;">rene.<span class="obfuscator">.nosp@m.</span>kije<span class="obfuscator">.nosp@m.</span>wski@<span class="obfuscator">.nosp@m.</span>fu-b<span class="obfuscator">.nosp@m.</span>erlin<span class="obfuscator">.nosp@m.</span>.de</a> </dd>
+<dd>
+Martine Lenders <a href="#" onclick="location.href='mai'+'lto:'+'m.l'+'en'+'der'+'s@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">m.len<span class="obfuscator">.nosp@m.</span>ders<span class="obfuscator">.nosp@m.</span>@fu-b<span class="obfuscator">.nosp@m.</span>erli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for assert.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -186,14 +190,7 @@ $(function(){initNavTree('assert_8h.html',''); initResizable(true); });
 <tr class="memdesc:a230dd82e0f6bd6337d478f77147c29db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to handle failed assertion.  <br /></td></tr>
 <tr class="separator:a230dd82e0f6bd6337d478f77147c29db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>POSIX.1-2008 compliant version of the assert macro. </p>
-<dl class="section author"><dt>Author</dt><dd>Oliver Hahm <a href="#" onclick="location.href='mai'+'lto:'+'oli'+'ve'+'r.h'+'ah'+'m@i'+'nr'+'ia.'+'fr'; return false;">olive<span class="obfuscator">.nosp@m.</span>r.ha<span class="obfuscator">.nosp@m.</span>hm@in<span class="obfuscator">.nosp@m.</span>ria.<span class="obfuscator">.nosp@m.</span>fr</a> </dd>
-<dd>
-René Kijewski <a href="#" onclick="location.href='mai'+'lto:'+'ren'+'e.'+'kij'+'ew'+'ski'+'@f'+'u-b'+'er'+'lin'+'.d'+'e'; return false;">rene.<span class="obfuscator">.nosp@m.</span>kije<span class="obfuscator">.nosp@m.</span>wski@<span class="obfuscator">.nosp@m.</span>fu-b<span class="obfuscator">.nosp@m.</span>erlin<span class="obfuscator">.nosp@m.</span>.de</a> </dd>
-<dd>
-Martine Lenders <a href="#" onclick="location.href='mai'+'lto:'+'m.l'+'en'+'der'+'s@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">m.len<span class="obfuscator">.nosp@m.</span>ders<span class="obfuscator">.nosp@m.</span>@fu-b<span class="obfuscator">.nosp@m.</span>erli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a3153a272f18d0f805028fce7e4337b53" name="a3153a272f18d0f805028fce7e4337b53"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3153a272f18d0f805028fce7e4337b53">&#9670;&#160;</a></span>assert</h2>
 
@@ -344,7 +341,7 @@ Martine Lenders <a href="#" onclick="location.href='mai'+'lto:'+'m.l'+'en'+'der'
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_f8fc1035965dbcf3e6094016d717607e.html">lib</a></li><li class="navelem"><a class="el" href="dir_d412f47eb2d89caf346962a58545ba17.html">include</a></li><li class="navelem"><a class="el" href="assert_8h.html">assert.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

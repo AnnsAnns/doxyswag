@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,10 @@ $(function(){initNavTree('nrfx__glue_8h.html',''); initResizable(true); });
 
 <p>This file contains macros that should be implemented according to the needs of the host environment into which nrfx is integrated.  
 <a href="#details">More...</a></p>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This file contains macros that should be implemented according to the needs of the host environment into which nrfx is integrated. </p>
+<dl class="section author"><dt>Author</dt><dd>Nordic Semiconductor ASA </dd></dl>
+</div><table class="memberdecls">
 <tr class="memitem:a9698a3f6b6bea455d2b54a79e514ee36" id="r_a9698a3f6b6bea455d2b54a79e514ee36"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9698a3f6b6bea455d2b54a79e514ee36">NRFX_ASSERT</a>(expression)</td></tr>
 <tr class="memdesc:a9698a3f6b6bea455d2b54a79e514ee36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro for placing a runtime assertion.  <br /></td></tr>
 <tr class="separator:a9698a3f6b6bea455d2b54a79e514ee36"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -257,10 +257,7 @@ $(function(){initNavTree('nrfx__glue_8h.html',''); initResizable(true); });
 <tr class="memdesc:aa1580d2a7d2a6ec67c471fac00b84576"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitmask that defines TIMER instances that are reserved for use outside of the nrfx library. <br /></td></tr>
 <tr class="separator:aa1580d2a7d2a6ec67c471fac00b84576"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This file contains macros that should be implemented according to the needs of the host environment into which nrfx is integrated. </p>
-<dl class="section author"><dt>Author</dt><dd>Nordic Semiconductor ASA </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a9698a3f6b6bea455d2b54a79e514ee36" name="a9698a3f6b6bea455d2b54a79e514ee36"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9698a3f6b6bea455d2b54a79e514ee36">&#9670;&#160;</a></span>NRFX_ASSERT</h2>
 
@@ -831,7 +828,7 @@ $(function(){initNavTree('nrfx__glue_8h.html',''); initResizable(true); });
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_1b757248df2f96757224e5c7d0d8f21a.html">pkg</a></li><li class="navelem"><a class="el" href="dir_b669f6e3f5a077cfbffd85f151a6b4f4.html">nrfx</a></li><li class="navelem"><a class="el" href="dir_ad4aef5d8cabb47d458c6359e552aa2a.html">include</a></li><li class="navelem"><a class="el" href="nrfx__glue_8h.html">nrfx_glue.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

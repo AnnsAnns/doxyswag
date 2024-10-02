@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -153,6 +150,70 @@ $(function(){initNavTree('group__core__thread.html',''); initResizable(true); })
 
 <p>Support for multi-threading  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Support for multi-threading </p>
+<h1><a class="anchor" id="autotoc_md18"></a>
+Priorities</h1>
+<p>As RIOT is using a fixed priority <a class="el" href="group__core__sched.html">scheduling algorithm</a>, threads are scheduled based on their priority. The priority is fixed for every thread and specified during the thread's creation by the <code>priority</code> parameter.</p>
+<p>The lower the priority value, the higher the priority of the thread, with 0 being the highest possible priority.</p>
+<p>The lowest possible priority is <a class="el" href="thread__config_8h.html#aff75fcd47eeb1872daf68978351983fb">THREAD_PRIORITY_IDLE</a> - 1.</p>
+<dl class="section note"><dt>Note</dt><dd>Assigning the same priority to two or more threads is usually not a good idea. A thread in RIOT may run until it yields (<a class="el" href="#gaaa9229e0f462f60bb9550919fa3d7699">thread_yield</a>) or another thread with higher priority is runnable (<a class="el" href="group__core__sched.html#gaf4e431441709328f9355dfb7e21a0eb9">STATUS_ON_RUNQUEUE</a>) again. Multiple threads with the same priority will therefore be scheduled cooperatively: when one of them is running, all others with the same priority depend on it to yield (or be interrupted by a thread with higher priority). This may make it difficult to determine when which of them gets scheduled and how much CPU time they will get. In most applications, the number of threads in application is significantly smaller than the number of available priorities, so assigning distinct priorities per thread should not be a problem. Only assign the same priority to multiple threads if you know what you are doing!</dd></dl>
+<h1><a class="anchor" id="autotoc_md19"></a>
+Thread Behavior</h1>
+<p>In addition to the priority, flags can be used when creating a thread to alter the thread's behavior after creation. The following flags are available:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Flags   </th><th class="markdownTableHeadNone">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="#ga31d767ff839598270044e04a53ffa7f4">THREAD_CREATE_SLEEPING</a>   </td><td class="markdownTableBodyNone">the thread will sleep until woken up manually    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="#ga55062dd3d2da4ee10c96a5ff39505ff4">THREAD_CREATE_WOUT_YIELD</a>   </td><td class="markdownTableBodyNone">the thread might not run immediately after creation    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="#gaca0f981819582216a85af20f6676032b">THREAD_CREATE_NO_STACKTEST</a>   </td><td class="markdownTableBodyNone">never measure the stack's memory usage   </td></tr>
+</table>
+<h1><a class="anchor" id="autotoc_md20"></a>
+Thread creation</h1>
+<p>Creating a new thread is internally done in two steps:</p><ol type="1">
+<li>the new thread's stack is initialized depending on the platform</li>
+<li>the new thread is added to the scheduler and the scheduler is run (if not indicated otherwise)</li>
+</ol>
+<dl class="section note"><dt>Note</dt><dd>Creating threads from within an ISR is currently supported, however it is considered to be a bad programming practice and we strongly discourage you from doing so.</dd></dl>
+<h2><a class="anchor" id="autotoc_md21"></a>
+Usage</h2>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;thread.h&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">char</span> rcv_thread_stack[<a class="code hl_define" href="thread__config_8h.html#a0dc9cf6e8b0b4da823649d78403fff90">THREAD_STACKSIZE_MAIN</a>];</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> *rcv_thread(<span class="keywordtype">void</span> *arg)</div>
+<div class="line">{</div>
+<div class="line">    (void) arg;</div>
+<div class="line">    <a class="code hl_struct" href="structmsg__t.html">msg_t</a> m;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">while</span> (1) {</div>
+<div class="line">        <a class="code hl_function" href="group__core__msg.html#gae3e05f08bd71d6f65dc727624c4d5f7a">msg_receive</a>(&amp;m);</div>
+<div class="line">        <a class="code hl_define" href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a>(<span class="stringliteral">&quot;Got msg from %&quot;</span> <a class="code hl_define" href="group__core__sched.html#gacbdb91f768b6240701dcb6cfaf0216ac">PRIkernel_pid</a> <span class="stringliteral">&quot;\n&quot;</span>, m.<a class="code hl_variable" href="structmsg__t.html#a6c7d65a0a86c7b69ed58f9f71a043028">sender_pid</a>);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> NULL;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    <a class="code hl_function" href="#ga7e0403a9aa86ce0ec136f6b069d4434a">thread_create</a>(rcv_thread_stack, <span class="keyword">sizeof</span>(rcv_thread_stack),</div>
+<div class="line">                  <a class="code hl_define" href="thread__config_8h.html#ac57374d1c51374ebf95d9679281af818">THREAD_PRIORITY_MAIN</a> - 1, 0,</div>
+<div class="line">                  rcv_thread, NULL, <span class="stringliteral">&quot;rcv_thread&quot;</span>);</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__core__msg_html_gae3e05f08bd71d6f65dc727624c4d5f7a"><div class="ttname"><a href="group__core__msg.html#gae3e05f08bd71d6f65dc727624c4d5f7a">msg_receive</a></div><div class="ttdeci">int msg_receive(msg_t *m)</div><div class="ttdoc">Receive a message.</div></div>
+<div class="ttc" id="agroup__core__sched_html_gacbdb91f768b6240701dcb6cfaf0216ac"><div class="ttname"><a href="group__core__sched.html#gacbdb91f768b6240701dcb6cfaf0216ac">PRIkernel_pid</a></div><div class="ttdeci">#define PRIkernel_pid</div><div class="ttdoc">Macro for printing formatter.</div><div class="ttdef"><b>Definition</b> sched.h:125</div></div>
+<div class="ttc" id="agroup__core__thread_html_ga7e0403a9aa86ce0ec136f6b069d4434a"><div class="ttname"><a href="#ga7e0403a9aa86ce0ec136f6b069d4434a">thread_create</a></div><div class="ttdeci">kernel_pid_t thread_create(char *stack, int stacksize, uint8_t priority, int flags, thread_task_func_t task_func, void *arg, const char *name)</div><div class="ttdoc">Creates a new thread.</div></div>
+<div class="ttc" id="agroup__cpu__avr8__common__stdio__wrapper_html_gad2eb277496af160238e7306fff780ad2"><div class="ttname"><a href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a></div><div class="ttdeci">#define printf(...)</div><div class="ttdoc">A wrapper for the printf() function that passes arguments through unmodified, but fails to compile if...</div><div class="ttdef"><b>Definition</b> stdio.h:60</div></div>
+<div class="ttc" id="astructmsg__t_html"><div class="ttname"><a href="structmsg__t.html">msg_t</a></div><div class="ttdoc">Describes a message object which can be sent between threads.</div><div class="ttdef"><b>Definition</b> msg.h:196</div></div>
+<div class="ttc" id="astructmsg__t_html_a6c7d65a0a86c7b69ed58f9f71a043028"><div class="ttname"><a href="structmsg__t.html#a6c7d65a0a86c7b69ed58f9f71a043028">msg_t::sender_pid</a></div><div class="ttdeci">kernel_pid_t sender_pid</div><div class="ttdoc">PID of sending thread.</div><div class="ttdef"><b>Definition</b> msg.h:197</div></div>
+<div class="ttc" id="athread__config_8h_html_a0dc9cf6e8b0b4da823649d78403fff90"><div class="ttname"><a href="thread__config_8h.html#a0dc9cf6e8b0b4da823649d78403fff90">THREAD_STACKSIZE_MAIN</a></div><div class="ttdeci">#define THREAD_STACKSIZE_MAIN</div><div class="ttdoc">Size of the main task's stack in bytes.</div><div class="ttdef"><b>Definition</b> thread_config.h:79</div></div>
+<div class="ttc" id="athread__config_8h_html_ac57374d1c51374ebf95d9679281af818"><div class="ttname"><a href="thread__config_8h.html#ac57374d1c51374ebf95d9679281af818">THREAD_PRIORITY_MAIN</a></div><div class="ttdeci">#define THREAD_PRIORITY_MAIN</div><div class="ttdoc">Priority of the main thread.</div><div class="ttdef"><b>Definition</b> thread_config.h:135</div></div>
+</div><!-- fragment --><p>Reading from the top down, you can see that first, stack memory for our thread <code>rcv_thread</code> is preallocated, followed by an implementation of the thread's function. Communication between threads is done using <a class="el" href="group__core__msg.html">Messaging / IPC</a>. In this case, <code>rcv_thread</code> will print the process id of each thread that sent a message to <code>rcv_thread</code>.</p>
+<p>After it has been properly defined, <code>rcv_thread</code> is created with a call to <a class="el" href="#ga7e0403a9aa86ce0ec136f6b069d4434a">thread_create()</a> in <code>main()</code>. It is assigned a priority of <code>THREAD_PRIORITY_MAIN - 1</code>, i.e. a slightly <em>higher</em> priority than the main thread. Since neither the <code>THREAD_CREATE_SLEEPING</code> nor the <code>THREAD_CREATE_WOUT_YIELD</code> flag is set, <code>rcv_thread</code> will be executed immediately.</p>
+<dl class="section note"><dt>Note</dt><dd>If the messages to the thread are sent using <a class="el" href="group__core__msg.html#ga99264bd4f263fa2b478308c1f7983c10">msg_try_send()</a> or from an ISR, activate your thread's message queue by calling <a class="el" href="group__core__msg.html#ga480e6f32c8ab18579b62a890f3fda2cd">msg_init_queue()</a> to prevent messages from being dropped when they can't be handled right away. The same applies if you'd like <a class="el" href="group__core__msg.html#gac5347725c3d203ac72604c0ab8b7d6d8" title="Send a message (blocking).">msg_send()</a> to your thread to be non-blocking. For more details, see <a class="el" href="group__core__msg.html">the Messaging documentation</a>. </dd></dl>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -308,70 +369,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>thread_print_stack</b
 <tr class="memdesc:ga51f8182fbb138fd27746e509b69d3aed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legacy flag kept for compatibility.  <br /></td></tr>
 <tr class="separator:ga51f8182fbb138fd27746e509b69d3aed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Support for multi-threading </p>
-<h1><a class="anchor" id="autotoc_md18"></a>
-Priorities</h1>
-<p>As RIOT is using a fixed priority <a class="el" href="group__core__sched.html">scheduling algorithm</a>, threads are scheduled based on their priority. The priority is fixed for every thread and specified during the thread's creation by the <code>priority</code> parameter.</p>
-<p>The lower the priority value, the higher the priority of the thread, with 0 being the highest possible priority.</p>
-<p>The lowest possible priority is <a class="el" href="thread__config_8h.html#aff75fcd47eeb1872daf68978351983fb">THREAD_PRIORITY_IDLE</a> - 1.</p>
-<dl class="section note"><dt>Note</dt><dd>Assigning the same priority to two or more threads is usually not a good idea. A thread in RIOT may run until it yields (<a class="el" href="#gaaa9229e0f462f60bb9550919fa3d7699">thread_yield</a>) or another thread with higher priority is runnable (<a class="el" href="group__core__sched.html#gaf4e431441709328f9355dfb7e21a0eb9">STATUS_ON_RUNQUEUE</a>) again. Multiple threads with the same priority will therefore be scheduled cooperatively: when one of them is running, all others with the same priority depend on it to yield (or be interrupted by a thread with higher priority). This may make it difficult to determine when which of them gets scheduled and how much CPU time they will get. In most applications, the number of threads in application is significantly smaller than the number of available priorities, so assigning distinct priorities per thread should not be a problem. Only assign the same priority to multiple threads if you know what you are doing!</dd></dl>
-<h1><a class="anchor" id="autotoc_md19"></a>
-Thread Behavior</h1>
-<p>In addition to the priority, flags can be used when creating a thread to alter the thread's behavior after creation. The following flags are available:</p>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Flags   </th><th class="markdownTableHeadNone">Description    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="#ga31d767ff839598270044e04a53ffa7f4">THREAD_CREATE_SLEEPING</a>   </td><td class="markdownTableBodyNone">the thread will sleep until woken up manually    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="#ga55062dd3d2da4ee10c96a5ff39505ff4">THREAD_CREATE_WOUT_YIELD</a>   </td><td class="markdownTableBodyNone">the thread might not run immediately after creation    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="#gaca0f981819582216a85af20f6676032b">THREAD_CREATE_NO_STACKTEST</a>   </td><td class="markdownTableBodyNone">never measure the stack's memory usage   </td></tr>
-</table>
-<h1><a class="anchor" id="autotoc_md20"></a>
-Thread creation</h1>
-<p>Creating a new thread is internally done in two steps:</p><ol type="1">
-<li>the new thread's stack is initialized depending on the platform</li>
-<li>the new thread is added to the scheduler and the scheduler is run (if not indicated otherwise)</li>
-</ol>
-<dl class="section note"><dt>Note</dt><dd>Creating threads from within an ISR is currently supported, however it is considered to be a bad programming practice and we strongly discourage you from doing so.</dd></dl>
-<h2><a class="anchor" id="autotoc_md21"></a>
-Usage</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;thread.h&quot;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">char</span> rcv_thread_stack[<a class="code hl_define" href="thread__config_8h.html#a0dc9cf6e8b0b4da823649d78403fff90">THREAD_STACKSIZE_MAIN</a>];</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> *rcv_thread(<span class="keywordtype">void</span> *arg)</div>
-<div class="line">{</div>
-<div class="line">    (void) arg;</div>
-<div class="line">    <a class="code hl_struct" href="structmsg__t.html">msg_t</a> m;</div>
-<div class="line"> </div>
-<div class="line">    <span class="keywordflow">while</span> (1) {</div>
-<div class="line">        <a class="code hl_function" href="group__core__msg.html#gae3e05f08bd71d6f65dc727624c4d5f7a">msg_receive</a>(&amp;m);</div>
-<div class="line">        <a class="code hl_define" href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a>(<span class="stringliteral">&quot;Got msg from %&quot;</span> <a class="code hl_define" href="group__core__sched.html#gacbdb91f768b6240701dcb6cfaf0216ac">PRIkernel_pid</a> <span class="stringliteral">&quot;\n&quot;</span>, m.<a class="code hl_variable" href="structmsg__t.html#a6c7d65a0a86c7b69ed58f9f71a043028">sender_pid</a>);</div>
-<div class="line">    }</div>
-<div class="line"> </div>
-<div class="line">    <span class="keywordflow">return</span> NULL;</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>)</div>
-<div class="line">{</div>
-<div class="line">    <a class="code hl_function" href="#ga7e0403a9aa86ce0ec136f6b069d4434a">thread_create</a>(rcv_thread_stack, <span class="keyword">sizeof</span>(rcv_thread_stack),</div>
-<div class="line">                  <a class="code hl_define" href="thread__config_8h.html#ac57374d1c51374ebf95d9679281af818">THREAD_PRIORITY_MAIN</a> - 1, 0,</div>
-<div class="line">                  rcv_thread, NULL, <span class="stringliteral">&quot;rcv_thread&quot;</span>);</div>
-<div class="line">}</div>
-<div class="ttc" id="agroup__core__msg_html_gae3e05f08bd71d6f65dc727624c4d5f7a"><div class="ttname"><a href="group__core__msg.html#gae3e05f08bd71d6f65dc727624c4d5f7a">msg_receive</a></div><div class="ttdeci">int msg_receive(msg_t *m)</div><div class="ttdoc">Receive a message.</div></div>
-<div class="ttc" id="agroup__core__sched_html_gacbdb91f768b6240701dcb6cfaf0216ac"><div class="ttname"><a href="group__core__sched.html#gacbdb91f768b6240701dcb6cfaf0216ac">PRIkernel_pid</a></div><div class="ttdeci">#define PRIkernel_pid</div><div class="ttdoc">Macro for printing formatter.</div><div class="ttdef"><b>Definition</b> sched.h:125</div></div>
-<div class="ttc" id="agroup__core__thread_html_ga7e0403a9aa86ce0ec136f6b069d4434a"><div class="ttname"><a href="#ga7e0403a9aa86ce0ec136f6b069d4434a">thread_create</a></div><div class="ttdeci">kernel_pid_t thread_create(char *stack, int stacksize, uint8_t priority, int flags, thread_task_func_t task_func, void *arg, const char *name)</div><div class="ttdoc">Creates a new thread.</div></div>
-<div class="ttc" id="agroup__cpu__avr8__common__stdio__wrapper_html_gad2eb277496af160238e7306fff780ad2"><div class="ttname"><a href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a></div><div class="ttdeci">#define printf(...)</div><div class="ttdoc">A wrapper for the printf() function that passes arguments through unmodified, but fails to compile if...</div><div class="ttdef"><b>Definition</b> stdio.h:60</div></div>
-<div class="ttc" id="astructmsg__t_html"><div class="ttname"><a href="structmsg__t.html">msg_t</a></div><div class="ttdoc">Describes a message object which can be sent between threads.</div><div class="ttdef"><b>Definition</b> msg.h:196</div></div>
-<div class="ttc" id="astructmsg__t_html_a6c7d65a0a86c7b69ed58f9f71a043028"><div class="ttname"><a href="structmsg__t.html#a6c7d65a0a86c7b69ed58f9f71a043028">msg_t::sender_pid</a></div><div class="ttdeci">kernel_pid_t sender_pid</div><div class="ttdoc">PID of sending thread.</div><div class="ttdef"><b>Definition</b> msg.h:197</div></div>
-<div class="ttc" id="athread__config_8h_html_a0dc9cf6e8b0b4da823649d78403fff90"><div class="ttname"><a href="thread__config_8h.html#a0dc9cf6e8b0b4da823649d78403fff90">THREAD_STACKSIZE_MAIN</a></div><div class="ttdeci">#define THREAD_STACKSIZE_MAIN</div><div class="ttdoc">Size of the main task's stack in bytes.</div><div class="ttdef"><b>Definition</b> thread_config.h:79</div></div>
-<div class="ttc" id="athread__config_8h_html_ac57374d1c51374ebf95d9679281af818"><div class="ttname"><a href="thread__config_8h.html#ac57374d1c51374ebf95d9679281af818">THREAD_PRIORITY_MAIN</a></div><div class="ttdeci">#define THREAD_PRIORITY_MAIN</div><div class="ttdoc">Priority of the main thread.</div><div class="ttdef"><b>Definition</b> thread_config.h:135</div></div>
-</div><!-- fragment --><p>Reading from the top down, you can see that first, stack memory for our thread <code>rcv_thread</code> is preallocated, followed by an implementation of the thread's function. Communication between threads is done using <a class="el" href="group__core__msg.html">Messaging / IPC</a>. In this case, <code>rcv_thread</code> will print the process id of each thread that sent a message to <code>rcv_thread</code>.</p>
-<p>After it has been properly defined, <code>rcv_thread</code> is created with a call to <a class="el" href="#ga7e0403a9aa86ce0ec136f6b069d4434a">thread_create()</a> in <code>main()</code>. It is assigned a priority of <code>THREAD_PRIORITY_MAIN - 1</code>, i.e. a slightly <em>higher</em> priority than the main thread. Since neither the <code>THREAD_CREATE_SLEEPING</code> nor the <code>THREAD_CREATE_WOUT_YIELD</code> flag is set, <code>rcv_thread</code> will be executed immediately.</p>
-<dl class="section note"><dt>Note</dt><dd>If the messages to the thread are sent using <a class="el" href="group__core__msg.html#ga99264bd4f263fa2b478308c1f7983c10">msg_try_send()</a> or from an ISR, activate your thread's message queue by calling <a class="el" href="group__core__msg.html#ga480e6f32c8ab18579b62a890f3fda2cd">msg_init_queue()</a> to prevent messages from being dropped when they can't be handled right away. The same applies if you'd like <a class="el" href="group__core__msg.html#gac5347725c3d203ac72604c0ab8b7d6d8" title="Send a message (blocking).">msg_send()</a> to your thread to be non-blocking. For more details, see <a class="el" href="group__core__msg.html">the Messaging documentation</a>. </dd></dl>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="gaa55ed7288e242cd4b2a8872f912dae96" name="gaa55ed7288e242cd4b2a8872f912dae96"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaa55ed7288e242cd4b2a8872f912dae96">&#9670;&#160;</a></span>CONFIG_THREAD_NAMES</h2>
@@ -1323,7 +1320,7 @@ Creating threads from within an ISR is currently supported, however it is consid
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

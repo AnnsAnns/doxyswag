@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -149,7 +146,18 @@ $(function(){initNavTree('at86rf2xx__registers_8h.html',''); initResizable(true)
 
 <p>Register and command definitions for AT86RF2xx devices.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="at86rf2xx_8h.html">at86rf2xx.h</a>&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Register and command definitions for AT86RF2xx devices. </p>
+<dl class="section author"><dt>Author</dt><dd>Alaeddine Weslati <a href="#" onclick="location.href='mai'+'lto:'+'ala'+'ed'+'din'+'e.'+'wes'+'la'+'ti@'+'in'+'ria'+'.f'+'r'; return false;">alaed<span class="obfuscator">.nosp@m.</span>dine<span class="obfuscator">.nosp@m.</span>.wesl<span class="obfuscator">.nosp@m.</span>ati@<span class="obfuscator">.nosp@m.</span>inria<span class="obfuscator">.nosp@m.</span>.fr</a> </dd>
+<dd>
+Thomas Eichinger <a href="#" onclick="location.href='mai'+'lto:'+'tho'+'ma'+'s.e'+'ic'+'hin'+'ge'+'r@f'+'u-'+'ber'+'li'+'n.d'+'e'; return false;">thoma<span class="obfuscator">.nosp@m.</span>s.ei<span class="obfuscator">.nosp@m.</span>ching<span class="obfuscator">.nosp@m.</span>er@f<span class="obfuscator">.nosp@m.</span>u-ber<span class="obfuscator">.nosp@m.</span>lin.<span class="obfuscator">.nosp@m.</span>de</a> </dd>
+<dd>
+Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
+<dd>
+Kaspar Schleiser <a href="#" onclick="location.href='mai'+'lto:'+'kas'+'pa'+'r@s'+'ch'+'lei'+'se'+'r.d'+'e'; return false;">kaspa<span class="obfuscator">.nosp@m.</span>r@sc<span class="obfuscator">.nosp@m.</span>hleis<span class="obfuscator">.nosp@m.</span>er.d<span class="obfuscator">.nosp@m.</span>e</a> </dd>
+<dd>
+Kévin Roussel <a href="#" onclick="location.href='mai'+'lto:'+'Kev'+'in'+'.Ro'+'us'+'sel'+'@i'+'nri'+'a.'+'fr'; return false;">Kevin<span class="obfuscator">.nosp@m.</span>.Rou<span class="obfuscator">.nosp@m.</span>ssel@<span class="obfuscator">.nosp@m.</span>inri<span class="obfuscator">.nosp@m.</span>a.fr</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;<a class="el" href="at86rf2xx_8h.html">at86rf2xx.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for at86rf2xx_registers.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -729,18 +737,7 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_TRX_RPC_MASK__IPAN_RPC_EN</b>&#160;&#160;&#160;(0x02)</td></tr>
 <tr class="separator:a909c9c6ee04c291a6470752c31cb26cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Register and command definitions for AT86RF2xx devices. </p>
-<dl class="section author"><dt>Author</dt><dd>Alaeddine Weslati <a href="#" onclick="location.href='mai'+'lto:'+'ala'+'ed'+'din'+'e.'+'wes'+'la'+'ti@'+'in'+'ria'+'.f'+'r'; return false;">alaed<span class="obfuscator">.nosp@m.</span>dine<span class="obfuscator">.nosp@m.</span>.wesl<span class="obfuscator">.nosp@m.</span>ati@<span class="obfuscator">.nosp@m.</span>inria<span class="obfuscator">.nosp@m.</span>.fr</a> </dd>
-<dd>
-Thomas Eichinger <a href="#" onclick="location.href='mai'+'lto:'+'tho'+'ma'+'s.e'+'ic'+'hin'+'ge'+'r@f'+'u-'+'ber'+'li'+'n.d'+'e'; return false;">thoma<span class="obfuscator">.nosp@m.</span>s.ei<span class="obfuscator">.nosp@m.</span>ching<span class="obfuscator">.nosp@m.</span>er@f<span class="obfuscator">.nosp@m.</span>u-ber<span class="obfuscator">.nosp@m.</span>lin.<span class="obfuscator">.nosp@m.</span>de</a> </dd>
-<dd>
-Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
-<dd>
-Kaspar Schleiser <a href="#" onclick="location.href='mai'+'lto:'+'kas'+'pa'+'r@s'+'ch'+'lei'+'se'+'r.d'+'e'; return false;">kaspa<span class="obfuscator">.nosp@m.</span>r@sc<span class="obfuscator">.nosp@m.</span>hleis<span class="obfuscator">.nosp@m.</span>er.d<span class="obfuscator">.nosp@m.</span>e</a> </dd>
-<dd>
-Kévin Roussel <a href="#" onclick="location.href='mai'+'lto:'+'Kev'+'in'+'.Ro'+'us'+'sel'+'@i'+'nri'+'a.'+'fr'; return false;">Kevin<span class="obfuscator">.nosp@m.</span>.Rou<span class="obfuscator">.nosp@m.</span>ssel@<span class="obfuscator">.nosp@m.</span>inri<span class="obfuscator">.nosp@m.</span>a.fr</a> </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ac6afa2cf5a3d8322f65730c1859f9851" name="ac6afa2cf5a3d8322f65730c1859f9851"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac6afa2cf5a3d8322f65730c1859f9851">&#9670;&#160;</a></span>AT86RF2XX_TRX_RPC_MASK__RX_RPC__SMART_IDLE</h2>
 
@@ -770,7 +767,7 @@ Kévin Roussel <a href="#" onclick="location.href='mai'+'lto:'+'Kev'+'in'+'.Ro'+
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_14bc92f4b96c8519b376567118ac28b3.html">drivers</a></li><li class="navelem"><a class="el" href="dir_78fb0e98dae0f90aa483bb0fc506b319.html">at86rf2xx</a></li><li class="navelem"><a class="el" href="dir_6beecde753c6e3a8b03761e6345970d1.html">include</a></li><li class="navelem"><a class="el" href="at86rf2xx__registers_8h.html">at86rf2xx_registers.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

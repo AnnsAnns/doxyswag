@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,67 @@ $(function(){initNavTree('clist_8h.html',''); initResizable(true); });
 
 <p>Circular linked list.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Circular linked list. </p>
+<p>This file contains a circularly and singly linked list implementation.</p>
+<p>Its operations are:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">operation   </th><th class="markdownTableHeadNone">runtime   </th><th class="markdownTableHeadNone">description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="#a8e0169f917e3452ba216ddbc498691b5" title="Inserts new_node at the beginning of *list.">clist_lpush()</a>   </td><td class="markdownTableBodyNone">O(1)   </td><td class="markdownTableBodyNone">insert as head (leftmost node)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="#a14a724f589e1442a33560f8d60e6b558" title="Returns first element in list.">clist_lpeek()</a>   </td><td class="markdownTableBodyNone">O(1)   </td><td class="markdownTableBodyNone">get the head without removing it    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="#a4dc4ae2c04ea4ceb67fa0eb0e4f7f321" title="Removes and returns first element from list.">clist_lpop()</a>   </td><td class="markdownTableBodyNone">O(1)   </td><td class="markdownTableBodyNone">remove and return head (leftmost node)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="#a60b48772afe042a1eb0447e475afb1ba" title="Appends new_node at the end of *list.">clist_rpush()</a>   </td><td class="markdownTableBodyNone">O(1)   </td><td class="markdownTableBodyNone">append as tail (rightmost node)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="#a7db59101664604dcd92c026433577982" title="Returns last element in list.">clist_rpeek()</a>   </td><td class="markdownTableBodyNone">O(1)   </td><td class="markdownTableBodyNone">get the tail without removing it    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="#af1c4c388f488fdf1a2ef7e8767036625" title="Removes and returns last element from list.">clist_rpop()</a>   </td><td class="markdownTableBodyNone">O(n)   </td><td class="markdownTableBodyNone">remove and return tail (rightmost node)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="#ab838c6948a107f303f4134501c4c15d0" title="Advances the circle list.">clist_lpoprpush()</a>   </td><td class="markdownTableBodyNone">O(1)   </td><td class="markdownTableBodyNone">move first element to the end of the list    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="#a7fed4990c46782959d3482812395648d" title="Finds and returns node.">clist_find()</a>   </td><td class="markdownTableBodyNone">O(n)   </td><td class="markdownTableBodyNone">find and return node    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="#ae18bb62fec2942576a91723cf29cbf23" title="Finds node and returns its predecessor.">clist_find_before()</a>   </td><td class="markdownTableBodyNone">O(n)   </td><td class="markdownTableBodyNone">find node return node pointing to node    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="#a9417c0cd591d0bf782b63ba0440481a2" title="Finds and removes node.">clist_remove()</a>   </td><td class="markdownTableBodyNone">O(n)   </td><td class="markdownTableBodyNone">remove and return node    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="#a329c26d6ab789b930204c27abc7c6956" title="Sort a list.">clist_sort()</a>   </td><td class="markdownTableBodyNone">O(NlogN)   </td><td class="markdownTableBodyNone">sort list (stable)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="#a12dd09fe1df59e4e0a36eb8b45b6a92e" title="Count the number of items in the given list.">clist_count()</a>   </td><td class="markdownTableBodyNone">O(n)   </td><td class="markdownTableBodyNone">count the number of elements in a list    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="#a6d8a97fe3bcf5285f2de76b4ebc4b043" title="Checks if *list is empty.">clist_is_empty()</a>   </td><td class="markdownTableBodyNone">O(1)   </td><td class="markdownTableBodyNone">returns true if the list contains no elements    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="#ac10155c22c6e38b8d0634f4845d8bc9f" title="Tells if a list has exactly one element.">clist_exactly_one()</a>   </td><td class="markdownTableBodyNone">O(1)   </td><td class="markdownTableBodyNone">returns true if the list contains one element    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="#a1a2567b442b696a62fc3458fe4bda771" title="Tells if a list has more than one element.">clist_more_than_one()</a>   </td><td class="markdownTableBodyNone">O(1)   </td><td class="markdownTableBodyNone">returns true if the list contains more than one element   </td></tr>
+</table>
+<p>clist can be used as a traditional list, a queue (FIFO) and a stack (LIFO) using fast O(1) operations.</p>
+<p>When used as traditional list, in order to traverse, make sure every element is only visited once.</p>
+<p>Example: </p><pre class="fragment">void clist_traverse(clist_node_t *list) {
+    clist_node_t *node = list-&gt;next;
+    if (! node) {
+        puts("list empty");
+        return;
+    }
+
+    do {
+        node = node-&gt;next;
+        // do something with node
+    } while (node != list-&gt;next);
+}
+</pre><p>Or use the <a class="el" href="#ad35da24b5e268b9cf3f823af4e1e48be" title="Traverse clist, call function for each member.">clist_foreach()</a> helper function, e.g.,:</p>
+<p>static int _print_node(clist_node_t *node) { printf("0x%08x ", (unsigned)node); return 0; }</p>
+<p>[...] clist_foreach(&amp;list, _print_node);</p>
+<p>To use clist as a queue, use <a class="el" href="#a60b48772afe042a1eb0447e475afb1ba" title="Appends new_node at the end of *list.">clist_rpush()</a> for adding elements and <a class="el" href="#a4dc4ae2c04ea4ceb67fa0eb0e4f7f321" title="Removes and returns first element from list.">clist_lpop()</a> for removal. Using <a class="el" href="#a8e0169f917e3452ba216ddbc498691b5" title="Inserts new_node at the beginning of *list.">clist_lpush()</a> and <a class="el" href="#af1c4c388f488fdf1a2ef7e8767036625" title="Removes and returns last element from list.">clist_rpop()</a> is inefficient due to <a class="el" href="#af1c4c388f488fdf1a2ef7e8767036625" title="Removes and returns last element from list.">clist_rpop()</a>'s O(n) runtime.</p>
+<p>To use clist as stack, use <a class="el" href="#a8e0169f917e3452ba216ddbc498691b5" title="Inserts new_node at the beginning of *list.">clist_lpush()</a>/clist_lpop().</p>
+<p>Implementation details:</p>
+<p>Each list is represented as a "clist_node_t". Its only member, the "next" pointer, points to the last entry in the list, whose "next" pointer points to the first entry. Actual list objects should have a <code>clist_node_t</code> as member and then use the <a class="el" href="container_8h.html#aa06910d90372b14a0756bf14cdc64811" title="Returns the container of a pointer to a member.">container_of()</a> macro in list operations. See <a class="el" href="group__core__thread.html#ga66b51382807f0a214c15e282fec5476f">thread_add_to_list()</a> as example.</p>
+<dl class="section author"><dt>Author</dt><dd>Kaspar Schleiser <a href="#" onclick="location.href='mai'+'lto:'+'kas'+'pa'+'r@s'+'ch'+'lei'+'se'+'r.d'+'e'; return false;">kaspa<span class="obfuscator">.nosp@m.</span>r@sc<span class="obfuscator">.nosp@m.</span>hleis<span class="obfuscator">.nosp@m.</span>er.d<span class="obfuscator">.nosp@m.</span>e</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;stddef.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="list_8h.html">list.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -225,67 +282,7 @@ typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><b>clist_cmp_fu
 <tr class="memdesc:a1a2567b442b696a62fc3458fe4bda771"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tells if a list has more than one element.  <br /></td></tr>
 <tr class="separator:a1a2567b442b696a62fc3458fe4bda771"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Circular linked list. </p>
-<p>This file contains a circularly and singly linked list implementation.</p>
-<p>Its operations are:</p>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">operation   </th><th class="markdownTableHeadNone">runtime   </th><th class="markdownTableHeadNone">description    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="#a8e0169f917e3452ba216ddbc498691b5" title="Inserts new_node at the beginning of *list.">clist_lpush()</a>   </td><td class="markdownTableBodyNone">O(1)   </td><td class="markdownTableBodyNone">insert as head (leftmost node)    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="#a14a724f589e1442a33560f8d60e6b558" title="Returns first element in list.">clist_lpeek()</a>   </td><td class="markdownTableBodyNone">O(1)   </td><td class="markdownTableBodyNone">get the head without removing it    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="#a4dc4ae2c04ea4ceb67fa0eb0e4f7f321" title="Removes and returns first element from list.">clist_lpop()</a>   </td><td class="markdownTableBodyNone">O(1)   </td><td class="markdownTableBodyNone">remove and return head (leftmost node)    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="#a60b48772afe042a1eb0447e475afb1ba" title="Appends new_node at the end of *list.">clist_rpush()</a>   </td><td class="markdownTableBodyNone">O(1)   </td><td class="markdownTableBodyNone">append as tail (rightmost node)    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="#a7db59101664604dcd92c026433577982" title="Returns last element in list.">clist_rpeek()</a>   </td><td class="markdownTableBodyNone">O(1)   </td><td class="markdownTableBodyNone">get the tail without removing it    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="#af1c4c388f488fdf1a2ef7e8767036625" title="Removes and returns last element from list.">clist_rpop()</a>   </td><td class="markdownTableBodyNone">O(n)   </td><td class="markdownTableBodyNone">remove and return tail (rightmost node)    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="#ab838c6948a107f303f4134501c4c15d0" title="Advances the circle list.">clist_lpoprpush()</a>   </td><td class="markdownTableBodyNone">O(1)   </td><td class="markdownTableBodyNone">move first element to the end of the list    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="#a7fed4990c46782959d3482812395648d" title="Finds and returns node.">clist_find()</a>   </td><td class="markdownTableBodyNone">O(n)   </td><td class="markdownTableBodyNone">find and return node    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="#ae18bb62fec2942576a91723cf29cbf23" title="Finds node and returns its predecessor.">clist_find_before()</a>   </td><td class="markdownTableBodyNone">O(n)   </td><td class="markdownTableBodyNone">find node return node pointing to node    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="#a9417c0cd591d0bf782b63ba0440481a2" title="Finds and removes node.">clist_remove()</a>   </td><td class="markdownTableBodyNone">O(n)   </td><td class="markdownTableBodyNone">remove and return node    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="#a329c26d6ab789b930204c27abc7c6956" title="Sort a list.">clist_sort()</a>   </td><td class="markdownTableBodyNone">O(NlogN)   </td><td class="markdownTableBodyNone">sort list (stable)    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="#a12dd09fe1df59e4e0a36eb8b45b6a92e" title="Count the number of items in the given list.">clist_count()</a>   </td><td class="markdownTableBodyNone">O(n)   </td><td class="markdownTableBodyNone">count the number of elements in a list    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="#a6d8a97fe3bcf5285f2de76b4ebc4b043" title="Checks if *list is empty.">clist_is_empty()</a>   </td><td class="markdownTableBodyNone">O(1)   </td><td class="markdownTableBodyNone">returns true if the list contains no elements    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="#ac10155c22c6e38b8d0634f4845d8bc9f" title="Tells if a list has exactly one element.">clist_exactly_one()</a>   </td><td class="markdownTableBodyNone">O(1)   </td><td class="markdownTableBodyNone">returns true if the list contains one element    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="#a1a2567b442b696a62fc3458fe4bda771" title="Tells if a list has more than one element.">clist_more_than_one()</a>   </td><td class="markdownTableBodyNone">O(1)   </td><td class="markdownTableBodyNone">returns true if the list contains more than one element   </td></tr>
-</table>
-<p>clist can be used as a traditional list, a queue (FIFO) and a stack (LIFO) using fast O(1) operations.</p>
-<p>When used as traditional list, in order to traverse, make sure every element is only visited once.</p>
-<p>Example: </p><pre class="fragment">void clist_traverse(clist_node_t *list) {
-    clist_node_t *node = list-&gt;next;
-    if (! node) {
-        puts("list empty");
-        return;
-    }
-
-    do {
-        node = node-&gt;next;
-        // do something with node
-    } while (node != list-&gt;next);
-}
-</pre><p>Or use the <a class="el" href="#ad35da24b5e268b9cf3f823af4e1e48be" title="Traverse clist, call function for each member.">clist_foreach()</a> helper function, e.g.,:</p>
-<p>static int _print_node(clist_node_t *node) { printf("0x%08x ", (unsigned)node); return 0; }</p>
-<p>[...] clist_foreach(&amp;list, _print_node);</p>
-<p>To use clist as a queue, use <a class="el" href="#a60b48772afe042a1eb0447e475afb1ba" title="Appends new_node at the end of *list.">clist_rpush()</a> for adding elements and <a class="el" href="#a4dc4ae2c04ea4ceb67fa0eb0e4f7f321" title="Removes and returns first element from list.">clist_lpop()</a> for removal. Using <a class="el" href="#a8e0169f917e3452ba216ddbc498691b5" title="Inserts new_node at the beginning of *list.">clist_lpush()</a> and <a class="el" href="#af1c4c388f488fdf1a2ef7e8767036625" title="Removes and returns last element from list.">clist_rpop()</a> is inefficient due to <a class="el" href="#af1c4c388f488fdf1a2ef7e8767036625" title="Removes and returns last element from list.">clist_rpop()</a>'s O(n) runtime.</p>
-<p>To use clist as stack, use <a class="el" href="#a8e0169f917e3452ba216ddbc498691b5" title="Inserts new_node at the beginning of *list.">clist_lpush()</a>/clist_lpop().</p>
-<p>Implementation details:</p>
-<p>Each list is represented as a "clist_node_t". Its only member, the "next" pointer, points to the last entry in the list, whose "next" pointer points to the first entry. Actual list objects should have a <code>clist_node_t</code> as member and then use the <a class="el" href="container_8h.html#aa06910d90372b14a0756bf14cdc64811" title="Returns the container of a pointer to a member.">container_of()</a> macro in list operations. See <a class="el" href="group__core__thread.html#ga66b51382807f0a214c15e282fec5476f">thread_add_to_list()</a> as example.</p>
-<dl class="section author"><dt>Author</dt><dd>Kaspar Schleiser <a href="#" onclick="location.href='mai'+'lto:'+'kas'+'pa'+'r@s'+'ch'+'lei'+'se'+'r.d'+'e'; return false;">kaspa<span class="obfuscator">.nosp@m.</span>r@sc<span class="obfuscator">.nosp@m.</span>hleis<span class="obfuscator">.nosp@m.</span>er.d<span class="obfuscator">.nosp@m.</span>e</a> </dd></dl>
-</div><h2 class="groupheader">Typedef Documentation</h2>
+<h2 class="groupheader">Typedef Documentation</h2>
 <a id="a6346f09447aabddc705945b64e406f0b" name="a6346f09447aabddc705945b64e406f0b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6346f09447aabddc705945b64e406f0b">&#9670;&#160;</a></span>clist_node_t</h2>
 
@@ -952,7 +949,7 @@ clist_sort(list, _cmp);
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_f8fc1035965dbcf3e6094016d717607e.html">lib</a></li><li class="navelem"><a class="el" href="dir_d412f47eb2d89caf346962a58545ba17.html">include</a></li><li class="navelem"><a class="el" href="clist_8h.html">clist.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,22 @@ $(function(){initNavTree('esp32-wrover-kit_2include_2board_8h.html',''); initRes
 
 <p>Board specific definitions for Espressif ESP-WROVER-KIT V3.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Board specific definitions for Espressif ESP-WROVER-KIT V3. </p>
+<p>The Espressif ESP-WROVER-KIT is a development board that uses the ESP32-WROVER module which includes a built-in 4 MByte SPI RAM. Most important features of the board are</p>
+<ul>
+<li>Micro-SD card interface</li>
+<li>OV7670 camera interface</li>
+<li>3.2" SPI LCD panel</li>
+<li>RGB LED</li>
+</ul>
+<p>Furthermore, many GPIOs are broken out for extension. The USB bridge based on FDI FT2232HL provides a JTAG interface for debugging through the USB interface.</p>
+<p>When the camera module is connected, add </p><div class="fragment"><div class="line">USEMODULE += esp32_wrover_kit_camera</div>
+</div><!-- fragment --><p> to the makefile of the application to use the according default board configuration.</p>
+<p>For detailed information about the configuration of ESP32 boards, see section <a class="el" href="group__cpu__esp32.html#esp32_peripherals">Common Peripherals</a>.</p>
+<dl class="section note"><dt>Note</dt><dd>Most definitions can be overridden by an <a class="el" href="group__cpu__esp32.html#esp32_application_specific_configurations">application-specific board configuration</a>.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span class="obfuscator">.nosp@m.</span>@sch<span class="obfuscator">.nosp@m.</span>orcht<span class="obfuscator">.nosp@m.</span>.net</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;board_common.h&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for board.h:</div>
@@ -278,22 +290,7 @@ $(function(){initNavTree('esp32-wrover-kit_2include_2board_8h.html',''); initRes
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>ILI9341_PARAM_ROTATION</b>&#160;&#160;&#160;<a class="el" href="group__drivers__ili9341.html#ga7f17667a81f76628e075a5592a250a03">ILI9341_ROTATION_HORZ_FLIP</a></td></tr>
 <tr class="separator:afa2498377288d5782caba436eb0877e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Board specific definitions for Espressif ESP-WROVER-KIT V3. </p>
-<p>The Espressif ESP-WROVER-KIT is a development board that uses the ESP32-WROVER module which includes a built-in 4 MByte SPI RAM. Most important features of the board are</p>
-<ul>
-<li>Micro-SD card interface</li>
-<li>OV7670 camera interface</li>
-<li>3.2" SPI LCD panel</li>
-<li>RGB LED</li>
-</ul>
-<p>Furthermore, many GPIOs are broken out for extension. The USB bridge based on FDI FT2232HL provides a JTAG interface for debugging through the USB interface.</p>
-<p>When the camera module is connected, add </p><div class="fragment"><div class="line">USEMODULE += esp32_wrover_kit_camera</div>
-</div><!-- fragment --><p> to the makefile of the application to use the according default board configuration.</p>
-<p>For detailed information about the configuration of ESP32 boards, see section <a class="el" href="group__cpu__esp32.html#esp32_peripherals">Common Peripherals</a>.</p>
-<dl class="section note"><dt>Note</dt><dd>Most definitions can be overridden by an <a class="el" href="group__cpu__esp32.html#esp32_application_specific_configurations">application-specific board configuration</a>.</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span class="obfuscator">.nosp@m.</span>@sch<span class="obfuscator">.nosp@m.</span>orcht<span class="obfuscator">.nosp@m.</span>.net</a> </dd></dl>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
@@ -301,7 +298,7 @@ $(function(){initNavTree('esp32-wrover-kit_2include_2board_8h.html',''); initRes
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6c8313236d9db5b969ca7d150fe527de.html">boards</a></li><li class="navelem"><a class="el" href="dir_b1926f36ca1c4f6a1122f7e00b524252.html">esp32-wrover-kit</a></li><li class="navelem"><a class="el" href="dir_3ef5a0dcccdd6300c0ae4b4ebdcef3e3.html">include</a></li><li class="navelem"><a class="el" href="esp32-wrover-kit_2include_2board_8h.html">board.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:28 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

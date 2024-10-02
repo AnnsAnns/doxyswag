@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,10 @@ $(function(){initNavTree('enc28j60__regs_8h.html',''); initResizable(true); });
 
 <p>Register definitions for the ENC28J60 Ethernet device.  
 <a href="#details">More...</a></p>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Register definitions for the ENC28J60 Ethernet device. </p>
+<dl class="section author"><dt>Author</dt><dd>Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">SPI instruction set</h2></td></tr>
 <tr class="memitem:a21ea8a63d475215740b85b471a0b236a" id="r_a21ea8a63d475215740b85b471a0b236a"><td class="memItemLeft" align="right" valign="top"><a id="a21ea8a63d475215740b85b471a0b236a" name="a21ea8a63d475215740b85b471a0b236a"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CMD_RCR</b>&#160;&#160;&#160;0x00            /* read control register */</td></tr>
@@ -871,10 +871,7 @@ $(function(){initNavTree('enc28j60__regs_8h.html',''); initResizable(true); });
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>TX_POVERRIDE</b>&#160;&#160;&#160;0x01</td></tr>
 <tr class="separator:ae56d190d45ccb5a98210e7a369d687cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Register definitions for the ENC28J60 Ethernet device. </p>
-<dl class="section author"><dt>Author</dt><dd>Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ab99ac6b94f01fcccde2d2e11b4dc3f68" name="ab99ac6b94f01fcccde2d2e11b4dc3f68"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab99ac6b94f01fcccde2d2e11b4dc3f68">&#9670;&#160;</a></span>PHLCON_LACFG</h2>
 
@@ -937,7 +934,7 @@ $(function(){initNavTree('enc28j60__regs_8h.html',''); initResizable(true); });
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_14bc92f4b96c8519b376567118ac28b3.html">drivers</a></li><li class="navelem"><a class="el" href="dir_13ecb8964e0bb9b955938eb7bcf511c8.html">enc28j60</a></li><li class="navelem"><a class="el" href="dir_d3942e4f29ce2f4046caf2fd03752d4c.html">include</a></li><li class="navelem"><a class="el" href="enc28j60__regs_8h.html">enc28j60_regs.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

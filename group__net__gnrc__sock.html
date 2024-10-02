@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,12 +144,14 @@ $(function(){initNavTree('group__net__gnrc__sock.html',''); initResizable(true);
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a>  </div>
-  <div class="headertitle"><div class="title">GNRC-specific implementation of the sock API<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a></div></div></div>
+  <div class="headertitle"><div class="title">GNRC-specific implementation of the sock API<div class="ingroups"><a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Provides an implementation of the <a class="el" href="group__net__sock.html">Sock API</a> by the <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a>  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Provides an implementation of the <a class="el" href="group__net__sock.html">Sock API</a> by the <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -195,8 +194,6 @@ typedef struct <a class="el" href="structgnrc__sock__reg.html">gnrc_sock_reg</a>
 <tr class="memdesc:ga0361f554346d114bf4129d0d95085ebb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forward declaration. <br /></td></tr>
 <tr class="separator:ga0361f554346d114bf4129d0d95085ebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Provides an implementation of the <a class="el" href="group__net__sock.html">Sock API</a> by the <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
@@ -204,7 +201,7 @@ typedef struct <a class="el" href="structgnrc__sock__reg.html">gnrc_sock_reg</a>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -146,67 +143,12 @@ $(function(){initNavTree('group__net__sock__ip.html',''); initResizable(true); }
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">Raw IPv4/IPv6 sock API<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__sock.html">Sock API</a></div></div></div>
+  <div class="headertitle"><div class="title">Raw IPv4/IPv6 sock API<div class="ingroups"><a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__net__sock.html">Sock API</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Sock submodule for raw IPv4/IPv6  
 <a href="#details">More...</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip_8h.html">ip.h</a></td></tr>
-<tr class="memdesc:ip_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw IPv4/IPv6 sock definitions. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsock__ip__aux__rx__t.html">sock_ip_aux_rx_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Auxiliary data provided when receiving using an IP sock object.  <a href="structsock__ip__aux__rx__t.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsock__ip__aux__tx__t.html">sock_ip_aux_tx_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Auxiliary data provided when sending using an IP sock object.  <a href="structsock__ip__aux__tx__t.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:ga439f68352d1339555536747a64b5232e" id="r_ga439f68352d1339555536747a64b5232e"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structsock__ip.html">sock_ip</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga439f68352d1339555536747a64b5232e">sock_ip_t</a></td></tr>
-<tr class="memdesc:ga439f68352d1339555536747a64b5232e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type for a raw IPv4/IPv6 sock object.  <br /></td></tr>
-<tr class="separator:ga439f68352d1339555536747a64b5232e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ga0b416e35dd100962d88bdd675e7f6b18" id="r_ga0b416e35dd100962d88bdd675e7f6b18"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0b416e35dd100962d88bdd675e7f6b18">sock_ip_create</a> (<a class="el" href="group__net__sock__async.html#ga439f68352d1339555536747a64b5232e">sock_ip_t</a> *sock, const <a class="el" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> *local, const <a class="el" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> *remote, uint8_t proto, uint16_t flags)</td></tr>
-<tr class="memdesc:ga0b416e35dd100962d88bdd675e7f6b18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new raw IPv4/IPv6 sock object.  <br /></td></tr>
-<tr class="separator:ga0b416e35dd100962d88bdd675e7f6b18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga59aea36d7e415e533686e37bf69d3ec4" id="r_ga59aea36d7e415e533686e37bf69d3ec4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga59aea36d7e415e533686e37bf69d3ec4">sock_ip_close</a> (<a class="el" href="group__net__sock__async.html#ga439f68352d1339555536747a64b5232e">sock_ip_t</a> *sock)</td></tr>
-<tr class="memdesc:ga59aea36d7e415e533686e37bf69d3ec4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes a raw IPv4/IPv6 sock object.  <br /></td></tr>
-<tr class="separator:ga59aea36d7e415e533686e37bf69d3ec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae01afa2e9d65199732f37d0ea927b581" id="r_gae01afa2e9d65199732f37d0ea927b581"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae01afa2e9d65199732f37d0ea927b581">sock_ip_get_local</a> (<a class="el" href="group__net__sock__async.html#ga439f68352d1339555536747a64b5232e">sock_ip_t</a> *sock, <a class="el" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> *ep)</td></tr>
-<tr class="memdesc:gae01afa2e9d65199732f37d0ea927b581"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the local end point of a raw IPv4/IPv6 sock object.  <br /></td></tr>
-<tr class="separator:gae01afa2e9d65199732f37d0ea927b581"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga51463dba508be8f9a114486a75f9fdbe" id="r_ga51463dba508be8f9a114486a75f9fdbe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga51463dba508be8f9a114486a75f9fdbe">sock_ip_get_remote</a> (<a class="el" href="group__net__sock__async.html#ga439f68352d1339555536747a64b5232e">sock_ip_t</a> *sock, <a class="el" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> *ep)</td></tr>
-<tr class="memdesc:ga51463dba508be8f9a114486a75f9fdbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the remote end point of a raw IPv4/IPv6 sock object.  <br /></td></tr>
-<tr class="separator:ga51463dba508be8f9a114486a75f9fdbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa9ec389133f8c39fd4132724306089df" id="r_gaa9ec389133f8c39fd4132724306089df"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa9ec389133f8c39fd4132724306089df">sock_ip_recv_aux</a> (<a class="el" href="group__net__sock__async.html#ga439f68352d1339555536747a64b5232e">sock_ip_t</a> *sock, void *data, size_t max_len, uint32_t timeout, <a class="el" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> *remote, <a class="el" href="structsock__ip__aux__rx__t.html">sock_ip_aux_rx_t</a> *aux)</td></tr>
-<tr class="memdesc:gaa9ec389133f8c39fd4132724306089df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a message over IPv4/IPv6 from remote end point.  <br /></td></tr>
-<tr class="separator:gaa9ec389133f8c39fd4132724306089df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafad2a57b4ee2bb5604e2d788f5e116ba" id="r_gafad2a57b4ee2bb5604e2d788f5e116ba"><td class="memItemLeft" align="right" valign="top">static ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafad2a57b4ee2bb5604e2d788f5e116ba">sock_ip_recv</a> (<a class="el" href="group__net__sock__async.html#ga439f68352d1339555536747a64b5232e">sock_ip_t</a> *sock, void *data, size_t max_len, uint32_t timeout, <a class="el" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> *remote)</td></tr>
-<tr class="memdesc:gafad2a57b4ee2bb5604e2d788f5e116ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a message over IPv4/IPv6 from remote end point.  <br /></td></tr>
-<tr class="separator:gafad2a57b4ee2bb5604e2d788f5e116ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1a678826f520f62c94ff8f4492e4847b" id="r_ga1a678826f520f62c94ff8f4492e4847b"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1a678826f520f62c94ff8f4492e4847b">sock_ip_recv_buf_aux</a> (<a class="el" href="group__net__sock__async.html#ga439f68352d1339555536747a64b5232e">sock_ip_t</a> *sock, void **data, void **buf_ctx, uint32_t timeout, <a class="el" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> *remote, <a class="el" href="structsock__ip__aux__rx__t.html">sock_ip_aux_rx_t</a> *aux)</td></tr>
-<tr class="memdesc:ga1a678826f520f62c94ff8f4492e4847b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides stack-internal buffer space containing an IPv4/IPv6 message from remote end point.  <br /></td></tr>
-<tr class="separator:ga1a678826f520f62c94ff8f4492e4847b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa3ccb9ce7d1ac34118227549531a6ce7" id="r_gaa3ccb9ce7d1ac34118227549531a6ce7"><td class="memItemLeft" align="right" valign="top">static ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa3ccb9ce7d1ac34118227549531a6ce7">sock_ip_recv_buf</a> (<a class="el" href="group__net__sock__async.html#ga439f68352d1339555536747a64b5232e">sock_ip_t</a> *sock, void **data, void **buf_ctx, uint32_t timeout, <a class="el" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> *remote)</td></tr>
-<tr class="memdesc:gaa3ccb9ce7d1ac34118227549531a6ce7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides stack-internal buffer space containing an IPv4/IPv6 message from remote end point.  <br /></td></tr>
-<tr class="separator:gaa3ccb9ce7d1ac34118227549531a6ce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaaf777c4afca9984f71a25c57aeaf49bf" id="r_gaaf777c4afca9984f71a25c57aeaf49bf"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaaf777c4afca9984f71a25c57aeaf49bf">sock_ip_send_aux</a> (<a class="el" href="group__net__sock__async.html#ga439f68352d1339555536747a64b5232e">sock_ip_t</a> *sock, const void *data, size_t len, uint8_t proto, const <a class="el" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> *remote, <a class="el" href="structsock__ip__aux__tx__t.html">sock_ip_aux_tx_t</a> *aux)</td></tr>
-<tr class="memdesc:gaaf777c4afca9984f71a25c57aeaf49bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a message over IPv4/IPv6 to remote end point.  <br /></td></tr>
-<tr class="separator:gaaf777c4afca9984f71a25c57aeaf49bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga66054a9b18473f819d098e7896adda57" id="r_ga66054a9b18473f819d098e7896adda57"><td class="memItemLeft" align="right" valign="top">static ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga66054a9b18473f819d098e7896adda57">sock_ip_send</a> (<a class="el" href="group__net__sock__async.html#ga439f68352d1339555536747a64b5232e">sock_ip_t</a> *sock, const void *data, size_t len, uint8_t proto, const <a class="el" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> *remote)</td></tr>
-<tr class="memdesc:ga66054a9b18473f819d098e7896adda57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a message over IPv4/IPv6 to remote end point.  <br /></td></tr>
-<tr class="separator:ga66054a9b18473f819d098e7896adda57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Sock submodule for raw IPv4/IPv6 </p>
 <h2><a class="anchor" id="autotoc_md2082"></a>
@@ -399,6 +341,61 @@ A Simple IPv6 Client</h3>
 <div class="line">    <a class="code hl_define" href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a>(<span class="stringliteral">&quot;\&quot;\n&quot;</span>);</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>Finally, we wait a second before sending out the next "Hello!" with <code>xtimer_sleep(1)</code>. </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ip_8h.html">ip.h</a></td></tr>
+<tr class="memdesc:ip_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw IPv4/IPv6 sock definitions. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsock__ip__aux__rx__t.html">sock_ip_aux_rx_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Auxiliary data provided when receiving using an IP sock object.  <a href="structsock__ip__aux__rx__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsock__ip__aux__tx__t.html">sock_ip_aux_tx_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Auxiliary data provided when sending using an IP sock object.  <a href="structsock__ip__aux__tx__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga439f68352d1339555536747a64b5232e" id="r_ga439f68352d1339555536747a64b5232e"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structsock__ip.html">sock_ip</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga439f68352d1339555536747a64b5232e">sock_ip_t</a></td></tr>
+<tr class="memdesc:ga439f68352d1339555536747a64b5232e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type for a raw IPv4/IPv6 sock object.  <br /></td></tr>
+<tr class="separator:ga439f68352d1339555536747a64b5232e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga0b416e35dd100962d88bdd675e7f6b18" id="r_ga0b416e35dd100962d88bdd675e7f6b18"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0b416e35dd100962d88bdd675e7f6b18">sock_ip_create</a> (<a class="el" href="group__net__sock__async.html#ga439f68352d1339555536747a64b5232e">sock_ip_t</a> *sock, const <a class="el" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> *local, const <a class="el" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> *remote, uint8_t proto, uint16_t flags)</td></tr>
+<tr class="memdesc:ga0b416e35dd100962d88bdd675e7f6b18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new raw IPv4/IPv6 sock object.  <br /></td></tr>
+<tr class="separator:ga0b416e35dd100962d88bdd675e7f6b18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga59aea36d7e415e533686e37bf69d3ec4" id="r_ga59aea36d7e415e533686e37bf69d3ec4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga59aea36d7e415e533686e37bf69d3ec4">sock_ip_close</a> (<a class="el" href="group__net__sock__async.html#ga439f68352d1339555536747a64b5232e">sock_ip_t</a> *sock)</td></tr>
+<tr class="memdesc:ga59aea36d7e415e533686e37bf69d3ec4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes a raw IPv4/IPv6 sock object.  <br /></td></tr>
+<tr class="separator:ga59aea36d7e415e533686e37bf69d3ec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae01afa2e9d65199732f37d0ea927b581" id="r_gae01afa2e9d65199732f37d0ea927b581"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae01afa2e9d65199732f37d0ea927b581">sock_ip_get_local</a> (<a class="el" href="group__net__sock__async.html#ga439f68352d1339555536747a64b5232e">sock_ip_t</a> *sock, <a class="el" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> *ep)</td></tr>
+<tr class="memdesc:gae01afa2e9d65199732f37d0ea927b581"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the local end point of a raw IPv4/IPv6 sock object.  <br /></td></tr>
+<tr class="separator:gae01afa2e9d65199732f37d0ea927b581"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga51463dba508be8f9a114486a75f9fdbe" id="r_ga51463dba508be8f9a114486a75f9fdbe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga51463dba508be8f9a114486a75f9fdbe">sock_ip_get_remote</a> (<a class="el" href="group__net__sock__async.html#ga439f68352d1339555536747a64b5232e">sock_ip_t</a> *sock, <a class="el" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> *ep)</td></tr>
+<tr class="memdesc:ga51463dba508be8f9a114486a75f9fdbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the remote end point of a raw IPv4/IPv6 sock object.  <br /></td></tr>
+<tr class="separator:ga51463dba508be8f9a114486a75f9fdbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa9ec389133f8c39fd4132724306089df" id="r_gaa9ec389133f8c39fd4132724306089df"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa9ec389133f8c39fd4132724306089df">sock_ip_recv_aux</a> (<a class="el" href="group__net__sock__async.html#ga439f68352d1339555536747a64b5232e">sock_ip_t</a> *sock, void *data, size_t max_len, uint32_t timeout, <a class="el" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> *remote, <a class="el" href="structsock__ip__aux__rx__t.html">sock_ip_aux_rx_t</a> *aux)</td></tr>
+<tr class="memdesc:gaa9ec389133f8c39fd4132724306089df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a message over IPv4/IPv6 from remote end point.  <br /></td></tr>
+<tr class="separator:gaa9ec389133f8c39fd4132724306089df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafad2a57b4ee2bb5604e2d788f5e116ba" id="r_gafad2a57b4ee2bb5604e2d788f5e116ba"><td class="memItemLeft" align="right" valign="top">static ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafad2a57b4ee2bb5604e2d788f5e116ba">sock_ip_recv</a> (<a class="el" href="group__net__sock__async.html#ga439f68352d1339555536747a64b5232e">sock_ip_t</a> *sock, void *data, size_t max_len, uint32_t timeout, <a class="el" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> *remote)</td></tr>
+<tr class="memdesc:gafad2a57b4ee2bb5604e2d788f5e116ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a message over IPv4/IPv6 from remote end point.  <br /></td></tr>
+<tr class="separator:gafad2a57b4ee2bb5604e2d788f5e116ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1a678826f520f62c94ff8f4492e4847b" id="r_ga1a678826f520f62c94ff8f4492e4847b"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1a678826f520f62c94ff8f4492e4847b">sock_ip_recv_buf_aux</a> (<a class="el" href="group__net__sock__async.html#ga439f68352d1339555536747a64b5232e">sock_ip_t</a> *sock, void **data, void **buf_ctx, uint32_t timeout, <a class="el" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> *remote, <a class="el" href="structsock__ip__aux__rx__t.html">sock_ip_aux_rx_t</a> *aux)</td></tr>
+<tr class="memdesc:ga1a678826f520f62c94ff8f4492e4847b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides stack-internal buffer space containing an IPv4/IPv6 message from remote end point.  <br /></td></tr>
+<tr class="separator:ga1a678826f520f62c94ff8f4492e4847b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa3ccb9ce7d1ac34118227549531a6ce7" id="r_gaa3ccb9ce7d1ac34118227549531a6ce7"><td class="memItemLeft" align="right" valign="top">static ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa3ccb9ce7d1ac34118227549531a6ce7">sock_ip_recv_buf</a> (<a class="el" href="group__net__sock__async.html#ga439f68352d1339555536747a64b5232e">sock_ip_t</a> *sock, void **data, void **buf_ctx, uint32_t timeout, <a class="el" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> *remote)</td></tr>
+<tr class="memdesc:gaa3ccb9ce7d1ac34118227549531a6ce7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides stack-internal buffer space containing an IPv4/IPv6 message from remote end point.  <br /></td></tr>
+<tr class="separator:gaa3ccb9ce7d1ac34118227549531a6ce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaf777c4afca9984f71a25c57aeaf49bf" id="r_gaaf777c4afca9984f71a25c57aeaf49bf"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaaf777c4afca9984f71a25c57aeaf49bf">sock_ip_send_aux</a> (<a class="el" href="group__net__sock__async.html#ga439f68352d1339555536747a64b5232e">sock_ip_t</a> *sock, const void *data, size_t len, uint8_t proto, const <a class="el" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> *remote, <a class="el" href="structsock__ip__aux__tx__t.html">sock_ip_aux_tx_t</a> *aux)</td></tr>
+<tr class="memdesc:gaaf777c4afca9984f71a25c57aeaf49bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a message over IPv4/IPv6 to remote end point.  <br /></td></tr>
+<tr class="separator:gaaf777c4afca9984f71a25c57aeaf49bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga66054a9b18473f819d098e7896adda57" id="r_ga66054a9b18473f819d098e7896adda57"><td class="memItemLeft" align="right" valign="top">static ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga66054a9b18473f819d098e7896adda57">sock_ip_send</a> (<a class="el" href="group__net__sock__async.html#ga439f68352d1339555536747a64b5232e">sock_ip_t</a> *sock, const void *data, size_t len, uint8_t proto, const <a class="el" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> *remote)</td></tr>
+<tr class="memdesc:ga66054a9b18473f819d098e7896adda57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a message over IPv4/IPv6 to remote end point.  <br /></td></tr>
+<tr class="separator:ga66054a9b18473f819d098e7896adda57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ga439f68352d1339555536747a64b5232e" name="ga439f68352d1339555536747a64b5232e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga439f68352d1339555536747a64b5232e">&#9670;&#160;</a></span>sock_ip_t</h2>
@@ -1021,7 +1018,7 @@ A Simple IPv6 Client</h3>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

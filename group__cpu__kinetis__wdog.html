@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -150,7 +147,14 @@ $(function(){initNavTree('group__cpu__kinetis__wdog.html',''); initResizable(tru
 
 <p>Driver for Freescale WDOG device.  
 <a href="#details">More...</a></p>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Driver for Freescale WDOG device. </p>
+<p>There are different implementations of the Watchdog devices. Currently, it is only possible to turn the Watchdog off. It supports two types: an advanced Watchdog, mostly found on Kinetis MCUs with Cortex-M4 inside and a simpler COP Watchdog.</p>
+<h3><a class="anchor" id="autotoc_md68"></a>
+WDOG Configuration Example (for periph_conf.h)</h3>
+<p>The driver attempts to determine the type of the WDOG. Also you can force the use of advanced WDOG: </p><pre class="fragment">#define KINETIS_WDOG_ADVANCED    1
+</pre><p>Or the use of COP WDOG: </p><pre class="fragment">#define KINETIS_WDOG_ADVANCED    0
+</pre> <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wdog_8h.html">wdog.h</a></td></tr>
@@ -164,21 +168,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>wdog_disable</b> (voi
 <tr class="memdesc:ga0b1954623f258c06db648d57b4871392"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable hardware watchdog. <br /></td></tr>
 <tr class="separator:ga0b1954623f258c06db648d57b4871392"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Driver for Freescale WDOG device. </p>
-<p>There are different implementations of the Watchdog devices. Currently, it is only possible to turn the Watchdog off. It supports two types: an advanced Watchdog, mostly found on Kinetis MCUs with Cortex-M4 inside and a simpler COP Watchdog.</p>
-<h3><a class="anchor" id="autotoc_md68"></a>
-WDOG Configuration Example (for periph_conf.h)</h3>
-<p>The driver attempts to determine the type of the WDOG. Also you can force the use of advanced WDOG: </p><pre class="fragment">#define KINETIS_WDOG_ADVANCED    1
-</pre><p>Or the use of COP WDOG: </p><pre class="fragment">#define KINETIS_WDOG_ADVANCED    0
-</pre> </div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

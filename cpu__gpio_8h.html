@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,12 @@ $(function(){initNavTree('cpu__gpio_8h.html',''); initResizable(true); });
 
 <p>GPIO CPU definitions for the STM32 family.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>GPIO CPU definitions for the STM32 family. </p>
+<dl class="section author"><dt>Author</dt><dd>Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
+<dd>
+Vincent Dupont <a href="#" onclick="location.href='mai'+'lto:'+'vin'+'ce'+'nt@'+'ot'+'ake'+'ys'+'.co'+'m'; return false;">vince<span class="obfuscator">.nosp@m.</span>nt@o<span class="obfuscator">.nosp@m.</span>takey<span class="obfuscator">.nosp@m.</span>s.co<span class="obfuscator">.nosp@m.</span>m</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;cpu.h&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for cpu_gpio.h:</div>
@@ -210,12 +212,7 @@ $(function(){initNavTree('cpu__gpio_8h.html',''); initResizable(true); });
 <tr class="memdesc:a5cc817fd48cd5f0cddc7bf907a9a30cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure the given pin to be used as ADC input.  <br /></td></tr>
 <tr class="separator:a5cc817fd48cd5f0cddc7bf907a9a30cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>GPIO CPU definitions for the STM32 family. </p>
-<dl class="section author"><dt>Author</dt><dd>Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
-<dd>
-Vincent Dupont <a href="#" onclick="location.href='mai'+'lto:'+'vin'+'ce'+'nt@'+'ot'+'ake'+'ys'+'.co'+'m'; return false;">vince<span class="obfuscator">.nosp@m.</span>nt@o<span class="obfuscator">.nosp@m.</span>takey<span class="obfuscator">.nosp@m.</span>s.co<span class="obfuscator">.nosp@m.</span>m</a> </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a463aa09de2c1d0bb231575c21eaff2c9" name="a463aa09de2c1d0bb231575c21eaff2c9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a463aa09de2c1d0bb231575c21eaff2c9">&#9670;&#160;</a></span>GPIO_MODE</h2>
 
@@ -392,7 +389,7 @@ Vincent Dupont <a href="#" onclick="location.href='mai'+'lto:'+'vin'+'ce'+'nt@'+
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_c433b04169c945a1c7f0848f853d4379.html">cpu</a></li><li class="navelem"><a class="el" href="dir_8fb93018175f1eef8ccffa491ecd65e5.html">stm32</a></li><li class="navelem"><a class="el" href="dir_2c7c57a0102e8392aaea30c0e4d338a5.html">include</a></li><li class="navelem"><a class="el" href="dir_2467268495d90d0a752e11c9806aa072.html">periph</a></li><li class="navelem"><a class="el" href="cpu__gpio_8h.html">cpu_gpio.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

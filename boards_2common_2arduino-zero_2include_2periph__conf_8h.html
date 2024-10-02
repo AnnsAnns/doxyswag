@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,16 @@ $(function(){initNavTree('boards_2common_2arduino-zero_2include_2periph__conf_8h
 
 <p>Configuration of CPU peripherals for Arduino Zero board and clones.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Configuration of CPU peripherals for Arduino Zero board and clones. </p>
+<dl class="section author"><dt>Author</dt><dd>Thomas Eichinger <a href="#" onclick="location.href='mai'+'lto:'+'tho'+'ma'+'s.e'+'ic'+'hin'+'ge'+'r@f'+'u-'+'ber'+'li'+'n.d'+'e'; return false;">thoma<span class="obfuscator">.nosp@m.</span>s.ei<span class="obfuscator">.nosp@m.</span>ching<span class="obfuscator">.nosp@m.</span>er@f<span class="obfuscator">.nosp@m.</span>u-ber<span class="obfuscator">.nosp@m.</span>lin.<span class="obfuscator">.nosp@m.</span>de</a> </dd>
+<dd>
+Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
+<dd>
+Peter Kietzmann <a href="#" onclick="location.href='mai'+'lto:'+'pet'+'er'+'.ki'+'et'+'zma'+'nn'+'@ha'+'w-'+'ham'+'bu'+'rg.'+'de'; return false;">peter<span class="obfuscator">.nosp@m.</span>.kie<span class="obfuscator">.nosp@m.</span>tzman<span class="obfuscator">.nosp@m.</span>n@ha<span class="obfuscator">.nosp@m.</span>w-ham<span class="obfuscator">.nosp@m.</span>burg<span class="obfuscator">.nosp@m.</span>.de</a> </dd>
+<dd>
+Alexandre Abadie <a href="#" onclick="location.href='mai'+'lto:'+'ale'+'xa'+'ndr'+'e.'+'aba'+'di'+'e@i'+'nr'+'ia.'+'fr'; return false;">alexa<span class="obfuscator">.nosp@m.</span>ndre<span class="obfuscator">.nosp@m.</span>.abad<span class="obfuscator">.nosp@m.</span>ie@i<span class="obfuscator">.nosp@m.</span>nria.<span class="obfuscator">.nosp@m.</span>fr</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;cpu.h&quot;</code><br />
 <code>#include &quot;periph_cpu.h&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -262,16 +268,7 @@ $(function(){initNavTree('boards_2common_2arduino-zero_2include_2periph__conf_8h
 <tr class="memitem:a57b47076d6e87497ff2901208cb484dc" id="r_a57b47076d6e87497ff2901208cb484dc"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structsam0__common__usb__config__t.html">sam0_common_usb_config_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57b47076d6e87497ff2901208cb484dc">sam_usbdev_config</a> []</td></tr>
 <tr class="separator:a57b47076d6e87497ff2901208cb484dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Configuration of CPU peripherals for Arduino Zero board and clones. </p>
-<dl class="section author"><dt>Author</dt><dd>Thomas Eichinger <a href="#" onclick="location.href='mai'+'lto:'+'tho'+'ma'+'s.e'+'ic'+'hin'+'ge'+'r@f'+'u-'+'ber'+'li'+'n.d'+'e'; return false;">thoma<span class="obfuscator">.nosp@m.</span>s.ei<span class="obfuscator">.nosp@m.</span>ching<span class="obfuscator">.nosp@m.</span>er@f<span class="obfuscator">.nosp@m.</span>u-ber<span class="obfuscator">.nosp@m.</span>lin.<span class="obfuscator">.nosp@m.</span>de</a> </dd>
-<dd>
-Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
-<dd>
-Peter Kietzmann <a href="#" onclick="location.href='mai'+'lto:'+'pet'+'er'+'.ki'+'et'+'zma'+'nn'+'@ha'+'w-'+'ham'+'bu'+'rg.'+'de'; return false;">peter<span class="obfuscator">.nosp@m.</span>.kie<span class="obfuscator">.nosp@m.</span>tzman<span class="obfuscator">.nosp@m.</span>n@ha<span class="obfuscator">.nosp@m.</span>w-ham<span class="obfuscator">.nosp@m.</span>burg<span class="obfuscator">.nosp@m.</span>.de</a> </dd>
-<dd>
-Alexandre Abadie <a href="#" onclick="location.href='mai'+'lto:'+'ale'+'xa'+'ndr'+'e.'+'aba'+'di'+'e@i'+'nr'+'ia.'+'fr'; return false;">alexa<span class="obfuscator">.nosp@m.</span>ndre<span class="obfuscator">.nosp@m.</span>.abad<span class="obfuscator">.nosp@m.</span>ie@i<span class="obfuscator">.nosp@m.</span>nria.<span class="obfuscator">.nosp@m.</span>fr</a> </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a8dc6f59497ff407016c464fb10f9ece8" name="a8dc6f59497ff407016c464fb10f9ece8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8dc6f59497ff407016c464fb10f9ece8">&#9670;&#160;</a></span>CLOCK_USE_PLL</h2>
 
@@ -470,12 +467,26 @@ Alexandre Abadie <a href="#" onclick="location.href='mai'+'lto:'+'ale'+'xa'+'ndr
 <div class="line">        .miso_pad = <a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#a5f3aefc5ac5917dd4a5c71ca3b624b29a92f167e36771c98d038232388b7e850c">SPI_PAD_MISO_0</a>,</div>
 <div class="line">        .mosi_pad = <a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#aecd093a68bc8af5fd8df392bc9e7d598a3dfa7950c9a6cb45530c07ae67f13581">SPI_PAD_MOSI_2_SCK_3</a>,</div>
 <div class="line">        .gclk_src = <a class="code hl_define" href="samd5x_2include_2periph__cpu_8h.html#a086ca6a9c92fc2673def07c2cb6b65c7">SAM0_GCLK_MAIN</a>,</div>
+<div class="line">    },</div>
+<div class="line">    {</div>
+<div class="line">        .dev      = &amp;SERCOM1-&gt;SPI,</div>
+<div class="line">        .miso_pin = <a class="code hl_define" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 19),</div>
+<div class="line">        .mosi_pin = <a class="code hl_define" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 16),</div>
+<div class="line">        .clk_pin  = <a class="code hl_define" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 17),</div>
+<div class="line">        .miso_mux = <a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#ac86e130e5617ffe35f2aa1169d8a67c0a735b6a3c0b2afe9159f89367eeee53d9">GPIO_MUX_C</a>,</div>
+<div class="line">        .mosi_mux = <a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#ac86e130e5617ffe35f2aa1169d8a67c0a735b6a3c0b2afe9159f89367eeee53d9">GPIO_MUX_C</a>,</div>
+<div class="line">        .clk_mux  = <a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#ac86e130e5617ffe35f2aa1169d8a67c0a735b6a3c0b2afe9159f89367eeee53d9">GPIO_MUX_C</a>,</div>
+<div class="line">        .miso_pad = <a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#a5f3aefc5ac5917dd4a5c71ca3b624b29abbe88f9c5efc963d0cf52674f3d370d9">SPI_PAD_MISO_3</a>,</div>
+<div class="line">        .mosi_pad = <a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#aecd093a68bc8af5fd8df392bc9e7d598afb7a1f7d65f561a12e60be5a27b3a395">SPI_PAD_MOSI_0_SCK_1</a>,</div>
+<div class="line">        .gclk_src = <a class="code hl_define" href="samd5x_2include_2periph__cpu_8h.html#a086ca6a9c92fc2673def07c2cb6b65c7">SAM0_GCLK_MAIN</a>,</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="ttc" id="asam0__common_2include_2periph__cpu__common_8h_html_a10e74d65d7876276a8f6061c71dcf469a8b7dd81ba2f0d15957795457d92ce139"><div class="ttname"><a href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469a8b7dd81ba2f0d15957795457d92ce139">PB</a></div><div class="ttdeci">@ PB</div><div class="ttdoc">port B</div><div class="ttdef"><b>Definition</b> periph_cpu_common.h:100</div></div>
 <div class="ttc" id="asam0__common_2include_2periph__cpu__common_8h_html_a5f3aefc5ac5917dd4a5c71ca3b624b29a92f167e36771c98d038232388b7e850c"><div class="ttname"><a href="sam0__common_2include_2periph__cpu__common_8h.html#a5f3aefc5ac5917dd4a5c71ca3b624b29a92f167e36771c98d038232388b7e850c">SPI_PAD_MISO_0</a></div><div class="ttdeci">@ SPI_PAD_MISO_0</div><div class="ttdoc">use pad 0 for MISO line</div><div class="ttdef"><b>Definition</b> periph_cpu_common.h:440</div></div>
+<div class="ttc" id="asam0__common_2include_2periph__cpu__common_8h_html_a5f3aefc5ac5917dd4a5c71ca3b624b29abbe88f9c5efc963d0cf52674f3d370d9"><div class="ttname"><a href="sam0__common_2include_2periph__cpu__common_8h.html#a5f3aefc5ac5917dd4a5c71ca3b624b29abbe88f9c5efc963d0cf52674f3d370d9">SPI_PAD_MISO_3</a></div><div class="ttdeci">@ SPI_PAD_MISO_3</div><div class="ttdoc">use pad 3 for MISO line</div><div class="ttdef"><b>Definition</b> periph_cpu_common.h:443</div></div>
 <div class="ttc" id="asam0__common_2include_2periph__cpu__common_8h_html_ac86e130e5617ffe35f2aa1169d8a67c0a58aca89cf09aaa1d2026ab1f32b05236"><div class="ttname"><a href="sam0__common_2include_2periph__cpu__common_8h.html#ac86e130e5617ffe35f2aa1169d8a67c0a58aca89cf09aaa1d2026ab1f32b05236">GPIO_MUX_D</a></div><div class="ttdeci">@ GPIO_MUX_D</div><div class="ttdoc">select peripheral function D</div><div class="ttdef"><b>Definition</b> periph_cpu_common.h:247</div></div>
 <div class="ttc" id="asam0__common_2include_2periph__cpu__common_8h_html_aecd093a68bc8af5fd8df392bc9e7d598a3dfa7950c9a6cb45530c07ae67f13581"><div class="ttname"><a href="sam0__common_2include_2periph__cpu__common_8h.html#aecd093a68bc8af5fd8df392bc9e7d598a3dfa7950c9a6cb45530c07ae67f13581">SPI_PAD_MOSI_2_SCK_3</a></div><div class="ttdeci">@ SPI_PAD_MOSI_2_SCK_3</div><div class="ttdoc">use pad 2 for MOSI, pad 3 for SCK</div><div class="ttdef"><b>Definition</b> periph_cpu_common.h:451</div></div>
+<div class="ttc" id="asam0__common_2include_2periph__cpu__common_8h_html_aecd093a68bc8af5fd8df392bc9e7d598afb7a1f7d65f561a12e60be5a27b3a395"><div class="ttname"><a href="sam0__common_2include_2periph__cpu__common_8h.html#aecd093a68bc8af5fd8df392bc9e7d598afb7a1f7d65f561a12e60be5a27b3a395">SPI_PAD_MOSI_0_SCK_1</a></div><div class="ttdeci">@ SPI_PAD_MOSI_0_SCK_1</div><div class="ttdoc">use pad 0 for MOSI, pad 1 for SCK</div><div class="ttdef"><b>Definition</b> periph_cpu_common.h:450</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -590,7 +601,7 @@ Alexandre Abadie <a href="#" onclick="location.href='mai'+'lto:'+'ale'+'xa'+'ndr
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6c8313236d9db5b969ca7d150fe527de.html">boards</a></li><li class="navelem"><a class="el" href="dir_c95ba9ba7fbc2fbce23d1bdfa8cd1c6b.html">common</a></li><li class="navelem"><a class="el" href="dir_d1351a4467b1ff9d9c8f0a8f94a789f9.html">arduino-zero</a></li><li class="navelem"><a class="el" href="dir_5d8ddf4d21875fcbb61260c51aecddb9.html">include</a></li><li class="navelem"><a class="el" href="boards_2common_2arduino-zero_2include_2periph__conf_8h.html">periph_conf.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

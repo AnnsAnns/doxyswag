@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -146,12 +143,35 @@ $(function(){initNavTree('group__net__gnrc__lwmac.html',''); initResizable(true)
 <a href="#files">Files</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">LWMAC<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a></div></div></div>
+  <div class="headertitle"><div class="title">LWMAC<div class="ingroups"><a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>A Lightweight duty-cycling 802.15.4 MAC protocol  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>A Lightweight duty-cycling 802.15.4 MAC protocol </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000022">Deprecated</a></b></dt><dd>This module is deprecated and will be removed after the 2024.10 release. As an alternative MAC layer for IEEE 802.15.4, you can use <a class="el" href="group__pkg__opendsme.html">openDSME - IEEE 802.15.4 DSME</a>.</dd></dl>
+<h2><a class="anchor" id="autotoc_md2026"></a>
+LWMAC implementation</h2>
+<h2><a class="anchor" id="autotoc_md2027"></a>
+Radio duty cycling</h2>
+<p>LWMAC adopts the radio duty-cycle scheme to conserve power. Namely, in each cycle period (MAC superframe), a node device wakes up for a short period of time (called listen period or wake-up period) for receiving possible incoming packets from other devices. Outside the listen period, the node device turns off its radio to conserve power.</p>
+<h2><a class="anchor" id="autotoc_md2028"></a>
+Phase-lock scheme</h2>
+<p>LWMAC adopts the phase-lock scheme to further reduce power consumption. Each node device in LWMAC will try to record/track its Tx-neighbor's wake-up phase. This is called phase-lock. After phase-locking, the sender node will (likely) spend less preamble packets (also called WR packet, i.e., wake-up-request, in LWMAC) for initiating a hand-shaking procedure for transmitting a data packet, compared to the first time it talks to the receiver.</p>
+<h2><a class="anchor" id="autotoc_md2029"></a>
+Burst transmission</h2>
+<p>LWMAC adopts pending-bit technique to enhance its throughput. Namely, in case of having multi packets for the receiver, a sender uses the pending-bit flag embedded in the MAC header to instruct this situation, and the buffered packets will be transmitted in a continuous sequence, back to back, to the receiver in one shot.</p>
+<h2><a class="anchor" id="autotoc_md2030"></a>
+Auto wake-up extension</h2>
+<p>LWMAC adopts auto wake-up extension scheme based on timeout (like T-MAC). In short, when a packet is successfully received at the receiver side, the receiver will reset the wake-up timeout to extend its wake-up period for receiving more potential incoming packets. This is to be compatible with the pending-bit technique to allow the receiver to absorb more packets when needed, thus boosts the throughput.</p>
+<h2><a class="anchor" id="autotoc_md2031"></a>
+Simple retransmission scheme</h2>
+<p>LWMAC adopts a simple retransmission scheme to enhance link reliability. The data packet will only be dropped in case the retransmission counter gets larger than <a class="el" href="group__net__gnrc__lwmac__conf.html#gaab0dec523ac0ad4b48d8e117eb283126">CONFIG_GNRC_LWMAC_MAX_DATA_TX_RETRIES</a>.</p>
+<h2><a class="anchor" id="autotoc_md2032"></a>
+Automatic phase backoff scheme</h2>
+<p>LWMAC adopts an automatic phase backoff scheme to reduce WR (preamble) collision probability. In multi-hop scenarios, let's say, nodes A &lt;&mdash;B &lt;-&mdash;C (which is common in multi-hop data collection networks), in which B has packets for A, and C has packets for B. In case A and B's wake-up phases are too close (overlapping). Then, especially in high traffic conditions, B and C may initiate transmissions at the same time (B sends to A, and C sends to B), a link of either will be definitely interfered, leading to collisions and link throughput reduction. To this end, by using the automatic phase backoff scheme, if a sender finds its receiver's phase is too close to its own phase, it will run a backoff scheme to randomly reselect a new wake-up phase for itself. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -195,29 +215,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga0649ee050832c15abf6602689c826640"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an IEEE 802.15.4 LWMAC network interface.  <br /></td></tr>
 <tr class="separator:ga0649ee050832c15abf6602689c826640"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>A Lightweight duty-cycling 802.15.4 MAC protocol </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000022">Deprecated</a></b></dt><dd>This module is deprecated and will be removed after the 2024.10 release. As an alternative MAC layer for IEEE 802.15.4, you can use <a class="el" href="group__pkg__opendsme.html">openDSME - IEEE 802.15.4 DSME</a>.</dd></dl>
-<h2><a class="anchor" id="autotoc_md2026"></a>
-LWMAC implementation</h2>
-<h2><a class="anchor" id="autotoc_md2027"></a>
-Radio duty cycling</h2>
-<p>LWMAC adopts the radio duty-cycle scheme to conserve power. Namely, in each cycle period (MAC superframe), a node device wakes up for a short period of time (called listen period or wake-up period) for receiving possible incoming packets from other devices. Outside the listen period, the node device turns off its radio to conserve power.</p>
-<h2><a class="anchor" id="autotoc_md2028"></a>
-Phase-lock scheme</h2>
-<p>LWMAC adopts the phase-lock scheme to further reduce power consumption. Each node device in LWMAC will try to record/track its Tx-neighbor's wake-up phase. This is called phase-lock. After phase-locking, the sender node will (likely) spend less preamble packets (also called WR packet, i.e., wake-up-request, in LWMAC) for initiating a hand-shaking procedure for transmitting a data packet, compared to the first time it talks to the receiver.</p>
-<h2><a class="anchor" id="autotoc_md2029"></a>
-Burst transmission</h2>
-<p>LWMAC adopts pending-bit technique to enhance its throughput. Namely, in case of having multi packets for the receiver, a sender uses the pending-bit flag embedded in the MAC header to instruct this situation, and the buffered packets will be transmitted in a continuous sequence, back to back, to the receiver in one shot.</p>
-<h2><a class="anchor" id="autotoc_md2030"></a>
-Auto wake-up extension</h2>
-<p>LWMAC adopts auto wake-up extension scheme based on timeout (like T-MAC). In short, when a packet is successfully received at the receiver side, the receiver will reset the wake-up timeout to extend its wake-up period for receiving more potential incoming packets. This is to be compatible with the pending-bit technique to allow the receiver to absorb more packets when needed, thus boosts the throughput.</p>
-<h2><a class="anchor" id="autotoc_md2031"></a>
-Simple retransmission scheme</h2>
-<p>LWMAC adopts a simple retransmission scheme to enhance link reliability. The data packet will only be dropped in case the retransmission counter gets larger than <a class="el" href="group__net__gnrc__lwmac__conf.html#gaab0dec523ac0ad4b48d8e117eb283126">CONFIG_GNRC_LWMAC_MAX_DATA_TX_RETRIES</a>.</p>
-<h2><a class="anchor" id="autotoc_md2032"></a>
-Automatic phase backoff scheme</h2>
-<p>LWMAC adopts an automatic phase backoff scheme to reduce WR (preamble) collision probability. In multi-hop scenarios, let's say, nodes A &lt;&mdash;B &lt;-&mdash;C (which is common in multi-hop data collection networks), in which B has packets for A, and C has packets for B. In case A and B's wake-up phases are too close (overlapping). Then, especially in high traffic conditions, B and C may initiate transmissions at the same time (B sends to A, and C sends to B), a link of either will be definitely interfered, leading to collisions and link throughput reduction. To this end, by using the automatic phase backoff scheme, if a sender finds its receiver's phase is too close to its own phase, it will run a backoff scheme to randomly reselect a new wake-up phase for itself. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga55299407e69c99e80ed955717c3b6cd6" name="ga55299407e69c99e80ed955717c3b6cd6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga55299407e69c99e80ed955717c3b6cd6">&#9670;&#160;</a></span>CONFIG_GNRC_LWMAC_RADIO_REINIT_THRESHOLD</h2>
@@ -302,7 +299,7 @@ negative number on error </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

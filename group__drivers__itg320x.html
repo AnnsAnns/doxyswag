@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -154,6 +151,16 @@ $(function(){initNavTree('group__drivers__itg320x.html',''); initResizable(true)
 
 <p>Device driver for InvenSense ITG320X 3-axis gyroscope  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Device driver for InvenSense ITG320X 3-axis gyroscope </p>
+<p>The driver can be used with InvenSense ITG3200, ITG3205, and MPU3050. The latter one can be used only with reduced feature set.</p>
+<p>The driver implements polling mode as well as interrupt mode. Thus, the application may use two different approaches to retrieve new data, either</p>
+<ul>
+<li>periodically fetching the data at a rate lower than the sensor's output data rate (ODR), or</li>
+<li>fetching the data when the data-ready interrupt is triggered.</li>
+</ul>
+<p>To use the latter approach, module <code>itg320x_int</code> has to be enabled and the GPIO to which the sensor's <b>INT</b> output pin is connected has to be configured.</p>
+<p>This driver provides <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> capabilities. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -281,16 +288,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga22d3230ca379d48459cf50bd3a380e7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">AD0 pin high. <br /></td></tr>
 <tr class="separator:ga22d3230ca379d48459cf50bd3a380e7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Device driver for InvenSense ITG320X 3-axis gyroscope </p>
-<p>The driver can be used with InvenSense ITG3200, ITG3205, and MPU3050. The latter one can be used only with reduced feature set.</p>
-<p>The driver implements polling mode as well as interrupt mode. Thus, the application may use two different approaches to retrieve new data, either</p>
-<ul>
-<li>periodically fetching the data at a rate lower than the sensor's output data rate (ODR), or</li>
-<li>fetching the data when the data-ready interrupt is triggered.</li>
-</ul>
-<p>To use the latter approach, module <code>itg320x_int</code> has to be enabled and the GPIO to which the sensor's <b>INT</b> output pin is connected has to be configured.</p>
-<p>This driver provides <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> capabilities. </p>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ga61f7479fbc78071d75b09877ca54d548" name="ga61f7479fbc78071d75b09877ca54d548"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga61f7479fbc78071d75b09877ca54d548">&#9670;&#160;</a></span>itg320x_drdy_int_cb_t</h2>
@@ -743,7 +740,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

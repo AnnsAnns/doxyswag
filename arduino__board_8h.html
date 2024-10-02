@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,14 @@ $(function(){initNavTree('arduino__board_8h.html',''); initResizable(true); });
 
 <p>Configuration of the Arduino API for Arduino Atmega boards.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="arduino__board__analog_8h.html">arduino_board_analog.h</a>&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Configuration of the Arduino API for Arduino Atmega boards. </p>
+<dl class="section author"><dt>Author</dt><dd>Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
+<dd>
+Laurent Navet <a href="#" onclick="location.href='mai'+'lto:'+'lau'+'re'+'nt.'+'na'+'vet'+'@g'+'mai'+'l.'+'com'; return false;">laure<span class="obfuscator">.nosp@m.</span>nt.n<span class="obfuscator">.nosp@m.</span>avet@<span class="obfuscator">.nosp@m.</span>gmai<span class="obfuscator">.nosp@m.</span>l.com</a> </dd>
+<dd>
+Thomas Perrot <a href="#" onclick="location.href='mai'+'lto:'+'tho'+'ma'+'s.p'+'er'+'rot'+'@t'+'upi'+'.f'+'r'; return false;">thoma<span class="obfuscator">.nosp@m.</span>s.pe<span class="obfuscator">.nosp@m.</span>rrot@<span class="obfuscator">.nosp@m.</span>tupi<span class="obfuscator">.nosp@m.</span>.fr</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;<a class="el" href="arduino__board__analog_8h.html">arduino_board_analog.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="arduino__board__pins_8h.html">arduino_board_pins.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="arduino__board__pwm_8h.html">arduino_board_pwm.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -169,14 +173,7 @@ $(function(){initNavTree('arduino__board_8h.html',''); initResizable(true); });
 <tr class="memdesc:a43bafb28b29491ec7f871319b5a3b2f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">F_CPU defines the CPU frequency in Hz.  <br /></td></tr>
 <tr class="separator:a43bafb28b29491ec7f871319b5a3b2f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Configuration of the Arduino API for Arduino Atmega boards. </p>
-<dl class="section author"><dt>Author</dt><dd>Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
-<dd>
-Laurent Navet <a href="#" onclick="location.href='mai'+'lto:'+'lau'+'re'+'nt.'+'na'+'vet'+'@g'+'mai'+'l.'+'com'; return false;">laure<span class="obfuscator">.nosp@m.</span>nt.n<span class="obfuscator">.nosp@m.</span>avet@<span class="obfuscator">.nosp@m.</span>gmai<span class="obfuscator">.nosp@m.</span>l.com</a> </dd>
-<dd>
-Thomas Perrot <a href="#" onclick="location.href='mai'+'lto:'+'tho'+'ma'+'s.p'+'er'+'rot'+'@t'+'upi'+'.f'+'r'; return false;">thoma<span class="obfuscator">.nosp@m.</span>s.pe<span class="obfuscator">.nosp@m.</span>rrot@<span class="obfuscator">.nosp@m.</span>tupi<span class="obfuscator">.nosp@m.</span>.fr</a> </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a43bafb28b29491ec7f871319b5a3b2f8" name="a43bafb28b29491ec7f871319b5a3b2f8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a43bafb28b29491ec7f871319b5a3b2f8">&#9670;&#160;</a></span>F_CPU</h2>
 
@@ -204,7 +201,7 @@ Thomas Perrot <a href="#" onclick="location.href='mai'+'lto:'+'tho'+'ma'+'s.p'+'
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a408b6d3a4a484720bc3ecfeac8947e3.html">sys</a></li><li class="navelem"><a class="el" href="dir_6df8ab48d4cbe531a89d483b6187ccb7.html">arduino</a></li><li class="navelem"><a class="el" href="dir_823c4d59a998c1b3b84a939ae5395edd.html">include</a></li><li class="navelem"><a class="el" href="arduino__board_8h.html">arduino_board.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

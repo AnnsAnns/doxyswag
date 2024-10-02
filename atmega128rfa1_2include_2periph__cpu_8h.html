@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -150,7 +147,12 @@ $(function(){initNavTree('atmega128rfa1_2include_2periph__cpu_8h.html',''); init
 
 <p>CPU specific definitions for internal peripheral handling.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;periph_cpu_common.h&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>CPU specific definitions for internal peripheral handling. </p>
+<dl class="section author"><dt>Author</dt><dd>Josua Arndt <a href="#" onclick="location.href='mai'+'lto:'+'jar'+'nd'+'t@i'+'as'+'.rw'+'th'+'-aa'+'ch'+'en.'+'de'; return false;">jarnd<span class="obfuscator">.nosp@m.</span>t@ia<span class="obfuscator">.nosp@m.</span>s.rwt<span class="obfuscator">.nosp@m.</span>h-aa<span class="obfuscator">.nosp@m.</span>chen.<span class="obfuscator">.nosp@m.</span>de</a> </dd>
+<dd>
+Steffen Robertz <a href="#" onclick="location.href='mai'+'lto:'+'ste'+'ff'+'en.'+'ro'+'ber'+'tz'+'@rw'+'th'+'-aa'+'ch'+'en.'+'de'; return false;">steff<span class="obfuscator">.nosp@m.</span>en.r<span class="obfuscator">.nosp@m.</span>obert<span class="obfuscator">.nosp@m.</span>z@rw<span class="obfuscator">.nosp@m.</span>th-aa<span class="obfuscator">.nosp@m.</span>chen<span class="obfuscator">.nosp@m.</span>.de</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;periph_cpu_common.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="atmega__regs__common_8h.html">atmega_regs_common.h</a>&quot;</code><br />
 <code>#include &quot;periph_conf.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="atmega128rfa1_2include_2default__timer__config_8h.html">default_timer_config.h</a>&quot;</code><br />
@@ -225,12 +227,7 @@ static bool&#160;</td><td class="memItemRight" valign="bottom"><b>atmega_has_pin
  }</td></tr>
 <tr class="separator:a61dadd085c1777f559549e05962b2c9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>CPU specific definitions for internal peripheral handling. </p>
-<dl class="section author"><dt>Author</dt><dd>Josua Arndt <a href="#" onclick="location.href='mai'+'lto:'+'jar'+'nd'+'t@i'+'as'+'.rw'+'th'+'-aa'+'ch'+'en.'+'de'; return false;">jarnd<span class="obfuscator">.nosp@m.</span>t@ia<span class="obfuscator">.nosp@m.</span>s.rwt<span class="obfuscator">.nosp@m.</span>h-aa<span class="obfuscator">.nosp@m.</span>chen.<span class="obfuscator">.nosp@m.</span>de</a> </dd>
-<dd>
-Steffen Robertz <a href="#" onclick="location.href='mai'+'lto:'+'ste'+'ff'+'en.'+'ro'+'ber'+'tz'+'@rw'+'th'+'-aa'+'ch'+'en.'+'de'; return false;">steff<span class="obfuscator">.nosp@m.</span>en.r<span class="obfuscator">.nosp@m.</span>obert<span class="obfuscator">.nosp@m.</span>z@rw<span class="obfuscator">.nosp@m.</span>th-aa<span class="obfuscator">.nosp@m.</span>chen<span class="obfuscator">.nosp@m.</span>.de</a> </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a33b21f2a315e57318668814f00727415" name="a33b21f2a315e57318668814f00727415"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a33b21f2a315e57318668814f00727415">&#9670;&#160;</a></span>CPU_ATMEGA_EXT_INTS</h2>
 
@@ -294,7 +291,7 @@ Steffen Robertz <a href="#" onclick="location.href='mai'+'lto:'+'ste'+'ff'+'en.'
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_c433b04169c945a1c7f0848f853d4379.html">cpu</a></li><li class="navelem"><a class="el" href="dir_8dc242f3dd6bb6ebb69d31df71428722.html">atmega128rfa1</a></li><li class="navelem"><a class="el" href="dir_f485f5612bf29361b2616a059608c1c4.html">include</a></li><li class="navelem"><a class="el" href="atmega128rfa1_2include_2periph__cpu_8h.html">periph_cpu.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

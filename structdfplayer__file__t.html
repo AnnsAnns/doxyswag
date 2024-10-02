@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -149,7 +146,25 @@ $(function(){initNavTree('structdfplayer__file__t.html',''); initResizable(true)
 
 <p>Data structure representing a file on the DFPlayer.  
  <a href="#details">More...</a></p>
-
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Data structure representing a file on the DFPlayer. </p>
+<p>If <a class="el" href="#a59a2bb45a570b5b8657809a628c857dd">dfplayer_file_t::scheme</a> is DFPLAYER_SCHEME_MP3_FILE, <a class="el" href="#aa2fdade670f222365d41bcedf733682a">dfplayer_file_t::number</a> holds the number of the represented file. If <a class="el" href="#a59a2bb45a570b5b8657809a628c857dd">dfplayer_file_t::scheme</a> is DFPLAYER_SCHEME_FOLDER_FILE, <a class="el" href="#a4bbe7899a6dfda71e8f93603a90c397f">dfplayer_file_t::folder</a> holds the number of the folder containing the represented file and <a class="el" href="#a1137d5ce89da5caaaf46d69f883830b2">dfplayer_file_t::file</a> the number of the file.</p>
+<p>E.g. file <code>32/123.mp3</code> would be represented as:</p>
+<div class="fragment"><div class="line"><a class="code hl_struct" href="structdfplayer__file__t.html">dfplayer_file_t</a> <a class="code hl_variable" href="#a1137d5ce89da5caaaf46d69f883830b2">file</a> = {</div>
+<div class="line">   .scheme = <a class="code hl_enumvalue" href="dfplayer__types_8h.html#a44ae95acd9aff0c022e2921912c927f1a7c269e08ff6f2c6fef4cd6395267bee2">DFPLAYER_SCHEME_FOLDER_FILE</a>,</div>
+<div class="line">   .folder = 32,</div>
+<div class="line">   .file = 123</div>
+<div class="line">}</div>
+<div class="ttc" id="adfplayer__types_8h_html_a44ae95acd9aff0c022e2921912c927f1a7c269e08ff6f2c6fef4cd6395267bee2"><div class="ttname"><a href="dfplayer__types_8h.html#a44ae95acd9aff0c022e2921912c927f1a7c269e08ff6f2c6fef4cd6395267bee2">DFPLAYER_SCHEME_FOLDER_FILE</a></div><div class="ttdeci">@ DFPLAYER_SCHEME_FOLDER_FILE</div><div class="ttdoc">Naming scheme &lt;folder&gt;/&lt;file&gt;</div><div class="ttdef"><b>Definition</b> dfplayer_types.h:95</div></div>
+<div class="ttc" id="astructdfplayer__file__t_html"><div class="ttname"><a href="structdfplayer__file__t.html">dfplayer_file_t</a></div><div class="ttdoc">Data structure representing a file on the DFPlayer.</div><div class="ttdef"><b>Definition</b> dfplayer_types.h:169</div></div>
+<div class="ttc" id="astructdfplayer__file__t_html_a1137d5ce89da5caaaf46d69f883830b2"><div class="ttname"><a href="#a1137d5ce89da5caaaf46d69f883830b2">dfplayer_file_t::file</a></div><div class="ttdeci">uint8_t file</div><div class="ttdoc">Name of the file (naming scheme &quot;42/123.mp3&quot;)</div><div class="ttdef"><b>Definition</b> dfplayer_types.h:174</div></div>
+</div><!-- fragment --><p>and <code>MP3/0042.mp3</code> as:</p>
+<div class="fragment"><div class="line"><a class="code hl_struct" href="structdfplayer__file__t.html">dfplayer_file_t</a> <a class="code hl_variable" href="#a1137d5ce89da5caaaf46d69f883830b2">file</a> = {</div>
+<div class="line">   .scheme = <a class="code hl_enumvalue" href="dfplayer__types_8h.html#a44ae95acd9aff0c022e2921912c927f1ad441b660ccfc8f296e51bb7fb0de6ff1">DFPLAYER_SCHEME_MP3_FILE</a>,</div>
+<div class="line">   .number = 42</div>
+<div class="line">}</div>
+<div class="ttc" id="adfplayer__types_8h_html_a44ae95acd9aff0c022e2921912c927f1ad441b660ccfc8f296e51bb7fb0de6ff1"><div class="ttname"><a href="dfplayer__types_8h.html#a44ae95acd9aff0c022e2921912c927f1ad441b660ccfc8f296e51bb7fb0de6ff1">DFPLAYER_SCHEME_MP3_FILE</a></div><div class="ttdeci">@ DFPLAYER_SCHEME_MP3_FILE</div><div class="ttdoc">Naming scheme MP3/&lt;number&gt;</div><div class="ttdef"><b>Definition</b> dfplayer_types.h:96</div></div>
+</div><!-- fragment --> </div>
 <p><code>#include &lt;dfplayer_types.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -181,25 +196,7 @@ union {&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
 <tr class="memdesc:a59a2bb45a570b5b8657809a628c857dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used naming scheme. <br /></td></tr>
 <tr class="separator:a59a2bb45a570b5b8657809a628c857dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Data structure representing a file on the DFPlayer. </p>
-<p>If <a class="el" href="#a59a2bb45a570b5b8657809a628c857dd">dfplayer_file_t::scheme</a> is DFPLAYER_SCHEME_MP3_FILE, <a class="el" href="#aa2fdade670f222365d41bcedf733682a">dfplayer_file_t::number</a> holds the number of the represented file. If <a class="el" href="#a59a2bb45a570b5b8657809a628c857dd">dfplayer_file_t::scheme</a> is DFPLAYER_SCHEME_FOLDER_FILE, <a class="el" href="#a4bbe7899a6dfda71e8f93603a90c397f">dfplayer_file_t::folder</a> holds the number of the folder containing the represented file and <a class="el" href="#a1137d5ce89da5caaaf46d69f883830b2">dfplayer_file_t::file</a> the number of the file.</p>
-<p>E.g. file <code>32/123.mp3</code> would be represented as:</p>
-<div class="fragment"><div class="line"><a class="code hl_struct" href="structdfplayer__file__t.html">dfplayer_file_t</a> <a class="code hl_variable" href="#a1137d5ce89da5caaaf46d69f883830b2">file</a> = {</div>
-<div class="line">   .scheme = <a class="code hl_enumvalue" href="dfplayer__types_8h.html#a44ae95acd9aff0c022e2921912c927f1a7c269e08ff6f2c6fef4cd6395267bee2">DFPLAYER_SCHEME_FOLDER_FILE</a>,</div>
-<div class="line">   .folder = 32,</div>
-<div class="line">   .file = 123</div>
-<div class="line">}</div>
-<div class="ttc" id="adfplayer__types_8h_html_a44ae95acd9aff0c022e2921912c927f1a7c269e08ff6f2c6fef4cd6395267bee2"><div class="ttname"><a href="dfplayer__types_8h.html#a44ae95acd9aff0c022e2921912c927f1a7c269e08ff6f2c6fef4cd6395267bee2">DFPLAYER_SCHEME_FOLDER_FILE</a></div><div class="ttdeci">@ DFPLAYER_SCHEME_FOLDER_FILE</div><div class="ttdoc">Naming scheme &lt;folder&gt;/&lt;file&gt;</div><div class="ttdef"><b>Definition</b> dfplayer_types.h:95</div></div>
-<div class="ttc" id="astructdfplayer__file__t_html"><div class="ttname"><a href="structdfplayer__file__t.html">dfplayer_file_t</a></div><div class="ttdoc">Data structure representing a file on the DFPlayer.</div><div class="ttdef"><b>Definition</b> dfplayer_types.h:169</div></div>
-<div class="ttc" id="astructdfplayer__file__t_html_a1137d5ce89da5caaaf46d69f883830b2"><div class="ttname"><a href="#a1137d5ce89da5caaaf46d69f883830b2">dfplayer_file_t::file</a></div><div class="ttdeci">uint8_t file</div><div class="ttdoc">Name of the file (naming scheme &quot;42/123.mp3&quot;)</div><div class="ttdef"><b>Definition</b> dfplayer_types.h:174</div></div>
-</div><!-- fragment --><p>and <code>MP3/0042.mp3</code> as:</p>
-<div class="fragment"><div class="line"><a class="code hl_struct" href="structdfplayer__file__t.html">dfplayer_file_t</a> <a class="code hl_variable" href="#a1137d5ce89da5caaaf46d69f883830b2">file</a> = {</div>
-<div class="line">   .scheme = <a class="code hl_enumvalue" href="dfplayer__types_8h.html#a44ae95acd9aff0c022e2921912c927f1ad441b660ccfc8f296e51bb7fb0de6ff1">DFPLAYER_SCHEME_MP3_FILE</a>,</div>
-<div class="line">   .number = 42</div>
-<div class="line">}</div>
-<div class="ttc" id="adfplayer__types_8h_html_a44ae95acd9aff0c022e2921912c927f1ad441b660ccfc8f296e51bb7fb0de6ff1"><div class="ttname"><a href="dfplayer__types_8h.html#a44ae95acd9aff0c022e2921912c927f1ad441b660ccfc8f296e51bb7fb0de6ff1">DFPLAYER_SCHEME_MP3_FILE</a></div><div class="ttdeci">@ DFPLAYER_SCHEME_MP3_FILE</div><div class="ttdoc">Naming scheme MP3/&lt;number&gt;</div><div class="ttdef"><b>Definition</b> dfplayer_types.h:96</div></div>
-</div><!-- fragment --> </div><hr/>The documentation for this struct was generated from the following file:<ul>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>drivers/dfplayer/include/<a class="el" href="dfplayer__types_8h.html">dfplayer_types.h</a></li>
 </ul>
 </div><!-- contents -->
@@ -210,7 +207,7 @@ union {&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structdfplayer__file__t.html">dfplayer_file_t</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:32 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:11 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

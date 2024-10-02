@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,10 @@ $(function(){initNavTree('lvgl__riot__conf_8h.html',''); initResizable(true); })
 
 <p>Definitions specific to RIOT for the LVGL engine.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="kernel__defines_8h.html">kernel_defines.h</a>&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Definitions specific to RIOT for the LVGL engine. </p>
+<dl class="section author"><dt>Author</dt><dd>Alexandre Abadie <a href="#" onclick="location.href='mai'+'lto:'+'ale'+'xa'+'ndr'+'e.'+'aba'+'di'+'e@i'+'nr'+'ia.'+'fr'; return false;">alexa<span class="obfuscator">.nosp@m.</span>ndre<span class="obfuscator">.nosp@m.</span>.abad<span class="obfuscator">.nosp@m.</span>ie@i<span class="obfuscator">.nosp@m.</span>nria.<span class="obfuscator">.nosp@m.</span>fr</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;<a class="el" href="kernel__defines_8h.html">kernel_defines.h</a>&quot;</code><br />
 <code>#include &quot;board.h&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for lvgl_riot_conf.h:</div>
@@ -181,10 +181,7 @@ $(function(){initNavTree('lvgl__riot__conf_8h.html',''); initResizable(true); })
 typedef int16_t&#160;</td><td class="memItemRight" valign="bottom"><b>lv_coord_t</b></td></tr>
 <tr class="separator:ad98932f5017f20988532bb68b32a6d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Definitions specific to RIOT for the LVGL engine. </p>
-<dl class="section author"><dt>Author</dt><dd>Alexandre Abadie <a href="#" onclick="location.href='mai'+'lto:'+'ale'+'xa'+'ndr'+'e.'+'aba'+'di'+'e@i'+'nr'+'ia.'+'fr'; return false;">alexa<span class="obfuscator">.nosp@m.</span>ndre<span class="obfuscator">.nosp@m.</span>.abad<span class="obfuscator">.nosp@m.</span>ie@i<span class="obfuscator">.nosp@m.</span>nria.<span class="obfuscator">.nosp@m.</span>fr</a> </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a6b77dcb22fcdc624952dc307331e5db6" name="a6b77dcb22fcdc624952dc307331e5db6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6b77dcb22fcdc624952dc307331e5db6">&#9670;&#160;</a></span>LV_ATTRIBUTE_MEM_ALIGN</h2>
 
@@ -210,7 +207,7 @@ typedef int16_t&#160;</td><td class="memItemRight" valign="bottom"><b>lv_coord_t
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_1b757248df2f96757224e5c7d0d8f21a.html">pkg</a></li><li class="navelem"><a class="el" href="dir_7121ab3c4d9d372461660a4fd70cb231.html">lvgl</a></li><li class="navelem"><a class="el" href="dir_e6ca5663ac0a56b34a44719c278c9d61.html">include</a></li><li class="navelem"><a class="el" href="lvgl__riot__conf_8h.html">lvgl_riot_conf.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

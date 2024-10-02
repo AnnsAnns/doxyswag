@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,12 @@ $(function(){initNavTree('mcp2515__defines_8h.html',''); initResizable(true); })
 
 <p>Driver for the Microchip MCP2515 can controller.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Driver for the Microchip MCP2515 can controller. </p>
+<p>Defines for the MCP2515 can controller driver.</p>
+<p>MCP2515 SPI CAN Controller Register &amp; Configuration Constant</p>
+<dl class="section author"><dt>Author</dt><dd>Toon Stegen <a href="#" onclick="location.href='mai'+'lto:'+'too'+'n.'+'ste'+'ge'+'n@a'+'lt'+'ran'+'.c'+'om'; return false;">toon.<span class="obfuscator">.nosp@m.</span>steg<span class="obfuscator">.nosp@m.</span>en@al<span class="obfuscator">.nosp@m.</span>tran<span class="obfuscator">.nosp@m.</span>.com</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for mcp2515_defines.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -967,12 +969,7 @@ $(function(){initNavTree('mcp2515__defines_8h.html',''); initResizable(true); })
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>MCP2515_RX_IDE</b>&#160;&#160;&#160;0x08</td></tr>
 <tr class="separator:a61f7d3c8a8ffc7fe3a951a5f71fbf02f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Driver for the Microchip MCP2515 can controller. </p>
-<p>Defines for the MCP2515 can controller driver.</p>
-<p>MCP2515 SPI CAN Controller Register &amp; Configuration Constant</p>
-<dl class="section author"><dt>Author</dt><dd>Toon Stegen <a href="#" onclick="location.href='mai'+'lto:'+'too'+'n.'+'ste'+'ge'+'n@a'+'lt'+'ran'+'.c'+'om'; return false;">toon.<span class="obfuscator">.nosp@m.</span>steg<span class="obfuscator">.nosp@m.</span>en@al<span class="obfuscator">.nosp@m.</span>tran<span class="obfuscator">.nosp@m.</span>.com</a> </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a359ceb1f0125676537158a324bd41c2e" name="a359ceb1f0125676537158a324bd41c2e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a359ceb1f0125676537158a324bd41c2e">&#9670;&#160;</a></span>MCP2515_CANCTRL_CLKPRE_MASK</h2>
 
@@ -1061,7 +1058,7 @@ $(function(){initNavTree('mcp2515__defines_8h.html',''); initResizable(true); })
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_14bc92f4b96c8519b376567118ac28b3.html">drivers</a></li><li class="navelem"><a class="el" href="dir_a93c57c0804ff3711ff140a5182da88c.html">mcp2515</a></li><li class="navelem"><a class="el" href="mcp2515__defines_8h.html">mcp2515_defines.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

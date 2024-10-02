@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -153,6 +150,10 @@ $(function(){initNavTree('group__drivers__mag3110.html',''); initResizable(true)
 
 <p>Driver for the Freescale MAG3110 magnetometer.  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Driver for the Freescale MAG3110 magnetometer. </p>
+<p>After initialization and set active the magnetometer will make measurements at periodic times. The output rate and over sample ratio can be determined by magnetometer initialization. The measured values of magnetic field strength and die temperature have uncalibrated offsets. To get correct measurement values, the individual offsets must be measured and set accordingly.</p>
+<p>This driver provides <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> capabilities. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -352,10 +353,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:gad334a483ba14da11cf74ec5ba1505c05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Setting for testing. <br /></td></tr>
 <tr class="separator:gad334a483ba14da11cf74ec5ba1505c05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Driver for the Freescale MAG3110 magnetometer. </p>
-<p>After initialization and set active the magnetometer will make measurements at periodic times. The output rate and over sample ratio can be determined by magnetometer initialization. The measured values of magnetic field strength and die temperature have uncalibrated offsets. To get correct measurement values, the individual offsets must be measured and set accordingly.</p>
-<p>This driver provides <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> capabilities. </p>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="ga91d74b317405fff79ca4459da11f98e3" name="ga91d74b317405fff79ca4459da11f98e3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga91d74b317405fff79ca4459da11f98e3">&#9670;&#160;</a></span>anonymous enum</h2>
@@ -627,7 +624,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

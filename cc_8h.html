@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -143,13 +140,17 @@ $(function(){initNavTree('cc_8h.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">cc.h File Reference<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__pkg__lwip.html">lwIP network stack</a> &raquo; <a class="el" href="group__pkg__lwip__sys.html">Porting layer</a></div></div></div>
+  <div class="headertitle"><div class="title">cc.h File Reference<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__pkg__lwip.html">lwIP network stack</a> &raquo; <a class="el" href="group__pkg__lwip__sys.html">Porting layer</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Compiler/platform abstraction.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;<a class="el" href="inttypes_8h.html">inttypes.h</a>&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Compiler/platform abstraction. </p>
+<dl class="section see"><dt>See also</dt><dd><a href="http://www.nongnu.org/lwip/2_1_x/group__compiler__abstraction.html">http://www.nongnu.org/lwip/2_1_x/group__compiler__abstraction.html</a></dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Martine Lenders <a href="#" onclick="location.href='mai'+'lto:'+'mle'+'nd'+'ers'+'@i'+'nf.'+'fu'+'-be'+'rl'+'in.'+'de'; return false;">mlend<span class="obfuscator">.nosp@m.</span>ers@<span class="obfuscator">.nosp@m.</span>inf.f<span class="obfuscator">.nosp@m.</span>u-be<span class="obfuscator">.nosp@m.</span>rlin.<span class="obfuscator">.nosp@m.</span>de</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;<a class="el" href="inttypes_8h.html">inttypes.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="stdio_8h.html">stdio.h</a>&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="irq_8h.html">irq.h</a>&quot;</code><br />
@@ -215,11 +216,7 @@ Macros</h2></td></tr>
 <tr class="memitem:ga7e8bcd0282525704d6dd596bdd1b47d0" id="r_ga7e8bcd0282525704d6dd596bdd1b47d0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__lwip__sys.html#ga7e8bcd0282525704d6dd596bdd1b47d0">LWIP_PLATFORM_ASSERT</a>(x)</td></tr>
 <tr class="separator:ga7e8bcd0282525704d6dd596bdd1b47d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Compiler/platform abstraction. </p>
-<dl class="section see"><dt>See also</dt><dd><a href="http://www.nongnu.org/lwip/2_1_x/group__compiler__abstraction.html">http://www.nongnu.org/lwip/2_1_x/group__compiler__abstraction.html</a></dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Martine Lenders <a href="#" onclick="location.href='mai'+'lto:'+'mle'+'nd'+'ers'+'@i'+'nf.'+'fu'+'-be'+'rl'+'in.'+'de'; return false;">mlend<span class="obfuscator">.nosp@m.</span>ers@<span class="obfuscator">.nosp@m.</span>inf.f<span class="obfuscator">.nosp@m.</span>u-be<span class="obfuscator">.nosp@m.</span>rlin.<span class="obfuscator">.nosp@m.</span>de</a> </dd></dl>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
@@ -227,7 +224,7 @@ Macros</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_1b757248df2f96757224e5c7d0d8f21a.html">pkg</a></li><li class="navelem"><a class="el" href="dir_4b16a7c796cbd792fe27e1f12666ee97.html">lwip</a></li><li class="navelem"><a class="el" href="dir_91027723a0363ae9beaf9d098a66bc18.html">include</a></li><li class="navelem"><a class="el" href="dir_3a9a5e00a21f9378173bdd6fb2bc921b.html">arch</a></li><li class="navelem"><a class="el" href="cc_8h.html">cc.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

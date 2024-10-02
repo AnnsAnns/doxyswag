@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -149,6 +146,9 @@ $(function(){initNavTree('group__sys__congure__reno__methods.html',''); initResi
 
 <p>Many other congestion control mechanisms are just adaptations of TCP Reno, so this makes the methods of <a class="el" href="group__sys__congure__reno.html">CongURE implementation of TCP Reno</a> available to other <a class="el" href="group__sys__congure.html">CongURE - A Congestion control framework</a> modules.  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Many other congestion control mechanisms are just adaptations of TCP Reno, so this makes the methods of <a class="el" href="group__sys__congure__reno.html">CongURE implementation of TCP Reno</a> available to other <a class="el" href="group__sys__congure.html">CongURE - A Congestion control framework</a> modules. </p>
+<p>Use module <code>congure_reno_methods</code> to only compile in these modules, but not the driver for <code>congure_reno_snd_t</code> or <a class="el" href="group__sys__congure__reno.html#ga3537f89f698c97e3ce04659a928f3bf6">congure_reno_snd_setup()</a>. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -180,9 +180,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga45a7b5648fb4123a2b472cb16b5ed9e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use to override <a class="el" href="structcongure__snd__driver.html#a6d84e81002a9ab715325cd675a80f101" title="Report that &quot;congestion encountered&quot; CE signals were received for a message by means of explicit cong...">congure_snd_driver_t::report_ecn_ce</a>.  <br /></td></tr>
 <tr class="separator:ga45a7b5648fb4123a2b472cb16b5ed9e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Many other congestion control mechanisms are just adaptations of TCP Reno, so this makes the methods of <a class="el" href="group__sys__congure__reno.html">CongURE implementation of TCP Reno</a> available to other <a class="el" href="group__sys__congure.html">CongURE - A Congestion control framework</a> modules. </p>
-<p>Use module <code>congure_reno_methods</code> to only compile in these modules, but not the driver for <code>congure_reno_snd_t</code> or <a class="el" href="group__sys__congure__reno.html#ga3537f89f698c97e3ce04659a928f3bf6">congure_reno_snd_setup()</a>. </p>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="gadd85d9ff7751fa1f212375615f7e9354" name="gadd85d9ff7751fa1f212375615f7e9354"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gadd85d9ff7751fa1f212375615f7e9354">&#9670;&#160;</a></span>congure_reno_set_mss()</h2>
@@ -469,7 +466,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -151,7 +148,12 @@ $(function(){initNavTree('sdp3x_8h.html',''); initResizable(true); });
 
 <p>Device driver interface for the SDP3x sensor.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="drivers_2include_2saul_8h.html">saul.h</a>&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Device driver interface for the SDP3x sensor. </p>
+<dl class="section author"><dt>Author</dt><dd>Dirk Ehmen <a href="#" onclick="location.href='mai'+'lto:'+'ehm'+'en'+'@ib'+'r.'+'cs.'+'tu'+'-bs'+'.d'+'e'; return false;">ehmen<span class="obfuscator">.nosp@m.</span>@ibr<span class="obfuscator">.nosp@m.</span>.cs.t<span class="obfuscator">.nosp@m.</span>u-bs<span class="obfuscator">.nosp@m.</span>.de</a> </dd>
+<dd>
+Nishchay Agrawal <a href="#" onclick="location.href='mai'+'lto:'+'f20'+'16'+'088'+'@p'+'ila'+'ni'+'.bi'+'ts'+'-pi'+'la'+'ni.'+'ac'+'.in'; return false;">f2016<span class="obfuscator">.nosp@m.</span>088@<span class="obfuscator">.nosp@m.</span>pilan<span class="obfuscator">.nosp@m.</span>i.bi<span class="obfuscator">.nosp@m.</span>ts-pi<span class="obfuscator">.nosp@m.</span>lani<span class="obfuscator">.nosp@m.</span>.ac.i<span class="obfuscator">.nosp@m.</span>n</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;<a class="el" href="drivers_2include_2saul_8h.html">saul.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="xtimer_8h.html">xtimer.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="mutex_8h.html">mutex.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="i2c_8h.html">periph/i2c.h</a>&quot;</code><br />
@@ -245,12 +247,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a82deb98b50b5bea05cb8c6039e8207e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Don't Average values. <br /></td></tr>
 <tr class="separator:a82deb98b50b5bea05cb8c6039e8207e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Device driver interface for the SDP3x sensor. </p>
-<dl class="section author"><dt>Author</dt><dd>Dirk Ehmen <a href="#" onclick="location.href='mai'+'lto:'+'ehm'+'en'+'@ib'+'r.'+'cs.'+'tu'+'-bs'+'.d'+'e'; return false;">ehmen<span class="obfuscator">.nosp@m.</span>@ibr<span class="obfuscator">.nosp@m.</span>.cs.t<span class="obfuscator">.nosp@m.</span>u-bs<span class="obfuscator">.nosp@m.</span>.de</a> </dd>
-<dd>
-Nishchay Agrawal <a href="#" onclick="location.href='mai'+'lto:'+'f20'+'16'+'088'+'@p'+'ila'+'ni'+'.bi'+'ts'+'-pi'+'la'+'ni.'+'ac'+'.in'; return false;">f2016<span class="obfuscator">.nosp@m.</span>088@<span class="obfuscator">.nosp@m.</span>pilan<span class="obfuscator">.nosp@m.</span>i.bi<span class="obfuscator">.nosp@m.</span>ts-pi<span class="obfuscator">.nosp@m.</span>lani<span class="obfuscator">.nosp@m.</span>.ac.i<span class="obfuscator">.nosp@m.</span>n</a> </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a236d42250cc4d0e946407330e2873881" name="a236d42250cc4d0e946407330e2873881"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a236d42250cc4d0e946407330e2873881">&#9670;&#160;</a></span>SDP3X_FLAG_MASS_FLOW</h2>
 
@@ -609,7 +606,7 @@ Nishchay Agrawal <a href="#" onclick="location.href='mai'+'lto:'+'f20'+'16'+'088
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_14bc92f4b96c8519b376567118ac28b3.html">drivers</a></li><li class="navelem"><a class="el" href="dir_ee023d43c33bfccc31aa50a48a76892b.html">include</a></li><li class="navelem"><a class="el" href="sdp3x_8h.html">sdp3x.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

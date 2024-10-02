@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -146,83 +143,12 @@ $(function(){initNavTree('group__net__sock__udp.html',''); initResizable(true); 
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">UDP sock API<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__sock.html">Sock API</a></div></div></div>
+  <div class="headertitle"><div class="title">UDP sock API<div class="ingroups"><a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__net__sock.html">Sock API</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Sock submodule for UDP  
 <a href="#details">More...</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sock_2udp_8h.html">udp.h</a></td></tr>
-<tr class="memdesc:sock_2udp_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">UDP sock definitions. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsock__udp__aux__rx__t.html">sock_udp_aux_rx_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Auxiliary data provided when receiving using an UDP sock object.  <a href="structsock__udp__aux__rx__t.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsock__udp__aux__tx__t.html">sock_udp_aux_tx_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Auxiliary data provided when sending using an UDP sock object.  <a href="structsock__udp__aux__tx__t.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:gaedc829c7973d7870c1ec078f9ffd45a1" id="r_gaedc829c7973d7870c1ec078f9ffd45a1"><td class="memItemLeft" align="right" valign="top"><a id="gaedc829c7973d7870c1ec078f9ffd45a1" name="gaedc829c7973d7870c1ec078f9ffd45a1"></a>
-typedef struct <a class="el" href="struct__sock__tl__ep.html">_sock_tl_ep</a>&#160;</td><td class="memItemRight" valign="bottom"><b>sock_udp_ep_t</b></td></tr>
-<tr class="memdesc:gaedc829c7973d7870c1ec078f9ffd45a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">An end point for a UDP sock object. <br /></td></tr>
-<tr class="separator:gaedc829c7973d7870c1ec078f9ffd45a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3cb61a4ee66c9c235e4f22860658698c" id="r_ga3cb61a4ee66c9c235e4f22860658698c"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structsock__udp.html">sock_udp</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a></td></tr>
-<tr class="memdesc:ga3cb61a4ee66c9c235e4f22860658698c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type for a UDP sock object.  <br /></td></tr>
-<tr class="separator:ga3cb61a4ee66c9c235e4f22860658698c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ga20fa4b890dff1c97a63075090e6f9d7d" id="r_ga20fa4b890dff1c97a63075090e6f9d7d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga20fa4b890dff1c97a63075090e6f9d7d">sock_udp_create</a> (<a class="el" href="group__net__sock__async.html#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a> *sock, const <a class="el" href="#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *local, const <a class="el" href="#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *remote, uint16_t flags)</td></tr>
-<tr class="memdesc:ga20fa4b890dff1c97a63075090e6f9d7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new UDP sock object.  <br /></td></tr>
-<tr class="separator:ga20fa4b890dff1c97a63075090e6f9d7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9bab7d0998b2c49e66bab0f03367298a" id="r_ga9bab7d0998b2c49e66bab0f03367298a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9bab7d0998b2c49e66bab0f03367298a">sock_udp_close</a> (<a class="el" href="group__net__sock__async.html#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a> *sock)</td></tr>
-<tr class="memdesc:ga9bab7d0998b2c49e66bab0f03367298a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes a UDP sock object.  <br /></td></tr>
-<tr class="separator:ga9bab7d0998b2c49e66bab0f03367298a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1a0e4c3a85b42cfcdc2f016dd2c96c83" id="r_ga1a0e4c3a85b42cfcdc2f016dd2c96c83"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1a0e4c3a85b42cfcdc2f016dd2c96c83">sock_udp_get_local</a> (<a class="el" href="group__net__sock__async.html#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a> *sock, <a class="el" href="#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *ep)</td></tr>
-<tr class="memdesc:ga1a0e4c3a85b42cfcdc2f016dd2c96c83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the local end point of a UDP sock object.  <br /></td></tr>
-<tr class="separator:ga1a0e4c3a85b42cfcdc2f016dd2c96c83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga626661c83a17ad7f4f3e25b67378f7d7" id="r_ga626661c83a17ad7f4f3e25b67378f7d7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga626661c83a17ad7f4f3e25b67378f7d7">sock_udp_get_remote</a> (<a class="el" href="group__net__sock__async.html#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a> *sock, <a class="el" href="#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *ep)</td></tr>
-<tr class="memdesc:ga626661c83a17ad7f4f3e25b67378f7d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the remote end point of a UDP sock object.  <br /></td></tr>
-<tr class="separator:ga626661c83a17ad7f4f3e25b67378f7d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0a849357c25e692946f8df4f62654ed4" id="r_ga0a849357c25e692946f8df4f62654ed4"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0a849357c25e692946f8df4f62654ed4">sock_udp_recv_aux</a> (<a class="el" href="group__net__sock__async.html#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a> *sock, void *data, size_t max_len, uint32_t timeout, <a class="el" href="#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *remote, <a class="el" href="structsock__udp__aux__rx__t.html">sock_udp_aux_rx_t</a> *aux)</td></tr>
-<tr class="memdesc:ga0a849357c25e692946f8df4f62654ed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a UDP message from a remote end point.  <br /></td></tr>
-<tr class="separator:ga0a849357c25e692946f8df4f62654ed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacc31d9fd5c02e95e4ca7257c808e53ac" id="r_gacc31d9fd5c02e95e4ca7257c808e53ac"><td class="memItemLeft" align="right" valign="top">static ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacc31d9fd5c02e95e4ca7257c808e53ac">sock_udp_recv</a> (<a class="el" href="group__net__sock__async.html#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a> *sock, void *data, size_t max_len, uint32_t timeout, <a class="el" href="#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *remote)</td></tr>
-<tr class="memdesc:gacc31d9fd5c02e95e4ca7257c808e53ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a UDP message from a remote end point.  <br /></td></tr>
-<tr class="separator:gacc31d9fd5c02e95e4ca7257c808e53ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaafd8e7ab7192b031fd8873def358b987" id="r_gaafd8e7ab7192b031fd8873def358b987"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaafd8e7ab7192b031fd8873def358b987">sock_udp_recv_buf_aux</a> (<a class="el" href="group__net__sock__async.html#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a> *sock, void **data, void **buf_ctx, uint32_t timeout, <a class="el" href="#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *remote, <a class="el" href="structsock__udp__aux__rx__t.html">sock_udp_aux_rx_t</a> *aux)</td></tr>
-<tr class="memdesc:gaafd8e7ab7192b031fd8873def358b987"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides stack-internal buffer space containing a UDP message from a remote end point.  <br /></td></tr>
-<tr class="separator:gaafd8e7ab7192b031fd8873def358b987"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga35b5ec6cb6a197ea2f3ab6eabacca73e" id="r_ga35b5ec6cb6a197ea2f3ab6eabacca73e"><td class="memItemLeft" align="right" valign="top">static ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga35b5ec6cb6a197ea2f3ab6eabacca73e">sock_udp_recv_buf</a> (<a class="el" href="group__net__sock__async.html#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a> *sock, void **data, void **buf_ctx, uint32_t timeout, <a class="el" href="#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *remote)</td></tr>
-<tr class="memdesc:ga35b5ec6cb6a197ea2f3ab6eabacca73e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides stack-internal buffer space containing a UDP message from a remote end point.  <br /></td></tr>
-<tr class="separator:ga35b5ec6cb6a197ea2f3ab6eabacca73e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga336d4369bc2c7e77423f7d1e67161749" id="r_ga336d4369bc2c7e77423f7d1e67161749"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga336d4369bc2c7e77423f7d1e67161749">sock_udp_sendv_aux</a> (<a class="el" href="group__net__sock__async.html#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a> *sock, const <a class="el" href="group__sys__iolist.html#gaa17f91ef26edec149cd806d8457aa3a0">iolist_t</a> *snips, const <a class="el" href="#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *remote, <a class="el" href="structsock__udp__aux__tx__t.html">sock_udp_aux_tx_t</a> *aux)</td></tr>
-<tr class="memdesc:ga336d4369bc2c7e77423f7d1e67161749"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a UDP message to remote end point with non-continous payload.  <br /></td></tr>
-<tr class="separator:ga336d4369bc2c7e77423f7d1e67161749"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga56a625663ba4bc9efc4e3c388fc1c7ec" id="r_ga56a625663ba4bc9efc4e3c388fc1c7ec"><td class="memItemLeft" align="right" valign="top">static ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga56a625663ba4bc9efc4e3c388fc1c7ec">sock_udp_send_aux</a> (<a class="el" href="group__net__sock__async.html#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a> *sock, const void *data, size_t len, const <a class="el" href="#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *remote, <a class="el" href="structsock__udp__aux__tx__t.html">sock_udp_aux_tx_t</a> *aux)</td></tr>
-<tr class="memdesc:ga56a625663ba4bc9efc4e3c388fc1c7ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a UDP message to remote end point.  <br /></td></tr>
-<tr class="separator:ga56a625663ba4bc9efc4e3c388fc1c7ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabdc04f105c67fc0cbc1ab7b403161bea" id="r_gabdc04f105c67fc0cbc1ab7b403161bea"><td class="memItemLeft" align="right" valign="top">static ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabdc04f105c67fc0cbc1ab7b403161bea">sock_udp_send</a> (<a class="el" href="group__net__sock__async.html#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a> *sock, const void *data, size_t len, const <a class="el" href="#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *remote)</td></tr>
-<tr class="memdesc:gabdc04f105c67fc0cbc1ab7b403161bea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a UDP message to remote end point.  <br /></td></tr>
-<tr class="separator:gabdc04f105c67fc0cbc1ab7b403161bea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga86893cb9733eb7cc210e0f2407f640e0" id="r_ga86893cb9733eb7cc210e0f2407f640e0"><td class="memItemLeft" align="right" valign="top">static ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga86893cb9733eb7cc210e0f2407f640e0">sock_udp_sendv</a> (<a class="el" href="group__net__sock__async.html#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a> *sock, const <a class="el" href="group__sys__iolist.html#gaa17f91ef26edec149cd806d8457aa3a0">iolist_t</a> *snips, const <a class="el" href="#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *remote)</td></tr>
-<tr class="memdesc:ga86893cb9733eb7cc210e0f2407f640e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a UDP message to remote end point with non-continous payload.  <br /></td></tr>
-<tr class="separator:ga86893cb9733eb7cc210e0f2407f640e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab579f958fda8cc1eb423bfb6323b2835" id="r_gab579f958fda8cc1eb423bfb6323b2835"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab579f958fda8cc1eb423bfb6323b2835">sock_udp_ep_is_multicast</a> (const <a class="el" href="#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *ep)</td></tr>
-<tr class="memdesc:gab579f958fda8cc1eb423bfb6323b2835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the IP address of an endpoint is multicast.  <br /></td></tr>
-<tr class="separator:gab579f958fda8cc1eb423bfb6323b2835"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2c9722dd76f33d865a76adf1451dbcf0" id="r_ga2c9722dd76f33d865a76adf1451dbcf0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2c9722dd76f33d865a76adf1451dbcf0">sock_udp_ep_is_v6</a> (const <a class="el" href="#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *ep)</td></tr>
-<tr class="memdesc:ga2c9722dd76f33d865a76adf1451dbcf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the IP address of an endpoint is an IPv6 address.  <br /></td></tr>
-<tr class="separator:ga2c9722dd76f33d865a76adf1451dbcf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Sock submodule for UDP </p>
 <h2><a class="anchor" id="autotoc_md2088"></a>
@@ -421,6 +347,77 @@ A Simple UDP Echo Client</h3>
 <div class="line">    <a class="code hl_define" href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a>(<span class="stringliteral">&quot;\&quot;\n&quot;</span>);</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>Finally, we wait a second before sending out the next "Hello!" with <code>xtimer_sleep(1)</code>. </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sock_2udp_8h.html">udp.h</a></td></tr>
+<tr class="memdesc:sock_2udp_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">UDP sock definitions. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsock__udp__aux__rx__t.html">sock_udp_aux_rx_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Auxiliary data provided when receiving using an UDP sock object.  <a href="structsock__udp__aux__rx__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsock__udp__aux__tx__t.html">sock_udp_aux_tx_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Auxiliary data provided when sending using an UDP sock object.  <a href="structsock__udp__aux__tx__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:gaedc829c7973d7870c1ec078f9ffd45a1" id="r_gaedc829c7973d7870c1ec078f9ffd45a1"><td class="memItemLeft" align="right" valign="top"><a id="gaedc829c7973d7870c1ec078f9ffd45a1" name="gaedc829c7973d7870c1ec078f9ffd45a1"></a>
+typedef struct <a class="el" href="struct__sock__tl__ep.html">_sock_tl_ep</a>&#160;</td><td class="memItemRight" valign="bottom"><b>sock_udp_ep_t</b></td></tr>
+<tr class="memdesc:gaedc829c7973d7870c1ec078f9ffd45a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">An end point for a UDP sock object. <br /></td></tr>
+<tr class="separator:gaedc829c7973d7870c1ec078f9ffd45a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3cb61a4ee66c9c235e4f22860658698c" id="r_ga3cb61a4ee66c9c235e4f22860658698c"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structsock__udp.html">sock_udp</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a></td></tr>
+<tr class="memdesc:ga3cb61a4ee66c9c235e4f22860658698c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type for a UDP sock object.  <br /></td></tr>
+<tr class="separator:ga3cb61a4ee66c9c235e4f22860658698c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga20fa4b890dff1c97a63075090e6f9d7d" id="r_ga20fa4b890dff1c97a63075090e6f9d7d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga20fa4b890dff1c97a63075090e6f9d7d">sock_udp_create</a> (<a class="el" href="group__net__sock__async.html#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a> *sock, const <a class="el" href="#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *local, const <a class="el" href="#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *remote, uint16_t flags)</td></tr>
+<tr class="memdesc:ga20fa4b890dff1c97a63075090e6f9d7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new UDP sock object.  <br /></td></tr>
+<tr class="separator:ga20fa4b890dff1c97a63075090e6f9d7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9bab7d0998b2c49e66bab0f03367298a" id="r_ga9bab7d0998b2c49e66bab0f03367298a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9bab7d0998b2c49e66bab0f03367298a">sock_udp_close</a> (<a class="el" href="group__net__sock__async.html#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a> *sock)</td></tr>
+<tr class="memdesc:ga9bab7d0998b2c49e66bab0f03367298a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes a UDP sock object.  <br /></td></tr>
+<tr class="separator:ga9bab7d0998b2c49e66bab0f03367298a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1a0e4c3a85b42cfcdc2f016dd2c96c83" id="r_ga1a0e4c3a85b42cfcdc2f016dd2c96c83"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1a0e4c3a85b42cfcdc2f016dd2c96c83">sock_udp_get_local</a> (<a class="el" href="group__net__sock__async.html#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a> *sock, <a class="el" href="#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *ep)</td></tr>
+<tr class="memdesc:ga1a0e4c3a85b42cfcdc2f016dd2c96c83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the local end point of a UDP sock object.  <br /></td></tr>
+<tr class="separator:ga1a0e4c3a85b42cfcdc2f016dd2c96c83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga626661c83a17ad7f4f3e25b67378f7d7" id="r_ga626661c83a17ad7f4f3e25b67378f7d7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga626661c83a17ad7f4f3e25b67378f7d7">sock_udp_get_remote</a> (<a class="el" href="group__net__sock__async.html#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a> *sock, <a class="el" href="#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *ep)</td></tr>
+<tr class="memdesc:ga626661c83a17ad7f4f3e25b67378f7d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the remote end point of a UDP sock object.  <br /></td></tr>
+<tr class="separator:ga626661c83a17ad7f4f3e25b67378f7d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0a849357c25e692946f8df4f62654ed4" id="r_ga0a849357c25e692946f8df4f62654ed4"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0a849357c25e692946f8df4f62654ed4">sock_udp_recv_aux</a> (<a class="el" href="group__net__sock__async.html#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a> *sock, void *data, size_t max_len, uint32_t timeout, <a class="el" href="#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *remote, <a class="el" href="structsock__udp__aux__rx__t.html">sock_udp_aux_rx_t</a> *aux)</td></tr>
+<tr class="memdesc:ga0a849357c25e692946f8df4f62654ed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a UDP message from a remote end point.  <br /></td></tr>
+<tr class="separator:ga0a849357c25e692946f8df4f62654ed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacc31d9fd5c02e95e4ca7257c808e53ac" id="r_gacc31d9fd5c02e95e4ca7257c808e53ac"><td class="memItemLeft" align="right" valign="top">static ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacc31d9fd5c02e95e4ca7257c808e53ac">sock_udp_recv</a> (<a class="el" href="group__net__sock__async.html#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a> *sock, void *data, size_t max_len, uint32_t timeout, <a class="el" href="#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *remote)</td></tr>
+<tr class="memdesc:gacc31d9fd5c02e95e4ca7257c808e53ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a UDP message from a remote end point.  <br /></td></tr>
+<tr class="separator:gacc31d9fd5c02e95e4ca7257c808e53ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaafd8e7ab7192b031fd8873def358b987" id="r_gaafd8e7ab7192b031fd8873def358b987"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaafd8e7ab7192b031fd8873def358b987">sock_udp_recv_buf_aux</a> (<a class="el" href="group__net__sock__async.html#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a> *sock, void **data, void **buf_ctx, uint32_t timeout, <a class="el" href="#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *remote, <a class="el" href="structsock__udp__aux__rx__t.html">sock_udp_aux_rx_t</a> *aux)</td></tr>
+<tr class="memdesc:gaafd8e7ab7192b031fd8873def358b987"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides stack-internal buffer space containing a UDP message from a remote end point.  <br /></td></tr>
+<tr class="separator:gaafd8e7ab7192b031fd8873def358b987"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga35b5ec6cb6a197ea2f3ab6eabacca73e" id="r_ga35b5ec6cb6a197ea2f3ab6eabacca73e"><td class="memItemLeft" align="right" valign="top">static ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga35b5ec6cb6a197ea2f3ab6eabacca73e">sock_udp_recv_buf</a> (<a class="el" href="group__net__sock__async.html#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a> *sock, void **data, void **buf_ctx, uint32_t timeout, <a class="el" href="#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *remote)</td></tr>
+<tr class="memdesc:ga35b5ec6cb6a197ea2f3ab6eabacca73e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides stack-internal buffer space containing a UDP message from a remote end point.  <br /></td></tr>
+<tr class="separator:ga35b5ec6cb6a197ea2f3ab6eabacca73e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga336d4369bc2c7e77423f7d1e67161749" id="r_ga336d4369bc2c7e77423f7d1e67161749"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga336d4369bc2c7e77423f7d1e67161749">sock_udp_sendv_aux</a> (<a class="el" href="group__net__sock__async.html#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a> *sock, const <a class="el" href="group__sys__iolist.html#gaa17f91ef26edec149cd806d8457aa3a0">iolist_t</a> *snips, const <a class="el" href="#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *remote, <a class="el" href="structsock__udp__aux__tx__t.html">sock_udp_aux_tx_t</a> *aux)</td></tr>
+<tr class="memdesc:ga336d4369bc2c7e77423f7d1e67161749"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a UDP message to remote end point with non-continous payload.  <br /></td></tr>
+<tr class="separator:ga336d4369bc2c7e77423f7d1e67161749"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga56a625663ba4bc9efc4e3c388fc1c7ec" id="r_ga56a625663ba4bc9efc4e3c388fc1c7ec"><td class="memItemLeft" align="right" valign="top">static ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga56a625663ba4bc9efc4e3c388fc1c7ec">sock_udp_send_aux</a> (<a class="el" href="group__net__sock__async.html#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a> *sock, const void *data, size_t len, const <a class="el" href="#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *remote, <a class="el" href="structsock__udp__aux__tx__t.html">sock_udp_aux_tx_t</a> *aux)</td></tr>
+<tr class="memdesc:ga56a625663ba4bc9efc4e3c388fc1c7ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a UDP message to remote end point.  <br /></td></tr>
+<tr class="separator:ga56a625663ba4bc9efc4e3c388fc1c7ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabdc04f105c67fc0cbc1ab7b403161bea" id="r_gabdc04f105c67fc0cbc1ab7b403161bea"><td class="memItemLeft" align="right" valign="top">static ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabdc04f105c67fc0cbc1ab7b403161bea">sock_udp_send</a> (<a class="el" href="group__net__sock__async.html#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a> *sock, const void *data, size_t len, const <a class="el" href="#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *remote)</td></tr>
+<tr class="memdesc:gabdc04f105c67fc0cbc1ab7b403161bea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a UDP message to remote end point.  <br /></td></tr>
+<tr class="separator:gabdc04f105c67fc0cbc1ab7b403161bea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga86893cb9733eb7cc210e0f2407f640e0" id="r_ga86893cb9733eb7cc210e0f2407f640e0"><td class="memItemLeft" align="right" valign="top">static ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga86893cb9733eb7cc210e0f2407f640e0">sock_udp_sendv</a> (<a class="el" href="group__net__sock__async.html#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a> *sock, const <a class="el" href="group__sys__iolist.html#gaa17f91ef26edec149cd806d8457aa3a0">iolist_t</a> *snips, const <a class="el" href="#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *remote)</td></tr>
+<tr class="memdesc:ga86893cb9733eb7cc210e0f2407f640e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a UDP message to remote end point with non-continous payload.  <br /></td></tr>
+<tr class="separator:ga86893cb9733eb7cc210e0f2407f640e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab579f958fda8cc1eb423bfb6323b2835" id="r_gab579f958fda8cc1eb423bfb6323b2835"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab579f958fda8cc1eb423bfb6323b2835">sock_udp_ep_is_multicast</a> (const <a class="el" href="#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *ep)</td></tr>
+<tr class="memdesc:gab579f958fda8cc1eb423bfb6323b2835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the IP address of an endpoint is multicast.  <br /></td></tr>
+<tr class="separator:gab579f958fda8cc1eb423bfb6323b2835"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2c9722dd76f33d865a76adf1451dbcf0" id="r_ga2c9722dd76f33d865a76adf1451dbcf0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2c9722dd76f33d865a76adf1451dbcf0">sock_udp_ep_is_v6</a> (const <a class="el" href="#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *ep)</td></tr>
+<tr class="memdesc:ga2c9722dd76f33d865a76adf1451dbcf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the IP address of an endpoint is an IPv6 address.  <br /></td></tr>
+<tr class="separator:ga2c9722dd76f33d865a76adf1451dbcf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ga3cb61a4ee66c9c235e4f22860658698c" name="ga3cb61a4ee66c9c235e4f22860658698c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga3cb61a4ee66c9c235e4f22860658698c">&#9670;&#160;</a></span>sock_udp_t</h2>
@@ -1226,7 +1223,7 @@ A Simple UDP Echo Client</h3>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

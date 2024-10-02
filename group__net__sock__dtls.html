@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,125 +144,12 @@ $(function(){initNavTree('group__net__sock__dtls.html',''); initResizable(true);
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">DTLS sock API<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__sock.html">Sock API</a> &#124; <a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__dtls.html">DTLS</a></div></div></div>
+  <div class="headertitle"><div class="title">DTLS sock API<div class="ingroups"><a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__net__sock.html">Sock API</a> &#124; <a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__net__dtls.html">DTLS</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Sock submodule for DTLS  
 <a href="#details">More...</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
-Topics</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__sock__dtls__creds.html">DTLS sock credentials API</a></td></tr>
-<tr class="memdesc:group__net__sock__dtls__creds"><td class="mdescLeft">&#160;</td><td class="mdescRight">Credential handling for DTLS sock <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__sock__dtls__conf.html">SOCK DTLS compile configuration</a></td></tr>
-<tr class="memdesc:group__net__sock__dtls__conf"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sock_2dtls_8h.html">dtls.h</a></td></tr>
-<tr class="memdesc:sock_2dtls_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">DTLS sock definitions. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:gad77967da0dcabd6ceea9e523897b6798" id="r_gad77967da0dcabd6ceea9e523897b6798"><td class="memItemLeft" align="right" valign="top"><a id="gad77967da0dcabd6ceea9e523897b6798" name="gad77967da0dcabd6ceea9e523897b6798"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DTLS_HANDSHAKE_BUFSIZE</b>&#160;&#160;&#160;(1 &lt;&lt; <a class="el" href="group__net__sock__dtls__conf.html#ga0cbc6d1ac3648c3e4b6803d0272535ef">CONFIG_DTLS_HANDSHAKE_BUFSIZE_EXP</a>)</td></tr>
-<tr class="memdesc:gad77967da0dcabd6ceea9e523897b6798"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size buffer used in handshake to hold credentials. <br /></td></tr>
-<tr class="separator:gad77967da0dcabd6ceea9e523897b6798"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3f7ccb93f455150d01aad0295d398762" id="r_ga3f7ccb93f455150d01aad0295d398762"><td class="memItemLeft" align="right" valign="top"><a id="ga3f7ccb93f455150d01aad0295d398762" name="ga3f7ccb93f455150d01aad0295d398762"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SOCK_DTLS_HANDSHAKE</b>&#160;&#160;&#160;(<a class="el" href="group__cpu__atmega__common.html#ga3396cf9fb0ff5af3a18dd2a2bbdb21e1">EXDEV</a>)</td></tr>
-<tr class="memdesc:ga3f7ccb93f455150d01aad0295d398762"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return value for a successful handshake. <br /></td></tr>
-<tr class="separator:ga3f7ccb93f455150d01aad0295d398762"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad41621093a9a2d9e7830e372125cb8fd" id="r_gad41621093a9a2d9e7830e372125cb8fd"><td class="memItemLeft" align="right" valign="top"><a id="gad41621093a9a2d9e7830e372125cb8fd" name="gad41621093a9a2d9e7830e372125cb8fd"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CONFIG_DTLS_FORCE_EXTENDED_MASTER_SECRET</b>&#160;&#160;&#160;1</td></tr>
-<tr class="memdesc:gad41621093a9a2d9e7830e372125cb8fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Force extended master secret extension. <br /></td></tr>
-<tr class="separator:gad41621093a9a2d9e7830e372125cb8fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga05770995cf620f04210dc5517517db70" id="r_ga05770995cf620f04210dc5517517db70"><td class="memItemLeft" align="right" valign="top"><a id="ga05770995cf620f04210dc5517517db70" name="ga05770995cf620f04210dc5517517db70"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CONFIG_DTLS_FORCE_RENEGOTIATION_INFO</b>&#160;&#160;&#160;1</td></tr>
-<tr class="memdesc:ga05770995cf620f04210dc5517517db70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Force renegotiation info extension. <br /></td></tr>
-<tr class="separator:ga05770995cf620f04210dc5517517db70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:gaa63acc71681400dd4b856ce09e27cafb" id="r_gaa63acc71681400dd4b856ce09e27cafb"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structsock__dtls.html">sock_dtls</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a></td></tr>
-<tr class="memdesc:gaa63acc71681400dd4b856ce09e27cafb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type for a DTLS sock object.  <br /></td></tr>
-<tr class="separator:gaa63acc71681400dd4b856ce09e27cafb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8595b9670004ad4afc5738109ecce649" id="r_ga8595b9670004ad4afc5738109ecce649"><td class="memItemLeft" align="right" valign="top"><a id="ga8595b9670004ad4afc5738109ecce649" name="ga8595b9670004ad4afc5738109ecce649"></a>
-typedef struct <a class="el" href="structsock__dtls__session.html">sock_dtls_session</a>&#160;</td><td class="memItemRight" valign="bottom"><b>sock_dtls_session_t</b></td></tr>
-<tr class="memdesc:ga8595b9670004ad4afc5738109ecce649"><td class="mdescLeft">&#160;</td><td class="mdescRight">Information about a created session. <br /></td></tr>
-<tr class="separator:ga8595b9670004ad4afc5738109ecce649"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9512682d85257239769e4f62d3968839" id="r_ga9512682d85257239769e4f62d3968839"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structsock__udp__aux__rx__t.html">sock_udp_aux_rx_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9512682d85257239769e4f62d3968839">sock_dtls_aux_rx_t</a></td></tr>
-<tr class="memdesc:ga9512682d85257239769e4f62d3968839"><td class="mdescLeft">&#160;</td><td class="mdescRight">Auxiliary data provided when receiving using an DTLS sock object.  <br /></td></tr>
-<tr class="separator:ga9512682d85257239769e4f62d3968839"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac7bc6f25016a05b5b793eb5d4745166a" id="r_gac7bc6f25016a05b5b793eb5d4745166a"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structsock__udp__aux__tx__t.html">sock_udp_aux_tx_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac7bc6f25016a05b5b793eb5d4745166a">sock_dtls_aux_tx_t</a></td></tr>
-<tr class="memdesc:gac7bc6f25016a05b5b793eb5d4745166a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Auxiliary data provided when sending using an DTLS sock object.  <br /></td></tr>
-<tr class="separator:gac7bc6f25016a05b5b793eb5d4745166a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ga53b88f47412139d54c8e480404435ea8" id="r_ga53b88f47412139d54c8e480404435ea8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga53b88f47412139d54c8e480404435ea8">sock_dtls_init</a> (void)</td></tr>
-<tr class="memdesc:ga53b88f47412139d54c8e480404435ea8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called exactly once during <code>auto_init</code>.  <br /></td></tr>
-<tr class="separator:ga53b88f47412139d54c8e480404435ea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga10998fac05f15688f9dd34a22c7bb682" id="r_ga10998fac05f15688f9dd34a22c7bb682"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga10998fac05f15688f9dd34a22c7bb682">sock_dtls_create</a> (<a class="el" href="group__net__sock__async.html#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a> *sock, <a class="el" href="group__net__sock__async.html#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a> *udp_sock, <a class="el" href="group__net__credman.html#ga89fc115fe10d879da7faf1c0d0f901a7">credman_tag_t</a> tag, unsigned version, unsigned role)</td></tr>
-<tr class="memdesc:ga10998fac05f15688f9dd34a22c7bb682"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new DTLS sock object.  <br /></td></tr>
-<tr class="separator:ga10998fac05f15688f9dd34a22c7bb682"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7c57588ebd846e5324bf24ffd97269a4" id="r_ga7c57588ebd846e5324bf24ffd97269a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__net__sock__async.html#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7c57588ebd846e5324bf24ffd97269a4">sock_dtls_get_udp_sock</a> (<a class="el" href="group__net__sock__async.html#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a> *sock)</td></tr>
-<tr class="memdesc:ga7c57588ebd846e5324bf24ffd97269a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get underlying UDP sock.  <br /></td></tr>
-<tr class="separator:ga7c57588ebd846e5324bf24ffd97269a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6ebde4fba6fd184710d1ec1c6285e7a2" id="r_ga6ebde4fba6fd184710d1ec1c6285e7a2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6ebde4fba6fd184710d1ec1c6285e7a2">sock_dtls_session_init</a> (<a class="el" href="group__net__sock__async.html#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a> *sock, const <a class="el" href="group__net__sock__udp.html#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *ep, <a class="el" href="#ga8595b9670004ad4afc5738109ecce649">sock_dtls_session_t</a> *remote)</td></tr>
-<tr class="memdesc:ga6ebde4fba6fd184710d1ec1c6285e7a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize session handshake.  <br /></td></tr>
-<tr class="separator:ga6ebde4fba6fd184710d1ec1c6285e7a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5e2688dd03fe5d365ec81c4f82ff03ed" id="r_ga5e2688dd03fe5d365ec81c4f82ff03ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5e2688dd03fe5d365ec81c4f82ff03ed">sock_dtls_session_destroy</a> (<a class="el" href="group__net__sock__async.html#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a> *sock, <a class="el" href="#ga8595b9670004ad4afc5738109ecce649">sock_dtls_session_t</a> *remote)</td></tr>
-<tr class="memdesc:ga5e2688dd03fe5d365ec81c4f82ff03ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys an existing DTLS session.  <br /></td></tr>
-<tr class="separator:ga5e2688dd03fe5d365ec81c4f82ff03ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaceffefc3c421cb696560e87ecf040161" id="r_gaceffefc3c421cb696560e87ecf040161"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaceffefc3c421cb696560e87ecf040161">sock_dtls_session_get_udp_ep</a> (const <a class="el" href="#ga8595b9670004ad4afc5738109ecce649">sock_dtls_session_t</a> *session, <a class="el" href="group__net__sock__udp.html#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *ep)</td></tr>
-<tr class="memdesc:gaceffefc3c421cb696560e87ecf040161"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the remote UDP endpoint from a session.  <br /></td></tr>
-<tr class="separator:gaceffefc3c421cb696560e87ecf040161"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaddac5bc68779c993cc613042a2515b12" id="r_gaddac5bc68779c993cc613042a2515b12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaddac5bc68779c993cc613042a2515b12">sock_dtls_session_set_udp_ep</a> (<a class="el" href="#ga8595b9670004ad4afc5738109ecce649">sock_dtls_session_t</a> *session, const <a class="el" href="group__net__sock__udp.html#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *ep)</td></tr>
-<tr class="memdesc:gaddac5bc68779c993cc613042a2515b12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the remote UDP endpoint from a session.  <br /></td></tr>
-<tr class="separator:gaddac5bc68779c993cc613042a2515b12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga91476f35b5ea85b789e19cb3fd256f42" id="r_ga91476f35b5ea85b789e19cb3fd256f42"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga91476f35b5ea85b789e19cb3fd256f42">sock_dtls_recv_aux</a> (<a class="el" href="group__net__sock__async.html#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a> *sock, <a class="el" href="#ga8595b9670004ad4afc5738109ecce649">sock_dtls_session_t</a> *remote, void *data, size_t maxlen, uint32_t timeout, <a class="el" href="#ga9512682d85257239769e4f62d3968839">sock_dtls_aux_rx_t</a> *aux)</td></tr>
-<tr class="memdesc:ga91476f35b5ea85b789e19cb3fd256f42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive handshake messages and application data from remote peer.  <br /></td></tr>
-<tr class="separator:ga91476f35b5ea85b789e19cb3fd256f42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga893395d4c18709210d66d979a2f9ea69" id="r_ga893395d4c18709210d66d979a2f9ea69"><td class="memItemLeft" align="right" valign="top">static ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga893395d4c18709210d66d979a2f9ea69">sock_dtls_recv</a> (<a class="el" href="group__net__sock__async.html#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a> *sock, <a class="el" href="#ga8595b9670004ad4afc5738109ecce649">sock_dtls_session_t</a> *remote, void *data, size_t maxlen, uint32_t timeout)</td></tr>
-<tr class="memdesc:ga893395d4c18709210d66d979a2f9ea69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive handshake messages and application data from remote peer.  <br /></td></tr>
-<tr class="separator:ga893395d4c18709210d66d979a2f9ea69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga208fb85350aa404db39305d6fe6cc0a9" id="r_ga208fb85350aa404db39305d6fe6cc0a9"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga208fb85350aa404db39305d6fe6cc0a9">sock_dtls_recv_buf_aux</a> (<a class="el" href="group__net__sock__async.html#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a> *sock, <a class="el" href="#ga8595b9670004ad4afc5738109ecce649">sock_dtls_session_t</a> *remote, void **data, void **buf_ctx, uint32_t timeout, <a class="el" href="#ga9512682d85257239769e4f62d3968839">sock_dtls_aux_rx_t</a> *aux)</td></tr>
-<tr class="memdesc:ga208fb85350aa404db39305d6fe6cc0a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrypts and provides stack-internal buffer space containing a message from a remote peer.  <br /></td></tr>
-<tr class="separator:ga208fb85350aa404db39305d6fe6cc0a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga026748dd9ad74a8a216eaad086551a7d" id="r_ga026748dd9ad74a8a216eaad086551a7d"><td class="memItemLeft" align="right" valign="top">static ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga026748dd9ad74a8a216eaad086551a7d">sock_dtls_recv_buf</a> (<a class="el" href="group__net__sock__async.html#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a> *sock, <a class="el" href="#ga8595b9670004ad4afc5738109ecce649">sock_dtls_session_t</a> *remote, void **data, void **buf_ctx, uint32_t timeout)</td></tr>
-<tr class="memdesc:ga026748dd9ad74a8a216eaad086551a7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrypts and provides stack-internal buffer space containing a message from a remote peer.  <br /></td></tr>
-<tr class="separator:ga026748dd9ad74a8a216eaad086551a7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaebdaa80fe988205e8aa2106898095e8c" id="r_gaebdaa80fe988205e8aa2106898095e8c"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaebdaa80fe988205e8aa2106898095e8c">sock_dtls_sendv_aux</a> (<a class="el" href="group__net__sock__async.html#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a> *sock, <a class="el" href="#ga8595b9670004ad4afc5738109ecce649">sock_dtls_session_t</a> *remote, const <a class="el" href="group__sys__iolist.html#gaa17f91ef26edec149cd806d8457aa3a0">iolist_t</a> *snips, uint32_t timeout, <a class="el" href="#gac7bc6f25016a05b5b793eb5d4745166a">sock_dtls_aux_tx_t</a> *aux)</td></tr>
-<tr class="memdesc:gaebdaa80fe988205e8aa2106898095e8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encrypts and sends a message to a remote peer with non-continous payload.  <br /></td></tr>
-<tr class="separator:gaebdaa80fe988205e8aa2106898095e8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1abd23c69aef1066a139cfc2ffb0d3e7" id="r_ga1abd23c69aef1066a139cfc2ffb0d3e7"><td class="memItemLeft" align="right" valign="top">static ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1abd23c69aef1066a139cfc2ffb0d3e7">sock_dtls_send_aux</a> (<a class="el" href="group__net__sock__async.html#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a> *sock, <a class="el" href="#ga8595b9670004ad4afc5738109ecce649">sock_dtls_session_t</a> *remote, const void *data, size_t len, uint32_t timeout, <a class="el" href="#gac7bc6f25016a05b5b793eb5d4745166a">sock_dtls_aux_tx_t</a> *aux)</td></tr>
-<tr class="memdesc:ga1abd23c69aef1066a139cfc2ffb0d3e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encrypts and sends a message to a remote peer.  <br /></td></tr>
-<tr class="separator:ga1abd23c69aef1066a139cfc2ffb0d3e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga630360b12614e2b57fca0cd81cdf9e4e" id="r_ga630360b12614e2b57fca0cd81cdf9e4e"><td class="memItemLeft" align="right" valign="top">static ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga630360b12614e2b57fca0cd81cdf9e4e">sock_dtls_send</a> (<a class="el" href="group__net__sock__async.html#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a> *sock, <a class="el" href="#ga8595b9670004ad4afc5738109ecce649">sock_dtls_session_t</a> *remote, const void *data, size_t len, uint32_t timeout)</td></tr>
-<tr class="memdesc:ga630360b12614e2b57fca0cd81cdf9e4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encrypts and sends a message to a remote peer.  <br /></td></tr>
-<tr class="separator:ga630360b12614e2b57fca0cd81cdf9e4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga16197978f12dc0efd521e8dba2853c45" id="r_ga16197978f12dc0efd521e8dba2853c45"><td class="memItemLeft" align="right" valign="top">static ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga16197978f12dc0efd521e8dba2853c45">sock_dtls_sendv</a> (<a class="el" href="group__net__sock__async.html#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a> *sock, <a class="el" href="#ga8595b9670004ad4afc5738109ecce649">sock_dtls_session_t</a> *remote, const <a class="el" href="group__sys__iolist.html#gaa17f91ef26edec149cd806d8457aa3a0">iolist_t</a> *snips, uint32_t timeout)</td></tr>
-<tr class="memdesc:ga16197978f12dc0efd521e8dba2853c45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encrypts and sends a message to a remote peer with non-continous payload.  <br /></td></tr>
-<tr class="separator:ga16197978f12dc0efd521e8dba2853c45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga47fde8af808ceed2db7fefbb05bbd04c" id="r_ga47fde8af808ceed2db7fefbb05bbd04c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga47fde8af808ceed2db7fefbb05bbd04c">sock_dtls_close</a> (<a class="el" href="group__net__sock__async.html#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a> *sock)</td></tr>
-<tr class="memdesc:ga47fde8af808ceed2db7fefbb05bbd04c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes a DTLS sock.  <br /></td></tr>
-<tr class="separator:ga47fde8af808ceed2db7fefbb05bbd04c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0c6a8ceda748c82eca58fbab436ca300" id="r_ga0c6a8ceda748c82eca58fbab436ca300"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="#gga0c6a8ceda748c82eca58fbab436ca300a1c0824e2bb84e5d4654893ded0788bbb">SOCK_DTLS_1_0</a> = 1
-, <a class="el" href="#gga0c6a8ceda748c82eca58fbab436ca300a3d86ab5555dcad0072067eeca3db9696">SOCK_DTLS_1_2</a> = 2
-, <a class="el" href="#gga0c6a8ceda748c82eca58fbab436ca300ac5122daec5c2cf0c50766b073facde42">SOCK_DTLS_1_3</a> = 3
- }</td></tr>
-<tr class="memdesc:ga0c6a8ceda748c82eca58fbab436ca300"><td class="mdescLeft">&#160;</td><td class="mdescRight">DTLS version number <a class="anchor" id="sock_dtls_prot_version"></a>.  <a href="#ga0c6a8ceda748c82eca58fbab436ca300">More...</a><br /></td></tr>
-<tr class="separator:ga0c6a8ceda748c82eca58fbab436ca300"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacef31600358009411b6fcea11ebe07f6" id="r_gacef31600358009411b6fcea11ebe07f6"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="#ggacef31600358009411b6fcea11ebe07f6a5d0ebcac70c848b4c09c9a35e40cfdaf">SOCK_DTLS_CLIENT</a> = 1
-, <a class="el" href="#ggacef31600358009411b6fcea11ebe07f6af8548d1d8748a66e59667582bed23a17">SOCK_DTLS_SERVER</a> = 2
- }</td></tr>
-<tr class="memdesc:gacef31600358009411b6fcea11ebe07f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">DTLS role <a class="anchor" id="sock_dtls_role"></a>.  <a href="#gacef31600358009411b6fcea11ebe07f6">More...</a><br /></td></tr>
-<tr class="separator:gacef31600358009411b6fcea11ebe07f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Sock submodule for DTLS </p>
 <p>DTLS sock acts as a wrapper for the underlying DTLS module to provide encryption for applications using the UDP sock API.</p>
@@ -682,6 +566,119 @@ Elliptic Curve Cryptography Cipher Suites</h4>
 <h4><a class="anchor" id="autotoc_md2081"></a>
 Public key verification when using ECC</h4>
 <p>By enabling the pseudomodule <code>sock_dtls_verify_public_key</code> the DTLS sock will verify the public key of the remote peer. When enabled, the DTLS sock will only accept a connection if the provided public key is in the list of public keys assigned to the specified sock. This only applies when using ECC ciphersuites (i.e., not PSK). </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
+Topics</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__sock__dtls__creds.html">DTLS sock credentials API</a></td></tr>
+<tr class="memdesc:group__net__sock__dtls__creds"><td class="mdescLeft">&#160;</td><td class="mdescRight">Credential handling for DTLS sock <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__sock__dtls__conf.html">SOCK DTLS compile configuration</a></td></tr>
+<tr class="memdesc:group__net__sock__dtls__conf"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sock_2dtls_8h.html">dtls.h</a></td></tr>
+<tr class="memdesc:sock_2dtls_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">DTLS sock definitions. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:gad77967da0dcabd6ceea9e523897b6798" id="r_gad77967da0dcabd6ceea9e523897b6798"><td class="memItemLeft" align="right" valign="top"><a id="gad77967da0dcabd6ceea9e523897b6798" name="gad77967da0dcabd6ceea9e523897b6798"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DTLS_HANDSHAKE_BUFSIZE</b>&#160;&#160;&#160;(1 &lt;&lt; <a class="el" href="group__net__sock__dtls__conf.html#ga0cbc6d1ac3648c3e4b6803d0272535ef">CONFIG_DTLS_HANDSHAKE_BUFSIZE_EXP</a>)</td></tr>
+<tr class="memdesc:gad77967da0dcabd6ceea9e523897b6798"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size buffer used in handshake to hold credentials. <br /></td></tr>
+<tr class="separator:gad77967da0dcabd6ceea9e523897b6798"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3f7ccb93f455150d01aad0295d398762" id="r_ga3f7ccb93f455150d01aad0295d398762"><td class="memItemLeft" align="right" valign="top"><a id="ga3f7ccb93f455150d01aad0295d398762" name="ga3f7ccb93f455150d01aad0295d398762"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>SOCK_DTLS_HANDSHAKE</b>&#160;&#160;&#160;(<a class="el" href="group__cpu__atmega__common.html#ga3396cf9fb0ff5af3a18dd2a2bbdb21e1">EXDEV</a>)</td></tr>
+<tr class="memdesc:ga3f7ccb93f455150d01aad0295d398762"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return value for a successful handshake. <br /></td></tr>
+<tr class="separator:ga3f7ccb93f455150d01aad0295d398762"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad41621093a9a2d9e7830e372125cb8fd" id="r_gad41621093a9a2d9e7830e372125cb8fd"><td class="memItemLeft" align="right" valign="top"><a id="gad41621093a9a2d9e7830e372125cb8fd" name="gad41621093a9a2d9e7830e372125cb8fd"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CONFIG_DTLS_FORCE_EXTENDED_MASTER_SECRET</b>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:gad41621093a9a2d9e7830e372125cb8fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Force extended master secret extension. <br /></td></tr>
+<tr class="separator:gad41621093a9a2d9e7830e372125cb8fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga05770995cf620f04210dc5517517db70" id="r_ga05770995cf620f04210dc5517517db70"><td class="memItemLeft" align="right" valign="top"><a id="ga05770995cf620f04210dc5517517db70" name="ga05770995cf620f04210dc5517517db70"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CONFIG_DTLS_FORCE_RENEGOTIATION_INFO</b>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:ga05770995cf620f04210dc5517517db70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Force renegotiation info extension. <br /></td></tr>
+<tr class="separator:ga05770995cf620f04210dc5517517db70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:gaa63acc71681400dd4b856ce09e27cafb" id="r_gaa63acc71681400dd4b856ce09e27cafb"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structsock__dtls.html">sock_dtls</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a></td></tr>
+<tr class="memdesc:gaa63acc71681400dd4b856ce09e27cafb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type for a DTLS sock object.  <br /></td></tr>
+<tr class="separator:gaa63acc71681400dd4b856ce09e27cafb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8595b9670004ad4afc5738109ecce649" id="r_ga8595b9670004ad4afc5738109ecce649"><td class="memItemLeft" align="right" valign="top"><a id="ga8595b9670004ad4afc5738109ecce649" name="ga8595b9670004ad4afc5738109ecce649"></a>
+typedef struct <a class="el" href="structsock__dtls__session.html">sock_dtls_session</a>&#160;</td><td class="memItemRight" valign="bottom"><b>sock_dtls_session_t</b></td></tr>
+<tr class="memdesc:ga8595b9670004ad4afc5738109ecce649"><td class="mdescLeft">&#160;</td><td class="mdescRight">Information about a created session. <br /></td></tr>
+<tr class="separator:ga8595b9670004ad4afc5738109ecce649"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9512682d85257239769e4f62d3968839" id="r_ga9512682d85257239769e4f62d3968839"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structsock__udp__aux__rx__t.html">sock_udp_aux_rx_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9512682d85257239769e4f62d3968839">sock_dtls_aux_rx_t</a></td></tr>
+<tr class="memdesc:ga9512682d85257239769e4f62d3968839"><td class="mdescLeft">&#160;</td><td class="mdescRight">Auxiliary data provided when receiving using an DTLS sock object.  <br /></td></tr>
+<tr class="separator:ga9512682d85257239769e4f62d3968839"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac7bc6f25016a05b5b793eb5d4745166a" id="r_gac7bc6f25016a05b5b793eb5d4745166a"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structsock__udp__aux__tx__t.html">sock_udp_aux_tx_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac7bc6f25016a05b5b793eb5d4745166a">sock_dtls_aux_tx_t</a></td></tr>
+<tr class="memdesc:gac7bc6f25016a05b5b793eb5d4745166a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Auxiliary data provided when sending using an DTLS sock object.  <br /></td></tr>
+<tr class="separator:gac7bc6f25016a05b5b793eb5d4745166a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga53b88f47412139d54c8e480404435ea8" id="r_ga53b88f47412139d54c8e480404435ea8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga53b88f47412139d54c8e480404435ea8">sock_dtls_init</a> (void)</td></tr>
+<tr class="memdesc:ga53b88f47412139d54c8e480404435ea8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called exactly once during <code>auto_init</code>.  <br /></td></tr>
+<tr class="separator:ga53b88f47412139d54c8e480404435ea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga10998fac05f15688f9dd34a22c7bb682" id="r_ga10998fac05f15688f9dd34a22c7bb682"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga10998fac05f15688f9dd34a22c7bb682">sock_dtls_create</a> (<a class="el" href="group__net__sock__async.html#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a> *sock, <a class="el" href="group__net__sock__async.html#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a> *udp_sock, <a class="el" href="group__net__credman.html#ga89fc115fe10d879da7faf1c0d0f901a7">credman_tag_t</a> tag, unsigned version, unsigned role)</td></tr>
+<tr class="memdesc:ga10998fac05f15688f9dd34a22c7bb682"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new DTLS sock object.  <br /></td></tr>
+<tr class="separator:ga10998fac05f15688f9dd34a22c7bb682"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7c57588ebd846e5324bf24ffd97269a4" id="r_ga7c57588ebd846e5324bf24ffd97269a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__net__sock__async.html#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7c57588ebd846e5324bf24ffd97269a4">sock_dtls_get_udp_sock</a> (<a class="el" href="group__net__sock__async.html#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a> *sock)</td></tr>
+<tr class="memdesc:ga7c57588ebd846e5324bf24ffd97269a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get underlying UDP sock.  <br /></td></tr>
+<tr class="separator:ga7c57588ebd846e5324bf24ffd97269a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6ebde4fba6fd184710d1ec1c6285e7a2" id="r_ga6ebde4fba6fd184710d1ec1c6285e7a2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6ebde4fba6fd184710d1ec1c6285e7a2">sock_dtls_session_init</a> (<a class="el" href="group__net__sock__async.html#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a> *sock, const <a class="el" href="group__net__sock__udp.html#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *ep, <a class="el" href="#ga8595b9670004ad4afc5738109ecce649">sock_dtls_session_t</a> *remote)</td></tr>
+<tr class="memdesc:ga6ebde4fba6fd184710d1ec1c6285e7a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize session handshake.  <br /></td></tr>
+<tr class="separator:ga6ebde4fba6fd184710d1ec1c6285e7a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5e2688dd03fe5d365ec81c4f82ff03ed" id="r_ga5e2688dd03fe5d365ec81c4f82ff03ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5e2688dd03fe5d365ec81c4f82ff03ed">sock_dtls_session_destroy</a> (<a class="el" href="group__net__sock__async.html#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a> *sock, <a class="el" href="#ga8595b9670004ad4afc5738109ecce649">sock_dtls_session_t</a> *remote)</td></tr>
+<tr class="memdesc:ga5e2688dd03fe5d365ec81c4f82ff03ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys an existing DTLS session.  <br /></td></tr>
+<tr class="separator:ga5e2688dd03fe5d365ec81c4f82ff03ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaceffefc3c421cb696560e87ecf040161" id="r_gaceffefc3c421cb696560e87ecf040161"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaceffefc3c421cb696560e87ecf040161">sock_dtls_session_get_udp_ep</a> (const <a class="el" href="#ga8595b9670004ad4afc5738109ecce649">sock_dtls_session_t</a> *session, <a class="el" href="group__net__sock__udp.html#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *ep)</td></tr>
+<tr class="memdesc:gaceffefc3c421cb696560e87ecf040161"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the remote UDP endpoint from a session.  <br /></td></tr>
+<tr class="separator:gaceffefc3c421cb696560e87ecf040161"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaddac5bc68779c993cc613042a2515b12" id="r_gaddac5bc68779c993cc613042a2515b12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaddac5bc68779c993cc613042a2515b12">sock_dtls_session_set_udp_ep</a> (<a class="el" href="#ga8595b9670004ad4afc5738109ecce649">sock_dtls_session_t</a> *session, const <a class="el" href="group__net__sock__udp.html#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *ep)</td></tr>
+<tr class="memdesc:gaddac5bc68779c993cc613042a2515b12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the remote UDP endpoint from a session.  <br /></td></tr>
+<tr class="separator:gaddac5bc68779c993cc613042a2515b12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga91476f35b5ea85b789e19cb3fd256f42" id="r_ga91476f35b5ea85b789e19cb3fd256f42"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga91476f35b5ea85b789e19cb3fd256f42">sock_dtls_recv_aux</a> (<a class="el" href="group__net__sock__async.html#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a> *sock, <a class="el" href="#ga8595b9670004ad4afc5738109ecce649">sock_dtls_session_t</a> *remote, void *data, size_t maxlen, uint32_t timeout, <a class="el" href="#ga9512682d85257239769e4f62d3968839">sock_dtls_aux_rx_t</a> *aux)</td></tr>
+<tr class="memdesc:ga91476f35b5ea85b789e19cb3fd256f42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive handshake messages and application data from remote peer.  <br /></td></tr>
+<tr class="separator:ga91476f35b5ea85b789e19cb3fd256f42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga893395d4c18709210d66d979a2f9ea69" id="r_ga893395d4c18709210d66d979a2f9ea69"><td class="memItemLeft" align="right" valign="top">static ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga893395d4c18709210d66d979a2f9ea69">sock_dtls_recv</a> (<a class="el" href="group__net__sock__async.html#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a> *sock, <a class="el" href="#ga8595b9670004ad4afc5738109ecce649">sock_dtls_session_t</a> *remote, void *data, size_t maxlen, uint32_t timeout)</td></tr>
+<tr class="memdesc:ga893395d4c18709210d66d979a2f9ea69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive handshake messages and application data from remote peer.  <br /></td></tr>
+<tr class="separator:ga893395d4c18709210d66d979a2f9ea69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga208fb85350aa404db39305d6fe6cc0a9" id="r_ga208fb85350aa404db39305d6fe6cc0a9"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga208fb85350aa404db39305d6fe6cc0a9">sock_dtls_recv_buf_aux</a> (<a class="el" href="group__net__sock__async.html#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a> *sock, <a class="el" href="#ga8595b9670004ad4afc5738109ecce649">sock_dtls_session_t</a> *remote, void **data, void **buf_ctx, uint32_t timeout, <a class="el" href="#ga9512682d85257239769e4f62d3968839">sock_dtls_aux_rx_t</a> *aux)</td></tr>
+<tr class="memdesc:ga208fb85350aa404db39305d6fe6cc0a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrypts and provides stack-internal buffer space containing a message from a remote peer.  <br /></td></tr>
+<tr class="separator:ga208fb85350aa404db39305d6fe6cc0a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga026748dd9ad74a8a216eaad086551a7d" id="r_ga026748dd9ad74a8a216eaad086551a7d"><td class="memItemLeft" align="right" valign="top">static ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga026748dd9ad74a8a216eaad086551a7d">sock_dtls_recv_buf</a> (<a class="el" href="group__net__sock__async.html#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a> *sock, <a class="el" href="#ga8595b9670004ad4afc5738109ecce649">sock_dtls_session_t</a> *remote, void **data, void **buf_ctx, uint32_t timeout)</td></tr>
+<tr class="memdesc:ga026748dd9ad74a8a216eaad086551a7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrypts and provides stack-internal buffer space containing a message from a remote peer.  <br /></td></tr>
+<tr class="separator:ga026748dd9ad74a8a216eaad086551a7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaebdaa80fe988205e8aa2106898095e8c" id="r_gaebdaa80fe988205e8aa2106898095e8c"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaebdaa80fe988205e8aa2106898095e8c">sock_dtls_sendv_aux</a> (<a class="el" href="group__net__sock__async.html#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a> *sock, <a class="el" href="#ga8595b9670004ad4afc5738109ecce649">sock_dtls_session_t</a> *remote, const <a class="el" href="group__sys__iolist.html#gaa17f91ef26edec149cd806d8457aa3a0">iolist_t</a> *snips, uint32_t timeout, <a class="el" href="#gac7bc6f25016a05b5b793eb5d4745166a">sock_dtls_aux_tx_t</a> *aux)</td></tr>
+<tr class="memdesc:gaebdaa80fe988205e8aa2106898095e8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encrypts and sends a message to a remote peer with non-continous payload.  <br /></td></tr>
+<tr class="separator:gaebdaa80fe988205e8aa2106898095e8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1abd23c69aef1066a139cfc2ffb0d3e7" id="r_ga1abd23c69aef1066a139cfc2ffb0d3e7"><td class="memItemLeft" align="right" valign="top">static ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1abd23c69aef1066a139cfc2ffb0d3e7">sock_dtls_send_aux</a> (<a class="el" href="group__net__sock__async.html#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a> *sock, <a class="el" href="#ga8595b9670004ad4afc5738109ecce649">sock_dtls_session_t</a> *remote, const void *data, size_t len, uint32_t timeout, <a class="el" href="#gac7bc6f25016a05b5b793eb5d4745166a">sock_dtls_aux_tx_t</a> *aux)</td></tr>
+<tr class="memdesc:ga1abd23c69aef1066a139cfc2ffb0d3e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encrypts and sends a message to a remote peer.  <br /></td></tr>
+<tr class="separator:ga1abd23c69aef1066a139cfc2ffb0d3e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga630360b12614e2b57fca0cd81cdf9e4e" id="r_ga630360b12614e2b57fca0cd81cdf9e4e"><td class="memItemLeft" align="right" valign="top">static ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga630360b12614e2b57fca0cd81cdf9e4e">sock_dtls_send</a> (<a class="el" href="group__net__sock__async.html#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a> *sock, <a class="el" href="#ga8595b9670004ad4afc5738109ecce649">sock_dtls_session_t</a> *remote, const void *data, size_t len, uint32_t timeout)</td></tr>
+<tr class="memdesc:ga630360b12614e2b57fca0cd81cdf9e4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encrypts and sends a message to a remote peer.  <br /></td></tr>
+<tr class="separator:ga630360b12614e2b57fca0cd81cdf9e4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga16197978f12dc0efd521e8dba2853c45" id="r_ga16197978f12dc0efd521e8dba2853c45"><td class="memItemLeft" align="right" valign="top">static ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga16197978f12dc0efd521e8dba2853c45">sock_dtls_sendv</a> (<a class="el" href="group__net__sock__async.html#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a> *sock, <a class="el" href="#ga8595b9670004ad4afc5738109ecce649">sock_dtls_session_t</a> *remote, const <a class="el" href="group__sys__iolist.html#gaa17f91ef26edec149cd806d8457aa3a0">iolist_t</a> *snips, uint32_t timeout)</td></tr>
+<tr class="memdesc:ga16197978f12dc0efd521e8dba2853c45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encrypts and sends a message to a remote peer with non-continous payload.  <br /></td></tr>
+<tr class="separator:ga16197978f12dc0efd521e8dba2853c45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga47fde8af808ceed2db7fefbb05bbd04c" id="r_ga47fde8af808ceed2db7fefbb05bbd04c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga47fde8af808ceed2db7fefbb05bbd04c">sock_dtls_close</a> (<a class="el" href="group__net__sock__async.html#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a> *sock)</td></tr>
+<tr class="memdesc:ga47fde8af808ceed2db7fefbb05bbd04c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes a DTLS sock.  <br /></td></tr>
+<tr class="separator:ga47fde8af808ceed2db7fefbb05bbd04c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0c6a8ceda748c82eca58fbab436ca300" id="r_ga0c6a8ceda748c82eca58fbab436ca300"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="#gga0c6a8ceda748c82eca58fbab436ca300a1c0824e2bb84e5d4654893ded0788bbb">SOCK_DTLS_1_0</a> = 1
+, <a class="el" href="#gga0c6a8ceda748c82eca58fbab436ca300a3d86ab5555dcad0072067eeca3db9696">SOCK_DTLS_1_2</a> = 2
+, <a class="el" href="#gga0c6a8ceda748c82eca58fbab436ca300ac5122daec5c2cf0c50766b073facde42">SOCK_DTLS_1_3</a> = 3
+ }</td></tr>
+<tr class="memdesc:ga0c6a8ceda748c82eca58fbab436ca300"><td class="mdescLeft">&#160;</td><td class="mdescRight">DTLS version number <a class="anchor" id="sock_dtls_prot_version"></a>.  <a href="#ga0c6a8ceda748c82eca58fbab436ca300">More...</a><br /></td></tr>
+<tr class="separator:ga0c6a8ceda748c82eca58fbab436ca300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacef31600358009411b6fcea11ebe07f6" id="r_gacef31600358009411b6fcea11ebe07f6"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="#ggacef31600358009411b6fcea11ebe07f6a5d0ebcac70c848b4c09c9a35e40cfdaf">SOCK_DTLS_CLIENT</a> = 1
+, <a class="el" href="#ggacef31600358009411b6fcea11ebe07f6af8548d1d8748a66e59667582bed23a17">SOCK_DTLS_SERVER</a> = 2
+ }</td></tr>
+<tr class="memdesc:gacef31600358009411b6fcea11ebe07f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">DTLS role <a class="anchor" id="sock_dtls_role"></a>.  <a href="#gacef31600358009411b6fcea11ebe07f6">More...</a><br /></td></tr>
+<tr class="separator:gacef31600358009411b6fcea11ebe07f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ga9512682d85257239769e4f62d3968839" name="ga9512682d85257239769e4f62d3968839"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga9512682d85257239769e4f62d3968839">&#9670;&#160;</a></span>sock_dtls_aux_rx_t</h2>
@@ -1635,7 +1632,7 @@ Function blocks if no packet is currently waiting.</dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

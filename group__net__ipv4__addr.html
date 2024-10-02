@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -146,12 +143,14 @@ $(function(){initNavTree('group__net__ipv4__addr.html',''); initResizable(true);
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">IPv4 addresses<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__ipv4.html">IPv4</a></div></div></div>
+  <div class="headertitle"><div class="title">IPv4 addresses<div class="ingroups"><a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__network__layer.html">Network Layer</a> &raquo; <a class="el" href="group__net__ipv4.html">IPv4</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>IPv4 address types and helper function  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>IPv4 address types and helper function </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -196,8 +195,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga4fab9bd324008a393b77265d3193c29c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print IPv4 address to stdout.  <br /></td></tr>
 <tr class="separator:ga4fab9bd324008a393b77265d3193c29c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>IPv4 address types and helper function </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="gaa1cf435b286640dbc9ae8c9d9891385e" name="gaa1cf435b286640dbc9ae8c9d9891385e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaa1cf435b286640dbc9ae8c9d9891385e">&#9670;&#160;</a></span>IPV4_ADDR_INIT</h2>
@@ -472,7 +469,7 @@ NULL, if <code>result</code> or <code>addr</code> was NULL </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

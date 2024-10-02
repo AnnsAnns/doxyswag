@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -144,7 +141,11 @@ $(function(){initNavTree('stdio__rtt_8h.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">stdio_rtt.h File Reference<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__sys__stdio.html">STDIO abstraction</a> &raquo; <a class="el" href="group__sys__stdio__rtt.html">STDIO over SEGGER RTT</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="stdio__base_8h.html">stdio_base.h</a>&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Michael Andersen <a href="#" onclick="location.href='mai'+'lto:'+'m.a'+'nd'+'ers'+'en'+'@cs'+'.b'+'erk'+'el'+'ey.'+'ed'+'u'; return false;">m.and<span class="obfuscator">.nosp@m.</span>erse<span class="obfuscator">.nosp@m.</span>n@cs.<span class="obfuscator">.nosp@m.</span>berk<span class="obfuscator">.nosp@m.</span>eley.<span class="obfuscator">.nosp@m.</span>edu</a> </dd>
+<dd>
+Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;<a class="el" href="stdio__base_8h.html">stdio_base.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for stdio_rtt.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -160,11 +161,7 @@ $(function(){initNavTree('stdio__rtt_8h.html',''); initResizable(true); });
 <tr class="memdesc:a6998fb52a4714c7a449ced7e9a013b6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">enable stdout blocking and free space polling.  <br /></td></tr>
 <tr class="separator:a6998fb52a4714c7a449ced7e9a013b6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Michael Andersen <a href="#" onclick="location.href='mai'+'lto:'+'m.a'+'nd'+'ers'+'en'+'@cs'+'.b'+'erk'+'el'+'ey.'+'ed'+'u'; return false;">m.and<span class="obfuscator">.nosp@m.</span>erse<span class="obfuscator">.nosp@m.</span>n@cs.<span class="obfuscator">.nosp@m.</span>berk<span class="obfuscator">.nosp@m.</span>eley.<span class="obfuscator">.nosp@m.</span>edu</a> </dd>
-<dd>
-Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
-</div><h2 class="groupheader">Function Documentation</h2>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="a6998fb52a4714c7a449ced7e9a013b6f" name="a6998fb52a4714c7a449ced7e9a013b6f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6998fb52a4714c7a449ced7e9a013b6f">&#9670;&#160;</a></span>rtt_stdio_enable_blocking_stdout()</h2>
 
@@ -213,7 +210,7 @@ Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a408b6d3a4a484720bc3ecfeac8947e3.html">sys</a></li><li class="navelem"><a class="el" href="dir_e9e107fc86bbb4b6a326076a6808b9f5.html">include</a></li><li class="navelem"><a class="el" href="stdio__rtt_8h.html">stdio_rtt.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

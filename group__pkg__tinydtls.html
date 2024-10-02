@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -143,19 +140,12 @@ $(function(){initNavTree('group__pkg__tinydtls.html',''); initResizable(true); }
 <div class="header">
   <div class="summary">
 <a href="#groups">Topics</a>  </div>
-  <div class="headertitle"><div class="title">TinyDTLS for RIOT<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__net.html">Networking</a> &#124; <a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__dtls.html">DTLS</a></div></div></div>
+  <div class="headertitle"><div class="title">TinyDTLS for RIOT<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &#124; <a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__net__dtls.html">DTLS</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Provides the Eclipse TinyDTLS to RIOT  
 <a href="#details">More...</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
-Topics</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tinydtls__config.html">Tinydtls compile time configuration</a></td></tr>
-<tr class="memdesc:group__tinydtls__config"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides compile-time configuration for tinydtls <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Provides the Eclipse TinyDTLS to RIOT </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://projects.eclipse.org/projects/iot.tinydtls">https://projects.eclipse.org/projects/iot.tinydtls</a></dd></dl>
@@ -170,14 +160,21 @@ Supported Cipher Suites</h2>
 <p>TinyDTLS only has support for <code>TLS_PSK_WITH_AES_128_CCM_8</code> and <code>TLS_ECDHE_ECDSA_WITH_AES_128_CCM_8</code>. To choose which cipher suite to use, add one of the following to your Makefile:</p>
 <p>For <code>TLS_PSK_WITH_AES_128_CCM_8</code> support (default): </p><div class="fragment"><div class="line">CFLAGS += -DCONFIG_DTLS_PSK</div>
 </div><!-- fragment --><p>For <code>TLS_ECDHE_ECDSA_WITH_AES_128_CCM_8</code> support: </p><div class="fragment"><div class="line">CFLAGS += -DCONFIG_DTLS_ECC</div>
-</div><!-- fragment --> </div><!-- contents -->
+</div><!-- fragment --> <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
+Topics</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tinydtls__config.html">Tinydtls compile time configuration</a></td></tr>
+<tr class="memdesc:group__tinydtls__config"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides compile-time configuration for tinydtls <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

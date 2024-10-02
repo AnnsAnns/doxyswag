@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -149,6 +146,85 @@ $(function(){initNavTree('group__cpu__cc26xx__cc13xx.html',''); initResizable(tr
 
 <p>Common code for TI cc26xx/cc13xx family  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Common code for TI cc26xx/cc13xx family </p>
+<p>This module contains code common to all cc26xx/cc13xx cpus supported by RIOT: <a class="el" href="group__cpu__cc26x0__cc13x0.html">TI CC26x0/CC13x0</a>, <a class="el" href="group__cpu__cc26x2__cc13x2.html">TI CC26x2, CC13x2</a></p>
+<h1><a class="anchor" id="cc26xx_cc13xx_riot"></a>
+RIOT-OS on CC26xx/CC13xx boards</h1>
+<h1><a class="anchor" id="autotoc_md23"></a>
+Overview</h1>
+<p>The CC26xx/C13xx is a family of micro controllers fabricated by Texas Instruments for low-power communications, using protocols such as BLE, IEEE 802.15.4g-2012, and proprietary radio protocols.</p>
+<p>These family of MCUs is divided in two generations, the cc26x0/cc13x0, and the cc26x2/cc13x2 family. The difference is that the later provides more ROM and RAM and improvements on various peripherals.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">MCU family   </th><th class="markdownTableHeadLeft">RAM   </th><th class="markdownTableHeadLeft">Flash    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">CC26x0/CC13x0   </td><td class="markdownTableBodyLeft">20 K   </td><td class="markdownTableBodyLeft">128 K    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">CC26x2/CC13x2   </td><td class="markdownTableBodyLeft">80 K   </td><td class="markdownTableBodyLeft">352 K   </td></tr>
+</table>
+<dl class="section note"><dt>Note</dt><dd>The actual flash size is the flash size minus 88 bytes, these 88 bytes are reserved for the CCFG, see also Flashing the CCFG.</dd></dl>
+<h1><a class="anchor" id="autotoc_md24"></a>
+Flashing the CCFG</h1>
+<dl class="section warning"><dt>Warning</dt><dd>Setting an incorrect CCFG configuration may lock out yourself out of the device.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Blank chips from Texas Instruments come without a CCFG flashed, so any firmware flashed won't boot until the configuration is flashed. As this might be the case for custom boards remember flashing it.</dd></dl>
+<p>RIOT provides built-in support to flash the Customer Configuration on the CC26xx/CC13xx MCUs. It can be done through Kconfig using <code>make menuconfig</code>.</p>
+<p>For example:</p>
+<div class="fragment"><div class="line">make -C examples/hello-world menuconfig BOARD=cc1350-launchpad</div>
+</div><!-- fragment --><p>It will open the Kconfig terminal configuration utility, you may see the <code>Update CCFG</code> option, selecting it will include the default configuration that Texas Instruments provides from their own SDK. You may change any further options available through Kconfig.</p>
+<p>Once configuration is saved you may compile a new binary and flash it onto the device.</p>
+<p>For example:</p>
+<div class="fragment"><div class="line">make -C examples/hello-world flash BOARD=cc1350-launchpad</div>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Once flashed, there's no need to flash it again, unless the configuration needs to be changed.</dd></dl>
+<h1><a class="anchor" id="autotoc_md25"></a>
+Debugging</h1>
+<p>Development kits from Texas Instruments come with an XDS110 on-board debug probe that provides programming, flashing and debugging capabilities.</p>
+<p>It can either use proprietary Texas Instruments tools for programming, or OpenOCD.</p>
+<h3><a class="anchor" id="autotoc_md26"></a>
+Using Upstream OpenOCD</h3>
+<p>OpenOCD is the default programmer and debugger. Hence, flashing can be done by navigating to the application directory and running:</p>
+<div class="fragment"><div class="line">make flash BOARD=&lt;CC26xx-or-CC13xx-based-board&gt;</div>
+</div><!-- fragment --><dl class="section warning"><dt>Warning</dt><dd>A reliable and robust sequence to reset the CC26xx / CC13xx from upstream OpenOCD is not yet implemented. As a result, OpenOCD will halt the MCU for flashing without reset. This may result in IRQ handlers being already set up and responding to IRQs that trigger while flashing. Hence, flashing is likely not 100% reliable.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>By default the XDS110 debug adapter is used, which is the debugger TI integrates into is developments boards. This can be overwritten by setting <code>OPENOCD_DEBUG_ADAPTER</code> to a different debugger.</dd></dl>
+<h3><a class="anchor" id="autotoc_md27"></a>
+Using TI's OpenOCD Fork</h3>
+<p>TI maintains an outdated fork of OpenOCD that contains patches and special handling that have not upstreamed yet. It can be build using:</p>
+<div class="fragment"><div class="line"><span class="preprocessor"># Clone into the openocd-ti folder</span></div>
+<div class="line">git clone https:<span class="comment">//git.ti.com/cgit/sdo-emu/openocd openocd-ti</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor"># Change directory to the openocd source code</span></div>
+<div class="line">cd openocd-ti/openocd</div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor"># Configure, build, install</span></div>
+<div class="line">./configure</div>
+<div class="line">make</div>
+<div class="line">sudo make install</div>
+</div><!-- fragment --><dl class="section warning"><dt>Warning</dt><dd>Sometimes OpenOCD may stop working when the firmware on the XDS110 is updated (when using Uniflash, happens without user intervention). With that in mind, it's encouraged to either enable the ROM bootloader backdoor to enable serial programming or the installation of TI Uniflash as a fallback. See Using Uniflash</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>With &lsquo;OPENOCD_CMD_RESET_HALT="-c 'reset halt&amp;rsquo;"` the default reset sequence can be restored. This may work with TI's OpenOCD fork.</dd></dl>
+<p>Otherwise, usage is identical with the upstream version of OpenOCD.</p>
+<h3><a class="anchor" id="autotoc_md28"></a>
+using J-Link</h3>
+<p>By passing (or exporting) <code>PROGRAMMER=jlink</code> J-Link can be used to flash the board. This requires a J-Link compatible programmer / debugger. Since the XDS110 that TI's development boards use is not compatible, an external programmer has to be used. The upside is that flashing appears to be reliable with that.</p>
+<h3><a class="anchor" id="autotoc_md29"></a>
+Using Uniflash</h3>
+<p>The TI's Code Composer Studio provides the necessary tools to use the debug features of the XDS110; Uniflash provides flashing tools. Both programs can be found here:</p>
+<ul>
+<li><a href="http://www.ti.com/tool/CCSTUDIO">Code Composer Studio (CCS) Integrated Development Environment (IDE)</a>.</li>
+<li><a href="http://www.ti.com/tool/UNIFLASH">Uniflash Standalone Flash Tool for TI Microcontrollers (MCU), Sitara Processors &amp; SimpleLink devices</a>.</li>
+</ul>
+<p>Before using the XDS110 with the latest CCS/Uniflash versions the firmware for it needs to be updated. Texas Instruments has a guide to correctly update it <a href="http://software-dl.ti.com/ccs/esd/documents/xdsdebugprobes/emu_xds110.html#updating-the-xds110-firmware">here</a>.</p>
+<h4><a class="anchor" id="autotoc_md30"></a>
+Setting up the environment</h4>
+<p>In order to make use of the programming and debugging capabilities of the XDS110 some environment variable needs to be set:</p>
+<div class="fragment"><div class="line"><span class="keyword">export</span> CCS_PATH=&lt;path to ti install folder&gt;/ti/ccs930</div>
+<div class="line"><span class="keyword">export</span> UNIFLASH_PATH&lt;path to ti install folder&gt;/ti/uniflash_5.2.0</div>
+</div><!-- fragment --><p>That assumes you have CCS 9.3.0 (for the path name) and Uniflash 5.2.0, adjust accordingly.</p>
+<p>After that you can flash using the RIOT <code>make flash</code> command on your application or to debug you first start the debug server:</p>
+<div class="fragment"><div class="line">make debug-server</div>
+</div><!-- fragment --><p>And then on another terminal you can run:</p>
+<div class="fragment"><div class="line">make debug</div>
+</div><!-- fragment --><p>It will open GDB and connect to the debug server automatically.</p>
+<dl class="section note"><dt>Note</dt><dd>By default LaunchPad boards on RIOT use uniflash as the default programmer, if it's not the case for an external board, you can always use uniflash by setting this environment variable <code>PROGRAMMER=uniflash</code> to change the default programmer. </dd></dl>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -301,85 +377,6 @@ Files</h2></td></tr>
 <tr class="memdesc:ga3cca25816936b7d5cf6319e3b1d05f10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable Test TAP.  <br /></td></tr>
 <tr class="separator:ga3cca25816936b7d5cf6319e3b1d05f10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Common code for TI cc26xx/cc13xx family </p>
-<p>This module contains code common to all cc26xx/cc13xx cpus supported by RIOT: <a class="el" href="group__cpu__cc26x0__cc13x0.html">TI CC26x0/CC13x0</a>, <a class="el" href="group__cpu__cc26x2__cc13x2.html">TI CC26x2, CC13x2</a></p>
-<h1><a class="anchor" id="cc26xx_cc13xx_riot"></a>
-RIOT-OS on CC26xx/CC13xx boards</h1>
-<h1><a class="anchor" id="autotoc_md23"></a>
-Overview</h1>
-<p>The CC26xx/C13xx is a family of micro controllers fabricated by Texas Instruments for low-power communications, using protocols such as BLE, IEEE 802.15.4g-2012, and proprietary radio protocols.</p>
-<p>These family of MCUs is divided in two generations, the cc26x0/cc13x0, and the cc26x2/cc13x2 family. The difference is that the later provides more ROM and RAM and improvements on various peripherals.</p>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadLeft">MCU family   </th><th class="markdownTableHeadLeft">RAM   </th><th class="markdownTableHeadLeft">Flash    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft">CC26x0/CC13x0   </td><td class="markdownTableBodyLeft">20 K   </td><td class="markdownTableBodyLeft">128 K    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft">CC26x2/CC13x2   </td><td class="markdownTableBodyLeft">80 K   </td><td class="markdownTableBodyLeft">352 K   </td></tr>
-</table>
-<dl class="section note"><dt>Note</dt><dd>The actual flash size is the flash size minus 88 bytes, these 88 bytes are reserved for the CCFG, see also Flashing the CCFG.</dd></dl>
-<h1><a class="anchor" id="autotoc_md24"></a>
-Flashing the CCFG</h1>
-<dl class="section warning"><dt>Warning</dt><dd>Setting an incorrect CCFG configuration may lock out yourself out of the device.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Blank chips from Texas Instruments come without a CCFG flashed, so any firmware flashed won't boot until the configuration is flashed. As this might be the case for custom boards remember flashing it.</dd></dl>
-<p>RIOT provides built-in support to flash the Customer Configuration on the CC26xx/CC13xx MCUs. It can be done through Kconfig using <code>make menuconfig</code>.</p>
-<p>For example:</p>
-<div class="fragment"><div class="line">make -C examples/hello-world menuconfig BOARD=cc1350-launchpad</div>
-</div><!-- fragment --><p>It will open the Kconfig terminal configuration utility, you may see the <code>Update CCFG</code> option, selecting it will include the default configuration that Texas Instruments provides from their own SDK. You may change any further options available through Kconfig.</p>
-<p>Once configuration is saved you may compile a new binary and flash it onto the device.</p>
-<p>For example:</p>
-<div class="fragment"><div class="line">make -C examples/hello-world flash BOARD=cc1350-launchpad</div>
-</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Once flashed, there's no need to flash it again, unless the configuration needs to be changed.</dd></dl>
-<h1><a class="anchor" id="autotoc_md25"></a>
-Debugging</h1>
-<p>Development kits from Texas Instruments come with an XDS110 on-board debug probe that provides programming, flashing and debugging capabilities.</p>
-<p>It can either use proprietary Texas Instruments tools for programming, or OpenOCD.</p>
-<h3><a class="anchor" id="autotoc_md26"></a>
-Using Upstream OpenOCD</h3>
-<p>OpenOCD is the default programmer and debugger. Hence, flashing can be done by navigating to the application directory and running:</p>
-<div class="fragment"><div class="line">make flash BOARD=&lt;CC26xx-or-CC13xx-based-board&gt;</div>
-</div><!-- fragment --><dl class="section warning"><dt>Warning</dt><dd>A reliable and robust sequence to reset the CC26xx / CC13xx from upstream OpenOCD is not yet implemented. As a result, OpenOCD will halt the MCU for flashing without reset. This may result in IRQ handlers being already set up and responding to IRQs that trigger while flashing. Hence, flashing is likely not 100% reliable.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>By default the XDS110 debug adapter is used, which is the debugger TI integrates into is developments boards. This can be overwritten by setting <code>OPENOCD_DEBUG_ADAPTER</code> to a different debugger.</dd></dl>
-<h3><a class="anchor" id="autotoc_md27"></a>
-Using TI's OpenOCD Fork</h3>
-<p>TI maintains an outdated fork of OpenOCD that contains patches and special handling that have not upstreamed yet. It can be build using:</p>
-<div class="fragment"><div class="line"><span class="preprocessor"># Clone into the openocd-ti folder</span></div>
-<div class="line">git clone https:<span class="comment">//git.ti.com/cgit/sdo-emu/openocd openocd-ti</span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor"># Change directory to the openocd source code</span></div>
-<div class="line">cd openocd-ti/openocd</div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor"># Configure, build, install</span></div>
-<div class="line">./configure</div>
-<div class="line">make</div>
-<div class="line">sudo make install</div>
-</div><!-- fragment --><dl class="section warning"><dt>Warning</dt><dd>Sometimes OpenOCD may stop working when the firmware on the XDS110 is updated (when using Uniflash, happens without user intervention). With that in mind, it's encouraged to either enable the ROM bootloader backdoor to enable serial programming or the installation of TI Uniflash as a fallback. See Using Uniflash</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>With &lsquo;OPENOCD_CMD_RESET_HALT="-c 'reset halt&amp;rsquo;"` the default reset sequence can be restored. This may work with TI's OpenOCD fork.</dd></dl>
-<p>Otherwise, usage is identical with the upstream version of OpenOCD.</p>
-<h3><a class="anchor" id="autotoc_md28"></a>
-using J-Link</h3>
-<p>By passing (or exporting) <code>PROGRAMMER=jlink</code> J-Link can be used to flash the board. This requires a J-Link compatible programmer / debugger. Since the XDS110 that TI's development boards use is not compatible, an external programmer has to be used. The upside is that flashing appears to be reliable with that.</p>
-<h3><a class="anchor" id="autotoc_md29"></a>
-Using Uniflash</h3>
-<p>The TI's Code Composer Studio provides the necessary tools to use the debug features of the XDS110; Uniflash provides flashing tools. Both programs can be found here:</p>
-<ul>
-<li><a href="http://www.ti.com/tool/CCSTUDIO">Code Composer Studio (CCS) Integrated Development Environment (IDE)</a>.</li>
-<li><a href="http://www.ti.com/tool/UNIFLASH">Uniflash Standalone Flash Tool for TI Microcontrollers (MCU), Sitara Processors &amp; SimpleLink devices</a>.</li>
-</ul>
-<p>Before using the XDS110 with the latest CCS/Uniflash versions the firmware for it needs to be updated. Texas Instruments has a guide to correctly update it <a href="http://software-dl.ti.com/ccs/esd/documents/xdsdebugprobes/emu_xds110.html#updating-the-xds110-firmware">here</a>.</p>
-<h4><a class="anchor" id="autotoc_md30"></a>
-Setting up the environment</h4>
-<p>In order to make use of the programming and debugging capabilities of the XDS110 some environment variable needs to be set:</p>
-<div class="fragment"><div class="line"><span class="keyword">export</span> CCS_PATH=&lt;path to ti install folder&gt;/ti/ccs930</div>
-<div class="line"><span class="keyword">export</span> UNIFLASH_PATH&lt;path to ti install folder&gt;/ti/uniflash_5.2.0</div>
-</div><!-- fragment --><p>That assumes you have CCS 9.3.0 (for the path name) and Uniflash 5.2.0, adjust accordingly.</p>
-<p>After that you can flash using the RIOT <code>make flash</code> command on your application or to debug you first start the debug server:</p>
-<div class="fragment"><div class="line">make debug-server</div>
-</div><!-- fragment --><p>And then on another terminal you can run:</p>
-<div class="fragment"><div class="line">make debug</div>
-</div><!-- fragment --><p>It will open GDB and connect to the debug server automatically.</p>
-<dl class="section note"><dt>Note</dt><dd>By default LaunchPad boards on RIOT use uniflash as the default programmer, if it's not the case for an external board, you can always use uniflash by setting this environment variable <code>PROGRAMMER=uniflash</code> to change the default programmer. </dd></dl>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="gab7d43d139ab1dda8cb8ebbc06a2e74f2" name="gab7d43d139ab1dda8cb8ebbc06a2e74f2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gab7d43d139ab1dda8cb8ebbc06a2e74f2">&#9670;&#160;</a></span>CONFIG_CC26XX_CC13XX_FORCE_VDDR_HH</h2>
@@ -937,7 +934,7 @@ GPRAM is 8 K-bytes in size and located at 0x11000000-0x11001FFF if</dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

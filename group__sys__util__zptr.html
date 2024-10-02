@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -152,6 +149,22 @@ $(function(){initNavTree('group__sys__util__zptr.html',''); initResizable(true);
 
 <p>Provides 32bit -&gt; 16bit pointer compression  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Provides 32bit -&gt; 16bit pointer compression </p>
+<p>On many platforms, some pointers may have to be aligned, e.g., to 4 byte boundaries. On 32bit platforms, that makes it possible to store all possible aligned 32bit pointers in a 16bit value as long as the total memory is small (e.g., with 4 byte alignment, all pointers within 256kb RAM can be represented by a 16bit value). This can save memory, at the cost of some instructions for compression/decompression.</p>
+<p>In order to use pointer compression, ZPTR_BASE needs to be defined to a (4 byte aligned) base address.</p>
+<p>A printf format macro (PRIzptr) is provided.</p>
+<p>You can then use zptr_t instead of a pointer type, using the supplied functions to compress / decompress, e.g., </p><pre class="fragment">void func(void *ptr) {
+    printf("%"PRIzptr"\n", ptr);
+    ...
+    free(ptr);
+</pre><p> }</p>
+<p>... would become </p><pre class="fragment">void func(zptr_t zptr);
+    printf("%"PRIzptr"\n", zptr);
+    ...
+    free(zptrd(zptr));
+}
+</pre><p>If ZPTR_BASE is unset, <a class="el" href="#gafae15584f6356f9392f4cd7459dc61ea">zptr_t</a> / <a class="el" href="#ga0d776532fbf73f97f4e1c1d8b6ee6b9c">zptrc()</a> / <a class="el" href="#gac47ab899f38d430b670747901c80f19d">zptrd()</a> will transparently and without overhead compile to normal (uncompressed) pointer operations. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -189,22 +202,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:gac47ab899f38d430b670747901c80f19d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decompress a pointer.  <br /></td></tr>
 <tr class="separator:gac47ab899f38d430b670747901c80f19d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Provides 32bit -&gt; 16bit pointer compression </p>
-<p>On many platforms, some pointers may have to be aligned, e.g., to 4 byte boundaries. On 32bit platforms, that makes it possible to store all possible aligned 32bit pointers in a 16bit value as long as the total memory is small (e.g., with 4 byte alignment, all pointers within 256kb RAM can be represented by a 16bit value). This can save memory, at the cost of some instructions for compression/decompression.</p>
-<p>In order to use pointer compression, ZPTR_BASE needs to be defined to a (4 byte aligned) base address.</p>
-<p>A printf format macro (PRIzptr) is provided.</p>
-<p>You can then use zptr_t instead of a pointer type, using the supplied functions to compress / decompress, e.g., </p><pre class="fragment">void func(void *ptr) {
-    printf("%"PRIzptr"\n", ptr);
-    ...
-    free(ptr);
-</pre><p> }</p>
-<p>... would become </p><pre class="fragment">void func(zptr_t zptr);
-    printf("%"PRIzptr"\n", zptr);
-    ...
-    free(zptrd(zptr));
-}
-</pre><p>If ZPTR_BASE is unset, <a class="el" href="#gafae15584f6356f9392f4cd7459dc61ea">zptr_t</a> / <a class="el" href="#ga0d776532fbf73f97f4e1c1d8b6ee6b9c">zptrc()</a> / <a class="el" href="#gac47ab899f38d430b670747901c80f19d">zptrd()</a> will transparently and without overhead compile to normal (uncompressed) pointer operations. </p>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ga9f9c7408243cbbe4df3251351420c2d1" name="ga9f9c7408243cbbe4df3251351420c2d1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga9f9c7408243cbbe4df3251351420c2d1">&#9670;&#160;</a></span>zptr_check()</h2>
@@ -317,7 +314,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -145,12 +142,43 @@ $(function(){initNavTree('group__pkg__openthread__cli.html',''); initResizable(t
 <a href="#files">Files</a> &#124;
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">OpenThread<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__pkg__openthread.html">OpenThread network stack</a></div></div></div>
+  <div class="headertitle"><div class="title">OpenThread<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__pkg__openthread.html">OpenThread network stack</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>An open source implementation of <a class="el" href="structThread.html" title="Thread struct within mqtt paho.">Thread</a> stack  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>An open source implementation of <a class="el" href="structThread.html" title="Thread struct within mqtt paho.">Thread</a> stack </p>
+<dl class="section see"><dt>See also</dt><dd><a href="https://github.com/openthread/openthread">https://github.com/openthread/openthread</a></dd></dl>
+<p><a class="el" href="structThread.html" title="Thread struct within mqtt paho.">Thread</a> is a mesh oriented network stack running for IEEE802.15.4 networks.</p>
+<p>The RIOT port allows to directly call OpenThread API functions using <a class="el" href="group__sys__event.html">Event Queue</a>. For example:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="ot_8h.html">ot.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;openthread/thread.h&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> _panid_handler(<a class="code hl_struct" href="structevent.html">event_t</a> *<a class="code hl_struct" href="structevent.html">event</a>);</div>
+<div class="line"><span class="keyword">static</span> <a class="code hl_struct" href="structevent.html">event_t</a> event_panid = {</div>
+<div class="line">    .handler = _panid_handler</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> _panid_handler(<a class="code hl_struct" href="structevent.html">event_t</a> *<a class="code hl_struct" href="structevent.html">event</a>)</div>
+<div class="line">{</div>
+<div class="line">    (void) <a class="code hl_struct" href="structevent.html">event</a>;</div>
+<div class="line">    uint16_t panid = otLinkGetPanId(<a class="code hl_function" href="#ga470e26f21f4e3218af8b8afcb6eb4ae8">openthread_get_instance</a>());</div>
+<div class="line">    do_something_with_panid(panid);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    <a class="code hl_function" href="group__sys__event.html#ga2053ce1facf709fffd024bee9e2383ba">event_post</a>(<a class="code hl_function" href="#gaa63efaf437cb495a7daf0bb036b48c24">openthread_get_evq</a>(), &amp;event_panid);</div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__pkg__openthread__cli_html_ga470e26f21f4e3218af8b8afcb6eb4ae8"><div class="ttname"><a href="#ga470e26f21f4e3218af8b8afcb6eb4ae8">openthread_get_instance</a></div><div class="ttdeci">otInstance * openthread_get_instance(void)</div><div class="ttdoc">Get pointer to the OpenThread instance.</div></div>
+<div class="ttc" id="agroup__pkg__openthread__cli_html_gaa63efaf437cb495a7daf0bb036b48c24"><div class="ttname"><a href="#gaa63efaf437cb495a7daf0bb036b48c24">openthread_get_evq</a></div><div class="ttdeci">event_queue_t * openthread_get_evq(void)</div><div class="ttdoc">Get OpenThread event queue.</div></div>
+<div class="ttc" id="agroup__sys__event_html_ga2053ce1facf709fffd024bee9e2383ba"><div class="ttname"><a href="group__sys__event.html#ga2053ce1facf709fffd024bee9e2383ba">event_post</a></div><div class="ttdeci">void event_post(event_queue_t *queue, event_t *event)</div><div class="ttdoc">Queue an event.</div></div>
+<div class="ttc" id="aot_8h_html"><div class="ttname"><a href="ot_8h.html">ot.h</a></div></div>
+<div class="ttc" id="astructevent_html"><div class="ttname"><a href="structevent.html">event</a></div><div class="ttdoc">event structure</div><div class="ttdef"><b>Definition</b> event.h:148</div></div>
+</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a href="https://openthread.io/releases/thread-reference-20180619">https://openthread.io/releases/thread-reference-20180619</a> </dd></dl>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -235,37 +263,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ot_random_init</b> (v
  <br /></td></tr>
 <tr class="separator:ga1660f37f6db0c4a3b6aefade9934b930"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>An open source implementation of <a class="el" href="structThread.html" title="Thread struct within mqtt paho.">Thread</a> stack </p>
-<dl class="section see"><dt>See also</dt><dd><a href="https://github.com/openthread/openthread">https://github.com/openthread/openthread</a></dd></dl>
-<p><a class="el" href="structThread.html" title="Thread struct within mqtt paho.">Thread</a> is a mesh oriented network stack running for IEEE802.15.4 networks.</p>
-<p>The RIOT port allows to directly call OpenThread API functions using <a class="el" href="group__sys__event.html">Event Queue</a>. For example:</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="ot_8h.html">ot.h</a>&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;openthread/thread.h&quot;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> _panid_handler(<a class="code hl_struct" href="structevent.html">event_t</a> *<a class="code hl_struct" href="structevent.html">event</a>);</div>
-<div class="line"><span class="keyword">static</span> <a class="code hl_struct" href="structevent.html">event_t</a> event_panid = {</div>
-<div class="line">    .handler = _panid_handler</div>
-<div class="line">};</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> _panid_handler(<a class="code hl_struct" href="structevent.html">event_t</a> *<a class="code hl_struct" href="structevent.html">event</a>)</div>
-<div class="line">{</div>
-<div class="line">    (void) <a class="code hl_struct" href="structevent.html">event</a>;</div>
-<div class="line">    uint16_t panid = otLinkGetPanId(<a class="code hl_function" href="#ga470e26f21f4e3218af8b8afcb6eb4ae8">openthread_get_instance</a>());</div>
-<div class="line">    do_something_with_panid(panid);</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>)</div>
-<div class="line">{</div>
-<div class="line">    <a class="code hl_function" href="group__sys__event.html#ga2053ce1facf709fffd024bee9e2383ba">event_post</a>(<a class="code hl_function" href="#gaa63efaf437cb495a7daf0bb036b48c24">openthread_get_evq</a>(), &amp;event_panid);</div>
-<div class="line">    <span class="keywordflow">return</span> 0;</div>
-<div class="line">}</div>
-<div class="ttc" id="agroup__pkg__openthread__cli_html_ga470e26f21f4e3218af8b8afcb6eb4ae8"><div class="ttname"><a href="#ga470e26f21f4e3218af8b8afcb6eb4ae8">openthread_get_instance</a></div><div class="ttdeci">otInstance * openthread_get_instance(void)</div><div class="ttdoc">Get pointer to the OpenThread instance.</div></div>
-<div class="ttc" id="agroup__pkg__openthread__cli_html_gaa63efaf437cb495a7daf0bb036b48c24"><div class="ttname"><a href="#gaa63efaf437cb495a7daf0bb036b48c24">openthread_get_evq</a></div><div class="ttdeci">event_queue_t * openthread_get_evq(void)</div><div class="ttdoc">Get OpenThread event queue.</div></div>
-<div class="ttc" id="agroup__sys__event_html_ga2053ce1facf709fffd024bee9e2383ba"><div class="ttname"><a href="group__sys__event.html#ga2053ce1facf709fffd024bee9e2383ba">event_post</a></div><div class="ttdeci">void event_post(event_queue_t *queue, event_t *event)</div><div class="ttdoc">Queue an event.</div></div>
-<div class="ttc" id="aot_8h_html"><div class="ttname"><a href="ot_8h.html">ot.h</a></div></div>
-<div class="ttc" id="astructevent_html"><div class="ttname"><a href="structevent.html">event</a></div><div class="ttdoc">event structure</div><div class="ttdef"><b>Definition</b> event.h:148</div></div>
-</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a href="https://openthread.io/releases/thread-reference-20180619">https://openthread.io/releases/thread-reference-20180619</a> </dd></dl>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="gaa63efaf437cb495a7daf0bb036b48c24" name="gaa63efaf437cb495a7daf0bb036b48c24"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaa63efaf437cb495a7daf0bb036b48c24">&#9670;&#160;</a></span>openthread_get_evq()</h2>
@@ -467,7 +464,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ot_random_init</b> (v
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -141,13 +138,16 @@ $(function(){initNavTree('gnrc__tcp__fsm_8h.html',''); initResizable(true); });
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">gnrc_tcp_fsm.h File Reference<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__tcp.html">TCP</a></div></div></div>
+  <div class="headertitle"><div class="title">gnrc_tcp_fsm.h File Reference<div class="ingroups"><a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__tcp.html">TCP</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>TCP finite state maschine declarations.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>TCP finite state maschine declarations. </p>
+<dl class="section author"><dt>Author</dt><dd>Simon Brummer <a href="#" onclick="location.href='mai'+'lto:'+'sim'+'on'+'.br'+'um'+'mer'+'@p'+'ost'+'eo'+'.de'; return false;">simon<span class="obfuscator">.nosp@m.</span>.bru<span class="obfuscator">.nosp@m.</span>mmer@<span class="obfuscator">.nosp@m.</span>post<span class="obfuscator">.nosp@m.</span>eo.de</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="mbox_8h.html">mbox.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="gnrc_8h.html">net/gnrc.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="tcb_8h.html">net/gnrc/tcp/tcb.h</a>&quot;</code><br />
@@ -205,10 +205,7 @@ $(function(){initNavTree('gnrc__tcp__fsm_8h.html',''); initResizable(true); });
 <tr class="memdesc:a64471d2c6e71c71db725f7af81de95ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get latest FSM state from given TCB.  <br /></td></tr>
 <tr class="separator:a64471d2c6e71c71db725f7af81de95ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>TCP finite state maschine declarations. </p>
-<dl class="section author"><dt>Author</dt><dd>Simon Brummer <a href="#" onclick="location.href='mai'+'lto:'+'sim'+'on'+'.br'+'um'+'mer'+'@p'+'ost'+'eo'+'.de'; return false;">simon<span class="obfuscator">.nosp@m.</span>.bru<span class="obfuscator">.nosp@m.</span>mmer@<span class="obfuscator">.nosp@m.</span>post<span class="obfuscator">.nosp@m.</span>eo.de</a> </dd></dl>
-</div><h2 class="groupheader">Function Documentation</h2>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="a97a2a1cea55e8661f9f1b5837656b6b8" name="a97a2a1cea55e8661f9f1b5837656b6b8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a97a2a1cea55e8661f9f1b5837656b6b8">&#9670;&#160;</a></span>_gnrc_tcp_fsm()</h2>
 
@@ -323,7 +320,7 @@ $(function(){initNavTree('gnrc__tcp__fsm_8h.html',''); initResizable(true); });
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a408b6d3a4a484720bc3ecfeac8947e3.html">sys</a></li><li class="navelem"><a class="el" href="dir_8029da4437d789f4711f6586d7ee68bf.html">net</a></li><li class="navelem"><a class="el" href="dir_3441f3001dd6ccd78cd6b9a576f26623.html">gnrc</a></li><li class="navelem"><a class="el" href="dir_0727303dbfc59bd8e335280ddc9d2cf1.html">transport_layer</a></li><li class="navelem"><a class="el" href="dir_d99edc6487248bf918b7b8209db2fc3e.html">tcp</a></li><li class="navelem"><a class="el" href="dir_51a369ceafaf466f30cd9596f2b3392c.html">include</a></li><li class="navelem"><a class="el" href="gnrc__tcp__fsm_8h.html">gnrc_tcp_fsm.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

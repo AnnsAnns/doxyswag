@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -153,6 +150,16 @@ $(function(){initNavTree('group__posix__select.html',''); initResizable(true); }
 
 <p>Select implementation for RIOT  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Select implementation for RIOT </p>
+<dl class="section see"><dt>See also</dt><dd>[The Open Group Base Specification Issue 7] (<a href="https://pubs.opengroup.org/onlinepubs/9699919799.2018edition/">https://pubs.opengroup.org/onlinepubs/9699919799.2018edition/</a>) </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000039">Todo</a></b></dt><dd><p class="startdd">Omitted from original specification for now:</p><ul>
+<li>Inclusion of <code>&lt;signal.h&gt;</code>; no POSIX signal handling implemented in RIOT yet</li>
+<li><code>pselect()</code> as it uses <code>sigset_t</code> from <code>&lt;signal.h&gt;</code></li>
+<li>handling of the <code>writefds</code> and <code>errorfds</code> parameters of <code><a class="el" href="#ga7ffa34f8c9a12e7fd43f5ef65bf889fa" title="Examines the given file descriptor sets if they are ready for their respective operation.">select()</a></code> </li>
+</ul>
+<p class="enddd">Currently, only <a class="el" href="group__posix__sockets.html">sockets</a> are supported </p>
+</dd></dl>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -200,16 +207,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga7ffa34f8c9a12e7fd43f5ef65bf889fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Examines the given file descriptor sets if they are ready for their respective operation.  <br /></td></tr>
 <tr class="separator:ga7ffa34f8c9a12e7fd43f5ef65bf889fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Select implementation for RIOT </p>
-<dl class="section see"><dt>See also</dt><dd>[The Open Group Base Specification Issue 7] (<a href="https://pubs.opengroup.org/onlinepubs/9699919799.2018edition/">https://pubs.opengroup.org/onlinepubs/9699919799.2018edition/</a>) </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000039">Todo</a></b></dt><dd><p class="startdd">Omitted from original specification for now:</p><ul>
-<li>Inclusion of <code>&lt;signal.h&gt;</code>; no POSIX signal handling implemented in RIOT yet</li>
-<li><code>pselect()</code> as it uses <code>sigset_t</code> from <code>&lt;signal.h&gt;</code></li>
-<li>handling of the <code>writefds</code> and <code>errorfds</code> parameters of <code><a class="el" href="#ga7ffa34f8c9a12e7fd43f5ef65bf889fa" title="Examines the given file descriptor sets if they are ready for their respective operation.">select()</a></code> </li>
-</ul>
-<p class="enddd">Currently, only <a class="el" href="group__posix__sockets.html">sockets</a> are supported </p>
-</dd></dl>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga86c5dbf5a99358e288f573d6a1e0873f" name="ga86c5dbf5a99358e288f573d6a1e0873f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga86c5dbf5a99358e288f573d6a1e0873f">&#9670;&#160;</a></span>FD_SETSIZE</h2>
@@ -437,7 +434,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

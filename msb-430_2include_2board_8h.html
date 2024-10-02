@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,19 @@ $(function(){initNavTree('msb-430_2include_2board_8h.html',''); initResizable(tr
 
 <p>Central definitions for the ScatterWeb MSB-430 board.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;board_common.h&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Central definitions for the ScatterWeb MSB-430 board. </p>
+<p>See <a href="https://www.mi.fu-berlin.de/inf/groups/ag-tech/projects/ScatterWeb/modules/mod_MSB-430.html">https://www.mi.fu-berlin.de/inf/groups/ag-tech/projects/ScatterWeb/modules/mod_MSB-430.html</a> for circuit diagram etc.</p>
+<h2>Components</h2>
+<ul>
+<li>MSP430 </li>
+<li>CC1020 </li>
+<li>SHT11 </li>
+<li>MMA7260Q </li>
+<li>LED</li>
+</ul>
+<dl class="section author"><dt>Author</dt><dd>Freie Universität Berlin, Computer Systems &amp; Telematics, FeuerWhere project </dd></dl>
+</div><div class="textblock"><code>#include &quot;board_common.h&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for board.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -169,19 +178,7 @@ $(function(){initNavTree('msb-430_2include_2board_8h.html',''); initResizable(tr
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>SHT1X_PARAM_DATA</b>&#160;&#160;&#160;(<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(3, 4))</td></tr>
 <tr class="separator:a4e39355a1b088aa9ed75276d6d948f06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Central definitions for the ScatterWeb MSB-430 board. </p>
-<p>See <a href="https://www.mi.fu-berlin.de/inf/groups/ag-tech/projects/ScatterWeb/modules/mod_MSB-430.html">https://www.mi.fu-berlin.de/inf/groups/ag-tech/projects/ScatterWeb/modules/mod_MSB-430.html</a> for circuit diagram etc.</p>
-<h2>Components</h2>
-<ul>
-<li>MSP430 </li>
-<li>CC1020 </li>
-<li>SHT11 </li>
-<li>MMA7260Q </li>
-<li>LED</li>
-</ul>
-<dl class="section author"><dt>Author</dt><dd>Freie Universität Berlin, Computer Systems &amp; Telematics, FeuerWhere project </dd></dl>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
@@ -189,7 +186,7 @@ $(function(){initNavTree('msb-430_2include_2board_8h.html',''); initResizable(tr
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6c8313236d9db5b969ca7d150fe527de.html">boards</a></li><li class="navelem"><a class="el" href="dir_9ac8d021f3fa5af01cd5ec56ba5d6ed2.html">msb-430</a></li><li class="navelem"><a class="el" href="dir_e2c76aed8afe1fa4d9aa8331c1ede6f2.html">include</a></li><li class="navelem"><a class="el" href="msb-430_2include_2board_8h.html">board.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:28 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

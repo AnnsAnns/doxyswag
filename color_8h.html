@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -150,7 +147,14 @@ $(function(){initNavTree('color_8h.html',''); initResizable(true); });
 
 <p>Headers for the color handling module.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Headers for the color handling module. </p>
+<dl class="section author"><dt>Author</dt><dd>Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
+<dd>
+Cenk Gündoğan <a href="#" onclick="location.href='mai'+'lto:'+'mai'+'l@'+'cgu'+'nd'+'oga'+'n.'+'de'; return false;">mail@<span class="obfuscator">.nosp@m.</span>cgun<span class="obfuscator">.nosp@m.</span>dogan<span class="obfuscator">.nosp@m.</span>.de</a> </dd>
+<dd>
+Simon Brummer <a href="#" onclick="location.href='mai'+'lto:'+'bru'+'mm'+'er.'+'si'+'mon'+'@g'+'oog'+'le'+'mai'+'l.'+'com'; return false;">brumm<span class="obfuscator">.nosp@m.</span>er.s<span class="obfuscator">.nosp@m.</span>imon@<span class="obfuscator">.nosp@m.</span>goog<span class="obfuscator">.nosp@m.</span>lemai<span class="obfuscator">.nosp@m.</span>l.co<span class="obfuscator">.nosp@m.</span>m</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for color.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -211,14 +215,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:gad6658844608f85469c193c8ab26c48fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the complementary color of a given rgb color.  <br /></td></tr>
 <tr class="separator:gad6658844608f85469c193c8ab26c48fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Headers for the color handling module. </p>
-<dl class="section author"><dt>Author</dt><dd>Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
-<dd>
-Cenk Gündoğan <a href="#" onclick="location.href='mai'+'lto:'+'mai'+'l@'+'cgu'+'nd'+'oga'+'n.'+'de'; return false;">mail@<span class="obfuscator">.nosp@m.</span>cgun<span class="obfuscator">.nosp@m.</span>dogan<span class="obfuscator">.nosp@m.</span>.de</a> </dd>
-<dd>
-Simon Brummer <a href="#" onclick="location.href='mai'+'lto:'+'bru'+'mm'+'er.'+'si'+'mon'+'@g'+'oog'+'le'+'mai'+'l.'+'com'; return false;">brumm<span class="obfuscator">.nosp@m.</span>er.s<span class="obfuscator">.nosp@m.</span>imon@<span class="obfuscator">.nosp@m.</span>goog<span class="obfuscator">.nosp@m.</span>lemai<span class="obfuscator">.nosp@m.</span>l.co<span class="obfuscator">.nosp@m.</span>m</a> </dd></dl>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
@@ -226,7 +223,7 @@ Simon Brummer <a href="#" onclick="location.href='mai'+'lto:'+'bru'+'mm'+'er.'+'
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a408b6d3a4a484720bc3ecfeac8947e3.html">sys</a></li><li class="navelem"><a class="el" href="dir_e9e107fc86bbb4b6a326076a6808b9f5.html">include</a></li><li class="navelem"><a class="el" href="color_8h.html">color.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

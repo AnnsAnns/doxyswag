@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -153,6 +150,13 @@ $(function(){initNavTree('group__drivers__matrix__keypad.html',''); initResizabl
 
 <p>Matrix keypad driver for row/column keypads  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Matrix keypad driver for row/column keypads </p>
+<p>This module implements a simple matrix keypad driver where keys are connected between GPIO columns and rows. It works best with diodes in series with the switches to prevent key ghosting, but it can be used without these diodes. <a class="el" href="#ga82a04ca5044662858728b189d175fa32">CONFIG_MATRIX_KEYPAD_ROWS_USE_OPEN_DRAIN</a> can be enabled when the keypad doesn't use diodes in the switches.</p>
+<p>The keypad works by configuring the column GPIOs as input with pull-ups. Each row is configured as open drain with pull-up. One by one the rows are set to pull their output low. For each row the column GPIOs are read and the state is checked. When a key is pressed the column GPIO of that switch will read low as soon as the row it is on is pulled low.</p>
+<p>The debouncing algorithm is a pattern style debounce where the switch must be in one position for a number of samples, then a set of "don't care" samples and then in the other position for a number of samples. The samples in the middle allow for a period where the switch can be either low or high without affecting the transition. The exact pattern is determined by <a class="el" href="#gaa80d44d3763dd8a85cb967ba068cf9f3">CONFIG_MATRIX_KEYPAD_DEBOUNCE_PATTERN_BEGIN</a> and <a class="el" href="#gad309c53ba7a9448a298d87ba420f73dc">CONFIG_MATRIX_KEYPAD_DEBOUNCE_PATTERN_END</a>. These are used as mask where the switch must be in a determined state. The bits where neither pattern is set is used as the "don't care" set of samples.</p>
+<p>A full scan of the matrix keypad is done via the <a class="el" href="#gac6ca1b06c03bc385b2d0430a1dfdf49e">matrix_keypad_scan</a> function. This function iterates over all rows and columns to update the stored history of every pin.</p>
+<p>When a state change is detected on a switch, the <a class="el" href="#ga5feba9dc3d19cfcddc5b7191f8ad9008">matrix_keypad_cb_t</a> callback is called with the row and column number together with the new state of the switch (pressed or not pressed). </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -220,13 +224,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:gac6ca1b06c03bc385b2d0430a1dfdf49e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scan through the keypad matrix.  <br /></td></tr>
 <tr class="separator:gac6ca1b06c03bc385b2d0430a1dfdf49e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Matrix keypad driver for row/column keypads </p>
-<p>This module implements a simple matrix keypad driver where keys are connected between GPIO columns and rows. It works best with diodes in series with the switches to prevent key ghosting, but it can be used without these diodes. <a class="el" href="#ga82a04ca5044662858728b189d175fa32">CONFIG_MATRIX_KEYPAD_ROWS_USE_OPEN_DRAIN</a> can be enabled when the keypad doesn't use diodes in the switches.</p>
-<p>The keypad works by configuring the column GPIOs as input with pull-ups. Each row is configured as open drain with pull-up. One by one the rows are set to pull their output low. For each row the column GPIOs are read and the state is checked. When a key is pressed the column GPIO of that switch will read low as soon as the row it is on is pulled low.</p>
-<p>The debouncing algorithm is a pattern style debounce where the switch must be in one position for a number of samples, then a set of "don't care" samples and then in the other position for a number of samples. The samples in the middle allow for a period where the switch can be either low or high without affecting the transition. The exact pattern is determined by <a class="el" href="#gaa80d44d3763dd8a85cb967ba068cf9f3">CONFIG_MATRIX_KEYPAD_DEBOUNCE_PATTERN_BEGIN</a> and <a class="el" href="#gad309c53ba7a9448a298d87ba420f73dc">CONFIG_MATRIX_KEYPAD_DEBOUNCE_PATTERN_END</a>. These are used as mask where the switch must be in a determined state. The bits where neither pattern is set is used as the "don't care" set of samples.</p>
-<p>A full scan of the matrix keypad is done via the <a class="el" href="#gac6ca1b06c03bc385b2d0430a1dfdf49e">matrix_keypad_scan</a> function. This function iterates over all rows and columns to update the stored history of every pin.</p>
-<p>When a state change is detected on a switch, the <a class="el" href="#ga5feba9dc3d19cfcddc5b7191f8ad9008">matrix_keypad_cb_t</a> callback is called with the row and column number together with the new state of the switch (pressed or not pressed). </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="gaa80d44d3763dd8a85cb967ba068cf9f3" name="gaa80d44d3763dd8a85cb967ba068cf9f3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaa80d44d3763dd8a85cb967ba068cf9f3">&#9670;&#160;</a></span>CONFIG_MATRIX_KEYPAD_DEBOUNCE_PATTERN_BEGIN</h2>
@@ -366,7 +363,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

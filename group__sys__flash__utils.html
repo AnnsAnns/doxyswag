@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -151,6 +148,18 @@ $(function(){initNavTree('group__sys__flash__utils.html',''); initResizable(true
 
 <p>read-only memory  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>read-only memory </p>
+<p>This modules adds utility functions, macros, and functions for read-only memory. The goal is to hide the differences between modified architectures that map flash into the data address space (e.g. ARM) and those which doesn't (e.g. most AVR, Xtensa).</p>
+<h1><a class="anchor" id="autotoc_md1977"></a>
+Usage</h1>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="flash__utils_8h.html">flash_utils.h</a>&quot;</span></div>
+<div class="ttc" id="aflash__utils_8h_html"><div class="ttname"><a href="flash__utils_8h.html">flash_utils.h</a></div><div class="ttdoc">Utility functions, macros, and types for read-only memory.</div></div>
+</div><!-- fragment --><p>No module needs to be selected, this is a header-only implementation that is always available.</p>
+<h1><a class="anchor" id="autotoc_md1978"></a>
+Porting Code to Use <code>flash_utils</code></h1>
+<p>This is mainly targeting applications developers to ease developing apps that work well on both legacy modified Harvard architectures (e.g. ATmega) and modern modified Harvard architectures (e.g. ARM, ATtiny, ...) as well as von-Neumann machines.</p>
+<p>The intention is to limit in-tree use to a very small number of modules that yield the most "bang for the buck" and not leak the use of <code>flash_utils</code> through the API. Specifically, reverting to not using <code>flash_utils</code> should not be noticed by any user (unless looking at memory consumption). </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -220,18 +229,6 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>flash_print_st
 <tr class="memdesc:gace95cb109c48a69e04ca4c1ca6180c78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like <a class="el" href="#gaee2a02e74e608ac3cc669a411b80fcc4">flash_puts</a> but without line break. <br /></td></tr>
 <tr class="separator:gace95cb109c48a69e04ca4c1ca6180c78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>read-only memory </p>
-<p>This modules adds utility functions, macros, and functions for read-only memory. The goal is to hide the differences between modified architectures that map flash into the data address space (e.g. ARM) and those which doesn't (e.g. most AVR, Xtensa).</p>
-<h1><a class="anchor" id="autotoc_md1977"></a>
-Usage</h1>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="flash__utils_8h.html">flash_utils.h</a>&quot;</span></div>
-<div class="ttc" id="aflash__utils_8h_html"><div class="ttname"><a href="flash__utils_8h.html">flash_utils.h</a></div><div class="ttdoc">Utility functions, macros, and types for read-only memory.</div></div>
-</div><!-- fragment --><p>No module needs to be selected, this is a header-only implementation that is always available.</p>
-<h1><a class="anchor" id="autotoc_md1978"></a>
-Porting Code to Use <code>flash_utils</code></h1>
-<p>This is mainly targeting applications developers to ease developing apps that work well on both legacy modified Harvard architectures (e.g. ATmega) and modern modified Harvard architectures (e.g. ARM, ATtiny, ...) as well as von-Neumann machines.</p>
-<p>The intention is to limit in-tree use to a very small number of modules that yield the most "bang for the buck" and not leak the use of <code>flash_utils</code> through the API. Specifically, reverting to not using <code>flash_utils</code> should not be noticed by any user (unless looking at memory consumption). </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga39a1a2e42dd44ab7f64836183f52668d" name="ga39a1a2e42dd44ab7f64836183f52668d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga39a1a2e42dd44ab7f64836183f52668d">&#9670;&#160;</a></span>FLASH_PUTS</h2>
@@ -665,7 +662,7 @@ Porting Code to Use <code>flash_utils</code></h1>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

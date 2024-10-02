@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -148,10 +145,94 @@ $(function(){initNavTree('group__lwm2m__objects__light__control.html',''); initR
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">Light Control<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__pkg__wakaama.html">LwM2M - Lightweight Machine to Machine</a> &raquo; <a class="el" href="group__lwm2m__objects.html">LwM2M Object implementations</a></div></div></div>
+  <div class="headertitle"><div class="title">Light Control<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__pkg__wakaama.html">LwM2M - Lightweight Machine to Machine</a> &raquo; <a class="el" href="group__lwm2m__objects.html">LwM2M Object implementations</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Light Control object implementation for LwM2M client using Wakaama</p>
+<dl class="section warning"><dt>Warning</dt><dd><b class="text-danger">This feature is experimental!</b><br  />
+ This API is considered experimental and may change in future releases without deprecation process.</dd></dl>
+<p>This implements the LwM2M Light Control object (ID 3311) as specified in the LwM2M registry.</p>
+<p>This Object is used to control a light source, such as a LED or other light. It allows a light to be turned on or off and dim it.</p>
+<p>To use this object add <code>USEMODULE += wakaama_objects_light_control</code> to the application Makefile.</p>
+<h2><a class="anchor" id="autotoc_md1938"></a>
+Resources</h2>
+<p>For an XML description of the object see <a href="https://raw.githubusercontent.com/OpenMobileAlliance/lwm2m-registry/prod/3311.xml">https://raw.githubusercontent.com/OpenMobileAlliance/lwm2m-registry/prod/3311.xml</a></p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Name   </th><th class="markdownTableHeadCenter">ID   </th><th class="markdownTableHeadCenter">Mandatory   </th><th class="markdownTableHeadCenter">Type   </th><th class="markdownTableHeadCenter">Range   </th><th class="markdownTableHeadCenter">Units   </th><th class="markdownTableHeadCenter">Implemented    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">On/Off   </td><td class="markdownTableBodyCenter">5850   </td><td class="markdownTableBodyCenter">Yes   </td><td class="markdownTableBodyCenter">Boolean   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">Yes[1]    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Dimmer   </td><td class="markdownTableBodyCenter">5851   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">Integer   </td><td class="markdownTableBodyCenter">0 - 100   </td><td class="markdownTableBodyCenter">/100   </td><td class="markdownTableBodyCenter">Yes[1]    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">On time   </td><td class="markdownTableBodyCenter">5852   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">Integer   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">s   </td><td class="markdownTableBodyCenter">Yes    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Cumulative active power   </td><td class="markdownTableBodyCenter">5805   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">Float   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">Wh   </td><td class="markdownTableBodyCenter">No    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Power factor   </td><td class="markdownTableBodyCenter">5820   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">Float   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">No    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Colour   </td><td class="markdownTableBodyCenter">5706   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">String   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">Yes    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Sensor Units   </td><td class="markdownTableBodyCenter">5701   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">String   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">No    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Application Type   </td><td class="markdownTableBodyCenter">5750   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">String   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">Yes   </td></tr>
+</table>
+<p>[1]: The handling of these resources are implemented, but its actual impact on the light state depends on the application. </p>
+<h2><a class="anchor" id="autotoc_md1939"></a>
+Usage</h2>
+<ol type="1">
+<li>Initialize the LwM2M client with <a class="el" href="#ga6e6b4d0c837fc466c592c2ed2ccac3e5">lwm2m_object_light_control_init</a>, by passing a pointer to the LwM2M client data.</li>
+<li>Now you can create instances of the Light Control object with <a class="el" href="#ga7cda995e36961ee59e7fae108a72190c">lwm2m_object_light_control_instance_create</a>. As part of the arguments, you can pass a callback that will be called when the light resources are updated (i.e. status, dimmer, color, app_type), as well as an user argument.</li>
+</ol>
+<div class="fragment"><div class="line"><span class="preprocessor">#define LIGHT_COLOR &quot;FFFFFF&quot;</span></div>
+<div class="line"><span class="preprocessor">#define LIGHT_APP_TYPE &quot;LED 0&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// ... ///</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> _light_cb(lwm2m_object_t *<span class="keywordtype">object</span>, uint16_t instance_id, <span class="keywordtype">bool</span> status, uint8_t dimmer,</div>
+<div class="line">               <span class="keyword">const</span> <span class="keywordtype">char</span>* color, <span class="keyword">const</span> <span class="keywordtype">char</span>* app_type, <span class="keywordtype">void</span> *arg)</div>
+<div class="line">{</div>
+<div class="line">    (void)<span class="keywordtype">object</span>;</div>
+<div class="line">    (void)instance_id;</div>
+<div class="line">    (void)arg;</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_define" href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a>(<span class="stringliteral">&quot;%s is now %s, &quot;</span>, app_type, status? <span class="stringliteral">&quot;ON&quot;</span>:<span class="stringliteral">&quot;OFF&quot;</span>);</div>
+<div class="line">    <a class="code hl_define" href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a>(<span class="stringliteral">&quot;with color %s and intensity %d%%\n&quot;</span>, color, dimmer);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// ... ///</span></div>
+<div class="line"> </div>
+<div class="line">lwm2m_object_t *light_control;</div>
+<div class="line"><a class="code hl_struct" href="structlwm2m__client__data__t.html">lwm2m_client_data_t</a> client_data;</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_function" href="group__lwm2m__client.html#ga7496736a9754f07edea52b0e4ab2e9c4">lwm2m_client_init</a>(&amp;client_data);</div>
+<div class="line">light_control = <a class="code hl_function" href="#ga6e6b4d0c837fc466c592c2ed2ccac3e5">lwm2m_object_light_control_init</a>(&amp;client_data);</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_struct" href="structlwm2m__obj__light__control__args.html">lwm2m_obj_light_control_args_t</a> args = {</div>
+<div class="line">   .cb = _light_cb,</div>
+<div class="line">   .cb_arg = NULL,</div>
+<div class="line">   .color = LIGHT_COLOR,</div>
+<div class="line">   .color_len = <span class="keyword">sizeof</span>(LIGHT_COLOR) - 1,</div>
+<div class="line">   .app_type = LIGHT_APP_TYPE,</div>
+<div class="line">   .app_type_len = <span class="keyword">sizeof</span>(LIGHT_APP_TYPE) - 1</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> result = <a class="code hl_function" href="#ga7cda995e36961ee59e7fae108a72190c">lwm2m_object_light_control_instance_create</a>(&amp;args, 0);</div>
+<div class="ttc" id="agroup__cpu__avr8__common__stdio__wrapper_html_gad2eb277496af160238e7306fff780ad2"><div class="ttname"><a href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a></div><div class="ttdeci">#define printf(...)</div><div class="ttdoc">A wrapper for the printf() function that passes arguments through unmodified, but fails to compile if...</div><div class="ttdef"><b>Definition</b> stdio.h:60</div></div>
+<div class="ttc" id="agroup__lwm2m__client_html_ga7496736a9754f07edea52b0e4ab2e9c4"><div class="ttname"><a href="group__lwm2m__client.html#ga7496736a9754f07edea52b0e4ab2e9c4">lwm2m_client_init</a></div><div class="ttdeci">void lwm2m_client_init(lwm2m_client_data_t *client_data)</div><div class="ttdoc">Initializes a LwM2M client.</div></div>
+<div class="ttc" id="agroup__lwm2m__objects__light__control_html_ga6e6b4d0c837fc466c592c2ed2ccac3e5"><div class="ttname"><a href="#ga6e6b4d0c837fc466c592c2ed2ccac3e5">lwm2m_object_light_control_init</a></div><div class="ttdeci">lwm2m_object_t * lwm2m_object_light_control_init(lwm2m_client_data_t *client_data)</div><div class="ttdoc">Initialize the Light Control object.</div></div>
+<div class="ttc" id="agroup__lwm2m__objects__light__control_html_ga7cda995e36961ee59e7fae108a72190c"><div class="ttname"><a href="#ga7cda995e36961ee59e7fae108a72190c">lwm2m_object_light_control_instance_create</a></div><div class="ttdeci">int lwm2m_object_light_control_instance_create(const lwm2m_obj_light_control_args_t *args, int32_t instance_id)</div><div class="ttdoc">Create a new Light Control instance and add it to the object list.</div></div>
+<div class="ttc" id="astructlwm2m__client__data__t_html"><div class="ttname"><a href="structlwm2m__client__data__t.html">lwm2m_client_data_t</a></div><div class="ttdoc">LwM2M client descriptor.</div><div class="ttdef"><b>Definition</b> lwm2m_client.h:70</div></div>
+<div class="ttc" id="astructlwm2m__obj__light__control__args_html"><div class="ttname"><a href="structlwm2m__obj__light__control__args.html">lwm2m_obj_light_control_args</a></div><div class="ttdoc">Arguments for the creation of a Light Control object instance.</div><div class="ttdef"><b>Definition</b> light_control.h:206</div></div>
+</div><!-- fragment --><ol type="1">
+<li>You can update the status, dimmer, color and app_type of the light control instance with <a class="el" href="#gac9321e17bf53a1ec1fef64346315d199">lwm2m_object_light_control_update_status</a>, <a class="el" href="#ga18585a0721ae6715baa978ef234e4e4c">lwm2m_object_light_control_update_dimmer</a>, <a class="el" href="#gac5531aa47275c0eeb1f5a6a1cbeab27c">lwm2m_object_light_control_update_color</a> and <a class="el" href="#gaaf6a465c26fb958d8f6fcf976f1afd14">lwm2m_object_light_control_update_app_type</a> respectively. This will make sure to send notifications to servers that may be observing these resources.</li>
+</ol>
+<div class="fragment"><div class="line"><a class="code hl_function" href="#gac9321e17bf53a1ec1fef64346315d199">lwm2m_object_light_control_update_status</a>(0, <span class="keyword">true</span>, <span class="keyword">false</span>);</div>
+<div class="line"><a class="code hl_function" href="#ga18585a0721ae6715baa978ef234e4e4c">lwm2m_object_light_control_update_dimmer</a>(0, 50, <span class="keyword">false</span>);</div>
+<div class="ttc" id="agroup__lwm2m__objects__light__control_html_ga18585a0721ae6715baa978ef234e4e4c"><div class="ttname"><a href="#ga18585a0721ae6715baa978ef234e4e4c">lwm2m_object_light_control_update_dimmer</a></div><div class="ttdeci">int lwm2m_object_light_control_update_dimmer(uint16_t instance_id, uint8_t dimmer, bool call_cb)</div><div class="ttdoc">Update the dimmer value of a light control instance.</div></div>
+<div class="ttc" id="agroup__lwm2m__objects__light__control_html_gac9321e17bf53a1ec1fef64346315d199"><div class="ttname"><a href="#gac9321e17bf53a1ec1fef64346315d199">lwm2m_object_light_control_update_status</a></div><div class="ttdeci">int lwm2m_object_light_control_update_status(uint16_t instance_id, bool status, bool call_cb)</div><div class="ttdoc">Update the status of a light control instance.</div></div>
+</div><!-- fragment --> <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__light__control__config.html">LwM2M Light Control object compile configurations</a></td></tr>
@@ -241,91 +322,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga4be64452929b1512a64e88e0982d60d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Light application type resource ID. <br /></td></tr>
 <tr class="separator:ga4be64452929b1512a64e88e0982d60d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Light Control object implementation for LwM2M client using Wakaama</p>
-<dl class="section warning"><dt>Warning</dt><dd><b class="text-danger">This feature is experimental!</b><br  />
- This API is considered experimental and may change in future releases without deprecation process.</dd></dl>
-<p>This implements the LwM2M Light Control object (ID 3311) as specified in the LwM2M registry.</p>
-<p>This Object is used to control a light source, such as a LED or other light. It allows a light to be turned on or off and dim it.</p>
-<p>To use this object add <code>USEMODULE += wakaama_objects_light_control</code> to the application Makefile.</p>
-<h2><a class="anchor" id="autotoc_md1938"></a>
-Resources</h2>
-<p>For an XML description of the object see <a href="https://raw.githubusercontent.com/OpenMobileAlliance/lwm2m-registry/prod/3311.xml">https://raw.githubusercontent.com/OpenMobileAlliance/lwm2m-registry/prod/3311.xml</a></p>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Name   </th><th class="markdownTableHeadCenter">ID   </th><th class="markdownTableHeadCenter">Mandatory   </th><th class="markdownTableHeadCenter">Type   </th><th class="markdownTableHeadCenter">Range   </th><th class="markdownTableHeadCenter">Units   </th><th class="markdownTableHeadCenter">Implemented    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">On/Off   </td><td class="markdownTableBodyCenter">5850   </td><td class="markdownTableBodyCenter">Yes   </td><td class="markdownTableBodyCenter">Boolean   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">Yes[1]    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Dimmer   </td><td class="markdownTableBodyCenter">5851   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">Integer   </td><td class="markdownTableBodyCenter">0 - 100   </td><td class="markdownTableBodyCenter">/100   </td><td class="markdownTableBodyCenter">Yes[1]    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">On time   </td><td class="markdownTableBodyCenter">5852   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">Integer   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">s   </td><td class="markdownTableBodyCenter">Yes    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Cumulative active power   </td><td class="markdownTableBodyCenter">5805   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">Float   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">Wh   </td><td class="markdownTableBodyCenter">No    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Power factor   </td><td class="markdownTableBodyCenter">5820   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">Float   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">No    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Colour   </td><td class="markdownTableBodyCenter">5706   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">String   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">Yes    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Sensor Units   </td><td class="markdownTableBodyCenter">5701   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">String   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">No    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Application Type   </td><td class="markdownTableBodyCenter">5750   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">String   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">Yes   </td></tr>
-</table>
-<p>[1]: The handling of these resources are implemented, but its actual impact on the light state depends on the application. </p>
-<h2><a class="anchor" id="autotoc_md1939"></a>
-Usage</h2>
-<ol type="1">
-<li>Initialize the LwM2M client with <a class="el" href="#ga6e6b4d0c837fc466c592c2ed2ccac3e5">lwm2m_object_light_control_init</a>, by passing a pointer to the LwM2M client data.</li>
-<li>Now you can create instances of the Light Control object with <a class="el" href="#ga7cda995e36961ee59e7fae108a72190c">lwm2m_object_light_control_instance_create</a>. As part of the arguments, you can pass a callback that will be called when the light resources are updated (i.e. status, dimmer, color, app_type), as well as an user argument.</li>
-</ol>
-<div class="fragment"><div class="line"><span class="preprocessor">#define LIGHT_COLOR &quot;FFFFFF&quot;</span></div>
-<div class="line"><span class="preprocessor">#define LIGHT_APP_TYPE &quot;LED 0&quot;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// ... ///</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> _light_cb(lwm2m_object_t *<span class="keywordtype">object</span>, uint16_t instance_id, <span class="keywordtype">bool</span> status, uint8_t dimmer,</div>
-<div class="line">               <span class="keyword">const</span> <span class="keywordtype">char</span>* color, <span class="keyword">const</span> <span class="keywordtype">char</span>* app_type, <span class="keywordtype">void</span> *arg)</div>
-<div class="line">{</div>
-<div class="line">    (void)<span class="keywordtype">object</span>;</div>
-<div class="line">    (void)instance_id;</div>
-<div class="line">    (void)arg;</div>
-<div class="line"> </div>
-<div class="line">    <a class="code hl_define" href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a>(<span class="stringliteral">&quot;%s is now %s, &quot;</span>, app_type, status? <span class="stringliteral">&quot;ON&quot;</span>:<span class="stringliteral">&quot;OFF&quot;</span>);</div>
-<div class="line">    <a class="code hl_define" href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a>(<span class="stringliteral">&quot;with color %s and intensity %d%%\n&quot;</span>, color, dimmer);</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// ... ///</span></div>
-<div class="line"> </div>
-<div class="line">lwm2m_object_t *light_control;</div>
-<div class="line"><a class="code hl_struct" href="structlwm2m__client__data__t.html">lwm2m_client_data_t</a> client_data;</div>
-<div class="line"> </div>
-<div class="line"><a class="code hl_function" href="group__lwm2m__client.html#ga7496736a9754f07edea52b0e4ab2e9c4">lwm2m_client_init</a>(&amp;client_data);</div>
-<div class="line">light_control = <a class="code hl_function" href="#ga6e6b4d0c837fc466c592c2ed2ccac3e5">lwm2m_object_light_control_init</a>(&amp;client_data);</div>
-<div class="line"> </div>
-<div class="line"><a class="code hl_struct" href="structlwm2m__obj__light__control__args.html">lwm2m_obj_light_control_args_t</a> args = {</div>
-<div class="line">   .cb = _light_cb,</div>
-<div class="line">   .cb_arg = NULL,</div>
-<div class="line">   .color = LIGHT_COLOR,</div>
-<div class="line">   .color_len = <span class="keyword">sizeof</span>(LIGHT_COLOR) - 1,</div>
-<div class="line">   .app_type = LIGHT_APP_TYPE,</div>
-<div class="line">   .app_type_len = <span class="keyword">sizeof</span>(LIGHT_APP_TYPE) - 1</div>
-<div class="line">};</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> result = <a class="code hl_function" href="#ga7cda995e36961ee59e7fae108a72190c">lwm2m_object_light_control_instance_create</a>(&amp;args, 0);</div>
-<div class="ttc" id="agroup__cpu__avr8__common__stdio__wrapper_html_gad2eb277496af160238e7306fff780ad2"><div class="ttname"><a href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a></div><div class="ttdeci">#define printf(...)</div><div class="ttdoc">A wrapper for the printf() function that passes arguments through unmodified, but fails to compile if...</div><div class="ttdef"><b>Definition</b> stdio.h:60</div></div>
-<div class="ttc" id="agroup__lwm2m__client_html_ga7496736a9754f07edea52b0e4ab2e9c4"><div class="ttname"><a href="group__lwm2m__client.html#ga7496736a9754f07edea52b0e4ab2e9c4">lwm2m_client_init</a></div><div class="ttdeci">void lwm2m_client_init(lwm2m_client_data_t *client_data)</div><div class="ttdoc">Initializes a LwM2M client.</div></div>
-<div class="ttc" id="agroup__lwm2m__objects__light__control_html_ga6e6b4d0c837fc466c592c2ed2ccac3e5"><div class="ttname"><a href="#ga6e6b4d0c837fc466c592c2ed2ccac3e5">lwm2m_object_light_control_init</a></div><div class="ttdeci">lwm2m_object_t * lwm2m_object_light_control_init(lwm2m_client_data_t *client_data)</div><div class="ttdoc">Initialize the Light Control object.</div></div>
-<div class="ttc" id="agroup__lwm2m__objects__light__control_html_ga7cda995e36961ee59e7fae108a72190c"><div class="ttname"><a href="#ga7cda995e36961ee59e7fae108a72190c">lwm2m_object_light_control_instance_create</a></div><div class="ttdeci">int lwm2m_object_light_control_instance_create(const lwm2m_obj_light_control_args_t *args, int32_t instance_id)</div><div class="ttdoc">Create a new Light Control instance and add it to the object list.</div></div>
-<div class="ttc" id="astructlwm2m__client__data__t_html"><div class="ttname"><a href="structlwm2m__client__data__t.html">lwm2m_client_data_t</a></div><div class="ttdoc">LwM2M client descriptor.</div><div class="ttdef"><b>Definition</b> lwm2m_client.h:70</div></div>
-<div class="ttc" id="astructlwm2m__obj__light__control__args_html"><div class="ttname"><a href="structlwm2m__obj__light__control__args.html">lwm2m_obj_light_control_args</a></div><div class="ttdoc">Arguments for the creation of a Light Control object instance.</div><div class="ttdef"><b>Definition</b> light_control.h:206</div></div>
-</div><!-- fragment --><ol type="1">
-<li>You can update the status, dimmer, color and app_type of the light control instance with <a class="el" href="#gac9321e17bf53a1ec1fef64346315d199">lwm2m_object_light_control_update_status</a>, <a class="el" href="#ga18585a0721ae6715baa978ef234e4e4c">lwm2m_object_light_control_update_dimmer</a>, <a class="el" href="#gac5531aa47275c0eeb1f5a6a1cbeab27c">lwm2m_object_light_control_update_color</a> and <a class="el" href="#gaaf6a465c26fb958d8f6fcf976f1afd14">lwm2m_object_light_control_update_app_type</a> respectively. This will make sure to send notifications to servers that may be observing these resources.</li>
-</ol>
-<div class="fragment"><div class="line"><a class="code hl_function" href="#gac9321e17bf53a1ec1fef64346315d199">lwm2m_object_light_control_update_status</a>(0, <span class="keyword">true</span>, <span class="keyword">false</span>);</div>
-<div class="line"><a class="code hl_function" href="#ga18585a0721ae6715baa978ef234e4e4c">lwm2m_object_light_control_update_dimmer</a>(0, 50, <span class="keyword">false</span>);</div>
-<div class="ttc" id="agroup__lwm2m__objects__light__control_html_ga18585a0721ae6715baa978ef234e4e4c"><div class="ttname"><a href="#ga18585a0721ae6715baa978ef234e4e4c">lwm2m_object_light_control_update_dimmer</a></div><div class="ttdeci">int lwm2m_object_light_control_update_dimmer(uint16_t instance_id, uint8_t dimmer, bool call_cb)</div><div class="ttdoc">Update the dimmer value of a light control instance.</div></div>
-<div class="ttc" id="agroup__lwm2m__objects__light__control_html_gac9321e17bf53a1ec1fef64346315d199"><div class="ttname"><a href="#gac9321e17bf53a1ec1fef64346315d199">lwm2m_object_light_control_update_status</a></div><div class="ttdeci">int lwm2m_object_light_control_update_status(uint16_t instance_id, bool status, bool call_cb)</div><div class="ttdoc">Update the status of a light control instance.</div></div>
-</div><!-- fragment --> <h2 class="groupheader">Typedef Documentation</h2>
+<h2 class="groupheader">Typedef Documentation</h2>
 <a id="ga995f8e79a83a3ad6dd7583e46667dcdb" name="ga995f8e79a83a3ad6dd7583e46667dcdb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga995f8e79a83a3ad6dd7583e46667dcdb">&#9670;&#160;</a></span>lwm2m_obj_light_control_cb_t</h2>
 
@@ -595,7 +592,7 @@ Usage</h2>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

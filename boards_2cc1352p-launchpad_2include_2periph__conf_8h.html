@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,12 @@ $(function(){initNavTree('boards_2cc1352p-launchpad_2include_2periph__conf_8h.ht
 
 <p>Peripheral MCU configuration for TI CC1312 LaunchPad.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;periph_cpu.h&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Peripheral MCU configuration for TI CC1312 LaunchPad. </p>
+<dl class="section author"><dt>Author</dt><dd>Jean Pierre Dudey <a href="#" onclick="location.href='mai'+'lto:'+'jea'+'nd'+'ude'+'y@'+'hot'+'ma'+'il.'+'co'+'m'; return false;">jeand<span class="obfuscator">.nosp@m.</span>udey<span class="obfuscator">.nosp@m.</span>@hotm<span class="obfuscator">.nosp@m.</span>ail.<span class="obfuscator">.nosp@m.</span>com</a> </dd>
+<dd>
+Luis A. Ruiz <a href="#" onclick="location.href='mai'+'lto:'+'lui'+'sa'+'n00'+'@h'+'otm'+'ai'+'l.c'+'om'; return false;">luisa<span class="obfuscator">.nosp@m.</span>n00@<span class="obfuscator">.nosp@m.</span>hotma<span class="obfuscator">.nosp@m.</span>il.c<span class="obfuscator">.nosp@m.</span>om</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;periph_cpu.h&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for periph_conf.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -192,12 +194,7 @@ $(function(){initNavTree('boards_2cc1352p-launchpad_2include_2periph__conf_8h.ht
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>I2C_SDA_PIN</b>&#160;&#160;&#160;(5)</td></tr>
 <tr class="separator:a2cade698267beb86ccaa38c14d35ab0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Peripheral MCU configuration for TI CC1312 LaunchPad. </p>
-<dl class="section author"><dt>Author</dt><dd>Jean Pierre Dudey <a href="#" onclick="location.href='mai'+'lto:'+'jea'+'nd'+'ude'+'y@'+'hot'+'ma'+'il.'+'co'+'m'; return false;">jeand<span class="obfuscator">.nosp@m.</span>udey<span class="obfuscator">.nosp@m.</span>@hotm<span class="obfuscator">.nosp@m.</span>ail.<span class="obfuscator">.nosp@m.</span>com</a> </dd>
-<dd>
-Luis A. Ruiz <a href="#" onclick="location.href='mai'+'lto:'+'lui'+'sa'+'n00'+'@h'+'otm'+'ai'+'l.c'+'om'; return false;">luisa<span class="obfuscator">.nosp@m.</span>n00@<span class="obfuscator">.nosp@m.</span>hotma<span class="obfuscator">.nosp@m.</span>il.c<span class="obfuscator">.nosp@m.</span>om</a> </dd></dl>
-</div><h2 class="groupheader">Variable Documentation</h2>
+<h2 class="groupheader">Variable Documentation</h2>
 <a id="a2dd41f782d2c67052e4dc7d37cef89b1" name="a2dd41f782d2c67052e4dc7d37cef89b1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2dd41f782d2c67052e4dc7d37cef89b1">&#9670;&#160;</a></span>timer_config</h2>
 
@@ -294,7 +291,7 @@ Luis A. Ruiz <a href="#" onclick="location.href='mai'+'lto:'+'lui'+'sa'+'n00'+'@
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6c8313236d9db5b969ca7d150fe527de.html">boards</a></li><li class="navelem"><a class="el" href="dir_f0b4f5b2a4150dfe5c2cbba727fe65e7.html">cc1352p-launchpad</a></li><li class="navelem"><a class="el" href="dir_6bfbc57dc95e95b2b0bc0873c7b95692.html">include</a></li><li class="navelem"><a class="el" href="boards_2cc1352p-launchpad_2include_2periph__conf_8h.html">periph_conf.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

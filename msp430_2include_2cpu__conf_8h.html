@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,9 @@ $(function(){initNavTree('msp430_2include_2cpu__conf_8h.html',''); initResizable
 
 <p>Common CPU definitions for MSP430.  
 <a href="#details">More...</a></p>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Common CPU definitions for MSP430. </p>
+</div><table class="memberdecls">
 <tr class="memitem:a0b53cd12bd56eb7c3da020e23b9803b9" id="r_a0b53cd12bd56eb7c3da020e23b9803b9"><td class="memItemLeft" align="right" valign="top"><a id="a0b53cd12bd56eb7c3da020e23b9803b9" name="a0b53cd12bd56eb7c3da020e23b9803b9"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>IRQ_API_INLINED</b>&#160;&#160;&#160;(1)</td></tr>
 <tr class="memdesc:a0b53cd12bd56eb7c3da020e23b9803b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This arch uses the inlined IRQ API. <br /></td></tr>
@@ -184,9 +183,7 @@ $(function(){initNavTree('msp430_2include_2cpu__conf_8h.html',''); initResizable
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>GNRC_IPV6_STACK_SIZE</b>&#160;&#160;&#160;(512)</td></tr>
 <tr class="separator:a2326b53a03c6e2ddc9036bf020b11b99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Common CPU definitions for MSP430. </p>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
@@ -194,7 +191,7 @@ $(function(){initNavTree('msp430_2include_2cpu__conf_8h.html',''); initResizable
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_c433b04169c945a1c7f0848f853d4379.html">cpu</a></li><li class="navelem"><a class="el" href="dir_e12b5c290be1bed67f26b97d448bfe66.html">msp430</a></li><li class="navelem"><a class="el" href="dir_26a1f59c249fa20d2babc76cbf21d6b0.html">include</a></li><li class="navelem"><a class="el" href="msp430_2include_2cpu__conf_8h.html">cpu_conf.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

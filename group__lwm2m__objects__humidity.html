@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,47 +144,9 @@ $(function(){initNavTree('group__lwm2m__objects__humidity.html',''); initResizab
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">Humidity<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__pkg__wakaama.html">LwM2M - Lightweight Machine to Machine</a> &raquo; <a class="el" href="group__lwm2m__objects.html">LwM2M Object implementations</a></div></div></div>
+  <div class="headertitle"><div class="title">Humidity<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__pkg__wakaama.html">LwM2M - Lightweight Machine to Machine</a> &raquo; <a class="el" href="group__lwm2m__objects.html">LwM2M Object implementations</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
-Topics</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__humidity__config.html">LwM2M Humidity Sensor object compile configurations</a></td></tr>
-<tr class="memdesc:group__lwm2m__objects__humidity__config"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="humidity_8h.html">humidity.h</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ga562900e4f2c6809c24d4a8f3abeb2c54" id="r_ga562900e4f2c6809c24d4a8f3abeb2c54"><td class="memItemLeft" align="right" valign="top"><a id="ga562900e4f2c6809c24d4a8f3abeb2c54" name="ga562900e4f2c6809c24d4a8f3abeb2c54"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>LWM2M_HUMIDITY_OBJECT_ID</b>&#160;&#160;&#160;3304</td></tr>
-<tr class="memdesc:ga562900e4f2c6809c24d4a8f3abeb2c54"><td class="mdescLeft">&#160;</td><td class="mdescRight">LwM2M Humidity Sensor object ID. <br /></td></tr>
-<tr class="separator:ga562900e4f2c6809c24d4a8f3abeb2c54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:ga147f17a44e21db2d24ed5b5c42e922a7" id="r_ga147f17a44e21db2d24ed5b5c42e922a7"><td class="memItemLeft" align="right" valign="top"><a id="ga147f17a44e21db2d24ed5b5c42e922a7" name="ga147f17a44e21db2d24ed5b5c42e922a7"></a>
-typedef <a class="el" href="group__lwm2m__objects__ipso__sensor__base.html#gaa7308ac56cc712168feff47573d2db39">lwm2m_obj_ipso_base_sensor_args_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>lwm2m_obj_humidity_args_t</b></td></tr>
-<tr class="memdesc:ga147f17a44e21db2d24ed5b5c42e922a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arguments for the creation of a Humidity Sensor object instance. <br /></td></tr>
-<tr class="separator:ga147f17a44e21db2d24ed5b5c42e922a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ga294b8f1ddfde2a4a8d8941c1c485219e" id="r_ga294b8f1ddfde2a4a8d8941c1c485219e"><td class="memItemLeft" align="right" valign="top">lwm2m_object_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga294b8f1ddfde2a4a8d8941c1c485219e">lwm2m_object_humidity_init</a> (<a class="el" href="structlwm2m__client__data__t.html">lwm2m_client_data_t</a> *client_data)</td></tr>
-<tr class="memdesc:ga294b8f1ddfde2a4a8d8941c1c485219e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the Humidity Sensor object handle.  <br /></td></tr>
-<tr class="separator:ga294b8f1ddfde2a4a8d8941c1c485219e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4fab7531413394d2e150ec443da9aefd" id="r_ga4fab7531413394d2e150ec443da9aefd"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4fab7531413394d2e150ec443da9aefd">lwm2m_object_humidity_instance_create</a> (const <a class="el" href="#ga147f17a44e21db2d24ed5b5c42e922a7">lwm2m_obj_humidity_args_t</a> *args)</td></tr>
-<tr class="memdesc:ga4fab7531413394d2e150ec443da9aefd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new Humidity Sensor instance.  <br /></td></tr>
-<tr class="separator:ga4fab7531413394d2e150ec443da9aefd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad8d1fbdab74de8a4d3c79f68432ab8fb" id="r_gad8d1fbdab74de8a4d3c79f68432ab8fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad8d1fbdab74de8a4d3c79f68432ab8fb">lwm2m_object_humidity_update_value</a> (const <a class="el" href="structlwm2m__client__data__t.html">lwm2m_client_data_t</a> *client_data, uint16_t instance_id, int16_t value)</td></tr>
-<tr class="memdesc:gad8d1fbdab74de8a4d3c79f68432ab8fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the value of the humidity sensor and trigger a notification to the observing servers, if any.  <br /></td></tr>
-<tr class="separator:gad8d1fbdab74de8a4d3c79f68432ab8fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Humidity Sensor object implementation for LwM2M client using Wakaama</p>
 <dl class="section warning"><dt>Warning</dt><dd><b class="text-danger">This feature is experimental!</b><br  />
@@ -243,7 +202,45 @@ Usage</h2>
 <div class="fragment"><div class="line">uint16_t instance_id = (uint16_t)res;</div>
 <div class="line"><a class="code hl_function" href="#gad8d1fbdab74de8a4d3c79f68432ab8fb">lwm2m_object_humidity_update_value</a>(&amp;client_data, instance_id, new_value);</div>
 <div class="ttc" id="agroup__lwm2m__objects__humidity_html_gad8d1fbdab74de8a4d3c79f68432ab8fb"><div class="ttname"><a href="#gad8d1fbdab74de8a4d3c79f68432ab8fb">lwm2m_object_humidity_update_value</a></div><div class="ttdeci">void lwm2m_object_humidity_update_value(const lwm2m_client_data_t *client_data, uint16_t instance_id, int16_t value)</div><div class="ttdoc">Update the value of the humidity sensor and trigger a notification to the observing servers,...</div></div>
-</div><!-- fragment --> <h2 class="groupheader">Function Documentation</h2>
+</div><!-- fragment --> <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
+Topics</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__humidity__config.html">LwM2M Humidity Sensor object compile configurations</a></td></tr>
+<tr class="memdesc:group__lwm2m__objects__humidity__config"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="humidity_8h.html">humidity.h</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga562900e4f2c6809c24d4a8f3abeb2c54" id="r_ga562900e4f2c6809c24d4a8f3abeb2c54"><td class="memItemLeft" align="right" valign="top"><a id="ga562900e4f2c6809c24d4a8f3abeb2c54" name="ga562900e4f2c6809c24d4a8f3abeb2c54"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LWM2M_HUMIDITY_OBJECT_ID</b>&#160;&#160;&#160;3304</td></tr>
+<tr class="memdesc:ga562900e4f2c6809c24d4a8f3abeb2c54"><td class="mdescLeft">&#160;</td><td class="mdescRight">LwM2M Humidity Sensor object ID. <br /></td></tr>
+<tr class="separator:ga562900e4f2c6809c24d4a8f3abeb2c54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga147f17a44e21db2d24ed5b5c42e922a7" id="r_ga147f17a44e21db2d24ed5b5c42e922a7"><td class="memItemLeft" align="right" valign="top"><a id="ga147f17a44e21db2d24ed5b5c42e922a7" name="ga147f17a44e21db2d24ed5b5c42e922a7"></a>
+typedef <a class="el" href="group__lwm2m__objects__ipso__sensor__base.html#gaa7308ac56cc712168feff47573d2db39">lwm2m_obj_ipso_base_sensor_args_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>lwm2m_obj_humidity_args_t</b></td></tr>
+<tr class="memdesc:ga147f17a44e21db2d24ed5b5c42e922a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arguments for the creation of a Humidity Sensor object instance. <br /></td></tr>
+<tr class="separator:ga147f17a44e21db2d24ed5b5c42e922a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga294b8f1ddfde2a4a8d8941c1c485219e" id="r_ga294b8f1ddfde2a4a8d8941c1c485219e"><td class="memItemLeft" align="right" valign="top">lwm2m_object_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga294b8f1ddfde2a4a8d8941c1c485219e">lwm2m_object_humidity_init</a> (<a class="el" href="structlwm2m__client__data__t.html">lwm2m_client_data_t</a> *client_data)</td></tr>
+<tr class="memdesc:ga294b8f1ddfde2a4a8d8941c1c485219e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the Humidity Sensor object handle.  <br /></td></tr>
+<tr class="separator:ga294b8f1ddfde2a4a8d8941c1c485219e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4fab7531413394d2e150ec443da9aefd" id="r_ga4fab7531413394d2e150ec443da9aefd"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4fab7531413394d2e150ec443da9aefd">lwm2m_object_humidity_instance_create</a> (const <a class="el" href="#ga147f17a44e21db2d24ed5b5c42e922a7">lwm2m_obj_humidity_args_t</a> *args)</td></tr>
+<tr class="memdesc:ga4fab7531413394d2e150ec443da9aefd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new Humidity Sensor instance.  <br /></td></tr>
+<tr class="separator:ga4fab7531413394d2e150ec443da9aefd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad8d1fbdab74de8a4d3c79f68432ab8fb" id="r_gad8d1fbdab74de8a4d3c79f68432ab8fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad8d1fbdab74de8a4d3c79f68432ab8fb">lwm2m_object_humidity_update_value</a> (const <a class="el" href="structlwm2m__client__data__t.html">lwm2m_client_data_t</a> *client_data, uint16_t instance_id, int16_t value)</td></tr>
+<tr class="memdesc:gad8d1fbdab74de8a4d3c79f68432ab8fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the value of the humidity sensor and trigger a notification to the observing servers, if any.  <br /></td></tr>
+<tr class="separator:gad8d1fbdab74de8a4d3c79f68432ab8fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="ga294b8f1ddfde2a4a8d8941c1c485219e" name="ga294b8f1ddfde2a4a8d8941c1c485219e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga294b8f1ddfde2a4a8d8941c1c485219e">&#9670;&#160;</a></span>lwm2m_object_humidity_init()</h2>
 
@@ -341,7 +338,7 @@ Usage</h2>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -141,13 +138,17 @@ $(function(){initNavTree('p2p__dodag_8h.html',''); initResizable(true); });
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">p2p_dodag.h File Reference<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__rpl.html">RPL</a> &raquo; <a class="el" href="group__net__gnrc__rpl__p2p.html">Reactive Discovery of P2P Routes in LLNs</a></div></div></div>
+  <div class="headertitle"><div class="title">p2p_dodag.h File Reference<div class="ingroups"><a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__rpl.html">RPL</a> &raquo; <a class="el" href="group__net__gnrc__rpl__p2p.html">Reactive Discovery of P2P Routes in LLNs</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>DODAG-related functions for P2P-RPL.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="p2p__structs_8h.html">net/gnrc/rpl/p2p_structs.h</a>&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>DODAG-related functions for P2P-RPL. </p>
+<p>Header file, which defines all public known DODAG-related functions for P2P-RPL.</p>
+<dl class="section author"><dt>Author</dt><dd>Cenk Gündoğan <a href="#" onclick="location.href='mai'+'lto:'+'mai'+'l@'+'cgu'+'nd'+'oga'+'n.'+'de'; return false;">mail@<span class="obfuscator">.nosp@m.</span>cgun<span class="obfuscator">.nosp@m.</span>dogan<span class="obfuscator">.nosp@m.</span>.de</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;<a class="el" href="p2p__structs_8h.html">net/gnrc/rpl/p2p_structs.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for p2p_dodag.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -174,11 +175,7 @@ $(function(){initNavTree('p2p__dodag_8h.html',''); initResizable(true); });
 <tr class="memdesc:a598892e81cdefb4f1e33b416fd6bf085"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the appropriate P2P-RPL DODAG extension of the <code>dodag</code>.  <br /></td></tr>
 <tr class="separator:a598892e81cdefb4f1e33b416fd6bf085"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>DODAG-related functions for P2P-RPL. </p>
-<p>Header file, which defines all public known DODAG-related functions for P2P-RPL.</p>
-<dl class="section author"><dt>Author</dt><dd>Cenk Gündoğan <a href="#" onclick="location.href='mai'+'lto:'+'mai'+'l@'+'cgu'+'nd'+'oga'+'n.'+'de'; return false;">mail@<span class="obfuscator">.nosp@m.</span>cgun<span class="obfuscator">.nosp@m.</span>dogan<span class="obfuscator">.nosp@m.</span>.de</a> </dd></dl>
-</div><h2 class="groupheader">Function Documentation</h2>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="a598892e81cdefb4f1e33b416fd6bf085" name="a598892e81cdefb4f1e33b416fd6bf085"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a598892e81cdefb4f1e33b416fd6bf085">&#9670;&#160;</a></span>gnrc_rpl_p2p_ext_get()</h2>
 
@@ -262,7 +259,7 @@ NULL, if no free P2P-RPL DODAG extension is available </dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a408b6d3a4a484720bc3ecfeac8947e3.html">sys</a></li><li class="navelem"><a class="el" href="dir_e9e107fc86bbb4b6a326076a6808b9f5.html">include</a></li><li class="navelem"><a class="el" href="dir_7afc5d30923bebdd1513d1cc48150ca7.html">net</a></li><li class="navelem"><a class="el" href="dir_cf159672c4bc64dfd629cfa389a5bd8d.html">gnrc</a></li><li class="navelem"><a class="el" href="dir_2f2be2643daa9869e2a5ad5917e83e5e.html">rpl</a></li><li class="navelem"><a class="el" href="p2p__dodag_8h.html">p2p_dodag.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

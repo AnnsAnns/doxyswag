@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,18 @@ $(function(){initNavTree('boards_2common_2arduino-mkr_2include_2periph__conf_8h.
 
 <p>Configuration of CPU peripherals for Arduino MKR boards.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;periph_cpu.h&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Configuration of CPU peripherals for Arduino MKR boards. </p>
+<dl class="section author"><dt>Author</dt><dd>Thomas Eichinger <a href="#" onclick="location.href='mai'+'lto:'+'tho'+'ma'+'s.e'+'ic'+'hin'+'ge'+'r@f'+'u-'+'ber'+'li'+'n.d'+'e'; return false;">thoma<span class="obfuscator">.nosp@m.</span>s.ei<span class="obfuscator">.nosp@m.</span>ching<span class="obfuscator">.nosp@m.</span>er@f<span class="obfuscator">.nosp@m.</span>u-ber<span class="obfuscator">.nosp@m.</span>lin.<span class="obfuscator">.nosp@m.</span>de</a> </dd>
+<dd>
+Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
+<dd>
+Peter Kietzmann <a href="#" onclick="location.href='mai'+'lto:'+'pet'+'er'+'.ki'+'et'+'zma'+'nn'+'@ha'+'w-'+'ham'+'bu'+'rg.'+'de'; return false;">peter<span class="obfuscator">.nosp@m.</span>.kie<span class="obfuscator">.nosp@m.</span>tzman<span class="obfuscator">.nosp@m.</span>n@ha<span class="obfuscator">.nosp@m.</span>w-ham<span class="obfuscator">.nosp@m.</span>burg<span class="obfuscator">.nosp@m.</span>.de</a> </dd>
+<dd>
+Alexandre Abadie <a href="#" onclick="location.href='mai'+'lto:'+'ale'+'xa'+'ndr'+'e.'+'aba'+'di'+'e@i'+'nr'+'ia.'+'fr'; return false;">alexa<span class="obfuscator">.nosp@m.</span>ndre<span class="obfuscator">.nosp@m.</span>.abad<span class="obfuscator">.nosp@m.</span>ie@i<span class="obfuscator">.nosp@m.</span>nria.<span class="obfuscator">.nosp@m.</span>fr</a> </dd>
+<dd>
+Bumsik kim <a href="#" onclick="location.href='mai'+'lto:'+'kbu'+'ms'+'ik@'+'gm'+'ail'+'.c'+'om'; return false;">kbums<span class="obfuscator">.nosp@m.</span>ik@g<span class="obfuscator">.nosp@m.</span>mail.<span class="obfuscator">.nosp@m.</span>com</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;periph_cpu.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="arduino-mkr_2include_2periph__conf__common_8h.html">periph_conf_common.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for periph_conf.h:</div>
@@ -182,18 +190,7 @@ $(function(){initNavTree('boards_2common_2arduino-mkr_2include_2periph__conf_8h.
 static const <a class="el" href="structspi__conf__t.html">spi_conf_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>spi_config</b> []</td></tr>
 <tr class="separator:a873188d7292e07499dcde9674b1e849c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Configuration of CPU peripherals for Arduino MKR boards. </p>
-<dl class="section author"><dt>Author</dt><dd>Thomas Eichinger <a href="#" onclick="location.href='mai'+'lto:'+'tho'+'ma'+'s.e'+'ic'+'hin'+'ge'+'r@f'+'u-'+'ber'+'li'+'n.d'+'e'; return false;">thoma<span class="obfuscator">.nosp@m.</span>s.ei<span class="obfuscator">.nosp@m.</span>ching<span class="obfuscator">.nosp@m.</span>er@f<span class="obfuscator">.nosp@m.</span>u-ber<span class="obfuscator">.nosp@m.</span>lin.<span class="obfuscator">.nosp@m.</span>de</a> </dd>
-<dd>
-Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
-<dd>
-Peter Kietzmann <a href="#" onclick="location.href='mai'+'lto:'+'pet'+'er'+'.ki'+'et'+'zma'+'nn'+'@ha'+'w-'+'ham'+'bu'+'rg.'+'de'; return false;">peter<span class="obfuscator">.nosp@m.</span>.kie<span class="obfuscator">.nosp@m.</span>tzman<span class="obfuscator">.nosp@m.</span>n@ha<span class="obfuscator">.nosp@m.</span>w-ham<span class="obfuscator">.nosp@m.</span>burg<span class="obfuscator">.nosp@m.</span>.de</a> </dd>
-<dd>
-Alexandre Abadie <a href="#" onclick="location.href='mai'+'lto:'+'ale'+'xa'+'ndr'+'e.'+'aba'+'di'+'e@i'+'nr'+'ia.'+'fr'; return false;">alexa<span class="obfuscator">.nosp@m.</span>ndre<span class="obfuscator">.nosp@m.</span>.abad<span class="obfuscator">.nosp@m.</span>ie@i<span class="obfuscator">.nosp@m.</span>nria.<span class="obfuscator">.nosp@m.</span>fr</a> </dd>
-<dd>
-Bumsik kim <a href="#" onclick="location.href='mai'+'lto:'+'kbu'+'ms'+'ik@'+'gm'+'ail'+'.c'+'om'; return false;">kbums<span class="obfuscator">.nosp@m.</span>ik@g<span class="obfuscator">.nosp@m.</span>mail.<span class="obfuscator">.nosp@m.</span>com</a> </dd></dl>
-</div><h2 class="groupheader">Variable Documentation</h2>
+<h2 class="groupheader">Variable Documentation</h2>
 <a id="a1643cfc64589407fb96b4cbf908689a5" name="a1643cfc64589407fb96b4cbf908689a5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1643cfc64589407fb96b4cbf908689a5">&#9670;&#160;</a></span>uart_config</h2>
 
@@ -247,7 +244,7 @@ Bumsik kim <a href="#" onclick="location.href='mai'+'lto:'+'kbu'+'ms'+'ik@'+'gm'
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6c8313236d9db5b969ca7d150fe527de.html">boards</a></li><li class="navelem"><a class="el" href="dir_c95ba9ba7fbc2fbce23d1bdfa8cd1c6b.html">common</a></li><li class="navelem"><a class="el" href="dir_e7c99ce763c457001d97c0dd71df1d84.html">arduino-mkr</a></li><li class="navelem"><a class="el" href="dir_a6483abf92e73e8c059f3f4c91b50699.html">include</a></li><li class="navelem"><a class="el" href="boards_2common_2arduino-mkr_2include_2periph__conf_8h.html">periph_conf.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

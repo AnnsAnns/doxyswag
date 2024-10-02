@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -151,7 +148,14 @@ $(function(){initNavTree('sht2x_8h.html',''); initResizable(true); });
 
 <p>Device driver implementation for the SHT2x humidity and temperature humidity sensor.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Device driver implementation for the SHT2x humidity and temperature humidity sensor. </p>
+<dl class="section author"><dt>Author</dt><dd>Kees Bakker <a href="#" onclick="location.href='mai'+'lto:'+'kee'+'s@'+'sod'+'aq'+'.co'+'m'; return false;">kees@<span class="obfuscator">.nosp@m.</span>soda<span class="obfuscator">.nosp@m.</span>q.com</a> </dd>
+<dd>
+George Psimenos <a href="#" onclick="location.href='mai'+'lto:'+'gp7'+'g1'+'4@s'+'ot'+'on.'+'ac'+'.uk'; return false;">gp7g1<span class="obfuscator">.nosp@m.</span>4@so<span class="obfuscator">.nosp@m.</span>ton.a<span class="obfuscator">.nosp@m.</span>c.uk</a> </dd>
+<dd>
+Steffen Robertz <a href="#" onclick="location.href='mai'+'lto:'+'ste'+'ff'+'en.'+'ro'+'ber'+'tz'+'@rw'+'th'+'-aa'+'ch'+'en.'+'de'; return false;">steff<span class="obfuscator">.nosp@m.</span>en.r<span class="obfuscator">.nosp@m.</span>obert<span class="obfuscator">.nosp@m.</span>z@rw<span class="obfuscator">.nosp@m.</span>th-aa<span class="obfuscator">.nosp@m.</span>chen<span class="obfuscator">.nosp@m.</span>.de</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="i2c_8h.html">periph/i2c.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -249,14 +253,7 @@ Functions</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>SHT2X_USER_OTP_MASK</b>&#160;&#160;&#160;0x02</td></tr>
 <tr class="separator:gae99e1a12707c7cc69e07c75de334ec03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Device driver implementation for the SHT2x humidity and temperature humidity sensor. </p>
-<dl class="section author"><dt>Author</dt><dd>Kees Bakker <a href="#" onclick="location.href='mai'+'lto:'+'kee'+'s@'+'sod'+'aq'+'.co'+'m'; return false;">kees@<span class="obfuscator">.nosp@m.</span>soda<span class="obfuscator">.nosp@m.</span>q.com</a> </dd>
-<dd>
-George Psimenos <a href="#" onclick="location.href='mai'+'lto:'+'gp7'+'g1'+'4@s'+'ot'+'on.'+'ac'+'.uk'; return false;">gp7g1<span class="obfuscator">.nosp@m.</span>4@so<span class="obfuscator">.nosp@m.</span>ton.a<span class="obfuscator">.nosp@m.</span>c.uk</a> </dd>
-<dd>
-Steffen Robertz <a href="#" onclick="location.href='mai'+'lto:'+'ste'+'ff'+'en.'+'ro'+'ber'+'tz'+'@rw'+'th'+'-aa'+'ch'+'en.'+'de'; return false;">steff<span class="obfuscator">.nosp@m.</span>en.r<span class="obfuscator">.nosp@m.</span>obert<span class="obfuscator">.nosp@m.</span>z@rw<span class="obfuscator">.nosp@m.</span>th-aa<span class="obfuscator">.nosp@m.</span>chen<span class="obfuscator">.nosp@m.</span>.de</a> </dd></dl>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
@@ -264,7 +261,7 @@ Steffen Robertz <a href="#" onclick="location.href='mai'+'lto:'+'ste'+'ff'+'en.'
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_14bc92f4b96c8519b376567118ac28b3.html">drivers</a></li><li class="navelem"><a class="el" href="dir_ee023d43c33bfccc31aa50a48a76892b.html">include</a></li><li class="navelem"><a class="el" href="sht2x_8h.html">sht2x.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

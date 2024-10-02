@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,6 +144,8 @@ $(function(){initNavTree('group__se__aead.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">Secure Element Authenticated Encryption with Additional Data<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__sys__psa__crypto.html">PSA Cryptographic API</a> &raquo; <a class="el" href="group__sys__psa__crypto__se__driver.html">PSA Crypto Secure Element Wrapper</a></div></div></div>
 </div><!--header-->
 <div class="contents">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Authenticated Encryption with Additional Data (AEAD) operations with secure elements must be done in one function call. While this creates a burden for implementers as there must be sufficient space in memory for the entire message, it prevents decrypted data from being made available before the authentication operation is complete and the data is known to be authentic. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
@@ -163,8 +162,6 @@ Typedefs</h2></td></tr>
 <tr class="memdesc:gab517338cb0541c9e36fbcea713622104"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that performs a secure element authenticated decryption operation.  <br /></td></tr>
 <tr class="separator:gab517338cb0541c9e36fbcea713622104"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Authenticated Encryption with Additional Data (AEAD) operations with secure elements must be done in one function call. While this creates a burden for implementers as there must be sufficient space in memory for the entire message, it prevents decrypted data from being made available before the authentication operation is complete and the data is known to be authentic. </p>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="gab517338cb0541c9e36fbcea713622104" name="gab517338cb0541c9e36fbcea713622104"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gab517338cb0541c9e36fbcea713622104">&#9670;&#160;</a></span>psa_drv_se_aead_decrypt_t</h2>
@@ -241,7 +238,7 @@ Typedefs</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

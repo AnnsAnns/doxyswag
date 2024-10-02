@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,10 @@ $(function(){initNavTree('soft__uart__params_8h.html',''); initResizable(true); 
 
 <p>Software UART configuration.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;board.h&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Software UART configuration. </p>
+<dl class="section author"><dt>Author</dt><dd>Benjamin Valentin <a href="#" onclick="location.href='mai'+'lto:'+'ben'+'ja'+'min'+'.v'+'ale'+'nt'+'in@'+'ml'+'-pa'+'.c'+'om'; return false;">benja<span class="obfuscator">.nosp@m.</span>min.<span class="obfuscator">.nosp@m.</span>valen<span class="obfuscator">.nosp@m.</span>tin@<span class="obfuscator">.nosp@m.</span>ml-pa<span class="obfuscator">.nosp@m.</span>.com</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;board.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="soft__uart_8h.html">soft_uart.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="units_8h.html">macros/units.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="kernel__defines_8h.html">kernel_defines.h</a>&quot;</code><br />
@@ -186,10 +186,7 @@ $(function(){initNavTree('soft__uart__params_8h.html',''); initResizable(true); 
 <tr class="memdesc:a6391237f48fabefc4aa7df925221b2c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sotware UART port descriptor array.  <br /></td></tr>
 <tr class="separator:a6391237f48fabefc4aa7df925221b2c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Software UART configuration. </p>
-<dl class="section author"><dt>Author</dt><dd>Benjamin Valentin <a href="#" onclick="location.href='mai'+'lto:'+'ben'+'ja'+'min'+'.v'+'ale'+'nt'+'in@'+'ml'+'-pa'+'.c'+'om'; return false;">benja<span class="obfuscator">.nosp@m.</span>min.<span class="obfuscator">.nosp@m.</span>valen<span class="obfuscator">.nosp@m.</span>tin@<span class="obfuscator">.nosp@m.</span>ml-pa<span class="obfuscator">.nosp@m.</span>.com</a> </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ab3525ba29e961b7dedc3d4e017802945" name="ab3525ba29e961b7dedc3d4e017802945"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab3525ba29e961b7dedc3d4e017802945">&#9670;&#160;</a></span>SOFT_UART_PARAMS</h2>
 
@@ -247,7 +244,7 @@ $(function(){initNavTree('soft__uart__params_8h.html',''); initResizable(true); 
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_14bc92f4b96c8519b376567118ac28b3.html">drivers</a></li><li class="navelem"><a class="el" href="dir_b879b17ff81896454f80cc570026be98.html">soft_uart</a></li><li class="navelem"><a class="el" href="dir_2b86298b97b2b97cd967d8ecefdde78e.html">include</a></li><li class="navelem"><a class="el" href="soft__uart__params_8h.html">soft_uart_params.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

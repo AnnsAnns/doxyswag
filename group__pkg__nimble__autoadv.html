@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -146,12 +143,20 @@ $(function(){initNavTree('group__pkg__nimble__autoadv.html',''); initResizable(t
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">Automated advertising<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__ble.html">Bluetooth Low Energy (BLE)</a> &raquo; <a class="el" href="group__pkg__nimble.html">NimBLE</a></div></div></div>
+  <div class="headertitle"><div class="title">Automated advertising<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__ble.html">Bluetooth Low Energy (BLE)</a> &raquo; <a class="el" href="group__pkg__nimble.html">NimBLE</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Module for automated bluetooth advertising.  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Module for automated bluetooth advertising. </p>
+<p>Advertising is restarted on disconnect events automatically. Defaults to the following characteristics:</p><ul>
+<li>General discoverable mode (BLE_GAP_DISC_MODE_GEN)</li>
+<li>Undirected connectable mode (BLE_GAP_CONN_MODE_UND)</li>
+<li>No expiration (BLE_HS_FOREVER)</li>
+<li>No name </li>
+</ul>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -237,14 +242,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:gadc3fc788199661f224ebaf5874f6f2ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">enable scan-request notification ignore if no 'nimble_adv_ex' <br /></td></tr>
 <tr class="separator:gadc3fc788199661f224ebaf5874f6f2ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Module for automated bluetooth advertising. </p>
-<p>Advertising is restarted on disconnect events automatically. Defaults to the following characteristics:</p><ul>
-<li>General discoverable mode (BLE_GAP_DISC_MODE_GEN)</li>
-<li>Undirected connectable mode (BLE_GAP_CONN_MODE_UND)</li>
-<li>No expiration (BLE_HS_FOREVER)</li>
-<li>No name </li>
-</ul>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga4b2115e7cb4d082e2fb626d6d94b0a33" name="ga4b2115e7cb4d082e2fb626d6d94b0a33"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga4b2115e7cb4d082e2fb626d6d94b0a33">&#9670;&#160;</a></span>CONFIG_NIMBLE_AUTOADV_DEVICE_NAME</h2>
@@ -550,7 +547,7 @@ BLUETIL_AD_NOMEM if there is not enough space to write add field </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -153,7 +150,30 @@ $(function(){initNavTree('group__drivers__at24cxxx.html',''); initResizable(true
 
 <p>Device driver interface for the AT24CXXX EEPROM units  
 <a href="#details">More...</a></p>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Device driver interface for the AT24CXXX EEPROM units </p>
+<h1><a class="anchor" id="overview"></a>
+Overview</h1>
+<p>Various manufacturers such as Atmel/Microchip or ST offer small I2C EEPROMs which usually come in 8-pin packages and are used for persistent data storage of settings, counters, etc. This driver adds support for these devices with direct read and write functions.</p>
+<p>The high level wrapper for RIOTs MTD interface to utilize the I2C EEPROMs as MTD storage is described in drivers_mtd_at24cxxx.</p>
+<p>A list of supported devices can be found in the <a class="el" href="at24cxxx__defines_8h.html" title="Constants for various I2C EEPROM devices.">at24cxxx_defines.h</a> file.</p>
+<h1><a class="anchor" id="usage"></a>
+Usage</h1>
+<p>The preconfigured devices in the <a class="el" href="at24cxxx__defines_8h.html" title="Constants for various I2C EEPROM devices.">at24cxxx_defines.h</a> file devices are easily accessible as pseudomodules and can be added to the Makefile of your project: </p><pre class="fragment"> USEMODULE += at24c02
+</pre><p>When using one of the pseudomodules, the configuration of the device is already predefined in the AT24CXXX_PARAMS macro and can be used for the initialization: </p><pre class="fragment"> at24cxxx_t eeprom_dev;
+ at24cxxx_params_t eeprom_params = AT24CXXX_PARAMS;
+
+ at24cxxx_init(&amp;eeprom_dev, &amp;eeprom_params);
+</pre><p><br  />
+For other devices that are not yet part of the library, the generic module has to be added: </p><pre class="fragment"> USEMODULE += at24cxxx
+</pre><p>The predefined macro can not be used in this case, so the parameters of the device have to be added to the at24cxxx_params_t structure manually with the values from the corresponding datasheet: </p><pre class="fragment"> at24cxxx_t eeprom_dev;
+ at24cxxx_params_t eeprom_params = {
+     .i2c = I2C_DEV(0), \
+     ...
+ };
+
+ at24cxxx_init(&amp;eeprom_dev, &amp;eeprom_params);
+</pre> <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="at24cxxx__defines_8h.html">at24cxxx_defines.h</a></td></tr>
@@ -223,30 +243,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:gac672fca6f474625234205ec9c50d37cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable write protection.  <br /></td></tr>
 <tr class="separator:gac672fca6f474625234205ec9c50d37cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Device driver interface for the AT24CXXX EEPROM units </p>
-<h1><a class="anchor" id="overview"></a>
-Overview</h1>
-<p>Various manufacturers such as Atmel/Microchip or ST offer small I2C EEPROMs which usually come in 8-pin packages and are used for persistent data storage of settings, counters, etc. This driver adds support for these devices with direct read and write functions.</p>
-<p>The high level wrapper for RIOTs MTD interface to utilize the I2C EEPROMs as MTD storage is described in drivers_mtd_at24cxxx.</p>
-<p>A list of supported devices can be found in the <a class="el" href="at24cxxx__defines_8h.html" title="Constants for various I2C EEPROM devices.">at24cxxx_defines.h</a> file.</p>
-<h1><a class="anchor" id="usage"></a>
-Usage</h1>
-<p>The preconfigured devices in the <a class="el" href="at24cxxx__defines_8h.html" title="Constants for various I2C EEPROM devices.">at24cxxx_defines.h</a> file devices are easily accessible as pseudomodules and can be added to the Makefile of your project: </p><pre class="fragment"> USEMODULE += at24c02
-</pre><p>When using one of the pseudomodules, the configuration of the device is already predefined in the AT24CXXX_PARAMS macro and can be used for the initialization: </p><pre class="fragment"> at24cxxx_t eeprom_dev;
- at24cxxx_params_t eeprom_params = AT24CXXX_PARAMS;
-
- at24cxxx_init(&amp;eeprom_dev, &amp;eeprom_params);
-</pre><p><br  />
-For other devices that are not yet part of the library, the generic module has to be added: </p><pre class="fragment"> USEMODULE += at24cxxx
-</pre><p>The predefined macro can not be used in this case, so the parameters of the device have to be added to the at24cxxx_params_t structure manually with the values from the corresponding datasheet: </p><pre class="fragment"> at24cxxx_t eeprom_dev;
- at24cxxx_params_t eeprom_params = {
-     .i2c = I2C_DEV(0), \
-     ...
- };
-
- at24cxxx_init(&amp;eeprom_dev, &amp;eeprom_params);
-</pre> <h2 class="groupheader">Function Documentation</h2>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="ga553b7cab9e3474d698759173a9c66c33" name="ga553b7cab9e3474d698759173a9c66c33"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga553b7cab9e3474d698759173a9c66c33">&#9670;&#160;</a></span>at24cxxx_clear()</h2>
 
@@ -642,7 +639,7 @@ For other devices that are not yet part of the library, the generic module has t
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

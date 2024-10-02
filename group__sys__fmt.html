@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -152,6 +149,15 @@ $(function(){initNavTree('group__sys__fmt.html',''); initResizable(true); });
 
 <p>Provides simple string formatting functions  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Provides simple string formatting functions </p>
+<p>The goal of this API is to provide a string formatting interface which has a reduced code size footprint compared to the libc provided <a class="el" href="stdio_8h.html" title="stdio wrapper to extend the C libs stdio">stdio.h</a> functionality.</p>
+<p>This library provides a set of formatting and printing functions for 64 bit integers, even when the C library was built without support for 64 bit formatting (newlib-nano).</p>
+<dl class="section note"><dt>Note</dt><dd>The fmt functions expect their <code>out</code> parameter to hold the entire output. This <em>MUST</em> be ensured by the caller.</dd>
+<dd>
+Each fmt function will not write anything to <code>out</code> if it is <code>NULL</code>, but still return the number of characters that would have been written. This can be used to ensure the <code>out</code> buffer is large enough.</dd>
+<dd>
+The print functions in this library do not buffer any output. Mixing calls to standard <code>printf</code> from <a class="el" href="stdio_8h.html" title="stdio wrapper to extend the C libs stdio">stdio.h</a> with the <code>print_xxx</code> functions in fmt, especially on the same output line, may cause garbled output. </dd></dl>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -292,15 +298,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga2a643544c74b8000c17474d087b1cb11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pad string to the left.  <br /></td></tr>
 <tr class="separator:ga2a643544c74b8000c17474d087b1cb11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Provides simple string formatting functions </p>
-<p>The goal of this API is to provide a string formatting interface which has a reduced code size footprint compared to the libc provided <a class="el" href="stdio_8h.html" title="stdio wrapper to extend the C libs stdio">stdio.h</a> functionality.</p>
-<p>This library provides a set of formatting and printing functions for 64 bit integers, even when the C library was built without support for 64 bit formatting (newlib-nano).</p>
-<dl class="section note"><dt>Note</dt><dd>The fmt functions expect their <code>out</code> parameter to hold the entire output. This <em>MUST</em> be ensured by the caller.</dd>
-<dd>
-Each fmt function will not write anything to <code>out</code> if it is <code>NULL</code>, but still return the number of characters that would have been written. This can be used to ensure the <code>out</code> buffer is large enough.</dd>
-<dd>
-The print functions in this library do not buffer any output. Mixing calls to standard <code>printf</code> from <a class="el" href="stdio_8h.html" title="stdio wrapper to extend the C libs stdio">stdio.h</a> with the <code>print_xxx</code> functions in fmt, especially on the same output line, may cause garbled output. </dd></dl>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ga00b86861e4b8a343d68b4166ab388b58" name="ga00b86861e4b8a343d68b4166ab388b58"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga00b86861e4b8a343d68b4166ab388b58">&#9670;&#160;</a></span>fmt_byte_hex()</h2>
@@ -1550,7 +1547,7 @@ precision &lt; TENMAP_SIZE (== 8)</dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -144,85 +141,12 @@ $(function(){initNavTree('group__net__gnrc.html',''); initResizable(true); });
   <div class="summary">
 <a href="#groups">Topics</a> &#124;
 <a href="#files">Files</a>  </div>
-  <div class="headertitle"><div class="title">Generic (GNRC) network stack<div class="ingroups"><a class="el" href="group__net.html">Networking</a></div></div></div>
+  <div class="headertitle"><div class="title">Generic (GNRC) network stack<div class="ingroups"><a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>RIOT's modular default IP network stack.  
 <a href="#details">More...</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
-Topics</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan.html">6LoWPAN</a></td></tr>
-<tr class="memdesc:group__net__gnrc__sixlowpan"><td class="mdescLeft">&#160;</td><td class="mdescRight">GNRC's 6LoWPAN implementation <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__mac.html">Common MAC module</a></td></tr>
-<tr class="memdesc:group__net__gnrc__mac"><td class="mdescLeft">&#160;</td><td class="mdescRight">A MAC module for providing common MAC parameters and helper functions. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__pktdump.html">Dump Network Packets</a></td></tr>
-<tr class="memdesc:group__net__gnrc__pktdump"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dump network packets to STDOUT for debugging <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__neterr.html">Error reporting</a></td></tr>
-<tr class="memdesc:group__net__gnrc__neterr"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows for asynchronous error reporting in the network stack. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__lorawan.html">GNRC LoRaWAN</a></td></tr>
-<tr class="memdesc:group__net__gnrc__lorawan"><td class="mdescLeft">&#160;</td><td class="mdescRight">GNRC LoRaWAN stack implementation <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__netapi.html">GNRC communication interface</a></td></tr>
-<tr class="memdesc:group__net__gnrc__netapi"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic interface for IPC communication between GNRC modules <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sock.html">GNRC-specific implementation of the sock API</a></td></tr>
-<tr class="memdesc:group__net__gnrc__sock"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides an implementation of the <a class="el" href="group__net__sock.html">Sock API</a> by the <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__gomach.html">GoMacH</a></td></tr>
-<tr class="memdesc:group__net__gnrc__gomach"><td class="mdescLeft">&#160;</td><td class="mdescRight">A traffic-adaptive multi-channel MAC <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__tx__sync.html">Helpers for synchronizing with transmission.</a></td></tr>
-<tr class="memdesc:group__net__gnrc__tx__sync"><td class="mdescLeft">&#160;</td><td class="mdescRight">This allows upper layers to wait for a transmission to complete (or fail) and for passing up data about the transmission. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__ipv6.html">IPv6</a></td></tr>
-<tr class="memdesc:group__net__gnrc__ipv6"><td class="mdescLeft">&#160;</td><td class="mdescRight">GNRC's IPv6 implementation <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__lwmac.html">LWMAC</a></td></tr>
-<tr class="memdesc:group__net__gnrc__lwmac"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Lightweight duty-cycling 802.15.4 MAC protocol <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__netif.html">Network interface API</a></td></tr>
-<tr class="memdesc:group__net__gnrc__netif"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstraction layer for GNRC's network interfaces <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__netreg.html">Network protocol registry</a></td></tr>
-<tr class="memdesc:group__net__gnrc__netreg"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registry to receive messages of a specified protocol type by GNRC. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__pktbuf.html">Packet buffer</a></td></tr>
-<tr class="memdesc:group__net__gnrc__pktbuf"><td class="mdescLeft">&#160;</td><td class="mdescRight">A global network packet buffer. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__pktqueue.html">Packet queue</a></td></tr>
-<tr class="memdesc:group__net__gnrc__pktqueue"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__net__gnrc__pkt.html#ga961e6ea05309a3d69a4d96f4a2dedb63">gnrc_pktsnip_t</a> queue <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__priority__pktqueue.html">Priority packet queue for GNRC</a></td></tr>
-<tr class="memdesc:group__net__gnrc__priority__pktqueue"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for priority_queue that holds gnrc_pktsnip_t* <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__rpl.html">RPL</a></td></tr>
-<tr class="memdesc:group__net__gnrc__rpl"><td class="mdescLeft">&#160;</td><td class="mdescRight">RPL implementation for GNRC <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__ipv6__auto__subnets.html">Simple-Subnet auto-configuration</a></td></tr>
-<tr class="memdesc:group__net__gnrc__ipv6__auto__subnets"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automatic configuration for cascading subnets <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__tcp.html">TCP</a></td></tr>
-<tr class="memdesc:group__net__gnrc__tcp"><td class="mdescLeft">&#160;</td><td class="mdescRight">RIOT's TCP implementation for the GNRC network stack. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__udp.html">UDP</a></td></tr>
-<tr class="memdesc:group__net__gnrc__udp"><td class="mdescLeft">&#160;</td><td class="mdescRight">GNRC's implementation of the UDP protocol <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__nettype.html">gnrc_nettype: Protocol type</a></td></tr>
-<tr class="memdesc:group__net__gnrc__nettype"><td class="mdescLeft">&#160;</td><td class="mdescRight">Protocol type definitions and helper functions <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gnrc_8h.html">gnrc.h</a></td></tr>
-<tr class="memdesc:gnrc_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Includes all essential GNRC network stack base modules. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>RIOT's modular default IP network stack. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://www.riot-os.org/assets/pdfs/mlenders_msc.pdf">Martine Lenders' master thesis</a> about GNRC's design and evaluation and the slide set of <a href="https://www.riot-os.org/assets/pdfs/mlenders_msc_def.pdf">its defense</a>.</dd></dl>
@@ -381,6 +305,79 @@ How To Use</h1>
 <li>To include the <a class="el" href="group__net__gnrc__rpl.html">RPL</a> module <div class="fragment"><div class="line">USEMODULE += gnrc_rpl</div>
 </div><!-- fragment --> This will include the <a class="el" href="group__net__gnrc__rpl.html">RPL</a> module. To provide forwarding capabilities it is necessary to build the application with <code>gnrc_ipv6_router_default</code> (or <code>gnrc_ipv6_router</code>), not <code>gnrc_ipv6_default</code> (or <code>gnrc_ipv6</code>). </li>
 </ul>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
+Topics</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan.html">6LoWPAN</a></td></tr>
+<tr class="memdesc:group__net__gnrc__sixlowpan"><td class="mdescLeft">&#160;</td><td class="mdescRight">GNRC's 6LoWPAN implementation <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__mac.html">Common MAC module</a></td></tr>
+<tr class="memdesc:group__net__gnrc__mac"><td class="mdescLeft">&#160;</td><td class="mdescRight">A MAC module for providing common MAC parameters and helper functions. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__pktdump.html">Dump Network Packets</a></td></tr>
+<tr class="memdesc:group__net__gnrc__pktdump"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dump network packets to STDOUT for debugging <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__neterr.html">Error reporting</a></td></tr>
+<tr class="memdesc:group__net__gnrc__neterr"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows for asynchronous error reporting in the network stack. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__lorawan.html">GNRC LoRaWAN</a></td></tr>
+<tr class="memdesc:group__net__gnrc__lorawan"><td class="mdescLeft">&#160;</td><td class="mdescRight">GNRC LoRaWAN stack implementation <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__netapi.html">GNRC communication interface</a></td></tr>
+<tr class="memdesc:group__net__gnrc__netapi"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic interface for IPC communication between GNRC modules <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sock.html">GNRC-specific implementation of the sock API</a></td></tr>
+<tr class="memdesc:group__net__gnrc__sock"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides an implementation of the <a class="el" href="group__net__sock.html">Sock API</a> by the <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__gomach.html">GoMacH</a></td></tr>
+<tr class="memdesc:group__net__gnrc__gomach"><td class="mdescLeft">&#160;</td><td class="mdescRight">A traffic-adaptive multi-channel MAC <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__tx__sync.html">Helpers for synchronizing with transmission.</a></td></tr>
+<tr class="memdesc:group__net__gnrc__tx__sync"><td class="mdescLeft">&#160;</td><td class="mdescRight">This allows upper layers to wait for a transmission to complete (or fail) and for passing up data about the transmission. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__ipv6.html">IPv6</a></td></tr>
+<tr class="memdesc:group__net__gnrc__ipv6"><td class="mdescLeft">&#160;</td><td class="mdescRight">GNRC's IPv6 implementation <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__lwmac.html">LWMAC</a></td></tr>
+<tr class="memdesc:group__net__gnrc__lwmac"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Lightweight duty-cycling 802.15.4 MAC protocol <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__netif.html">Network interface API</a></td></tr>
+<tr class="memdesc:group__net__gnrc__netif"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstraction layer for GNRC's network interfaces <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__netreg.html">Network protocol registry</a></td></tr>
+<tr class="memdesc:group__net__gnrc__netreg"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registry to receive messages of a specified protocol type by GNRC. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__pktbuf.html">Packet buffer</a></td></tr>
+<tr class="memdesc:group__net__gnrc__pktbuf"><td class="mdescLeft">&#160;</td><td class="mdescRight">A global network packet buffer. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__pktqueue.html">Packet queue</a></td></tr>
+<tr class="memdesc:group__net__gnrc__pktqueue"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__net__gnrc__pkt.html#ga961e6ea05309a3d69a4d96f4a2dedb63">gnrc_pktsnip_t</a> queue <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__priority__pktqueue.html">Priority packet queue for GNRC</a></td></tr>
+<tr class="memdesc:group__net__gnrc__priority__pktqueue"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for priority_queue that holds gnrc_pktsnip_t* <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__rpl.html">RPL</a></td></tr>
+<tr class="memdesc:group__net__gnrc__rpl"><td class="mdescLeft">&#160;</td><td class="mdescRight">RPL implementation for GNRC <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__ipv6__auto__subnets.html">Simple-Subnet auto-configuration</a></td></tr>
+<tr class="memdesc:group__net__gnrc__ipv6__auto__subnets"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automatic configuration for cascading subnets <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__tcp.html">TCP</a></td></tr>
+<tr class="memdesc:group__net__gnrc__tcp"><td class="mdescLeft">&#160;</td><td class="mdescRight">RIOT's TCP implementation for the GNRC network stack. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__udp.html">UDP</a></td></tr>
+<tr class="memdesc:group__net__gnrc__udp"><td class="mdescLeft">&#160;</td><td class="mdescRight">GNRC's implementation of the UDP protocol <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__nettype.html">gnrc_nettype: Protocol type</a></td></tr>
+<tr class="memdesc:group__net__gnrc__nettype"><td class="mdescLeft">&#160;</td><td class="mdescRight">Protocol type definitions and helper functions <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gnrc_8h.html">gnrc.h</a></td></tr>
+<tr class="memdesc:gnrc_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Includes all essential GNRC network stack base modules. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
@@ -388,7 +385,7 @@ How To Use</h1>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

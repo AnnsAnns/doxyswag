@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -149,7 +146,10 @@ $(function(){initNavTree('ph__oem__params_8h.html',''); initResizable(true); });
 
 <p>Default configuration for Atlas Scientific pH OEM sensors.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;board.h&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Default configuration for Atlas Scientific pH OEM sensors. </p>
+<dl class="section author"><dt>Author</dt><dd>Igor Knippenberg <a href="#" onclick="location.href='mai'+'lto:'+'igo'+'r.'+'kni'+'pp'+'enb'+'er'+'g@g'+'ma'+'il.'+'co'+'m'; return false;">igor.<span class="obfuscator">.nosp@m.</span>knip<span class="obfuscator">.nosp@m.</span>penbe<span class="obfuscator">.nosp@m.</span>rg@g<span class="obfuscator">.nosp@m.</span>mail.<span class="obfuscator">.nosp@m.</span>com</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;board.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="saul__reg_8h.html">saul_reg.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ph__oem_8h.html">ph_oem.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ph__oem__regs_8h.html">ph_oem_regs.h</a>&quot;</code><br />
@@ -192,10 +192,7 @@ Variables</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>PH_OEM_SAUL_INFO</b>&#160;&#160;&#160;{ .name = &quot;pH OEM sensor&quot; }</td></tr>
 <tr class="separator:a54ed0fb71ad509d306fe4de2092945d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Default configuration for Atlas Scientific pH OEM sensors. </p>
-<dl class="section author"><dt>Author</dt><dd>Igor Knippenberg <a href="#" onclick="location.href='mai'+'lto:'+'igo'+'r.'+'kni'+'pp'+'enb'+'er'+'g@g'+'ma'+'il.'+'co'+'m'; return false;">igor.<span class="obfuscator">.nosp@m.</span>knip<span class="obfuscator">.nosp@m.</span>penbe<span class="obfuscator">.nosp@m.</span>rg@g<span class="obfuscator">.nosp@m.</span>mail.<span class="obfuscator">.nosp@m.</span>com</a> </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="abe3c0eb6dc913f42e767a612bdd46f80" name="abe3c0eb6dc913f42e767a612bdd46f80"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abe3c0eb6dc913f42e767a612bdd46f80">&#9670;&#160;</a></span>PH_OEM_PARAMS</h2>
 
@@ -280,7 +277,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_14bc92f4b96c8519b376567118ac28b3.html">drivers</a></li><li class="navelem"><a class="el" href="dir_8b10be61989476c492bd67d82de76f48.html">ph_oem</a></li><li class="navelem"><a class="el" href="dir_ce948bc10552b604cf6e2e29ee17056d.html">include</a></li><li class="navelem"><a class="el" href="ph__oem__params_8h.html">ph_oem_params.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

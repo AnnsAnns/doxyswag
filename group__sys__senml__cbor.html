@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -151,6 +148,9 @@ $(function(){initNavTree('group__sys__senml__cbor.html',''); initResizable(true)
 
 <p>Functionality for encoding SenML values as CBOR  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Functionality for encoding SenML values as CBOR </p>
+<p>The <code>senml_cbor</code> module contains functionality for encoding <a class="el" href="group__sys__senml.html">SenML</a> values to CBOR using <a class="el" href="group__pkg__nanocbor.html">NanoCBOR library</a>. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -202,9 +202,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:gaf115895098ba108cb67f278beb0f0af4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encode <a class="el" href="structsenml__data__value__t.html">senml_data_value_t</a> as CBOR.  <br /></td></tr>
 <tr class="separator:gaf115895098ba108cb67f278beb0f0af4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Functionality for encoding SenML values as CBOR </p>
-<p>The <code>senml_cbor</code> module contains functionality for encoding <a class="el" href="group__sys__senml.html">SenML</a> values to CBOR using <a class="el" href="group__pkg__nanocbor.html">NanoCBOR library</a>. </p>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="gaf362bf480b8033e3233d04fcc6af7fd8" name="gaf362bf480b8033e3233d04fcc6af7fd8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaf362bf480b8033e3233d04fcc6af7fd8">&#9670;&#160;</a></span>senml_cbor_label_t</h2>
@@ -387,7 +384,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

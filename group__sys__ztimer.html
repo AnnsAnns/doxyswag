@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -155,6 +152,113 @@ $(function(){initNavTree('group__sys__ztimer.html',''); initResizable(true); });
 
 <p>High level timer abstraction layer  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>High level timer abstraction layer </p>
+<h1><a class="anchor" id="autotoc_md2105"></a>
+Introduction</h1>
+<p>ztimer provides a high level abstraction of hardware timers for application timing needs.</p>
+<p>The basic functions of the ztimer module are <a class="el" href="#gabcd8174ea28626e102b40143075ed9c8" title="Get the current time from a clock.">ztimer_now()</a>, <a class="el" href="#gade98636e198f2d571c8acd861d29d360" title="Put the calling thread to sleep for the specified number of ticks.">ztimer_sleep()</a>, <a class="el" href="#ga8934a79a89e35d58673418a1e4a2e69c" title="Set a timer on a clock.">ztimer_set()</a> and <a class="el" href="#gadf7bdfdd20c4eaa767abd39efe6d5e50" title="Remove a timer from a clock.">ztimer_remove()</a>.</p>
+<p>They all take a pointer to a clock device (or virtual timer device) as first parameter.</p>
+<p>RIOT provides ZTIMER_USEC, ZTIMER_MSEC, ZTIMER_SEC by default, which can be used in an application by depending on the modules ztimer_usec, ztimer_msec or ztimer_sec. They will then automatically get configured.</p>
+<p>Every ztimer clock allows multiple timeouts to be scheduled. They all provide unsigned 32bit range. In this documentation, a timeout or its corresponding struct will be called <code>timer</code>, and when the time out has passed, it has <code>triggered</code>.</p>
+<p>As ztimer can use arbitrarily configurable backends, a ztimer clock instance can run at configurable frequencies. Throughout this documentation, one clock step is called <code>tick</code>. For the pre-defined clocks ZTIMER_USEC, ZTIMER_MSEC and ZTIMER_SEC, one clock tick corresponds to one microsecond, one millisecond or one second, respectively.</p>
+<p><a class="el" href="#gabcd8174ea28626e102b40143075ed9c8" title="Get the current time from a clock.">ztimer_now()</a> returns the current clock tick count as uint32_t.</p>
+<p><a class="el" href="#gade98636e198f2d571c8acd861d29d360" title="Put the calling thread to sleep for the specified number of ticks.">ztimer_sleep()</a> pauses the current thread for the passed amount of clock ticks. E.g., <code>ztimer_sleep(ZTIMER_SEC, 5);</code> will suspend the currently running thread for five seconds.</p>
+<p><a class="el" href="#ga8934a79a89e35d58673418a1e4a2e69c" title="Set a timer on a clock.">ztimer_set()</a> takes a <a class="el" href="structztimer__t.html" title="ztimer structure">ztimer_t</a> object (containing a function pointer and void * argument) and an interval as arguments. After at least the interval (in number of ticks for the corresponding clock) has passed, the callback will be called in interrupt context. A timer can be cancelled using <a class="el" href="#gadf7bdfdd20c4eaa767abd39efe6d5e50" title="Remove a timer from a clock.">ztimer_remove()</a>.</p>
+<p>Example:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="ztimer_8h.html">ztimer.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> callback(<span class="keywordtype">void</span> *arg)</div>
+<div class="line">{</div>
+<div class="line">   puts(arg);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main()</div>
+<div class="line">{</div>
+<div class="line">    <a class="code hl_struct" href="structztimer__t.html">ztimer_t</a> timeout = { .callback=callback, .arg=<span class="stringliteral">&quot;Hello ztimer!&quot;</span> };</div>
+<div class="line">    <a class="code hl_function" href="#ga8934a79a89e35d58673418a1e4a2e69c">ztimer_set</a>(<a class="code hl_variable" href="#ga538242d3a91b31e6282863b9663f8a03">ZTIMER_SEC</a>, &amp;timeout, 2);</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_function" href="#gade98636e198f2d571c8acd861d29d360">ztimer_sleep</a>(<a class="code hl_variable" href="#ga538242d3a91b31e6282863b9663f8a03">ZTIMER_SEC</a>, 5);</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__sys__ztimer_html_ga538242d3a91b31e6282863b9663f8a03"><div class="ttname"><a href="#ga538242d3a91b31e6282863b9663f8a03">ZTIMER_SEC</a></div><div class="ttdeci">ztimer_clock_t *const ZTIMER_SEC</div><div class="ttdoc">Default ztimer second clock.</div></div>
+<div class="ttc" id="agroup__sys__ztimer_html_ga8934a79a89e35d58673418a1e4a2e69c"><div class="ttname"><a href="#ga8934a79a89e35d58673418a1e4a2e69c">ztimer_set</a></div><div class="ttdeci">uint32_t ztimer_set(ztimer_clock_t *clock, ztimer_t *timer, uint32_t val)</div><div class="ttdoc">Set a timer on a clock.</div></div>
+<div class="ttc" id="agroup__sys__ztimer_html_gade98636e198f2d571c8acd861d29d360"><div class="ttname"><a href="#gade98636e198f2d571c8acd861d29d360">ztimer_sleep</a></div><div class="ttdeci">void ztimer_sleep(ztimer_clock_t *clock, uint32_t duration)</div><div class="ttdoc">Put the calling thread to sleep for the specified number of ticks.</div></div>
+<div class="ttc" id="astructztimer__t_html"><div class="ttname"><a href="structztimer__t.html">ztimer_t</a></div><div class="ttdoc">ztimer structure</div><div class="ttdef"><b>Definition</b> ztimer.h:318</div></div>
+<div class="ttc" id="aztimer_8h_html"><div class="ttname"><a href="ztimer_8h.html">ztimer.h</a></div><div class="ttdoc">ztimer API</div></div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md2106"></a>
+ztimer best practices</h1>
+<ol type="1">
+<li>Don't use ZTIMER_USEC unless the increased resolution is really needed. ZTIMER_USEC will, on most platforms, prevent low-power sleep modes.</li>
+<li><p class="startli">Clear <a class="el" href="structztimer__t.html" title="ztimer structure">ztimer_t</a> structs before use. Example: </p><pre class="fragment">ztimer_t foo = { 0 };
+</pre><p class="startli">This ensures ztimer knows the timer is not already set, possibly preventing an unnecessary full ztimer list traversal. (ztimer will ensure that a removed timer is sufficiently cleared.)</p>
+</li>
+<li>Don't compare <a class="el" href="#gabcd8174ea28626e102b40143075ed9c8" title="Get the current time from a clock.">ztimer_now()</a> values from different clocks. The clocks are almost certainly not synchronized.</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md2107"></a>
+Design</h1>
+<h2><a class="anchor" id="autotoc_md2108"></a>
+clocks, virtual timers, chaining</h2>
+<p>The system is composed of clocks (virtual ztimer devices) which can be chained to create an abstract view of a hardware timer/counter device. Each ztimer clock acts as a operation on the next clock in the chain. At the end of each ztimer chain there is always some kind of counter device object.</p>
+<p>Each clock device handles multiplexing (allowing multiple timers to be set) and extension to full 32bit.</p>
+<p>Hardware interface submodules:</p>
+<ul>
+<li><a class="el" href="group__sys__ztimer__periph__rtt.html#ga8a621eeefd4bb3ca67c914c1dd12a997">ztimer_periph_rtt</a> interface for periph_rtt</li>
+<li><a class="el" href="group__sys__ztimer__periph__rtc.html#ga2614a7e5cd1c5e9f792d6c4b675fa01e">ztimer_periph_rtc</a> interface for periph_rtc</li>
+<li><a class="el" href="group__sys__ztimer__periph__timer.html#gabe9575e40a44642a4ce743ed4b563fef">ztimer_periph_timer</a> interface for periph_timer</li>
+</ul>
+<p>Filter submodules:</p>
+<ul>
+<li><a class="el" href="group__sys__ztimer__convert__frac.html#gae5236d7f947ab29a467a91c60600acd6">ztimer_convert_frac</a> for fast frequency conversion using the frac library</li>
+<li><a class="el" href="group__sys__ztimer__convert__muldiv64.html#ga436d01676d7383cccb86df744068db1c">ztimer_convert_muldiv64</a> for accurate but slow frequency conversion using 64bit division</li>
+</ul>
+<p>A common chain could be:</p>
+<ol type="1">
+<li>ztimer_periph_timer (e.g., on top of an 1024Hz 16bit hardware timer)</li>
+<li>ztimer_convert_frac (to convert 1024 to 1000Hz)</li>
+</ol>
+<p>This is how e.g., the clock ZTIMER_MSEC might be configured on a specific system.</p>
+<p>Every clock in the chain can always be used on its own. E.g. in the example above, the ztimer_periph object can be used as ztimer clock with 1024Hz ticks in addition to the ztimer_convert_frac with 1000Hz.</p>
+<h2><a class="anchor" id="autotoc_md2109"></a>
+Timer handling</h2>
+<p>Timers in ztimer are stored in a clock using a linked list for which each entry stores the difference to the previous entry in the timer (T[n]). The clock also stores the absolute time on which the relative offsets are based (B), effectively storing the absolute target time for each entry (as B + sum(T[0-n])). Storing the entries in this way allows all entries to use the full width of the used uint32_t, compared to storing the absolute time.</p>
+<p>In order to prevent timer processing offset to add up, whenever a timer triggers, the list's absolute base time is set to the <em>expected</em> trigger time (B + T[0]). The underlying clock is then set to alarm at (now() + (now() - B) + T[1]). Thus even though the list is keeping relative offsets, the time keeping is done by keeping track of the absolute times.</p>
+<p>Currently, a sorted singly linked list is used for storing the timers. This choice has some implications:</p>
+<ul>
+<li>only one pointer needed per timer object (for "next" element)</li>
+<li>simple implementation</li>
+<li>acceptable runtime for expected number of active timers (&lt;50)</li>
+<li>constant get_min() (important for timer triggering)</li>
+<li>O(n) insertion / removal of timer objects</li>
+</ul>
+<p>By making the list doubly-linked, removal of timer objects could be easily made a constant operation, at the price of another pointer per timer object (for "previous" element).</p>
+<p>If deemed necessary, the linked list can be exchanged our augmented with another data structure providing better algorithmic guarantees. It remains to be shown whether the increased complexity would lead to better performance for any reasonable amount of active timers.</p>
+<h2><a class="anchor" id="autotoc_md2110"></a>
+Clock extension</h2>
+<p>The API always allows setting full 32bit relative offsets for every clock.</p>
+<p>In some cases (e.g., a hardware timer only allowing getting/setting smaller values or a conversion which would overflow uint32_t for large intervals), ztimer takes care of extending timers. This is enabled automatically for every ztimer clock that has a "max_value" setting smaller than 2**32-1. If a <a class="el" href="#ga8934a79a89e35d58673418a1e4a2e69c" title="Set a timer on a clock.">ztimer_set()</a> would overflow that value, intermediate intervals of length (max_value / 2) are set until the remaining interval fits into max_value. If extension is enabled for a clock, <a class="el" href="#gabcd8174ea28626e102b40143075ed9c8" title="Get the current time from a clock.">ztimer_now()</a> uses interval checkpointing, storing the current time and corresponding clock tick value on each call and using that information to calculate the current time. This ensures correct <a class="el" href="#gabcd8174ea28626e102b40143075ed9c8" title="Get the current time from a clock.">ztimer_now()</a> values if <a class="el" href="#gabcd8174ea28626e102b40143075ed9c8" title="Get the current time from a clock.">ztimer_now()</a> is called at least once every "max_value" ticks. This is ensured by scheduling intermediate callbacks every (max_value / 2) ticks (even if no timeout is configured).</p>
+<h2><a class="anchor" id="autotoc_md2111"></a>
+Reliability</h2>
+<p>Care has been taken to avoid any unexpected behaviour of ztimer. In particular, ztimer tries hard to avoid underflows (setting a backend timer to a value at or behind the current time, causing the timer interrupt to trigger one whole timer period too late). This is done by always setting relative timeouts to backend timers, with interrupts disabled and ensuring that very small values don't cause underflows.</p>
+<h2><a class="anchor" id="autotoc_md2112"></a>
+Configuration and convention</h2>
+<p>As timer hardware and capabilities is diverse and ztimer allows configuring and using arbitrary clock backends and conversions, it is envisioned to provide default configurations that application developers can assume to be available.</p>
+<p>These are implemented by using pointers to ztimer clocks using default names.</p>
+<p>For now, there are:</p>
+<p>ZTIMER_USEC: clock providing microsecond ticks, always uses a basic timer (ztimer_periph_timer)</p>
+<p>ZTIMER_MSEC: clock providing millisecond ticks, using a low power timer (ztimer_periph_rtt) if it is available on the platform and it running at 1kHz or above else it uses the same basic timer as ZTIMER_USEC does.</p>
+<p>ZTIMER_SEC: clock providing second time, possibly using epoch semantics, it will use a low power timer (ztimer_periph_rtt) if it is available on the platform alternately it uses ztimer_periph_rtc if it is available and configured if if these are missing it will use same basic timer as ZTIMER_USEC does.</p>
+<p>If <code>periph_rtt</code> is required with direct access by another MODULE or application, <code>ztimer_no_periph_rtt</code> can be included to avoid automatic selection of <code>ztimer_periph_rtt</code> as a backend for ZTIMER_SEC and ZTIMER_MSEC. i.e.: <code>USEMODULE += ztimer_no_periph_rtt</code>.</p>
+<p>These pointers are defined in <code><a class="el" href="ztimer_8h.html" title="ztimer API">ztimer.h</a></code> and can be used like this: </p><pre class="fragment">ztimer_now(ZTIMER_USEC);
+</pre><p>They also need to be added to USEMODULE using the names <code>ztimer_usec</code>, <code>ztimer_msec</code> and <code>ztimer_sec</code>.</p>
+<h2><a class="anchor" id="autotoc_md2113"></a>
+Some notes on ztimer's accuracy</h2>
+<ol type="1">
+<li>ztimer <em>should</em> wait "at least" the specified timeout</li>
+<li>due to its implementation details, expect +-1 clock tick systemic inaccuracy for all clocks.</li>
+<li>for the predefined clocks (ZTIMER_USEC, ZTIMER_MSEC, ZTIMER_SEC), tick conversion might be applied using ztimer_convert_*, causing errors due to integer conversion and rounding. In particular, most RTT's closest match for milliseconds are 1024Hz, which will be converted using convert_frac to provide the 1ms clock.</li>
+<li>Some platforms don't have any timer that can be configured to 1us. E.g., the fe310 (hifive1/b) only supports a 32kHz timer, and most atmegas only support 250kHz. In order to not completely break all applications using ZTIMER_USEC, that clock will only provide ~30.5ms respectively 4us maximum accuracy on those boards. With DEVELHELP=1, a warning will be printed at boot time.</li>
+<li>Due to +-1 systemic inaccuracies, it is advisable to use ZTIMER_MSEC for second timers up to 49 days (instead of ZTIMER_SEC). </li>
+</ol>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -335,113 +439,6 @@ Variables</h2></td></tr>
 <tr class="memdesc:ga5adbd6f8c80cee6a72e346e176e8ead7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base ztimer for the millisecond clock (ZTIMER_MSEC)  <br /></td></tr>
 <tr class="separator:ga5adbd6f8c80cee6a72e346e176e8ead7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>High level timer abstraction layer </p>
-<h1><a class="anchor" id="autotoc_md2105"></a>
-Introduction</h1>
-<p>ztimer provides a high level abstraction of hardware timers for application timing needs.</p>
-<p>The basic functions of the ztimer module are <a class="el" href="#gabcd8174ea28626e102b40143075ed9c8" title="Get the current time from a clock.">ztimer_now()</a>, <a class="el" href="#gade98636e198f2d571c8acd861d29d360" title="Put the calling thread to sleep for the specified number of ticks.">ztimer_sleep()</a>, <a class="el" href="#ga8934a79a89e35d58673418a1e4a2e69c" title="Set a timer on a clock.">ztimer_set()</a> and <a class="el" href="#gadf7bdfdd20c4eaa767abd39efe6d5e50" title="Remove a timer from a clock.">ztimer_remove()</a>.</p>
-<p>They all take a pointer to a clock device (or virtual timer device) as first parameter.</p>
-<p>RIOT provides ZTIMER_USEC, ZTIMER_MSEC, ZTIMER_SEC by default, which can be used in an application by depending on the modules ztimer_usec, ztimer_msec or ztimer_sec. They will then automatically get configured.</p>
-<p>Every ztimer clock allows multiple timeouts to be scheduled. They all provide unsigned 32bit range. In this documentation, a timeout or its corresponding struct will be called <code>timer</code>, and when the time out has passed, it has <code>triggered</code>.</p>
-<p>As ztimer can use arbitrarily configurable backends, a ztimer clock instance can run at configurable frequencies. Throughout this documentation, one clock step is called <code>tick</code>. For the pre-defined clocks ZTIMER_USEC, ZTIMER_MSEC and ZTIMER_SEC, one clock tick corresponds to one microsecond, one millisecond or one second, respectively.</p>
-<p><a class="el" href="#gabcd8174ea28626e102b40143075ed9c8" title="Get the current time from a clock.">ztimer_now()</a> returns the current clock tick count as uint32_t.</p>
-<p><a class="el" href="#gade98636e198f2d571c8acd861d29d360" title="Put the calling thread to sleep for the specified number of ticks.">ztimer_sleep()</a> pauses the current thread for the passed amount of clock ticks. E.g., <code>ztimer_sleep(ZTIMER_SEC, 5);</code> will suspend the currently running thread for five seconds.</p>
-<p><a class="el" href="#ga8934a79a89e35d58673418a1e4a2e69c" title="Set a timer on a clock.">ztimer_set()</a> takes a <a class="el" href="structztimer__t.html" title="ztimer structure">ztimer_t</a> object (containing a function pointer and void * argument) and an interval as arguments. After at least the interval (in number of ticks for the corresponding clock) has passed, the callback will be called in interrupt context. A timer can be cancelled using <a class="el" href="#gadf7bdfdd20c4eaa767abd39efe6d5e50" title="Remove a timer from a clock.">ztimer_remove()</a>.</p>
-<p>Example:</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="ztimer_8h.html">ztimer.h</a>&quot;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> callback(<span class="keywordtype">void</span> *arg)</div>
-<div class="line">{</div>
-<div class="line">   puts(arg);</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> main()</div>
-<div class="line">{</div>
-<div class="line">    <a class="code hl_struct" href="structztimer__t.html">ztimer_t</a> timeout = { .callback=callback, .arg=<span class="stringliteral">&quot;Hello ztimer!&quot;</span> };</div>
-<div class="line">    <a class="code hl_function" href="#ga8934a79a89e35d58673418a1e4a2e69c">ztimer_set</a>(<a class="code hl_variable" href="#ga538242d3a91b31e6282863b9663f8a03">ZTIMER_SEC</a>, &amp;timeout, 2);</div>
-<div class="line"> </div>
-<div class="line">    <a class="code hl_function" href="#gade98636e198f2d571c8acd861d29d360">ztimer_sleep</a>(<a class="code hl_variable" href="#ga538242d3a91b31e6282863b9663f8a03">ZTIMER_SEC</a>, 5);</div>
-<div class="line">}</div>
-<div class="ttc" id="agroup__sys__ztimer_html_ga538242d3a91b31e6282863b9663f8a03"><div class="ttname"><a href="#ga538242d3a91b31e6282863b9663f8a03">ZTIMER_SEC</a></div><div class="ttdeci">ztimer_clock_t *const ZTIMER_SEC</div><div class="ttdoc">Default ztimer second clock.</div></div>
-<div class="ttc" id="agroup__sys__ztimer_html_ga8934a79a89e35d58673418a1e4a2e69c"><div class="ttname"><a href="#ga8934a79a89e35d58673418a1e4a2e69c">ztimer_set</a></div><div class="ttdeci">uint32_t ztimer_set(ztimer_clock_t *clock, ztimer_t *timer, uint32_t val)</div><div class="ttdoc">Set a timer on a clock.</div></div>
-<div class="ttc" id="agroup__sys__ztimer_html_gade98636e198f2d571c8acd861d29d360"><div class="ttname"><a href="#gade98636e198f2d571c8acd861d29d360">ztimer_sleep</a></div><div class="ttdeci">void ztimer_sleep(ztimer_clock_t *clock, uint32_t duration)</div><div class="ttdoc">Put the calling thread to sleep for the specified number of ticks.</div></div>
-<div class="ttc" id="astructztimer__t_html"><div class="ttname"><a href="structztimer__t.html">ztimer_t</a></div><div class="ttdoc">ztimer structure</div><div class="ttdef"><b>Definition</b> ztimer.h:318</div></div>
-<div class="ttc" id="aztimer_8h_html"><div class="ttname"><a href="ztimer_8h.html">ztimer.h</a></div><div class="ttdoc">ztimer API</div></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md2106"></a>
-ztimer best practices</h1>
-<ol type="1">
-<li>Don't use ZTIMER_USEC unless the increased resolution is really needed. ZTIMER_USEC will, on most platforms, prevent low-power sleep modes.</li>
-<li><p class="startli">Clear <a class="el" href="structztimer__t.html" title="ztimer structure">ztimer_t</a> structs before use. Example: </p><pre class="fragment">ztimer_t foo = { 0 };
-</pre><p class="startli">This ensures ztimer knows the timer is not already set, possibly preventing an unnecessary full ztimer list traversal. (ztimer will ensure that a removed timer is sufficiently cleared.)</p>
-</li>
-<li>Don't compare <a class="el" href="#gabcd8174ea28626e102b40143075ed9c8" title="Get the current time from a clock.">ztimer_now()</a> values from different clocks. The clocks are almost certainly not synchronized.</li>
-</ol>
-<h1><a class="anchor" id="autotoc_md2107"></a>
-Design</h1>
-<h2><a class="anchor" id="autotoc_md2108"></a>
-clocks, virtual timers, chaining</h2>
-<p>The system is composed of clocks (virtual ztimer devices) which can be chained to create an abstract view of a hardware timer/counter device. Each ztimer clock acts as a operation on the next clock in the chain. At the end of each ztimer chain there is always some kind of counter device object.</p>
-<p>Each clock device handles multiplexing (allowing multiple timers to be set) and extension to full 32bit.</p>
-<p>Hardware interface submodules:</p>
-<ul>
-<li><a class="el" href="group__sys__ztimer__periph__rtt.html#ga8a621eeefd4bb3ca67c914c1dd12a997">ztimer_periph_rtt</a> interface for periph_rtt</li>
-<li><a class="el" href="group__sys__ztimer__periph__rtc.html#ga2614a7e5cd1c5e9f792d6c4b675fa01e">ztimer_periph_rtc</a> interface for periph_rtc</li>
-<li><a class="el" href="group__sys__ztimer__periph__timer.html#gabe9575e40a44642a4ce743ed4b563fef">ztimer_periph_timer</a> interface for periph_timer</li>
-</ul>
-<p>Filter submodules:</p>
-<ul>
-<li><a class="el" href="group__sys__ztimer__convert__frac.html#gae5236d7f947ab29a467a91c60600acd6">ztimer_convert_frac</a> for fast frequency conversion using the frac library</li>
-<li><a class="el" href="group__sys__ztimer__convert__muldiv64.html#ga436d01676d7383cccb86df744068db1c">ztimer_convert_muldiv64</a> for accurate but slow frequency conversion using 64bit division</li>
-</ul>
-<p>A common chain could be:</p>
-<ol type="1">
-<li>ztimer_periph_timer (e.g., on top of an 1024Hz 16bit hardware timer)</li>
-<li>ztimer_convert_frac (to convert 1024 to 1000Hz)</li>
-</ol>
-<p>This is how e.g., the clock ZTIMER_MSEC might be configured on a specific system.</p>
-<p>Every clock in the chain can always be used on its own. E.g. in the example above, the ztimer_periph object can be used as ztimer clock with 1024Hz ticks in addition to the ztimer_convert_frac with 1000Hz.</p>
-<h2><a class="anchor" id="autotoc_md2109"></a>
-Timer handling</h2>
-<p>Timers in ztimer are stored in a clock using a linked list for which each entry stores the difference to the previous entry in the timer (T[n]). The clock also stores the absolute time on which the relative offsets are based (B), effectively storing the absolute target time for each entry (as B + sum(T[0-n])). Storing the entries in this way allows all entries to use the full width of the used uint32_t, compared to storing the absolute time.</p>
-<p>In order to prevent timer processing offset to add up, whenever a timer triggers, the list's absolute base time is set to the <em>expected</em> trigger time (B + T[0]). The underlying clock is then set to alarm at (now() + (now() - B) + T[1]). Thus even though the list is keeping relative offsets, the time keeping is done by keeping track of the absolute times.</p>
-<p>Currently, a sorted singly linked list is used for storing the timers. This choice has some implications:</p>
-<ul>
-<li>only one pointer needed per timer object (for "next" element)</li>
-<li>simple implementation</li>
-<li>acceptable runtime for expected number of active timers (&lt;50)</li>
-<li>constant get_min() (important for timer triggering)</li>
-<li>O(n) insertion / removal of timer objects</li>
-</ul>
-<p>By making the list doubly-linked, removal of timer objects could be easily made a constant operation, at the price of another pointer per timer object (for "previous" element).</p>
-<p>If deemed necessary, the linked list can be exchanged our augmented with another data structure providing better algorithmic guarantees. It remains to be shown whether the increased complexity would lead to better performance for any reasonable amount of active timers.</p>
-<h2><a class="anchor" id="autotoc_md2110"></a>
-Clock extension</h2>
-<p>The API always allows setting full 32bit relative offsets for every clock.</p>
-<p>In some cases (e.g., a hardware timer only allowing getting/setting smaller values or a conversion which would overflow uint32_t for large intervals), ztimer takes care of extending timers. This is enabled automatically for every ztimer clock that has a "max_value" setting smaller than 2**32-1. If a <a class="el" href="#ga8934a79a89e35d58673418a1e4a2e69c" title="Set a timer on a clock.">ztimer_set()</a> would overflow that value, intermediate intervals of length (max_value / 2) are set until the remaining interval fits into max_value. If extension is enabled for a clock, <a class="el" href="#gabcd8174ea28626e102b40143075ed9c8" title="Get the current time from a clock.">ztimer_now()</a> uses interval checkpointing, storing the current time and corresponding clock tick value on each call and using that information to calculate the current time. This ensures correct <a class="el" href="#gabcd8174ea28626e102b40143075ed9c8" title="Get the current time from a clock.">ztimer_now()</a> values if <a class="el" href="#gabcd8174ea28626e102b40143075ed9c8" title="Get the current time from a clock.">ztimer_now()</a> is called at least once every "max_value" ticks. This is ensured by scheduling intermediate callbacks every (max_value / 2) ticks (even if no timeout is configured).</p>
-<h2><a class="anchor" id="autotoc_md2111"></a>
-Reliability</h2>
-<p>Care has been taken to avoid any unexpected behaviour of ztimer. In particular, ztimer tries hard to avoid underflows (setting a backend timer to a value at or behind the current time, causing the timer interrupt to trigger one whole timer period too late). This is done by always setting relative timeouts to backend timers, with interrupts disabled and ensuring that very small values don't cause underflows.</p>
-<h2><a class="anchor" id="autotoc_md2112"></a>
-Configuration and convention</h2>
-<p>As timer hardware and capabilities is diverse and ztimer allows configuring and using arbitrary clock backends and conversions, it is envisioned to provide default configurations that application developers can assume to be available.</p>
-<p>These are implemented by using pointers to ztimer clocks using default names.</p>
-<p>For now, there are:</p>
-<p>ZTIMER_USEC: clock providing microsecond ticks, always uses a basic timer (ztimer_periph_timer)</p>
-<p>ZTIMER_MSEC: clock providing millisecond ticks, using a low power timer (ztimer_periph_rtt) if it is available on the platform and it running at 1kHz or above else it uses the same basic timer as ZTIMER_USEC does.</p>
-<p>ZTIMER_SEC: clock providing second time, possibly using epoch semantics, it will use a low power timer (ztimer_periph_rtt) if it is available on the platform alternately it uses ztimer_periph_rtc if it is available and configured if if these are missing it will use same basic timer as ZTIMER_USEC does.</p>
-<p>If <code>periph_rtt</code> is required with direct access by another MODULE or application, <code>ztimer_no_periph_rtt</code> can be included to avoid automatic selection of <code>ztimer_periph_rtt</code> as a backend for ZTIMER_SEC and ZTIMER_MSEC. i.e.: <code>USEMODULE += ztimer_no_periph_rtt</code>.</p>
-<p>These pointers are defined in <code><a class="el" href="ztimer_8h.html" title="ztimer API">ztimer.h</a></code> and can be used like this: </p><pre class="fragment">ztimer_now(ZTIMER_USEC);
-</pre><p>They also need to be added to USEMODULE using the names <code>ztimer_usec</code>, <code>ztimer_msec</code> and <code>ztimer_sec</code>.</p>
-<h2><a class="anchor" id="autotoc_md2113"></a>
-Some notes on ztimer's accuracy</h2>
-<ol type="1">
-<li>ztimer <em>should</em> wait "at least" the specified timeout</li>
-<li>due to its implementation details, expect +-1 clock tick systemic inaccuracy for all clocks.</li>
-<li>for the predefined clocks (ZTIMER_USEC, ZTIMER_MSEC, ZTIMER_SEC), tick conversion might be applied using ztimer_convert_*, causing errors due to integer conversion and rounding. In particular, most RTT's closest match for milliseconds are 1024Hz, which will be converted using convert_frac to provide the 1ms clock.</li>
-<li>Some platforms don't have any timer that can be configured to 1us. E.g., the fe310 (hifive1/b) only supports a 32kHz timer, and most atmegas only support 250kHz. In order to not completely break all applications using ZTIMER_USEC, that clock will only provide ~30.5ms respectively 4us maximum accuracy on those boards. With DEVELHELP=1, a warning will be printed at boot time.</li>
-<li>Due to +-1 systemic inaccuracies, it is advisable to use ZTIMER_MSEC for second timers up to 49 days (instead of ZTIMER_SEC). </li>
-</ol>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="gab10130a9b13fd88ea06a2889e63342f6" name="gab10130a9b13fd88ea06a2889e63342f6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gab10130a9b13fd88ea06a2889e63342f6">&#9670;&#160;</a></span>ztimer_now_t</h2>
@@ -1219,7 +1216,7 @@ Make sure to call <a class="el" href="#gaaff51039476f11e6969da09493e7ccb0">ztime
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

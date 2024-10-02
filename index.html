@@ -1,11 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>RIOT OS: Main Page</title>
+    <title>RIOT OS: RIOT OS</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="dynsections.js"></script>
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -140,10 +137,80 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
 /* @license-end */
 </script>
 <div id="doc-content">
-<div class="header">
-  <div class="headertitle"><div class="title">RIOT OS Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">RIOT OS </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_README"></a> <a href="https://ci.riot-os.org/details/branch/master"><img src="https://ci.riot-os.org/job/branch/master/badge" alt="Nightly CI status master" class="inline"/></a> <a href="https://github.com/RIOT-OS/RIOT/releases/latest"><img src="https://img.shields.io/github/release/RIOT-OS/RIOT.svg" alt="GitHub release" style="pointer-events: none;" class="inline"/></a> <a href="https://github.com/RIOT-OS/RIOT/blob/master/LICENSE"><img src="https://img.shields.io/github/license/RIOT-OS/RIOT" alt="License" class="inline"/></a> <a href="https://doc.riot-os.org/"><img src="https://img.shields.io/badge/docs-API-informational.svg" alt="API docs" style="pointer-events: none;" class="inline"/></a> <a href="https://github.com/RIOT-OS/RIOT/wiki"><img src="https://img.shields.io/badge/docs-Wiki-informational.svg" alt="Wiki" style="pointer-events: none;" class="inline"/></a> <a href="https://stackoverflow.com/questions/tagged/riot-os"><img src="https://img.shields.io/badge/stackoverflow-%5Briot--os%5D-yellow" alt="Stack Overflow questions" class="inline"/></a> <a href="https://fosstodon.org/@RIOT_OS"><img src="https://img.shields.io/badge/social-Mastodon-informational.svg" alt="Mastodon" style="pointer-events: none;" class="inline"/></a> <a href="https://matrix.to/#/#riot-os:matrix.org"><img src="https://img.shields.io/badge/chat-Matrix-brightgreen.svg" alt="Matrix" style="pointer-events: none;" class="inline"/></a></p>
+<p align="center"></p>
+<p><img src="doc/doxygen/src/riot-logo.svg" alt="" style="pointer-events: none;" width="66%" class="inline"/>                         </p>
+<p>The friendly Operating System for IoT!</p>
+<p>RIOT is an open-source microcontroller operating system, designed to match the requirements of Internet of Things (IoT) devices and other embedded devices. It supports a range of devices that are typically found in the Internet of Things (IoT): 8-bit, 16-bit and 32-bit microcontrollers.</p>
+<p>RIOT is based on the following design principles: energy-efficiency, real-time capabilities, small memory footprint, modularity, and uniform API access, independent of the underlying hardware (this API offers partial POSIX compliance).</p>
+<p>RIOT is developed by an international open source community which is independent of specific vendors (e.g. similarly to the Linux community). RIOT is licensed with LGPLv2.1, a copyleft license which fosters indirect business models around the free open-source software platform provided by RIOT, e.g. it is possible to link closed-source code with the LGPL code.</p>
+<h2><a class="anchor" id="autotoc_md2180"></a>
+Features</h2>
+<p>RIOT provides features including, but not limited to:</p>
+<ul>
+<li>a preemptive, tickless scheduler with priorities</li>
+<li>flexible memory management</li>
+<li>high resolution, long-term timers</li>
+<li>MTD abstraction layer</li>
+<li>File System integration</li>
+<li>support 200+ boards based on AVR, MSP430, ESP8266, ESP32, RISC-V, ARM7 and ARM Cortex-M</li>
+<li>the native port allows to run RIOT as-is on Linux and BSD. Multiple instances of RIOT running on a single machine can also be interconnected via a simple virtual Ethernet bridge or via a simulated IEEE 802.15.4 network (ZEP)</li>
+<li>IPv6</li>
+<li>6LoWPAN (RFC4944, RFC6282, and RFC6775)</li>
+<li>UDP</li>
+<li>RPL (storing mode, P2P mode)</li>
+<li>CoAP</li>
+<li>OTA updates via SUIT</li>
+<li>MQTT</li>
+<li>USB (device mode)</li>
+<li>Display / Touchscreen support</li>
+<li>CCN-Lite</li>
+<li>LoRaWAN</li>
+<li>UWB</li>
+<li>Bluetooth (BLE) via <a href="https://github.com/apache/mynewt-nimble">NimBLE</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md2181"></a>
+Getting RIOT</h2>
+<p>The most convenient way to get RIOT is to clone it via Git</p>
+<div class="fragment"><div class="line">$ git clone https://github.com/RIOT-OS/RIOT</div>
+</div><!-- fragment --><p>this will ensure that you get all the newest features and bug fixes with the caveat of an ever changing work environment.</p>
+<p>If you prefer things more stable, you can download the source code of one of our quarter annual releases <a href="https://github.com/RIOT-OS/RIOT/releases">via Github</a> as ZIP file or tarball. You can also checkout a release in a cloned Git repository using</p>
+<div class="fragment"><div class="line">$ git pull --tags</div>
+<div class="line">$ git checkout &lt;YYYY.MM&gt;</div>
+</div><!-- fragment --><p>For more details on our release cycle, check our <a href="https://doc.riot-os.org/release-cycle.html">documentation</a>.</p>
+<h2><a class="anchor" id="autotoc_md2182"></a>
+Getting Started</h2>
+<ul>
+<li>You want to start the RIOT? Just follow our <a href="https://doc.riot-os.org/index.html#the-quickest-start">quickstart guide</a> or try this <a href="https://github.com/RIOT-OS/Tutorials/blob/master/README.md">tutorial</a>. For specific toolchain installation, follow instructions in the <a href="https://doc.riot-os.org/getting-started.html">getting started</a> page.</li>
+<li>The RIOT API itself can be built from the code using doxygen. The latest version of the documentation is uploaded daily to <a href="https://doc.riot-os.org">doc.riot-os.org</a>.</li>
+</ul>
+<p>Using Windows? Use <a href="doc/guides/setup-windows">this guide</a> to <a href="doc/guides/setup-windows">setup the development environment</a>.</p>
+<h2><a class="anchor" id="autotoc_md2183"></a>
+Forum</h2>
+<p>Do you have a question, want to discuss a new feature, or just want to present your latest project using RIOT? Come over to our <a href="https://forum.riot-os.org">forum</a> and post to your hearts content.</p>
+<h2><a class="anchor" id="autotoc_md2184"></a>
+Contribute</h2>
+<p>To contribute something to RIOT, please refer to our contributing document.</p>
+<h2><a class="anchor" id="autotoc_md2185"></a>
+Mailing Lists</h2>
+<ul>
+<li>RIOT commits: <a href="https://lists.riot-os.org/mailman/listinfo/commits">commits@riot-os.org</a></li>
+<li>Github notifications: <a href="https://lists.riot-os.org/mailman/listinfo/notifications">notifications@riot-os.org</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md2186"></a>
+License</h2>
+<ul>
+<li>Most of the code developed by the RIOT community is licensed under the GNU Lesser General Public License (LGPL) version 2.1 as published by the Free Software Foundation.</li>
+<li>Some external sources, especially files developed by SICS are published under a separate license.</li>
+</ul>
+<p>All code files contain licensing information.</p>
+<p>For more information, see the RIOT website:</p>
+<p><a href="https://www.riot-os.org">https://www.riot-os.org</a> </p>
+</div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -152,7 +219,7 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:32 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:11 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

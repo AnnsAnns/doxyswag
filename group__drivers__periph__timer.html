@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -153,6 +150,12 @@ $(function(){initNavTree('group__drivers__periph__timer.html',''); initResizable
 
 <p>Low-level timer peripheral driver  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Low-level timer peripheral driver </p>
+<h1><a class="anchor" id="autotoc_md1715"></a>
+(Low-) Power Implications</h1>
+<p>After calling <a class="el" href="#ga63a0c3bdcc4c2f1a93e725614b116da7" title="Initialize the given timer.">timer_init()</a>, the underlying hardware timer <b>should</b> be powered on and running. When a timer is explicitly stopped by calling <a class="el" href="#ga995bb5527183eacd8bb4b835be143613" title="Stop the given timer.">timer_stop()</a>, the timer <b>should</b> be stopped and powered down (e.g. by peripheral clock gating). Once the timer is started again (by calling <a class="el" href="#gafe70538411bdcd344b2f663b1c6073b0" title="Start the given timer.">timer_start()</a>), it should transparently continue its previously configured operation.</p>
+<p>While the timer is active, the implementation might need to block certain power modes on specific CPU implementation. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -236,12 +239,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga07898c80f7f0e38362b8d5dcd99c9641"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a compare channel has matched.  <br /></td></tr>
 <tr class="separator:ga07898c80f7f0e38362b8d5dcd99c9641"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Low-level timer peripheral driver </p>
-<h1><a class="anchor" id="autotoc_md1715"></a>
-(Low-) Power Implications</h1>
-<p>After calling <a class="el" href="#ga63a0c3bdcc4c2f1a93e725614b116da7" title="Initialize the given timer.">timer_init()</a>, the underlying hardware timer <b>should</b> be powered on and running. When a timer is explicitly stopped by calling <a class="el" href="#ga995bb5527183eacd8bb4b835be143613" title="Stop the given timer.">timer_stop()</a>, the timer <b>should</b> be stopped and powered down (e.g. by peripheral clock gating). Once the timer is started again (by calling <a class="el" href="#gafe70538411bdcd344b2f663b1c6073b0" title="Start the given timer.">timer_start()</a>), it should transparently continue its previously configured operation.</p>
-<p>While the timer is active, the implementation might need to block certain power modes on specific CPU implementation. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="gaef1d63a43a0267ef0fb0f1a87b233f24" name="gaef1d63a43a0267ef0fb0f1a87b233f24"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaef1d63a43a0267ef0fb0f1a87b233f24">&#9670;&#160;</a></span>TIM_FLAG_RESET_ON_MATCH</h2>
@@ -773,7 +770,7 @@ Needs to be enabled with <code>FEATURES_REQUIRED += periph_timer_periodic</code>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

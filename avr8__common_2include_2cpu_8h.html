@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -150,7 +147,22 @@ $(function(){initNavTree('avr8__common_2include_2cpu_8h.html',''); initResizable
 
 <p>Common implementations and headers for AVR-8 family based micro-controllers.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;<a class="el" href="stdio_8h.html">stdio.h</a>&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Common implementations and headers for AVR-8 family based micro-controllers. </p>
+<p>Basic definitions for the AVR-8 common module</p>
+<p>When ever you want to do something hardware related, that is accessing MCUs registers directly, just include this file. It will then make sure that the MCU specific headers are included.</p>
+<dl class="section author"><dt>Author</dt><dd>Stefan Pfeiffer <a href="#" onclick="location.href='mai'+'lto:'+'ste'+'fa'+'n.p'+'fe'+'iff'+'er'+'@fu'+'-b'+'erl'+'in'+'.de'; return false;">stefa<span class="obfuscator">.nosp@m.</span>n.pf<span class="obfuscator">.nosp@m.</span>eiffe<span class="obfuscator">.nosp@m.</span>r@fu<span class="obfuscator">.nosp@m.</span>-berl<span class="obfuscator">.nosp@m.</span>in.d<span class="obfuscator">.nosp@m.</span>e</a> </dd>
+<dd>
+Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
+<dd>
+Hinnerk van Bruinehsen <a href="#" onclick="location.href='mai'+'lto:'+'h.v'+'.b'+'rui'+'ne'+'hse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">h.v.b<span class="obfuscator">.nosp@m.</span>ruin<span class="obfuscator">.nosp@m.</span>ehsen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
+<dd>
+Kaspar Schleiser <a href="#" onclick="location.href='mai'+'lto:'+'kas'+'pa'+'r@s'+'ch'+'lei'+'se'+'r.d'+'e'; return false;">kaspa<span class="obfuscator">.nosp@m.</span>r@sc<span class="obfuscator">.nosp@m.</span>hleis<span class="obfuscator">.nosp@m.</span>er.d<span class="obfuscator">.nosp@m.</span>e</a> </dd>
+<dd>
+Josua Arndt <a href="#" onclick="location.href='mai'+'lto:'+'jar'+'nd'+'t@i'+'as'+'.rw'+'th'+'-aa'+'ch'+'en.'+'de'; return false;">jarnd<span class="obfuscator">.nosp@m.</span>t@ia<span class="obfuscator">.nosp@m.</span>s.rwt<span class="obfuscator">.nosp@m.</span>h-aa<span class="obfuscator">.nosp@m.</span>chen.<span class="obfuscator">.nosp@m.</span>de</a> </dd>
+<dd>
+Gerson Fernando Budke <a href="#" onclick="location.href='mai'+'lto:'+'nan'+'do'+'jve'+'@g'+'mai'+'l.'+'com'; return false;">nando<span class="obfuscator">.nosp@m.</span>jve@<span class="obfuscator">.nosp@m.</span>gmail<span class="obfuscator">.nosp@m.</span>.com</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;<a class="el" href="stdio_8h.html">stdio.h</a>&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;avr/interrupt.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="architecture_8h.html">architecture.h</a>&quot;</code><br />
@@ -225,22 +237,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>avr8_reset_cause</b> 
 <tr class="memdesc:a5864f6aa00f7d95f4708fdcb37c7432c"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOD is active on sleep. <br /></td></tr>
 <tr class="separator:a5864f6aa00f7d95f4708fdcb37c7432c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Common implementations and headers for AVR-8 family based micro-controllers. </p>
-<p>Basic definitions for the AVR-8 common module</p>
-<p>When ever you want to do something hardware related, that is accessing MCUs registers directly, just include this file. It will then make sure that the MCU specific headers are included.</p>
-<dl class="section author"><dt>Author</dt><dd>Stefan Pfeiffer <a href="#" onclick="location.href='mai'+'lto:'+'ste'+'fa'+'n.p'+'fe'+'iff'+'er'+'@fu'+'-b'+'erl'+'in'+'.de'; return false;">stefa<span class="obfuscator">.nosp@m.</span>n.pf<span class="obfuscator">.nosp@m.</span>eiffe<span class="obfuscator">.nosp@m.</span>r@fu<span class="obfuscator">.nosp@m.</span>-berl<span class="obfuscator">.nosp@m.</span>in.d<span class="obfuscator">.nosp@m.</span>e</a> </dd>
-<dd>
-Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
-<dd>
-Hinnerk van Bruinehsen <a href="#" onclick="location.href='mai'+'lto:'+'h.v'+'.b'+'rui'+'ne'+'hse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">h.v.b<span class="obfuscator">.nosp@m.</span>ruin<span class="obfuscator">.nosp@m.</span>ehsen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
-<dd>
-Kaspar Schleiser <a href="#" onclick="location.href='mai'+'lto:'+'kas'+'pa'+'r@s'+'ch'+'lei'+'se'+'r.d'+'e'; return false;">kaspa<span class="obfuscator">.nosp@m.</span>r@sc<span class="obfuscator">.nosp@m.</span>hleis<span class="obfuscator">.nosp@m.</span>er.d<span class="obfuscator">.nosp@m.</span>e</a> </dd>
-<dd>
-Josua Arndt <a href="#" onclick="location.href='mai'+'lto:'+'jar'+'nd'+'t@i'+'as'+'.rw'+'th'+'-aa'+'ch'+'en.'+'de'; return false;">jarnd<span class="obfuscator">.nosp@m.</span>t@ia<span class="obfuscator">.nosp@m.</span>s.rwt<span class="obfuscator">.nosp@m.</span>h-aa<span class="obfuscator">.nosp@m.</span>chen.<span class="obfuscator">.nosp@m.</span>de</a> </dd>
-<dd>
-Gerson Fernando Budke <a href="#" onclick="location.href='mai'+'lto:'+'nan'+'do'+'jve'+'@g'+'mai'+'l.'+'com'; return false;">nando<span class="obfuscator">.nosp@m.</span>jve@<span class="obfuscator">.nosp@m.</span>gmail<span class="obfuscator">.nosp@m.</span>.com</a> </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ab5118844564b2b052d891434c336e00b" name="ab5118844564b2b052d891434c336e00b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab5118844564b2b052d891434c336e00b">&#9670;&#160;</a></span>AVR8_STATE_FLAG_UART_TX</h2>
 
@@ -404,7 +401,7 @@ Gerson Fernando Budke <a href="#" onclick="location.href='mai'+'lto:'+'nan'+'do'
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_c433b04169c945a1c7f0848f853d4379.html">cpu</a></li><li class="navelem"><a class="el" href="dir_38295422b9d2dcbd8e0c0497623f9cdb.html">avr8_common</a></li><li class="navelem"><a class="el" href="dir_53105ed1940d80b3be976be0bda06a96.html">include</a></li><li class="navelem"><a class="el" href="avr8__common_2include_2cpu_8h.html">cpu.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

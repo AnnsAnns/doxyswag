@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -146,12 +143,15 @@ $(function(){initNavTree('group__net__fib.html',''); initResizable(true); });
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">Forwarding Information Base (FIB)<div class="ingroups"><a class="el" href="group__net.html">Networking</a></div></div></div>
+  <div class="headertitle"><div class="title">Forwarding Information Base (FIB)<div class="ingroups"><a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>FIB implementation  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>FIB implementation </p>
+<p>This module is unused by RIOT's networking stacks, see <a class="el" href="group__net__gnrc__ipv6__nib__ft.html">Forwarding table</a> instead. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -287,9 +287,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>fib_print_notify_rrp<
 <tr class="memdesc:ga4832ca9ba009ee11909342caac134f7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the given FIB sourceroute.  <br /></td></tr>
 <tr class="separator:ga4832ca9ba009ee11909342caac134f7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>FIB implementation </p>
-<p>This module is unused by RIOT's networking stacks, see <a class="el" href="group__net__gnrc__ipv6__nib__ft.html">Forwarding table</a> instead. </p>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="gad16e13ec99caf2fde361449ad1160ea2" name="gad16e13ec99caf2fde361449ad1160ea2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gad16e13ec99caf2fde361449ad1160ea2">&#9670;&#160;</a></span>fib_add_entry()</h2>
@@ -1446,7 +1443,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>fib_print_notify_rrp<
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

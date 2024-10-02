@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -149,7 +146,13 @@ $(function(){initNavTree('esp32-ttgo-t-beam_2include_2board_8h.html',''); initRe
 
 <p>Board specific definitions for TTGO T-Beam board.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Board specific definitions for TTGO T-Beam board. </p>
+<p>TTGO T-Beam is an ESP32 development board with 8 MB Flash that uses the EPS32 chip directly. It integrates a SemTech SX1276 or SX1278 for LoRaWAN communication in the 433 MHz or the 868/915 MHz band, respectively. Additionally, it has an OLED display connected via I2C on board.</p>
+<p>For detailed information about the configuration of ESP32 boards, see section <a class="el" href="group__cpu__esp32.html#esp32_peripherals">Common Peripherals</a>.</p>
+<dl class="section note"><dt>Note</dt><dd>Most definitions can be overridden by an <a class="el" href="group__cpu__esp32.html#esp32_application_specific_configurations">application-specific board configuration</a>.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Yegor Yefremov <a href="#" onclick="location.href='mai'+'lto:'+'yeg'+'or'+'sli'+'st'+'s@g'+'oo'+'gle'+'ma'+'il.'+'co'+'m'; return false;">yegor<span class="obfuscator">.nosp@m.</span>slis<span class="obfuscator">.nosp@m.</span>ts@go<span class="obfuscator">.nosp@m.</span>ogle<span class="obfuscator">.nosp@m.</span>mail.<span class="obfuscator">.nosp@m.</span>com</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;board_common.h&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for board.h:</div>
@@ -217,13 +220,7 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>SX127X_PARAM_DIO3</b>&#160;&#160;&#160;<a class="el" href="atmega__common_2include_2periph__cpu__common_8h.html#a3969ce1e494a72d3c2925b10ddeb4604">GPIO_UNDEF</a></td></tr>
 <tr class="separator:ac917eea6062e10a46800eed21dd3c59b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Board specific definitions for TTGO T-Beam board. </p>
-<p>TTGO T-Beam is an ESP32 development board with 8 MB Flash that uses the EPS32 chip directly. It integrates a SemTech SX1276 or SX1278 for LoRaWAN communication in the 433 MHz or the 868/915 MHz band, respectively. Additionally, it has an OLED display connected via I2C on board.</p>
-<p>For detailed information about the configuration of ESP32 boards, see section <a class="el" href="group__cpu__esp32.html#esp32_peripherals">Common Peripherals</a>.</p>
-<dl class="section note"><dt>Note</dt><dd>Most definitions can be overridden by an <a class="el" href="group__cpu__esp32.html#esp32_application_specific_configurations">application-specific board configuration</a>.</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Yegor Yefremov <a href="#" onclick="location.href='mai'+'lto:'+'yeg'+'or'+'sli'+'st'+'s@g'+'oo'+'gle'+'ma'+'il.'+'co'+'m'; return false;">yegor<span class="obfuscator">.nosp@m.</span>slis<span class="obfuscator">.nosp@m.</span>ts@go<span class="obfuscator">.nosp@m.</span>ogle<span class="obfuscator">.nosp@m.</span>mail.<span class="obfuscator">.nosp@m.</span>com</a> </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a904884feea8e03c30c9a85ca6d7a8e5c" name="a904884feea8e03c30c9a85ca6d7a8e5c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a904884feea8e03c30c9a85ca6d7a8e5c">&#9670;&#160;</a></span>BTN0_MODE</h2>
 
@@ -249,7 +246,7 @@ Macros</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6c8313236d9db5b969ca7d150fe527de.html">boards</a></li><li class="navelem"><a class="el" href="dir_17a9af8bb22d51a49d7bd0941ee2a8d3.html">esp32-ttgo-t-beam</a></li><li class="navelem"><a class="el" href="dir_edeb98559eb1e7fb01e274cce366d962.html">include</a></li><li class="navelem"><a class="el" href="esp32-ttgo-t-beam_2include_2board_8h.html">board.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:28 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

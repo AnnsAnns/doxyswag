@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -152,7 +149,13 @@ $(function(){initNavTree('sam0__common_2include_2periph__cpu__common_8h.html',''
 
 <p>Common CPU specific definitions for all SAMx21 based CPUs.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;cpu.h&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Common CPU specific definitions for all SAMx21 based CPUs. </p>
+<p>Common CPU specific definitions for all SAMx21 based CPUs</p>
+<dl class="section author"><dt>Author</dt><dd>Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
+<dd>
+Dylan Laduranty <a href="#" onclick="location.href='mai'+'lto:'+'dyl'+'an'+'.la'+'du'+'ran'+'ty'+'@me'+'so'+'tic'+'.c'+'om'; return false;">dylan<span class="obfuscator">.nosp@m.</span>.lad<span class="obfuscator">.nosp@m.</span>urant<span class="obfuscator">.nosp@m.</span>y@me<span class="obfuscator">.nosp@m.</span>sotic<span class="obfuscator">.nosp@m.</span>.com</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;cpu.h&quot;</code><br />
 <code>#include &quot;exti_config.h&quot;</code><br />
 <code>#include &quot;timer_config.h&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -584,13 +587,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>rtc_tamper_enable</b>
 <tr class="memdesc:a7708c2f82517391d6c791be8ec8f66ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the tamper event mask for a certain pin.  <br /></td></tr>
 <tr class="separator:a7708c2f82517391d6c791be8ec8f66ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Common CPU specific definitions for all SAMx21 based CPUs. </p>
-<p>Common CPU specific definitions for all SAMx21 based CPUs</p>
-<dl class="section author"><dt>Author</dt><dd>Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
-<dd>
-Dylan Laduranty <a href="#" onclick="location.href='mai'+'lto:'+'dyl'+'an'+'.la'+'du'+'ran'+'ty'+'@me'+'so'+'tic'+'.c'+'om'; return false;">dylan<span class="obfuscator">.nosp@m.</span>.lad<span class="obfuscator">.nosp@m.</span>urant<span class="obfuscator">.nosp@m.</span>y@me<span class="obfuscator">.nosp@m.</span>sotic<span class="obfuscator">.nosp@m.</span>.com</a> </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a2545e42f23e359d4197aee636ba5703a" name="a2545e42f23e359d4197aee636ba5703a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2545e42f23e359d4197aee636ba5703a">&#9670;&#160;</a></span>DMA_DESCRIPTOR_IN_LPSRAM</h2>
 
@@ -2150,7 +2147,7 @@ When increment is enabled for source, the <code>src</code> must point to the <b>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_c433b04169c945a1c7f0848f853d4379.html">cpu</a></li><li class="navelem"><a class="el" href="dir_8a5890fbb7b122a90f356d448a51e7c5.html">sam0_common</a></li><li class="navelem"><a class="el" href="dir_88fcb9d0f54a094aff6c26b28e4b4de0.html">include</a></li><li class="navelem"><a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html">periph_cpu_common.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

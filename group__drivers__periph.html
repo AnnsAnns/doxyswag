@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -149,6 +146,76 @@ $(function(){initNavTree('group__drivers__periph.html',''); initResizable(true);
 
 <p>Low-level peripheral driver interface for vendor and platform independent access to MCU peripherals as UART, SPI, etc  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Low-level peripheral driver interface for vendor and platform independent access to MCU peripherals as UART, SPI, etc </p>
+<p>The module contains the low-level peripheral driver interface. This interface defines a standardized interface to access MCU peripherals that is not tied to any specific vendor, platform or architecture.</p>
+<h1><a class="anchor" id="autotoc_md1700"></a>
+Initialization and Thread Safety</h1>
+<p>Peripheral drivers fall into three categories regarding to their initialization:</p>
+<ol type="1">
+<li>Drivers that do not need to be initialized (e.g. <a class="el" href="group__drivers__periph__eeprom.html">EEPROM driver</a>)</li>
+<li>Drivers that are automatically initialized by the module <code>periph_init</code> at boot, (see <a class="el" href="group__drivers__periph__init.html">Common peripheral initialization</a> for details)</li>
+<li>Drivers that require manual initialization (e.g. <a class="el" href="group__drivers__periph__uart.html">UART</a> or <a class="el" href="group__drivers__periph__adc.html">ADC</a>)</li>
+</ol>
+<p>The initialization code of drivers initialized at boot up is <em>not</em> thread safe. This code is run sequentially anyway and never called by the user, so the overhead of thread safety would not be justified.</p>
+<p>All other peripheral APIs (including the initialization functions of drivers that are not initialized with <code>periph_init</code>) are fully or partially thread safe. Partially thread safe drivers require the user to make sure that the same peripheral entity (e.g. one UART device) is exclusively used by one thread. So two threads may concurrently use two <em>distinct</em> UART devices without any synchronization, but they <em>must</em> synchronize explicitly to access the same UART device.</p>
+<p>Fully thread safe are all bus peripherals: A call to e.g. <a class="el" href="group__drivers__periph__spi.html#ga31d89f231c0d6b18a71f2c8f3804e042">spi_acquire</a> will start a period of exclusive access to the given SPI bus by the calling thread until that calls <a class="el" href="group__drivers__periph__spi.html#ga9e36100f2b58917366872fca2f9f3bc6">spi_release</a>.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Peripheral Driver   </th><th class="markdownTableHeadLeft">Initialized By   </th><th class="markdownTableHeadLeft"><a class="el" href="structThread.html" title="Thread struct within mqtt paho.">Thread</a> Safety    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>periph_adc</code>   </td><td class="markdownTableBodyLeft">user / driver   </td><td class="markdownTableBodyLeft">Partial (no concurrent use of the same ADC line allowed)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>periph_can</code>   </td><td class="markdownTableBodyLeft">user / driver   </td><td class="markdownTableBodyLeft">Partial (no concurrent use of the same CAN device allowed)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>periph_cpuid</code>   </td><td class="markdownTableBodyLeft">not needed   </td><td class="markdownTableBodyLeft">Full <a class="el" href="structThread.html" title="Thread struct within mqtt paho.">Thread</a> Safety    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>periph_dac</code>   </td><td class="markdownTableBodyLeft">user / driver   </td><td class="markdownTableBodyLeft">Partial (no concurrent use of the same DAC line allowed)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>periph_eeprom</code>   </td><td class="markdownTableBodyLeft">not needed   </td><td class="markdownTableBodyLeft">None (no concurrency whatsoever)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>periph_flashpage</code>   </td><td class="markdownTableBodyLeft">not needed   </td><td class="markdownTableBodyLeft">None (no concurrency whatsoever)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>periph_gpio</code>   </td><td class="markdownTableBodyLeft">not needed   </td><td class="markdownTableBodyLeft">Limited (reads are fine, concurrent writes to pins on distinct ports work)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>periph_gpio_ll</code>   </td><td class="markdownTableBodyLeft">not needed   </td><td class="markdownTableBodyLeft">Yes, except for concurrent initialization of the GPIO pin    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>periph_hwrng</code>   </td><td class="markdownTableBodyLeft"><code>periph_init</code>   </td><td class="markdownTableBodyLeft">None (no concurrency whatsoever)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>periph_i2c</code>   </td><td class="markdownTableBodyLeft"><code>periph_init</code>   </td><td class="markdownTableBodyLeft">Full <a class="el" href="structThread.html" title="Thread struct within mqtt paho.">Thread</a> Safety (except for initialization)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>periph_pio</code>   </td><td class="markdownTableBodyLeft"><code>periph_init</code>   </td><td class="markdownTableBodyLeft">Full <a class="el" href="structThread.html" title="Thread struct within mqtt paho.">Thread</a> Safety (except for initialization)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>periph_pm</code>   </td><td class="markdownTableBodyLeft">not needed   </td><td class="markdownTableBodyLeft">Full <a class="el" href="structThread.html" title="Thread struct within mqtt paho.">Thread</a> Safety    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>periph_ptp</code>   </td><td class="markdownTableBodyLeft"><code>periph_init</code>   </td><td class="markdownTableBodyLeft">Full <a class="el" href="structThread.html" title="Thread struct within mqtt paho.">Thread</a> Safety (except for initialization)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>periph_pwm</code>   </td><td class="markdownTableBodyLeft">user / driver   </td><td class="markdownTableBodyLeft">Partial (no concurrent use of the same PWM device)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>periph_qdec</code>   </td><td class="markdownTableBodyLeft">user / driver   </td><td class="markdownTableBodyLeft">Partial (no concurrent use of the same QDEC device)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>periph_rtc</code>   </td><td class="markdownTableBodyLeft"><code>periph_init</code>   </td><td class="markdownTableBodyLeft">None (no concurrency whatsoever)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>periph_rtt</code>   </td><td class="markdownTableBodyLeft"><code>periph_init</code>   </td><td class="markdownTableBodyLeft">None (no concurrency whatsoever)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>periph_spi</code>   </td><td class="markdownTableBodyLeft"><code>periph_init</code>   </td><td class="markdownTableBodyLeft">Full <a class="el" href="structThread.html" title="Thread struct within mqtt paho.">Thread</a> Safety (except for initialization)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>periph_timer</code>   </td><td class="markdownTableBodyLeft">user / driver   </td><td class="markdownTableBodyLeft">Yes, except for concurrent initialization of the same timer    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>periph_uart</code>   </td><td class="markdownTableBodyLeft">user / driver   </td><td class="markdownTableBodyLeft">Partial (no concurrent use of the same UART device allowed)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>periph_usbdev</code>   </td><td class="markdownTableBodyLeft">user / driver (*)   </td><td class="markdownTableBodyLeft">Full <a class="el" href="structThread.html" title="Thread struct within mqtt paho.">Thread</a> Safety (except for initialization)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>periph_vbat</code>   </td><td class="markdownTableBodyLeft"><code>periph_init</code>   </td><td class="markdownTableBodyLeft">None (no concurrency whatsoever)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>periph_wdt</code>   </td><td class="markdownTableBodyLeft"><code>periph_init</code>   </td><td class="markdownTableBodyLeft">Only <code><a class="el" href="group__drivers__periph__wdt.html#ga17282fdbc67f2150ddb989b910f751a1" title="Reset the watchdog timer counter, delay system reset.">wdt_kick()</a></code> is thread-safe   </td></tr>
+</table>
+<dl class="section note"><dt>Note</dt><dd><code>periph_usbdev</code> requires a low level initialization (<a class="el" href="group__drivers__periph__usbdev.html#ga124dc4fde43e3a5df575e812ef64cd77">usbdev_init_lowlevel</a>) that is done by <code>periph_init</code>. A per device initialization is needed in addition by the user.</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000012">Todo</a></b></dt><dd><p class="startdd">describe concept in detail </p>
+<p class="interdd">link to driver model </p>
+<p class="interdd">describe/link implementation guide </p>
+<p class="enddd">list best practices </p>
+</dd></dl>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -234,76 +301,6 @@ Topics</h2></td></tr>
 <tr class="memdesc:group__drivers__periph__usbdev"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a generic low-level USB driver interface <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Low-level peripheral driver interface for vendor and platform independent access to MCU peripherals as UART, SPI, etc </p>
-<p>The module contains the low-level peripheral driver interface. This interface defines a standardized interface to access MCU peripherals that is not tied to any specific vendor, platform or architecture.</p>
-<h1><a class="anchor" id="autotoc_md1700"></a>
-Initialization and Thread Safety</h1>
-<p>Peripheral drivers fall into three categories regarding to their initialization:</p>
-<ol type="1">
-<li>Drivers that do not need to be initialized (e.g. <a class="el" href="group__drivers__periph__eeprom.html">EEPROM driver</a>)</li>
-<li>Drivers that are automatically initialized by the module <code>periph_init</code> at boot, (see <a class="el" href="group__drivers__periph__init.html">Common peripheral initialization</a> for details)</li>
-<li>Drivers that require manual initialization (e.g. <a class="el" href="group__drivers__periph__uart.html">UART</a> or <a class="el" href="group__drivers__periph__adc.html">ADC</a>)</li>
-</ol>
-<p>The initialization code of drivers initialized at boot up is <em>not</em> thread safe. This code is run sequentially anyway and never called by the user, so the overhead of thread safety would not be justified.</p>
-<p>All other peripheral APIs (including the initialization functions of drivers that are not initialized with <code>periph_init</code>) are fully or partially thread safe. Partially thread safe drivers require the user to make sure that the same peripheral entity (e.g. one UART device) is exclusively used by one thread. So two threads may concurrently use two <em>distinct</em> UART devices without any synchronization, but they <em>must</em> synchronize explicitly to access the same UART device.</p>
-<p>Fully thread safe are all bus peripherals: A call to e.g. <a class="el" href="group__drivers__periph__spi.html#ga31d89f231c0d6b18a71f2c8f3804e042">spi_acquire</a> will start a period of exclusive access to the given SPI bus by the calling thread until that calls <a class="el" href="group__drivers__periph__spi.html#ga9e36100f2b58917366872fca2f9f3bc6">spi_release</a>.</p>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadLeft">Peripheral Driver   </th><th class="markdownTableHeadLeft">Initialized By   </th><th class="markdownTableHeadLeft"><a class="el" href="structThread.html" title="Thread struct within mqtt paho.">Thread</a> Safety    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><code>periph_adc</code>   </td><td class="markdownTableBodyLeft">user / driver   </td><td class="markdownTableBodyLeft">Partial (no concurrent use of the same ADC line allowed)    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><code>periph_can</code>   </td><td class="markdownTableBodyLeft">user / driver   </td><td class="markdownTableBodyLeft">Partial (no concurrent use of the same CAN device allowed)    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><code>periph_cpuid</code>   </td><td class="markdownTableBodyLeft">not needed   </td><td class="markdownTableBodyLeft">Full <a class="el" href="structThread.html" title="Thread struct within mqtt paho.">Thread</a> Safety    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><code>periph_dac</code>   </td><td class="markdownTableBodyLeft">user / driver   </td><td class="markdownTableBodyLeft">Partial (no concurrent use of the same DAC line allowed)    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><code>periph_eeprom</code>   </td><td class="markdownTableBodyLeft">not needed   </td><td class="markdownTableBodyLeft">None (no concurrency whatsoever)    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><code>periph_flashpage</code>   </td><td class="markdownTableBodyLeft">not needed   </td><td class="markdownTableBodyLeft">None (no concurrency whatsoever)    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><code>periph_gpio</code>   </td><td class="markdownTableBodyLeft">not needed   </td><td class="markdownTableBodyLeft">Limited (reads are fine, concurrent writes to pins on distinct ports work)    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><code>periph_gpio_ll</code>   </td><td class="markdownTableBodyLeft">not needed   </td><td class="markdownTableBodyLeft">Yes, except for concurrent initialization of the GPIO pin    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><code>periph_hwrng</code>   </td><td class="markdownTableBodyLeft"><code>periph_init</code>   </td><td class="markdownTableBodyLeft">None (no concurrency whatsoever)    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><code>periph_i2c</code>   </td><td class="markdownTableBodyLeft"><code>periph_init</code>   </td><td class="markdownTableBodyLeft">Full <a class="el" href="structThread.html" title="Thread struct within mqtt paho.">Thread</a> Safety (except for initialization)    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><code>periph_pio</code>   </td><td class="markdownTableBodyLeft"><code>periph_init</code>   </td><td class="markdownTableBodyLeft">Full <a class="el" href="structThread.html" title="Thread struct within mqtt paho.">Thread</a> Safety (except for initialization)    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><code>periph_pm</code>   </td><td class="markdownTableBodyLeft">not needed   </td><td class="markdownTableBodyLeft">Full <a class="el" href="structThread.html" title="Thread struct within mqtt paho.">Thread</a> Safety    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><code>periph_ptp</code>   </td><td class="markdownTableBodyLeft"><code>periph_init</code>   </td><td class="markdownTableBodyLeft">Full <a class="el" href="structThread.html" title="Thread struct within mqtt paho.">Thread</a> Safety (except for initialization)    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><code>periph_pwm</code>   </td><td class="markdownTableBodyLeft">user / driver   </td><td class="markdownTableBodyLeft">Partial (no concurrent use of the same PWM device)    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><code>periph_qdec</code>   </td><td class="markdownTableBodyLeft">user / driver   </td><td class="markdownTableBodyLeft">Partial (no concurrent use of the same QDEC device)    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><code>periph_rtc</code>   </td><td class="markdownTableBodyLeft"><code>periph_init</code>   </td><td class="markdownTableBodyLeft">None (no concurrency whatsoever)    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><code>periph_rtt</code>   </td><td class="markdownTableBodyLeft"><code>periph_init</code>   </td><td class="markdownTableBodyLeft">None (no concurrency whatsoever)    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><code>periph_spi</code>   </td><td class="markdownTableBodyLeft"><code>periph_init</code>   </td><td class="markdownTableBodyLeft">Full <a class="el" href="structThread.html" title="Thread struct within mqtt paho.">Thread</a> Safety (except for initialization)    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><code>periph_timer</code>   </td><td class="markdownTableBodyLeft">user / driver   </td><td class="markdownTableBodyLeft">Yes, except for concurrent initialization of the same timer    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><code>periph_uart</code>   </td><td class="markdownTableBodyLeft">user / driver   </td><td class="markdownTableBodyLeft">Partial (no concurrent use of the same UART device allowed)    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><code>periph_usbdev</code>   </td><td class="markdownTableBodyLeft">user / driver (*)   </td><td class="markdownTableBodyLeft">Full <a class="el" href="structThread.html" title="Thread struct within mqtt paho.">Thread</a> Safety (except for initialization)    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><code>periph_vbat</code>   </td><td class="markdownTableBodyLeft"><code>periph_init</code>   </td><td class="markdownTableBodyLeft">None (no concurrency whatsoever)    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><code>periph_wdt</code>   </td><td class="markdownTableBodyLeft"><code>periph_init</code>   </td><td class="markdownTableBodyLeft">Only <code><a class="el" href="group__drivers__periph__wdt.html#ga17282fdbc67f2150ddb989b910f751a1" title="Reset the watchdog timer counter, delay system reset.">wdt_kick()</a></code> is thread-safe   </td></tr>
-</table>
-<dl class="section note"><dt>Note</dt><dd><code>periph_usbdev</code> requires a low level initialization (<a class="el" href="group__drivers__periph__usbdev.html#ga124dc4fde43e3a5df575e812ef64cd77">usbdev_init_lowlevel</a>) that is done by <code>periph_init</code>. A per device initialization is needed in addition by the user.</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000012">Todo</a></b></dt><dd><p class="startdd">describe concept in detail </p>
-<p class="interdd">link to driver model </p>
-<p class="interdd">describe/link implementation guide </p>
-<p class="enddd">list best practices </p>
-</dd></dl>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
@@ -311,7 +308,7 @@ Initialization and Thread Safety</h1>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

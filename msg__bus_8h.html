@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -149,7 +146,27 @@ $(function(){initNavTree('msg__bus_8h.html',''); initResizable(true); });
 
 <p>Messaging Bus API for inter process message broadcast.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;<a class="el" href="assert_8h.html">assert.h</a>&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Messaging Bus API for inter process message broadcast. </p>
+<dl class="section warning"><dt>Warning</dt><dd><b class="text-danger">This feature is experimental!</b><br  />
+</dd></dl>
+<pre class="fragment">         Threads can subscribe to messages on one or multiple buses.
+         If a message is posted on one bus, all threads that are
+         subscribed to that message type will receive the message.
+
+         On one bus only 32 different message types are possible.
+         Do not use the `type` and `sender_pid` fields of a message
+         directly if it may have been received over a message bus.
+         Instead, use the @ref msg_bus_get_type and
+         @ref msg_bus_get_sender_pid functions.
+
+         If you want to check if a message was sent directly (not
+         over a bus, you can use the @ref msg_is_from_bus function.
+
+         @note Make sure to unsubscribe from all previously subscribed
+         buses before terminating a thread.
+</pre><dl class="section author"><dt>Author</dt><dd>Benjamin Valentin <a href="#" onclick="location.href='mai'+'lto:'+'ben'+'ja'+'min'+'.v'+'ale'+'nt'+'in@'+'ml'+'-pa'+'.c'+'om'; return false;">benja<span class="obfuscator">.nosp@m.</span>min.<span class="obfuscator">.nosp@m.</span>valen<span class="obfuscator">.nosp@m.</span>tin@<span class="obfuscator">.nosp@m.</span>ml-pa<span class="obfuscator">.nosp@m.</span>.com</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;<a class="el" href="assert_8h.html">assert.h</a>&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="list_8h.html">list.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="core_2include_2msg_8h.html">msg.h</a>&quot;</code><br />
@@ -214,27 +231,7 @@ Data Structures</h2></td></tr>
 <tr class="memdesc:a67c5433470d13ad01053567da8fad3ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Post a message to a bus.  <br /></td></tr>
 <tr class="separator:a67c5433470d13ad01053567da8fad3ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Messaging Bus API for inter process message broadcast. </p>
-<dl class="section warning"><dt>Warning</dt><dd><b class="text-danger">This feature is experimental!</b><br  />
-</dd></dl>
-<pre class="fragment">         Threads can subscribe to messages on one or multiple buses.
-         If a message is posted on one bus, all threads that are
-         subscribed to that message type will receive the message.
-
-         On one bus only 32 different message types are possible.
-         Do not use the `type` and `sender_pid` fields of a message
-         directly if it may have been received over a message bus.
-         Instead, use the @ref msg_bus_get_type and
-         @ref msg_bus_get_sender_pid functions.
-
-         If you want to check if a message was sent directly (not
-         over a bus, you can use the @ref msg_is_from_bus function.
-
-         @note Make sure to unsubscribe from all previously subscribed
-         buses before terminating a thread.
-</pre><dl class="section author"><dt>Author</dt><dd>Benjamin Valentin <a href="#" onclick="location.href='mai'+'lto:'+'ben'+'ja'+'min'+'.v'+'ale'+'nt'+'in@'+'ml'+'-pa'+'.c'+'om'; return false;">benja<span class="obfuscator">.nosp@m.</span>min.<span class="obfuscator">.nosp@m.</span>valen<span class="obfuscator">.nosp@m.</span>tin@<span class="obfuscator">.nosp@m.</span>ml-pa<span class="obfuscator">.nosp@m.</span>.com</a> </dd></dl>
-</div><h2 class="groupheader">Function Documentation</h2>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="a75bf3f0f5c857c9c43bcb4ec505d9708" name="a75bf3f0f5c857c9c43bcb4ec505d9708"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a75bf3f0f5c857c9c43bcb4ec505d9708">&#9670;&#160;</a></span>msg_bus_attach()</h2>
 
@@ -626,7 +623,7 @@ Data Structures</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_24d671cfcbc5d5238a6bd565a49d198f.html">include</a></li><li class="navelem"><a class="el" href="msg__bus_8h.html">msg_bus.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:28 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

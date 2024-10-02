@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -153,6 +150,15 @@ $(function(){initNavTree('group__drivers__lcd.html',''); initResizable(true); })
 
 <p>Driver for the LCD display  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Driver for the LCD display </p>
+<p>The LCD is a generic display driver for small RGB displays. It communicates with the device either via an</p>
+<ul>
+<li>SPI serial interface (if module <code>lcd_spi</code> enabled) or an</li>
+<li>MCU 8080 8-/16-bit parallel interface (if module <code>lcd_parallel</code> or module <code>lcd_parallel_16</code> is enabled).</li>
+</ul>
+<p>Usually the device driver is used either for a single display with SPI serial interface or for a display with parallel MCU 8080 8-/16-bit parallel interface. However, the device driver can also be used simultaneously for multiple displays with different interfaces if several of the <code>lcd_spi</code>, <code>lcd_parallel</code> and <code>lcd_parallel_16bit</code> modules are enabled at the same time. In this case, please refer to the notes in <a class="el" href="structlcd__params__t.html">lcd_params_t</a>.</p>
+<p>The device requires colors to be send in big endian RGB-565 format. The <a class="el" href="#ga5bf4283c3bb6ed05f6e694d0f152c12f">CONFIG_LCD_LE_MODE</a> compile time option can switch this, but only use this when strictly necessary. This option will slow down the driver as it certainly can't use DMA anymore, every short has to be converted before transfer. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -282,15 +288,6 @@ const <a class="el" href="structlcd__ll__par__driver__t.html">lcd_ll_par_driver_
 <tr class="memdesc:ga76c80799d9e1cded9ae2bd25670ef503"><td class="mdescLeft">&#160;</td><td class="mdescRight">Horizontal refresh direction. <br /></td></tr>
 <tr class="separator:ga76c80799d9e1cded9ae2bd25670ef503"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Driver for the LCD display </p>
-<p>The LCD is a generic display driver for small RGB displays. It communicates with the device either via an</p>
-<ul>
-<li>SPI serial interface (if module <code>lcd_spi</code> enabled) or an</li>
-<li>MCU 8080 8-/16-bit parallel interface (if module <code>lcd_parallel</code> or module <code>lcd_parallel_16</code> is enabled).</li>
-</ul>
-<p>Usually the device driver is used either for a single display with SPI serial interface or for a display with parallel MCU 8080 8-/16-bit parallel interface. However, the device driver can also be used simultaneously for multiple displays with different interfaces if several of the <code>lcd_spi</code>, <code>lcd_parallel</code> and <code>lcd_parallel_16bit</code> modules are enabled at the same time. In this case, please refer to the notes in <a class="el" href="structlcd__params__t.html">lcd_params_t</a>.</p>
-<p>The device requires colors to be send in big endian RGB-565 format. The <a class="el" href="#ga5bf4283c3bb6ed05f6e694d0f152c12f">CONFIG_LCD_LE_MODE</a> compile time option can switch this, but only use this when strictly necessary. This option will slow down the driver as it certainly can't use DMA anymore, every short has to be converted before transfer. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga5bf4283c3bb6ed05f6e694d0f152c12f" name="ga5bf4283c3bb6ed05f6e694d0f152c12f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga5bf4283c3bb6ed05f6e694d0f152c12f">&#9670;&#160;</a></span>CONFIG_LCD_LE_MODE</h2>
@@ -825,7 +822,7 @@ len &gt; 0</dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

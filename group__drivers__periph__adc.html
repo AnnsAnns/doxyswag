@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -153,6 +150,17 @@ $(function(){initNavTree('group__drivers__periph__adc.html',''); initResizable(t
 
 <p>Low-level ADC peripheral driver interface  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Low-level ADC peripheral driver interface </p>
+<p>This is a very simple ADC interface to allow platform independent access to a MCU's ADC unit(s). This interface is intentionally designed as simple as possible, to allow for very easy implementation and maximal portability.</p>
+<p>As of now, the interface does not allow for any advanced ADC concepts (e.g. continuous mode, scan sequences, injections). It is to be determined, if these features will ever be integrated in this interface, or if it does make more sense to create a second, advanced ADC interface for this.</p>
+<p>The ADC driver interface is built around the concept of ADC lines. An ADC line in this context is a tuple consisting out of a hardware ADC device (an ADC functional unit on the MCU) and an ADC channel connected to pin.</p>
+<p>If a MCU has more than one hardware ADC unit, the ADC lines can be mapped in a way, that it is possible to sample multiple lines in parallel, given that the ADC implementation allows for interruption of the program flow while waiting for the result of a conversion (e.g. through putting the calling thread to sleep while waiting for the conversion results).</p>
+<h1><a class="anchor" id="autotoc_md1697"></a>
+(Low-) Power Implications</h1>
+<p>The ADC peripheral(s) <b>should</b> only be powered on while <a class="el" href="#ga0ffa20b26f649b1879b487f9aa0aa4b4" title="Sample a value from the given ADC line.">adc_sample()</a> is active. For implementing <a class="el" href="#ga0ffa20b26f649b1879b487f9aa0aa4b4" title="Sample a value from the given ADC line.">adc_sample()</a> this means, that the peripheral should be powered on (i.e. through peripheral clock gating) at the beginning of the function and it should be powered back off at the end of the function.</p>
+<p>If the <a class="el" href="#ga0ffa20b26f649b1879b487f9aa0aa4b4" title="Sample a value from the given ADC line.">adc_sample()</a> function is implemented in a way, that it will put the active thread to sleep for a certain amount of time, the implementation might need to block certain power states.</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000011">Todo</a></b></dt><dd>Extend interface for continuous mode?</dd></dl>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -210,17 +218,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga5d07dd015dea76371902e97095482c9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable the ADC to save power.  <br /></td></tr>
 <tr class="separator:ga5d07dd015dea76371902e97095482c9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Low-level ADC peripheral driver interface </p>
-<p>This is a very simple ADC interface to allow platform independent access to a MCU's ADC unit(s). This interface is intentionally designed as simple as possible, to allow for very easy implementation and maximal portability.</p>
-<p>As of now, the interface does not allow for any advanced ADC concepts (e.g. continuous mode, scan sequences, injections). It is to be determined, if these features will ever be integrated in this interface, or if it does make more sense to create a second, advanced ADC interface for this.</p>
-<p>The ADC driver interface is built around the concept of ADC lines. An ADC line in this context is a tuple consisting out of a hardware ADC device (an ADC functional unit on the MCU) and an ADC channel connected to pin.</p>
-<p>If a MCU has more than one hardware ADC unit, the ADC lines can be mapped in a way, that it is possible to sample multiple lines in parallel, given that the ADC implementation allows for interruption of the program flow while waiting for the result of a conversion (e.g. through putting the calling thread to sleep while waiting for the conversion results).</p>
-<h1><a class="anchor" id="autotoc_md1697"></a>
-(Low-) Power Implications</h1>
-<p>The ADC peripheral(s) <b>should</b> only be powered on while <a class="el" href="#ga0ffa20b26f649b1879b487f9aa0aa4b4" title="Sample a value from the given ADC line.">adc_sample()</a> is active. For implementing <a class="el" href="#ga0ffa20b26f649b1879b487f9aa0aa4b4" title="Sample a value from the given ADC line.">adc_sample()</a> this means, that the peripheral should be powered on (i.e. through peripheral clock gating) at the beginning of the function and it should be powered back off at the end of the function.</p>
-<p>If the <a class="el" href="#ga0ffa20b26f649b1879b487f9aa0aa4b4" title="Sample a value from the given ADC line.">adc_sample()</a> function is implemented in a way, that it will put the active thread to sleep for a certain amount of time, the implementation might need to block certain power states.</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000011">Todo</a></b></dt><dd>Extend interface for continuous mode?</dd></dl>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="gaf0487d2e8711bf1c9e7daa6e61e05888" name="gaf0487d2e8711bf1c9e7daa6e61e05888"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaf0487d2e8711bf1c9e7daa6e61e05888">&#9670;&#160;</a></span>ADC_LINE</h2>
@@ -412,7 +409,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

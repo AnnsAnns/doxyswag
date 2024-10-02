@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -149,7 +146,10 @@ $(function(){initNavTree('structlcd__ll__par__driver__t.html',''); initResizable
 
 <p>Low-level MCU 8080 8-/16-bit parallel interface driver.  
  <a href="#details">More...</a></p>
-
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Low-level MCU 8080 8-/16-bit parallel interface driver. </p>
+<p>If the MCU-driven low-level parallel interface is enabled by module <code>lcd_ll_parallel_mcu</code>, the implementation of the MCU low-level parallel interface has to define a variable <a class="el" href="group__drivers__lcd.html#ga2666177bb70f393258c446df9176a7d8">lcd_ll_par_driver</a> of this type. All or a set of members have to point to the low-level parallel interface functions implemented by the MCU. For functions that are not implemented by the MCU, the members have to be set to the corresponding GPIO-driven low-level parallel interface functions provided by the LCD driver. </p>
+</div>
 <p><code>#include &lt;lcd.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -176,10 +176,7 @@ Data Fields</h2></td></tr>
 <tr class="memdesc:aef8ee73b43ea63d9368b24153ff71159"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a word using the MCU-driven low-level parallel interface.  <br /></td></tr>
 <tr class="separator:aef8ee73b43ea63d9368b24153ff71159"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Low-level MCU 8080 8-/16-bit parallel interface driver. </p>
-<p>If the MCU-driven low-level parallel interface is enabled by module <code>lcd_ll_parallel_mcu</code>, the implementation of the MCU low-level parallel interface has to define a variable <a class="el" href="group__drivers__lcd.html#ga2666177bb70f393258c446df9176a7d8">lcd_ll_par_driver</a> of this type. All or a set of members have to point to the low-level parallel interface functions implemented by the MCU. For functions that are not implemented by the MCU, the members have to be set to the corresponding GPIO-driven low-level parallel interface functions provided by the LCD driver. </p>
-</div><h2 class="groupheader">Field Documentation</h2>
+<h2 class="groupheader">Field Documentation</h2>
 <a id="afab258495475913b231734c2f75068f2" name="afab258495475913b231734c2f75068f2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afab258495475913b231734c2f75068f2">&#9670;&#160;</a></span>cmd_start</h2>
 
@@ -356,7 +353,7 @@ Data Fields</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structlcd__ll__par__driver__t.html">lcd_ll_par_driver_t</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:32 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:11 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

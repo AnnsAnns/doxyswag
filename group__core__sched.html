@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -154,6 +151,25 @@ $(function(){initNavTree('group__core__sched.html',''); initResizable(true); });
 
 <p>The RIOT scheduler  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>The RIOT scheduler </p>
+<p>RIOT features a tickless, preemptive, priority based scheduler. Context switches can occur either preemptively (i.e. on interrupts), voluntarily, or when a blocking operation (like <code><a class="el" href="group__core__msg.html#gae3e05f08bd71d6f65dc727624c4d5f7a" title="Receive a message.">msg_receive()</a></code>) is executed. Being tickless means it does not have a timer that fires periodically in order to emulate concurrent execution by switching threads continuously.</p>
+<h2><a class="anchor" id="autotoc_md13"></a>
+Priorities:</h2>
+<p>Every thread is given a priority on creation. The priority values are "order" or "nice" values, i.e. a higher value means a lower priority.</p>
+<h3><a class="anchor" id="autotoc_md14"></a>
+Example:</h3>
+<p>Given threads with priorities A=6, B=1, and C=3, B has the highest priority.</p>
+<p>A higher priority means that the scheduler will run this thread whenever it becomes runnable instead of a thread with a lower priority. In case of equal priorities, the threads are scheduled in a semi-cooperative fashion. That means that unless an interrupt happens, threads with the same priority will only switch due to voluntary or implicit context switches.</p>
+<h2><a class="anchor" id="autotoc_md15"></a>
+Interrupts:</h2>
+<p>When an interrupt occurs, e.g. because a timer fired or a network packet was received, the active context is saved and an interrupt service routine (ISR) that handles the interrupt is executed in another context. When the ISR is finished, the <code><a class="el" href="#gaa07e4e5c8c3a066188f8e833d2b9c276" title="Flag indicating whether a context switch is necessary after handling an interrupt.">sched_context_switch_request</a></code> flag can be checked. In case it is set, the <code><a class="el" href="#ga0447d72cc3171ada696b50801381897f" title="Triggers the scheduler to schedule the next thread.">sched_run()</a></code> function is called to determine the next active thread. (In the special case that the ISR knows that it can not enable a thread switch, this check can of course be omitted.) If the flag is not set, the original context is being restored and the thread resumes immediately.</p>
+<h2><a class="anchor" id="autotoc_md16"></a>
+Voluntary Context Switches:</h2>
+<p>There are two function calls that can lead to a voluntary context switch: <code><a class="el" href="group__core__thread.html#gaaa9229e0f462f60bb9550919fa3d7699" title="Lets current thread yield.">thread_yield()</a></code> and <code><a class="el" href="group__core__thread.html#ga8d16ab2564e99827b629f8cb1a253beb" title="Puts the current thread into sleep mode.">thread_sleep()</a></code>. While the latter disables (think blocks) the thread until it is woken (think unblocked) again via <code><a class="el" href="group__core__thread.html#gaab65867d92604d57f6efb622586466f4" title="Wakes up a sleeping thread.">thread_wakeup()</a></code>, the former only leads to a context switch in case there is another runnable thread with at least the same priority.</p>
+<h2><a class="anchor" id="autotoc_md17"></a>
+Implicit Context Switches:</h2>
+<p>Some functions that unblock another thread, e.g. <code><a class="el" href="group__core__msg.html#gac5347725c3d203ac72604c0ab8b7d6d8" title="Send a message (blocking).">msg_send()</a></code> or <code><a class="el" href="group__core__sync__mutex.html#ga05ccabe849d63b032f6317323da60187" title="Unlocks the mutex.">mutex_unlock()</a></code>, can cause a thread switch, if the target had a higher priority. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -313,25 +329,6 @@ volatile int&#160;</td><td class="memItemRight" valign="bottom"><b>sched_num_thr
 <tr class="memdesc:gac345972a587e6779b3c5d40874080e51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Describes an illegal thread status. <br /></td></tr>
 <tr class="separator:gac345972a587e6779b3c5d40874080e51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>The RIOT scheduler </p>
-<p>RIOT features a tickless, preemptive, priority based scheduler. Context switches can occur either preemptively (i.e. on interrupts), voluntarily, or when a blocking operation (like <code><a class="el" href="group__core__msg.html#gae3e05f08bd71d6f65dc727624c4d5f7a" title="Receive a message.">msg_receive()</a></code>) is executed. Being tickless means it does not have a timer that fires periodically in order to emulate concurrent execution by switching threads continuously.</p>
-<h2><a class="anchor" id="autotoc_md13"></a>
-Priorities:</h2>
-<p>Every thread is given a priority on creation. The priority values are "order" or "nice" values, i.e. a higher value means a lower priority.</p>
-<h3><a class="anchor" id="autotoc_md14"></a>
-Example:</h3>
-<p>Given threads with priorities A=6, B=1, and C=3, B has the highest priority.</p>
-<p>A higher priority means that the scheduler will run this thread whenever it becomes runnable instead of a thread with a lower priority. In case of equal priorities, the threads are scheduled in a semi-cooperative fashion. That means that unless an interrupt happens, threads with the same priority will only switch due to voluntary or implicit context switches.</p>
-<h2><a class="anchor" id="autotoc_md15"></a>
-Interrupts:</h2>
-<p>When an interrupt occurs, e.g. because a timer fired or a network packet was received, the active context is saved and an interrupt service routine (ISR) that handles the interrupt is executed in another context. When the ISR is finished, the <code><a class="el" href="#gaa07e4e5c8c3a066188f8e833d2b9c276" title="Flag indicating whether a context switch is necessary after handling an interrupt.">sched_context_switch_request</a></code> flag can be checked. In case it is set, the <code><a class="el" href="#ga0447d72cc3171ada696b50801381897f" title="Triggers the scheduler to schedule the next thread.">sched_run()</a></code> function is called to determine the next active thread. (In the special case that the ISR knows that it can not enable a thread switch, this check can of course be omitted.) If the flag is not set, the original context is being restored and the thread resumes immediately.</p>
-<h2><a class="anchor" id="autotoc_md16"></a>
-Voluntary Context Switches:</h2>
-<p>There are two function calls that can lead to a voluntary context switch: <code><a class="el" href="group__core__thread.html#gaaa9229e0f462f60bb9550919fa3d7699" title="Lets current thread yield.">thread_yield()</a></code> and <code><a class="el" href="group__core__thread.html#ga8d16ab2564e99827b629f8cb1a253beb" title="Puts the current thread into sleep mode.">thread_sleep()</a></code>. While the latter disables (think blocks) the thread until it is woken (think unblocked) again via <code><a class="el" href="group__core__thread.html#gaab65867d92604d57f6efb622586466f4" title="Wakes up a sleeping thread.">thread_wakeup()</a></code>, the former only leads to a context switch in case there is another runnable thread with at least the same priority.</p>
-<h2><a class="anchor" id="autotoc_md17"></a>
-Implicit Context Switches:</h2>
-<p>Some functions that unblock another thread, e.g. <code><a class="el" href="group__core__msg.html#gac5347725c3d203ac72604c0ab8b7d6d8" title="Send a message (blocking).">msg_send()</a></code> or <code><a class="el" href="group__core__sync__mutex.html#ga05ccabe849d63b032f6317323da60187" title="Unlocks the mutex.">mutex_unlock()</a></code>, can cause a thread switch, if the target had a higher priority. </p>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ga7ce70cd86509c7177f414edcd58b6a0a" name="ga7ce70cd86509c7177f414edcd58b6a0a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga7ce70cd86509c7177f414edcd58b6a0a">&#9670;&#160;</a></span>sched_callback_t</h2>
@@ -822,7 +819,7 @@ NULL if the active thread was not changed. </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

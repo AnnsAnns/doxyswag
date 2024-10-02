@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -150,7 +147,13 @@ $(function(){initNavTree('usbdev__stm32_8h.html',''); initResizable(true); });
 
 <p>USB interface functions for the stm32 OTG FS/HS class devices.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>USB interface functions for the stm32 OTG FS/HS class devices. </p>
+<p>The stm32f2, stm32f4 and stm32f7 have a common USB OTG FS capable USB peripheral.</p>
+<p>Two versions are currently known to exist with subtle differences in some registers. The CID register of the peripheral indicates this version, 0x00001200 for one version of the full speed peripheral and 0x00002000 for the other version of the full speed peripheral. The main difference is in the GCCFG register, where the 1.2 version has a NOVBUSSENS bit and the 2.0 version has a VBDEN bit. This difference is used to detect the IP version. The 2.0 version also has more advanced USB low power mode support.</p>
+<p>For the end user, the main difference is the 1.2 version having 4 endpoints and the 2.0 version having 6 endpoints. The 2.0 version also supports a number of USB low power modes.</p>
+<dl class="section author"><dt>Author</dt><dd>Koen Zandberg <a href="#" onclick="location.href='mai'+'lto:'+'koe'+'n@'+'ber'+'gz'+'and'+'.n'+'et'; return false;">koen@<span class="obfuscator">.nosp@m.</span>berg<span class="obfuscator">.nosp@m.</span>zand.<span class="obfuscator">.nosp@m.</span>net</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="stm32_2include_2periph__cpu_8h.html">periph_cpu.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="usbdev_8h.html">periph/usbdev.h</a>&quot;</code><br />
@@ -199,13 +202,7 @@ Macros</h2></td></tr>
 <tr class="memdesc:gaed8ebe9479c57edc8e2ae7da2f5203e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">USB OTG HS FIFO total size in bytes. <br /></td></tr>
 <tr class="separator:gaed8ebe9479c57edc8e2ae7da2f5203e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>USB interface functions for the stm32 OTG FS/HS class devices. </p>
-<p>The stm32f2, stm32f4 and stm32f7 have a common USB OTG FS capable USB peripheral.</p>
-<p>Two versions are currently known to exist with subtle differences in some registers. The CID register of the peripheral indicates this version, 0x00001200 for one version of the full speed peripheral and 0x00002000 for the other version of the full speed peripheral. The main difference is in the GCCFG register, where the 1.2 version has a NOVBUSSENS bit and the 2.0 version has a VBDEN bit. This difference is used to detect the IP version. The 2.0 version also has more advanced USB low power mode support.</p>
-<p>For the end user, the main difference is the 1.2 version having 4 endpoints and the 2.0 version having 6 endpoints. The 2.0 version also supports a number of USB low power modes.</p>
-<dl class="section author"><dt>Author</dt><dd>Koen Zandberg <a href="#" onclick="location.href='mai'+'lto:'+'koe'+'n@'+'ber'+'gz'+'and'+'.n'+'et'; return false;">koen@<span class="obfuscator">.nosp@m.</span>berg<span class="obfuscator">.nosp@m.</span>zand.<span class="obfuscator">.nosp@m.</span>net</a> </dd></dl>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
@@ -213,7 +210,7 @@ Macros</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_c433b04169c945a1c7f0848f853d4379.html">cpu</a></li><li class="navelem"><a class="el" href="dir_8fb93018175f1eef8ccffa491ecd65e5.html">stm32</a></li><li class="navelem"><a class="el" href="dir_2c7c57a0102e8392aaea30c0e4d338a5.html">include</a></li><li class="navelem"><a class="el" href="usbdev__stm32_8h.html">usbdev_stm32.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

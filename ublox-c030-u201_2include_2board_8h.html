@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,10 @@ $(function(){initNavTree('ublox-c030-u201_2include_2board_8h.html',''); initResi
 
 <p>Board specific definitions for the Ublox C030-U201 board.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Board specific definitions for the Ublox C030-U201 board. </p>
+<dl class="section author"><dt>Author</dt><dd>Vincent Dupont <a href="#" onclick="location.href='mai'+'lto:'+'vin'+'ce'+'nt@'+'ot'+'ake'+'ys'+'.co'+'m'; return false;">vince<span class="obfuscator">.nosp@m.</span>nt@o<span class="obfuscator">.nosp@m.</span>takey<span class="obfuscator">.nosp@m.</span>s.co<span class="obfuscator">.nosp@m.</span>m</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;cpu.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="stm32__leds_8h.html">stm32_leds.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -254,10 +254,7 @@ $(function(){initNavTree('ublox-c030-u201_2include_2board_8h.html',''); initResi
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>GPS_RST_PIN</b>&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="atmega1281_2include_2periph__cpu_8h.html#abc6126af1d45847bc59afa0aa3216b04a627cc690c37f97527dd2f07aa22092d9">PORT_C</a>, 10) /* Not connected */</td></tr>
 <tr class="separator:ga967293fc3f0e7aa056ab9a2d73bc058c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Board specific definitions for the Ublox C030-U201 board. </p>
-<dl class="section author"><dt>Author</dt><dd>Vincent Dupont <a href="#" onclick="location.href='mai'+'lto:'+'vin'+'ce'+'nt@'+'ot'+'ake'+'ys'+'.co'+'m'; return false;">vince<span class="obfuscator">.nosp@m.</span>nt@o<span class="obfuscator">.nosp@m.</span>takey<span class="obfuscator">.nosp@m.</span>s.co<span class="obfuscator">.nosp@m.</span>m</a> </dd></dl>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
@@ -265,7 +262,7 @@ $(function(){initNavTree('ublox-c030-u201_2include_2board_8h.html',''); initResi
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6c8313236d9db5b969ca7d150fe527de.html">boards</a></li><li class="navelem"><a class="el" href="dir_cd44e3e05a827e83021da119af15b7e0.html">ublox-c030-u201</a></li><li class="navelem"><a class="el" href="dir_79e4253f10e45b49c4ff3c72eb9de592.html">include</a></li><li class="navelem"><a class="el" href="ublox-c030-u201_2include_2board_8h.html">board.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:28 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -141,13 +138,16 @@ $(function(){initNavTree('gnrc__netif__nrf24l01p__ng_8h.html',''); initResizable
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">gnrc_netif_nrf24l01p_ng.h File Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__netdev.html">Network Device Drivers</a> &raquo; <a class="el" href="group__drivers__nrf24l01p__ng.html">NRF24L01+ (NG) 2.4 GHz trasceiver driver</a> &#124; <a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__netdev.html">Network Device Drivers</a> &#124; <a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__netif.html">Network interface API</a></div></div></div>
+  <div class="headertitle"><div class="title">gnrc_netif_nrf24l01p_ng.h File Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__netdev.html">Network Device Drivers</a> &raquo; <a class="el" href="group__drivers__nrf24l01p__ng.html">NRF24L01+ (NG) 2.4 GHz trasceiver driver</a> &#124; <a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__netdev.html">Network Device Drivers</a> &#124; <a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__netif.html">Network interface API</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>NRF24L01+ (NG) adaptation for <a class="el" href="group__net__gnrc__netif.html">Network interface API</a>.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="gnrc_2netif_8h.html">net/gnrc/netif.h</a>&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>NRF24L01+ (NG) adaptation for <a class="el" href="group__net__gnrc__netif.html">Network interface API</a>. </p>
+<dl class="section author"><dt>Author</dt><dd>Fabian Hüßler <a href="#" onclick="location.href='mai'+'lto:'+'fab'+'ia'+'n.h'+'ue'+'ssl'+'er'+'@ov'+'gu'+'.de'; return false;">fabia<span class="obfuscator">.nosp@m.</span>n.hu<span class="obfuscator">.nosp@m.</span>essle<span class="obfuscator">.nosp@m.</span>r@ov<span class="obfuscator">.nosp@m.</span>gu.de</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;<a class="el" href="gnrc_2netif_8h.html">net/gnrc/netif.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for gnrc_netif_nrf24l01p_ng.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -164,10 +164,7 @@ $(function(){initNavTree('gnrc__netif__nrf24l01p__ng_8h.html',''); initResizable
 <tr class="memdesc:a5871320e30bfab60d8b69926abe31fbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an NRF24L01+ (NG) network interface.  <br /></td></tr>
 <tr class="separator:a5871320e30bfab60d8b69926abe31fbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>NRF24L01+ (NG) adaptation for <a class="el" href="group__net__gnrc__netif.html">Network interface API</a>. </p>
-<dl class="section author"><dt>Author</dt><dd>Fabian Hüßler <a href="#" onclick="location.href='mai'+'lto:'+'fab'+'ia'+'n.h'+'ue'+'ssl'+'er'+'@ov'+'gu'+'.de'; return false;">fabia<span class="obfuscator">.nosp@m.</span>n.hu<span class="obfuscator">.nosp@m.</span>essle<span class="obfuscator">.nosp@m.</span>r@ov<span class="obfuscator">.nosp@m.</span>gu.de</a> </dd></dl>
-</div><h2 class="groupheader">Function Documentation</h2>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="a5871320e30bfab60d8b69926abe31fbb" name="a5871320e30bfab60d8b69926abe31fbb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5871320e30bfab60d8b69926abe31fbb">&#9670;&#160;</a></span>gnrc_netif_nrf24l01p_ng_create()</h2>
 
@@ -234,7 +231,7 @@ negative number on error </dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_14bc92f4b96c8519b376567118ac28b3.html">drivers</a></li><li class="navelem"><a class="el" href="dir_b6a34837e8e0697a269c8983b810db17.html">nrf24l01p_ng</a></li><li class="navelem"><a class="el" href="dir_fcfc792b2e31cc116677f52d23578452.html">include</a></li><li class="navelem"><a class="el" href="gnrc__netif__nrf24l01p__ng_8h.html">gnrc_netif_nrf24l01p_ng.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

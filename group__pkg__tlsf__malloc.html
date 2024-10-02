@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -151,6 +148,11 @@ $(function(){initNavTree('group__pkg__tlsf__malloc.html',''); initResizable(true
 
 <p>TLSF-based global memory allocator.  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>TLSF-based global memory allocator. </p>
+<p>This is a malloc/free implementation built on top of the TLSF allocator. It defines a global tlsf_control block and performs allocations on that block. This implementation replaces the system malloc</p>
+<p>Additionally, the calls to TLSF are wrapped in <a class="el" href="group__core__irq.html#ga7cb620d77da293d98ccc1715d6cb9a02" title="This function sets the IRQ disable bit in the status register.">irq_disable()</a>/irq_restore(), to make it thread-safe.</p>
+<p>If this module is used as the system memory allocator, then the global memory control block should be initialized as the first thing before the stdlib is used. Boards should use <a class="el" href="#ga66c0db8f9341cb9daabef2d4b08b035a" title="Add an area of memory to the global allocator pool.">tlsf_add_global_pool()</a> at startup to add all the memory regions they want to make available for dynamic allocation via <a class="el" href="group__oneway__malloc.html#ga9c36d0fe3ec4675cbffdc9b52f5fb399" title="Allocation a block of memory.">malloc()</a>. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -178,11 +180,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:gae543b38e2f4916ed72ba6c0219663441"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a pointer to the global tlsf_control block.  <br /></td></tr>
 <tr class="separator:gae543b38e2f4916ed72ba6c0219663441"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>TLSF-based global memory allocator. </p>
-<p>This is a malloc/free implementation built on top of the TLSF allocator. It defines a global tlsf_control block and performs allocations on that block. This implementation replaces the system malloc</p>
-<p>Additionally, the calls to TLSF are wrapped in <a class="el" href="group__core__irq.html#ga7cb620d77da293d98ccc1715d6cb9a02" title="This function sets the IRQ disable bit in the status register.">irq_disable()</a>/irq_restore(), to make it thread-safe.</p>
-<p>If this module is used as the system memory allocator, then the global memory control block should be initialized as the first thing before the stdlib is used. Boards should use <a class="el" href="#ga66c0db8f9341cb9daabef2d4b08b035a" title="Add an area of memory to the global allocator pool.">tlsf_add_global_pool()</a> at startup to add all the memory regions they want to make available for dynamic allocation via <a class="el" href="group__oneway__malloc.html#ga9c36d0fe3ec4675cbffdc9b52f5fb399" title="Allocation a block of memory.">malloc()</a>. </p>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="gae543b38e2f4916ed72ba6c0219663441" name="gae543b38e2f4916ed72ba6c0219663441"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gae543b38e2f4916ed72ba6c0219663441">&#9670;&#160;</a></span>_tlsf_get_global_control()</h2>
@@ -287,7 +284,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

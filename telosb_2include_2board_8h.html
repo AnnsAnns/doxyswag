@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,17 @@ $(function(){initNavTree('telosb_2include_2board_8h.html',''); initResizable(tru
 
 <p>Basic definitions for the TelosB board.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;cpu.h&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Basic definitions for the TelosB board. </p>
+<h2>Components</h2>
+<ul>
+<li>MSP430 </li>
+<li>CC2420</li>
+</ul>
+<dl class="section author"><dt>Author</dt><dd>Oliver Hahm <a href="#" onclick="location.href='mai'+'lto:'+'oli'+'ve'+'r.h'+'ah'+'m@i'+'nr'+'ia.'+'fr'; return false;">olive<span class="obfuscator">.nosp@m.</span>r.ha<span class="obfuscator">.nosp@m.</span>hm@in<span class="obfuscator">.nosp@m.</span>ria.<span class="obfuscator">.nosp@m.</span>fr</a> </dd>
+<dd>
+Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;cpu.h&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for board.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -250,17 +257,7 @@ $(function(){initNavTree('telosb_2include_2board_8h.html',''); initResizable(tru
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CC2420_PARAM_RESET</b>&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="msp430_2include_2periph__cpu__common_8h.html#adbaf9202177df73e6880eab6e6aab329a65a6941d69885163848f971ec185e27d">P4</a>, 6)</td></tr>
 <tr class="separator:a55730527d876c9d25cae65f634402115"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Basic definitions for the TelosB board. </p>
-<h2>Components</h2>
-<ul>
-<li>MSP430 </li>
-<li>CC2420</li>
-</ul>
-<dl class="section author"><dt>Author</dt><dd>Oliver Hahm <a href="#" onclick="location.href='mai'+'lto:'+'oli'+'ve'+'r.h'+'ah'+'m@i'+'nr'+'ia.'+'fr'; return false;">olive<span class="obfuscator">.nosp@m.</span>r.ha<span class="obfuscator">.nosp@m.</span>hm@in<span class="obfuscator">.nosp@m.</span>ria.<span class="obfuscator">.nosp@m.</span>fr</a> </dd>
-<dd>
-Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
@@ -268,7 +265,7 @@ Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6c8313236d9db5b969ca7d150fe527de.html">boards</a></li><li class="navelem"><a class="el" href="dir_4fffcf6f01ace73bf2a6b561c72e3fa9.html">telosb</a></li><li class="navelem"><a class="el" href="dir_d2a1e28c2bd7642a73b6ec5cec7a0b1d.html">include</a></li><li class="navelem"><a class="el" href="telosb_2include_2board_8h.html">board.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:28 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

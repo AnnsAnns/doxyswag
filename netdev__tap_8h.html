@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -149,7 +146,11 @@ $(function(){initNavTree('netdev__tap_8h.html',''); initResizable(true); });
 
 <p>Low-level ethernet driver for native tap interfaces.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Low-level ethernet driver for native tap interfaces. </p>
+<p>Definitions for <a class="el" href="structnetdev.html">netdev</a> ethernet driver for host system's TAP interfaces</p>
+<dl class="section author"><dt>Author</dt><dd>Kaspar Schleiser <a href="#" onclick="location.href='mai'+'lto:'+'kas'+'pa'+'r@s'+'ch'+'lei'+'se'+'r.d'+'e'; return false;">kaspa<span class="obfuscator">.nosp@m.</span>r@sc<span class="obfuscator">.nosp@m.</span>hleis<span class="obfuscator">.nosp@m.</span>er.d<span class="obfuscator">.nosp@m.</span>e</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="drivers_2include_2net_2netdev_8h.html">net/netdev.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="net_2ethernet_2hdr_8h.html">net/ethernet/hdr.h</a>&quot;</code><br />
@@ -185,11 +186,7 @@ typedef struct <a class="el" href="structnetdev__tap.html">netdev_tap</a>&#160;<
 <tr class="memdesc:a20531dae982082bfe5b5bf435ea7019b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup netdev_tap_t structure.  <br /></td></tr>
 <tr class="separator:a20531dae982082bfe5b5bf435ea7019b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Low-level ethernet driver for native tap interfaces. </p>
-<p>Definitions for <a class="el" href="structnetdev.html">netdev</a> ethernet driver for host system's TAP interfaces</p>
-<dl class="section author"><dt>Author</dt><dd>Kaspar Schleiser <a href="#" onclick="location.href='mai'+'lto:'+'kas'+'pa'+'r@s'+'ch'+'lei'+'se'+'r.d'+'e'; return false;">kaspa<span class="obfuscator">.nosp@m.</span>r@sc<span class="obfuscator">.nosp@m.</span>hleis<span class="obfuscator">.nosp@m.</span>er.d<span class="obfuscator">.nosp@m.</span>e</a> </dd></dl>
-</div><h2 class="groupheader">Function Documentation</h2>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="a20531dae982082bfe5b5bf435ea7019b" name="a20531dae982082bfe5b5bf435ea7019b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a20531dae982082bfe5b5bf435ea7019b">&#9670;&#160;</a></span>netdev_tap_setup()</h2>
 
@@ -234,7 +231,7 @@ typedef struct <a class="el" href="structnetdev__tap.html">netdev_tap</a>&#160;<
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_c433b04169c945a1c7f0848f853d4379.html">cpu</a></li><li class="navelem"><a class="el" href="dir_08417b664fe5404ce1d8d11465ea350a.html">native</a></li><li class="navelem"><a class="el" href="dir_10f33502332143c94afd5e97ec1b514c.html">include</a></li><li class="navelem"><a class="el" href="netdev__tap_8h.html">netdev_tap.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

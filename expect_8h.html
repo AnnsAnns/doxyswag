@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -150,7 +147,16 @@ $(function(){initNavTree('expect_8h.html',''); initResizable(true); });
 
 <p>test "expect condition" utility function  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;<a class="el" href="stdio_8h.html">stdio.h</a>&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>test "expect condition" utility function </p>
+<dl class="section author"><dt>Author</dt><dd>Oliver Hahm <a href="#" onclick="location.href='mai'+'lto:'+'oli'+'ve'+'r.h'+'ah'+'m@i'+'nr'+'ia.'+'fr'; return false;">olive<span class="obfuscator">.nosp@m.</span>r.ha<span class="obfuscator">.nosp@m.</span>hm@in<span class="obfuscator">.nosp@m.</span>ria.<span class="obfuscator">.nosp@m.</span>fr</a> </dd>
+<dd>
+René Kijewski <a href="#" onclick="location.href='mai'+'lto:'+'ren'+'e.'+'kij'+'ew'+'ski'+'@f'+'u-b'+'er'+'lin'+'.d'+'e'; return false;">rene.<span class="obfuscator">.nosp@m.</span>kije<span class="obfuscator">.nosp@m.</span>wski@<span class="obfuscator">.nosp@m.</span>fu-b<span class="obfuscator">.nosp@m.</span>erlin<span class="obfuscator">.nosp@m.</span>.de</a> </dd>
+<dd>
+Martine Lenders <a href="#" onclick="location.href='mai'+'lto:'+'m.l'+'en'+'der'+'s@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">m.len<span class="obfuscator">.nosp@m.</span>ders<span class="obfuscator">.nosp@m.</span>@fu-b<span class="obfuscator">.nosp@m.</span>erli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
+<dd>
+Kaspar Schleiser <a href="#" onclick="location.href='mai'+'lto:'+'kas'+'pa'+'r@s'+'ch'+'lei'+'se'+'r.d'+'e'; return false;">kaspa<span class="obfuscator">.nosp@m.</span>r@sc<span class="obfuscator">.nosp@m.</span>hleis<span class="obfuscator">.nosp@m.</span>er.d<span class="obfuscator">.nosp@m.</span>e</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;<a class="el" href="stdio_8h.html">stdio.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="compiler__hints_8h.html">compiler_hints.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="panic_8h.html">panic.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -173,16 +179,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:gafc15db835caad3ec252d916a14d84d26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to handle failed expectation.  <br /></td></tr>
 <tr class="separator:gafc15db835caad3ec252d916a14d84d26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>test "expect condition" utility function </p>
-<dl class="section author"><dt>Author</dt><dd>Oliver Hahm <a href="#" onclick="location.href='mai'+'lto:'+'oli'+'ve'+'r.h'+'ah'+'m@i'+'nr'+'ia.'+'fr'; return false;">olive<span class="obfuscator">.nosp@m.</span>r.ha<span class="obfuscator">.nosp@m.</span>hm@in<span class="obfuscator">.nosp@m.</span>ria.<span class="obfuscator">.nosp@m.</span>fr</a> </dd>
-<dd>
-René Kijewski <a href="#" onclick="location.href='mai'+'lto:'+'ren'+'e.'+'kij'+'ew'+'ski'+'@f'+'u-b'+'er'+'lin'+'.d'+'e'; return false;">rene.<span class="obfuscator">.nosp@m.</span>kije<span class="obfuscator">.nosp@m.</span>wski@<span class="obfuscator">.nosp@m.</span>fu-b<span class="obfuscator">.nosp@m.</span>erlin<span class="obfuscator">.nosp@m.</span>.de</a> </dd>
-<dd>
-Martine Lenders <a href="#" onclick="location.href='mai'+'lto:'+'m.l'+'en'+'der'+'s@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">m.len<span class="obfuscator">.nosp@m.</span>ders<span class="obfuscator">.nosp@m.</span>@fu-b<span class="obfuscator">.nosp@m.</span>erli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
-<dd>
-Kaspar Schleiser <a href="#" onclick="location.href='mai'+'lto:'+'kas'+'pa'+'r@s'+'ch'+'lei'+'se'+'r.d'+'e'; return false;">kaspa<span class="obfuscator">.nosp@m.</span>r@sc<span class="obfuscator">.nosp@m.</span>hleis<span class="obfuscator">.nosp@m.</span>er.d<span class="obfuscator">.nosp@m.</span>e</a> </dd></dl>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
@@ -190,7 +187,7 @@ Kaspar Schleiser <a href="#" onclick="location.href='mai'+'lto:'+'kas'+'pa'+'r@s
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a408b6d3a4a484720bc3ecfeac8947e3.html">sys</a></li><li class="navelem"><a class="el" href="dir_e9e107fc86bbb4b6a326076a6808b9f5.html">include</a></li><li class="navelem"><a class="el" href="dir_7ef080edd107cb54929c0fc123276653.html">test_utils</a></li><li class="navelem"><a class="el" href="expect_8h.html">expect.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

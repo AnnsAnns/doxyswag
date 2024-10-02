@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -152,67 +149,6 @@ $(function(){initNavTree('group__sys__netdev__test.html',''); initResizable(true
 
 <p>Provides a test dummy for the netdev interface.  
 <a href="#details">More...</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="netdev__test_8h.html">netdev_test.h</a></td></tr>
-<tr class="memdesc:netdev__test_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__sys__netdev__test.html">netdev dummy test driver</a> definitions <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnetdev__test__t.html">netdev_test_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device descriptor for <a class="el" href="group__sys__netdev__test.html">netdev dummy test driver</a> devices.  <a href="structnetdev__test__t.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:ga73c2ab62347fcc9f9903aec327984f1b" id="r_ga73c2ab62347fcc9f9903aec327984f1b"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga73c2ab62347fcc9f9903aec327984f1b">netdev_test_send_cb_t</a>) (<a class="el" href="group__drivers__netdev__api.html#ga14012f723b7591ad2fa42ace34601ac4">netdev_t</a> *dev, const <a class="el" href="group__sys__iolist.html#gaa17f91ef26edec149cd806d8457aa3a0">iolist_t</a> *<a class="el" href="structiolist.html">iolist</a>)</td></tr>
-<tr class="memdesc:ga73c2ab62347fcc9f9903aec327984f1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback type to handle send command.  <br /></td></tr>
-<tr class="separator:ga73c2ab62347fcc9f9903aec327984f1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5585d493c7a197bacb67141de1508bfa" id="r_ga5585d493c7a197bacb67141de1508bfa"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5585d493c7a197bacb67141de1508bfa">netdev_test_recv_cb_t</a>) (<a class="el" href="group__drivers__netdev__api.html#ga14012f723b7591ad2fa42ace34601ac4">netdev_t</a> *dev, char *buf, int len, void *info)</td></tr>
-<tr class="memdesc:ga5585d493c7a197bacb67141de1508bfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback type to handle receive command.  <br /></td></tr>
-<tr class="separator:ga5585d493c7a197bacb67141de1508bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa2c4b5ae63c2328c226d9a98a61df200" id="r_gaa2c4b5ae63c2328c226d9a98a61df200"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa2c4b5ae63c2328c226d9a98a61df200">netdev_test_init_cb_t</a>) (<a class="el" href="group__drivers__netdev__api.html#ga14012f723b7591ad2fa42ace34601ac4">netdev_t</a> *dev)</td></tr>
-<tr class="memdesc:gaa2c4b5ae63c2328c226d9a98a61df200"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback type to handle device initialization.  <br /></td></tr>
-<tr class="separator:gaa2c4b5ae63c2328c226d9a98a61df200"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad1fdc8aa8f712433f20513821447673a" id="r_gad1fdc8aa8f712433f20513821447673a"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad1fdc8aa8f712433f20513821447673a">netdev_test_isr_cb_t</a>) (<a class="el" href="group__drivers__netdev__api.html#ga14012f723b7591ad2fa42ace34601ac4">netdev_t</a> *dev)</td></tr>
-<tr class="memdesc:gad1fdc8aa8f712433f20513821447673a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback type to handle user-space ISR events.  <br /></td></tr>
-<tr class="separator:gad1fdc8aa8f712433f20513821447673a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa451fa9a902bc5802cbd2929d3f13137" id="r_gaa451fa9a902bc5802cbd2929d3f13137"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa451fa9a902bc5802cbd2929d3f13137">netdev_test_get_cb_t</a>) (<a class="el" href="group__drivers__netdev__api.html#ga14012f723b7591ad2fa42ace34601ac4">netdev_t</a> *dev, void *value, size_t max_len)</td></tr>
-<tr class="memdesc:gaa451fa9a902bc5802cbd2929d3f13137"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback type to handle get commands.  <br /></td></tr>
-<tr class="separator:gaa451fa9a902bc5802cbd2929d3f13137"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga398b5a36557a886fcecc924b58a57b58" id="r_ga398b5a36557a886fcecc924b58a57b58"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga398b5a36557a886fcecc924b58a57b58">netdev_test_set_cb_t</a>) (<a class="el" href="group__drivers__netdev__api.html#ga14012f723b7591ad2fa42ace34601ac4">netdev_t</a> *dev, const void *value, size_t value_len)</td></tr>
-<tr class="memdesc:ga398b5a36557a886fcecc924b58a57b58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback type to handle set commands.  <br /></td></tr>
-<tr class="separator:ga398b5a36557a886fcecc924b58a57b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:gaf64de26c2dc7b0284e2f48bfb658f161" id="r_gaf64de26c2dc7b0284e2f48bfb658f161"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf64de26c2dc7b0284e2f48bfb658f161">netdev_test_set_send_cb</a> (<a class="el" href="structnetdev__test__t.html">netdev_test_t</a> *dev, <a class="el" href="#ga73c2ab62347fcc9f9903aec327984f1b">netdev_test_send_cb_t</a> send_cb)</td></tr>
-<tr class="memdesc:gaf64de26c2dc7b0284e2f48bfb658f161"><td class="mdescLeft">&#160;</td><td class="mdescRight">override send callback  <br /></td></tr>
-<tr class="separator:gaf64de26c2dc7b0284e2f48bfb658f161"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1d12dea32413dec3cf8e58b4ccaa3b94" id="r_ga1d12dea32413dec3cf8e58b4ccaa3b94"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1d12dea32413dec3cf8e58b4ccaa3b94">netdev_test_set_recv_cb</a> (<a class="el" href="structnetdev__test__t.html">netdev_test_t</a> *dev, <a class="el" href="#ga5585d493c7a197bacb67141de1508bfa">netdev_test_recv_cb_t</a> recv_cb)</td></tr>
-<tr class="memdesc:ga1d12dea32413dec3cf8e58b4ccaa3b94"><td class="mdescLeft">&#160;</td><td class="mdescRight">override receive callback  <br /></td></tr>
-<tr class="separator:ga1d12dea32413dec3cf8e58b4ccaa3b94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8fb59bb499dcbd9ec46dc4f3176962e3" id="r_ga8fb59bb499dcbd9ec46dc4f3176962e3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8fb59bb499dcbd9ec46dc4f3176962e3">netdev_test_set_init_cb</a> (<a class="el" href="structnetdev__test__t.html">netdev_test_t</a> *dev, <a class="el" href="#gaa2c4b5ae63c2328c226d9a98a61df200">netdev_test_init_cb_t</a> init_cb)</td></tr>
-<tr class="memdesc:ga8fb59bb499dcbd9ec46dc4f3176962e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">override initialization callback  <br /></td></tr>
-<tr class="separator:ga8fb59bb499dcbd9ec46dc4f3176962e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac1cedb97465e5c55ab90cec8efa2cba1" id="r_gac1cedb97465e5c55ab90cec8efa2cba1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac1cedb97465e5c55ab90cec8efa2cba1">netdev_test_set_isr_cb</a> (<a class="el" href="structnetdev__test__t.html">netdev_test_t</a> *dev, <a class="el" href="#gad1fdc8aa8f712433f20513821447673a">netdev_test_isr_cb_t</a> isr_cb)</td></tr>
-<tr class="memdesc:gac1cedb97465e5c55ab90cec8efa2cba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">override ISR event handler callback  <br /></td></tr>
-<tr class="separator:gac1cedb97465e5c55ab90cec8efa2cba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2e498c704ae0e3b8a6e50717338cfac0" id="r_ga2e498c704ae0e3b8a6e50717338cfac0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2e498c704ae0e3b8a6e50717338cfac0">netdev_test_set_get_cb</a> (<a class="el" href="structnetdev__test__t.html">netdev_test_t</a> *dev, <a class="el" href="group__net__netopt.html#ga19e30424c1ab107c9c84dc0cb29d9906">netopt_t</a> opt, <a class="el" href="#gaa451fa9a902bc5802cbd2929d3f13137">netdev_test_get_cb_t</a> get_cb)</td></tr>
-<tr class="memdesc:ga2e498c704ae0e3b8a6e50717338cfac0"><td class="mdescLeft">&#160;</td><td class="mdescRight">override get callback for a certain option type  <br /></td></tr>
-<tr class="separator:ga2e498c704ae0e3b8a6e50717338cfac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaefb108f32cbe272508b2781721498565" id="r_gaefb108f32cbe272508b2781721498565"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaefb108f32cbe272508b2781721498565">netdev_test_set_set_cb</a> (<a class="el" href="structnetdev__test__t.html">netdev_test_t</a> *dev, <a class="el" href="group__net__netopt.html#ga19e30424c1ab107c9c84dc0cb29d9906">netopt_t</a> opt, <a class="el" href="#ga398b5a36557a886fcecc924b58a57b58">netdev_test_set_cb_t</a> set_cb)</td></tr>
-<tr class="memdesc:gaefb108f32cbe272508b2781721498565"><td class="mdescLeft">&#160;</td><td class="mdescRight">override get callback for a certain option type  <br /></td></tr>
-<tr class="separator:gaefb108f32cbe272508b2781721498565"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacc16ae9eae4a074248b63b08fdbf0f04" id="r_gacc16ae9eae4a074248b63b08fdbf0f04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacc16ae9eae4a074248b63b08fdbf0f04">netdev_test_setup</a> (<a class="el" href="structnetdev__test__t.html">netdev_test_t</a> *dev, void *state)</td></tr>
-<tr class="memdesc:gacc16ae9eae4a074248b63b08fdbf0f04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup a given <a class="el" href="group__sys__netdev__test.html">netdev dummy test driver</a> device.  <br /></td></tr>
-<tr class="separator:gacc16ae9eae4a074248b63b08fdbf0f04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga23d7530d7455a87ff64eee0ae718e6c6" id="r_ga23d7530d7455a87ff64eee0ae718e6c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga23d7530d7455a87ff64eee0ae718e6c6">netdev_test_reset</a> (<a class="el" href="structnetdev__test__t.html">netdev_test_t</a> *dev)</td></tr>
-<tr class="memdesc:ga23d7530d7455a87ff64eee0ae718e6c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets all callbacks for the device to NULL.  <br /></td></tr>
-<tr class="separator:ga23d7530d7455a87ff64eee0ae718e6c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Provides a test dummy for the netdev interface. </p>
 <p>See the following simple packet traversal timer for an example. Note that this example assumes that the stack doesn't require any option values from the device and that the stack doesn't create packets on its own or looses packets (neither of those can be assumed for in-production stacks).</p>
@@ -281,6 +217,67 @@ Functions</h2></td></tr>
 <div class="ttc" id="aunionipv6__addr__t_html"><div class="ttname"><a href="unionipv6__addr__t.html">ipv6_addr_t</a></div><div class="ttdoc">Data type to represent an IPv6 address.</div><div class="ttdef"><b>Definition</b> addr.h:72</div></div>
 <div class="ttc" id="axtimer_8h_html"><div class="ttname"><a href="xtimer_8h.html">xtimer.h</a></div><div class="ttdoc">xtimer interface definitions</div></div>
 </div><!-- fragment --><p>To provide options to the stack, the <a class="el" href="structnetdev__test__t.html#a32bcefb719d58e6a1a9e674d1e346fb4">get callbacks</a> for the specific options need to be set. To catch lost packets and additional sent by the stack the send handler needs to be adapted accordingly. </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="netdev__test_8h.html">netdev_test.h</a></td></tr>
+<tr class="memdesc:netdev__test_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__sys__netdev__test.html">netdev dummy test driver</a> definitions <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnetdev__test__t.html">netdev_test_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device descriptor for <a class="el" href="group__sys__netdev__test.html">netdev dummy test driver</a> devices.  <a href="structnetdev__test__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga73c2ab62347fcc9f9903aec327984f1b" id="r_ga73c2ab62347fcc9f9903aec327984f1b"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga73c2ab62347fcc9f9903aec327984f1b">netdev_test_send_cb_t</a>) (<a class="el" href="group__drivers__netdev__api.html#ga14012f723b7591ad2fa42ace34601ac4">netdev_t</a> *dev, const <a class="el" href="group__sys__iolist.html#gaa17f91ef26edec149cd806d8457aa3a0">iolist_t</a> *<a class="el" href="structiolist.html">iolist</a>)</td></tr>
+<tr class="memdesc:ga73c2ab62347fcc9f9903aec327984f1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback type to handle send command.  <br /></td></tr>
+<tr class="separator:ga73c2ab62347fcc9f9903aec327984f1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5585d493c7a197bacb67141de1508bfa" id="r_ga5585d493c7a197bacb67141de1508bfa"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5585d493c7a197bacb67141de1508bfa">netdev_test_recv_cb_t</a>) (<a class="el" href="group__drivers__netdev__api.html#ga14012f723b7591ad2fa42ace34601ac4">netdev_t</a> *dev, char *buf, int len, void *info)</td></tr>
+<tr class="memdesc:ga5585d493c7a197bacb67141de1508bfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback type to handle receive command.  <br /></td></tr>
+<tr class="separator:ga5585d493c7a197bacb67141de1508bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa2c4b5ae63c2328c226d9a98a61df200" id="r_gaa2c4b5ae63c2328c226d9a98a61df200"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa2c4b5ae63c2328c226d9a98a61df200">netdev_test_init_cb_t</a>) (<a class="el" href="group__drivers__netdev__api.html#ga14012f723b7591ad2fa42ace34601ac4">netdev_t</a> *dev)</td></tr>
+<tr class="memdesc:gaa2c4b5ae63c2328c226d9a98a61df200"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback type to handle device initialization.  <br /></td></tr>
+<tr class="separator:gaa2c4b5ae63c2328c226d9a98a61df200"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad1fdc8aa8f712433f20513821447673a" id="r_gad1fdc8aa8f712433f20513821447673a"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad1fdc8aa8f712433f20513821447673a">netdev_test_isr_cb_t</a>) (<a class="el" href="group__drivers__netdev__api.html#ga14012f723b7591ad2fa42ace34601ac4">netdev_t</a> *dev)</td></tr>
+<tr class="memdesc:gad1fdc8aa8f712433f20513821447673a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback type to handle user-space ISR events.  <br /></td></tr>
+<tr class="separator:gad1fdc8aa8f712433f20513821447673a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa451fa9a902bc5802cbd2929d3f13137" id="r_gaa451fa9a902bc5802cbd2929d3f13137"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa451fa9a902bc5802cbd2929d3f13137">netdev_test_get_cb_t</a>) (<a class="el" href="group__drivers__netdev__api.html#ga14012f723b7591ad2fa42ace34601ac4">netdev_t</a> *dev, void *value, size_t max_len)</td></tr>
+<tr class="memdesc:gaa451fa9a902bc5802cbd2929d3f13137"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback type to handle get commands.  <br /></td></tr>
+<tr class="separator:gaa451fa9a902bc5802cbd2929d3f13137"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga398b5a36557a886fcecc924b58a57b58" id="r_ga398b5a36557a886fcecc924b58a57b58"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga398b5a36557a886fcecc924b58a57b58">netdev_test_set_cb_t</a>) (<a class="el" href="group__drivers__netdev__api.html#ga14012f723b7591ad2fa42ace34601ac4">netdev_t</a> *dev, const void *value, size_t value_len)</td></tr>
+<tr class="memdesc:ga398b5a36557a886fcecc924b58a57b58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback type to handle set commands.  <br /></td></tr>
+<tr class="separator:ga398b5a36557a886fcecc924b58a57b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gaf64de26c2dc7b0284e2f48bfb658f161" id="r_gaf64de26c2dc7b0284e2f48bfb658f161"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf64de26c2dc7b0284e2f48bfb658f161">netdev_test_set_send_cb</a> (<a class="el" href="structnetdev__test__t.html">netdev_test_t</a> *dev, <a class="el" href="#ga73c2ab62347fcc9f9903aec327984f1b">netdev_test_send_cb_t</a> send_cb)</td></tr>
+<tr class="memdesc:gaf64de26c2dc7b0284e2f48bfb658f161"><td class="mdescLeft">&#160;</td><td class="mdescRight">override send callback  <br /></td></tr>
+<tr class="separator:gaf64de26c2dc7b0284e2f48bfb658f161"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1d12dea32413dec3cf8e58b4ccaa3b94" id="r_ga1d12dea32413dec3cf8e58b4ccaa3b94"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1d12dea32413dec3cf8e58b4ccaa3b94">netdev_test_set_recv_cb</a> (<a class="el" href="structnetdev__test__t.html">netdev_test_t</a> *dev, <a class="el" href="#ga5585d493c7a197bacb67141de1508bfa">netdev_test_recv_cb_t</a> recv_cb)</td></tr>
+<tr class="memdesc:ga1d12dea32413dec3cf8e58b4ccaa3b94"><td class="mdescLeft">&#160;</td><td class="mdescRight">override receive callback  <br /></td></tr>
+<tr class="separator:ga1d12dea32413dec3cf8e58b4ccaa3b94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8fb59bb499dcbd9ec46dc4f3176962e3" id="r_ga8fb59bb499dcbd9ec46dc4f3176962e3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8fb59bb499dcbd9ec46dc4f3176962e3">netdev_test_set_init_cb</a> (<a class="el" href="structnetdev__test__t.html">netdev_test_t</a> *dev, <a class="el" href="#gaa2c4b5ae63c2328c226d9a98a61df200">netdev_test_init_cb_t</a> init_cb)</td></tr>
+<tr class="memdesc:ga8fb59bb499dcbd9ec46dc4f3176962e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">override initialization callback  <br /></td></tr>
+<tr class="separator:ga8fb59bb499dcbd9ec46dc4f3176962e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac1cedb97465e5c55ab90cec8efa2cba1" id="r_gac1cedb97465e5c55ab90cec8efa2cba1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac1cedb97465e5c55ab90cec8efa2cba1">netdev_test_set_isr_cb</a> (<a class="el" href="structnetdev__test__t.html">netdev_test_t</a> *dev, <a class="el" href="#gad1fdc8aa8f712433f20513821447673a">netdev_test_isr_cb_t</a> isr_cb)</td></tr>
+<tr class="memdesc:gac1cedb97465e5c55ab90cec8efa2cba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">override ISR event handler callback  <br /></td></tr>
+<tr class="separator:gac1cedb97465e5c55ab90cec8efa2cba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2e498c704ae0e3b8a6e50717338cfac0" id="r_ga2e498c704ae0e3b8a6e50717338cfac0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2e498c704ae0e3b8a6e50717338cfac0">netdev_test_set_get_cb</a> (<a class="el" href="structnetdev__test__t.html">netdev_test_t</a> *dev, <a class="el" href="group__net__netopt.html#ga19e30424c1ab107c9c84dc0cb29d9906">netopt_t</a> opt, <a class="el" href="#gaa451fa9a902bc5802cbd2929d3f13137">netdev_test_get_cb_t</a> get_cb)</td></tr>
+<tr class="memdesc:ga2e498c704ae0e3b8a6e50717338cfac0"><td class="mdescLeft">&#160;</td><td class="mdescRight">override get callback for a certain option type  <br /></td></tr>
+<tr class="separator:ga2e498c704ae0e3b8a6e50717338cfac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaefb108f32cbe272508b2781721498565" id="r_gaefb108f32cbe272508b2781721498565"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaefb108f32cbe272508b2781721498565">netdev_test_set_set_cb</a> (<a class="el" href="structnetdev__test__t.html">netdev_test_t</a> *dev, <a class="el" href="group__net__netopt.html#ga19e30424c1ab107c9c84dc0cb29d9906">netopt_t</a> opt, <a class="el" href="#ga398b5a36557a886fcecc924b58a57b58">netdev_test_set_cb_t</a> set_cb)</td></tr>
+<tr class="memdesc:gaefb108f32cbe272508b2781721498565"><td class="mdescLeft">&#160;</td><td class="mdescRight">override get callback for a certain option type  <br /></td></tr>
+<tr class="separator:gaefb108f32cbe272508b2781721498565"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacc16ae9eae4a074248b63b08fdbf0f04" id="r_gacc16ae9eae4a074248b63b08fdbf0f04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacc16ae9eae4a074248b63b08fdbf0f04">netdev_test_setup</a> (<a class="el" href="structnetdev__test__t.html">netdev_test_t</a> *dev, void *state)</td></tr>
+<tr class="memdesc:gacc16ae9eae4a074248b63b08fdbf0f04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup a given <a class="el" href="group__sys__netdev__test.html">netdev dummy test driver</a> device.  <br /></td></tr>
+<tr class="separator:gacc16ae9eae4a074248b63b08fdbf0f04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga23d7530d7455a87ff64eee0ae718e6c6" id="r_ga23d7530d7455a87ff64eee0ae718e6c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga23d7530d7455a87ff64eee0ae718e6c6">netdev_test_reset</a> (<a class="el" href="structnetdev__test__t.html">netdev_test_t</a> *dev)</td></tr>
+<tr class="memdesc:ga23d7530d7455a87ff64eee0ae718e6c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets all callbacks for the device to NULL.  <br /></td></tr>
+<tr class="separator:ga23d7530d7455a87ff64eee0ae718e6c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="gaa451fa9a902bc5802cbd2929d3f13137" name="gaa451fa9a902bc5802cbd2929d3f13137"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaa451fa9a902bc5802cbd2929d3f13137">&#9670;&#160;</a></span>netdev_test_get_cb_t</h2>
@@ -742,7 +739,7 @@ currently received packet size if buf == NULL </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

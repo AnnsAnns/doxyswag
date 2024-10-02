@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -153,7 +150,10 @@ $(function(){initNavTree('cpu_2rpx0xx_2include_2pio_2pio_8h.html',''); initResiz
 
 <p>Internal PIO interface.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;periph_conf.h&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Internal PIO interface. </p>
+<dl class="section author"><dt>Author</dt><dd>Fabian Hüßler <a href="#" onclick="location.href='mai'+'lto:'+'fab'+'ia'+'n.h'+'ue'+'ssl'+'er'+'@ov'+'gu'+'.de'; return false;">fabia<span class="obfuscator">.nosp@m.</span>n.hu<span class="obfuscator">.nosp@m.</span>essle<span class="obfuscator">.nosp@m.</span>r@ov<span class="obfuscator">.nosp@m.</span>gu.de</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;periph_conf.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="drivers_2include_2periph_2gpio_8h.html">periph/gpio.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="drivers_2include_2periph_2pio_8h.html">periph/pio.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -794,10 +794,7 @@ typedef uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>pio_instr
 <tr class="memdesc:a3d3388bc7b30f6167402ec682501121f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encode the delay/sideset instruction field.  <br /></td></tr>
 <tr class="separator:a3d3388bc7b30f6167402ec682501121f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Internal PIO interface. </p>
-<dl class="section author"><dt>Author</dt><dd>Fabian Hüßler <a href="#" onclick="location.href='mai'+'lto:'+'fab'+'ia'+'n.h'+'ue'+'ssl'+'er'+'@ov'+'gu'+'.de'; return false;">fabia<span class="obfuscator">.nosp@m.</span>n.hu<span class="obfuscator">.nosp@m.</span>essle<span class="obfuscator">.nosp@m.</span>r@ov<span class="obfuscator">.nosp@m.</span>gu.de</a> </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="afa5466878b3eb7888e3022e19fda4f39" name="afa5466878b3eb7888e3022e19fda4f39"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afa5466878b3eb7888e3022e19fda4f39">&#9670;&#160;</a></span>PIO_GPIO_INIT_HIGH</h2>
 
@@ -3720,7 +3717,7 @@ typedef uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>pio_instr
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_c433b04169c945a1c7f0848f853d4379.html">cpu</a></li><li class="navelem"><a class="el" href="dir_51c24c621e5e0a29f190f93edfd603ea.html">rpx0xx</a></li><li class="navelem"><a class="el" href="dir_d1bed448e11ac3cf8dfa01d71c0d1f6d.html">include</a></li><li class="navelem"><a class="el" href="dir_04c8cc3fb1a887e4d12f23c4695c2143.html">pio</a></li><li class="navelem"><a class="el" href="cpu_2rpx0xx_2include_2pio_2pio_8h.html">pio.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

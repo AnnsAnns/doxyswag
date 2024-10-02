@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -143,13 +140,20 @@ $(function(){initNavTree('pkg_2semtech-loramac_2include_2semtech-loramac_2timer_
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a>  </div>
-  <div class="headertitle"><div class="title">timer.h File Reference<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__pkg__semtech-loramac.html">Semtech LoRaMAC implementation</a></div></div></div>
+  <div class="headertitle"><div class="title">timer.h File Reference<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__pkg__semtech-loramac.html">Semtech LoRaMAC implementation</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Semtech LoRaMAC timer compatibility definitions.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="ztimer_8h.html">ztimer.h</a>&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Semtech LoRaMAC timer compatibility definitions. </p>
+<dl class="section author"><dt>Author</dt><dd>José Ignacio Alamos <a href="#" onclick="location.href='mai'+'lto:'+'jia'+'la'+'mos'+'@u'+'c.c'+'l'; return false;">jiala<span class="obfuscator">.nosp@m.</span>mos@<span class="obfuscator">.nosp@m.</span>uc.cl</a> </dd>
+<dd>
+Alexandre Abadie <a href="#" onclick="location.href='mai'+'lto:'+'ale'+'xa'+'ndr'+'e.'+'aba'+'di'+'e@i'+'nr'+'ia.'+'fr'; return false;">alexa<span class="obfuscator">.nosp@m.</span>ndre<span class="obfuscator">.nosp@m.</span>.abad<span class="obfuscator">.nosp@m.</span>ie@i<span class="obfuscator">.nosp@m.</span>nria.<span class="obfuscator">.nosp@m.</span>fr</a> </dd>
+<dd>
+Francisco Molina <a href="#" onclick="location.href='mai'+'lto:'+'fra'+'nc'+'isc'+'o.'+'mol'+'in'+'a@i'+'nr'+'ia.'+'cl'; return false;">franc<span class="obfuscator">.nosp@m.</span>isco<span class="obfuscator">.nosp@m.</span>.moli<span class="obfuscator">.nosp@m.</span>na@i<span class="obfuscator">.nosp@m.</span>nria.<span class="obfuscator">.nosp@m.</span>cl</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;<a class="el" href="ztimer_8h.html">ztimer.h</a>&quot;</code><br />
 <code>#include &quot;msg.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="semtech__loramac_8h.html">semtech_loramac.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -206,14 +210,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>TimerLowPowerHandler<
 <tr class="memdesc:a317a7a41ad85f368cf07c4db74bf1563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manages the entry into low power mode. <br /></td></tr>
 <tr class="separator:a317a7a41ad85f368cf07c4db74bf1563"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Semtech LoRaMAC timer compatibility definitions. </p>
-<dl class="section author"><dt>Author</dt><dd>José Ignacio Alamos <a href="#" onclick="location.href='mai'+'lto:'+'jia'+'la'+'mos'+'@u'+'c.c'+'l'; return false;">jiala<span class="obfuscator">.nosp@m.</span>mos@<span class="obfuscator">.nosp@m.</span>uc.cl</a> </dd>
-<dd>
-Alexandre Abadie <a href="#" onclick="location.href='mai'+'lto:'+'ale'+'xa'+'ndr'+'e.'+'aba'+'di'+'e@i'+'nr'+'ia.'+'fr'; return false;">alexa<span class="obfuscator">.nosp@m.</span>ndre<span class="obfuscator">.nosp@m.</span>.abad<span class="obfuscator">.nosp@m.</span>ie@i<span class="obfuscator">.nosp@m.</span>nria.<span class="obfuscator">.nosp@m.</span>fr</a> </dd>
-<dd>
-Francisco Molina <a href="#" onclick="location.href='mai'+'lto:'+'fra'+'nc'+'isc'+'o.'+'mol'+'in'+'a@i'+'nr'+'ia.'+'cl'; return false;">franc<span class="obfuscator">.nosp@m.</span>isco<span class="obfuscator">.nosp@m.</span>.moli<span class="obfuscator">.nosp@m.</span>na@i<span class="obfuscator">.nosp@m.</span>nria.<span class="obfuscator">.nosp@m.</span>cl</a> </dd></dl>
-</div><h2 class="groupheader">Function Documentation</h2>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="a2b801c1a13b71247424701f9a034f7ca" name="a2b801c1a13b71247424701f9a034f7ca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2b801c1a13b71247424701f9a034f7ca">&#9670;&#160;</a></span>TimerGetCurrentTime()</h2>
 
@@ -430,7 +427,7 @@ Francisco Molina <a href="#" onclick="location.href='mai'+'lto:'+'fra'+'nc'+'isc
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_1b757248df2f96757224e5c7d0d8f21a.html">pkg</a></li><li class="navelem"><a class="el" href="dir_37897307909f7391789a6e9c0e572be0.html">semtech-loramac</a></li><li class="navelem"><a class="el" href="dir_b7923f552e1f85164bbe5afcff326fb1.html">include</a></li><li class="navelem"><a class="el" href="dir_6aa2b372035b838446f9a5ed23a7a3a9.html">semtech-loramac</a></li><li class="navelem"><a class="el" href="pkg_2semtech-loramac_2include_2semtech-loramac_2timer_8h.html">timer.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

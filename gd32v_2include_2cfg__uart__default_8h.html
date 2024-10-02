@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,12 @@ $(function(){initNavTree('gd32v_2include_2cfg__uart__default_8h.html',''); initR
 
 <p>Default UART configuration for GD32VF103 boards.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;periph_cpu.h&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Default UART configuration for GD32VF103 boards. </p>
+<dl class="section author"><dt>Author</dt><dd>Koen Zandberg <a href="#" onclick="location.href='mai'+'lto:'+'koe'+'n@'+'ber'+'gz'+'and'+'.n'+'et'; return false;">koen@<span class="obfuscator">.nosp@m.</span>berg<span class="obfuscator">.nosp@m.</span>zand.<span class="obfuscator">.nosp@m.</span>net</a> </dd>
+<dd>
+Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span class="obfuscator">.nosp@m.</span>@sch<span class="obfuscator">.nosp@m.</span>orcht<span class="obfuscator">.nosp@m.</span>.net</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;periph_cpu.h&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for cfg_uart_default.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -166,12 +168,7 @@ $(function(){initNavTree('gd32v_2include_2cfg__uart__default_8h.html',''); initR
 <tr class="memitem:a1643cfc64589407fb96b4cbf908689a5" id="r_a1643cfc64589407fb96b4cbf908689a5"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structuart__conf__t.html">uart_conf_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1643cfc64589407fb96b4cbf908689a5">uart_config</a> []</td></tr>
 <tr class="separator:a1643cfc64589407fb96b4cbf908689a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Default UART configuration for GD32VF103 boards. </p>
-<dl class="section author"><dt>Author</dt><dd>Koen Zandberg <a href="#" onclick="location.href='mai'+'lto:'+'koe'+'n@'+'ber'+'gz'+'and'+'.n'+'et'; return false;">koen@<span class="obfuscator">.nosp@m.</span>berg<span class="obfuscator">.nosp@m.</span>zand.<span class="obfuscator">.nosp@m.</span>net</a> </dd>
-<dd>
-Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span class="obfuscator">.nosp@m.</span>@sch<span class="obfuscator">.nosp@m.</span>orcht<span class="obfuscator">.nosp@m.</span>.net</a> </dd></dl>
-</div><h2 class="groupheader">Variable Documentation</h2>
+<h2 class="groupheader">Variable Documentation</h2>
 <a id="a1643cfc64589407fb96b4cbf908689a5" name="a1643cfc64589407fb96b4cbf908689a5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1643cfc64589407fb96b4cbf908689a5">&#9670;&#160;</a></span>uart_config</h2>
 
@@ -215,7 +212,7 @@ Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6c8313236d9db5b969ca7d150fe527de.html">boards</a></li><li class="navelem"><a class="el" href="dir_c95ba9ba7fbc2fbce23d1bdfa8cd1c6b.html">common</a></li><li class="navelem"><a class="el" href="dir_364ff26d698c8daa28b664dd92a6808e.html">gd32v</a></li><li class="navelem"><a class="el" href="dir_4f69095cf6feec4deec5b2693157b8b2.html">include</a></li><li class="navelem"><a class="el" href="gd32v_2include_2cfg__uart__default_8h.html">cfg_uart_default.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:28 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:07 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

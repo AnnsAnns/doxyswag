@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -152,6 +149,21 @@ $(function(){initNavTree('group__drivers__isl29125.html',''); initResizable(true
 
 <p>Device driver for the ISL29125 RGB light sensor  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Device driver for the ISL29125 RGB light sensor </p>
+<h2><a class="anchor" id="autotoc_md1660"></a>
+Description</h2>
+<p>The device supports level conversion in 12, and 16 bit depth per channel. Selecting a higher precision results in a longer conversion time.</p>
+<p>The driver uses the <a class="el" href="structcolor__rgb__t.html">color_rgb_t</a> color definition from <a class="el" href="color_8h.html">color.h</a> for value representation. It does not depend on the color module however.</p>
+<h2><a class="anchor" id="autotoc_md1661"></a>
+Usage</h2>
+<p>Examine <code>tests/drivers/isr29125</code> for an exemplary application using this driver.</p>
+<h2><a class="anchor" id="autotoc_md1662"></a>
+Caveats</h2>
+<p>A GPIO pin definition has been included in the interface for future compatibility only.</p><ul>
+<li>The driver does not support SYNC mode at the moment.</li>
+<li>The driver supports polling only, i.e. interrupt mode is currently not supported. </li>
+</ul>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -244,21 +256,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:gac5c4d806b0b4f337d499afa6bf1d1e1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read isl29125 interrupt status.  <br /></td></tr>
 <tr class="separator:gac5c4d806b0b4f337d499afa6bf1d1e1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Device driver for the ISL29125 RGB light sensor </p>
-<h2><a class="anchor" id="autotoc_md1660"></a>
-Description</h2>
-<p>The device supports level conversion in 12, and 16 bit depth per channel. Selecting a higher precision results in a longer conversion time.</p>
-<p>The driver uses the <a class="el" href="structcolor__rgb__t.html">color_rgb_t</a> color definition from <a class="el" href="color_8h.html">color.h</a> for value representation. It does not depend on the color module however.</p>
-<h2><a class="anchor" id="autotoc_md1661"></a>
-Usage</h2>
-<p>Examine <code>tests/drivers/isr29125</code> for an exemplary application using this driver.</p>
-<h2><a class="anchor" id="autotoc_md1662"></a>
-Caveats</h2>
-<p>A GPIO pin definition has been included in the interface for future compatibility only.</p><ul>
-<li>The driver does not support SYNC mode at the moment.</li>
-<li>The driver supports polling only, i.e. interrupt mode is currently not supported. </li>
-</ul>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="ga636d959d088e2c441198bbc7308ac82c" name="ga636d959d088e2c441198bbc7308ac82c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga636d959d088e2c441198bbc7308ac82c">&#9670;&#160;</a></span>isl29125_interrupt_conven_t</h2>
@@ -642,7 +639,7 @@ Caveats</h2>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

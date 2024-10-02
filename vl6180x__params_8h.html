@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -149,7 +146,10 @@ $(function(){initNavTree('vl6180x__params_8h.html',''); initResizable(true); });
 
 <p>Default configuration for ST VL6180X Ranging and Ambient Light Sensing (ALS) module.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;board.h&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Default configuration for ST VL6180X Ranging and Ambient Light Sensing (ALS) module. </p>
+<dl class="section author"><dt>Author</dt><dd>Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span class="obfuscator">.nosp@m.</span>@sch<span class="obfuscator">.nosp@m.</span>orcht<span class="obfuscator">.nosp@m.</span>.net</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;board.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="saul__reg_8h.html">saul_reg.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="vl6180x_8h.html">vl6180x.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -261,10 +261,7 @@ Variables</h2></td></tr>
 <tr class="memdesc:ab8a2cd25cd752a6edb5bc0afe6b55ba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default SAUL information. <br /></td></tr>
 <tr class="separator:ab8a2cd25cd752a6edb5bc0afe6b55ba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Default configuration for ST VL6180X Ranging and Ambient Light Sensing (ALS) module. </p>
-<dl class="section author"><dt>Author</dt><dd>Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span class="obfuscator">.nosp@m.</span>@sch<span class="obfuscator">.nosp@m.</span>orcht<span class="obfuscator">.nosp@m.</span>.net</a> </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a07ed1b7561d7ecbd6d7cef234ddf996b" name="a07ed1b7561d7ecbd6d7cef234ddf996b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a07ed1b7561d7ecbd6d7cef234ddf996b">&#9670;&#160;</a></span>VL6180X_PARAM_ALS</h2>
 
@@ -428,7 +425,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_14bc92f4b96c8519b376567118ac28b3.html">drivers</a></li><li class="navelem"><a class="el" href="dir_8c688d18f74352b6f39d0bd274e373e9.html">vl6180x</a></li><li class="navelem"><a class="el" href="dir_7770edf365de8c074753eeb8c718ab5b.html">include</a></li><li class="navelem"><a class="el" href="vl6180x__params_8h.html">vl6180x_params.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -150,6 +147,14 @@ $(function(){initNavTree('group__drivers__periph__hwrng.html',''); initResizable
 
 <p>Peripheral hardware random number generator interface  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Peripheral hardware random number generator interface </p>
+<p>The HWRNG interface abstracts means provided by MCU peripherals to create random number. On most platforms, these peripherals are called something like 'hardware random number generator' or 'pseudo random number generator'. The quality of the created random data does differ quite a bit between different MCUs, so please refer to your MCUs reference manual for information on this!</p>
+<dl class="section note"><dt>Note</dt><dd>Refer to your platforms MCU reference manual for information on the quality of the used (pseudo) random number generator!</dd></dl>
+<h1><a class="anchor" id="autotoc_md1706"></a>
+(Low-) Power Implications</h1>
+<p>The HWRNG implementation <b>should</b> consume no additional power while no read operation is in progress. This means, that the HWRNG peripheral should be disabled (e.g. through peripheral clock gating) after the initialization and that it <b>should</b> only be turned on while <a class="el" href="#ga7c042e4ffb0cf6574f197955967e2d86" title="Read N bytes of random data from the hardware device.">hwrng_read()</a> is active.</p>
+<p>If the implementation puts the active thread to sleep during <a class="el" href="#ga7c042e4ffb0cf6574f197955967e2d86" title="Read N bytes of random data from the hardware device.">hwrng_read()</a>, it might need to block certain power modes on some platforms during this time. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -166,14 +171,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga7c042e4ffb0cf6574f197955967e2d86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read N bytes of random data from the hardware device.  <br /></td></tr>
 <tr class="separator:ga7c042e4ffb0cf6574f197955967e2d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Peripheral hardware random number generator interface </p>
-<p>The HWRNG interface abstracts means provided by MCU peripherals to create random number. On most platforms, these peripherals are called something like 'hardware random number generator' or 'pseudo random number generator'. The quality of the created random data does differ quite a bit between different MCUs, so please refer to your MCUs reference manual for information on this!</p>
-<dl class="section note"><dt>Note</dt><dd>Refer to your platforms MCU reference manual for information on the quality of the used (pseudo) random number generator!</dd></dl>
-<h1><a class="anchor" id="autotoc_md1706"></a>
-(Low-) Power Implications</h1>
-<p>The HWRNG implementation <b>should</b> consume no additional power while no read operation is in progress. This means, that the HWRNG peripheral should be disabled (e.g. through peripheral clock gating) after the initialization and that it <b>should</b> only be turned on while <a class="el" href="#ga7c042e4ffb0cf6574f197955967e2d86" title="Read N bytes of random data from the hardware device.">hwrng_read()</a> is active.</p>
-<p>If the implementation puts the active thread to sleep during <a class="el" href="#ga7c042e4ffb0cf6574f197955967e2d86" title="Read N bytes of random data from the hardware device.">hwrng_read()</a>, it might need to block certain power modes on some platforms during this time. </p>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ga742ed475897cb8f8b9abaee758171145" name="ga742ed475897cb8f8b9abaee758171145"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga742ed475897cb8f8b9abaee758171145">&#9670;&#160;</a></span>hwrng_init()</h2>
@@ -233,7 +230,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

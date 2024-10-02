@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,10 @@ $(function(){initNavTree('samd10-xmini_2include_2board_8h.html',''); initResizab
 
 <p>Board specific definitions for the Atmel SAM D10 Xplained Mini board.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;cpu.h&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Board specific definitions for the Atmel SAM D10 Xplained Mini board. </p>
+<dl class="section author"><dt>Author</dt><dd>Benjamin Valentin <a href="#" onclick="location.href='mai'+'lto:'+'ben'+'ja'+'min'+'.v'+'ale'+'nt'+'in@'+'ml'+'-pa'+'.c'+'om'; return false;">benja<span class="obfuscator">.nosp@m.</span>min.<span class="obfuscator">.nosp@m.</span>valen<span class="obfuscator">.nosp@m.</span>tin@<span class="obfuscator">.nosp@m.</span>ml-pa<span class="obfuscator">.nosp@m.</span>.com</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;cpu.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="boards_2samd10-xmini_2include_2periph__conf_8h.html">periph_conf.h</a>&quot;</code><br />
 <code>#include &quot;periph_cpu.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="drivers_2include_2periph_2gpio_8h.html">periph/gpio.h</a>&quot;</code><br />
@@ -201,10 +201,7 @@ $(function(){initNavTree('samd10-xmini_2include_2board_8h.html',''); initResizab
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>BTN0_MODE</b>&#160;&#160;&#160;GPIO_IN_PU</td></tr>
 <tr class="separator:a904884feea8e03c30c9a85ca6d7a8e5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Board specific definitions for the Atmel SAM D10 Xplained Mini board. </p>
-<dl class="section author"><dt>Author</dt><dd>Benjamin Valentin <a href="#" onclick="location.href='mai'+'lto:'+'ben'+'ja'+'min'+'.v'+'ale'+'nt'+'in@'+'ml'+'-pa'+'.c'+'om'; return false;">benja<span class="obfuscator">.nosp@m.</span>min.<span class="obfuscator">.nosp@m.</span>valen<span class="obfuscator">.nosp@m.</span>tin@<span class="obfuscator">.nosp@m.</span>ml-pa<span class="obfuscator">.nosp@m.</span>.com</a> </dd></dl>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
@@ -212,7 +209,7 @@ $(function(){initNavTree('samd10-xmini_2include_2board_8h.html',''); initResizab
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6c8313236d9db5b969ca7d150fe527de.html">boards</a></li><li class="navelem"><a class="el" href="dir_92f113633ae414e0028e7d6851851b58.html">samd10-xmini</a></li><li class="navelem"><a class="el" href="dir_3ce7092670fbdb9beeb94575a69b1cf0.html">include</a></li><li class="navelem"><a class="el" href="samd10-xmini_2include_2board_8h.html">board.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:28 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -149,7 +146,10 @@ $(function(){initNavTree('structpthread__rwlock__t.html',''); initResizable(true
 
 <p>A fair reader writer lock.  
  <a href="#details">More...</a></p>
-
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A fair reader writer lock. </p>
+<p>The implementation ensures that readers and writers of the same priority won't starve each other. E.g. no new readers will get into the critical section if a writer of the same or a higher priority already waits for the lock. </p>
+</div>
 <p><code>#include &lt;pthread_rwlock.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -166,10 +166,7 @@ Data Fields</h2></td></tr>
 <tr class="memdesc:adabc4b6223d443ec80e25a99b2ded764"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides mutual exclusion on reading and writing on the structure. <br /></td></tr>
 <tr class="separator:adabc4b6223d443ec80e25a99b2ded764"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A fair reader writer lock. </p>
-<p>The implementation ensures that readers and writers of the same priority won't starve each other. E.g. no new readers will get into the critical section if a writer of the same or a higher priority already waits for the lock. </p>
-</div><h2 class="groupheader">Field Documentation</h2>
+<h2 class="groupheader">Field Documentation</h2>
 <a id="a21d3ee4d8fab0554c5cf907f68e6acb7" name="a21d3ee4d8fab0554c5cf907f68e6acb7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a21d3ee4d8fab0554c5cf907f68e6acb7">&#9670;&#160;</a></span>readers</h2>
 
@@ -202,7 +199,7 @@ Data Fields</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structpthread__rwlock__t.html">pthread_rwlock_t</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:32 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:11 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,11 @@ $(function(){initNavTree('esp32s3-usb-otg_2include_2board_8h.html',''); initResi
 
 <p>Board definitions for the ESP32-S3-USB-OTG boards.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Board definitions for the ESP32-S3-USB-OTG boards. </p>
+<p>Any modifications required for specific applications can be overridden by <a class="el" href="group__cpu__esp32.html#esp32_application_specific_configurations">application-specific board configuration</a>.</p>
+<dl class="section author"><dt>Author</dt><dd>Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span class="obfuscator">.nosp@m.</span>@sch<span class="obfuscator">.nosp@m.</span>orcht<span class="obfuscator">.nosp@m.</span>.net</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;board_common.h&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for board.h:</div>
@@ -268,11 +269,7 @@ $(function(){initNavTree('esp32s3-usb-otg_2include_2board_8h.html',''); initResi
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>SDCARD_SPI_PARAM_POWER</b>&#160;&#160;&#160;<a class="el" href="atmega__common_2include_2periph__cpu__common_8h.html#a3969ce1e494a72d3c2925b10ddeb4604">GPIO_UNDEF</a></td></tr>
 <tr class="separator:a1b39ba3680695d6a0197bf66295fb7ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Board definitions for the ESP32-S3-USB-OTG boards. </p>
-<p>Any modifications required for specific applications can be overridden by <a class="el" href="group__cpu__esp32.html#esp32_application_specific_configurations">application-specific board configuration</a>.</p>
-<dl class="section author"><dt>Author</dt><dd>Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span class="obfuscator">.nosp@m.</span>@sch<span class="obfuscator">.nosp@m.</span>orcht<span class="obfuscator">.nosp@m.</span>.net</a> </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="aab5c3eca54046333af52593b9e360270" name="aab5c3eca54046333af52593b9e360270"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aab5c3eca54046333af52593b9e360270">&#9670;&#160;</a></span>BTN0_PIN</h2>
 
@@ -349,7 +346,7 @@ $(function(){initNavTree('esp32s3-usb-otg_2include_2board_8h.html',''); initResi
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6c8313236d9db5b969ca7d150fe527de.html">boards</a></li><li class="navelem"><a class="el" href="dir_654e0f881c099d358f62715ce4cb33c5.html">esp32s3-usb-otg</a></li><li class="navelem"><a class="el" href="dir_f37dd3056e04126f2918ecaf369d9c7c.html">include</a></li><li class="navelem"><a class="el" href="esp32s3-usb-otg_2include_2board_8h.html">board.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:28 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

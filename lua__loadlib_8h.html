@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,10 @@ $(function(){initNavTree('lua__loadlib_8h.html',''); initResizable(true); });
 
 <p>Lightweight C interface to the package loader.  
 <a href="#details">More...</a></p>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Lightweight C interface to the package loader. </p>
+<dl class="section author"><dt>Author</dt><dd>Juan Carrano <a href="#" onclick="location.href='mai'+'lto:'+'j.c'+'ar'+'ran'+'o@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">j.car<span class="obfuscator">.nosp@m.</span>rano<span class="obfuscator">.nosp@m.</span>@fu-b<span class="obfuscator">.nosp@m.</span>erli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
+</div><table class="memberdecls">
 <tr class="memitem:a7410002304e43a4b787d19ca7ef88fbd" id="r_a7410002304e43a4b787d19ca7ef88fbd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7410002304e43a4b787d19ca7ef88fbd">LUAR_MODULE_NOTFOUND</a>&#160;&#160;&#160;50</td></tr>
 <tr class="memdesc:a7410002304e43a4b787d19ca7ef88fbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error code for when a modules is not found.  <br /></td></tr>
 <tr class="separator:a7410002304e43a4b787d19ca7ef88fbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -155,10 +155,7 @@ $(function(){initNavTree('lua__loadlib_8h.html',''); initResizable(true); });
 <tr class="memdesc:a9d167b5ec486c10513f38573a24941c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a module as a chunk.  <br /></td></tr>
 <tr class="separator:a9d167b5ec486c10513f38573a24941c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Lightweight C interface to the package loader. </p>
-<dl class="section author"><dt>Author</dt><dd>Juan Carrano <a href="#" onclick="location.href='mai'+'lto:'+'j.c'+'ar'+'ran'+'o@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">j.car<span class="obfuscator">.nosp@m.</span>rano<span class="obfuscator">.nosp@m.</span>@fu-b<span class="obfuscator">.nosp@m.</span>erli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a7410002304e43a4b787d19ca7ef88fbd" name="a7410002304e43a4b787d19ca7ef88fbd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7410002304e43a4b787d19ca7ef88fbd">&#9670;&#160;</a></span>LUAR_MODULE_NOTFOUND</h2>
 
@@ -218,7 +215,7 @@ $(function(){initNavTree('lua__loadlib_8h.html',''); initResizable(true); });
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_1b757248df2f96757224e5c7d0d8f21a.html">pkg</a></li><li class="navelem"><a class="el" href="dir_9c1b3943edbb5992967759649898d62b.html">lua</a></li><li class="navelem"><a class="el" href="dir_7f792c53b91c6ee772439e3bab01277e.html">include</a></li><li class="navelem"><a class="el" href="lua__loadlib_8h.html">lua_loadlib.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -149,7 +146,15 @@ $(function(){initNavTree('structcc110x__patable__t.html',''); initResizable(true
 
 <p>Structure that holds the PATABLE, which allows to configure the 8 available output power levels using a magic number for each level.  
  <a href="#details">More...</a></p>
-
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Structure that holds the PATABLE, which allows to configure the 8 available output power levels using a magic number for each level. </p>
+<p>See Section "24 Output Power Programming" on page 59ff in the data sheet. The values suggested in Table 39 on page 60 in the data sheet are already available by this driver, but will only be linked in (8 bytes of ROM size) when they are referenced.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="cc110x__settings_8h.html#abcd2a6fd28da795cad5edc4702d236ab" title="PATABLE values for the 433 MHz band.">cc110x_patable_433mhz</a> </dd>
+<dd>
+<a class="el" href="cc110x__settings_8h.html#a4524107126329e412f8ce97a8aca65d3" title="PATABLE values for the 868 MHz band.">cc110x_patable_868mhz</a> </dd>
+<dd>
+<a class="el" href="cc110x__settings_8h.html#a6b043be07763d32d96da8de867388b1b" title="PATABLE values for the 915 MHz band.">cc110x_patable_915mhz</a> </dd></dl>
+</div>
 <p><code>#include &lt;cc110x.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -159,15 +164,7 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>data</b> [8]</td><
 <tr class="memdesc:a8be026dc5c5a027e22995d7db9375655"><td class="mdescLeft">&#160;</td><td class="mdescRight">Magic number to store in the configuration register. <br /></td></tr>
 <tr class="separator:a8be026dc5c5a027e22995d7db9375655"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Structure that holds the PATABLE, which allows to configure the 8 available output power levels using a magic number for each level. </p>
-<p>See Section "24 Output Power Programming" on page 59ff in the data sheet. The values suggested in Table 39 on page 60 in the data sheet are already available by this driver, but will only be linked in (8 bytes of ROM size) when they are referenced.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="cc110x__settings_8h.html#abcd2a6fd28da795cad5edc4702d236ab" title="PATABLE values for the 433 MHz band.">cc110x_patable_433mhz</a> </dd>
-<dd>
-<a class="el" href="cc110x__settings_8h.html#a4524107126329e412f8ce97a8aca65d3" title="PATABLE values for the 868 MHz band.">cc110x_patable_868mhz</a> </dd>
-<dd>
-<a class="el" href="cc110x__settings_8h.html#a6b043be07763d32d96da8de867388b1b" title="PATABLE values for the 915 MHz band.">cc110x_patable_915mhz</a> </dd></dl>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>drivers/include/<a class="el" href="cc110x_8h.html">cc110x.h</a></li>
 </ul>
 </div><!-- contents -->
@@ -178,7 +175,7 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>data</b> [8]</td><
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structcc110x__patable__t.html">cc110x_patable_t</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:32 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:11 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

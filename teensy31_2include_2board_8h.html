@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,10 @@ $(function(){initNavTree('teensy31_2include_2board_8h.html',''); initResizable(t
 
 <p>Board specific definitions for the Teensy3.1 &amp; 3.2 board.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;cpu.h&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Board specific definitions for the Teensy3.1 &amp; 3.2 board. </p>
+<dl class="section author"><dt>Author</dt><dd>Loïc Dauphin <a href="#" onclick="location.href='mai'+'lto:'+'loi'+'c.'+'dau'+'ph'+'in@'+'in'+'ria'+'.f'+'r'; return false;">loic.<span class="obfuscator">.nosp@m.</span>daup<span class="obfuscator">.nosp@m.</span>hin@i<span class="obfuscator">.nosp@m.</span>nria<span class="obfuscator">.nosp@m.</span>.fr</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;cpu.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="boards_2teensy31_2include_2periph__conf_8h.html">periph_conf.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for board.h:</div>
@@ -200,10 +200,7 @@ $(function(){initNavTree('teensy31_2include_2board_8h.html',''); initResizable(t
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>LED0_TOGGLE</b>&#160;&#160;&#160;(LED_PORT-&gt;PTOR = (1 &lt;&lt; <a class="el" href="cc2538dk_2include_2board_8h.html#aad3eba5c40740281860f62c5a84527eb">LED0_BIT</a>))</td></tr>
 <tr class="separator:aebc6389533d9fc8dcbe4d2129a4d5a45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Board specific definitions for the Teensy3.1 &amp; 3.2 board. </p>
-<dl class="section author"><dt>Author</dt><dd>Loïc Dauphin <a href="#" onclick="location.href='mai'+'lto:'+'loi'+'c.'+'dau'+'ph'+'in@'+'in'+'ria'+'.f'+'r'; return false;">loic.<span class="obfuscator">.nosp@m.</span>daup<span class="obfuscator">.nosp@m.</span>hin@i<span class="obfuscator">.nosp@m.</span>nria<span class="obfuscator">.nosp@m.</span>.fr</a> </dd></dl>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
@@ -211,7 +208,7 @@ $(function(){initNavTree('teensy31_2include_2board_8h.html',''); initResizable(t
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6c8313236d9db5b969ca7d150fe527de.html">boards</a></li><li class="navelem"><a class="el" href="dir_e5036216cac79935803d6d850ca8bb3e.html">teensy31</a></li><li class="navelem"><a class="el" href="dir_64a72aa506f53995b09e07b0a5ade657.html">include</a></li><li class="navelem"><a class="el" href="teensy31_2include_2board_8h.html">board.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:28 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

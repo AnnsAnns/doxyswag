@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -153,6 +150,17 @@ $(function(){initNavTree('group__drivers__periph__pwm.html',''); initResizable(t
 
 <p>Low-level PWM peripheral driver  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Low-level PWM peripheral driver </p>
+<p>This interface enables access to CPU peripherals generating PWM signals. On most platforms, this interface will be implemented based on hardware timers, though some CPUs provide dedicated PWM peripherals.</p>
+<p>The characteristics of a PWM signal can be defined by three basic parameters, namely the frequency, the duty cycle, and the operational mode. This interface supports basic PWM generation in left-aligned, right-aligned, and center mode. Additionally the interface supports the definition of the used resolution, defining the granularity with which one can specify the duty cycle. This brings more flexibility to the configuration of the frequency, especially on systems with low system clocks.</p>
+<p>Typically, a single PWM device (e.g. hardware timer) supports PWM signal generation on multiple pins in parallel. While the duty cycle is selectable for each channel individually, the frequency and resolution are shared for all channels.</p>
+<p>The mapping/configuration of PWM devices (timers) and the used pins has to be done in the board configuration (the board's `periph_conf.h).</p>
+<p>When using the PWM interface, first thing you have to do is initialize the PWM device with the targeted mode, frequency, and resolution settings. Once the device is initialized, it will start the generation of PWM signals on all configured pins immediately, with an initial duty cycle of <code>0</code>. Use the <a class="el" href="#ga85080df933cc3a416f71acd9f47b90d0" title="Set the duty-cycle for a given channel of the given PWM device.">pwm_set()</a> function to change the duty cycle for a given channel. If you want to disable the PWM generation again, simply call <a class="el" href="#gaaa568926a9e527c74eb307258c0a3861" title="Stop PWM generation on the given device.">pwm_poweroff()</a>.</p>
+<h2><a class="anchor" id="autotoc_md1711"></a>
+(Low-)Power implications</h2>
+<p>After initialization, the a PWM peripheral <b>should</b> be powered on and active. When manually stopped using the <a class="el" href="#gaaa568926a9e527c74eb307258c0a3861" title="Stop PWM generation on the given device.">pwm_poweroff()</a> function, the PWM generation <b>should</b> be stopped for all channels and the PWM peripheral <b>should</b> be fully power off (e.g. through peripheral clock gating). Once being re-enabled by calling the <a class="el" href="#ga011d8bb27b3edab7aaee614bbd3acd57" title="Resume PWM generation on the given device.">pwm_poweron()</a> function, the PWM peripheral <b>should</b> transparently continue its previously configured operation, including the last active duty cycle values.</p>
+<p>While a PWM device is active, some implementations might need to block certain power modes. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -204,17 +212,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:gaaa568926a9e527c74eb307258c0a3861"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop PWM generation on the given device.  <br /></td></tr>
 <tr class="separator:gaaa568926a9e527c74eb307258c0a3861"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Low-level PWM peripheral driver </p>
-<p>This interface enables access to CPU peripherals generating PWM signals. On most platforms, this interface will be implemented based on hardware timers, though some CPUs provide dedicated PWM peripherals.</p>
-<p>The characteristics of a PWM signal can be defined by three basic parameters, namely the frequency, the duty cycle, and the operational mode. This interface supports basic PWM generation in left-aligned, right-aligned, and center mode. Additionally the interface supports the definition of the used resolution, defining the granularity with which one can specify the duty cycle. This brings more flexibility to the configuration of the frequency, especially on systems with low system clocks.</p>
-<p>Typically, a single PWM device (e.g. hardware timer) supports PWM signal generation on multiple pins in parallel. While the duty cycle is selectable for each channel individually, the frequency and resolution are shared for all channels.</p>
-<p>The mapping/configuration of PWM devices (timers) and the used pins has to be done in the board configuration (the board's `periph_conf.h).</p>
-<p>When using the PWM interface, first thing you have to do is initialize the PWM device with the targeted mode, frequency, and resolution settings. Once the device is initialized, it will start the generation of PWM signals on all configured pins immediately, with an initial duty cycle of <code>0</code>. Use the <a class="el" href="#ga85080df933cc3a416f71acd9f47b90d0" title="Set the duty-cycle for a given channel of the given PWM device.">pwm_set()</a> function to change the duty cycle for a given channel. If you want to disable the PWM generation again, simply call <a class="el" href="#gaaa568926a9e527c74eb307258c0a3861" title="Stop PWM generation on the given device.">pwm_poweroff()</a>.</p>
-<h2><a class="anchor" id="autotoc_md1711"></a>
-(Low-)Power implications</h2>
-<p>After initialization, the a PWM peripheral <b>should</b> be powered on and active. When manually stopped using the <a class="el" href="#gaaa568926a9e527c74eb307258c0a3861" title="Stop PWM generation on the given device.">pwm_poweroff()</a> function, the PWM generation <b>should</b> be stopped for all channels and the PWM peripheral <b>should</b> be fully power off (e.g. through peripheral clock gating). Once being re-enabled by calling the <a class="el" href="#ga011d8bb27b3edab7aaee614bbd3acd57" title="Resume PWM generation on the given device.">pwm_poweron()</a> function, the PWM peripheral <b>should</b> transparently continue its previously configured operation, including the last active duty cycle values.</p>
-<p>While a PWM device is active, some implementations might need to block certain power modes. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="gad7999c048ca3b0783f3fb62b93b056db" name="gad7999c048ca3b0783f3fb62b93b056db"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gad7999c048ca3b0783f3fb62b93b056db">&#9670;&#160;</a></span>PWM_DEV</h2>
@@ -407,7 +404,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

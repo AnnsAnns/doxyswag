@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -149,7 +146,10 @@ $(function(){initNavTree('pthread__mutex__attr_8h.html',''); initResizable(true)
 
 <p>Attributes for pthread mutexes.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;<a class="el" href="errno_8h.html">errno.h</a>&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Attributes for pthread mutexes. </p>
+<dl class="section note"><dt>Note</dt><dd>Do not include this header file directly, but <a class="el" href="pthread_8h.html" title="POSIX conforming multi-threading features.">pthread.h</a>. </dd></dl>
+</div><div class="textblock"><code>#include &lt;<a class="el" href="errno_8h.html">errno.h</a>&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for pthread_mutex_attr.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -236,10 +236,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>pthread_mutexattr_setp
 <tr class="memdesc:a846684648042740a5b5c1d3b3ba4ac51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether the mutex to create should be robust.  <br /></td></tr>
 <tr class="separator:a846684648042740a5b5c1d3b3ba4ac51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Attributes for pthread mutexes. </p>
-<dl class="section note"><dt>Note</dt><dd>Do not include this header file directly, but <a class="el" href="pthread_8h.html" title="POSIX conforming multi-threading features.">pthread.h</a>. </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a2a9b96c0491ae490c17d0b400bc427b0" name="a2a9b96c0491ae490c17d0b400bc427b0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2a9b96c0491ae490c17d0b400bc427b0">&#9670;&#160;</a></span>PTHREAD_MUTEX_DEFAULT</h2>
 
@@ -679,7 +676,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>pthread_mutexattr_setp
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a408b6d3a4a484720bc3ecfeac8947e3.html">sys</a></li><li class="navelem"><a class="el" href="dir_d783aa159a733fb0018b17e0d0bb6b55.html">posix</a></li><li class="navelem"><a class="el" href="dir_482046e6016400d51bd705eb10d8aebe.html">pthread</a></li><li class="navelem"><a class="el" href="dir_1990f2139a9ba1dd37c081d0af826a3d.html">include</a></li><li class="navelem"><a class="el" href="pthread__mutex__attr_8h.html">pthread_mutex_attr.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

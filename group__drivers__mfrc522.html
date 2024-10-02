@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -153,6 +150,22 @@ $(function(){initNavTree('group__drivers__mfrc522.html',''); initResizable(true)
 
 <p>Device driver for the NXP MFRC522 RFID controller  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Device driver for the NXP MFRC522 RFID controller </p>
+<p>With this driver MIFARE and NTAG tags/keys can be read and written contactless.</p>
+<p>Supported features:</p><ul>
+<li>Communication (Crypto1) with MIFARE Classic (1k, 4k, Mini)</li>
+<li>Communication (Crypto1) with MIFARE Classic compatible PICCs</li>
+<li>Firmware self check of MFRC522</li>
+<li>Set the UID, write to sector 0, and unbrick Chinese UID changeable MIFARE cards</li>
+</ul>
+<p>Partially supported features:</p><ul>
+<li>Communication with MIFARE Ultralight</li>
+<li>Other PICCs (Ntag216)</li>
+</ul>
+<p>Data sheet available here: <a href="https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf">https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf</a></p>
+<p>This driver is a port of a driver originally written for Arduino, you can find the original here: <a href="https://github.com/miguelbalboa/rfid">https://github.com/miguelbalboa/rfid</a> (currently based on commit 0a568b45baf1852883630e90ea125786e88f5322)</p>
+<dl class="section author"><dt>Author</dt><dd>Hendrik van Essen <a href="#" onclick="location.href='mai'+'lto:'+'hen'+'dr'+'ik.'+'ve'+'@fu'+'-b'+'erl'+'in'+'.de'; return false;">hendr<span class="obfuscator">.nosp@m.</span>ik.v<span class="obfuscator">.nosp@m.</span>e@fu-<span class="obfuscator">.nosp@m.</span>berl<span class="obfuscator">.nosp@m.</span>in.de</a> </dd></dl>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -353,22 +366,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:gab810713a04a1555c1a2b9356bd22377b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform a self-test of the MFRC522.  <br /></td></tr>
 <tr class="separator:gab810713a04a1555c1a2b9356bd22377b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Device driver for the NXP MFRC522 RFID controller </p>
-<p>With this driver MIFARE and NTAG tags/keys can be read and written contactless.</p>
-<p>Supported features:</p><ul>
-<li>Communication (Crypto1) with MIFARE Classic (1k, 4k, Mini)</li>
-<li>Communication (Crypto1) with MIFARE Classic compatible PICCs</li>
-<li>Firmware self check of MFRC522</li>
-<li>Set the UID, write to sector 0, and unbrick Chinese UID changeable MIFARE cards</li>
-</ul>
-<p>Partially supported features:</p><ul>
-<li>Communication with MIFARE Ultralight</li>
-<li>Other PICCs (Ntag216)</li>
-</ul>
-<p>Data sheet available here: <a href="https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf">https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf</a></p>
-<p>This driver is a port of a driver originally written for Arduino, you can find the original here: <a href="https://github.com/miguelbalboa/rfid">https://github.com/miguelbalboa/rfid</a> (currently based on commit 0a568b45baf1852883630e90ea125786e88f5322)</p>
-<dl class="section author"><dt>Author</dt><dd>Hendrik van Essen <a href="#" onclick="location.href='mai'+'lto:'+'hen'+'dr'+'ik.'+'ve'+'@fu'+'-b'+'erl'+'in'+'.de'; return false;">hendr<span class="obfuscator">.nosp@m.</span>ik.v<span class="obfuscator">.nosp@m.</span>e@fu-<span class="obfuscator">.nosp@m.</span>berl<span class="obfuscator">.nosp@m.</span>in.de</a> </dd></dl>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="gaab71e9ae567b0ce37fc780f28e92a439" name="gaab71e9ae567b0ce37fc780f28e92a439"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaab71e9ae567b0ce37fc780f28e92a439">&#9670;&#160;</a></span>MFRC522_MF_ACK</h2>
@@ -2310,7 +2307,7 @@ Calling any other function that uses MFRC522_REG_COMMAND will disable soft power
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

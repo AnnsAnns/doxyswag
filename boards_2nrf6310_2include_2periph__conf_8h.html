@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,16 @@ $(function(){initNavTree('boards_2nrf6310_2include_2periph__conf_8h.html',''); i
 
 <p>Peripheral MCU configuration for the nRF51 board nrf6310.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;periph_cpu.h&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Peripheral MCU configuration for the nRF51 board nrf6310. </p>
+<dl class="section author"><dt>Author</dt><dd>Christian Kühling <a href="#" onclick="location.href='mai'+'lto:'+'kue'+'hl'+'ing'+'@z'+'eda'+'t.'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">kuehl<span class="obfuscator">.nosp@m.</span>ing@<span class="obfuscator">.nosp@m.</span>zedat<span class="obfuscator">.nosp@m.</span>.fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
+<dd>
+Timo Ziegler <a href="#" onclick="location.href='mai'+'lto:'+'tim'+'o.'+'zie'+'gl'+'er@'+'fu'+'-be'+'rl'+'in.'+'de'; return false;">timo.<span class="obfuscator">.nosp@m.</span>zieg<span class="obfuscator">.nosp@m.</span>ler@f<span class="obfuscator">.nosp@m.</span>u-be<span class="obfuscator">.nosp@m.</span>rlin.<span class="obfuscator">.nosp@m.</span>de</a> </dd>
+<dd>
+Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
+<dd>
+Frank Holtz <a href="#" onclick="location.href='mai'+'lto:'+'fra'+'nk'+'-ri'+'ot'+'201'+'5@'+'hol'+'tz'+'net'+'.d'+'e'; return false;">frank<span class="obfuscator">.nosp@m.</span>-rio<span class="obfuscator">.nosp@m.</span>t2015<span class="obfuscator">.nosp@m.</span>@hol<span class="obfuscator">.nosp@m.</span>tznet<span class="obfuscator">.nosp@m.</span>.de</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;periph_cpu.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="cfg__clock__16__1_8h.html">cfg_clock_16_1.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="cfg__timer__012_8h.html">cfg_timer_012.h</a>&quot;</code><br />
 <code>#include &quot;cfg_rtt_default.h&quot;</code><br />
@@ -176,16 +182,7 @@ $(function(){initNavTree('boards_2nrf6310_2include_2periph__conf_8h.html',''); i
 <tr class="memitem:a873188d7292e07499dcde9674b1e849c" id="r_a873188d7292e07499dcde9674b1e849c"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structspi__conf__t.html">spi_conf_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a873188d7292e07499dcde9674b1e849c">spi_config</a> []</td></tr>
 <tr class="separator:a873188d7292e07499dcde9674b1e849c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Peripheral MCU configuration for the nRF51 board nrf6310. </p>
-<dl class="section author"><dt>Author</dt><dd>Christian Kühling <a href="#" onclick="location.href='mai'+'lto:'+'kue'+'hl'+'ing'+'@z'+'eda'+'t.'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">kuehl<span class="obfuscator">.nosp@m.</span>ing@<span class="obfuscator">.nosp@m.</span>zedat<span class="obfuscator">.nosp@m.</span>.fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
-<dd>
-Timo Ziegler <a href="#" onclick="location.href='mai'+'lto:'+'tim'+'o.'+'zie'+'gl'+'er@'+'fu'+'-be'+'rl'+'in.'+'de'; return false;">timo.<span class="obfuscator">.nosp@m.</span>zieg<span class="obfuscator">.nosp@m.</span>ler@f<span class="obfuscator">.nosp@m.</span>u-be<span class="obfuscator">.nosp@m.</span>rlin.<span class="obfuscator">.nosp@m.</span>de</a> </dd>
-<dd>
-Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
-<dd>
-Frank Holtz <a href="#" onclick="location.href='mai'+'lto:'+'fra'+'nk'+'-ri'+'ot'+'201'+'5@'+'hol'+'tz'+'net'+'.d'+'e'; return false;">frank<span class="obfuscator">.nosp@m.</span>-rio<span class="obfuscator">.nosp@m.</span>t2015<span class="obfuscator">.nosp@m.</span>@hol<span class="obfuscator">.nosp@m.</span>tznet<span class="obfuscator">.nosp@m.</span>.de</a> </dd></dl>
-</div><h2 class="groupheader">Variable Documentation</h2>
+<h2 class="groupheader">Variable Documentation</h2>
 <a id="a873188d7292e07499dcde9674b1e849c" name="a873188d7292e07499dcde9674b1e849c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a873188d7292e07499dcde9674b1e849c">&#9670;&#160;</a></span>spi_config</h2>
 
@@ -266,7 +263,7 @@ Frank Holtz <a href="#" onclick="location.href='mai'+'lto:'+'fra'+'nk'+'-ri'+'ot
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6c8313236d9db5b969ca7d150fe527de.html">boards</a></li><li class="navelem"><a class="el" href="dir_69068c5d85e79676b804b91ab4363fc9.html">nrf6310</a></li><li class="navelem"><a class="el" href="dir_d5db89d2b95abb353bdd0612444a2a86.html">include</a></li><li class="navelem"><a class="el" href="boards_2nrf6310_2include_2periph__conf_8h.html">periph_conf.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

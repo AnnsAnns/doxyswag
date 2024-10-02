@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -149,7 +146,10 @@ $(function(){initNavTree('dfplayer__types_8h.html',''); initResizable(true); });
 
 <p>Types used in the DFPlayer Mini Device Driver.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Types used in the DFPlayer Mini Device Driver. </p>
+<dl class="section author"><dt>Author</dt><dd>Marian Buschsieweke <a href="#" onclick="location.href='mai'+'lto:'+'mar'+'ia'+'n.b'+'us'+'chs'+'ie'+'wek'+'e@'+'ovg'+'u.'+'de'; return false;">maria<span class="obfuscator">.nosp@m.</span>n.bu<span class="obfuscator">.nosp@m.</span>schsi<span class="obfuscator">.nosp@m.</span>ewek<span class="obfuscator">.nosp@m.</span>e@ovg<span class="obfuscator">.nosp@m.</span>u.de</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="mutex_8h.html">mutex.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="drivers_2include_2periph_2gpio_8h.html">periph/gpio.h</a>&quot;</code><br />
@@ -256,10 +256,7 @@ typedef struct <a class="el" href="structdfplayer.html">dfplayer</a>&#160;</td><
 <tr class="memdesc:ad10a40a53f88666bde12ff45dc8d47c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signature of the function called when a medium was inserted/ejected.  <br /></td></tr>
 <tr class="separator:ad10a40a53f88666bde12ff45dc8d47c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Types used in the DFPlayer Mini Device Driver. </p>
-<dl class="section author"><dt>Author</dt><dd>Marian Buschsieweke <a href="#" onclick="location.href='mai'+'lto:'+'mar'+'ia'+'n.b'+'us'+'chs'+'ie'+'wek'+'e@'+'ovg'+'u.'+'de'; return false;">maria<span class="obfuscator">.nosp@m.</span>n.bu<span class="obfuscator">.nosp@m.</span>schsi<span class="obfuscator">.nosp@m.</span>ewek<span class="obfuscator">.nosp@m.</span>e@ovg<span class="obfuscator">.nosp@m.</span>u.de</a> </dd></dl>
-</div><h2 class="groupheader">Typedef Documentation</h2>
+<h2 class="groupheader">Typedef Documentation</h2>
 <a id="aee106f5d736492899b27c06a21ee5c79" name="aee106f5d736492899b27c06a21ee5c79"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aee106f5d736492899b27c06a21ee5c79">&#9670;&#160;</a></span>dfplayer_cb_done_t</h2>
 
@@ -488,7 +485,7 @@ typedef struct <a class="el" href="structdfplayer.html">dfplayer</a>&#160;</td><
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_14bc92f4b96c8519b376567118ac28b3.html">drivers</a></li><li class="navelem"><a class="el" href="dir_c391438d14ac819080a28638bc117588.html">dfplayer</a></li><li class="navelem"><a class="el" href="dir_04c61b6ae96553b3082d73ba92be9f3d.html">include</a></li><li class="navelem"><a class="el" href="dfplayer__types_8h.html">dfplayer_types.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

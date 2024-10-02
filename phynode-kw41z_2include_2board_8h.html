@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,12 @@ $(function(){initNavTree('phynode-kw41z_2include_2board_8h.html',''); initResiza
 
 <p>Board specific definitions for the USB-KW41Z.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;cpu.h&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Board specific definitions for the USB-KW41Z. </p>
+<dl class="section author"><dt>Author</dt><dd>Joakim Nohlgård <a href="#" onclick="location.href='mai'+'lto:'+'joa'+'ki'+'m.n'+'oh'+'lga'+'rd'+'@ei'+'st'+'ec.'+'se'; return false;">joaki<span class="obfuscator">.nosp@m.</span>m.no<span class="obfuscator">.nosp@m.</span>hlgar<span class="obfuscator">.nosp@m.</span>d@ei<span class="obfuscator">.nosp@m.</span>stec.<span class="obfuscator">.nosp@m.</span>se</a> </dd>
+<dd>
+José Alamos <a href="#" onclick="location.href='mai'+'lto:'+'jos'+'e.'+'ala'+'mo'+'s@h'+'aw'+'-ha'+'mb'+'urg'+'.d'+'e'; return false;">jose.<span class="obfuscator">.nosp@m.</span>alam<span class="obfuscator">.nosp@m.</span>os@ha<span class="obfuscator">.nosp@m.</span>w-ha<span class="obfuscator">.nosp@m.</span>mburg<span class="obfuscator">.nosp@m.</span>.de</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;cpu.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="boards_2phynode-kw41z_2include_2periph__conf_8h.html">periph_conf.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for board.h:</div>
@@ -316,12 +318,7 @@ $(function(){initNavTree('phynode-kw41z_2include_2board_8h.html',''); initResiza
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>MMA8X5X_PARAM_ADDR</b>&#160;&#160;&#160;(0x1D)</td></tr>
 <tr class="separator:a704a3a7b5b9b5aa680a1dafe7157c02c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Board specific definitions for the USB-KW41Z. </p>
-<dl class="section author"><dt>Author</dt><dd>Joakim Nohlgård <a href="#" onclick="location.href='mai'+'lto:'+'joa'+'ki'+'m.n'+'oh'+'lga'+'rd'+'@ei'+'st'+'ec.'+'se'; return false;">joaki<span class="obfuscator">.nosp@m.</span>m.no<span class="obfuscator">.nosp@m.</span>hlgar<span class="obfuscator">.nosp@m.</span>d@ei<span class="obfuscator">.nosp@m.</span>stec.<span class="obfuscator">.nosp@m.</span>se</a> </dd>
-<dd>
-José Alamos <a href="#" onclick="location.href='mai'+'lto:'+'jos'+'e.'+'ala'+'mo'+'s@h'+'aw'+'-ha'+'mb'+'urg'+'.d'+'e'; return false;">jose.<span class="obfuscator">.nosp@m.</span>alam<span class="obfuscator">.nosp@m.</span>os@ha<span class="obfuscator">.nosp@m.</span>w-ha<span class="obfuscator">.nosp@m.</span>mburg<span class="obfuscator">.nosp@m.</span>.de</a> </dd></dl>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
@@ -329,7 +326,7 @@ José Alamos <a href="#" onclick="location.href='mai'+'lto:'+'jos'+'e.'+'ala'+'m
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6c8313236d9db5b969ca7d150fe527de.html">boards</a></li><li class="navelem"><a class="el" href="dir_52a64e7814185e97369efa0b10ddbf0a.html">phynode-kw41z</a></li><li class="navelem"><a class="el" href="dir_4709f679c101090742e358d8c42746e3.html">include</a></li><li class="navelem"><a class="el" href="phynode-kw41z_2include_2board_8h.html">board.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:28 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

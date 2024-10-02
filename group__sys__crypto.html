@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -150,6 +147,43 @@ $(function(){initNavTree('group__sys__crypto.html',''); initResizable(true); });
 
 <p>RIOT provides a collection of block cipher ciphers, different operation modes and cryptographic hash algorithms.  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>RIOT provides a collection of block cipher ciphers, different operation modes and cryptographic hash algorithms. </p>
+<h1><a class="anchor" id="ciphers"></a>
+Ciphers</h1>
+<p>RIOT supports the following block ciphers:</p><ul>
+<li>AES-128, AES-192, AES-256</li>
+<li>NULL</li>
+</ul>
+<p>You can use them directly by adding <code>crypto_aes_128</code>, <code>crypto_aes_192</code> or <code>crypto_aes_256</code> to your USEMODULE-List. While you can use the ciphers functions directly, you should resort to the generic API for block ciphers whenever possible.</p>
+<p>Depending on the selected block ciphers, a sufficient large buffer size of the <a class="el" href="structcipher__context__t.html" title="the context for cipher-operations">cipher_context_t</a> is used for en-/de-cryption operations.</p>
+<p>Example: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="ciphers_8h.html">crypto/ciphers.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_struct" href="structcipher__t.html">cipher_t</a> cipher;</div>
+<div class="line">uint8_t key[AES_KEY_SIZE] = {0},</div>
+<div class="line">        plain_text[AES_BLOCK_SIZE] = {0},</div>
+<div class="line">        cipher_text[AES_BLOCK_SIZE] = {0};</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="ciphers_8h.html#a33dc7486f4011e7d3b99d1720f7cc350">cipher_init</a>(&amp;cipher, <a class="code hl_variable" href="ciphers_8h.html#af93f37b818df2b3c42f9826f75b0e556">CIPHER_AES</a>, key, AES_KEY_SIZE) &lt; 0)</div>
+<div class="line">    <a class="code hl_define" href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a>(<span class="stringliteral">&quot;Cipher init failed!\n&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="ciphers_8h.html#ab107fa538e58f5c3e54f362eafd95fcc">cipher_encrypt</a>(&amp;cipher, plain_text, cipher_text) &lt; 0)</div>
+<div class="line">    <a class="code hl_define" href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a>(<span class="stringliteral">&quot;Cipher encryption failed!\n&quot;</span>);</div>
+<div class="line"><span class="keywordflow">else</span></div>
+<div class="line">    <a class="code hl_function" href="group__sys__od.html#gadd5bc6e0ed88a7f27c27ab6448e9907b">od_hex_dump</a>(cipher_text, AES_BLOCK_SIZE, 0);</div>
+<div class="ttc" id="aciphers_8h_html"><div class="ttname"><a href="ciphers_8h.html">ciphers.h</a></div><div class="ttdoc">Headers for the packet encryption class.</div></div>
+<div class="ttc" id="aciphers_8h_html_a33dc7486f4011e7d3b99d1720f7cc350"><div class="ttname"><a href="ciphers_8h.html#a33dc7486f4011e7d3b99d1720f7cc350">cipher_init</a></div><div class="ttdeci">int cipher_init(cipher_t *cipher, cipher_id_t cipher_id, const uint8_t *key, uint8_t key_size)</div><div class="ttdoc">Initialize new cipher state.</div></div>
+<div class="ttc" id="aciphers_8h_html_ab107fa538e58f5c3e54f362eafd95fcc"><div class="ttname"><a href="ciphers_8h.html#ab107fa538e58f5c3e54f362eafd95fcc">cipher_encrypt</a></div><div class="ttdeci">int cipher_encrypt(const cipher_t *cipher, const uint8_t *input, uint8_t *output)</div><div class="ttdoc">Encrypt data of BLOCK_SIZE length *.</div></div>
+<div class="ttc" id="aciphers_8h_html_af93f37b818df2b3c42f9826f75b0e556"><div class="ttname"><a href="ciphers_8h.html#af93f37b818df2b3c42f9826f75b0e556">CIPHER_AES</a></div><div class="ttdeci">const cipher_id_t CIPHER_AES</div><div class="ttdoc">AES cipher id.</div></div>
+<div class="ttc" id="agroup__cpu__avr8__common__stdio__wrapper_html_gad2eb277496af160238e7306fff780ad2"><div class="ttname"><a href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a></div><div class="ttdeci">#define printf(...)</div><div class="ttdoc">A wrapper for the printf() function that passes arguments through unmodified, but fails to compile if...</div><div class="ttdef"><b>Definition</b> stdio.h:60</div></div>
+<div class="ttc" id="agroup__sys__od_html_gadd5bc6e0ed88a7f27c27ab6448e9907b"><div class="ttname"><a href="group__sys__od.html#gadd5bc6e0ed88a7f27c27ab6448e9907b">od_hex_dump</a></div><div class="ttdeci">static void od_hex_dump(const void *data, size_t data_len, uint8_t width)</div><div class="ttdoc">Dumps memory stored at data byte-wise up to data_len in hexadecimal representation to stdout.</div><div class="ttdef"><b>Definition</b> od.h:65</div></div>
+<div class="ttc" id="astructcipher__t_html"><div class="ttname"><a href="structcipher__t.html">cipher_t</a></div><div class="ttdoc">basic struct for using block ciphers contains the cipher interface and the context</div><div class="ttdef"><b>Definition</b> ciphers.h:119</div></div>
+</div><!-- fragment --><p>Some aspects of the AES implementation can be fine tuned by pseudo-modules:</p><ul>
+<li>crypto_aes_precalculated: Use pre-calculated T-tables. This improved speed at the expense of increased program size. The default is to calculate most tables on the fly.</li>
+<li>crypto_aes_unroll: enable manually-unrolled loops. The default is to not have them unrolled.</li>
+</ul>
+<p>If you need to encrypt data of arbitrary size take a look at the different operation modes like: CBC, CTR or CCM.</p>
+<p>Additional examples can be found in the test suite. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -202,43 +236,6 @@ Files</h2></td></tr>
 <tr class="memdesc:ocb_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset Codebook (OCB3) AEAD mode as specified in RFC 7253. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>RIOT provides a collection of block cipher ciphers, different operation modes and cryptographic hash algorithms. </p>
-<h1><a class="anchor" id="ciphers"></a>
-Ciphers</h1>
-<p>RIOT supports the following block ciphers:</p><ul>
-<li>AES-128, AES-192, AES-256</li>
-<li>NULL</li>
-</ul>
-<p>You can use them directly by adding <code>crypto_aes_128</code>, <code>crypto_aes_192</code> or <code>crypto_aes_256</code> to your USEMODULE-List. While you can use the ciphers functions directly, you should resort to the generic API for block ciphers whenever possible.</p>
-<p>Depending on the selected block ciphers, a sufficient large buffer size of the <a class="el" href="structcipher__context__t.html" title="the context for cipher-operations">cipher_context_t</a> is used for en-/de-cryption operations.</p>
-<p>Example: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="ciphers_8h.html">crypto/ciphers.h</a>&quot;</span></div>
-<div class="line"> </div>
-<div class="line"><a class="code hl_struct" href="structcipher__t.html">cipher_t</a> cipher;</div>
-<div class="line">uint8_t key[AES_KEY_SIZE] = {0},</div>
-<div class="line">        plain_text[AES_BLOCK_SIZE] = {0},</div>
-<div class="line">        cipher_text[AES_BLOCK_SIZE] = {0};</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="ciphers_8h.html#a33dc7486f4011e7d3b99d1720f7cc350">cipher_init</a>(&amp;cipher, <a class="code hl_variable" href="ciphers_8h.html#af93f37b818df2b3c42f9826f75b0e556">CIPHER_AES</a>, key, AES_KEY_SIZE) &lt; 0)</div>
-<div class="line">    <a class="code hl_define" href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a>(<span class="stringliteral">&quot;Cipher init failed!\n&quot;</span>);</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="ciphers_8h.html#ab107fa538e58f5c3e54f362eafd95fcc">cipher_encrypt</a>(&amp;cipher, plain_text, cipher_text) &lt; 0)</div>
-<div class="line">    <a class="code hl_define" href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a>(<span class="stringliteral">&quot;Cipher encryption failed!\n&quot;</span>);</div>
-<div class="line"><span class="keywordflow">else</span></div>
-<div class="line">    <a class="code hl_function" href="group__sys__od.html#gadd5bc6e0ed88a7f27c27ab6448e9907b">od_hex_dump</a>(cipher_text, AES_BLOCK_SIZE, 0);</div>
-<div class="ttc" id="aciphers_8h_html"><div class="ttname"><a href="ciphers_8h.html">ciphers.h</a></div><div class="ttdoc">Headers for the packet encryption class.</div></div>
-<div class="ttc" id="aciphers_8h_html_a33dc7486f4011e7d3b99d1720f7cc350"><div class="ttname"><a href="ciphers_8h.html#a33dc7486f4011e7d3b99d1720f7cc350">cipher_init</a></div><div class="ttdeci">int cipher_init(cipher_t *cipher, cipher_id_t cipher_id, const uint8_t *key, uint8_t key_size)</div><div class="ttdoc">Initialize new cipher state.</div></div>
-<div class="ttc" id="aciphers_8h_html_ab107fa538e58f5c3e54f362eafd95fcc"><div class="ttname"><a href="ciphers_8h.html#ab107fa538e58f5c3e54f362eafd95fcc">cipher_encrypt</a></div><div class="ttdeci">int cipher_encrypt(const cipher_t *cipher, const uint8_t *input, uint8_t *output)</div><div class="ttdoc">Encrypt data of BLOCK_SIZE length *.</div></div>
-<div class="ttc" id="aciphers_8h_html_af93f37b818df2b3c42f9826f75b0e556"><div class="ttname"><a href="ciphers_8h.html#af93f37b818df2b3c42f9826f75b0e556">CIPHER_AES</a></div><div class="ttdeci">const cipher_id_t CIPHER_AES</div><div class="ttdoc">AES cipher id.</div></div>
-<div class="ttc" id="agroup__cpu__avr8__common__stdio__wrapper_html_gad2eb277496af160238e7306fff780ad2"><div class="ttname"><a href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a></div><div class="ttdeci">#define printf(...)</div><div class="ttdoc">A wrapper for the printf() function that passes arguments through unmodified, but fails to compile if...</div><div class="ttdef"><b>Definition</b> stdio.h:60</div></div>
-<div class="ttc" id="agroup__sys__od_html_gadd5bc6e0ed88a7f27c27ab6448e9907b"><div class="ttname"><a href="group__sys__od.html#gadd5bc6e0ed88a7f27c27ab6448e9907b">od_hex_dump</a></div><div class="ttdeci">static void od_hex_dump(const void *data, size_t data_len, uint8_t width)</div><div class="ttdoc">Dumps memory stored at data byte-wise up to data_len in hexadecimal representation to stdout.</div><div class="ttdef"><b>Definition</b> od.h:65</div></div>
-<div class="ttc" id="astructcipher__t_html"><div class="ttname"><a href="structcipher__t.html">cipher_t</a></div><div class="ttdoc">basic struct for using block ciphers contains the cipher interface and the context</div><div class="ttdef"><b>Definition</b> ciphers.h:119</div></div>
-</div><!-- fragment --><p>Some aspects of the AES implementation can be fine tuned by pseudo-modules:</p><ul>
-<li>crypto_aes_precalculated: Use pre-calculated T-tables. This improved speed at the expense of increased program size. The default is to calculate most tables on the fly.</li>
-<li>crypto_aes_unroll: enable manually-unrolled loops. The default is to not have them unrolled.</li>
-</ul>
-<p>If you need to encrypt data of arbitrary size take a look at the different operation modes like: CBC, CTR or CCM.</p>
-<p>Additional examples can be found in the test suite. </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
@@ -246,7 +243,7 @@ Ciphers</h1>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

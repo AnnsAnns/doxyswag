@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -152,7 +149,11 @@ $(function(){initNavTree('psa__crypto__se__driver_8h.html',''); initResizable(tr
 
 <p>PSA external cryptoprocessor driver module.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>PSA external cryptoprocessor driver module. </p>
+<p>This header declares types and function signatures for cryptography drivers that access key material via opaque references. This is meant for cryptoprocessors that have a separate key storage from the space in which the PSA Crypto implementation runs, typically secure elements (SEs).</p>
+<p>This file is part of the PSA Crypto Driver HAL (hardware abstraction layer), containing functions for driver developers to implement to enable hardware to be called in a standardized way by a PSA Cryptography API implementation. The functions comprising the driver HAL, which driver authors implement, are not intended to be called by application developers. </p>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="crypto__values_8h.html">psa/crypto_values.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="crypto__types_8h.html">psa/crypto_types.h</a>&quot;</code><br />
@@ -316,11 +317,7 @@ Enumerations</h2></td></tr>
 <tr class="memdesc:ga984d5535962320e0c4692bb4ede486ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">An enumeration indicating how a key is created.  <a href="group__se__key__management.html#ga984d5535962320e0c4692bb4ede486ef">More...</a><br /></td></tr>
 <tr class="separator:ga984d5535962320e0c4692bb4ede486ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>PSA external cryptoprocessor driver module. </p>
-<p>This header declares types and function signatures for cryptography drivers that access key material via opaque references. This is meant for cryptoprocessors that have a separate key storage from the space in which the PSA Crypto implementation runs, typically secure elements (SEs).</p>
-<p>This file is part of the PSA Crypto Driver HAL (hardware abstraction layer), containing functions for driver developers to implement to enable hardware to be called in a standardized way by a PSA Cryptography API implementation. The functions comprising the driver HAL, which driver authors implement, are not intended to be called by application developers. </p>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
@@ -328,7 +325,7 @@ Enumerations</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a408b6d3a4a484720bc3ecfeac8947e3.html">sys</a></li><li class="navelem"><a class="el" href="dir_bb32bcf0b8563c6c3558720ea077f977.html">psa_crypto</a></li><li class="navelem"><a class="el" href="dir_af31d32d202675d0b66a6ab39c55372c.html">include</a></li><li class="navelem"><a class="el" href="psa__crypto__se__driver_8h.html">psa_crypto_se_driver.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

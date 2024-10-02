@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -153,6 +150,11 @@ $(function(){initNavTree('group__drivers__ieee802154__hal.html',''); initResizab
 
 <p>This is a Hardware Abstraction Layer for IEEE802.15.4 compatible radios.  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>This is a Hardware Abstraction Layer for IEEE802.15.4 compatible radios. </p>
+<dl class="section warning"><dt>Warning</dt><dd><b class="text-danger">This feature is experimental!</b><br  />
+ This API is experimental and in an early state - expect changes!</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>José I. Alamos <a href="#" onclick="location.href='mai'+'lto:'+'jos'+'e.'+'ala'+'mo'+'s@h'+'aw'+'-ha'+'mb'+'urg'+'.d'+'e'; return false;">jose.<span class="obfuscator">.nosp@m.</span>alam<span class="obfuscator">.nosp@m.</span>os@ha<span class="obfuscator">.nosp@m.</span>w-ha<span class="obfuscator">.nosp@m.</span>mburg<span class="obfuscator">.nosp@m.</span>.de</a> </dd></dl>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
@@ -419,11 +421,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga483db0fcce96039206ad5d38beea15c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a <a class="el" href="#ga512d8adef7d00aa02cbac68a17d71bd6">ieee802154_rf_caps_t</a> to a <a class="el" href="group__net__ieee802154__header.html#gaa78b6fe7ff1bba2869970de4e9e4d79f">ieee802154_phy_mode_t</a> value.  <br /></td></tr>
 <tr class="separator:ga483db0fcce96039206ad5d38beea15c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>This is a Hardware Abstraction Layer for IEEE802.15.4 compatible radios. </p>
-<dl class="section warning"><dt>Warning</dt><dd><b class="text-danger">This feature is experimental!</b><br  />
- This API is experimental and in an early state - expect changes!</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>José I. Alamos <a href="#" onclick="location.href='mai'+'lto:'+'jos'+'e.'+'ala'+'mo'+'s@h'+'aw'+'-ha'+'mb'+'urg'+'.d'+'e'; return false;">jose.<span class="obfuscator">.nosp@m.</span>alam<span class="obfuscator">.nosp@m.</span>os@ha<span class="obfuscator">.nosp@m.</span>w-ha<span class="obfuscator">.nosp@m.</span>mburg<span class="obfuscator">.nosp@m.</span>.de</a> </dd></dl>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga8e5233174880b78bf757a78a78f843e2" name="ga8e5233174880b78bf757a78a78f843e2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga8e5233174880b78bf757a78a78f843e2">&#9670;&#160;</a></span>IEEE802154_RF_CAPS_PHY_MASK</h2>
@@ -2528,7 +2525,7 @@ the device supports frame retransmissions (<a class="el" href="#gad92c5e680f4e83
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

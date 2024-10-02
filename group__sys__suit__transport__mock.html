@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -150,6 +147,11 @@ $(function(){initNavTree('group__sys__suit__transport__mock.html',''); initResiz
 
 <p>SUIT firmware mock transport  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>SUIT firmware mock transport </p>
+<p>Mock transport backend definitions for SUIT manifests </p><dl class="section author"><dt>Author</dt><dd>Koen Zandberg <a href="#" onclick="location.href='mai'+'lto:'+'koe'+'n@'+'ber'+'gz'+'and'+'.n'+'et'; return false;">koen@<span class="obfuscator">.nosp@m.</span>berg<span class="obfuscator">.nosp@m.</span>zand.<span class="obfuscator">.nosp@m.</span>net</a></dd></dl>
+<p>The mock transport is a noop transport. Payloads are preloaded in flash and provided as an array of <a class="el" href="structsuit__transport__mock__payload__t.html">suit_transport_mock_payload_t</a> to the module.</p>
+<p>Both the array of payloads named <code>payloads</code> and the size with name <code>num_payloads</code> must be provided. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
@@ -163,11 +165,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:gaf7dc77a6d3e4e3fde723b382eca368d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">'fetch' a payload  <br /></td></tr>
 <tr class="separator:gaf7dc77a6d3e4e3fde723b382eca368d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>SUIT firmware mock transport </p>
-<p>Mock transport backend definitions for SUIT manifests </p><dl class="section author"><dt>Author</dt><dd>Koen Zandberg <a href="#" onclick="location.href='mai'+'lto:'+'koe'+'n@'+'ber'+'gz'+'and'+'.n'+'et'; return false;">koen@<span class="obfuscator">.nosp@m.</span>berg<span class="obfuscator">.nosp@m.</span>zand.<span class="obfuscator">.nosp@m.</span>net</a></dd></dl>
-<p>The mock transport is a noop transport. Payloads are preloaded in flash and provided as an array of <a class="el" href="structsuit__transport__mock__payload__t.html">suit_transport_mock_payload_t</a> to the module.</p>
-<p>Both the array of payloads named <code>payloads</code> and the size with name <code>num_payloads</code> must be provided. </p>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="gaf7dc77a6d3e4e3fde723b382eca368d8" name="gaf7dc77a6d3e4e3fde723b382eca368d8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaf7dc77a6d3e4e3fde723b382eca368d8">&#9670;&#160;</a></span>suit_transport_mock_fetch()</h2>
@@ -205,7 +202,7 @@ negative otherwise </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

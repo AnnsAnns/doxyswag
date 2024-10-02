@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,19 @@ $(function(){initNavTree('boards_2esp32s3-devkit_2include_2periph__conf_8h.html'
 
 <p>Peripheral configurations for ESP32-S3-DevKit boards.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Peripheral configurations for ESP32-S3-DevKit boards. </p>
+<p>The peripheral configurations in this file can be used for Espressif ESP32-S3-DevKitx boards that use one of the following modules:</p>
+<ul>
+<li>ESP32-S3-WROOM-1x module (ESP32-S3-DevKitC-1 board)</li>
+<li>ESP32-S3-WROOM-2x module (ESP32-S3-DevKitC-1 board)</li>
+<li>ESP32-S3-MINI-1x module (ESP32-S3-DevKitM-1 board)</li>
+</ul>
+<p>Any modifications required for specific applications can be overridden by <a class="el" href="group__cpu__esp32.html#esp32_application_specific_configurations">application-specific board configuration</a>.</p>
+<p>For detailed information about the peripheral configuration for ESP32-S3 boards, see section <a class="el" href="group__cpu__esp32.html#esp32_peripherals">Common Peripherals</a>.</p>
+<dl class="section note"><dt>Note</dt><dd>Most definitions can be overridden by an <a class="el" href="group__cpu__esp32.html#esp32_application_specific_configurations">application-specific board configuration</a> if necessary.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span class="obfuscator">.nosp@m.</span>@sch<span class="obfuscator">.nosp@m.</span>orcht<span class="obfuscator">.nosp@m.</span>.net</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;periph_conf_common.h&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for periph_conf.h:</div>
@@ -231,19 +240,7 @@ $(function(){initNavTree('boards_2esp32s3-devkit_2include_2periph__conf_8h.html'
 <tr class="memdesc:a28fc91fb6e973e5f0be9e44e5edd5449"><td class="mdescLeft">&#160;</td><td class="mdescRight">direct I/O pin for <a class="el" href="group__drivers__periph__uart.html#gafc5afd63560d27731d2517b3005f3294" title="Default UART device access macro.">UART_DEV(0)</a> RxD, can't be changed <br /></td></tr>
 <tr class="separator:a28fc91fb6e973e5f0be9e44e5edd5449"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Peripheral configurations for ESP32-S3-DevKit boards. </p>
-<p>The peripheral configurations in this file can be used for Espressif ESP32-S3-DevKitx boards that use one of the following modules:</p>
-<ul>
-<li>ESP32-S3-WROOM-1x module (ESP32-S3-DevKitC-1 board)</li>
-<li>ESP32-S3-WROOM-2x module (ESP32-S3-DevKitC-1 board)</li>
-<li>ESP32-S3-MINI-1x module (ESP32-S3-DevKitM-1 board)</li>
-</ul>
-<p>Any modifications required for specific applications can be overridden by <a class="el" href="group__cpu__esp32.html#esp32_application_specific_configurations">application-specific board configuration</a>.</p>
-<p>For detailed information about the peripheral configuration for ESP32-S3 boards, see section <a class="el" href="group__cpu__esp32.html#esp32_peripherals">Common Peripherals</a>.</p>
-<dl class="section note"><dt>Note</dt><dd>Most definitions can be overridden by an <a class="el" href="group__cpu__esp32.html#esp32_application_specific_configurations">application-specific board configuration</a> if necessary.</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span class="obfuscator">.nosp@m.</span>@sch<span class="obfuscator">.nosp@m.</span>orcht<span class="obfuscator">.nosp@m.</span>.net</a> </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ac93ef90877386721589730c2219fde48" name="ac93ef90877386721589730c2219fde48"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac93ef90877386721589730c2219fde48">&#9670;&#160;</a></span>ADC_GPIOS</h2>
 
@@ -287,7 +284,7 @@ $(function(){initNavTree('boards_2esp32s3-devkit_2include_2periph__conf_8h.html'
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6c8313236d9db5b969ca7d150fe527de.html">boards</a></li><li class="navelem"><a class="el" href="dir_c9b0ce3a71ab51f7827bb9ed632fabb7.html">esp32s3-devkit</a></li><li class="navelem"><a class="el" href="dir_5a776980ab1daec0acadeb86d55184ec.html">include</a></li><li class="navelem"><a class="el" href="boards_2esp32s3-devkit_2include_2periph__conf_8h.html">periph_conf.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

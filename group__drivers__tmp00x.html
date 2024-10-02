@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -154,6 +151,65 @@ $(function(){initNavTree('group__drivers__tmp00x.html',''); initResizable(true);
 
 <p>Driver for the Texas Instruments TMP00X sensor.  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Driver for the Texas Instruments TMP00X sensor. </p>
+<p>The TI TMP00X (Infrared Thermopile Contactless Temperature Sensor) measures the temperature of an object without need of direct contact with the object. After initialization the sensor can be set active for periodic measurements. <br  />
+ The conversion duration depends on oversample ratio. The oversample ratio can be determined by sensor initialization. The target object temperature can be calculated as follows:<br  />
+<br  />
+ Temperature of sensor's die (2 times right shifting and devide-by 32):   </p><p class="formulaDsp">
+<img class="formulaDsp" alt="\begin{eqnarray*}
+        T_{\mathrm{DIE}} &amp;=&amp; \frac{T_{\mathrm{RAW}}}{128}
+    \end{eqnarray*}" src="form_22.png"/>
+</p>
+<p> Difference Temperature in Kelvin:   </p><p class="formulaDsp">
+<img class="formulaDsp" alt="\begin{eqnarray*}
+        T_{\mathrm{DIFF}} &amp;=&amp; T_{\mathrm{DIE}} - T_{\mathrm{REF}}
+    \end{eqnarray*}" src="form_23.png"/>
+</p>
+<p> Sensitivity of the thermopile sensor, with <img class="formulaInl" alt="$S_{\mathrm{0}}$" src="form_24.png"/> as calibration factor:    </p><p class="formulaDsp">
+<img class="formulaDsp" alt="\begin{eqnarray*}
+         S &amp;=&amp; S_{\mathrm{0}} \cdot ( 1 + a_1 \cdot T_{\mathrm{DIFF}}
+               + a_2 \cdot T_{\mathrm{DIFF}}^2 ) \\
+     \end{eqnarray*}" src="form_25.png"/>
+</p>
+<p> Sensor's voltage (the LSB size is <img class="formulaInl" alt="$ 156.25\,\mathrm{nV} $" src="form_26.png"/>):   </p><p class="formulaDsp">
+<img class="formulaDsp" alt="\begin{eqnarray*}
+         V_{\mathrm{OBJ}} &amp;=&amp; V_{\mathrm{RAW}} \cdot 156.25\,\mathrm{nV}
+     \end{eqnarray*}" src="form_27.png"/>
+</p>
+<p> Offset voltage:    </p><p class="formulaDsp">
+<img class="formulaDsp" alt="\begin{eqnarray*}
+         V_{OS} &amp;=&amp; b_0 + b_1 \cdot T_{\mathrm{DIFF}}
+                       + b_2 \cdot T_{\mathrm{DIFF}}^2 \\
+     \end{eqnarray*}" src="form_28.png"/>
+</p>
+<p> Seebeck coefficients of the thermopile:     </p><p class="formulaDsp">
+<img class="formulaDsp" alt="\begin{eqnarray*}
+         f(V_{\mathrm{OBJ}}) &amp;=&amp; (V_{\mathrm{OBJ}} - V_{O\mathrm{S}})
+                                 + c_2 \cdot (V_{\mathrm{OBJ}}
+                                 - V_{\mathrm{OS}})^2 \\
+     \end{eqnarray*}" src="form_29.png"/>
+</p>
+<p> Temperature of the target object:    </p><p class="formulaDsp">
+<img class="formulaDsp" alt="\begin{eqnarray*}
+         T_{\mathrm{OBJ}} &amp;=&amp; \sqrt[4]{T_{\mathrm{DIE}}^4
+                              + \frac{f(V_{\mathrm{OBJ}})}{S}} \\
+     \end{eqnarray*}" src="form_30.png"/>
+</p>
+<p> Constants:<br  />
+         </p><p class="formulaDsp">
+<img class="formulaDsp" alt="\begin{eqnarray*}
+         a_{\mathrm{1}} &amp;=&amp; 1.75 \cdot 10^{-3} \\
+         a_{\mathrm{2}} &amp;=&amp; -1.678 \cdot 10^{-5} \\
+         T_{\mathrm{REF}} &amp;=&amp; 298.15\,\mathrm{K} \\
+         b_{\mathrm{0}} &amp;=&amp; -2.94 \cdot 10^{-5} \\
+         b_{\mathrm{1}} &amp;=&amp; -5.7 \cdot 10^{-7} \\
+         b_{\mathrm{2}} &amp;=&amp; 4.63 \cdot 10^{-9} \\
+         c_{\mathrm{2}} &amp;=&amp; 13.4
+     \end{eqnarray*}" src="form_31.png"/>
+</p>
+<p>The calculation and constants are wrapped from TI TMP00X User's Guide SBOU107.</p>
+<p>This driver provides <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> capabilities. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -295,65 +351,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:gae2f69b4a2729f2b4494ae65d9a8fa6ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sensor Voltage Register LSB Size. <br /></td></tr>
 <tr class="separator:gae2f69b4a2729f2b4494ae65d9a8fa6ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Driver for the Texas Instruments TMP00X sensor. </p>
-<p>The TI TMP00X (Infrared Thermopile Contactless Temperature Sensor) measures the temperature of an object without need of direct contact with the object. After initialization the sensor can be set active for periodic measurements. <br  />
- The conversion duration depends on oversample ratio. The oversample ratio can be determined by sensor initialization. The target object temperature can be calculated as follows:<br  />
-<br  />
- Temperature of sensor's die (2 times right shifting and devide-by 32):   </p><p class="formulaDsp">
-<img class="formulaDsp" alt="\begin{eqnarray*}
-        T_{\mathrm{DIE}} &amp;=&amp; \frac{T_{\mathrm{RAW}}}{128}
-    \end{eqnarray*}" src="form_22.png"/>
-</p>
-<p> Difference Temperature in Kelvin:   </p><p class="formulaDsp">
-<img class="formulaDsp" alt="\begin{eqnarray*}
-        T_{\mathrm{DIFF}} &amp;=&amp; T_{\mathrm{DIE}} - T_{\mathrm{REF}}
-    \end{eqnarray*}" src="form_23.png"/>
-</p>
-<p> Sensitivity of the thermopile sensor, with <img class="formulaInl" alt="$S_{\mathrm{0}}$" src="form_24.png"/> as calibration factor:    </p><p class="formulaDsp">
-<img class="formulaDsp" alt="\begin{eqnarray*}
-         S &amp;=&amp; S_{\mathrm{0}} \cdot ( 1 + a_1 \cdot T_{\mathrm{DIFF}}
-               + a_2 \cdot T_{\mathrm{DIFF}}^2 ) \\
-     \end{eqnarray*}" src="form_25.png"/>
-</p>
-<p> Sensor's voltage (the LSB size is <img class="formulaInl" alt="$ 156.25\,\mathrm{nV} $" src="form_26.png"/>):   </p><p class="formulaDsp">
-<img class="formulaDsp" alt="\begin{eqnarray*}
-         V_{\mathrm{OBJ}} &amp;=&amp; V_{\mathrm{RAW}} \cdot 156.25\,\mathrm{nV}
-     \end{eqnarray*}" src="form_27.png"/>
-</p>
-<p> Offset voltage:    </p><p class="formulaDsp">
-<img class="formulaDsp" alt="\begin{eqnarray*}
-         V_{OS} &amp;=&amp; b_0 + b_1 \cdot T_{\mathrm{DIFF}}
-                       + b_2 \cdot T_{\mathrm{DIFF}}^2 \\
-     \end{eqnarray*}" src="form_28.png"/>
-</p>
-<p> Seebeck coefficients of the thermopile:     </p><p class="formulaDsp">
-<img class="formulaDsp" alt="\begin{eqnarray*}
-         f(V_{\mathrm{OBJ}}) &amp;=&amp; (V_{\mathrm{OBJ}} - V_{O\mathrm{S}})
-                                 + c_2 \cdot (V_{\mathrm{OBJ}}
-                                 - V_{\mathrm{OS}})^2 \\
-     \end{eqnarray*}" src="form_29.png"/>
-</p>
-<p> Temperature of the target object:    </p><p class="formulaDsp">
-<img class="formulaDsp" alt="\begin{eqnarray*}
-         T_{\mathrm{OBJ}} &amp;=&amp; \sqrt[4]{T_{\mathrm{DIE}}^4
-                              + \frac{f(V_{\mathrm{OBJ}})}{S}} \\
-     \end{eqnarray*}" src="form_30.png"/>
-</p>
-<p> Constants:<br  />
-         </p><p class="formulaDsp">
-<img class="formulaDsp" alt="\begin{eqnarray*}
-         a_{\mathrm{1}} &amp;=&amp; 1.75 \cdot 10^{-3} \\
-         a_{\mathrm{2}} &amp;=&amp; -1.678 \cdot 10^{-5} \\
-         T_{\mathrm{REF}} &amp;=&amp; 298.15\,\mathrm{K} \\
-         b_{\mathrm{0}} &amp;=&amp; -2.94 \cdot 10^{-5} \\
-         b_{\mathrm{1}} &amp;=&amp; -5.7 \cdot 10^{-7} \\
-         b_{\mathrm{2}} &amp;=&amp; 4.63 \cdot 10^{-9} \\
-         c_{\mathrm{2}} &amp;=&amp; 13.4
-     \end{eqnarray*}" src="form_31.png"/>
-</p>
-<p>The calculation and constants are wrapped from TI TMP00X User's Guide SBOU107.</p>
-<p>This driver provides <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> capabilities. </p>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="gad89246e8564c62fdd9c7d38de122beb5" name="gad89246e8564c62fdd9c7d38de122beb5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gad89246e8564c62fdd9c7d38de122beb5">&#9670;&#160;</a></span>anonymous enum</h2>
@@ -641,7 +638,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

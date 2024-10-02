@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -145,52 +142,12 @@ $(function(){initNavTree('group__net__sock__async__event.html',''); initResizabl
 <a href="#files">Files</a> &#124;
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">Asynchronous sock with event API<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__sock.html">Sock API</a></div></div></div>
+  <div class="headertitle"><div class="title">Asynchronous sock with event API<div class="ingroups"><a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__net__sock.html">Sock API</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Provides an implementation of asynchronous sock for <a class="el" href="group__sys__event.html">Event Queue</a>  
 <a href="#details">More...</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="net_2sock_2async_2event_8h.html">event.h</a></td></tr>
-<tr class="memdesc:net_2sock_2async_2event_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchronous sock using <a class="el" href="group__sys__event.html">Event Queue</a> definitions. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sock__async__ctx_8h.html">sock_async_ctx.h</a></td></tr>
-<tr class="memdesc:sock__async__ctx_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type definitions for asynchronous socks with <a class="el" href="group__sys__event.html">Event Queue</a>. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionsock__event__cb__t.html">sock_event_cb_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generalized callback type.  <a href="unionsock__event__cb__t.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsock__event__t.html">sock_event_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event definition for context scope.  <a href="structsock__event__t.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsock__async__ctx__t.html">sock_async_ctx_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchronous context for <a class="el" href="group__net__sock__async__event.html">Asynchronous sock with event API</a>.  <a href="structsock__async__ctx__t.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ga4b087835f24c1848d8f047a1d72562f7" id="r_ga4b087835f24c1848d8f047a1d72562f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4b087835f24c1848d8f047a1d72562f7">sock_dtls_event_init</a> (<a class="el" href="group__net__sock__async.html#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a> *sock, <a class="el" href="group__sys__event.html#ga7806b159463497fbcd16f1697565ff4e">event_queue_t</a> *ev_queue, <a class="el" href="group__net__sock__async.html#gacfa13d8e28daeb88e26acb43139ba8b9">sock_dtls_cb_t</a> handler, void *handler_arg)</td></tr>
-<tr class="memdesc:ga4b087835f24c1848d8f047a1d72562f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a DTLS sock able to handle asynchronous events using <a class="el" href="group__sys__event.html">Event Queue</a>.  <br /></td></tr>
-<tr class="separator:ga4b087835f24c1848d8f047a1d72562f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga516d85129fee3fbff50753252cc761cf" id="r_ga516d85129fee3fbff50753252cc761cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga516d85129fee3fbff50753252cc761cf">sock_ip_event_init</a> (<a class="el" href="group__net__sock__async.html#ga439f68352d1339555536747a64b5232e">sock_ip_t</a> *sock, <a class="el" href="group__sys__event.html#ga7806b159463497fbcd16f1697565ff4e">event_queue_t</a> *ev_queue, <a class="el" href="group__net__sock__async.html#ga9574e29ab737ab3036c83cadc8cf3a3b">sock_ip_cb_t</a> handler, void *handler_arg)</td></tr>
-<tr class="memdesc:ga516d85129fee3fbff50753252cc761cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a raw IPv4/IPv6 sock able to handle asynchronous events using <a class="el" href="group__sys__event.html">Event Queue</a>.  <br /></td></tr>
-<tr class="separator:ga516d85129fee3fbff50753252cc761cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga215c86d4d098d0588e5f827d0d5e3386" id="r_ga215c86d4d098d0588e5f827d0d5e3386"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga215c86d4d098d0588e5f827d0d5e3386">sock_tcp_event_init</a> (<a class="el" href="group__net__sock__async.html#ga0144778bc074e291fcb0d43bd35c0179">sock_tcp_t</a> *sock, <a class="el" href="group__sys__event.html#ga7806b159463497fbcd16f1697565ff4e">event_queue_t</a> *ev_queue, <a class="el" href="group__net__sock__async.html#ga8f34bbf7e66712311ea5b55b431d87cd">sock_tcp_cb_t</a> handler, void *handler_arg)</td></tr>
-<tr class="memdesc:ga215c86d4d098d0588e5f827d0d5e3386"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a TCP sock able to handle asynchronous events using <a class="el" href="group__sys__event.html">Event Queue</a>.  <br /></td></tr>
-<tr class="separator:ga215c86d4d098d0588e5f827d0d5e3386"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaaca71a0983b47ba06c5c6e13e16028f0" id="r_gaaca71a0983b47ba06c5c6e13e16028f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaaca71a0983b47ba06c5c6e13e16028f0">sock_tcp_queue_event_init</a> (<a class="el" href="group__net__sock__async.html#ga233763551e481f547f1cb07e7e31f981">sock_tcp_queue_t</a> *queue, <a class="el" href="group__sys__event.html#ga7806b159463497fbcd16f1697565ff4e">event_queue_t</a> *ev_queue, <a class="el" href="group__net__sock__async.html#ga0d5deaf01ef65664a65258f8c14141f3">sock_tcp_queue_cb_t</a> handler, void *handler_arg)</td></tr>
-<tr class="memdesc:gaaca71a0983b47ba06c5c6e13e16028f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a TCP listening queue able to handle asynchronous events using <a class="el" href="group__sys__event.html">Event Queue</a>.  <br /></td></tr>
-<tr class="separator:gaaca71a0983b47ba06c5c6e13e16028f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad9dc3dcf6ac348744efe0e2fc23bbc22" id="r_gad9dc3dcf6ac348744efe0e2fc23bbc22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad9dc3dcf6ac348744efe0e2fc23bbc22">sock_udp_event_init</a> (<a class="el" href="group__net__sock__async.html#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a> *sock, <a class="el" href="group__sys__event.html#ga7806b159463497fbcd16f1697565ff4e">event_queue_t</a> *ev_queue, <a class="el" href="group__net__sock__async.html#ga2f5a726f8b92f5677cfc0aff15eadbf5">sock_udp_cb_t</a> handler, void *handler_arg)</td></tr>
-<tr class="memdesc:gad9dc3dcf6ac348744efe0e2fc23bbc22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a UDP sock able to handle asynchronous events using <a class="el" href="group__sys__event.html">Event Queue</a>.  <br /></td></tr>
-<tr class="separator:gad9dc3dcf6ac348744efe0e2fc23bbc22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Provides an implementation of asynchronous sock for <a class="el" href="group__sys__event.html">Event Queue</a> </p>
 <dl class="section warning"><dt>Warning</dt><dd><b class="text-danger">This feature is experimental!</b><br  />
@@ -299,7 +256,47 @@ An asynchronous UDP Echo server using the event API</h3>
 <div class="fragment"><div class="line"><a class="code hl_function" href="group__sys__event.html#ga609d4085b10b48c8b8725dab5b465896">event_queue_init</a>(&amp;queue);</div>
 <div class="line"><a class="code hl_function" href="#gad9dc3dcf6ac348744efe0e2fc23bbc22">sock_udp_event_init</a>(&amp;sock, &amp;queue, handler, NULL);</div>
 <div class="line"><a class="code hl_function" href="group__sys__event.html#ga321751eb630a363f187305e098229e7d">event_loop</a>(&amp;queue);</div>
-</div><!-- fragment --> <h2 class="groupheader">Function Documentation</h2>
+</div><!-- fragment --> <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="net_2sock_2async_2event_8h.html">event.h</a></td></tr>
+<tr class="memdesc:net_2sock_2async_2event_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchronous sock using <a class="el" href="group__sys__event.html">Event Queue</a> definitions. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sock__async__ctx_8h.html">sock_async_ctx.h</a></td></tr>
+<tr class="memdesc:sock__async__ctx_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type definitions for asynchronous socks with <a class="el" href="group__sys__event.html">Event Queue</a>. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionsock__event__cb__t.html">sock_event_cb_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generalized callback type.  <a href="unionsock__event__cb__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsock__event__t.html">sock_event_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event definition for context scope.  <a href="structsock__event__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsock__async__ctx__t.html">sock_async_ctx_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchronous context for <a class="el" href="group__net__sock__async__event.html">Asynchronous sock with event API</a>.  <a href="structsock__async__ctx__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga4b087835f24c1848d8f047a1d72562f7" id="r_ga4b087835f24c1848d8f047a1d72562f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4b087835f24c1848d8f047a1d72562f7">sock_dtls_event_init</a> (<a class="el" href="group__net__sock__async.html#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a> *sock, <a class="el" href="group__sys__event.html#ga7806b159463497fbcd16f1697565ff4e">event_queue_t</a> *ev_queue, <a class="el" href="group__net__sock__async.html#gacfa13d8e28daeb88e26acb43139ba8b9">sock_dtls_cb_t</a> handler, void *handler_arg)</td></tr>
+<tr class="memdesc:ga4b087835f24c1848d8f047a1d72562f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a DTLS sock able to handle asynchronous events using <a class="el" href="group__sys__event.html">Event Queue</a>.  <br /></td></tr>
+<tr class="separator:ga4b087835f24c1848d8f047a1d72562f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga516d85129fee3fbff50753252cc761cf" id="r_ga516d85129fee3fbff50753252cc761cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga516d85129fee3fbff50753252cc761cf">sock_ip_event_init</a> (<a class="el" href="group__net__sock__async.html#ga439f68352d1339555536747a64b5232e">sock_ip_t</a> *sock, <a class="el" href="group__sys__event.html#ga7806b159463497fbcd16f1697565ff4e">event_queue_t</a> *ev_queue, <a class="el" href="group__net__sock__async.html#ga9574e29ab737ab3036c83cadc8cf3a3b">sock_ip_cb_t</a> handler, void *handler_arg)</td></tr>
+<tr class="memdesc:ga516d85129fee3fbff50753252cc761cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a raw IPv4/IPv6 sock able to handle asynchronous events using <a class="el" href="group__sys__event.html">Event Queue</a>.  <br /></td></tr>
+<tr class="separator:ga516d85129fee3fbff50753252cc761cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga215c86d4d098d0588e5f827d0d5e3386" id="r_ga215c86d4d098d0588e5f827d0d5e3386"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga215c86d4d098d0588e5f827d0d5e3386">sock_tcp_event_init</a> (<a class="el" href="group__net__sock__async.html#ga0144778bc074e291fcb0d43bd35c0179">sock_tcp_t</a> *sock, <a class="el" href="group__sys__event.html#ga7806b159463497fbcd16f1697565ff4e">event_queue_t</a> *ev_queue, <a class="el" href="group__net__sock__async.html#ga8f34bbf7e66712311ea5b55b431d87cd">sock_tcp_cb_t</a> handler, void *handler_arg)</td></tr>
+<tr class="memdesc:ga215c86d4d098d0588e5f827d0d5e3386"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a TCP sock able to handle asynchronous events using <a class="el" href="group__sys__event.html">Event Queue</a>.  <br /></td></tr>
+<tr class="separator:ga215c86d4d098d0588e5f827d0d5e3386"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaca71a0983b47ba06c5c6e13e16028f0" id="r_gaaca71a0983b47ba06c5c6e13e16028f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaaca71a0983b47ba06c5c6e13e16028f0">sock_tcp_queue_event_init</a> (<a class="el" href="group__net__sock__async.html#ga233763551e481f547f1cb07e7e31f981">sock_tcp_queue_t</a> *queue, <a class="el" href="group__sys__event.html#ga7806b159463497fbcd16f1697565ff4e">event_queue_t</a> *ev_queue, <a class="el" href="group__net__sock__async.html#ga0d5deaf01ef65664a65258f8c14141f3">sock_tcp_queue_cb_t</a> handler, void *handler_arg)</td></tr>
+<tr class="memdesc:gaaca71a0983b47ba06c5c6e13e16028f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a TCP listening queue able to handle asynchronous events using <a class="el" href="group__sys__event.html">Event Queue</a>.  <br /></td></tr>
+<tr class="separator:gaaca71a0983b47ba06c5c6e13e16028f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad9dc3dcf6ac348744efe0e2fc23bbc22" id="r_gad9dc3dcf6ac348744efe0e2fc23bbc22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad9dc3dcf6ac348744efe0e2fc23bbc22">sock_udp_event_init</a> (<a class="el" href="group__net__sock__async.html#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a> *sock, <a class="el" href="group__sys__event.html#ga7806b159463497fbcd16f1697565ff4e">event_queue_t</a> *ev_queue, <a class="el" href="group__net__sock__async.html#ga2f5a726f8b92f5677cfc0aff15eadbf5">sock_udp_cb_t</a> handler, void *handler_arg)</td></tr>
+<tr class="memdesc:gad9dc3dcf6ac348744efe0e2fc23bbc22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a UDP sock able to handle asynchronous events using <a class="el" href="group__sys__event.html">Event Queue</a>.  <br /></td></tr>
+<tr class="separator:gad9dc3dcf6ac348744efe0e2fc23bbc22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="ga4b087835f24c1848d8f047a1d72562f7" name="ga4b087835f24c1848d8f047a1d72562f7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga4b087835f24c1848d8f047a1d72562f7">&#9670;&#160;</a></span>sock_dtls_event_init()</h2>
 
@@ -522,7 +519,7 @@ An asynchronous UDP Echo server using the event API</h3>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

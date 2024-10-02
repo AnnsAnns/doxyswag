@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -149,22 +146,6 @@ $(function(){initNavTree('group__boards__gd32vf103c__start.html',''); initResiza
 
 <p>Support for the GD32VF103C-START board  
 <a href="#details">More...</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gd32vf103c-start_2include_2arduino__iomap_8h.html">arduino_iomap.h</a></td></tr>
-<tr class="memdesc:gd32vf103c-start_2include_2arduino__iomap_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mapping from MCU pins to Arduino pins. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gd32vf103c-start_2include_2board_8h.html">board.h</a></td></tr>
-<tr class="memdesc:gd32vf103c-start_2include_2board_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Board specific definitions for the GD32VF103C-START board. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gd32vf103c-start_2include_2gpio__params_8h.html">gpio_params.h</a></td></tr>
-<tr class="memdesc:gd32vf103c-start_2include_2gpio__params_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration of SAUL mapped GPIO pins. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boards_2gd32vf103c-start_2include_2periph__conf_8h.html">periph_conf.h</a></td></tr>
-<tr class="memdesc:boards_2gd32vf103c-start_2include_2periph__conf_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Board specific definitions for the GD32VF103C-START board. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the GD32VF103C-START board </p>
 <dl class="section author"><dt>Author</dt><dd>Marian Buschsieweke</dd></dl>
@@ -256,6 +237,22 @@ Connecting to the Serial Output</h2>
 <div class="fragment"><div class="line">make BOARD=gd32vf103c-start -C path/to/app term</div>
 </div><!-- fragment --><p>Alternatively, <code>stdio_cdc_acm</code> can be used. In this case the mini USB cable needs to be connected to the USB connector labeled OTG.</p>
 <dl class="section note"><dt>Note</dt><dd>It is safe to keep the jumper at JP2 in "Usart" position or even remove the jumper with RIOT. PA9 is still used as UART/TXD and VBUS sensing is disabled anyway. </dd></dl>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gd32vf103c-start_2include_2arduino__iomap_8h.html">arduino_iomap.h</a></td></tr>
+<tr class="memdesc:gd32vf103c-start_2include_2arduino__iomap_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mapping from MCU pins to Arduino pins. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gd32vf103c-start_2include_2board_8h.html">board.h</a></td></tr>
+<tr class="memdesc:gd32vf103c-start_2include_2board_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Board specific definitions for the GD32VF103C-START board. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gd32vf103c-start_2include_2gpio__params_8h.html">gpio_params.h</a></td></tr>
+<tr class="memdesc:gd32vf103c-start_2include_2gpio__params_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration of SAUL mapped GPIO pins. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boards_2gd32vf103c-start_2include_2periph__conf_8h.html">periph_conf.h</a></td></tr>
+<tr class="memdesc:boards_2gd32vf103c-start_2include_2periph__conf_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Board specific definitions for the GD32VF103C-START board. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
@@ -263,7 +260,7 @@ Connecting to the Serial Output</h2>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

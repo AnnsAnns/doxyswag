@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -150,6 +147,50 @@ $(function(){initNavTree('group__cpu__efm32.html',''); initResizable(true); });
 
 <p>Silicon Labs's EFM32/EFR32/EZR32 MCUs implementation  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Silicon Labs's EFM32/EFR32/EZR32 MCUs implementation </p>
+<p>This module contains all code and definitions for the Silicon Labs EFM32/EFR32/EZR32 MCUs. It uses the Gecko SDK (vendor library) for the peripheral drivers.</p>
+<h1><a class="anchor" id="autotoc_md31"></a>
+Supported Peripherals</h1>
+<p>The following peripherals are supported (depends on microcontroller):</p><ul>
+<li>ADC</li>
+<li>CPUID</li>
+<li>DAC</li>
+<li>Flash page</li>
+<li>GPIO</li>
+<li>HW RNG</li>
+<li>I2C</li>
+<li>Power Management</li>
+<li>PWM</li>
+<li>RTC</li>
+<li>RTT</li>
+<li>SPI</li>
+<li><a class="el" href="structTimer.html" title="struct to get time references within mqtt paho">Timer</a></li>
+<li>UART (including low-power)</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md32"></a>
+Clock Configuration</h1>
+<p>By default the microcontroller will run on the internal RC-oscillator. If an external crystal is available, you can configure it to use by setting <code>CLOCK_HF=cmuSelect_HFXO</code>. The same applies for <code>CLOCK_LFA</code>, <code>CLOCK_LFB</code> and <code>CLOCK_LFE</code> using <code>cmuSelect_LFXO</code>.</p>
+<p>If the internal RC-oscillator is not used, it will be disabled.</p>
+<p>Refer to the reference manual of the specific microcontroller for the specifics.</p>
+<h1><a class="anchor" id="autotoc_md33"></a>
+EMU and CMU Configuration</h1>
+<p>The Energy Management Unit (EMU) and Clock Management Unit (CMU) are initialized using default values provided by the Gecko SDK. You can override any of the following defaults to use other values:</p>
+<ul>
+<li><code>CMU_HFXOINIT</code></li>
+<li><code>CMU_LFXOINIT</code></li>
+<li><code>EMU_DCDCINIT</code></li>
+<li><code>EMU_EM23INIT</code></li>
+<li><code>EMU_EM4INIT</code></li>
+</ul>
+<p>Refer to the Gecko SDK for more information about these values.</p>
+<h1><a class="anchor" id="autotoc_md34"></a>
+Low-power Configuration</h1>
+<p>The EFM32/EFR32/EZR32 MCUs have support for low-power peripherals. Support is enabled by default, but can be disabled if not used.</p>
+<ul>
+<li>Setting <code>EFM32_LEUART_ENABLED=0</code> will disable support for the LEUART in the UART driver peripheral and save approximately 400 bytes.</li>
+</ul>
+<p>Refer to <code>cpu/efm32/efm32-features.mk</code> for more options. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -199,50 +240,6 @@ Files</h2></td></tr>
 <tr class="memdesc:efm32_2include_2periph__cpu_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">CPU specific definitions for internal peripheral handling. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Silicon Labs's EFM32/EFR32/EZR32 MCUs implementation </p>
-<p>This module contains all code and definitions for the Silicon Labs EFM32/EFR32/EZR32 MCUs. It uses the Gecko SDK (vendor library) for the peripheral drivers.</p>
-<h1><a class="anchor" id="autotoc_md31"></a>
-Supported Peripherals</h1>
-<p>The following peripherals are supported (depends on microcontroller):</p><ul>
-<li>ADC</li>
-<li>CPUID</li>
-<li>DAC</li>
-<li>Flash page</li>
-<li>GPIO</li>
-<li>HW RNG</li>
-<li>I2C</li>
-<li>Power Management</li>
-<li>PWM</li>
-<li>RTC</li>
-<li>RTT</li>
-<li>SPI</li>
-<li><a class="el" href="structTimer.html" title="struct to get time references within mqtt paho">Timer</a></li>
-<li>UART (including low-power)</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md32"></a>
-Clock Configuration</h1>
-<p>By default the microcontroller will run on the internal RC-oscillator. If an external crystal is available, you can configure it to use by setting <code>CLOCK_HF=cmuSelect_HFXO</code>. The same applies for <code>CLOCK_LFA</code>, <code>CLOCK_LFB</code> and <code>CLOCK_LFE</code> using <code>cmuSelect_LFXO</code>.</p>
-<p>If the internal RC-oscillator is not used, it will be disabled.</p>
-<p>Refer to the reference manual of the specific microcontroller for the specifics.</p>
-<h1><a class="anchor" id="autotoc_md33"></a>
-EMU and CMU Configuration</h1>
-<p>The Energy Management Unit (EMU) and Clock Management Unit (CMU) are initialized using default values provided by the Gecko SDK. You can override any of the following defaults to use other values:</p>
-<ul>
-<li><code>CMU_HFXOINIT</code></li>
-<li><code>CMU_LFXOINIT</code></li>
-<li><code>EMU_DCDCINIT</code></li>
-<li><code>EMU_EM23INIT</code></li>
-<li><code>EMU_EM4INIT</code></li>
-</ul>
-<p>Refer to the Gecko SDK for more information about these values.</p>
-<h1><a class="anchor" id="autotoc_md34"></a>
-Low-power Configuration</h1>
-<p>The EFM32/EFR32/EZR32 MCUs have support for low-power peripherals. Support is enabled by default, but can be disabled if not used.</p>
-<ul>
-<li>Setting <code>EFM32_LEUART_ENABLED=0</code> will disable support for the LEUART in the UART driver peripheral and save approximately 400 bytes.</li>
-</ul>
-<p>Refer to <code>cpu/efm32/efm32-features.mk</code> for more options. </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
@@ -250,7 +247,7 @@ Low-power Configuration</h1>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

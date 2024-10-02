@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -143,13 +140,16 @@ $(function(){initNavTree('nimble__rpble__params_8h.html',''); initResizable(true
 <div class="header">
   <div class="summary">
 <a href="#var-members">Variables</a>  </div>
-  <div class="headertitle"><div class="title">nimble_rpble_params.h File Reference<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__ble.html">Bluetooth Low Energy (BLE)</a> &raquo; <a class="el" href="group__pkg__nimble.html">NimBLE</a> &raquo; <a class="el" href="group__pkg__nimble__rpble.html">RPL-over-BLE for NimBLE</a></div></div></div>
+  <div class="headertitle"><div class="title">nimble_rpble_params.h File Reference<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__ble.html">Bluetooth Low Energy (BLE)</a> &raquo; <a class="el" href="group__pkg__nimble.html">NimBLE</a> &raquo; <a class="el" href="group__pkg__nimble__rpble.html">RPL-over-BLE for NimBLE</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Default configuration for the nimble_netif_rpble module.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="nimble__rpble_8h.html">nimble_rpble.h</a>&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Default configuration for the nimble_netif_rpble module. </p>
+<dl class="section author"><dt>Author</dt><dd>Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;<a class="el" href="nimble__rpble_8h.html">nimble_rpble.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for nimble_rpble_params.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -209,10 +209,7 @@ static const <a class="el" href="structnimble__rpble__cfg__t.html">nimble_rpble_
 <tr class="memitem:ac82fb7cf6f839def35b7593680b120b4" id="r_ac82fb7cf6f839def35b7593680b120b4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac82fb7cf6f839def35b7593680b120b4">NIMBLE_RPBLE_PARAMS</a></td></tr>
 <tr class="separator:ac82fb7cf6f839def35b7593680b120b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Default configuration for the nimble_netif_rpble module. </p>
-<dl class="section author"><dt>Author</dt><dd>Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ac82fb7cf6f839def35b7593680b120b4" name="ac82fb7cf6f839def35b7593680b120b4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac82fb7cf6f839def35b7593680b120b4">&#9670;&#160;</a></span>NIMBLE_RPBLE_PARAMS</h2>
 
@@ -249,7 +246,7 @@ static const <a class="el" href="structnimble__rpble__cfg__t.html">nimble_rpble_
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_1b757248df2f96757224e5c7d0d8f21a.html">pkg</a></li><li class="navelem"><a class="el" href="dir_80463f7a6317921a2116c8dac02e63ca.html">nimble</a></li><li class="navelem"><a class="el" href="dir_c5c7196e414fb9825f2be388a8b7fc29.html">rpble</a></li><li class="navelem"><a class="el" href="dir_6259b62197f046977a085d3349ff0a91.html">include</a></li><li class="navelem"><a class="el" href="nimble__rpble__params_8h.html">nimble_rpble_params.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

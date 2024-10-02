@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -155,7 +152,41 @@ $(function(){initNavTree('group__drivers__bme680.html',''); initResizable(true);
 
 <p>Driver for the Bosch BME680 sensor  
 <a href="#details">More...</a></p>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Driver for the Bosch BME680 sensor </p>
+<h3><a class="anchor" id="autotoc_md1623"></a>
+Introduction</h3>
+<p>The driver allows the use of BME680 sensors connected either via I2C or SPI. Instead of implementing a complete driver, it simply uses the <a href="https://github.com/BoschSensortec/BME680_driver">BME680 vendor driver</a> written and maintained by Bosch Sensortec as a package.</p>
+<p>Even though this driver interface provides an easy-to-use API, the vendor's driver API can still be used directly. This becomes necessary, for example, if the settings of the ambient temperature have to be updated from measurements with other sensors for gas measurement.</p>
+<p>All functions of the vendor's driver API require a reference to a sensor device structure of type <code>struct bme680_dev</code>. Use macro <a class="el" href="#gaf6ed7c0d8e8c6ac8be6a904d45809bfc">BME680_SENSOR(dev)</a> for a given device descriptor of type <a class="el" href="structbme680__t.html">bme680_t</a> to the according sensor device structure of type <code>struct bme680_dev</code>, for example:</p>
+<div class="fragment"><div class="line"><a class="code hl_struct" href="structbme680__t.html">bme680_t</a> dev;</div>
+<div class="line">...</div>
+<div class="line">BME680_SENSOR(dev).amb_temp = value_from_other_sensor;</div>
+<div class="line">bme680_set_sensor_settings(BME680_GAS_MEAS_SEL, &amp;<a class="code hl_define" href="#gaf6ed7c0d8e8c6ac8be6a904d45809bfc">BME680_SENSOR</a>(dev));</div>
+<div class="ttc" id="agroup__drivers__bme680_html_gaf6ed7c0d8e8c6ac8be6a904d45809bfc"><div class="ttname"><a href="#gaf6ed7c0d8e8c6ac8be6a904d45809bfc">BME680_SENSOR</a></div><div class="ttdeci">#define BME680_SENSOR(d)</div><div class="ttdoc">Converts a BME680 device descriptor to the BME680 sensor device structure for the vendor BME680 devic...</div><div class="ttdef"><b>Definition</b> bme680.h:139</div></div>
+<div class="ttc" id="astructbme680__t_html"><div class="ttname"><a href="structbme680__t.html">bme680_t</a></div><div class="ttdoc">BME680 device descriptor.</div><div class="ttdef"><b>Definition</b> bme680.h:233</div></div>
+</div><!-- fragment --><p>Refer to the code documentation at <a href="https://github.com/BoschSensortec/BME680_driver">GitHub</a> for detailed information on the API of the vendor driver.</p>
+<h3><a class="anchor" id="autotoc_md1624"></a>
+Sensor Operation Modes</h3>
+<p>The BME680 sensor supports only two modes, sleep mode and forced mode, in which measurements are taken. After the power-on sequence, the sensor automatically starts in sleep mode. To start a measurement, the sensor must switch to forced mode. In this mode it performs exactly one measurement of temperature, pressure, humidity and gas in this order, the so-called TPHG measurement cycle. After executing this TPHG measurement cycle, the raw data from the sensor is available and the sensor automatically returns to sleep mode</p>
+<h3><a class="anchor" id="autotoc_md1625"></a>
+Ambient Temperature</h3>
+<p>The sensor is initialized with a fixed ambient temperature defined by the parameter settings in <a class="el" href="bme680__params_8h.html#aaff300d1895e6540ac099581659a4f2e">bme680_params</a>. However, precise gas measurements require the calculation of the heating resistance based on the ambient temperature.</p>
+<p>The temperature of the internal temperature sensor is typically higher than the actual ambient temperature due to the self-heating of the sensor. element. It should therefore not be used to set the ambient temperature unless gas measurements are very infrequent and self-heating is negligible. Rather another temperature sensor should be used for that purpose.</p>
+<p>Function <a class="el" href="#ga9c4a863be8d955566d79102494c88b2c">bme680_set_ambient_temp</a> can be used to change the ambient temperature.</p>
+<h3><a class="anchor" id="autotoc_md1626"></a>
+Using the Sensor</h3>
+<p>Using the BME680 consists of the following steps</p>
+<ol type="1">
+<li>Trigger the sensor with <a class="el" href="#ga5eddf06b725e8f8944b8f20ebf6e1a6a">bme680_force_measurement</a> to change to the forced mode and perform a THPG cycle.</li>
+<li>Wait at least the time returned by <a class="el" href="#ga7e612954b35a0836a0fe0df22707e8d2">bme680_get_duration</a> until the THPG cycle is finished.</li>
+<li>Use <a class="el" href="#gae98f4c5bbee96672a75c07170f391c98">bme680_get_data</a> to fetch raw sensor data and convert them to the resulting sensor values</li>
+</ol>
+<h3><a class="anchor" id="autotoc_md1627"></a>
+Driver Configuration</h3>
+<p>BME680 sensors are connected either via I2C or SPI. Which interface is used by which BME680 sensor is defined by the parameters in <a class="el" href="bme680__params_8h.html#aaff300d1895e6540ac099581659a4f2e">bme680_params</a>. The respective driver implementation is enabled by the modules <code>bme680_i2c</code> and <code>bme680_spi</code>. Several BME680 sensors and a mixed configuration of I2C and SPI can be used in one application. </p><div class="fragment"><div class="line">USEMODULE=<span class="stringliteral">&#39;bme680_spi bme680_i2c&#39;</span> make BOARD=... -C tests/drivers/bme680</div>
+</div><!-- fragment --><p>The vendor driver allows the use of floating point conversions. In order to use these floating point conversions, module <code>bme680_fp</code> has to be enabled: </p><div class="fragment"><div class="line">USEMODULE=<span class="stringliteral">&#39;bme680_fp bme680_i2c&#39;</span> make BOARD=... -C tests/drivers/bme680</div>
+</div><!-- fragment --> <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bme680__params_8h.html">bme680_params.h</a></td></tr>
@@ -253,41 +284,7 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>bme680_devs_n
 <tr class="memdesc:ga4cc95617516b48b745b7326ad6de9940"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of initialized BME680 sensor devices in bme680_devs. <br /></td></tr>
 <tr class="separator:ga4cc95617516b48b745b7326ad6de9940"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Driver for the Bosch BME680 sensor </p>
-<h3><a class="anchor" id="autotoc_md1623"></a>
-Introduction</h3>
-<p>The driver allows the use of BME680 sensors connected either via I2C or SPI. Instead of implementing a complete driver, it simply uses the <a href="https://github.com/BoschSensortec/BME680_driver">BME680 vendor driver</a> written and maintained by Bosch Sensortec as a package.</p>
-<p>Even though this driver interface provides an easy-to-use API, the vendor's driver API can still be used directly. This becomes necessary, for example, if the settings of the ambient temperature have to be updated from measurements with other sensors for gas measurement.</p>
-<p>All functions of the vendor's driver API require a reference to a sensor device structure of type <code>struct bme680_dev</code>. Use macro <a class="el" href="#gaf6ed7c0d8e8c6ac8be6a904d45809bfc">BME680_SENSOR(dev)</a> for a given device descriptor of type <a class="el" href="structbme680__t.html">bme680_t</a> to the according sensor device structure of type <code>struct bme680_dev</code>, for example:</p>
-<div class="fragment"><div class="line"><a class="code hl_struct" href="structbme680__t.html">bme680_t</a> dev;</div>
-<div class="line">...</div>
-<div class="line">BME680_SENSOR(dev).amb_temp = value_from_other_sensor;</div>
-<div class="line">bme680_set_sensor_settings(BME680_GAS_MEAS_SEL, &amp;<a class="code hl_define" href="#gaf6ed7c0d8e8c6ac8be6a904d45809bfc">BME680_SENSOR</a>(dev));</div>
-<div class="ttc" id="agroup__drivers__bme680_html_gaf6ed7c0d8e8c6ac8be6a904d45809bfc"><div class="ttname"><a href="#gaf6ed7c0d8e8c6ac8be6a904d45809bfc">BME680_SENSOR</a></div><div class="ttdeci">#define BME680_SENSOR(d)</div><div class="ttdoc">Converts a BME680 device descriptor to the BME680 sensor device structure for the vendor BME680 devic...</div><div class="ttdef"><b>Definition</b> bme680.h:139</div></div>
-<div class="ttc" id="astructbme680__t_html"><div class="ttname"><a href="structbme680__t.html">bme680_t</a></div><div class="ttdoc">BME680 device descriptor.</div><div class="ttdef"><b>Definition</b> bme680.h:233</div></div>
-</div><!-- fragment --><p>Refer to the code documentation at <a href="https://github.com/BoschSensortec/BME680_driver">GitHub</a> for detailed information on the API of the vendor driver.</p>
-<h3><a class="anchor" id="autotoc_md1624"></a>
-Sensor Operation Modes</h3>
-<p>The BME680 sensor supports only two modes, sleep mode and forced mode, in which measurements are taken. After the power-on sequence, the sensor automatically starts in sleep mode. To start a measurement, the sensor must switch to forced mode. In this mode it performs exactly one measurement of temperature, pressure, humidity and gas in this order, the so-called TPHG measurement cycle. After executing this TPHG measurement cycle, the raw data from the sensor is available and the sensor automatically returns to sleep mode</p>
-<h3><a class="anchor" id="autotoc_md1625"></a>
-Ambient Temperature</h3>
-<p>The sensor is initialized with a fixed ambient temperature defined by the parameter settings in <a class="el" href="bme680__params_8h.html#aaff300d1895e6540ac099581659a4f2e">bme680_params</a>. However, precise gas measurements require the calculation of the heating resistance based on the ambient temperature.</p>
-<p>The temperature of the internal temperature sensor is typically higher than the actual ambient temperature due to the self-heating of the sensor. element. It should therefore not be used to set the ambient temperature unless gas measurements are very infrequent and self-heating is negligible. Rather another temperature sensor should be used for that purpose.</p>
-<p>Function <a class="el" href="#ga9c4a863be8d955566d79102494c88b2c">bme680_set_ambient_temp</a> can be used to change the ambient temperature.</p>
-<h3><a class="anchor" id="autotoc_md1626"></a>
-Using the Sensor</h3>
-<p>Using the BME680 consists of the following steps</p>
-<ol type="1">
-<li>Trigger the sensor with <a class="el" href="#ga5eddf06b725e8f8944b8f20ebf6e1a6a">bme680_force_measurement</a> to change to the forced mode and perform a THPG cycle.</li>
-<li>Wait at least the time returned by <a class="el" href="#ga7e612954b35a0836a0fe0df22707e8d2">bme680_get_duration</a> until the THPG cycle is finished.</li>
-<li>Use <a class="el" href="#gae98f4c5bbee96672a75c07170f391c98">bme680_get_data</a> to fetch raw sensor data and convert them to the resulting sensor values</li>
-</ol>
-<h3><a class="anchor" id="autotoc_md1627"></a>
-Driver Configuration</h3>
-<p>BME680 sensors are connected either via I2C or SPI. Which interface is used by which BME680 sensor is defined by the parameters in <a class="el" href="bme680__params_8h.html#aaff300d1895e6540ac099581659a4f2e">bme680_params</a>. The respective driver implementation is enabled by the modules <code>bme680_i2c</code> and <code>bme680_spi</code>. Several BME680 sensors and a mixed configuration of I2C and SPI can be used in one application. </p><div class="fragment"><div class="line">USEMODULE=<span class="stringliteral">&#39;bme680_spi bme680_i2c&#39;</span> make BOARD=... -C tests/drivers/bme680</div>
-</div><!-- fragment --><p>The vendor driver allows the use of floating point conversions. In order to use these floating point conversions, module <code>bme680_fp</code> has to be enabled: </p><div class="fragment"><div class="line">USEMODULE=<span class="stringliteral">&#39;bme680_fp bme680_i2c&#39;</span> make BOARD=... -C tests/drivers/bme680</div>
-</div><!-- fragment --> <h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="gaf6ed7c0d8e8c6ac8be6a904d45809bfc" name="gaf6ed7c0d8e8c6ac8be6a904d45809bfc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaf6ed7c0d8e8c6ac8be6a904d45809bfc">&#9670;&#160;</a></span>BME680_SENSOR</h2>
 
@@ -522,7 +519,7 @@ Driver Configuration</h3>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

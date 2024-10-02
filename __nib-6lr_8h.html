@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -141,13 +138,17 @@ $(function(){initNavTree('__nib-6lr_8h.html',''); initResizable(true); });
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">_nib-6lr.h File Reference<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__ipv6.html">IPv6</a> &raquo; <a class="el" href="group__net__gnrc__ipv6__nib.html">Neighbor Information Base for IPv6</a></div></div></div>
+  <div class="headertitle"><div class="title">_nib-6lr.h File Reference<div class="ingroups"><a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__ipv6.html">IPv6</a> &raquo; <a class="el" href="group__net__gnrc__ipv6__nib.html">Neighbor Information Base for IPv6</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Definitions related to 6Lo router (6LR) functionality of the NIB.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;<a class="el" href="kernel__defines_8h.html">kernel_defines.h</a>&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Definitions related to 6Lo router (6LR) functionality of the NIB. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__net__gnrc__ipv6__nib__conf.html#gaff424896197494575755b6c6987ee416">CONFIG_GNRC_IPV6_NIB_6LR</a></dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Martine Lenders <a href="#" onclick="location.href='mai'+'lto:'+'m.l'+'en'+'der'+'s@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">m.len<span class="obfuscator">.nosp@m.</span>ders<span class="obfuscator">.nosp@m.</span>@fu-b<span class="obfuscator">.nosp@m.</span>erli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;<a class="el" href="kernel__defines_8h.html">kernel_defines.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="ipv6_2nib_2conf_8h.html">net/gnrc/ipv6/nib/conf.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ndp_8h.html">net/ndp.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="sixlowpan_2nd_8h.html">net/sixlowpan/nd.h</a>&quot;</code><br />
@@ -178,11 +179,7 @@ $(function(){initNavTree('__nib-6lr_8h.html',''); initResizable(true); });
 <tr class="memdesc:aa08b0b3d63bb419a47fabafd16510fb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles and copies ARO from NS to NA.  <br /></td></tr>
 <tr class="separator:aa08b0b3d63bb419a47fabafd16510fb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Definitions related to 6Lo router (6LR) functionality of the NIB. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__net__gnrc__ipv6__nib__conf.html#gaff424896197494575755b6c6987ee416">CONFIG_GNRC_IPV6_NIB_6LR</a></dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Martine Lenders <a href="#" onclick="location.href='mai'+'lto:'+'m.l'+'en'+'der'+'s@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">m.len<span class="obfuscator">.nosp@m.</span>ders<span class="obfuscator">.nosp@m.</span>@fu-b<span class="obfuscator">.nosp@m.</span>erli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
-</div><h2 class="groupheader">Function Documentation</h2>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="aa08b0b3d63bb419a47fabafd16510fb0" name="aa08b0b3d63bb419a47fabafd16510fb0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa08b0b3d63bb419a47fabafd16510fb0">&#9670;&#160;</a></span>_copy_and_handle_aro()</h2>
 
@@ -406,7 +403,7 @@ $(function(){initNavTree('__nib-6lr_8h.html',''); initResizable(true); });
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a408b6d3a4a484720bc3ecfeac8947e3.html">sys</a></li><li class="navelem"><a class="el" href="dir_8029da4437d789f4711f6586d7ee68bf.html">net</a></li><li class="navelem"><a class="el" href="dir_3441f3001dd6ccd78cd6b9a576f26623.html">gnrc</a></li><li class="navelem"><a class="el" href="dir_339d813b9d7385c78a9e25d204700b17.html">network_layer</a></li><li class="navelem"><a class="el" href="dir_d4dbfc4bcd8253089576a43737c4ecfe.html">ipv6</a></li><li class="navelem"><a class="el" href="dir_64912e822a0ea6faba551b038c7fc73e.html">nib</a></li><li class="navelem"><a class="el" href="__nib-6lr_8h.html">_nib-6lr.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

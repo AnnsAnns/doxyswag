@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,12 @@ $(function(){initNavTree('f4vi1_2include_2board_8h.html',''); initResizable(true
 
 <p>Board specific definitions for the f4vi1 board.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;cpu.h&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Board specific definitions for the f4vi1 board. </p>
+<dl class="section author"><dt>Author</dt><dd>Stefan Pfeiffer <a href="#" onclick="location.href='mai'+'lto:'+'pfe'+'if'+'fer'+'@i'+'nf.'+'fu'+'-be'+'rl'+'in.'+'de'; return false;">pfeif<span class="obfuscator">.nosp@m.</span>fer@<span class="obfuscator">.nosp@m.</span>inf.f<span class="obfuscator">.nosp@m.</span>u-be<span class="obfuscator">.nosp@m.</span>rlin.<span class="obfuscator">.nosp@m.</span>de</a> </dd>
+<dd>
+Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;cpu.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="boards_2f4vi1_2include_2periph__conf_8h.html">periph_conf.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="stm32__leds_8h.html">stm32_leds.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -190,12 +192,7 @@ $(function(){initNavTree('f4vi1_2include_2board_8h.html',''); initResizable(true
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>LED2_PORT_NUM</b>&#160;&#160;&#160;<a class="el" href="atmega1281_2include_2periph__cpu_8h.html#abc6126af1d45847bc59afa0aa3216b04aeb6782d9dfedf3c6a78ffdb1624fa454">PORT_A</a></td></tr>
 <tr class="separator:a17da0a7b39dc25b0f47d27221c275f0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Board specific definitions for the f4vi1 board. </p>
-<dl class="section author"><dt>Author</dt><dd>Stefan Pfeiffer <a href="#" onclick="location.href='mai'+'lto:'+'pfe'+'if'+'fer'+'@i'+'nf.'+'fu'+'-be'+'rl'+'in.'+'de'; return false;">pfeif<span class="obfuscator">.nosp@m.</span>fer@<span class="obfuscator">.nosp@m.</span>inf.f<span class="obfuscator">.nosp@m.</span>u-be<span class="obfuscator">.nosp@m.</span>rlin.<span class="obfuscator">.nosp@m.</span>de</a> </dd>
-<dd>
-Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
@@ -203,7 +200,7 @@ Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6c8313236d9db5b969ca7d150fe527de.html">boards</a></li><li class="navelem"><a class="el" href="dir_db79555d5d7847651d5e2a06614b0a3a.html">f4vi1</a></li><li class="navelem"><a class="el" href="dir_52f67afa36979c93c746314c2a510b9c.html">include</a></li><li class="navelem"><a class="el" href="f4vi1_2include_2board_8h.html">board.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:28 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

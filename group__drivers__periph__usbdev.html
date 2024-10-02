@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -154,6 +151,27 @@ $(function(){initNavTree('group__drivers__periph__usbdev.html',''); initResizabl
 
 <p>This is a generic low-level USB driver interface  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>This is a generic low-level USB driver interface </p>
+<h1><a class="anchor" id="autotoc_md1717"></a>
+About</h1>
+<p>usbdev specifies a common USB device API for low level USB interfaces. The interface is split in a definition for the USB interface hardware and for individual USB endpoints.</p>
+<h1><a class="anchor" id="autotoc_md1718"></a>
+Design goals</h1>
+<ol type="1">
+<li>Support for multiple instances on a single board</li>
+<li>Interface optimized for MCU peripheral interfaces.</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md1719"></a>
+Details</h1>
+<p>The driver interface is split in two separate parts. One part is a global USB device interface, the other is an endpoint control API.</p>
+<p>The usb device driver can manage parts of the USB interface itself such as the pull up resistor state or the USB speed.</p>
+<p>The endpoint control API manages a single endpoint. This allows for a modular approach where multiple USB functions/interfaces can be multiplexed over a single USB interface. Each interface can be implemented as a separate module. The interface handler does not have to care about the usb device itself or it's endpoint number. It can simply request an available endpoint from the usb device with the <a class="el" href="#ga16b1fcc8c3f27987908879f48226ffb0">usbdev_new_ep</a> function.</p>
+<p>Each interface handler can request multiple endpoints from the usbdev device. It must supply the expected maximum endpoint transfer size and other properties of the endpoint. A pointer to an usbdev endpoint is returned if an endpoint fitting the requirements is available.</p>
+<p>Data transmission is done via the <a class="el" href="#gab577b73a742d3fa8906678f8dbeb2866">usbdev_ep_xmit</a> function. A buffer and length must be supplied. Received data from the host ends up at this buffer automatically by the low level drivers after reception. For reception the maximum expected transfer length must be supplied, equal to the maximum endpoint transfer size. The data received can be less than this.</p>
+<p>For transmitting data back to the host, a similar approach is used. The data to be transmitted is supplied as buffer and the <a class="el" href="#gab577b73a742d3fa8906678f8dbeb2866">usbdev_ep_xmit</a> function is called with the buffer and the size of the data.</p>
+<p>To ensure that the data buffers adhere to the restrictions of the low level USB peripheral memory interface, the specific <a class="el" href="#gaa9322e0f092c580129915333bab9a8f2">usbdev_ep_buf_t</a> data type must be used. It behaves as a regular <code>uint8_t</code> byte buffer, but is instantiated with the attributes to ensure that the low level DMA interface can use it.</p>
+<p>A callback function is required for signalling events from the driver. The <a class="el" href="#gga5289b0187db76ea19e4af527df0ac303a313d8d0c5416f13435bad11fa11044ea">USBDEV_EVENT_ESR</a> is special in that it indicates that the USB peripheral had an interrupt that needs to be serviced in a non-interrupt context. This requires the usbdev_esr function to be called. In the case that the event is signalled via the <a class="el" href="structusbdev.html#aa47cde5e01fb132a8a8d51cda19ce323">usbdev_t::epcb</a> callback, the <a class="el" href="#gad821d143df01e72083341c6535ff4a61">usbdev_ep_esr</a> should be called to service the endpoint specific events from the peripheral. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -275,27 +293,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:gab577b73a742d3fa8906678f8dbeb2866"><td class="mdescLeft">&#160;</td><td class="mdescRight">Submit a buffer for a USB endpoint transmission.  <br /></td></tr>
 <tr class="separator:gab577b73a742d3fa8906678f8dbeb2866"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>This is a generic low-level USB driver interface </p>
-<h1><a class="anchor" id="autotoc_md1717"></a>
-About</h1>
-<p>usbdev specifies a common USB device API for low level USB interfaces. The interface is split in a definition for the USB interface hardware and for individual USB endpoints.</p>
-<h1><a class="anchor" id="autotoc_md1718"></a>
-Design goals</h1>
-<ol type="1">
-<li>Support for multiple instances on a single board</li>
-<li>Interface optimized for MCU peripheral interfaces.</li>
-</ol>
-<h1><a class="anchor" id="autotoc_md1719"></a>
-Details</h1>
-<p>The driver interface is split in two separate parts. One part is a global USB device interface, the other is an endpoint control API.</p>
-<p>The usb device driver can manage parts of the USB interface itself such as the pull up resistor state or the USB speed.</p>
-<p>The endpoint control API manages a single endpoint. This allows for a modular approach where multiple USB functions/interfaces can be multiplexed over a single USB interface. Each interface can be implemented as a separate module. The interface handler does not have to care about the usb device itself or it's endpoint number. It can simply request an available endpoint from the usb device with the <a class="el" href="#ga16b1fcc8c3f27987908879f48226ffb0">usbdev_new_ep</a> function.</p>
-<p>Each interface handler can request multiple endpoints from the usbdev device. It must supply the expected maximum endpoint transfer size and other properties of the endpoint. A pointer to an usbdev endpoint is returned if an endpoint fitting the requirements is available.</p>
-<p>Data transmission is done via the <a class="el" href="#gab577b73a742d3fa8906678f8dbeb2866">usbdev_ep_xmit</a> function. A buffer and length must be supplied. Received data from the host ends up at this buffer automatically by the low level drivers after reception. For reception the maximum expected transfer length must be supplied, equal to the maximum endpoint transfer size. The data received can be less than this.</p>
-<p>For transmitting data back to the host, a similar approach is used. The data to be transmitted is supplied as buffer and the <a class="el" href="#gab577b73a742d3fa8906678f8dbeb2866">usbdev_ep_xmit</a> function is called with the buffer and the size of the data.</p>
-<p>To ensure that the data buffers adhere to the restrictions of the low level USB peripheral memory interface, the specific <a class="el" href="#gaa9322e0f092c580129915333bab9a8f2">usbdev_ep_buf_t</a> data type must be used. It behaves as a regular <code>uint8_t</code> byte buffer, but is instantiated with the attributes to ensure that the low level DMA interface can use it.</p>
-<p>A callback function is required for signalling events from the driver. The <a class="el" href="#gga5289b0187db76ea19e4af527df0ac303a313d8d0c5416f13435bad11fa11044ea">USBDEV_EVENT_ESR</a> is special in that it indicates that the USB peripheral had an interrupt that needs to be serviced in a non-interrupt context. This requires the usbdev_esr function to be called. In the case that the event is signalled via the <a class="el" href="structusbdev.html#aa47cde5e01fb132a8a8d51cda19ce323">usbdev_t::epcb</a> callback, the <a class="el" href="#gad821d143df01e72083341c6535ff4a61">usbdev_ep_esr</a> should be called to service the endpoint specific events from the peripheral. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga930ce1a11e19bb65c39c7ef20315dd2e" name="ga930ce1a11e19bb65c39c7ef20315dd2e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga930ce1a11e19bb65c39c7ef20315dd2e">&#9670;&#160;</a></span>USBDEV_CPU_DMA_REQUIREMENTS</h2>
@@ -1083,7 +1080,7 @@ NULL on error </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

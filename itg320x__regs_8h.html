@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,10 @@ $(function(){initNavTree('itg320x__regs_8h.html',''); initResizable(true); });
 
 <p>Register definitions for InvenSense ITG320X 3-axis gyroscope.  
 <a href="#details">More...</a></p>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Register definitions for InvenSense ITG320X 3-axis gyroscope. </p>
+<dl class="section author"><dt>Author</dt><dd>Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span class="obfuscator">.nosp@m.</span>@sch<span class="obfuscator">.nosp@m.</span>orcht<span class="obfuscator">.nosp@m.</span>.net</a> </dd></dl>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Register addresses</h2></td></tr>
 <tr class="memitem:a247c61769f8975cc88ffc458c3bc9d1f" id="r_a247c61769f8975cc88ffc458c3bc9d1f"><td class="memItemLeft" align="right" valign="top"><a id="a247c61769f8975cc88ffc458c3bc9d1f" name="a247c61769f8975cc88ffc458c3bc9d1f"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>ITG320X_REG_WHO_AM_I</b>&#160;&#160;&#160;(0x00)</td></tr>
@@ -262,10 +262,7 @@ $(function(){initNavTree('itg320x__regs_8h.html',''); initResizable(true); });
 <tr class="memdesc:a8d5d6e1924b2dd287714737a0426050b"><td class="mdescLeft">&#160;</td><td class="mdescRight">ITG320X_REG_PWR_MGM&lt;2:0&gt; <br /></td></tr>
 <tr class="separator:a8d5d6e1924b2dd287714737a0426050b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Register definitions for InvenSense ITG320X 3-axis gyroscope. </p>
-<dl class="section author"><dt>Author</dt><dd>Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span class="obfuscator">.nosp@m.</span>@sch<span class="obfuscator">.nosp@m.</span>orcht<span class="obfuscator">.nosp@m.</span>.net</a> </dd></dl>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
@@ -273,7 +270,7 @@ $(function(){initNavTree('itg320x__regs_8h.html',''); initResizable(true); });
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_14bc92f4b96c8519b376567118ac28b3.html">drivers</a></li><li class="navelem"><a class="el" href="dir_35cf52b61d97fe97138cac25b5c88f98.html">itg320x</a></li><li class="navelem"><a class="el" href="dir_05c4376afb7cf0fe2df9ff2e2535e60e.html">include</a></li><li class="navelem"><a class="el" href="itg320x__regs_8h.html">itg320x_regs.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -143,13 +140,15 @@ $(function(){initNavTree('sys_2include_2net_2gnrc_2gomach_2types_8h.html',''); i
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a>  </div>
-  <div class="headertitle"><div class="title">types.h File Reference<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__gomach.html">GoMacH</a></div></div></div>
+  <div class="headertitle"><div class="title">types.h File Reference<div class="ingroups"><a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__gomach.html">GoMacH</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Internal used types of GoMacH.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Internal used types of GoMacH. </p>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="xtimer_8h.html">xtimer.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="net_2gnrc_2gomach_2hdr_8h.html">net/gnrc/gomach/hdr.h</a>&quot;</code><br />
@@ -346,9 +345,7 @@ typedef struct <a class="el" href="structgomach.html">gomach</a>&#160;</td><td c
 <tr class="memdesc:acfd3983b0c5dc96365f0cd494f83d732"><td class="mdescLeft">&#160;</td><td class="mdescRight">GoMacH's specific structure for storing internal states. <br /></td></tr>
 <tr class="separator:acfd3983b0c5dc96365f0cd494f83d732"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Internal used types of GoMacH. </p>
-</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a8fdf026f5da8fd8885a19d186bb6753e" name="a8fdf026f5da8fd8885a19d186bb6753e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8fdf026f5da8fd8885a19d186bb6753e">&#9670;&#160;</a></span>gnrc_gomach_basic_state_t</h2>
 
@@ -615,7 +612,7 @@ typedef struct <a class="el" href="structgomach.html">gomach</a>&#160;</td><td c
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a408b6d3a4a484720bc3ecfeac8947e3.html">sys</a></li><li class="navelem"><a class="el" href="dir_e9e107fc86bbb4b6a326076a6808b9f5.html">include</a></li><li class="navelem"><a class="el" href="dir_7afc5d30923bebdd1513d1cc48150ca7.html">net</a></li><li class="navelem"><a class="el" href="dir_cf159672c4bc64dfd629cfa389a5bd8d.html">gnrc</a></li><li class="navelem"><a class="el" href="dir_306abe9bf61670e3570a67f765334c3f.html">gomach</a></li><li class="navelem"><a class="el" href="sys_2include_2net_2gnrc_2gomach_2types_8h.html">types.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

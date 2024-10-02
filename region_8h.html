@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -141,13 +138,16 @@ $(function(){initNavTree('region_8h.html',''); initResizable(true); });
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">region.h File Reference<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__lorawan.html">GNRC LoRaWAN</a></div></div></div>
+  <div class="headertitle"><div class="title">region.h File Reference<div class="ingroups"><a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__lorawan.html">GNRC LoRaWAN</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>GNRC LoRaWAN region specific functions.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="modules_8h.html">modules.h</a>&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>GNRC LoRaWAN region specific functions. </p>
+<dl class="section author"><dt>Author</dt><dd>José Ignacio Alamos <a href="#" onclick="location.href='mai'+'lto:'+'jos'+'e.'+'ala'+'mo'+'s@h'+'aw'+'-ha'+'mb'+'urg'+'.d'+'e'; return false;">jose.<span class="obfuscator">.nosp@m.</span>alam<span class="obfuscator">.nosp@m.</span>os@ha<span class="obfuscator">.nosp@m.</span>w-ha<span class="obfuscator">.nosp@m.</span>mburg<span class="obfuscator">.nosp@m.</span>.de</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;<a class="el" href="modules_8h.html">modules.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="lorawan_8h.html">net/gnrc/lorawan.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for region.h:</div>
@@ -174,10 +174,7 @@ $(function(){initNavTree('region_8h.html',''); initResizable(true); });
 <tr class="memdesc:ab0af8b271bf75e1be148ea17e39e3190"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a datarate is valid in the current region.  <br /></td></tr>
 <tr class="separator:ab0af8b271bf75e1be148ea17e39e3190"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>GNRC LoRaWAN region specific functions. </p>
-<dl class="section author"><dt>Author</dt><dd>José Ignacio Alamos <a href="#" onclick="location.href='mai'+'lto:'+'jos'+'e.'+'ala'+'mo'+'s@h'+'aw'+'-ha'+'mb'+'urg'+'.d'+'e'; return false;">jose.<span class="obfuscator">.nosp@m.</span>alam<span class="obfuscator">.nosp@m.</span>os@ha<span class="obfuscator">.nosp@m.</span>w-ha<span class="obfuscator">.nosp@m.</span>mburg<span class="obfuscator">.nosp@m.</span>.de</a> </dd></dl>
-</div><h2 class="groupheader">Function Documentation</h2>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="abfbfb419f449e372676eab9af5dc1e92" name="abfbfb419f449e372676eab9af5dc1e92"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abfbfb419f449e372676eab9af5dc1e92">&#9670;&#160;</a></span>gnrc_lorawan_process_cflist()</h2>
 
@@ -311,7 +308,7 @@ false otherwise </dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a408b6d3a4a484720bc3ecfeac8947e3.html">sys</a></li><li class="navelem"><a class="el" href="dir_e9e107fc86bbb4b6a326076a6808b9f5.html">include</a></li><li class="navelem"><a class="el" href="dir_7afc5d30923bebdd1513d1cc48150ca7.html">net</a></li><li class="navelem"><a class="el" href="dir_cf159672c4bc64dfd629cfa389a5bd8d.html">gnrc</a></li><li class="navelem"><a class="el" href="dir_a54755e576c9a65859560770ed34b1a4.html">lorawan</a></li><li class="navelem"><a class="el" href="region_8h.html">region.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

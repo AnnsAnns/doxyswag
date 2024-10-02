@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -149,7 +146,12 @@ $(function(){initNavTree('shtcx__params_8h.html',''); initResizable(true); });
 
 <p>Default parameters for the SHTCX Temperature and humidity sensor.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;board.h&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Default parameters for the SHTCX Temperature and humidity sensor. </p>
+<dl class="section author"><dt>Author</dt><dd>Steffen Robertz <a href="#" onclick="location.href='mai'+'lto:'+'ste'+'ff'+'en.'+'ro'+'ber'+'tz'+'@rw'+'th'+'-aa'+'ch'+'en.'+'de'; return false;">steff<span class="obfuscator">.nosp@m.</span>en.r<span class="obfuscator">.nosp@m.</span>obert<span class="obfuscator">.nosp@m.</span>z@rw<span class="obfuscator">.nosp@m.</span>th-aa<span class="obfuscator">.nosp@m.</span>chen<span class="obfuscator">.nosp@m.</span>.de</a> </dd>
+<dd>
+Josua Arndt <a href="#" onclick="location.href='mai'+'lto:'+'jar'+'nd'+'t@i'+'as'+'.rw'+'th'+'-aa'+'ch'+'en.'+'de'; return false;">jarnd<span class="obfuscator">.nosp@m.</span>t@ia<span class="obfuscator">.nosp@m.</span>s.rwt<span class="obfuscator">.nosp@m.</span>h-aa<span class="obfuscator">.nosp@m.</span>chen.<span class="obfuscator">.nosp@m.</span>de</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;board.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="shtcx_8h.html">shtcx.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="shtcx__regs_8h.html">shtcx_regs.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="saul__reg_8h.html">saul_reg.h</a>&quot;</code><br />
@@ -184,12 +186,7 @@ Variables</h2></td></tr>
 <tr class="memitem:a4df904195df1a1242f278331cc28a84e" id="r_a4df904195df1a1242f278331cc28a84e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4df904195df1a1242f278331cc28a84e">SHTCX_SAUL_INFO</a></td></tr>
 <tr class="separator:a4df904195df1a1242f278331cc28a84e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Default parameters for the SHTCX Temperature and humidity sensor. </p>
-<dl class="section author"><dt>Author</dt><dd>Steffen Robertz <a href="#" onclick="location.href='mai'+'lto:'+'ste'+'ff'+'en.'+'ro'+'ber'+'tz'+'@rw'+'th'+'-aa'+'ch'+'en.'+'de'; return false;">steff<span class="obfuscator">.nosp@m.</span>en.r<span class="obfuscator">.nosp@m.</span>obert<span class="obfuscator">.nosp@m.</span>z@rw<span class="obfuscator">.nosp@m.</span>th-aa<span class="obfuscator">.nosp@m.</span>chen<span class="obfuscator">.nosp@m.</span>.de</a> </dd>
-<dd>
-Josua Arndt <a href="#" onclick="location.href='mai'+'lto:'+'jar'+'nd'+'t@i'+'as'+'.rw'+'th'+'-aa'+'ch'+'en.'+'de'; return false;">jarnd<span class="obfuscator">.nosp@m.</span>t@ia<span class="obfuscator">.nosp@m.</span>s.rwt<span class="obfuscator">.nosp@m.</span>h-aa<span class="obfuscator">.nosp@m.</span>chen.<span class="obfuscator">.nosp@m.</span>de</a> </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a1edfbdd472a6ce645efd28aef3c03407" name="a1edfbdd472a6ce645efd28aef3c03407"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1edfbdd472a6ce645efd28aef3c03407">&#9670;&#160;</a></span>SHTCX_PARAMS</h2>
 
@@ -289,7 +286,7 @@ Josua Arndt <a href="#" onclick="location.href='mai'+'lto:'+'jar'+'nd'+'t@i'+'as
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_14bc92f4b96c8519b376567118ac28b3.html">drivers</a></li><li class="navelem"><a class="el" href="dir_675baa96289e6308eb1c654ace5d2a15.html">shtcx</a></li><li class="navelem"><a class="el" href="dir_b614cd17eed0929ac4cbe1ed6e36616a.html">include</a></li><li class="navelem"><a class="el" href="shtcx__params_8h.html">shtcx_params.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

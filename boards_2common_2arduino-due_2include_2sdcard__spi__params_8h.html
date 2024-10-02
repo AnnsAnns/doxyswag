@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -149,7 +146,12 @@ $(function(){initNavTree('boards_2common_2arduino-due_2include_2sdcard__spi__par
 
 <p>SD card configuration for the Arduino SD card shields.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="arduino__pinmap_8h.html">arduino_pinmap.h</a>&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>SD card configuration for the Arduino SD card shields. </p>
+<dl class="section author"><dt>Author</dt><dd>Michel Rottleuthner <a href="#" onclick="location.href='mai'+'lto:'+'mic'+'he'+'l.r'+'ot'+'tle'+'ut'+'hne'+'r@'+'haw'+'-h'+'amb'+'ur'+'g.d'+'e'; return false;">miche<span class="obfuscator">.nosp@m.</span>l.ro<span class="obfuscator">.nosp@m.</span>ttleu<span class="obfuscator">.nosp@m.</span>thne<span class="obfuscator">.nosp@m.</span>r@haw<span class="obfuscator">.nosp@m.</span>-ham<span class="obfuscator">.nosp@m.</span>burg.<span class="obfuscator">.nosp@m.</span>de</a> </dd>
+<dd>
+Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;<a class="el" href="arduino__pinmap_8h.html">arduino_pinmap.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for sdcard_spi_params.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -188,12 +190,7 @@ Variables</h2></td></tr>
 <tr class="memdesc:ac519e2e5309f85391ecd5b5f8394ae77"><td class="mdescLeft">&#160;</td><td class="mdescRight">treated as 'don't care' if SDCARD_SPI_PARAM_POWER is GPIO_UNDEF <br /></td></tr>
 <tr class="separator:ac519e2e5309f85391ecd5b5f8394ae77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>SD card configuration for the Arduino SD card shields. </p>
-<dl class="section author"><dt>Author</dt><dd>Michel Rottleuthner <a href="#" onclick="location.href='mai'+'lto:'+'mic'+'he'+'l.r'+'ot'+'tle'+'ut'+'hne'+'r@'+'haw'+'-h'+'amb'+'ur'+'g.d'+'e'; return false;">miche<span class="obfuscator">.nosp@m.</span>l.ro<span class="obfuscator">.nosp@m.</span>ttleu<span class="obfuscator">.nosp@m.</span>thne<span class="obfuscator">.nosp@m.</span>r@haw<span class="obfuscator">.nosp@m.</span>-ham<span class="obfuscator">.nosp@m.</span>burg.<span class="obfuscator">.nosp@m.</span>de</a> </dd>
-<dd>
-Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
-</div><h2 class="groupheader">Variable Documentation</h2>
+<h2 class="groupheader">Variable Documentation</h2>
 <a id="a6c5f99a4acde0dbaa42d3a2afd349bf1" name="a6c5f99a4acde0dbaa42d3a2afd349bf1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6c5f99a4acde0dbaa42d3a2afd349bf1">&#9670;&#160;</a></span>sdcard_spi_params</h2>
 
@@ -238,7 +235,7 @@ Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6c8313236d9db5b969ca7d150fe527de.html">boards</a></li><li class="navelem"><a class="el" href="dir_c95ba9ba7fbc2fbce23d1bdfa8cd1c6b.html">common</a></li><li class="navelem"><a class="el" href="dir_f03092a7f9bba9dfd15e4d72a1cc71b0.html">arduino-due</a></li><li class="navelem"><a class="el" href="dir_cd0ef0289302642cf5c8e6bdd1295777.html">include</a></li><li class="navelem"><a class="el" href="boards_2common_2arduino-due_2include_2sdcard__spi__params_8h.html">sdcard_spi_params.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:28 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:07 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

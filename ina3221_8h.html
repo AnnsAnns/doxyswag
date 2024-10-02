@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -153,7 +150,13 @@ $(function(){initNavTree('ina3221_8h.html',''); initResizable(true); });
 
 <p>Device driver interface for Texas Instruments INA3221 three-channel, high-side current and bus voltage monitor.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;<a class="el" href="assert_8h.html">assert.h</a>&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Device driver interface for Texas Instruments INA3221 three-channel, high-side current and bus voltage monitor. </p>
+<p>The alert pins WRN, CRT, TC, PV are open drain output pins, so they should be pulled high with internal or external pull-ups. They pull low, if the alert condition becomes true. If they become pulled low, the configured input pins in <a class="el" href="structina3221__params__t.html">ina3221_params_t</a> will read a low flank and the related interrupt callback will be executed, if configured with <a class="el" href="group__drivers__ina3221.html#ga1f1dd62a70629d3776fb0da739283eef">ina3221_enable_alert</a>. WRN condition: Any channel´s measured shunt voltage drop was higher than the configured value in INA3221_REG_CHx_WARN_ALERT_LIMIT, CRT condition: Any channel´s measured shunt voltage drop was higher than the configured value in INA3221_REG_CHx_CRIT_ALERT_LIMIT, or the sum of all channel´s voltage drops was higher than the configured value in INA3221_REG_SHUNT_VOLTAGE_SUM_LIMIT. Note that the sum of voltage drops only makes sense, if all channels are using the same shunt resistance value! TC condition: After a 1.2-V level is detected on channel 1, if the INA3221 does not detect a 1.2-V value or greater on the bus voltage measurement following four complete cycles of all three channels, the timing control TC alert pin pulls low. PV condition: If any channel´s measured bus voltage was not within the configured values in INA3221_REG_PV_LOWER_LIMIT and INA3221_REG_PV_UPPER_LIMIT, the PV pin is pulled low.</p>
+<p>For the number of enabled channels <img class="formulaInl" alt="$NCH$" src="form_4.png"/>, number of samples <img class="formulaInl" alt="$NS$" src="form_5.png"/>, bus voltage conversion time <img class="formulaInl" alt="$BCT$" src="form_6.png"/>, and shunt voltage conversion time <img class="formulaInl" alt="$SCT$" src="form_7.png"/>, the time to complete a full measurement cycle can be calculated with: <img class="formulaInl" alt="$ NCH \times NS \times (BCT + SCT) $" src="form_8.png"/>.</p>
+<dl class="section see"><dt>See also</dt><dd>Datasheet: <a href="https://www.ti.com/lit/ds/symlink/ina3221.pdf">https://www.ti.com/lit/ds/symlink/ina3221.pdf</a></dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Fabian Hüßler <a href="#" onclick="location.href='mai'+'lto:'+'fab'+'ia'+'n.h'+'ue'+'ssl'+'er'+'@ov'+'gu'+'.de'; return false;">fabia<span class="obfuscator">.nosp@m.</span>n.hu<span class="obfuscator">.nosp@m.</span>essle<span class="obfuscator">.nosp@m.</span>r@ov<span class="obfuscator">.nosp@m.</span>gu.de</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;<a class="el" href="assert_8h.html">assert.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="errno_8h.html">errno.h</a>&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
@@ -592,13 +595,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:gae891794e37425c7b374b1ea0c58f637c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate power from bus voltage and current values.  <br /></td></tr>
 <tr class="separator:gae891794e37425c7b374b1ea0c58f637c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Device driver interface for Texas Instruments INA3221 three-channel, high-side current and bus voltage monitor. </p>
-<p>The alert pins WRN, CRT, TC, PV are open drain output pins, so they should be pulled high with internal or external pull-ups. They pull low, if the alert condition becomes true. If they become pulled low, the configured input pins in <a class="el" href="structina3221__params__t.html">ina3221_params_t</a> will read a low flank and the related interrupt callback will be executed, if configured with <a class="el" href="group__drivers__ina3221.html#ga1f1dd62a70629d3776fb0da739283eef">ina3221_enable_alert</a>. WRN condition: Any channel´s measured shunt voltage drop was higher than the configured value in INA3221_REG_CHx_WARN_ALERT_LIMIT, CRT condition: Any channel´s measured shunt voltage drop was higher than the configured value in INA3221_REG_CHx_CRIT_ALERT_LIMIT, or the sum of all channel´s voltage drops was higher than the configured value in INA3221_REG_SHUNT_VOLTAGE_SUM_LIMIT. Note that the sum of voltage drops only makes sense, if all channels are using the same shunt resistance value! TC condition: After a 1.2-V level is detected on channel 1, if the INA3221 does not detect a 1.2-V value or greater on the bus voltage measurement following four complete cycles of all three channels, the timing control TC alert pin pulls low. PV condition: If any channel´s measured bus voltage was not within the configured values in INA3221_REG_PV_LOWER_LIMIT and INA3221_REG_PV_UPPER_LIMIT, the PV pin is pulled low.</p>
-<p>For the number of enabled channels <img class="formulaInl" alt="$NCH$" src="form_4.png"/>, number of samples <img class="formulaInl" alt="$NS$" src="form_5.png"/>, bus voltage conversion time <img class="formulaInl" alt="$BCT$" src="form_6.png"/>, and shunt voltage conversion time <img class="formulaInl" alt="$SCT$" src="form_7.png"/>, the time to complete a full measurement cycle can be calculated with: <img class="formulaInl" alt="$ NCH \times NS \times (BCT + SCT) $" src="form_8.png"/>.</p>
-<dl class="section see"><dt>See also</dt><dd>Datasheet: <a href="https://www.ti.com/lit/ds/symlink/ina3221.pdf">https://www.ti.com/lit/ds/symlink/ina3221.pdf</a></dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Fabian Hüßler <a href="#" onclick="location.href='mai'+'lto:'+'fab'+'ia'+'n.h'+'ue'+'ssl'+'er'+'@ov'+'gu'+'.de'; return false;">fabia<span class="obfuscator">.nosp@m.</span>n.hu<span class="obfuscator">.nosp@m.</span>essle<span class="obfuscator">.nosp@m.</span>r@ov<span class="obfuscator">.nosp@m.</span>gu.de</a> </dd></dl>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
@@ -606,7 +603,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_14bc92f4b96c8519b376567118ac28b3.html">drivers</a></li><li class="navelem"><a class="el" href="dir_ee023d43c33bfccc31aa50a48a76892b.html">include</a></li><li class="navelem"><a class="el" href="ina3221_8h.html">ina3221.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

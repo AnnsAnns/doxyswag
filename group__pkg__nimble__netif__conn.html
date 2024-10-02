@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,12 +144,14 @@ $(function(){initNavTree('group__pkg__nimble__netif__conn.html',''); initResizab
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">Connection State Management for netif<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__ble.html">Bluetooth Low Energy (BLE)</a> &raquo; <a class="el" href="group__pkg__nimble.html">NimBLE</a> &raquo; <a class="el" href="group__pkg__nimble__netif.html">GNRC netif Implementation</a></div></div></div>
+  <div class="headertitle"><div class="title">Connection State Management for netif<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__ble.html">Bluetooth Low Energy (BLE)</a> &raquo; <a class="el" href="group__pkg__nimble.html">NimBLE</a> &raquo; <a class="el" href="group__pkg__nimble__netif.html">GNRC netif Implementation</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Helper module for managing the memory needed to store the BLE connection state for the netif wrapper  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Helper module for managing the memory needed to store the BLE connection state for the netif wrapper </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -243,8 +242,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>nimble_netif_conn_fre
 <tr class="memdesc:ga26bd04269509aad85196f00f9bad145e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience function to check if any context is currently in the advertising state (<a class="el" href="group__pkg__nimble__netif.html#ggaa0ead9a390ae1a2e9537f8ea60f4f355a130f12082afcbd96ba82bdb82a7017da">NIMBLE_NETIF_ADV</a>)  <br /></td></tr>
 <tr class="separator:ga26bd04269509aad85196f00f9bad145e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Helper module for managing the memory needed to store the BLE connection state for the netif wrapper </p>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="gac90ae16ea0a02dc4f5dd02cd4b0b8c56" name="gac90ae16ea0a02dc4f5dd02cd4b0b8c56"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gac90ae16ea0a02dc4f5dd02cd4b0b8c56">&#9670;&#160;</a></span>nimble_netif_conn_iter_t</h2>
@@ -839,7 +836,7 @@ false if given interval is not used </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

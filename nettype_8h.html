@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -145,13 +142,16 @@ $(function(){initNavTree('nettype_8h.html',''); initResizable(true); });
 <a href="#define-members">Macros</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">nettype.h File Reference<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &#124; <a class="el" href="group__pseudomodules.html">Generic pseudomodules</a> &raquo; <a class="el" href="group__net__gnrc__nettype.html">gnrc_nettype: Protocol type</a></div></div></div>
+  <div class="headertitle"><div class="title">nettype.h File Reference<div class="ingroups"><a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &#124; <a class="el" href="group__pseudomodules.html">Generic pseudomodules</a> &raquo; <a class="el" href="group__net__gnrc__nettype.html">gnrc_nettype: Protocol type</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Protocol type definitions.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;<a class="el" href="inttypes_8h.html">inttypes.h</a>&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Protocol type definitions. </p>
+<dl class="section author"><dt>Author</dt><dd>Martine Lenders <a href="#" onclick="location.href='mai'+'lto:'+'mle'+'nd'+'ers'+'@i'+'nf.'+'fu'+'-be'+'rl'+'in.'+'de'; return false;">mlend<span class="obfuscator">.nosp@m.</span>ers@<span class="obfuscator">.nosp@m.</span>inf.f<span class="obfuscator">.nosp@m.</span>u-be<span class="obfuscator">.nosp@m.</span>rlin.<span class="obfuscator">.nosp@m.</span>de</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;<a class="el" href="inttypes_8h.html">inttypes.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="modules_8h.html">modules.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ethertype_8h.html">net/ethertype.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="protnum_8h.html">net/protnum.h</a>&quot;</code><br />
@@ -220,10 +220,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga33ec8c250360b80274a130278faf2843"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translates <a class="el" href="group__net__gnrc__nettype.html#ga2582fbb16a318806983c225a69460902">gnrc_nettype_t</a> to a Protocol Number.  <br /></td></tr>
 <tr class="separator:ga33ec8c250360b80274a130278faf2843"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Protocol type definitions. </p>
-<dl class="section author"><dt>Author</dt><dd>Martine Lenders <a href="#" onclick="location.href='mai'+'lto:'+'mle'+'nd'+'ers'+'@i'+'nf.'+'fu'+'-be'+'rl'+'in.'+'de'; return false;">mlend<span class="obfuscator">.nosp@m.</span>ers@<span class="obfuscator">.nosp@m.</span>inf.f<span class="obfuscator">.nosp@m.</span>u-be<span class="obfuscator">.nosp@m.</span>rlin.<span class="obfuscator">.nosp@m.</span>de</a> </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a3852d032d8d01e16c69f7010a4b5a814" name="a3852d032d8d01e16c69f7010a4b5a814"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3852d032d8d01e16c69f7010a4b5a814">&#9670;&#160;</a></span>GNRC_NETTYPE_LORAWAN</h2>
 
@@ -249,7 +246,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a408b6d3a4a484720bc3ecfeac8947e3.html">sys</a></li><li class="navelem"><a class="el" href="dir_e9e107fc86bbb4b6a326076a6808b9f5.html">include</a></li><li class="navelem"><a class="el" href="dir_7afc5d30923bebdd1513d1cc48150ca7.html">net</a></li><li class="navelem"><a class="el" href="dir_cf159672c4bc64dfd629cfa389a5bd8d.html">gnrc</a></li><li class="navelem"><a class="el" href="nettype_8h.html">nettype.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

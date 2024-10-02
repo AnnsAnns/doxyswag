@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,12 +144,15 @@ $(function(){initNavTree('group__net__gnrc__netapi.html',''); initResizable(true
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">GNRC communication interface<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a></div></div></div>
+  <div class="headertitle"><div class="title">GNRC communication interface<div class="ingroups"><a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Generic interface for IPC communication between GNRC modules  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Generic interface for IPC communication between GNRC modules </p>
+<p>The idea of this interface is that it provides every network module with a basic set of commands to communicate with its neighboring modules. In this model every module runs in its own thread and communication is done using the <a class="el" href="group__net__gnrc__netapi.html">GNRC communication interface</a>. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -228,9 +228,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga88f71db0621dc9ce78d14664f5e23f4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shortcut function for sending <a class="el" href="#ga81e297b6dd96cf0a565a9dc77cc54e11">GNRC_NETAPI_MSG_TYPE_SET</a> messages and parsing the returned <a class="el" href="#ga6edd8d8871394091cff19457fc3da1b5">GNRC_NETAPI_MSG_TYPE_ACK</a> message.  <br /></td></tr>
 <tr class="separator:ga88f71db0621dc9ce78d14664f5e23f4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Generic interface for IPC communication between GNRC modules </p>
-<p>The idea of this interface is that it provides every network module with a basic set of commands to communicate with its neighboring modules. In this model every module runs in its own thread and communication is done using the <a class="el" href="group__net__gnrc__netapi.html">GNRC communication interface</a>. </p>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="gac7238b921409edfd724569e32e395891" name="gac7238b921409edfd724569e32e395891"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gac7238b921409edfd724569e32e395891">&#9670;&#160;</a></span>_gnrc_netapi_get_set()</h2>
@@ -662,7 +659,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

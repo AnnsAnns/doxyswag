@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -141,13 +138,18 @@ $(function(){initNavTree('lwm2m__client__connection_8h.html',''); initResizable(
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">lwm2m_client_connection.h File Reference<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__pkg__wakaama.html">LwM2M - Lightweight Machine to Machine</a> &raquo; <a class="el" href="group__lwm2m__client.html">LwM2M Client using Wakaama</a></div></div></div>
+  <div class="headertitle"><div class="title">lwm2m_client_connection.h File Reference<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__pkg__wakaama.html">LwM2M - Lightweight Machine to Machine</a> &raquo; <a class="el" href="group__lwm2m__client.html">LwM2M Client using Wakaama</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Public API and definitions of the connection handle for LwM2M client implementation using Wakaama.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="ipv6_2addr_8h.html">net/ipv6/addr.h</a>&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Public API and definitions of the connection handle for LwM2M client implementation using Wakaama. </p>
+<dl class="section author"><dt>Author</dt><dd>Christian Manal <a href="#" onclick="location.href='mai'+'lto:'+'man'+'al'+'@un'+'i-'+'bre'+'me'+'n.d'+'e'; return false;">manal<span class="obfuscator">.nosp@m.</span>@uni<span class="obfuscator">.nosp@m.</span>-brem<span class="obfuscator">.nosp@m.</span>en.d<span class="obfuscator">.nosp@m.</span>e</a> </dd>
+<dd>
+Leandro Lanzieri <a href="#" onclick="location.href='mai'+'lto:'+'lea'+'nd'+'ro.'+'la'+'nzi'+'er'+'i@h'+'aw'+'-ha'+'mb'+'urg'+'.d'+'e'; return false;">leand<span class="obfuscator">.nosp@m.</span>ro.l<span class="obfuscator">.nosp@m.</span>anzie<span class="obfuscator">.nosp@m.</span>ri@h<span class="obfuscator">.nosp@m.</span>aw-ha<span class="obfuscator">.nosp@m.</span>mbur<span class="obfuscator">.nosp@m.</span>g.de</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;<a class="el" href="ipv6_2addr_8h.html">net/ipv6/addr.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="sock_2udp_8h.html">net/sock/udp.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="lwm2m__client_8h.html">lwm2m_client.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="lwm2m__client__config_8h.html">lwm2m_client_config.h</a>&quot;</code><br />
@@ -172,12 +174,7 @@ $(function(){initNavTree('lwm2m__client__connection_8h.html',''); initResizable(
 <tr class="memdesc:abb1319381d4ed8a1e9f209d08fa7548b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles a received packet from a connection.  <br /></td></tr>
 <tr class="separator:abb1319381d4ed8a1e9f209d08fa7548b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Public API and definitions of the connection handle for LwM2M client implementation using Wakaama. </p>
-<dl class="section author"><dt>Author</dt><dd>Christian Manal <a href="#" onclick="location.href='mai'+'lto:'+'man'+'al'+'@un'+'i-'+'bre'+'me'+'n.d'+'e'; return false;">manal<span class="obfuscator">.nosp@m.</span>@uni<span class="obfuscator">.nosp@m.</span>-brem<span class="obfuscator">.nosp@m.</span>en.d<span class="obfuscator">.nosp@m.</span>e</a> </dd>
-<dd>
-Leandro Lanzieri <a href="#" onclick="location.href='mai'+'lto:'+'lea'+'nd'+'ro.'+'la'+'nzi'+'er'+'i@h'+'aw'+'-ha'+'mb'+'urg'+'.d'+'e'; return false;">leand<span class="obfuscator">.nosp@m.</span>ro.l<span class="obfuscator">.nosp@m.</span>anzie<span class="obfuscator">.nosp@m.</span>ri@h<span class="obfuscator">.nosp@m.</span>aw-ha<span class="obfuscator">.nosp@m.</span>mbur<span class="obfuscator">.nosp@m.</span>g.de</a> </dd></dl>
-</div><h2 class="groupheader">Function Documentation</h2>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="a6a3bb8648e8c7603c70a093c5e69c129" name="a6a3bb8648e8c7603c70a093c5e69c129"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6a3bb8648e8c7603c70a093c5e69c129">&#9670;&#160;</a></span>lwm2m_client_connection_find()</h2>
 
@@ -270,7 +267,7 @@ non-zero otherwise </dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_1b757248df2f96757224e5c7d0d8f21a.html">pkg</a></li><li class="navelem"><a class="el" href="dir_1cb3ab6c72176e168a0441ca4fb3540a.html">wakaama</a></li><li class="navelem"><a class="el" href="dir_12a3c8b04ddc22d1c4c2c532963a542a.html">include</a></li><li class="navelem"><a class="el" href="lwm2m__client__connection_8h.html">lwm2m_client_connection.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

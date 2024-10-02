@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -150,7 +147,15 @@ $(function(){initNavTree('os_8h.html',''); initResizable(true); });
 
 <p>Apache Mynewt Copyright 2015-2021 The Apache Software Foundation.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;<a class="el" href="assert_8h.html">assert.h</a>&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Apache Mynewt Copyright 2015-2021 The Apache Software Foundation. </p>
+<p>This product includes software developed at The Apache Software Foundation (<a href="http://www.apache.org/">http://www.apache.org/</a>).</p>
+<p>Portions of this software were developed at Runtime Inc, copyright 2015.</p>
+<p>Licensed to the Apache Software Foundation (ASF) under one or more contributor license agreements. See the NOTICE file distributed with this work for additional information regarding copyright ownership. The ASF licenses this file to you under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at</p>
+<p><a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
+<p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</p>
+<p>mynewt-core error types </p>
+</div><div class="textblock"><code>#include &lt;<a class="el" href="assert_8h.html">assert.h</a>&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="irq_8h.html">irq.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="os__types_8h.html">os/os_types.h</a>&quot;</code><br />
@@ -223,15 +228,7 @@ Functions</h2></td></tr>
 <tr class="memitem:a820f638235d2ac6ce4c51bf627dd3182" id="r_a820f638235d2ac6ce4c51bf627dd3182"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a820f638235d2ac6ce4c51bf627dd3182">OS_ASSERT_CRITICAL</a>()</td></tr>
 <tr class="separator:a820f638235d2ac6ce4c51bf627dd3182"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Apache Mynewt Copyright 2015-2021 The Apache Software Foundation. </p>
-<p>This product includes software developed at The Apache Software Foundation (<a href="http://www.apache.org/">http://www.apache.org/</a>).</p>
-<p>Portions of this software were developed at Runtime Inc, copyright 2015.</p>
-<p>Licensed to the Apache Software Foundation (ASF) under one or more contributor license agreements. See the NOTICE file distributed with this work for additional information regarding copyright ownership. The ASF licenses this file to you under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at</p>
-<p><a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
-<p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</p>
-<p>mynewt-core error types </p>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="affe776513b24d84b39af8ab0930fef7f" name="affe776513b24d84b39af8ab0930fef7f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#affe776513b24d84b39af8ab0930fef7f">&#9670;&#160;</a></span>max</h2>
 
@@ -458,7 +455,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_1b757248df2f96757224e5c7d0d8f21a.html">pkg</a></li><li class="navelem"><a class="el" href="dir_c012323388a56f8628798ef22b726c32.html">mynewt-core</a></li><li class="navelem"><a class="el" href="dir_877293ade2d060e3b14dd2de6f6a9a19.html">include</a></li><li class="navelem"><a class="el" href="dir_48fe5d976a82dca7b3e0a65d4b7bb508.html">os</a></li><li class="navelem"><a class="el" href="os_8h.html">os.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

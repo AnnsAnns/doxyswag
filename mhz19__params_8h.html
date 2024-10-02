@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -149,7 +146,12 @@ $(function(){initNavTree('mhz19__params_8h.html',''); initResizable(true); });
 
 <p>Default configuration for MH-Z19.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;board.h&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Default configuration for MH-Z19. </p>
+<dl class="section author"><dt>Author</dt><dd>Koen Zandberg <a href="#" onclick="location.href='mai'+'lto:'+'koe'+'n@'+'ber'+'gz'+'and'+'.n'+'et'; return false;">koen@<span class="obfuscator">.nosp@m.</span>berg<span class="obfuscator">.nosp@m.</span>zand.<span class="obfuscator">.nosp@m.</span>net</a> </dd>
+<dd>
+Christian Manal <a href="#" onclick="location.href='mai'+'lto:'+'man'+'al'+'@un'+'i-'+'bre'+'me'+'n.d'+'e'; return false;">manal<span class="obfuscator">.nosp@m.</span>@uni<span class="obfuscator">.nosp@m.</span>-brem<span class="obfuscator">.nosp@m.</span>en.d<span class="obfuscator">.nosp@m.</span>e</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;board.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="mhz19_8h.html">mhz19.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="saul__reg_8h.html">saul_reg.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -174,12 +176,7 @@ Variables</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>MHZ19_SAUL_INFO</b>&#160;&#160;&#160;{ .name = &quot;mh-z19&quot; }</td></tr>
 <tr class="separator:a212a695a8aa4bcd6c5de6ed4e47d4d68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Default configuration for MH-Z19. </p>
-<dl class="section author"><dt>Author</dt><dd>Koen Zandberg <a href="#" onclick="location.href='mai'+'lto:'+'koe'+'n@'+'ber'+'gz'+'and'+'.n'+'et'; return false;">koen@<span class="obfuscator">.nosp@m.</span>berg<span class="obfuscator">.nosp@m.</span>zand.<span class="obfuscator">.nosp@m.</span>net</a> </dd>
-<dd>
-Christian Manal <a href="#" onclick="location.href='mai'+'lto:'+'man'+'al'+'@un'+'i-'+'bre'+'me'+'n.d'+'e'; return false;">manal<span class="obfuscator">.nosp@m.</span>@uni<span class="obfuscator">.nosp@m.</span>-brem<span class="obfuscator">.nosp@m.</span>en.d<span class="obfuscator">.nosp@m.</span>e</a> </dd></dl>
-</div><h2 class="groupheader">Variable Documentation</h2>
+<h2 class="groupheader">Variable Documentation</h2>
 <a id="a289858efb0667036e877b277db5e8070" name="a289858efb0667036e877b277db5e8070"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a289858efb0667036e877b277db5e8070">&#9670;&#160;</a></span>mhz19_params</h2>
 
@@ -245,7 +242,7 @@ Christian Manal <a href="#" onclick="location.href='mai'+'lto:'+'man'+'al'+'@un'
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_14bc92f4b96c8519b376567118ac28b3.html">drivers</a></li><li class="navelem"><a class="el" href="dir_5ae94c3c1263655ef1e304f59e947eff.html">mhz19</a></li><li class="navelem"><a class="el" href="dir_00a188c0dc44d0dd26fc8ce7c3d7a2f3.html">include</a></li><li class="navelem"><a class="el" href="mhz19__params_8h.html">mhz19_params.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

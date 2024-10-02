@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,14 @@ $(function(){initNavTree('riscv__common_2include_2irq__arch_8h.html',''); initRe
 
 <p>Implementation of the kernels irq interface.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of the kernels irq interface. </p>
+<dl class="section author"><dt>Author</dt><dd>Ken Rabold </dd>
+<dd>
+Alexandre Abadie <a href="#" onclick="location.href='mai'+'lto:'+'ale'+'xa'+'ndr'+'e.'+'aba'+'di'+'e@i'+'nr'+'ia.'+'fr'; return false;">alexa<span class="obfuscator">.nosp@m.</span>ndre<span class="obfuscator">.nosp@m.</span>.abad<span class="obfuscator">.nosp@m.</span>ie@i<span class="obfuscator">.nosp@m.</span>nria.<span class="obfuscator">.nosp@m.</span>fr</a> </dd>
+<dd>
+Marian Buschsieweke <a href="#" onclick="location.href='mai'+'lto:'+'mar'+'ia'+'n.b'+'us'+'chs'+'ie'+'wek'+'e@'+'ovg'+'u.'+'de'; return false;">maria<span class="obfuscator">.nosp@m.</span>n.bu<span class="obfuscator">.nosp@m.</span>schsi<span class="obfuscator">.nosp@m.</span>ewek<span class="obfuscator">.nosp@m.</span>e@ovg<span class="obfuscator">.nosp@m.</span>u.de</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="irq_8h.html">irq.h</a>&quot;</code><br />
 <code>#include &quot;vendor/riscv_csr.h&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -192,14 +196,7 @@ static bool&#160;</td><td class="memItemRight" valign="bottom"><b>irq_is_in</b> 
 static bool&#160;</td><td class="memItemRight" valign="bottom"><b>irq_is_enabled</b> (void)</td></tr>
 <tr class="separator:a900c163c61412808463adfd8787f46f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Implementation of the kernels irq interface. </p>
-<dl class="section author"><dt>Author</dt><dd>Ken Rabold </dd>
-<dd>
-Alexandre Abadie <a href="#" onclick="location.href='mai'+'lto:'+'ale'+'xa'+'ndr'+'e.'+'aba'+'di'+'e@i'+'nr'+'ia.'+'fr'; return false;">alexa<span class="obfuscator">.nosp@m.</span>ndre<span class="obfuscator">.nosp@m.</span>.abad<span class="obfuscator">.nosp@m.</span>ie@i<span class="obfuscator">.nosp@m.</span>nria.<span class="obfuscator">.nosp@m.</span>fr</a> </dd>
-<dd>
-Marian Buschsieweke <a href="#" onclick="location.href='mai'+'lto:'+'mar'+'ia'+'n.b'+'us'+'chs'+'ie'+'wek'+'e@'+'ovg'+'u.'+'de'; return false;">maria<span class="obfuscator">.nosp@m.</span>n.bu<span class="obfuscator">.nosp@m.</span>schsi<span class="obfuscator">.nosp@m.</span>ewek<span class="obfuscator">.nosp@m.</span>e@ovg<span class="obfuscator">.nosp@m.</span>u.de</a> </dd></dl>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
@@ -207,7 +204,7 @@ Marian Buschsieweke <a href="#" onclick="location.href='mai'+'lto:'+'mar'+'ia'+'
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_c433b04169c945a1c7f0848f853d4379.html">cpu</a></li><li class="navelem"><a class="el" href="dir_7a65efae10740b50b94440f94c0bfe16.html">riscv_common</a></li><li class="navelem"><a class="el" href="dir_06a14049c6918ca945db813a43b15ac2.html">include</a></li><li class="navelem"><a class="el" href="riscv__common_2include_2irq__arch_8h.html">irq_arch.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

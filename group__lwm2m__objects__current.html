@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,47 +144,9 @@ $(function(){initNavTree('group__lwm2m__objects__current.html',''); initResizabl
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">Current<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__pkg__wakaama.html">LwM2M - Lightweight Machine to Machine</a> &raquo; <a class="el" href="group__lwm2m__objects.html">LwM2M Object implementations</a></div></div></div>
+  <div class="headertitle"><div class="title">Current<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__pkg__wakaama.html">LwM2M - Lightweight Machine to Machine</a> &raquo; <a class="el" href="group__lwm2m__objects.html">LwM2M Object implementations</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
-Topics</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__current__config.html">LwM2M Current Sensor object compile configurations</a></td></tr>
-<tr class="memdesc:group__lwm2m__objects__current__config"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="current_8h.html">current.h</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:gaf513bad03fc431fa53e9c8b33ab58d34" id="r_gaf513bad03fc431fa53e9c8b33ab58d34"><td class="memItemLeft" align="right" valign="top"><a id="gaf513bad03fc431fa53e9c8b33ab58d34" name="gaf513bad03fc431fa53e9c8b33ab58d34"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>LWM2M_CURRENT_OBJECT_ID</b>&#160;&#160;&#160;3317</td></tr>
-<tr class="memdesc:gaf513bad03fc431fa53e9c8b33ab58d34"><td class="mdescLeft">&#160;</td><td class="mdescRight">LwM2M Current Sensor object ID. <br /></td></tr>
-<tr class="separator:gaf513bad03fc431fa53e9c8b33ab58d34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:ga1c8ba00289c5d776e4910b9d21f9b801" id="r_ga1c8ba00289c5d776e4910b9d21f9b801"><td class="memItemLeft" align="right" valign="top"><a id="ga1c8ba00289c5d776e4910b9d21f9b801" name="ga1c8ba00289c5d776e4910b9d21f9b801"></a>
-typedef <a class="el" href="group__lwm2m__objects__ipso__sensor__base.html#gaa7308ac56cc712168feff47573d2db39">lwm2m_obj_ipso_base_sensor_args_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>lwm2m_obj_current_args_t</b></td></tr>
-<tr class="memdesc:ga1c8ba00289c5d776e4910b9d21f9b801"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arguments for the creation of a Current Sensor object instance. <br /></td></tr>
-<tr class="separator:ga1c8ba00289c5d776e4910b9d21f9b801"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:gaebc95dc50e4bf5906c640be87b749cf5" id="r_gaebc95dc50e4bf5906c640be87b749cf5"><td class="memItemLeft" align="right" valign="top">lwm2m_object_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaebc95dc50e4bf5906c640be87b749cf5">lwm2m_object_current_init</a> (<a class="el" href="structlwm2m__client__data__t.html">lwm2m_client_data_t</a> *client_data)</td></tr>
-<tr class="memdesc:gaebc95dc50e4bf5906c640be87b749cf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the Current Sensor object handle.  <br /></td></tr>
-<tr class="separator:gaebc95dc50e4bf5906c640be87b749cf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadd49e32cba763b2b08024063ff979a3b" id="r_gadd49e32cba763b2b08024063ff979a3b"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadd49e32cba763b2b08024063ff979a3b">lwm2m_object_current_instance_create</a> (const <a class="el" href="#ga1c8ba00289c5d776e4910b9d21f9b801">lwm2m_obj_current_args_t</a> *args)</td></tr>
-<tr class="memdesc:gadd49e32cba763b2b08024063ff979a3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new Current Sensor instance.  <br /></td></tr>
-<tr class="separator:gadd49e32cba763b2b08024063ff979a3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa2a5931de0de27c93c902447f1392a0a" id="r_gaa2a5931de0de27c93c902447f1392a0a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa2a5931de0de27c93c902447f1392a0a">lwm2m_object_current_update_value</a> (const <a class="el" href="structlwm2m__client__data__t.html">lwm2m_client_data_t</a> *client_data, uint16_t instance_id, int16_t value)</td></tr>
-<tr class="memdesc:gaa2a5931de0de27c93c902447f1392a0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the value of the current sensor and trigger a notification to the observing servers, if any.  <br /></td></tr>
-<tr class="separator:gaa2a5931de0de27c93c902447f1392a0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Current Sensor object implementation for LwM2M client using Wakaama</p>
 <dl class="section warning"><dt>Warning</dt><dd><b class="text-danger">This feature is experimental!</b><br  />
@@ -243,7 +202,45 @@ Usage</h2>
 <div class="fragment"><div class="line">uint16_t instance_id = (uint16_t)res;</div>
 <div class="line"><a class="code hl_function" href="#gaa2a5931de0de27c93c902447f1392a0a">lwm2m_object_current_update_value</a>(&amp;client_data, instance_id, new_value);</div>
 <div class="ttc" id="agroup__lwm2m__objects__current_html_gaa2a5931de0de27c93c902447f1392a0a"><div class="ttname"><a href="#gaa2a5931de0de27c93c902447f1392a0a">lwm2m_object_current_update_value</a></div><div class="ttdeci">void lwm2m_object_current_update_value(const lwm2m_client_data_t *client_data, uint16_t instance_id, int16_t value)</div><div class="ttdoc">Update the value of the current sensor and trigger a notification to the observing servers,...</div></div>
-</div><!-- fragment --> <h2 class="groupheader">Function Documentation</h2>
+</div><!-- fragment --> <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
+Topics</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__current__config.html">LwM2M Current Sensor object compile configurations</a></td></tr>
+<tr class="memdesc:group__lwm2m__objects__current__config"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="current_8h.html">current.h</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:gaf513bad03fc431fa53e9c8b33ab58d34" id="r_gaf513bad03fc431fa53e9c8b33ab58d34"><td class="memItemLeft" align="right" valign="top"><a id="gaf513bad03fc431fa53e9c8b33ab58d34" name="gaf513bad03fc431fa53e9c8b33ab58d34"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LWM2M_CURRENT_OBJECT_ID</b>&#160;&#160;&#160;3317</td></tr>
+<tr class="memdesc:gaf513bad03fc431fa53e9c8b33ab58d34"><td class="mdescLeft">&#160;</td><td class="mdescRight">LwM2M Current Sensor object ID. <br /></td></tr>
+<tr class="separator:gaf513bad03fc431fa53e9c8b33ab58d34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga1c8ba00289c5d776e4910b9d21f9b801" id="r_ga1c8ba00289c5d776e4910b9d21f9b801"><td class="memItemLeft" align="right" valign="top"><a id="ga1c8ba00289c5d776e4910b9d21f9b801" name="ga1c8ba00289c5d776e4910b9d21f9b801"></a>
+typedef <a class="el" href="group__lwm2m__objects__ipso__sensor__base.html#gaa7308ac56cc712168feff47573d2db39">lwm2m_obj_ipso_base_sensor_args_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>lwm2m_obj_current_args_t</b></td></tr>
+<tr class="memdesc:ga1c8ba00289c5d776e4910b9d21f9b801"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arguments for the creation of a Current Sensor object instance. <br /></td></tr>
+<tr class="separator:ga1c8ba00289c5d776e4910b9d21f9b801"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gaebc95dc50e4bf5906c640be87b749cf5" id="r_gaebc95dc50e4bf5906c640be87b749cf5"><td class="memItemLeft" align="right" valign="top">lwm2m_object_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaebc95dc50e4bf5906c640be87b749cf5">lwm2m_object_current_init</a> (<a class="el" href="structlwm2m__client__data__t.html">lwm2m_client_data_t</a> *client_data)</td></tr>
+<tr class="memdesc:gaebc95dc50e4bf5906c640be87b749cf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the Current Sensor object handle.  <br /></td></tr>
+<tr class="separator:gaebc95dc50e4bf5906c640be87b749cf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadd49e32cba763b2b08024063ff979a3b" id="r_gadd49e32cba763b2b08024063ff979a3b"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadd49e32cba763b2b08024063ff979a3b">lwm2m_object_current_instance_create</a> (const <a class="el" href="#ga1c8ba00289c5d776e4910b9d21f9b801">lwm2m_obj_current_args_t</a> *args)</td></tr>
+<tr class="memdesc:gadd49e32cba763b2b08024063ff979a3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new Current Sensor instance.  <br /></td></tr>
+<tr class="separator:gadd49e32cba763b2b08024063ff979a3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa2a5931de0de27c93c902447f1392a0a" id="r_gaa2a5931de0de27c93c902447f1392a0a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa2a5931de0de27c93c902447f1392a0a">lwm2m_object_current_update_value</a> (const <a class="el" href="structlwm2m__client__data__t.html">lwm2m_client_data_t</a> *client_data, uint16_t instance_id, int16_t value)</td></tr>
+<tr class="memdesc:gaa2a5931de0de27c93c902447f1392a0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the value of the current sensor and trigger a notification to the observing servers, if any.  <br /></td></tr>
+<tr class="separator:gaa2a5931de0de27c93c902447f1392a0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="gaebc95dc50e4bf5906c640be87b749cf5" name="gaebc95dc50e4bf5906c640be87b749cf5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaebc95dc50e4bf5906c640be87b749cf5">&#9670;&#160;</a></span>lwm2m_object_current_init()</h2>
 
@@ -341,7 +338,7 @@ Usage</h2>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

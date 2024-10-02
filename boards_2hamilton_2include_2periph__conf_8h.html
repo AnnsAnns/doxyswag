@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,18 @@ $(function(){initNavTree('boards_2hamilton_2include_2periph__conf_8h.html',''); 
 
 <p>Configuration of CPU peripherals for the Hamilton mote.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Configuration of CPU peripherals for the Hamilton mote. </p>
+<dl class="section author"><dt>Author</dt><dd>Thomas Eichinger <a href="#" onclick="location.href='mai'+'lto:'+'tho'+'ma'+'s.e'+'ic'+'hin'+'ge'+'r@f'+'u-'+'ber'+'li'+'n.d'+'e'; return false;">thoma<span class="obfuscator">.nosp@m.</span>s.ei<span class="obfuscator">.nosp@m.</span>ching<span class="obfuscator">.nosp@m.</span>er@f<span class="obfuscator">.nosp@m.</span>u-ber<span class="obfuscator">.nosp@m.</span>lin.<span class="obfuscator">.nosp@m.</span>de</a> </dd>
+<dd>
+Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
+<dd>
+Peter Kietzmann <a href="#" onclick="location.href='mai'+'lto:'+'pet'+'er'+'.ki'+'et'+'zma'+'nn'+'@ha'+'w-'+'ham'+'bu'+'rg.'+'de'; return false;">peter<span class="obfuscator">.nosp@m.</span>.kie<span class="obfuscator">.nosp@m.</span>tzman<span class="obfuscator">.nosp@m.</span>n@ha<span class="obfuscator">.nosp@m.</span>w-ham<span class="obfuscator">.nosp@m.</span>burg<span class="obfuscator">.nosp@m.</span>.de</a> </dd>
+<dd>
+Michael Andersen <a href="#" onclick="location.href='mai'+'lto:'+'m.a'+'nd'+'ers'+'en'+'@be'+'rk'+'ele'+'y.'+'edu'; return false;">m.and<span class="obfuscator">.nosp@m.</span>erse<span class="obfuscator">.nosp@m.</span>n@ber<span class="obfuscator">.nosp@m.</span>kele<span class="obfuscator">.nosp@m.</span>y.edu</a> </dd>
+<dd>
+Hyung-Sin Kim <a href="#" onclick="location.href='mai'+'lto:'+'hs.'+'ki'+'m@b'+'er'+'kel'+'ey'+'.ed'+'u'; return false;">hs.ki<span class="obfuscator">.nosp@m.</span>m@be<span class="obfuscator">.nosp@m.</span>rkele<span class="obfuscator">.nosp@m.</span>y.ed<span class="obfuscator">.nosp@m.</span>u</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;cpu.h&quot;</code><br />
 <code>#include &quot;periph_cpu.h&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -262,18 +270,7 @@ $(function(){initNavTree('boards_2hamilton_2include_2periph__conf_8h.html',''); 
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>RANDOM_NUMOF</b>&#160;&#160;&#160;(0U)</td></tr>
 <tr class="separator:ac63a84fd7c167bc652e6d7adbab7e57a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Configuration of CPU peripherals for the Hamilton mote. </p>
-<dl class="section author"><dt>Author</dt><dd>Thomas Eichinger <a href="#" onclick="location.href='mai'+'lto:'+'tho'+'ma'+'s.e'+'ic'+'hin'+'ge'+'r@f'+'u-'+'ber'+'li'+'n.d'+'e'; return false;">thoma<span class="obfuscator">.nosp@m.</span>s.ei<span class="obfuscator">.nosp@m.</span>ching<span class="obfuscator">.nosp@m.</span>er@f<span class="obfuscator">.nosp@m.</span>u-ber<span class="obfuscator">.nosp@m.</span>lin.<span class="obfuscator">.nosp@m.</span>de</a> </dd>
-<dd>
-Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
-<dd>
-Peter Kietzmann <a href="#" onclick="location.href='mai'+'lto:'+'pet'+'er'+'.ki'+'et'+'zma'+'nn'+'@ha'+'w-'+'ham'+'bu'+'rg.'+'de'; return false;">peter<span class="obfuscator">.nosp@m.</span>.kie<span class="obfuscator">.nosp@m.</span>tzman<span class="obfuscator">.nosp@m.</span>n@ha<span class="obfuscator">.nosp@m.</span>w-ham<span class="obfuscator">.nosp@m.</span>burg<span class="obfuscator">.nosp@m.</span>.de</a> </dd>
-<dd>
-Michael Andersen <a href="#" onclick="location.href='mai'+'lto:'+'m.a'+'nd'+'ers'+'en'+'@be'+'rk'+'ele'+'y.'+'edu'; return false;">m.and<span class="obfuscator">.nosp@m.</span>erse<span class="obfuscator">.nosp@m.</span>n@ber<span class="obfuscator">.nosp@m.</span>kele<span class="obfuscator">.nosp@m.</span>y.edu</a> </dd>
-<dd>
-Hyung-Sin Kim <a href="#" onclick="location.href='mai'+'lto:'+'hs.'+'ki'+'m@b'+'er'+'kel'+'ey'+'.ed'+'u'; return false;">hs.ki<span class="obfuscator">.nosp@m.</span>m@be<span class="obfuscator">.nosp@m.</span>rkele<span class="obfuscator">.nosp@m.</span>y.ed<span class="obfuscator">.nosp@m.</span>u</a> </dd></dl>
-</div><h2 class="groupheader">Variable Documentation</h2>
+<h2 class="groupheader">Variable Documentation</h2>
 <a id="a22877cb675e55db16cb1227b62dc9404" name="a22877cb675e55db16cb1227b62dc9404"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a22877cb675e55db16cb1227b62dc9404">&#9670;&#160;</a></span>adc_channels</h2>
 
@@ -475,7 +472,7 @@ Hyung-Sin Kim <a href="#" onclick="location.href='mai'+'lto:'+'hs.'+'ki'+'m@b'+'
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6c8313236d9db5b969ca7d150fe527de.html">boards</a></li><li class="navelem"><a class="el" href="dir_b774d97d77eef72787a47178e1f5c288.html">hamilton</a></li><li class="navelem"><a class="el" href="dir_de1d43aefba543d12521c1446a6ccca0.html">include</a></li><li class="navelem"><a class="el" href="boards_2hamilton_2include_2periph__conf_8h.html">periph_conf.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

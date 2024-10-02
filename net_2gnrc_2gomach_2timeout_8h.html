@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -141,13 +138,15 @@ $(function(){initNavTree('net_2gnrc_2gomach_2timeout_8h.html',''); initResizable
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">timeout.h File Reference<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__gomach.html">GoMacH</a></div></div></div>
+  <div class="headertitle"><div class="title">timeout.h File Reference<div class="ingroups"><a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__gomach.html">GoMacH</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Timeout handling of GoMacH.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Timeout handling of GoMacH. </p>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &quot;msg.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="xtimer_8h.html">xtimer.h</a>&quot;</code><br />
@@ -180,9 +179,7 @@ $(function(){initNavTree('net_2gnrc_2gomach_2timeout_8h.html',''); initResizable
 <tr class="memdesc:a7f45a2f0139f310a5fb14cb690cd8949"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a specific GoMacH timeout expired.  <br /></td></tr>
 <tr class="separator:a7f45a2f0139f310a5fb14cb690cd8949"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Timeout handling of GoMacH. </p>
-</div><h2 class="groupheader">Function Documentation</h2>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="a40cfa3f483f8c0b136cfef5ba8e188bf" name="a40cfa3f483f8c0b136cfef5ba8e188bf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a40cfa3f483f8c0b136cfef5ba8e188bf">&#9670;&#160;</a></span>gnrc_gomach_clear_timeout()</h2>
 
@@ -382,7 +379,7 @@ false, if timeout of type <code>type</code> is not running. </dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a408b6d3a4a484720bc3ecfeac8947e3.html">sys</a></li><li class="navelem"><a class="el" href="dir_e9e107fc86bbb4b6a326076a6808b9f5.html">include</a></li><li class="navelem"><a class="el" href="dir_7afc5d30923bebdd1513d1cc48150ca7.html">net</a></li><li class="navelem"><a class="el" href="dir_cf159672c4bc64dfd629cfa389a5bd8d.html">gnrc</a></li><li class="navelem"><a class="el" href="dir_306abe9bf61670e3570a67f765334c3f.html">gomach</a></li><li class="navelem"><a class="el" href="net_2gnrc_2gomach_2timeout_8h.html">timeout.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

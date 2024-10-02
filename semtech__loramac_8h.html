@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -146,13 +143,16 @@ $(function(){initNavTree('semtech__loramac_8h.html',''); initResizable(true); })
 <a href="#define-members">Macros</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">semtech_loramac.h File Reference<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__pkg__semtech-loramac.html">Semtech LoRaMAC implementation</a></div></div></div>
+  <div class="headertitle"><div class="title">semtech_loramac.h File Reference<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__pkg__semtech-loramac.html">Semtech LoRaMAC implementation</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Public API and definitions of the Semtech LoRaMAC.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;<a class="el" href="inttypes_8h.html">inttypes.h</a>&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Public API and definitions of the Semtech LoRaMAC. </p>
+<dl class="section author"><dt>Author</dt><dd>Alexandre Abadie <a href="#" onclick="location.href='mai'+'lto:'+'ale'+'xa'+'ndr'+'e.'+'aba'+'di'+'e@i'+'nr'+'ia.'+'fr'; return false;">alexa<span class="obfuscator">.nosp@m.</span>ndre<span class="obfuscator">.nosp@m.</span>.abad<span class="obfuscator">.nosp@m.</span>ie@i<span class="obfuscator">.nosp@m.</span>nria.<span class="obfuscator">.nosp@m.</span>fr</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;<a class="el" href="inttypes_8h.html">inttypes.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="mutex_8h.html">mutex.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="drivers_2include_2net_2netdev_8h.html">net/netdev.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="loramac_8h.html">net/loramac.h</a>&quot;</code><br />
@@ -404,10 +404,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a21bb6f4d2851fee91d16191ee6af765c"><td class="mdescLeft">&#160;</td><td class="mdescRight">MAC MCPS indication event. <br /></td></tr>
 <tr class="separator:a21bb6f4d2851fee91d16191ee6af765c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Public API and definitions of the Semtech LoRaMAC. </p>
-<dl class="section author"><dt>Author</dt><dd>Alexandre Abadie <a href="#" onclick="location.href='mai'+'lto:'+'ale'+'xa'+'ndr'+'e.'+'aba'+'di'+'e@i'+'nr'+'ia.'+'fr'; return false;">alexa<span class="obfuscator">.nosp@m.</span>ndre<span class="obfuscator">.nosp@m.</span>.abad<span class="obfuscator">.nosp@m.</span>ie@i<span class="obfuscator">.nosp@m.</span>nria.<span class="obfuscator">.nosp@m.</span>fr</a> </dd></dl>
-</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="acbd3f41d6ec0844df2cf3023a41e3249" name="acbd3f41d6ec0844df2cf3023a41e3249"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acbd3f41d6ec0844df2cf3023a41e3249">&#9670;&#160;</a></span>anonymous enum</h2>
 
@@ -1760,7 +1757,7 @@ SEMTECH_LORAMAC_TX_CNF_FAILED when message was transmitted but no ACK was receiv
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_1b757248df2f96757224e5c7d0d8f21a.html">pkg</a></li><li class="navelem"><a class="el" href="dir_37897307909f7391789a6e9c0e572be0.html">semtech-loramac</a></li><li class="navelem"><a class="el" href="dir_b7923f552e1f85164bbe5afcff326fb1.html">include</a></li><li class="navelem"><a class="el" href="semtech__loramac_8h.html">semtech_loramac.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

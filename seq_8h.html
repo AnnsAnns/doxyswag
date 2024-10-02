@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,11 @@ $(function(){initNavTree('seq_8h.html',''); initResizable(true); });
 
 <p>Serial Number Arithmetic (RFC 1982)  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Serial Number Arithmetic (RFC 1982) </p>
+<dl class="section see"><dt>See also</dt><dd><a href="https://tools.ietf.org/html/rfc1982">RFC 1982 - Serial Number Arithmetic </a></dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Cenk Gündoğan <a href="#" onclick="location.href='mai'+'lto:'+'cnk'+'gn'+'dgn'+'@g'+'mai'+'l.'+'com'; return false;">cnkgn<span class="obfuscator">.nosp@m.</span>dgn@<span class="obfuscator">.nosp@m.</span>gmail<span class="obfuscator">.nosp@m.</span>.com</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="errno_8h.html">errno.h</a>&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for seq.h:</div>
@@ -249,11 +250,7 @@ typedef uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>seq64_t</
 <tr class="memdesc:a12c3b04a1f92d62f628d8d6b67182c66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare sequence numbers <code>s1</code>, <code>s2</code> in the serial number space UINT64_MAX.  <br /></td></tr>
 <tr class="separator:a12c3b04a1f92d62f628d8d6b67182c66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Serial Number Arithmetic (RFC 1982) </p>
-<dl class="section see"><dt>See also</dt><dd><a href="https://tools.ietf.org/html/rfc1982">RFC 1982 - Serial Number Arithmetic </a></dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Cenk Gündoğan <a href="#" onclick="location.href='mai'+'lto:'+'cnk'+'gn'+'dgn'+'@g'+'mai'+'l.'+'com'; return false;">cnkgn<span class="obfuscator">.nosp@m.</span>dgn@<span class="obfuscator">.nosp@m.</span>gmail<span class="obfuscator">.nosp@m.</span>.com</a> </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a06a017c2ebe4548f54f10a0ba37c300f" name="a06a017c2ebe4548f54f10a0ba37c300f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a06a017c2ebe4548f54f10a0ba37c300f">&#9670;&#160;</a></span>SEQ_LIMIT</h2>
 
@@ -1264,7 +1261,7 @@ s, if n is out of range </dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a408b6d3a4a484720bc3ecfeac8947e3.html">sys</a></li><li class="navelem"><a class="el" href="dir_e9e107fc86bbb4b6a326076a6808b9f5.html">include</a></li><li class="navelem"><a class="el" href="seq_8h.html">seq.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

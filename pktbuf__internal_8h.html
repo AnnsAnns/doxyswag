@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -141,13 +138,19 @@ $(function(){initNavTree('pktbuf__internal_8h.html',''); initResizable(true); })
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">pktbuf_internal.h File Reference<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__pktbuf.html">Packet buffer</a></div></div></div>
+  <div class="headertitle"><div class="title">pktbuf_internal.h File Reference<div class="ingroups"><a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__pktbuf.html">Packet buffer</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Internal stuff for gnrc_pktbuf.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Internal stuff for gnrc_pktbuf. </p>
+<p>Interface definition for the global network buffer. <a class="el" href="structNetwork.html" title="Network struct within mqtt paho.">Network</a> devices and layers can allocate space for packets here.</p>
+<dl class="section author"><dt>Author</dt><dd>Martine Lenders <a href="#" onclick="location.href='mai'+'lto:'+'mle'+'nd'+'ers'+'@i'+'nf.'+'fu'+'-be'+'rl'+'in.'+'de'; return false;">mlend<span class="obfuscator">.nosp@m.</span>ers@<span class="obfuscator">.nosp@m.</span>inf.f<span class="obfuscator">.nosp@m.</span>u-be<span class="obfuscator">.nosp@m.</span>rlin.<span class="obfuscator">.nosp@m.</span>de</a> </dd>
+<dd>
+Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="mutex_8h.html">mutex.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -174,13 +177,7 @@ $(function(){initNavTree('pktbuf__internal_8h.html',''); initResizable(true); })
 <tr class="memdesc:a382dff5b57c2954c7dffbf3b37b4eee3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the implementation's internal invariants still uphold.  <br /></td></tr>
 <tr class="separator:a382dff5b57c2954c7dffbf3b37b4eee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Internal stuff for gnrc_pktbuf. </p>
-<p>Interface definition for the global network buffer. <a class="el" href="structNetwork.html" title="Network struct within mqtt paho.">Network</a> devices and layers can allocate space for packets here.</p>
-<dl class="section author"><dt>Author</dt><dd>Martine Lenders <a href="#" onclick="location.href='mai'+'lto:'+'mle'+'nd'+'ers'+'@i'+'nf.'+'fu'+'-be'+'rl'+'in.'+'de'; return false;">mlend<span class="obfuscator">.nosp@m.</span>ers@<span class="obfuscator">.nosp@m.</span>inf.f<span class="obfuscator">.nosp@m.</span>u-be<span class="obfuscator">.nosp@m.</span>rlin.<span class="obfuscator">.nosp@m.</span>de</a> </dd>
-<dd>
-Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
-</div><h2 class="groupheader">Function Documentation</h2>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="a00a4f8b9ec47369b0db1f11548ae4490" name="a00a4f8b9ec47369b0db1f11548ae4490"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a00a4f8b9ec47369b0db1f11548ae4490">&#9670;&#160;</a></span>gnrc_pktbuf_contains()</h2>
 
@@ -323,7 +320,7 @@ false, the packet buffer is insane. </dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a408b6d3a4a484720bc3ecfeac8947e3.html">sys</a></li><li class="navelem"><a class="el" href="dir_8029da4437d789f4711f6586d7ee68bf.html">net</a></li><li class="navelem"><a class="el" href="dir_3441f3001dd6ccd78cd6b9a576f26623.html">gnrc</a></li><li class="navelem"><a class="el" href="dir_6d649f6136959d44cfb2756293d84996.html">pktbuf</a></li><li class="navelem"><a class="el" href="dir_cc80f7a59fdd4ae520ed9cc90a904d84.html">include</a></li><li class="navelem"><a class="el" href="pktbuf__internal_8h.html">pktbuf_internal.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

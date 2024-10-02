@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -149,7 +146,10 @@ $(function(){initNavTree('async__read_8h.html',''); initResizable(true); });
 
 <p>Multiple asynchronous read on file descriptors.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Multiple asynchronous read on file descriptors. </p>
+<dl class="section author"><dt>Author</dt><dd>Takuo Yonezawa <a href="#" onclick="location.href='mai'+'lto:'+'Yon'+'ez'+'awa'+'-T'+'2@m'+'ai'+'l.d'+'np'+'.co'+'.j'+'p'; return false;">Yonez<span class="obfuscator">.nosp@m.</span>awa-<span class="obfuscator">.nosp@m.</span>T2@ma<span class="obfuscator">.nosp@m.</span>il.d<span class="obfuscator">.nosp@m.</span>np.co<span class="obfuscator">.nosp@m.</span>.jp</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;poll.h&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for async_read.h:</div>
@@ -191,10 +191,7 @@ typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><b>native_asyn
 <tr class="memdesc:a53920baef08eb5b24b332e15d8337fe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">start monitoring of file descriptor as interrupt  <br /></td></tr>
 <tr class="separator:a53920baef08eb5b24b332e15d8337fe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Multiple asynchronous read on file descriptors. </p>
-<dl class="section author"><dt>Author</dt><dd>Takuo Yonezawa <a href="#" onclick="location.href='mai'+'lto:'+'Yon'+'ez'+'awa'+'-T'+'2@m'+'ai'+'l.d'+'np'+'.co'+'.j'+'p'; return false;">Yonez<span class="obfuscator">.nosp@m.</span>awa-<span class="obfuscator">.nosp@m.</span>T2@ma<span class="obfuscator">.nosp@m.</span>il.d<span class="obfuscator">.nosp@m.</span>np.co<span class="obfuscator">.nosp@m.</span>.jp</a> </dd></dl>
-</div><h2 class="groupheader">Function Documentation</h2>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="a13b158f9ecf0e91252904fd3c34b36a0" name="a13b158f9ecf0e91252904fd3c34b36a0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a13b158f9ecf0e91252904fd3c34b36a0">&#9670;&#160;</a></span>native_async_read_add_handler()</h2>
 
@@ -366,7 +363,7 @@ typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><b>native_asyn
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_c433b04169c945a1c7f0848f853d4379.html">cpu</a></li><li class="navelem"><a class="el" href="dir_08417b664fe5404ce1d8d11465ea350a.html">native</a></li><li class="navelem"><a class="el" href="dir_10f33502332143c94afd5e97ec1b514c.html">include</a></li><li class="navelem"><a class="el" href="async__read_8h.html">async_read.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

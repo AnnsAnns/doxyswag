@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -149,22 +146,6 @@ $(function(){initNavTree('group__sys__malloc__monitor.html',''); initResizable(t
 
 <p>This module allows to monitor the dynamic memory usage of a certain piece of code.  
 <a href="#details">More...</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
-Topics</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__malloc__monitor__internals.html">Heap Memory Usage Monitor internals</a></td></tr>
-<tr class="memdesc:group__sys__malloc__monitor__internals"><td class="mdescLeft">&#160;</td><td class="mdescRight">internals for monitoring heap memory usage (calls to malloc/calloc/realloc/free) <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab9f58450ed54755a5235860a5dab4404" id="r_gab9f58450ed54755a5235860a5dab4404"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab9f58450ed54755a5235860a5dab4404">malloc_monitor_get_usage_current</a> (void)</td></tr>
-<tr class="memdesc:gab9f58450ed54755a5235860a5dab4404"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain current heap memory usage.  <br /></td></tr>
-<tr class="separator:gab9f58450ed54755a5235860a5dab4404"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga743882f0584698616b02c30ae735f6b7" id="r_ga743882f0584698616b02c30ae735f6b7"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga743882f0584698616b02c30ae735f6b7">malloc_monitor_get_usage_high_watermark</a> (void)</td></tr>
-<tr class="memdesc:ga743882f0584698616b02c30ae735f6b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain maximum heap memory usage since last call to <a class="el" href="#gaa09f0da764e5c7f1de4db627c8b427b4">malloc_monitor_reset_high_watermark()</a>.  <br /></td></tr>
-<tr class="separator:ga743882f0584698616b02c30ae735f6b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa09f0da764e5c7f1de4db627c8b427b4" id="r_gaa09f0da764e5c7f1de4db627c8b427b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa09f0da764e5c7f1de4db627c8b427b4">malloc_monitor_reset_high_watermark</a> (void)</td></tr>
-<tr class="memdesc:gaa09f0da764e5c7f1de4db627c8b427b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset maximum heap memory usage.  <br /></td></tr>
-<tr class="separator:gaa09f0da764e5c7f1de4db627c8b427b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>This module allows to monitor the dynamic memory usage of a certain piece of code. </p>
 <dl class="section warning"><dt>Warning</dt><dd>This module automatically selects <a class="el" href="group__sys__malloc__ts.html">Thread-safe wrappers for malloc and friends</a> and naturally incurs a certain runtime overhead. It is not meant for production usage. </dd></dl>
@@ -208,6 +189,22 @@ Example</h2>
 Configuration</h1>
 <p>The maximum number of pointers that can be monitored at once can be set with Kconfig in System &gt; Heap Memory Usage Monitor &gt; Monitor Size or by setting the corresponding CFlag in your application's Makefile as <code>CFLAGS += CONFIG_MODULE_SYS_MALLOC_MONITOR_SIZE=42</code>. It defaults to 100.</p>
 <p>For more fine-grained debugging of invalid calls to <a class="el" href="group__oneway__malloc.html#gafbedc913aa4651b3c3b4b3aecd9b4711">free()</a>, duplicated calls to <a class="el" href="group__oneway__malloc.html#gafbedc913aa4651b3c3b4b3aecd9b4711">free()</a>, or memory leaks, the module can be configured to print information on every call to <a class="el" href="group__oneway__malloc.html#ga9c36d0fe3ec4675cbffdc9b52f5fb399">malloc()</a>, <a class="el" href="group__oneway__malloc.html#ga2fc5f746d640647b01e4f5687b67177f">calloc()</a>, <a class="el" href="group__oneway__malloc.html#gad28fed1039f35d754710633141b4edf0">realloc()</a>, or <a class="el" href="group__oneway__malloc.html#gafbedc913aa4651b3c3b4b3aecd9b4711">free()</a> by setting System &gt; Heap Memory Usage Monitor &gt; Verbose or adding <code>CFLAGS += CONFIG_MODULE_SYS_MALLOC_MONITOR_VERBOSE=1</code> to your Makefile. <code>malloc_monitor</code> defaults to be non-verbose. </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
+Topics</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__malloc__monitor__internals.html">Heap Memory Usage Monitor internals</a></td></tr>
+<tr class="memdesc:group__sys__malloc__monitor__internals"><td class="mdescLeft">&#160;</td><td class="mdescRight">internals for monitoring heap memory usage (calls to malloc/calloc/realloc/free) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab9f58450ed54755a5235860a5dab4404" id="r_gab9f58450ed54755a5235860a5dab4404"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab9f58450ed54755a5235860a5dab4404">malloc_monitor_get_usage_current</a> (void)</td></tr>
+<tr class="memdesc:gab9f58450ed54755a5235860a5dab4404"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain current heap memory usage.  <br /></td></tr>
+<tr class="separator:gab9f58450ed54755a5235860a5dab4404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga743882f0584698616b02c30ae735f6b7" id="r_ga743882f0584698616b02c30ae735f6b7"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga743882f0584698616b02c30ae735f6b7">malloc_monitor_get_usage_high_watermark</a> (void)</td></tr>
+<tr class="memdesc:ga743882f0584698616b02c30ae735f6b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain maximum heap memory usage since last call to <a class="el" href="#gaa09f0da764e5c7f1de4db627c8b427b4">malloc_monitor_reset_high_watermark()</a>.  <br /></td></tr>
+<tr class="separator:ga743882f0584698616b02c30ae735f6b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa09f0da764e5c7f1de4db627c8b427b4" id="r_gaa09f0da764e5c7f1de4db627c8b427b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa09f0da764e5c7f1de4db627c8b427b4">malloc_monitor_reset_high_watermark</a> (void)</td></tr>
+<tr class="memdesc:gaa09f0da764e5c7f1de4db627c8b427b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset maximum heap memory usage.  <br /></td></tr>
+<tr class="separator:gaa09f0da764e5c7f1de4db627c8b427b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="gab9f58450ed54755a5235860a5dab4404" name="gab9f58450ed54755a5235860a5dab4404"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gab9f58450ed54755a5235860a5dab4404">&#9670;&#160;</a></span>malloc_monitor_get_usage_current()</h2>
@@ -276,7 +273,7 @@ Configuration</h1>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

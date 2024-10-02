@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -149,7 +146,11 @@ $(function(){initNavTree('structsdmmc__driver__t.html',''); initResizable(true);
 
 <p>Low-level SDIO/SD/MMC peripheral driver.  
  <a href="#details">More...</a></p>
-
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Low-level SDIO/SD/MMC peripheral driver. </p>
+<p>The low-level SDIO/SD/MMC peripheral driver interface as used by high-level SDIO/SD/MMC device API functions. It has to be implemented for a specific CPU.</p>
+<dl class="section note"><dt>Note</dt><dd>High-level functions such as <a class="el" href="group__drivers__sdmmc.html#ga3438a6d03cd98606a885462800e3ef89">sdmmc_read_blocks</a> are provided by the SDIO/SD/MMC API and should be used instead. Directly calling these functions is not recommended. </dd></dl>
+</div>
 <p><code>#include &lt;sdmmc.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -182,11 +183,7 @@ Data Fields</h2></td></tr>
 <tr class="memdesc:accc93e4916aa1e023308b1b1bf03a762"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finish the data transfer.  <br /></td></tr>
 <tr class="separator:accc93e4916aa1e023308b1b1bf03a762"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Low-level SDIO/SD/MMC peripheral driver. </p>
-<p>The low-level SDIO/SD/MMC peripheral driver interface as used by high-level SDIO/SD/MMC device API functions. It has to be implemented for a specific CPU.</p>
-<dl class="section note"><dt>Note</dt><dd>High-level functions such as <a class="el" href="group__drivers__sdmmc.html#ga3438a6d03cd98606a885462800e3ef89">sdmmc_read_blocks</a> are provided by the SDIO/SD/MMC API and should be used instead. Directly calling these functions is not recommended. </dd></dl>
-</div><h2 class="groupheader">Field Documentation</h2>
+<h2 class="groupheader">Field Documentation</h2>
 <a id="ae7e0fef0c7a1ca3deb22844549d1cfcb" name="ae7e0fef0c7a1ca3deb22844549d1cfcb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae7e0fef0c7a1ca3deb22844549d1cfcb">&#9670;&#160;</a></span>card_init</h2>
 
@@ -548,7 +545,7 @@ Data Fields</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structsdmmc__driver__t.html">sdmmc_driver_t</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:32 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:11 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

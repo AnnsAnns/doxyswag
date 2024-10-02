@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,12 +144,34 @@ $(function(){initNavTree('group__ble__skald.html',''); initResizable(true); });
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">Skald, who advertises to the world<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__ble.html">Bluetooth Low Energy (BLE)</a></div></div></div>
+  <div class="headertitle"><div class="title">Skald, who advertises to the world<div class="ingroups"><a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__ble.html">Bluetooth Low Energy (BLE)</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Skald, a minimalistic BLE advertising stack  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Skald, a minimalistic BLE advertising stack </p>
+<h1><a class="anchor" id="autotoc_md2059"></a>
+About</h1>
+<p>Skald is a very minimalistic BLE implementation, implementing the <code>broadcaster</code> role only. With this focus, the stack allows for setting up different kind of beacons using an extremely low memory footprint.</p>
+<h1><a class="anchor" id="autotoc_md2060"></a>
+Design Decisions and Limitations</h1>
+<ul>
+<li>support for local addresses only (using <code>luid</code> to generate them)</li>
+<li>advertising interval is configured during compile time, override by setting <code>CFLAGS+=-DCONFIG_SKALD_INTERVAL=xxx</code></li>
+<li>advertising channels are configured during compile time, override by setting <code>CFLAGS+=-DSKALD_ADV_CHAN={37,39}</code></li>
+</ul>
+<h1><a class="anchor" id="autotoc_md2061"></a>
+Implementation state</h1>
+<p>Supported:</p><ul>
+<li>advertising of custom GAP payloads</li>
+<li>iBeacon (full support)</li>
+<li>Eddystone (partly supported)</li>
+</ul>
+<p>Limitations:</p><ul>
+<li>currently Skald supports random static addresses only (generated using the <code>luid</code> module) </li>
+</ul>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -201,28 +220,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>skald_init</b> (void)
 <tr class="memdesc:gae33964f370c344557e7ae6e28b55d75b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a random public address.  <br /></td></tr>
 <tr class="separator:gae33964f370c344557e7ae6e28b55d75b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Skald, a minimalistic BLE advertising stack </p>
-<h1><a class="anchor" id="autotoc_md2059"></a>
-About</h1>
-<p>Skald is a very minimalistic BLE implementation, implementing the <code>broadcaster</code> role only. With this focus, the stack allows for setting up different kind of beacons using an extremely low memory footprint.</p>
-<h1><a class="anchor" id="autotoc_md2060"></a>
-Design Decisions and Limitations</h1>
-<ul>
-<li>support for local addresses only (using <code>luid</code> to generate them)</li>
-<li>advertising interval is configured during compile time, override by setting <code>CFLAGS+=-DCONFIG_SKALD_INTERVAL=xxx</code></li>
-<li>advertising channels are configured during compile time, override by setting <code>CFLAGS+=-DSKALD_ADV_CHAN={37,39}</code></li>
-</ul>
-<h1><a class="anchor" id="autotoc_md2061"></a>
-Implementation state</h1>
-<p>Supported:</p><ul>
-<li>advertising of custom GAP payloads</li>
-<li>iBeacon (full support)</li>
-<li>Eddystone (partly supported)</li>
-</ul>
-<p>Limitations:</p><ul>
-<li>currently Skald supports random static addresses only (generated using the <code>luid</code> module) </li>
-</ul>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ga5e8e394c7ccee712fab3f30629a07346" name="ga5e8e394c7ccee712fab3f30629a07346"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga5e8e394c7ccee712fab3f30629a07346">&#9670;&#160;</a></span>skald_adv_start()</h2>
@@ -308,7 +305,7 @@ Implementation state</h1>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

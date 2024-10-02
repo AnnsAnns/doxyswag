@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -154,6 +151,13 @@ $(function(){initNavTree('group__drivers__ad7746.html',''); initResizable(true);
 
 <p>I2C Capacitance-to-digital converter with temperature and voltage sensors.  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>I2C Capacitance-to-digital converter with temperature and voltage sensors. </p>
+<p>The devices has two main channels: capacitance channel and voltage / temperature channel.</p>
+<p>The capacitance channel can measure from two different inputs (CIN1 and CIN2), selected using <a class="el" href="#ga24f7c23e22d6d88b94d131f4f88ae53f">ad7746_set_cap_ch_input</a>.</p>
+<p>The voltage / temperature channel can measure from five different sources: Voltage from VIN pins, internal VCC, internal temperature sensor and external temperature sensor (see datasheet for proper setup). The mode of this channel can be set using <a class="el" href="#ga330f467eb4699fd401ea01d2b99b6e33">ad7746_set_vt_ch_mode</a> or will directly be set when trying to read from a specific source which is not the currently selected one. This mode change may lead to data not being available right away (in which case the reading function will return <a class="el" href="#ggaf38129fd1797a5cfd7d746065784a44fafd4ae9c38b193247ae742bf9c59780bc">AD7746_NODATA</a> error code).</p>
+<dl class="section note"><dt>Note</dt><dd>Constantly switching between modes in the voltage / temperature channel may lead to invalid data, for what it seems to be a device limitation.</dd></dl>
+<p>This driver provides <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> capabilities. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -296,13 +300,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga9e823cbfb7138270312dad717be7118e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the sample rate for the capacitance channel.  <br /></td></tr>
 <tr class="separator:ga9e823cbfb7138270312dad717be7118e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>I2C Capacitance-to-digital converter with temperature and voltage sensors. </p>
-<p>The devices has two main channels: capacitance channel and voltage / temperature channel.</p>
-<p>The capacitance channel can measure from two different inputs (CIN1 and CIN2), selected using <a class="el" href="#ga24f7c23e22d6d88b94d131f4f88ae53f">ad7746_set_cap_ch_input</a>.</p>
-<p>The voltage / temperature channel can measure from five different sources: Voltage from VIN pins, internal VCC, internal temperature sensor and external temperature sensor (see datasheet for proper setup). The mode of this channel can be set using <a class="el" href="#ga330f467eb4699fd401ea01d2b99b6e33">ad7746_set_vt_ch_mode</a> or will directly be set when trying to read from a specific source which is not the currently selected one. This mode change may lead to data not being available right away (in which case the reading function will return <a class="el" href="#ggaf38129fd1797a5cfd7d746065784a44fafd4ae9c38b193247ae742bf9c59780bc">AD7746_NODATA</a> error code).</p>
-<dl class="section note"><dt>Note</dt><dd>Constantly switching between modes in the voltage / temperature channel may lead to invalid data, for what it seems to be a device limitation.</dd></dl>
-<p>This driver provides <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> capabilities. </p>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="ga1e06e534e565b0e44afdf96c77951725" name="ga1e06e534e565b0e44afdf96c77951725"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga1e06e534e565b0e44afdf96c77951725">&#9670;&#160;</a></span>anonymous enum</h2>
@@ -882,7 +879,7 @@ AD7746_NOI2C on error </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

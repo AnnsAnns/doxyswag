@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -152,6 +149,44 @@ $(function(){initNavTree('group__drivers__ws281x.html',''); initResizable(true);
 
 <p>Driver for the WS2812 or the SK6812 RGB LEDs sold as NeoPixel  
 <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Driver for the WS2812 or the SK6812 RGB LEDs sold as NeoPixel </p>
+<h1><a class="anchor" id="autotoc_md1741"></a>
+Summary</h1>
+<p>The WS2812 or SK6812 RGB LEDs, or more commonly known as NeoPixels, can be chained so that a single data pin of the MCU can control an arbitrary number of RGB LEDs. This driver supports both the WS2812/SK6812 and the WS2812b LEDs.</p>
+<h1><a class="anchor" id="autotoc_md1742"></a>
+Support</h1>
+<p>The protocol to communicate with the WS281x is custom, so no hardware implementations can be used. Hence, the protocol needs to be bit banged in software. As the timing requirements are too strict to do this using the platform independent APIs for accessing <a class="el" href="group__drivers__periph__gpio.html">GPIO</a> and <a class="el" href="group__sys__xtimer.html">xtimer high level timer abstraction layer (deprecated)</a>, platform specific implementations of <a class="el" href="#ga3680a18762396b4b41df473fcab8942a">ws281x_write</a> are needed.</p>
+<h2><a class="anchor" id="autotoc_md1743"></a>
+ATmega</h2>
+<p>A bit banging implementation for ATmegas clocked at 8MHz and at 16MHz is provided. Boards clocked at any other core frequency are not supported. (But keep in mind that most (all?) ATmega MCUs do have an internal 8MHz oscillator, that could be enabled by changing the fuse settings.)</p>
+<dl class="section warning"><dt>Warning</dt><dd>On 8MHz ATmegas, only pins at GPIO ports B, C, and D are supported. (On 16MHz ATmegas, any pin is fine.)</dd></dl>
+<h2><a class="anchor" id="autotoc_md1744"></a>
+ESP32</h2>
+<p>The ESP32 implementation is frequency independent, as frequencies above 80MHz are high enough to support bit banging without assembly.</p>
+<h2><a class="anchor" id="autotoc_md1745"></a>
+Native/VT100</h2>
+<p>The native (VT100) implementation writes the LED state to the console.</p>
+<h3><a class="anchor" id="autotoc_md1746"></a>
+Usage</h3>
+<p>Add the following to your <code>Makefile</code>:</p>
+<ul>
+<li>Auto-selecting the backend: <div class="fragment"><div class="line">Makefile</div>
+<div class="line">  USEMODULE += ws281x</div>
+</div><!-- fragment --></li>
+</ul>
+<p>This will automatically pull in one of the backends supported by your board. In case multiple backends apply and the automatic selection does not pick your preferred backend, you can manually pick your preferred backend as described below.</p>
+<ul>
+<li>the ATmega backend: <div class="fragment"><div class="line">Makefile</div>
+<div class="line">  USEMODULE += ws281x_atmega</div>
+</div><!-- fragment --></li>
+<li>the ESP32 backend: <div class="fragment"><div class="line">Makefile</div>
+<div class="line">  USEMODULE += ws281x_esp32</div>
+</div><!-- fragment --></li>
+<li>the native/VT100 backend: <div class="fragment"><div class="line">Makefile</div>
+<div class="line">  USEMODULE += ws281x_vt100</div>
+</div><!-- fragment --> </li>
+</ul>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -208,44 +243,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga3680a18762396b4b41df473fcab8942a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the internal buffer to the LED chain.  <br /></td></tr>
 <tr class="separator:ga3680a18762396b4b41df473fcab8942a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Driver for the WS2812 or the SK6812 RGB LEDs sold as NeoPixel </p>
-<h1><a class="anchor" id="autotoc_md1741"></a>
-Summary</h1>
-<p>The WS2812 or SK6812 RGB LEDs, or more commonly known as NeoPixels, can be chained so that a single data pin of the MCU can control an arbitrary number of RGB LEDs. This driver supports both the WS2812/SK6812 and the WS2812b LEDs.</p>
-<h1><a class="anchor" id="autotoc_md1742"></a>
-Support</h1>
-<p>The protocol to communicate with the WS281x is custom, so no hardware implementations can be used. Hence, the protocol needs to be bit banged in software. As the timing requirements are too strict to do this using the platform independent APIs for accessing <a class="el" href="group__drivers__periph__gpio.html">GPIO</a> and <a class="el" href="group__sys__xtimer.html">xtimer high level timer abstraction layer (deprecated)</a>, platform specific implementations of <a class="el" href="#ga3680a18762396b4b41df473fcab8942a">ws281x_write</a> are needed.</p>
-<h2><a class="anchor" id="autotoc_md1743"></a>
-ATmega</h2>
-<p>A bit banging implementation for ATmegas clocked at 8MHz and at 16MHz is provided. Boards clocked at any other core frequency are not supported. (But keep in mind that most (all?) ATmega MCUs do have an internal 8MHz oscillator, that could be enabled by changing the fuse settings.)</p>
-<dl class="section warning"><dt>Warning</dt><dd>On 8MHz ATmegas, only pins at GPIO ports B, C, and D are supported. (On 16MHz ATmegas, any pin is fine.)</dd></dl>
-<h2><a class="anchor" id="autotoc_md1744"></a>
-ESP32</h2>
-<p>The ESP32 implementation is frequency independent, as frequencies above 80MHz are high enough to support bit banging without assembly.</p>
-<h2><a class="anchor" id="autotoc_md1745"></a>
-Native/VT100</h2>
-<p>The native (VT100) implementation writes the LED state to the console.</p>
-<h3><a class="anchor" id="autotoc_md1746"></a>
-Usage</h3>
-<p>Add the following to your <code>Makefile</code>:</p>
-<ul>
-<li>Auto-selecting the backend: <div class="fragment"><div class="line">Makefile</div>
-<div class="line">  USEMODULE += ws281x</div>
-</div><!-- fragment --></li>
-</ul>
-<p>This will automatically pull in one of the backends supported by your board. In case multiple backends apply and the automatic selection does not pick your preferred backend, you can manually pick your preferred backend as described below.</p>
-<ul>
-<li>the ATmega backend: <div class="fragment"><div class="line">Makefile</div>
-<div class="line">  USEMODULE += ws281x_atmega</div>
-</div><!-- fragment --></li>
-<li>the ESP32 backend: <div class="fragment"><div class="line">Makefile</div>
-<div class="line">  USEMODULE += ws281x_esp32</div>
-</div><!-- fragment --></li>
-<li>the native/VT100 backend: <div class="fragment"><div class="line">Makefile</div>
-<div class="line">  USEMODULE += ws281x_vt100</div>
-</div><!-- fragment --> </li>
-</ul>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ga6dc34ec194571babec40b5a19415ed66" name="ga6dc34ec194571babec40b5a19415ed66"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga6dc34ec194571babec40b5a19415ed66">&#9670;&#160;</a></span>ws281x_end_transmission()</h2>
@@ -509,7 +506,7 @@ Usage</h3>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

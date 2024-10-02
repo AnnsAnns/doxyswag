@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -143,13 +140,16 @@ $(function(){initNavTree('gnrc__lorawan__internal_8h.html',''); initResizable(tr
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a>  </div>
-  <div class="headertitle"><div class="title">gnrc_lorawan_internal.h File Reference<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__lorawan.html">GNRC LoRaWAN</a></div></div></div>
+  <div class="headertitle"><div class="title">gnrc_lorawan_internal.h File Reference<div class="ingroups"><a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__lorawan.html">GNRC LoRaWAN</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>GNRC LoRaWAN internal header.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;<a class="el" href="stdio_8h.html">stdio.h</a>&gt;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>GNRC LoRaWAN internal header. </p>
+<dl class="section author"><dt>Author</dt><dd>Jose Ignacio Alamos <a href="#" onclick="location.href='mai'+'lto:'+'jos'+'e.'+'ala'+'mo'+'s@h'+'aw'+'-ha'+'mb'+'urg'+'.d'+'e'; return false;">jose.<span class="obfuscator">.nosp@m.</span>alam<span class="obfuscator">.nosp@m.</span>os@ha<span class="obfuscator">.nosp@m.</span>w-ha<span class="obfuscator">.nosp@m.</span>mburg<span class="obfuscator">.nosp@m.</span>.de</a> </dd></dl>
+</div><div class="textblock"><code>#include &lt;<a class="el" href="stdio_8h.html">stdio.h</a>&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="iolist_8h.html">iolist.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="sys_2include_2net_2lora_8h.html">net/lora.h</a>&quot;</code><br />
@@ -565,10 +565,7 @@ Data Structures</h2></td></tr>
 <tr class="memdesc:a61a45ac72ef20886c177691a3bdda5a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Se the app key in the MLME join request data.  <br /></td></tr>
 <tr class="separator:a61a45ac72ef20886c177691a3bdda5a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>GNRC LoRaWAN internal header. </p>
-<dl class="section author"><dt>Author</dt><dd>Jose Ignacio Alamos <a href="#" onclick="location.href='mai'+'lto:'+'jos'+'e.'+'ala'+'mo'+'s@h'+'aw'+'-ha'+'mb'+'urg'+'.d'+'e'; return false;">jose.<span class="obfuscator">.nosp@m.</span>alam<span class="obfuscator">.nosp@m.</span>os@ha<span class="obfuscator">.nosp@m.</span>w-ha<span class="obfuscator">.nosp@m.</span>mburg<span class="obfuscator">.nosp@m.</span>.de</a> </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ae4f3fc63f5592b7914289c24142e7900" name="ae4f3fc63f5592b7914289c24142e7900"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae4f3fc63f5592b7914289c24142e7900">&#9670;&#160;</a></span>MHDR_MIC_BUF_SIZE</h2>
 
@@ -2173,7 +2170,7 @@ false if OptNeg bit is unset </dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a408b6d3a4a484720bc3ecfeac8947e3.html">sys</a></li><li class="navelem"><a class="el" href="dir_8029da4437d789f4711f6586d7ee68bf.html">net</a></li><li class="navelem"><a class="el" href="dir_3441f3001dd6ccd78cd6b9a576f26623.html">gnrc</a></li><li class="navelem"><a class="el" href="dir_00ffca95038903d902c39d60fd4b461e.html">link_layer</a></li><li class="navelem"><a class="el" href="dir_06d2abc7e24971379578d86a2f4e1698.html">lorawan</a></li><li class="navelem"><a class="el" href="dir_f05499f30ec899ab026a36a63a742d42.html">include</a></li><li class="navelem"><a class="el" href="gnrc__lorawan__internal_8h.html">gnrc_lorawan_internal.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

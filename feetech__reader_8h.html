@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -149,7 +146,10 @@ $(function(){initNavTree('feetech__reader_8h.html',''); initResizable(true); });
 
 <p>Interface definition for Feetech packet reader.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="feetech__protocol_8h.html">feetech_protocol.h</a>&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Interface definition for Feetech packet reader. </p>
+<dl class="section author"><dt>Author</dt><dd>Loïc Dauphin <a href="#" onclick="location.href='mai'+'lto:'+'loi'+'c.'+'dau'+'ph'+'in@'+'in'+'ria'+'.f'+'r'; return false;">loic.<span class="obfuscator">.nosp@m.</span>daup<span class="obfuscator">.nosp@m.</span>hin@i<span class="obfuscator">.nosp@m.</span>nria<span class="obfuscator">.nosp@m.</span>.fr</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;<a class="el" href="feetech__protocol_8h.html">feetech_protocol.h</a>&quot;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
@@ -235,10 +235,7 @@ Data Structures</h2></td></tr>
 <tr class="memdesc:af53a688fac87b6b5cc202a8bef541884"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the packet item's payload (SYNC_WRITE)  <br /></td></tr>
 <tr class="separator:af53a688fac87b6b5cc202a8bef541884"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Interface definition for Feetech packet reader. </p>
-<dl class="section author"><dt>Author</dt><dd>Loïc Dauphin <a href="#" onclick="location.href='mai'+'lto:'+'loi'+'c.'+'dau'+'ph'+'in@'+'in'+'ria'+'.f'+'r'; return false;">loic.<span class="obfuscator">.nosp@m.</span>daup<span class="obfuscator">.nosp@m.</span>hin@i<span class="obfuscator">.nosp@m.</span>nria<span class="obfuscator">.nosp@m.</span>.fr</a> </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="abde31bd6613d8921deeb073557a9ecdc" name="abde31bd6613d8921deeb073557a9ecdc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abde31bd6613d8921deeb073557a9ecdc">&#9670;&#160;</a></span>FEETECH_RESPONSE_SIZE</h2>
 
@@ -970,7 +967,7 @@ false otherwise </dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_14bc92f4b96c8519b376567118ac28b3.html">drivers</a></li><li class="navelem"><a class="el" href="dir_e970f03c2194680eeb4b7056467ba042.html">feetech</a></li><li class="navelem"><a class="el" href="dir_d32825a7f5801892f00cc0dcea286066.html">include</a></li><li class="navelem"><a class="el" href="feetech__reader_8h.html">feetech_reader.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -147,7 +144,9 @@ $(function(){initNavTree('structnetdev__test__t.html',''); initResizable(true); 
 
 <p>Device descriptor for <a class="el" href="group__sys__netdev__test.html">netdev dummy test driver</a> devices.  
  <a href="#details">More...</a></p>
-
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Device descriptor for <a class="el" href="group__sys__netdev__test.html">netdev dummy test driver</a> devices. </p>
+</div>
 <p><code>#include &lt;netdev_test.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="memitem:a1222699d9138e3dc89daf7e7c4a9ea67" id="r_a1222699d9138e3dc89daf7e7c4a9ea67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnetdev__ieee802154__t.html">netdev_ieee802154_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1222699d9138e3dc89daf7e7c4a9ea67">netdev</a></td></tr>
@@ -241,9 +240,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>context</b></td></t
 <tr class="memdesc:aaacac29a8aa7891d7dc1882b5eb89773 inherit pub_attribs_structnetdev"><td class="mdescLeft">&#160;</td><td class="mdescRight">ptr to network stack context <br /></td></tr>
 <tr class="separator:aaacac29a8aa7891d7dc1882b5eb89773 inherit pub_attribs_structnetdev"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Device descriptor for <a class="el" href="group__sys__netdev__test.html">netdev dummy test driver</a> devices. </p>
-</div><h2 class="groupheader">Field Documentation</h2>
+<h2 class="groupheader">Field Documentation</h2>
 <a id="a1222699d9138e3dc89daf7e7c4a9ea67" name="a1222699d9138e3dc89daf7e7c4a9ea67"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1222699d9138e3dc89daf7e7c4a9ea67">&#9670;&#160;</a></span>netdev</h2>
 
@@ -289,7 +286,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>context</b></td></t
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structnetdev__test__t.html">netdev_test_t</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:32 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:11 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

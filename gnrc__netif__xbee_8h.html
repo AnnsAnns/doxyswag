@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
   <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
@@ -25,15 +25,12 @@
       src="doxygen-awesome-paragraph-link.js"
     ></script>
       <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-      <script type="text/javascript">
-          DoxygenAwesomeInteractiveToc.init()
-      </script>
     <!-- <link href="pagefind/pagefind-ui.css" rel="stylesheet"> -->
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
       // Check whether the PagefindUI class is available
       if (typeof PagefindUI === "undefined") {
-        console.error("PagefindUI class is not available | Dev Build");
+        console.warn("PagefindUI class is not available | Dev Build");
       } else {
         // // Remove the "searchstub" element and initialize the PagefindUI class
         // document.getElementById("#searchstub").remove();
@@ -141,13 +138,16 @@ $(function(){initNavTree('gnrc__netif__xbee_8h.html',''); initResizable(true); }
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">gnrc_netif_xbee.h File Reference<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__netif.html">Network interface API</a></div></div></div>
+  <div class="headertitle"><div class="title">gnrc_netif_xbee.h File Reference<div class="ingroups"><a class="el" href="group__network.html">Networking</a> &raquo; <a class="el" href="group__net.html">(Deprecated Group 🐸👻)</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__netif.html">Network interface API</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>XBee adaption for <a class="el" href="group__net__gnrc__netif.html">Network interface API</a>.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="gnrc_2netif_8h.html">net/gnrc/netif.h</a>&quot;</code><br />
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>XBee adaption for <a class="el" href="group__net__gnrc__netif.html">Network interface API</a>. </p>
+<dl class="section author"><dt>Author</dt><dd>Martine Lenders <a href="#" onclick="location.href='mai'+'lto:'+'m.l'+'en'+'der'+'s@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">m.len<span class="obfuscator">.nosp@m.</span>ders<span class="obfuscator">.nosp@m.</span>@fu-b<span class="obfuscator">.nosp@m.</span>erli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
+</div><div class="textblock"><code>#include &quot;<a class="el" href="gnrc_2netif_8h.html">net/gnrc/netif.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for gnrc_netif_xbee.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -160,10 +160,7 @@ $(function(){initNavTree('gnrc__netif__xbee_8h.html',''); initResizable(true); }
 <tr class="memdesc:a8098ede934e8b043837f2bcc26fb5f7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an Xbee network interface.  <br /></td></tr>
 <tr class="separator:a8098ede934e8b043837f2bcc26fb5f7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>XBee adaption for <a class="el" href="group__net__gnrc__netif.html">Network interface API</a>. </p>
-<dl class="section author"><dt>Author</dt><dd>Martine Lenders <a href="#" onclick="location.href='mai'+'lto:'+'m.l'+'en'+'der'+'s@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">m.len<span class="obfuscator">.nosp@m.</span>ders<span class="obfuscator">.nosp@m.</span>@fu-b<span class="obfuscator">.nosp@m.</span>erli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
-</div><h2 class="groupheader">Function Documentation</h2>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="a8098ede934e8b043837f2bcc26fb5f7a" name="a8098ede934e8b043837f2bcc26fb5f7a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8098ede934e8b043837f2bcc26fb5f7a">&#9670;&#160;</a></span>gnrc_netif_xbee_create()</h2>
 
@@ -230,7 +227,7 @@ negative number on error </dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_14bc92f4b96c8519b376567118ac28b3.html">drivers</a></li><li class="navelem"><a class="el" href="dir_a32829aff948e7776340963ed66edd24.html">xbee</a></li><li class="navelem"><a class="el" href="dir_2224317a2d3c7ec1b6c598cae2e9f5a5.html">include</a></li><li class="navelem"><a class="el" href="gnrc__netif__xbee_8h.html">gnrc_netif_xbee.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>
