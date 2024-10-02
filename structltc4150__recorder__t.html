@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -149,11 +149,7 @@ $(function(){initNavTree('structltc4150__recorder__t.html',''); initResizable(tr
 
 <p>Interface to allow recording of the drawn current in a user defined resolution.  
  <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Interface to allow recording of the drawn current in a user defined resolution. </p>
-<dl class="section note"><dt>Note</dt><dd>Keep in mind that the data recording may be performed by the CPU of the system to monitor - thus keep power consumption for the recording low!</dd></dl>
-<p>The LTC4150 driver will only track total charge transferred (separately for charging in discharging direction). However, there are use cases that required more precise data recording, e.g. a rolling average of the last minute. This interface allows application developers to implement the ideal trade-off between RAM, ROM and runtime overhead for the data recording and the level of information they require. </p>
-</div>
+
 <p><code>#include &lt;ltc4150.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -165,7 +161,11 @@ Data Fields</h2></td></tr>
 <tr class="memdesc:a379a4df9b53c00d192873d955d055811"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to call upon driver initialization or reset.  <br /></td></tr>
 <tr class="separator:a379a4df9b53c00d192873d955d055811"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Field Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Interface to allow recording of the drawn current in a user defined resolution. </p>
+<dl class="section note"><dt>Note</dt><dd>Keep in mind that the data recording may be performed by the CPU of the system to monitor - thus keep power consumption for the recording low!</dd></dl>
+<p>The LTC4150 driver will only track total charge transferred (separately for charging in discharging direction). However, there are use cases that required more precise data recording, e.g. a rolling average of the last minute. This interface allows application developers to implement the ideal trade-off between RAM, ROM and runtime overhead for the data recording and the level of information they require. </p>
+</div><h2 class="groupheader">Field Documentation</h2>
 <a id="a5c91f357bc7459dadfb103644daa3e12" name="a5c91f357bc7459dadfb103644daa3e12"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5c91f357bc7459dadfb103644daa3e12">&#9670;&#160;</a></span>pulse</h2>
 
@@ -230,7 +230,7 @@ Data Fields</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structltc4150__recorder__t.html">ltc4150_recorder_t</a></li>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:03 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:32 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -150,14 +150,7 @@ $(function(){initNavTree('group__cpu__kinetis__wdog.html',''); initResizable(tru
 
 <p>Driver for Freescale WDOG device.  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Driver for Freescale WDOG device. </p>
-<p>There are different implementations of the Watchdog devices. Currently, it is only possible to turn the Watchdog off. It supports two types: an advanced Watchdog, mostly found on Kinetis MCUs with Cortex-M4 inside and a simpler COP Watchdog.</p>
-<h3><a class="anchor" id="autotoc_md68"></a>
-WDOG Configuration Example (for periph_conf.h)</h3>
-<p>The driver attempts to determine the type of the WDOG. Also you can force the use of advanced WDOG: </p><pre class="fragment">#define KINETIS_WDOG_ADVANCED    1
-</pre><p>Or the use of COP WDOG: </p><pre class="fragment">#define KINETIS_WDOG_ADVANCED    0
-</pre> <table class="memberdecls">
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wdog_8h.html">wdog.h</a></td></tr>
@@ -171,14 +164,21 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>wdog_disable</b> (voi
 <tr class="memdesc:ga0b1954623f258c06db648d57b4871392"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable hardware watchdog. <br /></td></tr>
 <tr class="separator:ga0b1954623f258c06db648d57b4871392"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Driver for Freescale WDOG device. </p>
+<p>There are different implementations of the Watchdog devices. Currently, it is only possible to turn the Watchdog off. It supports two types: an advanced Watchdog, mostly found on Kinetis MCUs with Cortex-M4 inside and a simpler COP Watchdog.</p>
+<h3><a class="anchor" id="autotoc_md68"></a>
+WDOG Configuration Example (for periph_conf.h)</h3>
+<p>The driver attempts to determine the type of the WDOG. Also you can force the use of advanced WDOG: </p><pre class="fragment">#define KINETIS_WDOG_ADVANCED    1
+</pre><p>Or the use of COP WDOG: </p><pre class="fragment">#define KINETIS_WDOG_ADVANCED    0
+</pre> </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

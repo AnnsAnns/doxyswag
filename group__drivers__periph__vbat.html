@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -150,10 +150,6 @@ $(function(){initNavTree('group__drivers__periph__vbat.html',''); initResizable(
 
 <p>Driver to monitor the internal backup battery status  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Driver to monitor the internal backup battery status </p>
-<p>The backup battery must be connected with the VBAT pin and GND. On most development boards you will have to remove a solder bridge that connects VDD with VBAT. The battery is used to retain the backup domain register and RTC register content while power (VDD) is off.</p>
-<p>The actual driver is implemented as a CPU feature. A board that supports backup battery monitoring via ADC, must <code>#define VBAT_ADC <a class="el" href="group__drivers__periph__adc.html#gaf0487d2e8711bf1c9e7daa6e61e05888" title="Default ADC line access macro.">ADC_LINE(x)</a></code>, where <code>x</code> is the index of the internal VBAT ADC line in <code>adc_config[]</code> in periph_conf.h. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -173,6 +169,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga55fef9a170942ce40c9f47311e9fb753"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample the backup battery and compare the result with the minimum value required to power the backup domain.  <br /></td></tr>
 <tr class="separator:ga55fef9a170942ce40c9f47311e9fb753"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Driver to monitor the internal backup battery status </p>
+<p>The backup battery must be connected with the VBAT pin and GND. On most development boards you will have to remove a solder bridge that connects VDD with VBAT. The battery is used to retain the backup domain register and RTC register content while power (VDD) is off.</p>
+<p>The actual driver is implemented as a CPU feature. A board that supports backup battery monitoring via ADC, must <code>#define VBAT_ADC <a class="el" href="group__drivers__periph__adc.html#gaf0487d2e8711bf1c9e7daa6e61e05888" title="Default ADC line access macro.">ADC_LINE(x)</a></code>, where <code>x</code> is the index of the internal VBAT ADC line in <code>adc_config[]</code> in periph_conf.h. </p>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="gaeb3ca5b3b22f381adde3f34656f338d6" name="gaeb3ca5b3b22f381adde3f34656f338d6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaeb3ca5b3b22f381adde3f34656f338d6">&#9670;&#160;</a></span>vbat_init()</h2>
@@ -253,7 +253,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

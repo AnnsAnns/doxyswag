@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -153,12 +153,6 @@ $(function(){initNavTree('group__drivers__hdc1000.html',''); initResizable(true)
 
 <p>Driver for the TI HDC1000 Humidity and Temperature Sensor  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Driver for the TI HDC1000 Humidity and Temperature Sensor </p>
-<p>The driver will initialize the sensor for best resolution (14 bit). Currently the driver doesn't use the heater. Temperature and humidity are acquired in sequence. The sensor is always in sleep mode.</p>
-<p>The temperature and humidity values can either be acquired using the simplified <code><a class="el" href="#gad945afdbf93f689bb92e489735ec79c8" title="Convenience function for reading temperature and humidity.">hdc1000_read()</a></code> function, or the conversion can be triggered manually using the <code><a class="el" href="#ga25887f2bbe38aff90b938eb94f9686e3" title="Trigger a new conversion.">hdc1000_trigger_conversion()</a></code> and <code><a class="el" href="#ga41acf165b8dad421b0d594f65ff1e612" title="Read conversion results for temperature and humidity.">hdc1000_get_results()</a></code> functions sequentially. If using the second method, on must wait at least <code>CONFIG_HDC1000_CONVERSION_TIME</code> between triggering the conversion and reading the results.</p>
-<dl class="section note"><dt>Note</dt><dd>The driver does currently not support using the devices heating unit.</dd></dl>
-<p>This driver provides <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> capabilities. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -220,6 +214,12 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga7e5f81b479e97ae98e3799235a3d00fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extended read function including caching capability.  <br /></td></tr>
 <tr class="separator:ga7e5f81b479e97ae98e3799235a3d00fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Driver for the TI HDC1000 Humidity and Temperature Sensor </p>
+<p>The driver will initialize the sensor for best resolution (14 bit). Currently the driver doesn't use the heater. Temperature and humidity are acquired in sequence. The sensor is always in sleep mode.</p>
+<p>The temperature and humidity values can either be acquired using the simplified <code><a class="el" href="#gad945afdbf93f689bb92e489735ec79c8" title="Convenience function for reading temperature and humidity.">hdc1000_read()</a></code> function, or the conversion can be triggered manually using the <code><a class="el" href="#ga25887f2bbe38aff90b938eb94f9686e3" title="Trigger a new conversion.">hdc1000_trigger_conversion()</a></code> and <code><a class="el" href="#ga41acf165b8dad421b0d594f65ff1e612" title="Read conversion results for temperature and humidity.">hdc1000_get_results()</a></code> functions sequentially. If using the second method, on must wait at least <code>CONFIG_HDC1000_CONVERSION_TIME</code> between triggering the conversion and reading the results.</p>
+<dl class="section note"><dt>Note</dt><dd>The driver does currently not support using the devices heating unit.</dd></dl>
+<p>This driver provides <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> capabilities. </p>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="ga19ec6beb56ffd72599a9e41ec1024563" name="ga19ec6beb56ffd72599a9e41ec1024563"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga19ec6beb56ffd72599a9e41ec1024563">&#9670;&#160;</a></span>anonymous enum</h2>
@@ -460,7 +460,7 @@ HDC1000_BUSERR on I2C communication failures </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

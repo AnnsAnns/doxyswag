@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -154,15 +154,6 @@ $(function(){initNavTree('group__drivers__periph__dac.html',''); initResizable(t
 
 <p>DAC peripheral driver interface  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>DAC peripheral driver interface </p>
-<p>Similar to the ADC driver interface (<a class="el" href="group__drivers__periph__adc.html">ADC</a>), the DAC interface uses the concept of lines, corresponds to a tuple of a DAC device and a DAC output channel.</p>
-<p>The DAC interface expects data to be served as a 16-bit unsigned integer, independent of the actual resolution of the hardware device. It is up to the DAC driver, to scale the given value to the maximal width that can be handled. The device driver should, on the other hand, implement the DAC in a way, that it will use the bit width, that comes closest to 16-bit.</p>
-<p>This kind of 'auto-scaling' is quite sufficient for this interface, as standard DAC peripherals use a fixed conversion resolution internally anyway, so that any particular bit-width configuration on this driver level would not have much effect...</p>
-<h1><a class="anchor" id="autotoc_md1699"></a>
-(Low-) Power Implications</h1>
-<p>The configured DAC peripherals are active (and consume power) from the point of initialization. When calling <a class="el" href="#ga75f85190b7b9a4ce4c6f99ddf64f31dc" title="Disable the given DAC line.">dac_poweroff()</a>, the implementation <b>should</b> disable the given DAC line and put the DAC peripheral to sleep (e.g. through peripheral clock gating). When woken up again through <a class="el" href="#gac32e162d1fce1c584918ef29008c1808" title="Enable the given DAC line.">dac_poweron()</a>, the given DAC line <b>should</b> transparently continue it's previous operation.</p>
-<p>The DAC driver implementation may need to block (and free) certain power modes in the driver's <a class="el" href="#gabc514d1757c59929f653c64085d3fd5d" title="Initialize the given DAC line.">dac_init()</a>, <a class="el" href="#gac32e162d1fce1c584918ef29008c1808" title="Enable the given DAC line.">dac_poweron()</a>, and the <a class="el" href="#ga75f85190b7b9a4ce4c6f99ddf64f31dc" title="Disable the given DAC line.">dac_poweroff()</a> functions. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -219,6 +210,15 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga75f85190b7b9a4ce4c6f99ddf64f31dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable the given DAC line.  <br /></td></tr>
 <tr class="separator:ga75f85190b7b9a4ce4c6f99ddf64f31dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>DAC peripheral driver interface </p>
+<p>Similar to the ADC driver interface (<a class="el" href="group__drivers__periph__adc.html">ADC</a>), the DAC interface uses the concept of lines, corresponds to a tuple of a DAC device and a DAC output channel.</p>
+<p>The DAC interface expects data to be served as a 16-bit unsigned integer, independent of the actual resolution of the hardware device. It is up to the DAC driver, to scale the given value to the maximal width that can be handled. The device driver should, on the other hand, implement the DAC in a way, that it will use the bit width, that comes closest to 16-bit.</p>
+<p>This kind of 'auto-scaling' is quite sufficient for this interface, as standard DAC peripherals use a fixed conversion resolution internally anyway, so that any particular bit-width configuration on this driver level would not have much effect...</p>
+<h1><a class="anchor" id="autotoc_md1699"></a>
+(Low-) Power Implications</h1>
+<p>The configured DAC peripherals are active (and consume power) from the point of initialization. When calling <a class="el" href="#ga75f85190b7b9a4ce4c6f99ddf64f31dc" title="Disable the given DAC line.">dac_poweroff()</a>, the implementation <b>should</b> disable the given DAC line and put the DAC peripheral to sleep (e.g. through peripheral clock gating). When woken up again through <a class="el" href="#gac32e162d1fce1c584918ef29008c1808" title="Enable the given DAC line.">dac_poweron()</a>, the given DAC line <b>should</b> transparently continue it's previous operation.</p>
+<p>The DAC driver implementation may need to block (and free) certain power modes in the driver's <a class="el" href="#gabc514d1757c59929f653c64085d3fd5d" title="Initialize the given DAC line.">dac_init()</a>, <a class="el" href="#gac32e162d1fce1c584918ef29008c1808" title="Enable the given DAC line.">dac_poweron()</a>, and the <a class="el" href="#ga75f85190b7b9a4ce4c6f99ddf64f31dc" title="Disable the given DAC line.">dac_poweroff()</a> functions. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="gacd6d66e4e9bb209927d29c0e8d13dea9" name="gacd6d66e4e9bb209927d29c0e8d13dea9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gacd6d66e4e9bb209927d29c0e8d13dea9">&#9670;&#160;</a></span>DAC_LINE</h2>
@@ -358,7 +358,7 @@ DAC_NOLINE on invalid DAC line </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

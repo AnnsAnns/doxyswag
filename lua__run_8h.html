@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -147,18 +147,7 @@ $(function(){initNavTree('lua__run_8h.html',''); initResizable(true); });
 
 <p>Convenience functions for running Lua code.  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Convenience functions for running Lua code. </p>
-<dl class="section author"><dt>Author</dt><dd>Juan Carrano <a href="#" onclick="location.href='mai'+'lto:'+'j.c'+'ar'+'ran'+'o@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">j.car<span class="obfuscator">.nosp@m.</span>rano<span class="obfuscator">.nosp@m.</span>@fu-b<span class="obfuscator">.nosp@m.</span>erli<span class="obfuscator">.nosp@m.</span>n.de</a></dd></dl>
-<p>This functions make it easy to create and use new Lua context: It provides:</p>
-<ul>
-<li>Easy to use routines for executing modules as scripts.</li>
-<li>Control over which modules get loaded.</li>
-<li>Support for using a local heap allocator.</li>
-<li>Out of memory handling via setjmp/longjmp.</li>
-</ul>
-<p>This library is not strictly required, as all of the functionality could be implemented in terms of the public lua api, but it covers most of the use cases, and thus avoids code repetition in applications. </p>
-</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;lua.h&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for lua_run.h:</div>
@@ -272,7 +261,18 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><b>lua_riot_str_
 <tr class="memdesc:a94e40235e7a20671c8c9e20a66ab3e48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the interpreter and run a user supplied buffer in protected mode.  <br /></td></tr>
 <tr class="separator:a94e40235e7a20671c8c9e20a66ab3e48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Convenience functions for running Lua code. </p>
+<dl class="section author"><dt>Author</dt><dd>Juan Carrano <a href="#" onclick="location.href='mai'+'lto:'+'j.c'+'ar'+'ran'+'o@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">j.car<span class="obfuscator">.nosp@m.</span>rano<span class="obfuscator">.nosp@m.</span>@fu-b<span class="obfuscator">.nosp@m.</span>erli<span class="obfuscator">.nosp@m.</span>n.de</a></dd></dl>
+<p>This functions make it easy to create and use new Lua context: It provides:</p>
+<ul>
+<li>Easy to use routines for executing modules as scripts.</li>
+<li>Control over which modules get loaded.</li>
+<li>Support for using a local heap allocator.</li>
+<li>Out of memory handling via setjmp/longjmp.</li>
+</ul>
+<p>This library is not strictly required, as all of the functionality could be implemented in terms of the public lua api, but it covers most of the use cases, and thus avoids code repetition in applications. </p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a544b6302babfb0d16c8e8ec74599f8cd" name="a544b6302babfb0d16c8e8ec74599f8cd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a544b6302babfb0d16c8e8ec74599f8cd">&#9670;&#160;</a></span>lua_riot_close</h2>
 
@@ -597,7 +597,7 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><b>lua_riot_str_
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_1b757248df2f96757224e5c7d0d8f21a.html">pkg</a></li><li class="navelem"><a class="el" href="dir_9c1b3943edbb5992967759649898d62b.html">lua</a></li><li class="navelem"><a class="el" href="dir_7f792c53b91c6ee772439e3bab01277e.html">include</a></li><li class="navelem"><a class="el" href="lua__run_8h.html">lua_run.h</a></li>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:00 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

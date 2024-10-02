@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -150,17 +150,6 @@ $(function(){initNavTree('group__sys__tiny__strerror.html',''); initResizable(tr
 
 <p>Tiny strerror() implementation  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Tiny strerror() implementation </p>
-<h1><a class="anchor" id="autotoc_md2104"></a>
-Usage</h1>
-<p>Select module <code>tiny_strerror</code> in order to use it.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="tiny__strerror_8h.html">tiny_strerror.h</a>&quot;</span></div>
-<div class="ttc" id="atiny__strerror_8h_html"><div class="ttname"><a href="tiny__strerror_8h.html">tiny_strerror.h</a></div><div class="ttdoc">Tiny strerror() implementation.</div></div>
-</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Using module <code>tiny_strerror_as_strerror</code> will replace all calls to <code>strerror()</code> by calls to <code><a class="el" href="#ga578772324fe3652592efc2391e56c7e2" title="Get the name of an errno macro.">tiny_strerror()</a></code>, which may safe a bit of ROM.</dd>
-<dd>
-Using module <code>tiny_strerror_minimal</code> will just print the error code value. This will save ~1k of ROM, but won't provide much more information.</dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>The module <code>tiny_strerror_minimal</code> is not thread-safe. </dd></dl>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -174,6 +163,17 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga578772324fe3652592efc2391e56c7e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of an errno macro.  <br /></td></tr>
 <tr class="separator:ga578772324fe3652592efc2391e56c7e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Tiny strerror() implementation </p>
+<h1><a class="anchor" id="autotoc_md2104"></a>
+Usage</h1>
+<p>Select module <code>tiny_strerror</code> in order to use it.</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="tiny__strerror_8h.html">tiny_strerror.h</a>&quot;</span></div>
+<div class="ttc" id="atiny__strerror_8h_html"><div class="ttname"><a href="tiny__strerror_8h.html">tiny_strerror.h</a></div><div class="ttdoc">Tiny strerror() implementation.</div></div>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Using module <code>tiny_strerror_as_strerror</code> will replace all calls to <code>strerror()</code> by calls to <code><a class="el" href="#ga578772324fe3652592efc2391e56c7e2" title="Get the name of an errno macro.">tiny_strerror()</a></code>, which may safe a bit of ROM.</dd>
+<dd>
+Using module <code>tiny_strerror_minimal</code> will just print the error code value. This will save ~1k of ROM, but won't provide much more information.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>The module <code>tiny_strerror_minimal</code> is not thread-safe. </dd></dl>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ga578772324fe3652592efc2391e56c7e2" name="ga578772324fe3652592efc2391e56c7e2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga578772324fe3652592efc2391e56c7e2">&#9670;&#160;</a></span>tiny_strerror()</h2>
@@ -224,7 +224,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

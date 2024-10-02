@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -150,6 +150,18 @@ $(function(){initNavTree('group__sys__stdio__semihosting.html',''); initResizabl
 
 <p>Standard input/output backend using ARM Semihosting  
 <a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio__semihosting_8h.html">stdio_semihosting.h</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga9fd1a2194c1d39034c91b5c814be48ba" id="r_ga9fd1a2194c1d39034c91b5c814be48ba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9fd1a2194c1d39034c91b5c814be48ba">STDIO_SEMIHOSTING_RX</a>&#160;&#160;&#160;(<a class="el" href="modules_8h.html#a185d252af6cac906c5bdf5a7171b85f4">IS_USED</a>(MODULE_STDIN))</td></tr>
+<tr class="memdesc:ga9fd1a2194c1d39034c91b5c814be48ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable reception for Semihosting.  <br /></td></tr>
+<tr class="separator:ga9fd1a2194c1d39034c91b5c814be48ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Standard input/output backend using ARM Semihosting </p>
 <p>The ARM Semihosting provides an STDIO backend using the ARM Semihosting protocol. The main advantage of Semihosting is that is allows STDIO over the SWD/JTAG debugging interface already available on ARM microcontrollers.</p>
@@ -163,18 +175,6 @@ Usage</h2>
 </div><!-- fragment --><p>If semihosting is not the default stdio mechanism of your board, the <code>RIOT_TERMINAL</code> variable has to be set to <code>semihosting</code>:</p>
 <div class="fragment"><div class="line">make term RIOT_TERMINAL=semihosting</div>
 </div><!-- fragment --><p>Launching the terminal will start an OpenOCD session with semihosting enabled. This can be used for both STDIO interaction and for debugging the firmware. </p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio__semihosting_8h.html">stdio_semihosting.h</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ga9fd1a2194c1d39034c91b5c814be48ba" id="r_ga9fd1a2194c1d39034c91b5c814be48ba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9fd1a2194c1d39034c91b5c814be48ba">STDIO_SEMIHOSTING_RX</a>&#160;&#160;&#160;(<a class="el" href="modules_8h.html#a185d252af6cac906c5bdf5a7171b85f4">IS_USED</a>(MODULE_STDIN))</td></tr>
-<tr class="memdesc:ga9fd1a2194c1d39034c91b5c814be48ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable reception for Semihosting.  <br /></td></tr>
-<tr class="separator:ga9fd1a2194c1d39034c91b5c814be48ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga9fd1a2194c1d39034c91b5c814be48ba" name="ga9fd1a2194c1d39034c91b5c814be48ba"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga9fd1a2194c1d39034c91b5c814be48ba">&#9670;&#160;</a></span>STDIO_SEMIHOSTING_RX</h2>
@@ -200,7 +200,7 @@ Macros</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

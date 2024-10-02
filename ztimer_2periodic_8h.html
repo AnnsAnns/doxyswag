@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -149,6 +149,47 @@ $(function(){initNavTree('ztimer_2periodic_8h.html',''); initResizable(true); })
 
 <p>Periodic ztimer API.  
 <a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="ztimer_8h.html">ztimer.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for periodic.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="ztimer_2periodic_8h__incl.svg" width="1464" height="812"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="ztimer_2periodic_8h__dep__incl.svg" width="215" height="224"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structztimer__periodic__t.html">ztimer_periodic_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">ztimer periodic structure  <a href="structztimer__periodic__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad39f2313f2095d86d3ee133352e4adb3" id="r_ad39f2313f2095d86d3ee133352e4adb3"><td class="memItemLeft" align="right" valign="top"><a id="ad39f2313f2095d86d3ee133352e4adb3" name="ad39f2313f2095d86d3ee133352e4adb3"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ZTIMER_PERIODIC_KEEP_GOING</b>&#160;&#160;&#160;true</td></tr>
+<tr class="memdesc:ad39f2313f2095d86d3ee133352e4adb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Periodic timer stop unless it returns this value. <br /></td></tr>
+<tr class="separator:ad39f2313f2095d86d3ee133352e4adb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42758b7874dc3dea8d2cd508332cd3f7" id="r_a42758b7874dc3dea8d2cd508332cd3f7"><td class="memItemLeft" align="right" valign="top"><a id="a42758b7874dc3dea8d2cd508332cd3f7" name="a42758b7874dc3dea8d2cd508332cd3f7"></a>
+typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><b>ztimer_periodic_callback_t</b>) (void *)</td></tr>
+<tr class="memdesc:a42758b7874dc3dea8d2cd508332cd3f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of callbacks in <a class="el" href="structztimer__periodic__t.html">periodic timers</a>. <br /></td></tr>
+<tr class="separator:a42758b7874dc3dea8d2cd508332cd3f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4787c10556689ad31e17ac1b656a9d3" id="r_af4787c10556689ad31e17ac1b656a9d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4787c10556689ad31e17ac1b656a9d3">ztimer_periodic_init</a> (<a class="el" href="group__sys__ztimer.html#ga3639ce794c3bd80a6e9bbe88a7db4a88">ztimer_clock_t</a> *clock, <a class="el" href="structztimer__periodic__t.html">ztimer_periodic_t</a> *timer, bool(*callback)(void *), void *arg, uint32_t interval)</td></tr>
+<tr class="memdesc:af4787c10556689ad31e17ac1b656a9d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a periodic timer structure.  <br /></td></tr>
+<tr class="separator:af4787c10556689ad31e17ac1b656a9d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac265e801bfaaf3440f780205949fcd9d" id="r_ac265e801bfaaf3440f780205949fcd9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac265e801bfaaf3440f780205949fcd9d">ztimer_periodic_start</a> (<a class="el" href="structztimer__periodic__t.html">ztimer_periodic_t</a> *timer)</td></tr>
+<tr class="memdesc:ac265e801bfaaf3440f780205949fcd9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start or restart a periodic timer.  <br /></td></tr>
+<tr class="separator:ac265e801bfaaf3440f780205949fcd9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47aae7ea50cf35d6dea7085b644f2289" id="r_a47aae7ea50cf35d6dea7085b644f2289"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47aae7ea50cf35d6dea7085b644f2289">ztimer_periodic_stop</a> (<a class="el" href="structztimer__periodic__t.html">ztimer_periodic_t</a> *timer)</td></tr>
+<tr class="memdesc:a47aae7ea50cf35d6dea7085b644f2289"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop a periodic timer.  <br /></td></tr>
+<tr class="separator:a47aae7ea50cf35d6dea7085b644f2289"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Periodic ztimer API. </p>
 <p>Once started, the periodic timer will call the configured callback function once each interval until the timer is either stopped using ztimer_periodic_stop or the callback function returns a non-zero value.</p>
@@ -195,48 +236,7 @@ $(function(){initNavTree('ztimer_2periodic_8h.html',''); initResizable(true); })
 <div class="ttc" id="aztimer_2periodic_8h_html_af4787c10556689ad31e17ac1b656a9d3"><div class="ttname"><a href="#af4787c10556689ad31e17ac1b656a9d3">ztimer_periodic_init</a></div><div class="ttdeci">void ztimer_periodic_init(ztimer_clock_t *clock, ztimer_periodic_t *timer, bool(*callback)(void *), void *arg, uint32_t interval)</div><div class="ttdoc">Initialize a periodic timer structure.</div></div>
 </div><!-- fragment --><p>ztimer periodic API</p>
 <dl class="section author"><dt>Author</dt><dd>Kaspar Schleiser <a href="#" onclick="location.href='mai'+'lto:'+'kas'+'pa'+'r@s'+'ch'+'lei'+'se'+'r.d'+'e'; return false;">kaspa<span class="obfuscator">.nosp@m.</span>r@sc<span class="obfuscator">.nosp@m.</span>hleis<span class="obfuscator">.nosp@m.</span>er.d<span class="obfuscator">.nosp@m.</span>e</a> </dd></dl>
-</div><div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
-<code>#include &lt;stdint.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="ztimer_8h.html">ztimer.h</a>&quot;</code><br />
-</div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for periodic.h:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="ztimer_2periodic_8h__incl.svg" width="1464" height="812"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div><div class="textblock"><div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="ztimer_2periodic_8h__dep__incl.svg" width="215" height="224"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structztimer__periodic__t.html">ztimer_periodic_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">ztimer periodic structure  <a href="structztimer__periodic__t.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad39f2313f2095d86d3ee133352e4adb3" id="r_ad39f2313f2095d86d3ee133352e4adb3"><td class="memItemLeft" align="right" valign="top"><a id="ad39f2313f2095d86d3ee133352e4adb3" name="ad39f2313f2095d86d3ee133352e4adb3"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>ZTIMER_PERIODIC_KEEP_GOING</b>&#160;&#160;&#160;true</td></tr>
-<tr class="memdesc:ad39f2313f2095d86d3ee133352e4adb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Periodic timer stop unless it returns this value. <br /></td></tr>
-<tr class="separator:ad39f2313f2095d86d3ee133352e4adb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42758b7874dc3dea8d2cd508332cd3f7" id="r_a42758b7874dc3dea8d2cd508332cd3f7"><td class="memItemLeft" align="right" valign="top"><a id="a42758b7874dc3dea8d2cd508332cd3f7" name="a42758b7874dc3dea8d2cd508332cd3f7"></a>
-typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><b>ztimer_periodic_callback_t</b>) (void *)</td></tr>
-<tr class="memdesc:a42758b7874dc3dea8d2cd508332cd3f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of callbacks in <a class="el" href="structztimer__periodic__t.html">periodic timers</a>. <br /></td></tr>
-<tr class="separator:a42758b7874dc3dea8d2cd508332cd3f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4787c10556689ad31e17ac1b656a9d3" id="r_af4787c10556689ad31e17ac1b656a9d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4787c10556689ad31e17ac1b656a9d3">ztimer_periodic_init</a> (<a class="el" href="group__sys__ztimer.html#ga3639ce794c3bd80a6e9bbe88a7db4a88">ztimer_clock_t</a> *clock, <a class="el" href="structztimer__periodic__t.html">ztimer_periodic_t</a> *timer, bool(*callback)(void *), void *arg, uint32_t interval)</td></tr>
-<tr class="memdesc:af4787c10556689ad31e17ac1b656a9d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a periodic timer structure.  <br /></td></tr>
-<tr class="separator:af4787c10556689ad31e17ac1b656a9d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac265e801bfaaf3440f780205949fcd9d" id="r_ac265e801bfaaf3440f780205949fcd9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac265e801bfaaf3440f780205949fcd9d">ztimer_periodic_start</a> (<a class="el" href="structztimer__periodic__t.html">ztimer_periodic_t</a> *timer)</td></tr>
-<tr class="memdesc:ac265e801bfaaf3440f780205949fcd9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start or restart a periodic timer.  <br /></td></tr>
-<tr class="separator:ac265e801bfaaf3440f780205949fcd9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47aae7ea50cf35d6dea7085b644f2289" id="r_a47aae7ea50cf35d6dea7085b644f2289"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47aae7ea50cf35d6dea7085b644f2289">ztimer_periodic_stop</a> (<a class="el" href="structztimer__periodic__t.html">ztimer_periodic_t</a> *timer)</td></tr>
-<tr class="memdesc:a47aae7ea50cf35d6dea7085b644f2289"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop a periodic timer.  <br /></td></tr>
-<tr class="separator:a47aae7ea50cf35d6dea7085b644f2289"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="af4787c10556689ad31e17ac1b656a9d3" name="af4787c10556689ad31e17ac1b656a9d3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af4787c10556689ad31e17ac1b656a9d3">&#9670;&#160;</a></span>ztimer_periodic_init()</h2>
 
@@ -347,7 +347,7 @@ typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><b>ztimer_peri
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a408b6d3a4a484720bc3ecfeac8947e3.html">sys</a></li><li class="navelem"><a class="el" href="dir_e9e107fc86bbb4b6a326076a6808b9f5.html">include</a></li><li class="navelem"><a class="el" href="dir_232e08c57b821bd6c087b3fb08c2fb7e.html">ztimer</a></li><li class="navelem"><a class="el" href="ztimer_2periodic_8h.html">periodic.h</a></li>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

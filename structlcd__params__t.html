@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -149,10 +149,7 @@ $(function(){initNavTree('structlcd__params__t.html',''); initResizable(true); }
 
 <p>Device initialization parameters.  
  <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Device initialization parameters. </p>
-<dl class="section note"><dt>Note</dt><dd>The device driver can be used simultaneously for displays with SPI serial interface and parallel MCU 8080 8-/16-bit interfaces if the modules <code>lcd_spi</code> and <code>lcd_parallel</code> or <code>lcd_parallel_16bit</code> are enabled at the same time. In this case the interface parameters for the SPI serial interface and the MCU 8080 parallel 8-/16-bit interfaces are defined. <a class="el" href="#ab603c9671e060ceab30589e96b29f04d">lcd_params_t::spi</a> must then be set to <a class="el" href="atxmega_2include_2periph__cpu_8h.html#a0d0505b52e78af9251f6a1921d30214e">SPI_UNDEF</a> for displays that use the MCU-8080-parallel-8-/16-bit interface, i.e. <a class="el" href="#ab603c9671e060ceab30589e96b29f04d">lcd_params_t::spi</a> is then used to detect the interface mode. </dd></dl>
-</div>
+
 <p><code>#include &lt;lcd.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -291,7 +288,10 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cntrl</b></td></tr
 <tr class="memdesc:a5d3c2f9c61bb67b40b08b92840ae8806"><td class="mdescLeft">&#160;</td><td class="mdescRight">controller variant used, if the controller- specific driver supports multiple controller variants <br /></td></tr>
 <tr class="separator:a5d3c2f9c61bb67b40b08b92840ae8806"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Device initialization parameters. </p>
+<dl class="section note"><dt>Note</dt><dd>The device driver can be used simultaneously for displays with SPI serial interface and parallel MCU 8080 8-/16-bit interfaces if the modules <code>lcd_spi</code> and <code>lcd_parallel</code> or <code>lcd_parallel_16bit</code> are enabled at the same time. In this case the interface parameters for the SPI serial interface and the MCU 8080 parallel 8-/16-bit interfaces are defined. <a class="el" href="#ab603c9671e060ceab30589e96b29f04d">lcd_params_t::spi</a> must then be set to <a class="el" href="atxmega_2include_2periph__cpu_8h.html#a0d0505b52e78af9251f6a1921d30214e">SPI_UNDEF</a> for displays that use the MCU-8080-parallel-8-/16-bit interface, i.e. <a class="el" href="#ab603c9671e060ceab30589e96b29f04d">lcd_params_t::spi</a> is then used to detect the interface mode. </dd></dl>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>drivers/include/<a class="el" href="lcd_8h.html">lcd.h</a></li>
 </ul>
 </div><!-- contents -->
@@ -302,7 +302,7 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cntrl</b></td></tr
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structlcd__params__t.html">lcd_params_t</a></li>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:03 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:32 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

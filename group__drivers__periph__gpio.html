@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -155,19 +155,6 @@ $(function(){initNavTree('group__drivers__periph__gpio.html',''); initResizable(
 
 <p>Low-level GPIO peripheral driver  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Low-level GPIO peripheral driver </p>
-<p>This is a basic GPIO (General-purpose input/output) interface to allow platform independent access to a MCU's input/output pins. This interface is intentionally designed to be as simple as possible, to allow for easy implementation and maximum portability.</p>
-<p>The interface provides capabilities to initialize a pin as output-, input- and interrupt pin. With the API you can basically set/clear/toggle the digital signal at the hardware pin when in output mode. Configured as input you can read a digital value that is being applied to the pin externally. When initializing an external interrupt pin, you can register a callback function that is executed in interrupt context once the interrupt condition applies to the pin. Usually you can react to rising or falling signal flanks (or both).</p>
-<p>In addition the API provides to set standard input/output circuit modes such as e.g. internal push-pull configurations.</p>
-<p>All modern micro controllers organize their GPIOs in some form of ports, often named 'PA', 'PB', 'PC'..., or 'P0', 'P1', 'P2'..., or similar. Each of these ports is then assigned a number of pins, often 8, 16, or 32. A hardware pin can thus be described by its port/pin tuple. To access a pin, the <code><a class="el" href="#gae29846b3ecd19a0b7c44ff80a37ae7c1" title="Convert (port, pin) tuple to gpio_t value.">GPIO_PIN(port, pin)</a></code> macro should be used. For example: If your platform has a pin PB22, it will be port=1 and pin=22. The <code>GPIO_PIN</code> macro should be overridden by a MCU, to allow for efficient encoding of the the port/pin tuple. For example, on many platforms it is possible to <code>OR</code> the pin number with the corresponding ports base register address. This allows for efficient decoding of pin number and base address without the need of any address lookup.</p>
-<p>In case the driver does not define it, the below macro definition is used to simply map the port/pin tuple to the pin value. In that case, predefined GPIO definitions in <code>RIOT/boards/ * /include/periph_conf.h</code> will define the selected GPIO pin.</p>
-<dl class="section warning"><dt>Warning</dt><dd>The scalar GPIO pin type <code>gpio_t</code> is deprecated and will be replaced by a structured GPIO pin type in a future GPIO API. Therefore, don't use the direct comparison of GPIO pins anymore. Instead, use the inline comparison functions <a class="el" href="#gaf0160800f2524bb7981b1a9e0ea5b92b">gpio_is_equal</a> and <a class="el" href="#ga0c3767ed80df4ad880e5bb09520787ed">gpio_is_valid</a>.</dd></dl>
-<h1><a class="anchor" id="autotoc_md1702"></a>
-(Low-) Power Implications</h1>
-<p>On almost all platforms, we can only control the peripheral power state of full ports (i.e. groups of pins), but not for single GPIO pins. Together with CPU specific alternate function handling for pins used by other peripheral drivers, this can make it quite complex to keep track of pins that are currently used at a certain moment. To simplify the implementations (and ease the memory consumption), we expect ports to be powered on (e.g. through peripheral clock gating) when first used and never be powered off again.</p>
-<p>GPIO driver implementations <b>should</b> power on the corresponding port during <a class="el" href="#gab7d8ecaeb639070a28027a8fd31a0955" title="Initialize the given pin as general purpose input or output.">gpio_init()</a> and <a class="el" href="#ga48ba4c318486db320a4bf6237b49d61c" title="Initialize a GPIO pin for external interrupt usage.">gpio_init_int()</a>.</p>
-<p>For external interrupts to work, some platforms may need to block certain power modes (although this is not very likely). This should be done during <a class="el" href="#ga48ba4c318486db320a4bf6237b49d61c" title="Initialize a GPIO pin for external interrupt usage.">gpio_init_int()</a>. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -273,6 +260,19 @@ typedef uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>gpio_t</b
 <tr class="memdesc:gadacfc0deb08affff1e88f9549c8e2823"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO type identifier. <br /></td></tr>
 <tr class="separator:gadacfc0deb08affff1e88f9549c8e2823"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Low-level GPIO peripheral driver </p>
+<p>This is a basic GPIO (General-purpose input/output) interface to allow platform independent access to a MCU's input/output pins. This interface is intentionally designed to be as simple as possible, to allow for easy implementation and maximum portability.</p>
+<p>The interface provides capabilities to initialize a pin as output-, input- and interrupt pin. With the API you can basically set/clear/toggle the digital signal at the hardware pin when in output mode. Configured as input you can read a digital value that is being applied to the pin externally. When initializing an external interrupt pin, you can register a callback function that is executed in interrupt context once the interrupt condition applies to the pin. Usually you can react to rising or falling signal flanks (or both).</p>
+<p>In addition the API provides to set standard input/output circuit modes such as e.g. internal push-pull configurations.</p>
+<p>All modern micro controllers organize their GPIOs in some form of ports, often named 'PA', 'PB', 'PC'..., or 'P0', 'P1', 'P2'..., or similar. Each of these ports is then assigned a number of pins, often 8, 16, or 32. A hardware pin can thus be described by its port/pin tuple. To access a pin, the <code><a class="el" href="#gae29846b3ecd19a0b7c44ff80a37ae7c1" title="Convert (port, pin) tuple to gpio_t value.">GPIO_PIN(port, pin)</a></code> macro should be used. For example: If your platform has a pin PB22, it will be port=1 and pin=22. The <code>GPIO_PIN</code> macro should be overridden by a MCU, to allow for efficient encoding of the the port/pin tuple. For example, on many platforms it is possible to <code>OR</code> the pin number with the corresponding ports base register address. This allows for efficient decoding of pin number and base address without the need of any address lookup.</p>
+<p>In case the driver does not define it, the below macro definition is used to simply map the port/pin tuple to the pin value. In that case, predefined GPIO definitions in <code>RIOT/boards/ * /include/periph_conf.h</code> will define the selected GPIO pin.</p>
+<dl class="section warning"><dt>Warning</dt><dd>The scalar GPIO pin type <code>gpio_t</code> is deprecated and will be replaced by a structured GPIO pin type in a future GPIO API. Therefore, don't use the direct comparison of GPIO pins anymore. Instead, use the inline comparison functions <a class="el" href="#gaf0160800f2524bb7981b1a9e0ea5b92b">gpio_is_equal</a> and <a class="el" href="#ga0c3767ed80df4ad880e5bb09520787ed">gpio_is_valid</a>.</dd></dl>
+<h1><a class="anchor" id="autotoc_md1702"></a>
+(Low-) Power Implications</h1>
+<p>On almost all platforms, we can only control the peripheral power state of full ports (i.e. groups of pins), but not for single GPIO pins. Together with CPU specific alternate function handling for pins used by other peripheral drivers, this can make it quite complex to keep track of pins that are currently used at a certain moment. To simplify the implementations (and ease the memory consumption), we expect ports to be powered on (e.g. through peripheral clock gating) when first used and never be powered off again.</p>
+<p>GPIO driver implementations <b>should</b> power on the corresponding port during <a class="el" href="#gab7d8ecaeb639070a28027a8fd31a0955" title="Initialize the given pin as general purpose input or output.">gpio_init()</a> and <a class="el" href="#ga48ba4c318486db320a4bf6237b49d61c" title="Initialize a GPIO pin for external interrupt usage.">gpio_init_int()</a>.</p>
+<p>For external interrupts to work, some platforms may need to block certain power modes (although this is not very likely). This should be done during <a class="el" href="#ga48ba4c318486db320a4bf6237b49d61c" title="Initialize a GPIO pin for external interrupt usage.">gpio_init_int()</a>. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="gae29846b3ecd19a0b7c44ff80a37ae7c1" name="gae29846b3ecd19a0b7c44ff80a37ae7c1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gae29846b3ecd19a0b7c44ff80a37ae7c1">&#9670;&#160;</a></span>GPIO_PIN</h2>
@@ -733,7 +733,7 @@ typedef uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>gpio_t</b
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

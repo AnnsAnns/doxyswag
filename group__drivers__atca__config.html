@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -150,16 +150,7 @@ $(function(){initNavTree('group__drivers__atca__config.html',''); initResizable(
 
 <p>Set default configuration parameters for the ATCA device  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Set default configuration parameters for the ATCA device </p>
-<pre class="fragment">     The CryptoAuth library defines the data structure ATCAIfaceCfg for
-     device initialization. We use this instead of a self defined params
-     struct and store it in the params array.
-     ATCAIfaceCfg contains a variable for the bus address, which is never
-     used by the library. We use it to store RIOT's I2C_DEV.
-     We also initialize the baud rate with zero, because RIOT doesn't have
-     an API to change baud.
-</pre> <table class="memberdecls">
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:gae6b5e92b2b2926912a32230c77816119" id="r_gae6b5e92b2b2926912a32230c77816119"><td class="memItemLeft" align="right" valign="top"><a id="gae6b5e92b2b2926912a32230c77816119" name="gae6b5e92b2b2926912a32230c77816119"></a>
@@ -192,7 +183,16 @@ ATCADevice&#160;</td><td class="memItemRight" valign="bottom"><b>atca_devs_ptr</
 <tr class="memdesc:ga266e6ab9a932474b6501d2ec11294954"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration parameters for the primary ATCA device.  <br /></td></tr>
 <tr class="separator:ga266e6ab9a932474b6501d2ec11294954"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Set default configuration parameters for the ATCA device </p>
+<pre class="fragment">     The CryptoAuth library defines the data structure ATCAIfaceCfg for
+     device initialization. We use this instead of a self defined params
+     struct and store it in the params array.
+     ATCAIfaceCfg contains a variable for the bus address, which is never
+     used by the library. We use it to store RIOT's I2C_DEV.
+     We also initialize the baud rate with zero, because RIOT doesn't have
+     an API to change baud.
+</pre> <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga266e6ab9a932474b6501d2ec11294954" name="ga266e6ab9a932474b6501d2ec11294954"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga266e6ab9a932474b6501d2ec11294954">&#9670;&#160;</a></span>ATCA_PARAMS</h2>
 
@@ -253,7 +253,7 @@ ATCADevice&#160;</td><td class="memItemRight" valign="bottom"><b>atca_devs_ptr</
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

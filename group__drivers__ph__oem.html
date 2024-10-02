@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -153,15 +153,6 @@ $(function(){initNavTree('group__drivers__ph__oem.html',''); initResizable(true)
 
 <p>Device driver for Atlas Scientific pH OEM sensor with SMBus/I2C interface  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Device driver for Atlas Scientific pH OEM sensor with SMBus/I2C interface </p>
-<p>The Atlas Scientific pH OEM sensor can be used with or without the interrupt pin. Per default this pin is mapped to <a class="el" href="atmega__common_2include_2periph__cpu__common_8h.html#a3969ce1e494a72d3c2925b10ddeb4604">GPIO_UNDEF</a> if not otherwise defined in your makefile.</p>
-<p>If you use an electrical isolation for most accurate readings e.g. with the ADM3260, keep in mind that its not recommended to use the interrupt pin without also isolating it somehow. The preferred method, if not using an isolation on the interrupt line, would be polling. In this case leave the interrupt pin undefined.</p>
-<p>The Sensor has no integrated temperature sensor and for the highest possible precision it requires another device to provide the temperature for error compensation.</p>
-<p>Once the pH OEM is powered on it will be ready to receive commands and take readings after 1ms.</p>
-<dl class="section note"><dt>Note</dt><dd>This driver provides <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> capabilities. Reading (<a class="el" href="structsaul__driver__t.html#a61cc7eac43a095d01db90d23286217ab">saul_driver_t::read</a>) from the device returns the current pH value. Writing (<a class="el" href="structsaul__driver__t.html#a36521b54ed4c2ed7d038928d42f8c28c">saul_driver_t::write</a>) a temperature value in celsius to the device sets the temperature compensation. A valid temperature range is 1 - 20000 (0.01 °C to 200.0 °C)</dd>
-<dd>
-Communication is done using SMBus/I2C protocol at speeds of 10-100 kHz. Set your board I2C speed to <a class="el" href="atxmega_2include_2periph__cpu_8h.html#a6e6a870f98abb8cffa95373b69fb8243a6b350d376580872bb53bdfc4ff41d9b0">I2C_SPEED_LOW</a> or <a class="el" href="atxmega_2include_2periph__cpu_8h.html#a6e6a870f98abb8cffa95373b69fb8243a0826bf5711e82ba26b4ada6104260583">I2C_SPEED_NORMAL</a> </dd></dl>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -280,6 +271,15 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga2ed33b1757d6297da1f6a23c7c768fce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the <a class="el" href="ph__oem__regs_8h.html#ae7fbcf4a00512be94584cbcb17ceb534a1fa4ee560bf8a18e35479d2de33b479d">PH_OEM_REG_PH_READING_BASE</a> register to get the current pH reading.  <br /></td></tr>
 <tr class="separator:ga2ed33b1757d6297da1f6a23c7c768fce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Device driver for Atlas Scientific pH OEM sensor with SMBus/I2C interface </p>
+<p>The Atlas Scientific pH OEM sensor can be used with or without the interrupt pin. Per default this pin is mapped to <a class="el" href="atmega__common_2include_2periph__cpu__common_8h.html#a3969ce1e494a72d3c2925b10ddeb4604">GPIO_UNDEF</a> if not otherwise defined in your makefile.</p>
+<p>If you use an electrical isolation for most accurate readings e.g. with the ADM3260, keep in mind that its not recommended to use the interrupt pin without also isolating it somehow. The preferred method, if not using an isolation on the interrupt line, would be polling. In this case leave the interrupt pin undefined.</p>
+<p>The Sensor has no integrated temperature sensor and for the highest possible precision it requires another device to provide the temperature for error compensation.</p>
+<p>Once the pH OEM is powered on it will be ready to receive commands and take readings after 1ms.</p>
+<dl class="section note"><dt>Note</dt><dd>This driver provides <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> capabilities. Reading (<a class="el" href="structsaul__driver__t.html#a61cc7eac43a095d01db90d23286217ab">saul_driver_t::read</a>) from the device returns the current pH value. Writing (<a class="el" href="structsaul__driver__t.html#a36521b54ed4c2ed7d038928d42f8c28c">saul_driver_t::write</a>) a temperature value in celsius to the device sets the temperature compensation. A valid temperature range is 1 - 20000 (0.01 °C to 200.0 °C)</dd>
+<dd>
+Communication is done using SMBus/I2C protocol at speeds of 10-100 kHz. Set your board I2C speed to <a class="el" href="atxmega_2include_2periph__cpu_8h.html#a6e6a870f98abb8cffa95373b69fb8243a6b350d376580872bb53bdfc4ff41d9b0">I2C_SPEED_LOW</a> or <a class="el" href="atxmega_2include_2periph__cpu_8h.html#a6e6a870f98abb8cffa95373b69fb8243a0826bf5711e82ba26b4ada6104260583">I2C_SPEED_NORMAL</a> </dd></dl>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="gaf859a7a988d4650f5c6d449633667673" name="gaf859a7a988d4650f5c6d449633667673"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaf859a7a988d4650f5c6d449633667673">&#9670;&#160;</a></span>ph_oem_calibration_option_t</h2>
@@ -879,7 +879,7 @@ Also provide the <a class="el" href="native_2include_2periph__cpu_8h.html#a491a2
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

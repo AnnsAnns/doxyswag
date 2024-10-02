@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -154,40 +154,6 @@ $(function(){initNavTree('group__drivers__nrf5x__nrfmin.html',''); initResizable
 
 <p>Minimal driver for the NRF51 radio  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Minimal driver for the NRF51 radio </p>
-<p>This driver uses the nRF5x radio in a proprietary/custom way, defining our own custom link layer. This custom link layer resembles some characteristics of the IEEE802.15.4 link layer, but is not at all compatible to it.</p>
-<p>One key point is, that this custom link layer is only meant to operate between nRF5x devices, which let's us make some very nice assumptions:</p><ul>
-<li>all communicating hosts are little-endian -&gt; we define host byte order := network byte order</li>
-</ul>
-<p>The driver is using a Nordic proprietary physical layer, configured to a bitrate of 1 Mbit/s. The maximum payload length can be freely configured, but the maximal supported value is 250 byte (default is 200 byte).</p>
-<p>We define the nrfmin link layer to use 16-bit addresses. On the physical layer we encode these addresses by putting these addresses into the 2 least significant bytes of the supported 5-byte addresses, while setting the other 3 bytes to 0xe7.</p>
-<p>For out custom link layer, we define our own proprietary link layer format (all fields are in host byte order (little endian)):</p>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">byte0   </th><th class="markdownTableHeadNone">byte1 - byte2   </th><th class="markdownTableHeadNone">byte3 - byte4   </th><th class="markdownTableHeadNone">byte5   </th><th class="markdownTableHeadNone">byte7 - byteN    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">length   </td><td class="markdownTableBodyNone">src_addr   </td><td class="markdownTableBodyNone">dst_addr   </td><td class="markdownTableBodyNone">proto   </td><td class="markdownTableBodyNone">payload...   </td></tr>
-</table>
-<p>With:</p><ul>
-<li>length: length of the packet, including the header -&gt; payload len + 6</li>
-<li>src_addr: 16-bit source address</li>
-<li>dst_addr: 16-bit destination address</li>
-<li>proto: type of data transferred (similar to an Ethertype field)</li>
-</ul>
-<p>SUMMARY: This driver / link layer supports:</p><ul>
-<li>16-bit addressing (16-bit) -&gt; extract default address from CPU ID</li>
-<li>broadcast (broadcast address is ff:ff)</li>
-<li>channels from 0 to 31 [2400MHz to 2524MHz, 4MHz per channel]</li>
-<li>setting of TX power [+4dBm to -20dBm, in ~4dBm steps]</li>
-<li>8-bit packet type/proto field (to be used as seen fit)</li>
-<li>setting device state (RX, SLEEP)</li>
-</ul>
-<p>But so far no support for:</p><ul>
-<li>link layer ACKs</li>
-<li>retransmissions</li>
-</ul>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">Todo</a></b></dt><dd>So far the driver uses only a single RX buffer that is locked until the data was read/discarded. This can potentially lead to a lot of packet loss -&gt; using more than one buffer would help here...</dd></dl>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -287,6 +253,40 @@ const <a class="el" href="group__drivers__netdev__api.html#gace9c281c047e2e2a985
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>NRFMIN_PKT_MAX</b>&#160;&#160;&#160;(<a class="el" href="#ga1b6a6f33f28dda6377d809f363b4d4a3">NRFMIN_HDR_LEN</a> + <a class="el" href="#ga581cf7b90338d6880a42f1c8d881519d">NRFMIN_PAYLOAD_MAX</a>)</td></tr>
 <tr class="separator:ga60f555831837341d031b898f50dd8088"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Minimal driver for the NRF51 radio </p>
+<p>This driver uses the nRF5x radio in a proprietary/custom way, defining our own custom link layer. This custom link layer resembles some characteristics of the IEEE802.15.4 link layer, but is not at all compatible to it.</p>
+<p>One key point is, that this custom link layer is only meant to operate between nRF5x devices, which let's us make some very nice assumptions:</p><ul>
+<li>all communicating hosts are little-endian -&gt; we define host byte order := network byte order</li>
+</ul>
+<p>The driver is using a Nordic proprietary physical layer, configured to a bitrate of 1 Mbit/s. The maximum payload length can be freely configured, but the maximal supported value is 250 byte (default is 200 byte).</p>
+<p>We define the nrfmin link layer to use 16-bit addresses. On the physical layer we encode these addresses by putting these addresses into the 2 least significant bytes of the supported 5-byte addresses, while setting the other 3 bytes to 0xe7.</p>
+<p>For out custom link layer, we define our own proprietary link layer format (all fields are in host byte order (little endian)):</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">byte0   </th><th class="markdownTableHeadNone">byte1 - byte2   </th><th class="markdownTableHeadNone">byte3 - byte4   </th><th class="markdownTableHeadNone">byte5   </th><th class="markdownTableHeadNone">byte7 - byteN    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">length   </td><td class="markdownTableBodyNone">src_addr   </td><td class="markdownTableBodyNone">dst_addr   </td><td class="markdownTableBodyNone">proto   </td><td class="markdownTableBodyNone">payload...   </td></tr>
+</table>
+<p>With:</p><ul>
+<li>length: length of the packet, including the header -&gt; payload len + 6</li>
+<li>src_addr: 16-bit source address</li>
+<li>dst_addr: 16-bit destination address</li>
+<li>proto: type of data transferred (similar to an Ethertype field)</li>
+</ul>
+<p>SUMMARY: This driver / link layer supports:</p><ul>
+<li>16-bit addressing (16-bit) -&gt; extract default address from CPU ID</li>
+<li>broadcast (broadcast address is ff:ff)</li>
+<li>channels from 0 to 31 [2400MHz to 2524MHz, 4MHz per channel]</li>
+<li>setting of TX power [+4dBm to -20dBm, in ~4dBm steps]</li>
+<li>8-bit packet type/proto field (to be used as seen fit)</li>
+<li>setting device state (RX, SLEEP)</li>
+</ul>
+<p>But so far no support for:</p><ul>
+<li>link layer ACKs</li>
+<li>retransmissions</li>
+</ul>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">Todo</a></b></dt><dd>So far the driver uses only a single RX buffer that is locked until the data was read/discarded. This can potentially lead to a lot of packet loss -&gt; using more than one buffer would help here...</dd></dl>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="gaae9105d422bbfff9698bfa210d3d22cd" name="gaae9105d422bbfff9698bfa210d3d22cd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaae9105d422bbfff9698bfa210d3d22cd">&#9670;&#160;</a></span>nrfmin_get_addr()</h2>
@@ -506,7 +506,7 @@ const <a class="el" href="group__drivers__netdev__api.html#gace9c281c047e2e2a985
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

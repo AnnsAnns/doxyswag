@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -152,22 +152,6 @@ $(function(){initNavTree('group__pkg__nimble__statconn.html',''); initResizable(
 
 <p>Static connection manager for NimBLE netif that keeps opens connections on demand and takes care of keeping them open.  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Static connection manager for NimBLE netif that keeps opens connections on demand and takes care of keeping them open. </p>
-<dl class="section warning"><dt>Warning</dt><dd><b class="text-danger">This feature is experimental!</b><br  />
- </dd></dl>
-<h1><a class="anchor" id="autotoc_md1864"></a>
-WARNING</h1>
-<p>This module is highly experimental! Expect bugs, instabilities and sudden API changes :-)</p>
-<h1><a class="anchor" id="autotoc_md1865"></a>
-About</h1>
-<p>Statconn is the implementation of a static connection manager for the NimBLE netif module. It initiates new connections when told and additionally takes care of reopening connections in case of connection loss.</p>
-<h1><a class="anchor" id="autotoc_md1866"></a>
-Usage</h1>
-<p>A node can either be a master, the one initiating the connection, or a slave, the one advertising its presence, w.r.t. to BLE connections. To open a connection between two nodes, call <a class="el" href="#ga52f36085ab5d1de08b2ad33cc35364f3" title="Connect to a peer (slave) with a given address as master.">nimble_statconn_add_slave()</a> with the BLE address of the slave node on the designated master node and call <a class="el" href="#ga4bc4dbf8957fbba42be1c1e87986e145" title="Connect to peer (master) with a given address as slave.">nimble_statconn_add_master()</a> with the address of the master node on the designated slave node. From that point on, statconn will take care of opening and maintaining the connection between these two nodes.</p>
-<h1><a class="anchor" id="autotoc_md1867"></a>
-Configuration</h1>
-<p>This module is configured completely statically. All relevant configuration options are set at compile time using a couple of macros. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -231,6 +215,22 @@ Functions</h2></td></tr>
 <tr class="memdesc:gaa7af88c59698176666109a4b55ca1ee4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the connection to the given peer.  <br /></td></tr>
 <tr class="separator:gaa7af88c59698176666109a4b55ca1ee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Static connection manager for NimBLE netif that keeps opens connections on demand and takes care of keeping them open. </p>
+<dl class="section warning"><dt>Warning</dt><dd><b class="text-danger">This feature is experimental!</b><br  />
+ </dd></dl>
+<h1><a class="anchor" id="autotoc_md1864"></a>
+WARNING</h1>
+<p>This module is highly experimental! Expect bugs, instabilities and sudden API changes :-)</p>
+<h1><a class="anchor" id="autotoc_md1865"></a>
+About</h1>
+<p>Statconn is the implementation of a static connection manager for the NimBLE netif module. It initiates new connections when told and additionally takes care of reopening connections in case of connection loss.</p>
+<h1><a class="anchor" id="autotoc_md1866"></a>
+Usage</h1>
+<p>A node can either be a master, the one initiating the connection, or a slave, the one advertising its presence, w.r.t. to BLE connections. To open a connection between two nodes, call <a class="el" href="#ga52f36085ab5d1de08b2ad33cc35364f3" title="Connect to a peer (slave) with a given address as master.">nimble_statconn_add_slave()</a> with the BLE address of the slave node on the designated master node and call <a class="el" href="#ga4bc4dbf8957fbba42be1c1e87986e145" title="Connect to peer (master) with a given address as slave.">nimble_statconn_add_master()</a> with the address of the master node on the designated slave node. From that point on, statconn will take care of opening and maintaining the connection between these two nodes.</p>
+<h1><a class="anchor" id="autotoc_md1867"></a>
+Configuration</h1>
+<p>This module is configured completely statically. All relevant configuration options are set at compile time using a couple of macros. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga7b93bb27c8af48e17079c041b7eb2bbd" name="ga7b93bb27c8af48e17079c041b7eb2bbd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga7b93bb27c8af48e17079c041b7eb2bbd">&#9670;&#160;</a></span>NIMBLE_STATCONN_CONN_ITVL_MAX_MS</h2>
@@ -440,7 +440,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

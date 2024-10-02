@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -149,6 +149,22 @@ $(function(){initNavTree('group__boards__lora-e5-dev.html',''); initResizable(tr
 
 <p>Support for the LoRa-E5 Development Board - STM32WLE5JC.  
 <a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lora-e5-dev_2include_2arduino__iomap_8h.html">arduino_iomap.h</a></td></tr>
+<tr class="memdesc:lora-e5-dev_2include_2arduino__iomap_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mapping from MCU pins to Arduino pins. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lora-e5-dev_2include_2board_8h.html">board.h</a></td></tr>
+<tr class="memdesc:lora-e5-dev_2include_2board_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin definitions and board configuration options for LoRa-E5 Development Board. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lora-e5-dev_2include_2gpio__params_8h.html">gpio_params.h</a></td></tr>
+<tr class="memdesc:lora-e5-dev_2include_2gpio__params_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Board specific configuration of direct mapped GPIOs. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boards_2lora-e5-dev_2include_2periph__conf_8h.html">periph_conf.h</a></td></tr>
+<tr class="memdesc:boards_2lora-e5-dev_2include_2periph__conf_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Peripheral MCU configuration for the LoRa-E5 Development Board. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the LoRa-E5 Development Board - STM32WLE5JC. </p>
 <dl class="section warning"><dt>Warning</dt><dd>This BOARD comes with arduino style pin headers, but the gpio mapping does not map to arduino BOARDs, even 3.3V and 5V pins are placed differently, so don't use arduino expansion-boards since these might short-circuit the mcu and/or expansion-board.</dd></dl>
@@ -259,22 +275,6 @@ LoRa</h3>
 <h3><a class="anchor" id="autotoc_md498"></a>
 Sensors</h3>
 <p>This board includes a <a class="el" href="group__drivers__lm75.html">LM75 Temperature Sensor driver compile configuration</a> temperature sensor. It can be included with <code>USEMODULE += lm75a</code> or through <code>USEMODULE += saul_default</code>. </p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lora-e5-dev_2include_2arduino__iomap_8h.html">arduino_iomap.h</a></td></tr>
-<tr class="memdesc:lora-e5-dev_2include_2arduino__iomap_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mapping from MCU pins to Arduino pins. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lora-e5-dev_2include_2board_8h.html">board.h</a></td></tr>
-<tr class="memdesc:lora-e5-dev_2include_2board_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin definitions and board configuration options for LoRa-E5 Development Board. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lora-e5-dev_2include_2gpio__params_8h.html">gpio_params.h</a></td></tr>
-<tr class="memdesc:lora-e5-dev_2include_2gpio__params_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Board specific configuration of direct mapped GPIOs. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boards_2lora-e5-dev_2include_2periph__conf_8h.html">periph_conf.h</a></td></tr>
-<tr class="memdesc:boards_2lora-e5-dev_2include_2periph__conf_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Peripheral MCU configuration for the LoRa-E5 Development Board. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
@@ -282,7 +282,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

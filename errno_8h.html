@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -146,12 +146,7 @@ $(function(){initNavTree('errno_8h.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">errno.h File Reference<div class="ingroups"><a class="el" href="group__cpu.html">CPU</a> &raquo; <a class="el" href="group__cpu__atmega__common.html">Atmel ATmega CPU: common files</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="errno_8h.html">errno.h</a>&gt;</span></div>
-<div class="ttc" id="aerrno_8h_html"><div class="ttname"><a href="errno_8h.html">errno.h</a></div></div>
-</div><!-- fragment --><p>Some functions in the library set the global variable <code>errno</code> when an error occurs. The file, <code>&lt;<a class="el" href="errno_8h.html">errno.h</a>&gt;</code>, provides symbolic names for various error codes.</p>
-<dl class="section warning"><dt>Warning</dt><dd>The <code>errno</code> global variable is not safe to use in a threaded or multi-task system. A race condition can occur if a task is interrupted between the call which sets <code>error</code> and when the task examines <code>errno</code>. If another task changes <code>errno</code> during this time, the result will be incorrect for the interrupted task. </dd></dl>
-</div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -500,7 +495,12 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>errno</b></td></tr>
 <tr class="memdesc:ga10426080250efba47f4aaf254036ff00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Too many references: cannot splice. <br /></td></tr>
 <tr class="separator:ga10426080250efba47f4aaf254036ff00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="errno_8h.html">errno.h</a>&gt;</span></div>
+<div class="ttc" id="aerrno_8h_html"><div class="ttname"><a href="errno_8h.html">errno.h</a></div></div>
+</div><!-- fragment --><p>Some functions in the library set the global variable <code>errno</code> when an error occurs. The file, <code>&lt;<a class="el" href="errno_8h.html">errno.h</a>&gt;</code>, provides symbolic names for various error codes.</p>
+<dl class="section warning"><dt>Warning</dt><dd>The <code>errno</code> global variable is not safe to use in a threaded or multi-task system. A race condition can occur if a task is interrupted between the call which sets <code>error</code> and when the task examines <code>errno</code>. If another task changes <code>errno</code> during this time, the result will be incorrect for the interrupted task. </dd></dl>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
@@ -508,7 +508,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>errno</b></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_c433b04169c945a1c7f0848f853d4379.html">cpu</a></li><li class="navelem"><a class="el" href="dir_38295422b9d2dcbd8e0c0497623f9cdb.html">avr8_common</a></li><li class="navelem"><a class="el" href="dir_65f1c8301712d060d3b5450e549f2235.html">avr_libc_extra</a></li><li class="navelem"><a class="el" href="dir_57c307721262166a368d7da6c11d8ddf.html">include</a></li><li class="navelem"><a class="el" href="errno_8h.html">errno.h</a></li>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:00 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

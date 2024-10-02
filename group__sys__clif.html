@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -152,64 +152,6 @@ $(function(){initNavTree('group__sys__clif.html',''); initResizable(true); });
 
 <p>Simple encoding and decoding of CoRE Link Format (RFC 6690) strings  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Simple encoding and decoding of CoRE Link Format (RFC 6690) strings </p>
-<dl class="section see"><dt>See also</dt><dd>RFC 6690: <a href="https://tools.ietf.org/html/rfc6690">https://tools.ietf.org/html/rfc6690</a></dd></dl>
-<p>clif provides a high-level API for CoRE Link Format encoding and decoding of links, through the <a class="el" href="#gaee6e4e90a7fa04a2382b9cfda5eebff7">clif_encode_link</a> and <a class="el" href="#ga34e06cd7b46af940a401f8960b40db27">clif_decode_link</a> respectively.</p>
-<p>The high-level API is built on top of low-level functions provided by clif, such as <a class="el" href="#ga64bff762fe47c265b22d2aeb68bc9488">clif_add_target</a>, <a class="el" href="#gaf8dc42338d1803aaa6ff52ac2867bc07">clif_add_attr</a>, and <a class="el" href="#gace6bb544828672a1ed5ee37bfb7fb7f6">clif_get_attr</a>. Also, some convenience functions like <a class="el" href="#gae2121fe08acabfbdd028a4df2544318c">clif_get_attr_type</a>, <a class="el" href="#ga2de9d1863bc8f638a311d8e83e258dee">clif_attr_type_to_str</a> and <a class="el" href="#ga8dddd9a82a434717cfc318b153bbbaf1">clif_init_attr</a> are provided, to facilitate the work with links.</p>
-<h3><a class="anchor" id="autotoc_md1974"></a>
-Decoding</h3>
-<p><a class="el" href="#ga34e06cd7b46af940a401f8960b40db27">clif_decode_link</a> takes a buffer which contains an encoded link and returns the information of it in a <a class="el" href="structclif__t.html">clif_t</a> structure and each attribute in a <a class="el" href="structclif__attr__t.html">clif_attr_t</a> structure of a given array.</p>
-<div class="fragment"><div class="line"><span class="comment">// A buffer &#39;input_buf&#39; of length &#39;input_len&#39; contains the links to decode</span></div>
-<div class="line"><a class="code hl_struct" href="structclif__attr__t.html">clif_attr_t</a> out_attrs[ATTRS_NUM];</div>
-<div class="line"><a class="code hl_struct" href="structclif__t.html">clif_t</a> out_links[LINKS_NUM];</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">const</span> <span class="keywordtype">char</span> *pos = input_buf;</div>
-<div class="line"><span class="keywordtype">unsigned</span> links_numof = 0;</div>
-<div class="line"><span class="keywordtype">unsigned</span> attrs_numof = 0;</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordflow">while</span> (pos &lt; &amp;input_buf[input_len]) {</div>
-<div class="line">     ssize_t res = <a class="code hl_function" href="#ga34e06cd7b46af940a401f8960b40db27">clif_decode_link</a>(&amp;out_links[links_numof],</div>
-<div class="line">                                    &amp;out_attrs[attrs_numof],</div>
-<div class="line">                                    ATTRS_NUM - attrs_numof, pos,</div>
-<div class="line">                                    &amp;input_buf[input_len]- pos);</div>
-<div class="line">     <span class="keywordflow">if</span> (res &lt; 0) {</div>
-<div class="line">         <span class="keywordflow">break</span>;</div>
-<div class="line">     }</div>
-<div class="line">     pos += res;</div>
-<div class="line">     attrs_numof += out_links[links_numof].<a class="code hl_variable" href="structclif__t.html#a457f91e6a8cae6fe1e3ba8a11ea6d8bd">attrs_len</a>;</div>
-<div class="line">     links_numof++;</div>
-<div class="line">}</div>
-<div class="ttc" id="agroup__sys__clif_html_ga34e06cd7b46af940a401f8960b40db27"><div class="ttname"><a href="#ga34e06cd7b46af940a401f8960b40db27">clif_decode_link</a></div><div class="ttdeci">ssize_t clif_decode_link(clif_t *link, clif_attr_t *attrs, unsigned attrs_len, const char *buf, size_t maxlen)</div><div class="ttdoc">Decodes a string of link format.</div></div>
-<div class="ttc" id="astructclif__attr__t_html"><div class="ttname"><a href="structclif__attr__t.html">clif_attr_t</a></div><div class="ttdoc">Link format attribute descriptor.</div><div class="ttdef"><b>Definition</b> clif.h:137</div></div>
-<div class="ttc" id="astructclif__t_html"><div class="ttname"><a href="structclif__t.html">clif_t</a></div><div class="ttdoc">Link format descriptor.</div><div class="ttdef"><b>Definition</b> clif.h:147</div></div>
-<div class="ttc" id="astructclif__t_html_a457f91e6a8cae6fe1e3ba8a11ea6d8bd"><div class="ttname"><a href="structclif__t.html#a457f91e6a8cae6fe1e3ba8a11ea6d8bd">clif_t::attrs_len</a></div><div class="ttdeci">unsigned attrs_len</div><div class="ttdoc">size of array of attributes</div><div class="ttdef"><b>Definition</b> clif.h:151</div></div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md1975"></a>
-Encoding</h3>
-<p><a class="el" href="#gaee6e4e90a7fa04a2382b9cfda5eebff7">clif_encode_link</a> encodes a given link into a buffer, it can be called with a NULL pointer, in that case it will only calculate the amount of bytes needed to encode the link. After every call to this function a separator needs to be added to the buffer.</p>
-<div class="fragment"><div class="line"><span class="comment">// A &#39;links&#39; array of clif_t, of length &#39;links_len&#39; contains the links to encode</span></div>
-<div class="line"><span class="keywordtype">char</span> out[OUT_SIZE];</div>
-<div class="line">ssize_t res;</div>
-<div class="line"><span class="keywordtype">size_t</span> pos = 0;</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; links_len; i++) {</div>
-<div class="line">     <span class="keywordflow">if</span> (i) {</div>
-<div class="line">         res = <a class="code hl_function" href="#gaf702a47253923be822ea1dea10f62dca">clif_add_link_separator</a>(&amp;out[pos], OUT_SIZE - pos);</div>
-<div class="line">         <span class="keywordflow">if</span> (res &lt;= 0) {</div>
-<div class="line">             <span class="keywordflow">break</span>;</div>
-<div class="line">         }</div>
-<div class="line">         pos += res;</div>
-<div class="line">     }</div>
-<div class="line"> </div>
-<div class="line">     res = <a class="code hl_function" href="#gaee6e4e90a7fa04a2382b9cfda5eebff7">clif_encode_link</a>(&amp;links[i], &amp;out[pos], OUT_SIZE - pos);</div>
-<div class="line">     <span class="keywordflow">if</span> (res &lt;= 0) {</div>
-<div class="line">         <span class="keywordflow">break</span>;</div>
-<div class="line">     }</div>
-<div class="line">     pos += res;</div>
-<div class="line">}</div>
-<div class="ttc" id="agroup__sys__clif_html_gaee6e4e90a7fa04a2382b9cfda5eebff7"><div class="ttname"><a href="#gaee6e4e90a7fa04a2382b9cfda5eebff7">clif_encode_link</a></div><div class="ttdeci">ssize_t clif_encode_link(const clif_t *link, char *buf, size_t maxlen)</div><div class="ttdoc">Encodes a given link in link format into a given buffer.</div></div>
-<div class="ttc" id="agroup__sys__clif_html_gaf702a47253923be822ea1dea10f62dca"><div class="ttname"><a href="#gaf702a47253923be822ea1dea10f62dca">clif_add_link_separator</a></div><div class="ttdeci">ssize_t clif_add_link_separator(char *buf, size_t maxlen)</div><div class="ttdoc">Adds the link separator character to a given buf, using link format.</div></div>
-</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>'attribute', in this module, extends to the term 'link-param' on the ABNF in <a href="https://tools.ietf.org/html/rfc6690#section-2">section 2 of RFC 6690</a>. </dd></dl>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -295,6 +237,64 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga8dddd9a82a434717cfc318b153bbbaf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the key of a given attribute according to a given type.  <br /></td></tr>
 <tr class="separator:ga8dddd9a82a434717cfc318b153bbbaf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Simple encoding and decoding of CoRE Link Format (RFC 6690) strings </p>
+<dl class="section see"><dt>See also</dt><dd>RFC 6690: <a href="https://tools.ietf.org/html/rfc6690">https://tools.ietf.org/html/rfc6690</a></dd></dl>
+<p>clif provides a high-level API for CoRE Link Format encoding and decoding of links, through the <a class="el" href="#gaee6e4e90a7fa04a2382b9cfda5eebff7">clif_encode_link</a> and <a class="el" href="#ga34e06cd7b46af940a401f8960b40db27">clif_decode_link</a> respectively.</p>
+<p>The high-level API is built on top of low-level functions provided by clif, such as <a class="el" href="#ga64bff762fe47c265b22d2aeb68bc9488">clif_add_target</a>, <a class="el" href="#gaf8dc42338d1803aaa6ff52ac2867bc07">clif_add_attr</a>, and <a class="el" href="#gace6bb544828672a1ed5ee37bfb7fb7f6">clif_get_attr</a>. Also, some convenience functions like <a class="el" href="#gae2121fe08acabfbdd028a4df2544318c">clif_get_attr_type</a>, <a class="el" href="#ga2de9d1863bc8f638a311d8e83e258dee">clif_attr_type_to_str</a> and <a class="el" href="#ga8dddd9a82a434717cfc318b153bbbaf1">clif_init_attr</a> are provided, to facilitate the work with links.</p>
+<h3><a class="anchor" id="autotoc_md1974"></a>
+Decoding</h3>
+<p><a class="el" href="#ga34e06cd7b46af940a401f8960b40db27">clif_decode_link</a> takes a buffer which contains an encoded link and returns the information of it in a <a class="el" href="structclif__t.html">clif_t</a> structure and each attribute in a <a class="el" href="structclif__attr__t.html">clif_attr_t</a> structure of a given array.</p>
+<div class="fragment"><div class="line"><span class="comment">// A buffer &#39;input_buf&#39; of length &#39;input_len&#39; contains the links to decode</span></div>
+<div class="line"><a class="code hl_struct" href="structclif__attr__t.html">clif_attr_t</a> out_attrs[ATTRS_NUM];</div>
+<div class="line"><a class="code hl_struct" href="structclif__t.html">clif_t</a> out_links[LINKS_NUM];</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">const</span> <span class="keywordtype">char</span> *pos = input_buf;</div>
+<div class="line"><span class="keywordtype">unsigned</span> links_numof = 0;</div>
+<div class="line"><span class="keywordtype">unsigned</span> attrs_numof = 0;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">while</span> (pos &lt; &amp;input_buf[input_len]) {</div>
+<div class="line">     ssize_t res = <a class="code hl_function" href="#ga34e06cd7b46af940a401f8960b40db27">clif_decode_link</a>(&amp;out_links[links_numof],</div>
+<div class="line">                                    &amp;out_attrs[attrs_numof],</div>
+<div class="line">                                    ATTRS_NUM - attrs_numof, pos,</div>
+<div class="line">                                    &amp;input_buf[input_len]- pos);</div>
+<div class="line">     <span class="keywordflow">if</span> (res &lt; 0) {</div>
+<div class="line">         <span class="keywordflow">break</span>;</div>
+<div class="line">     }</div>
+<div class="line">     pos += res;</div>
+<div class="line">     attrs_numof += out_links[links_numof].<a class="code hl_variable" href="structclif__t.html#a457f91e6a8cae6fe1e3ba8a11ea6d8bd">attrs_len</a>;</div>
+<div class="line">     links_numof++;</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__sys__clif_html_ga34e06cd7b46af940a401f8960b40db27"><div class="ttname"><a href="#ga34e06cd7b46af940a401f8960b40db27">clif_decode_link</a></div><div class="ttdeci">ssize_t clif_decode_link(clif_t *link, clif_attr_t *attrs, unsigned attrs_len, const char *buf, size_t maxlen)</div><div class="ttdoc">Decodes a string of link format.</div></div>
+<div class="ttc" id="astructclif__attr__t_html"><div class="ttname"><a href="structclif__attr__t.html">clif_attr_t</a></div><div class="ttdoc">Link format attribute descriptor.</div><div class="ttdef"><b>Definition</b> clif.h:137</div></div>
+<div class="ttc" id="astructclif__t_html"><div class="ttname"><a href="structclif__t.html">clif_t</a></div><div class="ttdoc">Link format descriptor.</div><div class="ttdef"><b>Definition</b> clif.h:147</div></div>
+<div class="ttc" id="astructclif__t_html_a457f91e6a8cae6fe1e3ba8a11ea6d8bd"><div class="ttname"><a href="structclif__t.html#a457f91e6a8cae6fe1e3ba8a11ea6d8bd">clif_t::attrs_len</a></div><div class="ttdeci">unsigned attrs_len</div><div class="ttdoc">size of array of attributes</div><div class="ttdef"><b>Definition</b> clif.h:151</div></div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md1975"></a>
+Encoding</h3>
+<p><a class="el" href="#gaee6e4e90a7fa04a2382b9cfda5eebff7">clif_encode_link</a> encodes a given link into a buffer, it can be called with a NULL pointer, in that case it will only calculate the amount of bytes needed to encode the link. After every call to this function a separator needs to be added to the buffer.</p>
+<div class="fragment"><div class="line"><span class="comment">// A &#39;links&#39; array of clif_t, of length &#39;links_len&#39; contains the links to encode</span></div>
+<div class="line"><span class="keywordtype">char</span> out[OUT_SIZE];</div>
+<div class="line">ssize_t res;</div>
+<div class="line"><span class="keywordtype">size_t</span> pos = 0;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; links_len; i++) {</div>
+<div class="line">     <span class="keywordflow">if</span> (i) {</div>
+<div class="line">         res = <a class="code hl_function" href="#gaf702a47253923be822ea1dea10f62dca">clif_add_link_separator</a>(&amp;out[pos], OUT_SIZE - pos);</div>
+<div class="line">         <span class="keywordflow">if</span> (res &lt;= 0) {</div>
+<div class="line">             <span class="keywordflow">break</span>;</div>
+<div class="line">         }</div>
+<div class="line">         pos += res;</div>
+<div class="line">     }</div>
+<div class="line"> </div>
+<div class="line">     res = <a class="code hl_function" href="#gaee6e4e90a7fa04a2382b9cfda5eebff7">clif_encode_link</a>(&amp;links[i], &amp;out[pos], OUT_SIZE - pos);</div>
+<div class="line">     <span class="keywordflow">if</span> (res &lt;= 0) {</div>
+<div class="line">         <span class="keywordflow">break</span>;</div>
+<div class="line">     }</div>
+<div class="line">     pos += res;</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__sys__clif_html_gaee6e4e90a7fa04a2382b9cfda5eebff7"><div class="ttname"><a href="#gaee6e4e90a7fa04a2382b9cfda5eebff7">clif_encode_link</a></div><div class="ttdeci">ssize_t clif_encode_link(const clif_t *link, char *buf, size_t maxlen)</div><div class="ttdoc">Encodes a given link in link format into a given buffer.</div></div>
+<div class="ttc" id="agroup__sys__clif_html_gaf702a47253923be822ea1dea10f62dca"><div class="ttname"><a href="#gaf702a47253923be822ea1dea10f62dca">clif_add_link_separator</a></div><div class="ttdeci">ssize_t clif_add_link_separator(char *buf, size_t maxlen)</div><div class="ttdoc">Adds the link separator character to a given buf, using link format.</div></div>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>'attribute', in this module, extends to the term 'link-param' on the ABNF in <a href="https://tools.ietf.org/html/rfc6690#section-2">section 2 of RFC 6690</a>. </dd></dl>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="gaf96be3e9de53e065a22cd7978e05dc5c" name="gaf96be3e9de53e065a22cd7978e05dc5c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaf96be3e9de53e065a22cd7978e05dc5c">&#9670;&#160;</a></span>anonymous enum</h2>
@@ -812,7 +812,7 @@ CLIF_NOT_FOUND if no valid target is found </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

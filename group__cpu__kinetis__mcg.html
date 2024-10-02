@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -151,6 +151,31 @@ $(function(){initNavTree('group__cpu__kinetis__mcg.html',''); initResizable(true
 
 <p>Implementation of the Kinetis Multipurpose Clock Generator (MCG) driver  
 <a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mcg_8h.html">mcg.h</a></td></tr>
+<tr class="memdesc:mcg_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface definition for the Kinetis MCG driver. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:gafc465f12242e68f6c3695caa3ba0a169" id="r_gafc465f12242e68f6c3695caa3ba0a169"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafc465f12242e68f6c3695caa3ba0a169">CLOCK_CORECLOCK</a>&#160;&#160;&#160;(MCGOUTCLK)</td></tr>
+<tr class="memdesc:gafc465f12242e68f6c3695caa3ba0a169"><td class="mdescLeft">&#160;</td><td class="mdescRight">Core clock frequency, used by the ARM core and certain hardware modules in Kinetis CPUs.  <br /></td></tr>
+<tr class="separator:gafc465f12242e68f6c3695caa3ba0a169"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga47b8fb0bde3602f542629a3a73f3cb96" id="r_ga47b8fb0bde3602f542629a3a73f3cb96"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga47b8fb0bde3602f542629a3a73f3cb96">CLOCK_BUSCLOCK</a>&#160;&#160;&#160;(<a class="el" href="arm7tdmi__gba_2include_2periph__cpu_8h.html#afc465f12242e68f6c3695caa3ba0a169">CLOCK_CORECLOCK</a> / x)</td></tr>
+<tr class="memdesc:ga47b8fb0bde3602f542629a3a73f3cb96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bus clock frequency, used by several hardware modules in Kinetis CPUs.  <br /></td></tr>
+<tr class="separator:ga47b8fb0bde3602f542629a3a73f3cb96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga8300c73075c4d426cd6caa6b126aae2c" id="r_ga8300c73075c4d426cd6caa6b126aae2c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8300c73075c4d426cd6caa6b126aae2c">kinetis_mcg_set_mode</a> (kinetis_mcg_mode_t mode)</td></tr>
+<tr class="memdesc:ga8300c73075c4d426cd6caa6b126aae2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Switch the MCG to the specified clocking mode.  <br /></td></tr>
+<tr class="separator:ga8300c73075c4d426cd6caa6b126aae2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaba884dd0d9798f77024d147d07afd162" id="r_gaba884dd0d9798f77024d147d07afd162"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaba884dd0d9798f77024d147d07afd162">kinetis_mcg_init</a> (void)</td></tr>
+<tr class="memdesc:gaba884dd0d9798f77024d147d07afd162"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the MCG.  <br /></td></tr>
+<tr class="separator:gaba884dd0d9798f77024d147d07afd162"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Implementation of the Kinetis Multipurpose Clock Generator (MCG) driver </p>
 <p>Please add <a class="el" href="mcg_8h.html" title="Interface definition for the Kinetis MCG driver.">mcg.h</a> in cpu_conf.h and MCG configuration to periph_conf.h</p>
@@ -209,32 +234,7 @@ Example for FEE Mode, 32.768 kHz crystal connected to RTC</h4>
 };
 #define CLOCK_CORECLOCK              (71991296ul)
 #define CLOCK_BUSCLOCK               (CLOCK_CORECLOCK / 2)
-</pre> <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mcg_8h.html">mcg.h</a></td></tr>
-<tr class="memdesc:mcg_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface definition for the Kinetis MCG driver. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:gafc465f12242e68f6c3695caa3ba0a169" id="r_gafc465f12242e68f6c3695caa3ba0a169"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafc465f12242e68f6c3695caa3ba0a169">CLOCK_CORECLOCK</a>&#160;&#160;&#160;(MCGOUTCLK)</td></tr>
-<tr class="memdesc:gafc465f12242e68f6c3695caa3ba0a169"><td class="mdescLeft">&#160;</td><td class="mdescRight">Core clock frequency, used by the ARM core and certain hardware modules in Kinetis CPUs.  <br /></td></tr>
-<tr class="separator:gafc465f12242e68f6c3695caa3ba0a169"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga47b8fb0bde3602f542629a3a73f3cb96" id="r_ga47b8fb0bde3602f542629a3a73f3cb96"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga47b8fb0bde3602f542629a3a73f3cb96">CLOCK_BUSCLOCK</a>&#160;&#160;&#160;(<a class="el" href="arm7tdmi__gba_2include_2periph__cpu_8h.html#afc465f12242e68f6c3695caa3ba0a169">CLOCK_CORECLOCK</a> / x)</td></tr>
-<tr class="memdesc:ga47b8fb0bde3602f542629a3a73f3cb96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bus clock frequency, used by several hardware modules in Kinetis CPUs.  <br /></td></tr>
-<tr class="separator:ga47b8fb0bde3602f542629a3a73f3cb96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ga8300c73075c4d426cd6caa6b126aae2c" id="r_ga8300c73075c4d426cd6caa6b126aae2c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8300c73075c4d426cd6caa6b126aae2c">kinetis_mcg_set_mode</a> (kinetis_mcg_mode_t mode)</td></tr>
-<tr class="memdesc:ga8300c73075c4d426cd6caa6b126aae2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Switch the MCG to the specified clocking mode.  <br /></td></tr>
-<tr class="separator:ga8300c73075c4d426cd6caa6b126aae2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaba884dd0d9798f77024d147d07afd162" id="r_gaba884dd0d9798f77024d147d07afd162"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaba884dd0d9798f77024d147d07afd162">kinetis_mcg_init</a> (void)</td></tr>
-<tr class="memdesc:gaba884dd0d9798f77024d147d07afd162"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the MCG.  <br /></td></tr>
-<tr class="separator:gaba884dd0d9798f77024d147d07afd162"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+</pre> <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga47b8fb0bde3602f542629a3a73f3cb96" name="ga47b8fb0bde3602f542629a3a73f3cb96"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga47b8fb0bde3602f542629a3a73f3cb96">&#9670;&#160;</a></span>CLOCK_BUSCLOCK</h2>
 
@@ -326,7 +326,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

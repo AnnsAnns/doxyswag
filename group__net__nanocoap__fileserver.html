@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -154,36 +154,6 @@ $(function(){initNavTree('group__net__nanocoap__fileserver.html',''); initResiza
 
 <p>Library for serving files from the VFS to CoAP clients  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Library for serving files from the VFS to CoAP clients </p>
-<h1><a class="anchor" id="autotoc_md2052"></a>
-About</h1>
-<p>This maps files in the local file system onto a resources in CoAP. In that, it is what is called a static web server in the unconstrained web.</p>
-<p>As usual, GET operations are used to read files and PUT writes to files. In the current implementation, PUTs are expressed as random-access, meaning that files are not updated atomically, although files are created atomically. The Content-Format option is not checked in the current implementation. Conditional file modification and deletion is supported using the If-Match option. The If-Match option carries a previously received Etag or in case of zero length, requires a request to be processed only if the resource exists. In opposite, the If-None-Match option requires a request to be processed, only if the resource does not yet exist, and is most useful for file creation.</p>
-<p>Directories are expressed to URIs with trailing slashes. Directories and their content are deleted as if one would do an <code>$rm -r</code>. If you only would like to delete a directory if it is empty, you must supply an If-Match option with the special value <a class="el" href="#ga6361921051a327323fed06922e0182fd">COAPFILESERVER_DIR_DELETE_ETAG</a>.</p>
-<dl class="section note"><dt>Note</dt><dd>The file server uses ETag for cache validation. The ETags are built from the file system stat values. As clients rely on the ETag to differ when the file changes, it is important that file modification times are set. The precise time values do not matter, but if a file is changed in place and neither its length nor its modification time is varied, then clients will not become aware of the change or may even mix up the versions half way through if they have a part of the old version cached.</dd></dl>
-<h1><a class="anchor" id="autotoc_md2053"></a>
-Usage</h1>
-<ul>
-<li><code>USEMODULE += nanocoap_fileserver</code></li>
-<li><p class="startli">Enter a <a class="el" href="#ga91de066181db9756bf9f1a7bad973480">nanocoap_fileserver_handler</a> handler into your CoAP server's resource list like this:</p>
-<div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_struct" href="structcoap__resource__t.html">coap_resource_t</a> _resources[] = {</div>
-<div class="line">    ...</div>
-<div class="line">    {</div>
-<div class="line">       .path = <span class="stringliteral">&quot;/files/sd&quot;</span>,</div>
-<div class="line">       .methods = COAP_GET | <a class="code hl_define" href="group__net__nanocoap.html#ga8c87dddfffd38c7c88c32b49fad9cb26">COAP_MATCH_SUBTREE</a>,</div>
-<div class="line">       .handler = <a class="code hl_function" href="#ga91de066181db9756bf9f1a7bad973480">nanocoap_fileserver_handler</a>,</div>
-<div class="line">       .context = <span class="stringliteral">&quot;/sd0&quot;</span></div>
-<div class="line">    },</div>
-<div class="line">    ...</div>
-<div class="line">}</div>
-<div class="ttc" id="agroup__net__nanocoap__fileserver_html_ga91de066181db9756bf9f1a7bad973480"><div class="ttname"><a href="#ga91de066181db9756bf9f1a7bad973480">nanocoap_fileserver_handler</a></div><div class="ttdeci">ssize_t nanocoap_fileserver_handler(coap_pkt_t *pdu, uint8_t *buf, size_t len, coap_request_ctx_t *ctx)</div><div class="ttdoc">File server handler.</div></div>
-<div class="ttc" id="agroup__net__nanocoap_html_ga8c87dddfffd38c7c88c32b49fad9cb26"><div class="ttname"><a href="group__net__nanocoap.html#ga8c87dddfffd38c7c88c32b49fad9cb26">COAP_MATCH_SUBTREE</a></div><div class="ttdeci">#define COAP_MATCH_SUBTREE</div><div class="ttdoc">Path is considered as a prefix when matching.</div><div class="ttdef"><b>Definition</b> nanocoap.h:129</div></div>
-<div class="ttc" id="astructcoap__resource__t_html"><div class="ttname"><a href="structcoap__resource__t.html">coap_resource_t</a></div><div class="ttdoc">Type for CoAP resource entry.</div><div class="ttdef"><b>Definition</b> nanocoap.h:311</div></div>
-</div><!-- fragment --><p class="startli">The path argument specifies under which path the folder is served via CoAP while the context argument contains the path on the local filesystem that will be served.</p>
-<p class="startli">The allowed methods dictate whether it's read-only (<code>COAP_GET</code>) or read-write (<code>COAP_GET | COAP_PUT | COAP_DELETE</code>). If you want to support <code>PUT</code> and <code>DELETE</code>, you need to enable the modules <code>nanocoap_fileserver_put</code> and <code>nanocoap_fileserver_delete</code>. </p>
-</li>
-</ul>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -233,6 +203,36 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga91de066181db9756bf9f1a7bad973480"><td class="mdescLeft">&#160;</td><td class="mdescRight">File server handler.  <br /></td></tr>
 <tr class="separator:ga91de066181db9756bf9f1a7bad973480"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Library for serving files from the VFS to CoAP clients </p>
+<h1><a class="anchor" id="autotoc_md2052"></a>
+About</h1>
+<p>This maps files in the local file system onto a resources in CoAP. In that, it is what is called a static web server in the unconstrained web.</p>
+<p>As usual, GET operations are used to read files and PUT writes to files. In the current implementation, PUTs are expressed as random-access, meaning that files are not updated atomically, although files are created atomically. The Content-Format option is not checked in the current implementation. Conditional file modification and deletion is supported using the If-Match option. The If-Match option carries a previously received Etag or in case of zero length, requires a request to be processed only if the resource exists. In opposite, the If-None-Match option requires a request to be processed, only if the resource does not yet exist, and is most useful for file creation.</p>
+<p>Directories are expressed to URIs with trailing slashes. Directories and their content are deleted as if one would do an <code>$rm -r</code>. If you only would like to delete a directory if it is empty, you must supply an If-Match option with the special value <a class="el" href="#ga6361921051a327323fed06922e0182fd">COAPFILESERVER_DIR_DELETE_ETAG</a>.</p>
+<dl class="section note"><dt>Note</dt><dd>The file server uses ETag for cache validation. The ETags are built from the file system stat values. As clients rely on the ETag to differ when the file changes, it is important that file modification times are set. The precise time values do not matter, but if a file is changed in place and neither its length nor its modification time is varied, then clients will not become aware of the change or may even mix up the versions half way through if they have a part of the old version cached.</dd></dl>
+<h1><a class="anchor" id="autotoc_md2053"></a>
+Usage</h1>
+<ul>
+<li><code>USEMODULE += nanocoap_fileserver</code></li>
+<li><p class="startli">Enter a <a class="el" href="#ga91de066181db9756bf9f1a7bad973480">nanocoap_fileserver_handler</a> handler into your CoAP server's resource list like this:</p>
+<div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_struct" href="structcoap__resource__t.html">coap_resource_t</a> _resources[] = {</div>
+<div class="line">    ...</div>
+<div class="line">    {</div>
+<div class="line">       .path = <span class="stringliteral">&quot;/files/sd&quot;</span>,</div>
+<div class="line">       .methods = COAP_GET | <a class="code hl_define" href="group__net__nanocoap.html#ga8c87dddfffd38c7c88c32b49fad9cb26">COAP_MATCH_SUBTREE</a>,</div>
+<div class="line">       .handler = <a class="code hl_function" href="#ga91de066181db9756bf9f1a7bad973480">nanocoap_fileserver_handler</a>,</div>
+<div class="line">       .context = <span class="stringliteral">&quot;/sd0&quot;</span></div>
+<div class="line">    },</div>
+<div class="line">    ...</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__net__nanocoap__fileserver_html_ga91de066181db9756bf9f1a7bad973480"><div class="ttname"><a href="#ga91de066181db9756bf9f1a7bad973480">nanocoap_fileserver_handler</a></div><div class="ttdeci">ssize_t nanocoap_fileserver_handler(coap_pkt_t *pdu, uint8_t *buf, size_t len, coap_request_ctx_t *ctx)</div><div class="ttdoc">File server handler.</div></div>
+<div class="ttc" id="agroup__net__nanocoap_html_ga8c87dddfffd38c7c88c32b49fad9cb26"><div class="ttname"><a href="group__net__nanocoap.html#ga8c87dddfffd38c7c88c32b49fad9cb26">COAP_MATCH_SUBTREE</a></div><div class="ttdeci">#define COAP_MATCH_SUBTREE</div><div class="ttdoc">Path is considered as a prefix when matching.</div><div class="ttdef"><b>Definition</b> nanocoap.h:129</div></div>
+<div class="ttc" id="astructcoap__resource__t_html"><div class="ttname"><a href="structcoap__resource__t.html">coap_resource_t</a></div><div class="ttdoc">Type for CoAP resource entry.</div><div class="ttdef"><b>Definition</b> nanocoap.h:311</div></div>
+</div><!-- fragment --><p class="startli">The path argument specifies under which path the folder is served via CoAP while the context argument contains the path on the local filesystem that will be served.</p>
+<p class="startli">The allowed methods dictate whether it's read-only (<code>COAP_GET</code>) or read-write (<code>COAP_GET | COAP_PUT | COAP_DELETE</code>). If you want to support <code>PUT</code> and <code>DELETE</code>, you need to enable the modules <code>nanocoap_fileserver_put</code> and <code>nanocoap_fileserver_delete</code>. </p>
+</li>
+</ul>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ga212a3e5e439f0c9a9f80ac247bb6807e" name="ga212a3e5e439f0c9a9f80ac247bb6807e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga212a3e5e439f0c9a9f80ac247bb6807e">&#9670;&#160;</a></span>nanocoap_fileserver_event_handler_t</h2>
@@ -374,7 +374,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

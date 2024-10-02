@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -149,18 +149,7 @@ $(function(){initNavTree('structsdmmc__dev.html',''); initResizable(true); });
 
 <p>SDIO/SD/MMC device descriptor.  
  <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>SDIO/SD/MMC device descriptor. </p>
-<p>The device descriptor holds all required information about the SDIO/SD/MMC device and the card that is used by this decive.</p>
-<dl class="section note"><dt>Note</dt><dd>Most of the information is determined or collected during the card initialization and identification procedure by the <a class="el" href="group__drivers__sdmmc.html#ga8f38aee0dad654c7200e973ebe22a0ba">sdmmc_card_init</a> function. However, some information must be determined and collected by the low-level SDIO/SD/MMC peripheral driver. These are<ul>
-<li><a class="el" href="#a98af2c5a54bd013208daa3c4f6eccf31">sdmmc_dev_t::driver</a></li>
-<li><a class="el" href="#ac0e9bc5739851510d3e0b20f4d965304">sdmmc_dev_t::present</a></li>
-<li><a class="el" href="#a660ba858991085cbf9ee63440314631d">sdmmc_dev_t::status</a></li>
-<li><a class="el" href="#abf7983c8fcc1dbc16b4de874f981192c">sdmmc_dev_t::bus_width</a></li>
-<li><a class="el" href="#a5b9951bbaa3a831313d8abdea2b1839f">sdmmc_dev_t::spi_mode</a> </li>
-</ul>
-</dd></dl>
-</div>
+
 <p><code>#include &lt;sdmmc.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -210,7 +199,18 @@ uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>rca</b></td></tr>
 <tr class="memdesc:a5b9951bbaa3a831313d8abdea2b1839f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether SPI mode is used by the SDIO/SD/MMC device (default <code>false</code>).  <br /></td></tr>
 <tr class="separator:a5b9951bbaa3a831313d8abdea2b1839f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Field Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>SDIO/SD/MMC device descriptor. </p>
+<p>The device descriptor holds all required information about the SDIO/SD/MMC device and the card that is used by this decive.</p>
+<dl class="section note"><dt>Note</dt><dd>Most of the information is determined or collected during the card initialization and identification procedure by the <a class="el" href="group__drivers__sdmmc.html#ga8f38aee0dad654c7200e973ebe22a0ba">sdmmc_card_init</a> function. However, some information must be determined and collected by the low-level SDIO/SD/MMC peripheral driver. These are<ul>
+<li><a class="el" href="#a98af2c5a54bd013208daa3c4f6eccf31">sdmmc_dev_t::driver</a></li>
+<li><a class="el" href="#ac0e9bc5739851510d3e0b20f4d965304">sdmmc_dev_t::present</a></li>
+<li><a class="el" href="#a660ba858991085cbf9ee63440314631d">sdmmc_dev_t::status</a></li>
+<li><a class="el" href="#abf7983c8fcc1dbc16b4de874f981192c">sdmmc_dev_t::bus_width</a></li>
+<li><a class="el" href="#a5b9951bbaa3a831313d8abdea2b1839f">sdmmc_dev_t::spi_mode</a> </li>
+</ul>
+</dd></dl>
+</div><h2 class="groupheader">Field Documentation</h2>
 <a id="abf7983c8fcc1dbc16b4de874f981192c" name="abf7983c8fcc1dbc16b4de874f981192c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abf7983c8fcc1dbc16b4de874f981192c">&#9670;&#160;</a></span>bus_width</h2>
 
@@ -426,7 +426,7 @@ uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>rca</b></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structsdmmc__dev.html">sdmmc_dev</a></li>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:03 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:32 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

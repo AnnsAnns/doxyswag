@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -152,34 +152,6 @@ $(function(){initNavTree('group__sys__suit__storage.html',''); initResizable(tru
 
 <p>infrastructure  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>infrastructure </p>
-<p>SUIT firmware storage backends</p>
-<p>Storage backend functions for SUIT manifests </p><dl class="section author"><dt>Author</dt><dd>Koen Zandberg <a href="#" onclick="location.href='mai'+'lto:'+'koe'+'n@'+'ber'+'gz'+'and'+'.n'+'et'; return false;">koen@<span class="obfuscator">.nosp@m.</span>berg<span class="obfuscator">.nosp@m.</span>zand.<span class="obfuscator">.nosp@m.</span>net</a></dd></dl>
-<p>The interface defined here specifies a generic API for SUIT OTA storage backends.</p>
-<p>The driver allows for creating multiple backends, each possibly servicing multiple locations. An example of this is a VFS storage backend. This backend could service multiple file locations on a filesystem.</p>
-<p>A SUIT component ID is formatted as an array of bytestrings. To make it easy to match and use a string, the location is supplied as string, each component separated by a separator provided in the driver. If no separator (<code>\0</code>) is set, the components are concatenated without separator. The <a class="el" href="structsuit__storage__driver.html#a771b575214bc8ad8d5cdd2c72d8530b5">suit_storage_driver_t::set_active_location</a> must be called before starting operations on the backend.</p>
-<p>A write sequence by the caller must start with <a class="el" href="structsuit__storage__driver.html#a5b996af8800e6f6adda13a01bea4af71">suit_storage_driver_t::start</a>. The total length of the image is supplied to allow the backend to check if the payload fits in the available space. The payload data can be supplied piecewise with multiple calls to <a class="el" href="structsuit__storage__driver.html#a1bcb69cf7bd476bbcfdd93e7107ea8e5">suit_storage_driver_t::write</a>. The caller is free to specify the offset, but the backend may enforce strict monotonicity on the offset and may enforce the gapless writes. After all bytes are supplied, the <a class="el" href="structsuit__storage__driver.html#accd8f42c0f5a26e1466d8d65b321b3e2">suit_storage_driver_t::finish</a> function must be called to signal the end of the write stage.</p>
-<p>Only when the <a class="el" href="structsuit__storage__driver.html#a507db5fbf05f97ac76fbc3d8bc7eee0c">suit_storage_driver_t::install</a> is called, the payload must be marked as valid. The mechanism for this can be backend specific. However in the case of a firmware image, it must not be bootable before this function is called. Similarly, a file payload must not be available at its provided path until after this function is called. The reason behind this is that the payload often must first be stored on the device before the image_match is called by the manifest.</p>
-<p>The other option is that the <a class="el" href="structsuit__storage__driver.html#a141a01aa05a3407dba52fbc687364d52">suit_storage_driver_t::erase</a> is called. In this case the not-yet-installed payload must be erased again as its contents might not be what is expected by the digest in the manifest. The payload must then be removed to prevent the possibility of storing malicious code on the device.</p>
-<p>A form of read access must be implemented to provide a way to read back the data and check the digest of the payload. <a class="el" href="structsuit__storage__driver.html#ad6d948219078ec70812a74fb5470554f">suit_storage_driver_t::read</a> must be implemented, providing piecewise reading of the data. <a class="el" href="structsuit__storage__driver.html#ae201c7825a6b374b38a71ae355e423cc">suit_storage_driver_t::read_ptr</a> is optional to implement, it can provide direct read access on memory-mapped storage.</p>
-<p>As the storage backend provides a mechanism to store persistent data, functions are added to set and retrieve the manifest sequence number. While not strictly required to implement, a firmware without a mechanism to retrieve and store sequence numbers will always fail to update.</p>
-<p>The <a class="el" href="structsuit__storage__driver.html#ab5cc93de1b9acae9c3a2308b69bde4ee">suit_storage_driver_t::match_offset</a> function allows the manifest handler to check the component-offset condition against a storage backend.</p>
-<p>The usual call sequence by a manifest handler is:</p>
-<ol type="1">
-<li><a class="el" href="structsuit__storage__driver.html#ab884ee1d6c260334b603c70851c0dddb">suit_storage_driver_t::init</a> as on-boot initialization.</li>
-<li><a class="el" href="structsuit__storage__driver.html#a1b00d856f2ce0ceadddd4e09dbea8b63">suit_storage_driver_t::get_seq_no</a> to determine if the manifest is not replayed.</li>
-<li><a class="el" href="structsuit__storage__driver.html#a83d3abb9e1df010ce91a8a412fe07183">suit_storage_driver_t::has_location</a> to determine if the backend handles the payload in the manifest.</li>
-<li><a class="el" href="structsuit__storage__driver.html#a771b575214bc8ad8d5cdd2c72d8530b5">suit_storage_driver_t::set_active_location</a> to set the active location for the payload.</li>
-<li><a class="el" href="structsuit__storage__driver.html#a5b996af8800e6f6adda13a01bea4af71">suit_storage_driver_t::start</a> to start a payload write sequence.</li>
-<li>At least one <a class="el" href="structsuit__storage__driver.html#a1bcb69cf7bd476bbcfdd93e7107ea8e5">suit_storage_driver_t::write</a> calls to write the payload data.</li>
-<li><a class="el" href="structsuit__storage__driver.html#accd8f42c0f5a26e1466d8d65b321b3e2">suit_storage_driver_t::finish</a> to mark the end of the payload write.</li>
-<li><a class="el" href="structsuit__storage__driver.html#ad6d948219078ec70812a74fb5470554f">suit_storage_driver_t::read</a> or <a class="el" href="structsuit__storage__driver.html#ae201c7825a6b374b38a71ae355e423cc">suit_storage_driver_t::read_ptr</a> to read back the written payload. This to verify the digest of the payload with what is provided in the manifest.</li>
-<li><a class="el" href="structsuit__storage__driver.html#a507db5fbf05f97ac76fbc3d8bc7eee0c">suit_storage_driver_t::install</a> if the digest matches with what is expected and the payload can be installed or marked as valid, or:</li>
-<li><a class="el" href="structsuit__storage__driver.html#a141a01aa05a3407dba52fbc687364d52">suit_storage_driver_t::erase</a> if the digest does not match with what is expected and must be erased.</li>
-<li>ref <a class="el" href="structsuit__storage__driver.html#a4f5912a0eebefb273b3405d3d0ed64ec" title="Set a new sequence number in the storage backend.">suit_storage_driver_t::set_seq_no</a> to update the sequence number stored in the backend.</li>
-</ol>
-<dl class="section warning"><dt>Warning</dt><dd>This API is by design not thread safe </dd></dl>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -284,6 +256,34 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>suit_storage_init_all
 <tr class="memdesc:ga8f130af051b232e6f14041b11da84ee2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a new sequence number in the storage backend.  <br /></td></tr>
 <tr class="separator:ga8f130af051b232e6f14041b11da84ee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>infrastructure </p>
+<p>SUIT firmware storage backends</p>
+<p>Storage backend functions for SUIT manifests </p><dl class="section author"><dt>Author</dt><dd>Koen Zandberg <a href="#" onclick="location.href='mai'+'lto:'+'koe'+'n@'+'ber'+'gz'+'and'+'.n'+'et'; return false;">koen@<span class="obfuscator">.nosp@m.</span>berg<span class="obfuscator">.nosp@m.</span>zand.<span class="obfuscator">.nosp@m.</span>net</a></dd></dl>
+<p>The interface defined here specifies a generic API for SUIT OTA storage backends.</p>
+<p>The driver allows for creating multiple backends, each possibly servicing multiple locations. An example of this is a VFS storage backend. This backend could service multiple file locations on a filesystem.</p>
+<p>A SUIT component ID is formatted as an array of bytestrings. To make it easy to match and use a string, the location is supplied as string, each component separated by a separator provided in the driver. If no separator (<code>\0</code>) is set, the components are concatenated without separator. The <a class="el" href="structsuit__storage__driver.html#a771b575214bc8ad8d5cdd2c72d8530b5">suit_storage_driver_t::set_active_location</a> must be called before starting operations on the backend.</p>
+<p>A write sequence by the caller must start with <a class="el" href="structsuit__storage__driver.html#a5b996af8800e6f6adda13a01bea4af71">suit_storage_driver_t::start</a>. The total length of the image is supplied to allow the backend to check if the payload fits in the available space. The payload data can be supplied piecewise with multiple calls to <a class="el" href="structsuit__storage__driver.html#a1bcb69cf7bd476bbcfdd93e7107ea8e5">suit_storage_driver_t::write</a>. The caller is free to specify the offset, but the backend may enforce strict monotonicity on the offset and may enforce the gapless writes. After all bytes are supplied, the <a class="el" href="structsuit__storage__driver.html#accd8f42c0f5a26e1466d8d65b321b3e2">suit_storage_driver_t::finish</a> function must be called to signal the end of the write stage.</p>
+<p>Only when the <a class="el" href="structsuit__storage__driver.html#a507db5fbf05f97ac76fbc3d8bc7eee0c">suit_storage_driver_t::install</a> is called, the payload must be marked as valid. The mechanism for this can be backend specific. However in the case of a firmware image, it must not be bootable before this function is called. Similarly, a file payload must not be available at its provided path until after this function is called. The reason behind this is that the payload often must first be stored on the device before the image_match is called by the manifest.</p>
+<p>The other option is that the <a class="el" href="structsuit__storage__driver.html#a141a01aa05a3407dba52fbc687364d52">suit_storage_driver_t::erase</a> is called. In this case the not-yet-installed payload must be erased again as its contents might not be what is expected by the digest in the manifest. The payload must then be removed to prevent the possibility of storing malicious code on the device.</p>
+<p>A form of read access must be implemented to provide a way to read back the data and check the digest of the payload. <a class="el" href="structsuit__storage__driver.html#ad6d948219078ec70812a74fb5470554f">suit_storage_driver_t::read</a> must be implemented, providing piecewise reading of the data. <a class="el" href="structsuit__storage__driver.html#ae201c7825a6b374b38a71ae355e423cc">suit_storage_driver_t::read_ptr</a> is optional to implement, it can provide direct read access on memory-mapped storage.</p>
+<p>As the storage backend provides a mechanism to store persistent data, functions are added to set and retrieve the manifest sequence number. While not strictly required to implement, a firmware without a mechanism to retrieve and store sequence numbers will always fail to update.</p>
+<p>The <a class="el" href="structsuit__storage__driver.html#ab5cc93de1b9acae9c3a2308b69bde4ee">suit_storage_driver_t::match_offset</a> function allows the manifest handler to check the component-offset condition against a storage backend.</p>
+<p>The usual call sequence by a manifest handler is:</p>
+<ol type="1">
+<li><a class="el" href="structsuit__storage__driver.html#ab884ee1d6c260334b603c70851c0dddb">suit_storage_driver_t::init</a> as on-boot initialization.</li>
+<li><a class="el" href="structsuit__storage__driver.html#a1b00d856f2ce0ceadddd4e09dbea8b63">suit_storage_driver_t::get_seq_no</a> to determine if the manifest is not replayed.</li>
+<li><a class="el" href="structsuit__storage__driver.html#a83d3abb9e1df010ce91a8a412fe07183">suit_storage_driver_t::has_location</a> to determine if the backend handles the payload in the manifest.</li>
+<li><a class="el" href="structsuit__storage__driver.html#a771b575214bc8ad8d5cdd2c72d8530b5">suit_storage_driver_t::set_active_location</a> to set the active location for the payload.</li>
+<li><a class="el" href="structsuit__storage__driver.html#a5b996af8800e6f6adda13a01bea4af71">suit_storage_driver_t::start</a> to start a payload write sequence.</li>
+<li>At least one <a class="el" href="structsuit__storage__driver.html#a1bcb69cf7bd476bbcfdd93e7107ea8e5">suit_storage_driver_t::write</a> calls to write the payload data.</li>
+<li><a class="el" href="structsuit__storage__driver.html#accd8f42c0f5a26e1466d8d65b321b3e2">suit_storage_driver_t::finish</a> to mark the end of the payload write.</li>
+<li><a class="el" href="structsuit__storage__driver.html#ad6d948219078ec70812a74fb5470554f">suit_storage_driver_t::read</a> or <a class="el" href="structsuit__storage__driver.html#ae201c7825a6b374b38a71ae355e423cc">suit_storage_driver_t::read_ptr</a> to read back the written payload. This to verify the digest of the payload with what is provided in the manifest.</li>
+<li><a class="el" href="structsuit__storage__driver.html#a507db5fbf05f97ac76fbc3d8bc7eee0c">suit_storage_driver_t::install</a> if the digest matches with what is expected and the payload can be installed or marked as valid, or:</li>
+<li><a class="el" href="structsuit__storage__driver.html#a141a01aa05a3407dba52fbc687364d52">suit_storage_driver_t::erase</a> if the digest does not match with what is expected and must be erased.</li>
+<li>ref <a class="el" href="structsuit__storage__driver.html#a4f5912a0eebefb273b3405d3d0ed64ec" title="Set a new sequence number in the storage backend.">suit_storage_driver_t::set_seq_no</a> to update the sequence number stored in the backend.</li>
+</ol>
+<dl class="section warning"><dt>Warning</dt><dd>This API is by design not thread safe </dd></dl>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ga7b89ef497bfbf0b587e8e8257f19d1d4" name="ga7b89ef497bfbf0b587e8e8257f19d1d4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga7b89ef497bfbf0b587e8e8257f19d1d4">&#9670;&#160;</a></span>suit_storage_erase()</h2>
@@ -1081,7 +1081,7 @@ SUIT_ERR_STORAGE_UNAVAILABLE if the location is not available. </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -149,12 +149,7 @@ $(function(){initNavTree('structpsa__drv__se__mac__t.html',''); initResizable(tr
 
 <p>A struct containing all of the function pointers needed to perform secure element MAC operations.  
  <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A struct containing all of the function pointers needed to perform secure element MAC operations. </p>
-<p>PSA Crypto API implementations should populate the table as appropriate upon startup.</p>
-<p>If one of the functions is not implemented (such as <a class="el" href="group__se__mac.html#gac8b2bbcfeb4a8f4409a4777051f55666">psa_drv_se_mac_generate_t</a>), it should be set to NULL.</p>
-<p>Driver implementers should ensure that they implement all of the functions that make sense for their hardware, and that they provide a full solution (for example, if they support <code>p_setup</code>, they should also support <code>p_update</code> and at least one of <code>p_finish</code> or <code>p_finish_verify</code> ). </p>
-</div>
+
 <p><code>#include &lt;psa_crypto_se_driver.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -192,7 +187,12 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><b>context_size</b></t
 <tr class="memdesc:a6cf9d713a7716b493c8c3ae7f2a9ccf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that performs a MAC and verify operation in one call. <br /></td></tr>
 <tr class="separator:a6cf9d713a7716b493c8c3ae7f2a9ccf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A struct containing all of the function pointers needed to perform secure element MAC operations. </p>
+<p>PSA Crypto API implementations should populate the table as appropriate upon startup.</p>
+<p>If one of the functions is not implemented (such as <a class="el" href="group__se__mac.html#gac8b2bbcfeb4a8f4409a4777051f55666">psa_drv_se_mac_generate_t</a>), it should be set to NULL.</p>
+<p>Driver implementers should ensure that they implement all of the functions that make sense for their hardware, and that they provide a full solution (for example, if they support <code>p_setup</code>, they should also support <code>p_update</code> and at least one of <code>p_finish</code> or <code>p_finish_verify</code> ). </p>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>sys/psa_crypto/include/<a class="el" href="psa__crypto__se__driver_8h.html">psa_crypto_se_driver.h</a></li>
 </ul>
 </div><!-- contents -->
@@ -203,7 +203,7 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><b>context_size</b></t
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structpsa__drv__se__mac__t.html">psa_drv_se_mac_t</a></li>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:03 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:32 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

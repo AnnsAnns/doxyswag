@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -152,17 +152,6 @@ $(function(){initNavTree('group__sys__random.html',''); initResizable(true); });
 
 <p>Pseudo Random Number Generator (PRNG)  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Pseudo Random Number Generator (PRNG) </p>
-<p>Various implementations of a PRNG are available:</p><ul>
-<li>Tiny Mersenne Twister (default)</li>
-<li>Mersenne Twister</li>
-<li>Simple Park-Miller PRNG</li>
-<li>Musl C PRNG</li>
-<li>Fortuna (CS)PRNG</li>
-<li>Hardware Random Number Generator (non-seedable) HWRNG differ in how they generate random numbers and may not use a PRNG internally. Refer to the manual of your MCU for details.</li>
-</ul>
-<p>By default, the <code>auto_init_random</code> module is enabled, which initializes the PRNG on startup. However, there is no lower limit on the entropy provided at that time. Unless the <code>periph_hwrng</code> module is used, entropy may be as little as zero (the constant may even be the same across devices). </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -218,6 +207,17 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>random_bytes</b> (voi
 <tr class="memdesc:ga8c50d509bf9917ad512ee00d7574ab5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">generates a random number on [0,1) with 53-bit resolution  <br /></td></tr>
 <tr class="separator:ga8c50d509bf9917ad512ee00d7574ab5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Pseudo Random Number Generator (PRNG) </p>
+<p>Various implementations of a PRNG are available:</p><ul>
+<li>Tiny Mersenne Twister (default)</li>
+<li>Mersenne Twister</li>
+<li>Simple Park-Miller PRNG</li>
+<li>Musl C PRNG</li>
+<li>Fortuna (CS)PRNG</li>
+<li>Hardware Random Number Generator (non-seedable) HWRNG differ in how they generate random numbers and may not use a PRNG internally. Refer to the manual of your MCU for details.</li>
+</ul>
+<p>By default, the <code>auto_init_random</code> module is enabled, which initializes the PRNG on startup. However, there is no lower limit on the entropy provided at that time. Unless the <code>periph_hwrng</code> module is used, entropy may be as little as zero (the constant may even be the same across devices). </p>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ga04012a93563b53748dc63eb552fd561b" name="ga04012a93563b53748dc63eb552fd561b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga04012a93563b53748dc63eb552fd561b">&#9670;&#160;</a></span>random_init()</h2>
@@ -415,7 +415,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>random_bytes</b> (voi
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

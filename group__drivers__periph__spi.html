@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -154,22 +154,6 @@ $(function(){initNavTree('group__drivers__periph__spi.html',''); initResizable(t
 
 <p>Low-level SPI peripheral driver  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Low-level SPI peripheral driver </p>
-<p>This interface defines an abstraction for using a CPU's hardware SPI units. The interface only supports SPI master mode.</p>
-<p>As SPI buses can have multiple devices connected to them they are to be considered as shared resources. To reflect this, the SPI interface is based on a transaction model. This requires that the bus needs to be acquired before usage and released afterwards, using the <code><a class="el" href="#ga31d89f231c0d6b18a71f2c8f3804e042" title="Start a new SPI transaction.">spi_acquire()</a></code> and the <code><a class="el" href="#ga9e36100f2b58917366872fca2f9f3bc6" title="Finish an ongoing SPI transaction by releasing the given SPI bus.">spi_release()</a></code> functions.</p>
-<p>This interface supports both software and hardware chip select lines. This is reflected by the cpi_cs_t type, which overloads the gpio_t type with platform specific values for defining platform dependent hardware chip select lines.</p>
-<p>Some devices have however very uncommon requirements on the usage and the timings of their chip select line. For those cases this interface allows to manage the chip select line manually from the user code (e.g. by calling gpio_set/clear explicitly) while deactivating the SPI driver internal chip select handling by passing <a class="el" href="atmega__common_2include_2periph__cpu__common_8h.html#a3969ce1e494a72d3c2925b10ddeb4604">GPIO_UNDEF</a> as CS parameter.</p>
-<p>In the time, when the SPI bus is not used, the SPI unit should be in low-power mode to save energy.</p>
-<p>The SPI unit's initialization is split into 3 parts:</p><ol type="1">
-<li><code><a class="el" href="#gada6e52541835bc04dcc6ec62f2c74c3a" title="Basic initialization of the given SPI bus.">spi_init()</a></code> should be called once for each SPI unit defined by a board during system initialization.</li>
-<li><code><a class="el" href="#ga1ed20d7e5b67938bd35139a819a8c982" title="Initialize the given chip select pin.">spi_init_cs()</a></code> should be called during device driver initialization, as each chip select pin/line is used uniquely by a specific device, i.e. chip select lines are no shared resource.</li>
-<li><code><a class="el" href="#ga31d89f231c0d6b18a71f2c8f3804e042" title="Start a new SPI transaction.">spi_acquire()</a></code> needs to be called for each new transaction. This function configures the bus with specific parameters (clock, mode) for the duration of that transaction.</li>
-</ol>
-<h1><a class="anchor" id="autotoc_md1714"></a>
-(Low-) Power Implications</h1>
-<p>As SPI buses are shared peripherals and the interfaces implements a transaction based paradigm, we leverage this for the SPI peripherals power management. After calling <a class="el" href="#gada6e52541835bc04dcc6ec62f2c74c3a" title="Basic initialization of the given SPI bus.">spi_init()</a>, the SPI peripheral <b>should</b> be completely powered off (e.g. through peripheral clock gating). It <b>should</b> subsequently only be powered on and enabled in between <a class="el" href="#ga31d89f231c0d6b18a71f2c8f3804e042" title="Start a new SPI transaction.">spi_acquire()</a> and <a class="el" href="#ga9e36100f2b58917366872fca2f9f3bc6" title="Finish an ongoing SPI transaction by releasing the given SPI bus.">spi_release()</a> blocks.</p>
-<p>In case the SPI driver implementation puts the active thread to sleep during data transfer (e.g. when using DMA), the implementation might need to block certain power states during that time. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -295,6 +279,22 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga98f8710acaf25e728848a499df0b2d27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transfer a 16 bit number in big endian byte order.  <br /></td></tr>
 <tr class="separator:ga98f8710acaf25e728848a499df0b2d27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Low-level SPI peripheral driver </p>
+<p>This interface defines an abstraction for using a CPU's hardware SPI units. The interface only supports SPI master mode.</p>
+<p>As SPI buses can have multiple devices connected to them they are to be considered as shared resources. To reflect this, the SPI interface is based on a transaction model. This requires that the bus needs to be acquired before usage and released afterwards, using the <code><a class="el" href="#ga31d89f231c0d6b18a71f2c8f3804e042" title="Start a new SPI transaction.">spi_acquire()</a></code> and the <code><a class="el" href="#ga9e36100f2b58917366872fca2f9f3bc6" title="Finish an ongoing SPI transaction by releasing the given SPI bus.">spi_release()</a></code> functions.</p>
+<p>This interface supports both software and hardware chip select lines. This is reflected by the cpi_cs_t type, which overloads the gpio_t type with platform specific values for defining platform dependent hardware chip select lines.</p>
+<p>Some devices have however very uncommon requirements on the usage and the timings of their chip select line. For those cases this interface allows to manage the chip select line manually from the user code (e.g. by calling gpio_set/clear explicitly) while deactivating the SPI driver internal chip select handling by passing <a class="el" href="atmega__common_2include_2periph__cpu__common_8h.html#a3969ce1e494a72d3c2925b10ddeb4604">GPIO_UNDEF</a> as CS parameter.</p>
+<p>In the time, when the SPI bus is not used, the SPI unit should be in low-power mode to save energy.</p>
+<p>The SPI unit's initialization is split into 3 parts:</p><ol type="1">
+<li><code><a class="el" href="#gada6e52541835bc04dcc6ec62f2c74c3a" title="Basic initialization of the given SPI bus.">spi_init()</a></code> should be called once for each SPI unit defined by a board during system initialization.</li>
+<li><code><a class="el" href="#ga1ed20d7e5b67938bd35139a819a8c982" title="Initialize the given chip select pin.">spi_init_cs()</a></code> should be called during device driver initialization, as each chip select pin/line is used uniquely by a specific device, i.e. chip select lines are no shared resource.</li>
+<li><code><a class="el" href="#ga31d89f231c0d6b18a71f2c8f3804e042" title="Start a new SPI transaction.">spi_acquire()</a></code> needs to be called for each new transaction. This function configures the bus with specific parameters (clock, mode) for the duration of that transaction.</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md1714"></a>
+(Low-) Power Implications</h1>
+<p>As SPI buses are shared peripherals and the interfaces implements a transaction based paradigm, we leverage this for the SPI peripherals power management. After calling <a class="el" href="#gada6e52541835bc04dcc6ec62f2c74c3a" title="Basic initialization of the given SPI bus.">spi_init()</a>, the SPI peripheral <b>should</b> be completely powered off (e.g. through peripheral clock gating). It <b>should</b> subsequently only be powered on and enabled in between <a class="el" href="#ga31d89f231c0d6b18a71f2c8f3804e042" title="Start a new SPI transaction.">spi_acquire()</a> and <a class="el" href="#ga9e36100f2b58917366872fca2f9f3bc6" title="Finish an ongoing SPI transaction by releasing the given SPI bus.">spi_release()</a> blocks.</p>
+<p>In case the SPI driver implementation puts the active thread to sleep during data transfer (e.g. when using DMA), the implementation might need to block certain power states during that time. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="gafb9420809bc7722e41488a090b53eaf9" name="gafb9420809bc7722e41488a090b53eaf9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gafb9420809bc7722e41488a090b53eaf9">&#9670;&#160;</a></span>SPI_DEV</h2>
@@ -1001,7 +1001,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -149,23 +149,7 @@ $(function(){initNavTree('openwsn__radio_8h.html',''); initResizable(true); });
 
 <p>RIOT adaption of the "radio" bsp module definitions.  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>RIOT adaption of the "radio" bsp module definitions. </p>
-<p>The radio adaptation runs in an own thread with the highest priority (<code>THREAD_PRIORITY_MAIN - 4</code>) and maps to RIOT's <code>netdev</code> API.</p>
-<p>Hardware MAC layer features such as CSMA/CA, ACK handling and retransmissions are handled by OpenWSN, so the radio driver must support disabling AUTOACK and CSMA handling by the hardware. Frame filtering must as well be disabled.</p>
-<p>The radio adaptation preloads the buffer so <code>NETOPT_PRELOADING</code> must be supported.</p>
-<p>OpenWSN needs to be notified when a frame reception/transmission stats and when it ends. Therefore radio drivers need to support the following netdev events: </p><pre class="fragment">- `NETDEV_EVENT_RX_STARTED`
-- `NETDEV_EVENT_TX_STARTED`
-- `NETDEV_EVENT_RX_COMPLETE`
-- `NETDEV_EVENT_TX_COMPLETE`
-</pre><p>OpenWSN expects to recover crc information on every received frame even if it will simply drop frames with invalid crc. The stack can function correctly if radio drivers automatically drop frames with an invalid crc (i.e. the stack doesn't get notified about these frames), but it might print the following error if using <code>openwsn_serial</code>:</p>
-<ul>
-<li><code>[IEEE802154E] wdDataDuration overflows while at state 19 in slotOffset 0</code></li>
-</ul>
-<dl class="section author"><dt>Author</dt><dd>Peter Kietzmann <a href="#" onclick="location.href='mai'+'lto:'+'pet'+'er'+'.ki'+'et'+'zma'+'nn'+'@ha'+'w-'+'ham'+'bu'+'rg.'+'de'; return false;">peter<span class="obfuscator">.nosp@m.</span>.kie<span class="obfuscator">.nosp@m.</span>tzman<span class="obfuscator">.nosp@m.</span>n@ha<span class="obfuscator">.nosp@m.</span>w-ham<span class="obfuscator">.nosp@m.</span>burg<span class="obfuscator">.nosp@m.</span>.de</a>, April 2019 </dd>
-<dd>
-Francisco Molina <a href="#" onclick="location.href='mai'+'lto:'+'fra'+'nc'+'ois'+'-x'+'avi'+'er'+'.mo'+'li'+'na@'+'in'+'ria'+'.f'+'r'; return false;">franc<span class="obfuscator">.nosp@m.</span>ois-<span class="obfuscator">.nosp@m.</span>xavie<span class="obfuscator">.nosp@m.</span>r.mo<span class="obfuscator">.nosp@m.</span>lina@<span class="obfuscator">.nosp@m.</span>inri<span class="obfuscator">.nosp@m.</span>a.fr</a> </dd></dl>
-</div><div class="textblock"><code>#include &quot;<a class="el" href="drivers_2include_2net_2netdev_8h.html">net/netdev.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="drivers_2include_2net_2netdev_8h.html">net/netdev.h</a>&quot;</code><br />
 <code>#include &quot;net/ieee802154/radio.h&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for openwsn_radio.h:</div>
@@ -184,7 +168,23 @@ Data Structures</h2></td></tr>
 <tr class="memdesc:aba93a4258ee8e3c5948341ab6920a9d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize OpenWSN radio.  <br /></td></tr>
 <tr class="separator:aba93a4258ee8e3c5948341ab6920a9d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>RIOT adaption of the "radio" bsp module definitions. </p>
+<p>The radio adaptation runs in an own thread with the highest priority (<code>THREAD_PRIORITY_MAIN - 4</code>) and maps to RIOT's <code>netdev</code> API.</p>
+<p>Hardware MAC layer features such as CSMA/CA, ACK handling and retransmissions are handled by OpenWSN, so the radio driver must support disabling AUTOACK and CSMA handling by the hardware. Frame filtering must as well be disabled.</p>
+<p>The radio adaptation preloads the buffer so <code>NETOPT_PRELOADING</code> must be supported.</p>
+<p>OpenWSN needs to be notified when a frame reception/transmission stats and when it ends. Therefore radio drivers need to support the following netdev events: </p><pre class="fragment">- `NETDEV_EVENT_RX_STARTED`
+- `NETDEV_EVENT_TX_STARTED`
+- `NETDEV_EVENT_RX_COMPLETE`
+- `NETDEV_EVENT_TX_COMPLETE`
+</pre><p>OpenWSN expects to recover crc information on every received frame even if it will simply drop frames with invalid crc. The stack can function correctly if radio drivers automatically drop frames with an invalid crc (i.e. the stack doesn't get notified about these frames), but it might print the following error if using <code>openwsn_serial</code>:</p>
+<ul>
+<li><code>[IEEE802154E] wdDataDuration overflows while at state 19 in slotOffset 0</code></li>
+</ul>
+<dl class="section author"><dt>Author</dt><dd>Peter Kietzmann <a href="#" onclick="location.href='mai'+'lto:'+'pet'+'er'+'.ki'+'et'+'zma'+'nn'+'@ha'+'w-'+'ham'+'bu'+'rg.'+'de'; return false;">peter<span class="obfuscator">.nosp@m.</span>.kie<span class="obfuscator">.nosp@m.</span>tzman<span class="obfuscator">.nosp@m.</span>n@ha<span class="obfuscator">.nosp@m.</span>w-ham<span class="obfuscator">.nosp@m.</span>burg<span class="obfuscator">.nosp@m.</span>.de</a>, April 2019 </dd>
+<dd>
+Francisco Molina <a href="#" onclick="location.href='mai'+'lto:'+'fra'+'nc'+'ois'+'-x'+'avi'+'er'+'.mo'+'li'+'na@'+'in'+'ria'+'.f'+'r'; return false;">franc<span class="obfuscator">.nosp@m.</span>ois-<span class="obfuscator">.nosp@m.</span>xavie<span class="obfuscator">.nosp@m.</span>r.mo<span class="obfuscator">.nosp@m.</span>lina@<span class="obfuscator">.nosp@m.</span>inri<span class="obfuscator">.nosp@m.</span>a.fr</a> </dd></dl>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="aba93a4258ee8e3c5948341ab6920a9d7" name="aba93a4258ee8e3c5948341ab6920a9d7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aba93a4258ee8e3c5948341ab6920a9d7">&#9670;&#160;</a></span>openwsn_radio_init()</h2>
 
@@ -221,7 +221,7 @@ Data Structures</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_1b757248df2f96757224e5c7d0d8f21a.html">pkg</a></li><li class="navelem"><a class="el" href="dir_a73ac54a2ba9b7ee7568ad4b08fa0066.html">openwsn</a></li><li class="navelem"><a class="el" href="dir_7b67b52597893d9e58440d8c4c9b78e8.html">include</a></li><li class="navelem"><a class="el" href="openwsn__radio_8h.html">openwsn_radio.h</a></li>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:00 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

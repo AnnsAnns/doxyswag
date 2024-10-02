@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -152,6 +152,78 @@ $(function(){initNavTree('group__core__msg.html',''); initResizable(true); });
 
 <p>Messaging API for inter process communication  
 <a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_2include_2msg_8h.html">msg.h</a></td></tr>
+<tr class="memdesc:core_2include_2msg_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Messaging API for inter process communication. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="msg__bus_8h.html">msg_bus.h</a></td></tr>
+<tr class="memdesc:msg__bus_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Messaging Bus API for inter process message broadcast. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmsg__t.html">msg_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Describes a message object which can be sent between threads.  <a href="structmsg__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:gadba0f57bc141ce3a7ec95fbd4bf26429" id="r_gadba0f57bc141ce3a7ec95fbd4bf26429"><td class="memItemLeft" align="right" valign="top"><a id="gadba0f57bc141ce3a7ec95fbd4bf26429" name="gadba0f57bc141ce3a7ec95fbd4bf26429"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>KERNEL_PID_ISR</b>&#160;&#160;&#160;(<a class="el" href="group__core__sched.html#ga8328107b84cbf548fa267bffd8a0496c">KERNEL_PID_LAST</a> + 1)</td></tr>
+<tr class="memdesc:gadba0f57bc141ce3a7ec95fbd4bf26429"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value of <a class="el" href="structmsg__t.html#a6c7d65a0a86c7b69ed58f9f71a043028" title="PID of sending thread.">msg_t::sender_pid</a> if the sender was an interrupt service routine. <br /></td></tr>
+<tr class="separator:gadba0f57bc141ce3a7ec95fbd4bf26429"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gac5347725c3d203ac72604c0ab8b7d6d8" id="r_gac5347725c3d203ac72604c0ab8b7d6d8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac5347725c3d203ac72604c0ab8b7d6d8">msg_send</a> (<a class="el" href="structmsg__t.html">msg_t</a> *m, <a class="el" href="group__core__sched.html#ga8375139300d7cbf23bd8bd89ddddbe84">kernel_pid_t</a> target_pid)</td></tr>
+<tr class="memdesc:gac5347725c3d203ac72604c0ab8b7d6d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a message (blocking).  <br /></td></tr>
+<tr class="separator:gac5347725c3d203ac72604c0ab8b7d6d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga99264bd4f263fa2b478308c1f7983c10" id="r_ga99264bd4f263fa2b478308c1f7983c10"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga99264bd4f263fa2b478308c1f7983c10">msg_try_send</a> (<a class="el" href="structmsg__t.html">msg_t</a> *m, <a class="el" href="group__core__sched.html#ga8375139300d7cbf23bd8bd89ddddbe84">kernel_pid_t</a> target_pid)</td></tr>
+<tr class="memdesc:ga99264bd4f263fa2b478308c1f7983c10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a message (non-blocking).  <br /></td></tr>
+<tr class="separator:ga99264bd4f263fa2b478308c1f7983c10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8711110548c90fe5ca82215e89bb83dd" id="r_ga8711110548c90fe5ca82215e89bb83dd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8711110548c90fe5ca82215e89bb83dd">msg_send_to_self</a> (<a class="el" href="structmsg__t.html">msg_t</a> *m)</td></tr>
+<tr class="memdesc:ga8711110548c90fe5ca82215e89bb83dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a message to the current thread.  <br /></td></tr>
+<tr class="separator:ga8711110548c90fe5ca82215e89bb83dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2762c096056c5eac7ffe38c8727e033a" id="r_ga2762c096056c5eac7ffe38c8727e033a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2762c096056c5eac7ffe38c8727e033a">msg_send_int</a> (<a class="el" href="structmsg__t.html">msg_t</a> *m, <a class="el" href="group__core__sched.html#ga8375139300d7cbf23bd8bd89ddddbe84">kernel_pid_t</a> target_pid)</td></tr>
+<tr class="memdesc:ga2762c096056c5eac7ffe38c8727e033a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send message from interrupt.  <br /></td></tr>
+<tr class="separator:ga2762c096056c5eac7ffe38c8727e033a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga77476ad20575d236516ec0acb0bdabd1" id="r_ga77476ad20575d236516ec0acb0bdabd1"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga77476ad20575d236516ec0acb0bdabd1">msg_sent_by_int</a> (const <a class="el" href="structmsg__t.html">msg_t</a> *m)</td></tr>
+<tr class="memdesc:ga77476ad20575d236516ec0acb0bdabd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test if the message was sent inside an ISR.  <br /></td></tr>
+<tr class="separator:ga77476ad20575d236516ec0acb0bdabd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae3e05f08bd71d6f65dc727624c4d5f7a" id="r_gae3e05f08bd71d6f65dc727624c4d5f7a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae3e05f08bd71d6f65dc727624c4d5f7a">msg_receive</a> (<a class="el" href="structmsg__t.html">msg_t</a> *m)</td></tr>
+<tr class="memdesc:gae3e05f08bd71d6f65dc727624c4d5f7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive a message.  <br /></td></tr>
+<tr class="separator:gae3e05f08bd71d6f65dc727624c4d5f7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0a5e88bf7d9cadb41e5acf4deb300061" id="r_ga0a5e88bf7d9cadb41e5acf4deb300061"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0a5e88bf7d9cadb41e5acf4deb300061">msg_try_receive</a> (<a class="el" href="structmsg__t.html">msg_t</a> *m)</td></tr>
+<tr class="memdesc:ga0a5e88bf7d9cadb41e5acf4deb300061"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to receive a message.  <br /></td></tr>
+<tr class="separator:ga0a5e88bf7d9cadb41e5acf4deb300061"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga01aee21f8554591c7933d4ba05cfe85b" id="r_ga01aee21f8554591c7933d4ba05cfe85b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga01aee21f8554591c7933d4ba05cfe85b">msg_send_receive</a> (<a class="el" href="structmsg__t.html">msg_t</a> *m, <a class="el" href="structmsg__t.html">msg_t</a> *reply, <a class="el" href="group__core__sched.html#ga8375139300d7cbf23bd8bd89ddddbe84">kernel_pid_t</a> target_pid)</td></tr>
+<tr class="memdesc:ga01aee21f8554591c7933d4ba05cfe85b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a message, block until reply received.  <br /></td></tr>
+<tr class="separator:ga01aee21f8554591c7933d4ba05cfe85b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2e7b09dc269eb4847f6e08b9900ffda9" id="r_ga2e7b09dc269eb4847f6e08b9900ffda9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2e7b09dc269eb4847f6e08b9900ffda9">msg_reply</a> (<a class="el" href="structmsg__t.html">msg_t</a> *m, <a class="el" href="structmsg__t.html">msg_t</a> *reply)</td></tr>
+<tr class="memdesc:ga2e7b09dc269eb4847f6e08b9900ffda9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replies to a message.  <br /></td></tr>
+<tr class="separator:ga2e7b09dc269eb4847f6e08b9900ffda9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga09edaaa9af7fca0a049459038b087583" id="r_ga09edaaa9af7fca0a049459038b087583"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga09edaaa9af7fca0a049459038b087583">msg_reply_int</a> (<a class="el" href="structmsg__t.html">msg_t</a> *m, <a class="el" href="structmsg__t.html">msg_t</a> *reply)</td></tr>
+<tr class="memdesc:ga09edaaa9af7fca0a049459038b087583"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replies to a message from interrupt.  <br /></td></tr>
+<tr class="separator:ga09edaaa9af7fca0a049459038b087583"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaef6ea5d2ddb211eb61a51acd3f9d7507" id="r_gaef6ea5d2ddb211eb61a51acd3f9d7507"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaef6ea5d2ddb211eb61a51acd3f9d7507">msg_avail_thread</a> (<a class="el" href="group__core__sched.html#ga8375139300d7cbf23bd8bd89ddddbe84">kernel_pid_t</a> pid)</td></tr>
+<tr class="memdesc:gaef6ea5d2ddb211eb61a51acd3f9d7507"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check how many messages are available (waiting) in the message queue of a specific thread.  <br /></td></tr>
+<tr class="separator:gaef6ea5d2ddb211eb61a51acd3f9d7507"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4b99e9912e2cd5c85afbb72dedb77ca3" id="r_ga4b99e9912e2cd5c85afbb72dedb77ca3"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4b99e9912e2cd5c85afbb72dedb77ca3">msg_avail</a> (void)</td></tr>
+<tr class="memdesc:ga4b99e9912e2cd5c85afbb72dedb77ca3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check how many messages are available (waiting) in the message queue.  <br /></td></tr>
+<tr class="separator:ga4b99e9912e2cd5c85afbb72dedb77ca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga489c0d4da83324cd92c99db0a7682407" id="r_ga489c0d4da83324cd92c99db0a7682407"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga489c0d4da83324cd92c99db0a7682407">msg_queue_capacity</a> (<a class="el" href="group__core__sched.html#ga8375139300d7cbf23bd8bd89ddddbe84">kernel_pid_t</a> pid)</td></tr>
+<tr class="memdesc:ga489c0d4da83324cd92c99db0a7682407"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get maximum capacity of a thread's queue length.  <br /></td></tr>
+<tr class="separator:ga489c0d4da83324cd92c99db0a7682407"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga480e6f32c8ab18579b62a890f3fda2cd" id="r_ga480e6f32c8ab18579b62a890f3fda2cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga480e6f32c8ab18579b62a890f3fda2cd">msg_init_queue</a> (<a class="el" href="structmsg__t.html">msg_t</a> *array, int num)</td></tr>
+<tr class="memdesc:ga480e6f32c8ab18579b62a890f3fda2cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the current thread's message queue.  <br /></td></tr>
+<tr class="separator:ga480e6f32c8ab18579b62a890f3fda2cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga43b46e5167cdf2b2324920b59dae81a0" id="r_ga43b46e5167cdf2b2324920b59dae81a0"><td class="memItemLeft" align="right" valign="top"><a id="ga43b46e5167cdf2b2324920b59dae81a0" name="ga43b46e5167cdf2b2324920b59dae81a0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>msg_queue_print</b> (void)</td></tr>
+<tr class="memdesc:ga43b46e5167cdf2b2324920b59dae81a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the message queue of the current thread. <br /></td></tr>
+<tr class="separator:ga43b46e5167cdf2b2324920b59dae81a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Messaging API for inter process communication </p>
 <h1><a class="anchor" id="autotoc_md0"></a>
@@ -274,78 +346,6 @@ Asynchronous IPC</h2>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md7"></a>
 Timing &amp; messages</h1>
 <p>Timing out the reception of a message or sending messages at a certain time is out of scope for the basic IPC provided by the kernel. See the <a class="el" href="group__sys__xtimer.html">xtimer</a> module on information for these functionalities. </p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_2include_2msg_8h.html">msg.h</a></td></tr>
-<tr class="memdesc:core_2include_2msg_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Messaging API for inter process communication. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="msg__bus_8h.html">msg_bus.h</a></td></tr>
-<tr class="memdesc:msg__bus_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Messaging Bus API for inter process message broadcast. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmsg__t.html">msg_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Describes a message object which can be sent between threads.  <a href="structmsg__t.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:gadba0f57bc141ce3a7ec95fbd4bf26429" id="r_gadba0f57bc141ce3a7ec95fbd4bf26429"><td class="memItemLeft" align="right" valign="top"><a id="gadba0f57bc141ce3a7ec95fbd4bf26429" name="gadba0f57bc141ce3a7ec95fbd4bf26429"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>KERNEL_PID_ISR</b>&#160;&#160;&#160;(<a class="el" href="group__core__sched.html#ga8328107b84cbf548fa267bffd8a0496c">KERNEL_PID_LAST</a> + 1)</td></tr>
-<tr class="memdesc:gadba0f57bc141ce3a7ec95fbd4bf26429"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value of <a class="el" href="structmsg__t.html#a6c7d65a0a86c7b69ed58f9f71a043028" title="PID of sending thread.">msg_t::sender_pid</a> if the sender was an interrupt service routine. <br /></td></tr>
-<tr class="separator:gadba0f57bc141ce3a7ec95fbd4bf26429"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:gac5347725c3d203ac72604c0ab8b7d6d8" id="r_gac5347725c3d203ac72604c0ab8b7d6d8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac5347725c3d203ac72604c0ab8b7d6d8">msg_send</a> (<a class="el" href="structmsg__t.html">msg_t</a> *m, <a class="el" href="group__core__sched.html#ga8375139300d7cbf23bd8bd89ddddbe84">kernel_pid_t</a> target_pid)</td></tr>
-<tr class="memdesc:gac5347725c3d203ac72604c0ab8b7d6d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a message (blocking).  <br /></td></tr>
-<tr class="separator:gac5347725c3d203ac72604c0ab8b7d6d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga99264bd4f263fa2b478308c1f7983c10" id="r_ga99264bd4f263fa2b478308c1f7983c10"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga99264bd4f263fa2b478308c1f7983c10">msg_try_send</a> (<a class="el" href="structmsg__t.html">msg_t</a> *m, <a class="el" href="group__core__sched.html#ga8375139300d7cbf23bd8bd89ddddbe84">kernel_pid_t</a> target_pid)</td></tr>
-<tr class="memdesc:ga99264bd4f263fa2b478308c1f7983c10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a message (non-blocking).  <br /></td></tr>
-<tr class="separator:ga99264bd4f263fa2b478308c1f7983c10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8711110548c90fe5ca82215e89bb83dd" id="r_ga8711110548c90fe5ca82215e89bb83dd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8711110548c90fe5ca82215e89bb83dd">msg_send_to_self</a> (<a class="el" href="structmsg__t.html">msg_t</a> *m)</td></tr>
-<tr class="memdesc:ga8711110548c90fe5ca82215e89bb83dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a message to the current thread.  <br /></td></tr>
-<tr class="separator:ga8711110548c90fe5ca82215e89bb83dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2762c096056c5eac7ffe38c8727e033a" id="r_ga2762c096056c5eac7ffe38c8727e033a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2762c096056c5eac7ffe38c8727e033a">msg_send_int</a> (<a class="el" href="structmsg__t.html">msg_t</a> *m, <a class="el" href="group__core__sched.html#ga8375139300d7cbf23bd8bd89ddddbe84">kernel_pid_t</a> target_pid)</td></tr>
-<tr class="memdesc:ga2762c096056c5eac7ffe38c8727e033a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send message from interrupt.  <br /></td></tr>
-<tr class="separator:ga2762c096056c5eac7ffe38c8727e033a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga77476ad20575d236516ec0acb0bdabd1" id="r_ga77476ad20575d236516ec0acb0bdabd1"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga77476ad20575d236516ec0acb0bdabd1">msg_sent_by_int</a> (const <a class="el" href="structmsg__t.html">msg_t</a> *m)</td></tr>
-<tr class="memdesc:ga77476ad20575d236516ec0acb0bdabd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test if the message was sent inside an ISR.  <br /></td></tr>
-<tr class="separator:ga77476ad20575d236516ec0acb0bdabd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae3e05f08bd71d6f65dc727624c4d5f7a" id="r_gae3e05f08bd71d6f65dc727624c4d5f7a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae3e05f08bd71d6f65dc727624c4d5f7a">msg_receive</a> (<a class="el" href="structmsg__t.html">msg_t</a> *m)</td></tr>
-<tr class="memdesc:gae3e05f08bd71d6f65dc727624c4d5f7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive a message.  <br /></td></tr>
-<tr class="separator:gae3e05f08bd71d6f65dc727624c4d5f7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0a5e88bf7d9cadb41e5acf4deb300061" id="r_ga0a5e88bf7d9cadb41e5acf4deb300061"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0a5e88bf7d9cadb41e5acf4deb300061">msg_try_receive</a> (<a class="el" href="structmsg__t.html">msg_t</a> *m)</td></tr>
-<tr class="memdesc:ga0a5e88bf7d9cadb41e5acf4deb300061"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to receive a message.  <br /></td></tr>
-<tr class="separator:ga0a5e88bf7d9cadb41e5acf4deb300061"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga01aee21f8554591c7933d4ba05cfe85b" id="r_ga01aee21f8554591c7933d4ba05cfe85b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga01aee21f8554591c7933d4ba05cfe85b">msg_send_receive</a> (<a class="el" href="structmsg__t.html">msg_t</a> *m, <a class="el" href="structmsg__t.html">msg_t</a> *reply, <a class="el" href="group__core__sched.html#ga8375139300d7cbf23bd8bd89ddddbe84">kernel_pid_t</a> target_pid)</td></tr>
-<tr class="memdesc:ga01aee21f8554591c7933d4ba05cfe85b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a message, block until reply received.  <br /></td></tr>
-<tr class="separator:ga01aee21f8554591c7933d4ba05cfe85b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2e7b09dc269eb4847f6e08b9900ffda9" id="r_ga2e7b09dc269eb4847f6e08b9900ffda9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2e7b09dc269eb4847f6e08b9900ffda9">msg_reply</a> (<a class="el" href="structmsg__t.html">msg_t</a> *m, <a class="el" href="structmsg__t.html">msg_t</a> *reply)</td></tr>
-<tr class="memdesc:ga2e7b09dc269eb4847f6e08b9900ffda9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replies to a message.  <br /></td></tr>
-<tr class="separator:ga2e7b09dc269eb4847f6e08b9900ffda9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga09edaaa9af7fca0a049459038b087583" id="r_ga09edaaa9af7fca0a049459038b087583"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga09edaaa9af7fca0a049459038b087583">msg_reply_int</a> (<a class="el" href="structmsg__t.html">msg_t</a> *m, <a class="el" href="structmsg__t.html">msg_t</a> *reply)</td></tr>
-<tr class="memdesc:ga09edaaa9af7fca0a049459038b087583"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replies to a message from interrupt.  <br /></td></tr>
-<tr class="separator:ga09edaaa9af7fca0a049459038b087583"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaef6ea5d2ddb211eb61a51acd3f9d7507" id="r_gaef6ea5d2ddb211eb61a51acd3f9d7507"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaef6ea5d2ddb211eb61a51acd3f9d7507">msg_avail_thread</a> (<a class="el" href="group__core__sched.html#ga8375139300d7cbf23bd8bd89ddddbe84">kernel_pid_t</a> pid)</td></tr>
-<tr class="memdesc:gaef6ea5d2ddb211eb61a51acd3f9d7507"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check how many messages are available (waiting) in the message queue of a specific thread.  <br /></td></tr>
-<tr class="separator:gaef6ea5d2ddb211eb61a51acd3f9d7507"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4b99e9912e2cd5c85afbb72dedb77ca3" id="r_ga4b99e9912e2cd5c85afbb72dedb77ca3"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4b99e9912e2cd5c85afbb72dedb77ca3">msg_avail</a> (void)</td></tr>
-<tr class="memdesc:ga4b99e9912e2cd5c85afbb72dedb77ca3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check how many messages are available (waiting) in the message queue.  <br /></td></tr>
-<tr class="separator:ga4b99e9912e2cd5c85afbb72dedb77ca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga489c0d4da83324cd92c99db0a7682407" id="r_ga489c0d4da83324cd92c99db0a7682407"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga489c0d4da83324cd92c99db0a7682407">msg_queue_capacity</a> (<a class="el" href="group__core__sched.html#ga8375139300d7cbf23bd8bd89ddddbe84">kernel_pid_t</a> pid)</td></tr>
-<tr class="memdesc:ga489c0d4da83324cd92c99db0a7682407"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get maximum capacity of a thread's queue length.  <br /></td></tr>
-<tr class="separator:ga489c0d4da83324cd92c99db0a7682407"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga480e6f32c8ab18579b62a890f3fda2cd" id="r_ga480e6f32c8ab18579b62a890f3fda2cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga480e6f32c8ab18579b62a890f3fda2cd">msg_init_queue</a> (<a class="el" href="structmsg__t.html">msg_t</a> *array, int num)</td></tr>
-<tr class="memdesc:ga480e6f32c8ab18579b62a890f3fda2cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the current thread's message queue.  <br /></td></tr>
-<tr class="separator:ga480e6f32c8ab18579b62a890f3fda2cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga43b46e5167cdf2b2324920b59dae81a0" id="r_ga43b46e5167cdf2b2324920b59dae81a0"><td class="memItemLeft" align="right" valign="top"><a id="ga43b46e5167cdf2b2324920b59dae81a0" name="ga43b46e5167cdf2b2324920b59dae81a0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>msg_queue_print</b> (void)</td></tr>
-<tr class="memdesc:ga43b46e5167cdf2b2324920b59dae81a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the message queue of the current thread. <br /></td></tr>
-<tr class="separator:ga43b46e5167cdf2b2324920b59dae81a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ga4b99e9912e2cd5c85afbb72dedb77ca3" name="ga4b99e9912e2cd5c85afbb72dedb77ca3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga4b99e9912e2cd5c85afbb72dedb77ca3">&#9670;&#160;</a></span>msg_avail()</h2>
@@ -799,7 +799,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>msg_queue_print</b> (
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

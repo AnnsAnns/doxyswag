@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -149,12 +149,7 @@ $(function(){initNavTree('structapds99xx__int__config__t.html',''); initResizabl
 
 <p>Interrupt configuration.  
  <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Interrupt configuration. </p>
-<p>The interrupt enable flags <a class="el" href="#aa6714b8f4009b680889293431d507b8b" title="ALS interrupt enabled.">apds99xx_int_config_t::als_int_en</a> and <a class="el" href="#aa74b462cc086784ea87a19a803852626" title="Proximity interrupt enabled.">apds99xx_int_config_t::prx_int_en</a> control whether ALS and proximity sensor interrupts are enable.</p>
-<p>The persistence values <a class="el" href="#ab789227157c8b3af125bafc9c22e0900" title="Number of consecutive ALS values that have to be outside the thresholds to generate an interrupt:">apds99xx_int_config_t::als_pers</a> and <a class="el" href="#a43a89e44fc11f12ae109e938b6ffb13f" title="Number of consecutive proximity values that have to be outside the thresholds to generate an interrup...">apds99xx_int_config_t::prx_pers</a> specify how many ALS or proximity values have to be outside of the thresholds defined by <a class="el" href="#a67f8a9a7bc86b4ebb914beaae92e46f6" title="Low threshold value for ALS interrupts.">apds99xx_int_config_t::als_thresh_low</a> and <a class="el" href="#a02fe32997aebf312fe14755269631f71" title="High threshold value for ALS interrupts.">apds99xx_int_config_t::als_thresh_high</a> or <a class="el" href="#a8c5ea7d81ee315c7b48b0b57d7881b90" title="Low threshold for proximity values (only the low byte is used for APDS9960)">apds99xx_int_config_t::prx_thresh_low</a> and <a class="el" href="#af845121e3853da30a9020a9bde4d4274" title="High threshold for proximity values (only the low byte is used for APDS9960)">apds99xx_int_config_t::prx_thresh_high</a>.</p>
-<dl class="section note"><dt>Note</dt><dd>If the persistence values are 0, an interrupt is generated in each cycle at the end of the corresponding measurement step, regardless of the values and the defined threshold. The corresponding interrupt is thus used as a data-ready interrupt. </dd></dl>
-</div>
+
 <p><code>#include &lt;apds99xx.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -190,7 +185,12 @@ uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>prx_thresh_high</
 <tr class="memdesc:af845121e3853da30a9020a9bde4d4274"><td class="mdescLeft">&#160;</td><td class="mdescRight">High threshold for proximity values (only the low byte is used for APDS9960) <br /></td></tr>
 <tr class="separator:af845121e3853da30a9020a9bde4d4274"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Field Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Interrupt configuration. </p>
+<p>The interrupt enable flags <a class="el" href="#aa6714b8f4009b680889293431d507b8b" title="ALS interrupt enabled.">apds99xx_int_config_t::als_int_en</a> and <a class="el" href="#aa74b462cc086784ea87a19a803852626" title="Proximity interrupt enabled.">apds99xx_int_config_t::prx_int_en</a> control whether ALS and proximity sensor interrupts are enable.</p>
+<p>The persistence values <a class="el" href="#ab789227157c8b3af125bafc9c22e0900" title="Number of consecutive ALS values that have to be outside the thresholds to generate an interrupt:">apds99xx_int_config_t::als_pers</a> and <a class="el" href="#a43a89e44fc11f12ae109e938b6ffb13f" title="Number of consecutive proximity values that have to be outside the thresholds to generate an interrup...">apds99xx_int_config_t::prx_pers</a> specify how many ALS or proximity values have to be outside of the thresholds defined by <a class="el" href="#a67f8a9a7bc86b4ebb914beaae92e46f6" title="Low threshold value for ALS interrupts.">apds99xx_int_config_t::als_thresh_low</a> and <a class="el" href="#a02fe32997aebf312fe14755269631f71" title="High threshold value for ALS interrupts.">apds99xx_int_config_t::als_thresh_high</a> or <a class="el" href="#a8c5ea7d81ee315c7b48b0b57d7881b90" title="Low threshold for proximity values (only the low byte is used for APDS9960)">apds99xx_int_config_t::prx_thresh_low</a> and <a class="el" href="#af845121e3853da30a9020a9bde4d4274" title="High threshold for proximity values (only the low byte is used for APDS9960)">apds99xx_int_config_t::prx_thresh_high</a>.</p>
+<dl class="section note"><dt>Note</dt><dd>If the persistence values are 0, an interrupt is generated in each cycle at the end of the corresponding measurement step, regardless of the values and the defined threshold. The corresponding interrupt is thus used as a data-ready interrupt. </dd></dl>
+</div><h2 class="groupheader">Field Documentation</h2>
 <a id="ab789227157c8b3af125bafc9c22e0900" name="ab789227157c8b3af125bafc9c22e0900"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab789227157c8b3af125bafc9c22e0900">&#9670;&#160;</a></span>als_pers</h2>
 
@@ -252,7 +252,7 @@ uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>prx_thresh_high</
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structapds99xx__int__config__t.html">apds99xx_int_config_t</a></li>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:32 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

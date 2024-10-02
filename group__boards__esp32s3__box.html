@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -149,6 +149,19 @@ $(function(){initNavTree('group__boards__esp32s3__box.html',''); initResizable(t
 
 <p>Support for the ESP32-S3-Box  
 <a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="esp32s3-box_2include_2board_8h.html">board.h</a></td></tr>
+<tr class="memdesc:esp32s3-box_2include_2board_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Board definitions for ESP32-S3-Box boards. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="esp32s3-box_2include_2gpio__params_8h.html">gpio_params.h</a></td></tr>
+<tr class="memdesc:esp32s3-box_2include_2gpio__params_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Board specific configuration of direct mapped GPIOs. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boards_2esp32s3-box_2include_2periph__conf_8h.html">periph_conf.h</a></td></tr>
+<tr class="memdesc:boards_2esp32s3-box_2include_2periph__conf_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Peripheral configurations for ESP32-S3-Box boards. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the ESP32-S3-Box </p>
 <dl class="section author"><dt>Author</dt><dd>Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span class="obfuscator">.nosp@m.</span>@sch<span class="obfuscator">.nosp@m.</span>orcht<span class="obfuscator">.nosp@m.</span>.net</a></dd></dl>
@@ -279,19 +292,6 @@ Flashing the Device</h2>
 </div><!-- fragment --><p> This can happen either if RIOT is not yet installed or if the USB port was previously used with the USB OTG controller, for example with USBUS or tinyUSB. In this case, restart the ESP32-S3-Box manually into download mode by pressing and releasing the RESET button while holding down the BOOT button. In download mode, the USB Serial/JTAG interface is always available.</p>
 <dl class="section note"><dt>Note</dt><dd>If the USB port was previously used with the USB OTG controller, an automatic restart of the ESP32-S3 with the flashed application is not possible. In this case the ESP32-S3-Box must be reset manually using the RESET button. In all other cases the ESP32-S3 automatically restarts with the flashed application.</dd></dl>
 <p><a class="el" href="#esp32s3_box_toc">Back to table of contents</a> </p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="esp32s3-box_2include_2board_8h.html">board.h</a></td></tr>
-<tr class="memdesc:esp32s3-box_2include_2board_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Board definitions for ESP32-S3-Box boards. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="esp32s3-box_2include_2gpio__params_8h.html">gpio_params.h</a></td></tr>
-<tr class="memdesc:esp32s3-box_2include_2gpio__params_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Board specific configuration of direct mapped GPIOs. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boards_2esp32s3-box_2include_2periph__conf_8h.html">periph_conf.h</a></td></tr>
-<tr class="memdesc:boards_2esp32s3-box_2include_2periph__conf_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Peripheral configurations for ESP32-S3-Box boards. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
@@ -299,7 +299,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

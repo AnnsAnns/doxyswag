@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -155,52 +155,6 @@ $(function(){initNavTree('group__drivers__motor.html',''); initResizable(true); 
 
 <p>High-level driver for DC motors  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>High-level driver for DC motors </p>
-<p>This API aims to handle DC motor analogic driver. Driver boards using serial communication protocols (I2C, UART, etc...) are not in the scope of this driver. Mainly designed for H-bridge, it could also drive some brushless drivers.</p>
-<p>Some H-bridge driver circuits handle several motors. Maximum motor number by H-bridge is set to 2 with CONFIG_MOTOR_DRIVER_MAX macro. This macro can be overridden to support H-bridge drivers with more outputs. However, CONFIG_MOTOR_DRIVER_MAX should not exceed PWM channels number.</p>
-<p>motor_driver_t structure represents an H-bridge. As several H-bridge can share a same PWM device, motor_driver_t can represent a group of H-bridge.</p>
-<p>Most of H-bridge boards uses the following I/Os for each motor :</p><ul>
-<li>Enable/disable GPIO</li>
-<li>One or two direction GPIOs</li>
-<li>A PWM signal</li>
-</ul>
-<pre class="fragment">*
-* Each motor direction is controlled (assuming it is enabled) according to
-* the following truth table :
-*  __________________________
-* | DIR0 | DIR1 |  BEHAVIOR  |
-* |--------------------------|
-* |  0   |  0   | BRAKE LOW  |
-* |  0   |  1   |     CW     |
-* |  1   |  0   |     CCW    |
-* |  1   |  1   | BRAKE HIGH |
-* |______|______|____________|
-*
-* In case of single GPIO for direction, only DIR0 is used without brake
-* capability :
-*  ___________________
-* | DIR0 |  BEHAVIOR  |
-* |-------------------|
-* |   0  |     CW     |
-* |   1  |     CCW    |
-* |______|____________|
-*
-* Some boards add a brake pin with single direction GPIO :
-*  ________________________
-* | DIR | BRAKE | BEHAVIOR |
-* |------------------------|
-* |  0  |   0   |    CW    |
-* |  0  |   1   |   BRAKE  |
-* |  1  |   0   |    CCW   |
-* |  1  |   1   |   BRAKE  |
-* |_____|_______|__________|
-*
-* </pre><p>From this truth tables we can extract two direction states :</p><ul>
-<li>CW (ClockWise)</li>
-<li>CCW (Counter ClockWise) and a brake capability</li>
-</ul>
-<p>BRAKE LOW is functionally the same than BRAKE HIGH but some H-bridge only brake on BRAKE HIGH due to hardware. In case of single direction GPIO, there is no BRAKE, PWM duty cycle is set to 0. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -276,6 +230,52 @@ Functions</h2></td></tr>
 <tr class="memdesc:gac754fc14404b505f664234c355ea3a90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable a motor of a given motor driver.  <br /></td></tr>
 <tr class="separator:gac754fc14404b505f664234c355ea3a90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>High-level driver for DC motors </p>
+<p>This API aims to handle DC motor analogic driver. Driver boards using serial communication protocols (I2C, UART, etc...) are not in the scope of this driver. Mainly designed for H-bridge, it could also drive some brushless drivers.</p>
+<p>Some H-bridge driver circuits handle several motors. Maximum motor number by H-bridge is set to 2 with CONFIG_MOTOR_DRIVER_MAX macro. This macro can be overridden to support H-bridge drivers with more outputs. However, CONFIG_MOTOR_DRIVER_MAX should not exceed PWM channels number.</p>
+<p>motor_driver_t structure represents an H-bridge. As several H-bridge can share a same PWM device, motor_driver_t can represent a group of H-bridge.</p>
+<p>Most of H-bridge boards uses the following I/Os for each motor :</p><ul>
+<li>Enable/disable GPIO</li>
+<li>One or two direction GPIOs</li>
+<li>A PWM signal</li>
+</ul>
+<pre class="fragment">*
+* Each motor direction is controlled (assuming it is enabled) according to
+* the following truth table :
+*  __________________________
+* | DIR0 | DIR1 |  BEHAVIOR  |
+* |--------------------------|
+* |  0   |  0   | BRAKE LOW  |
+* |  0   |  1   |     CW     |
+* |  1   |  0   |     CCW    |
+* |  1   |  1   | BRAKE HIGH |
+* |______|______|____________|
+*
+* In case of single GPIO for direction, only DIR0 is used without brake
+* capability :
+*  ___________________
+* | DIR0 |  BEHAVIOR  |
+* |-------------------|
+* |   0  |     CW     |
+* |   1  |     CCW    |
+* |______|____________|
+*
+* Some boards add a brake pin with single direction GPIO :
+*  ________________________
+* | DIR | BRAKE | BEHAVIOR |
+* |------------------------|
+* |  0  |   0   |    CW    |
+* |  0  |   1   |   BRAKE  |
+* |  1  |   0   |    CCW   |
+* |  1  |   1   |   BRAKE  |
+* |_____|_______|__________|
+*
+* </pre><p>From this truth tables we can extract two direction states :</p><ul>
+<li>CW (ClockWise)</li>
+<li>CCW (Counter ClockWise) and a brake capability</li>
+</ul>
+<p>BRAKE LOW is functionally the same than BRAKE HIGH but some H-bridge only brake on BRAKE HIGH due to hardware. In case of single direction GPIO, there is no BRAKE, PWM duty cycle is set to 0. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="gab6862a1456bc2056093a27c5c2e64ef4" name="gab6862a1456bc2056093a27c5c2e64ef4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gab6862a1456bc2056093a27c5c2e64ef4">&#9670;&#160;</a></span>MOTOR_DRIVER_DEV</h2>
@@ -554,7 +554,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

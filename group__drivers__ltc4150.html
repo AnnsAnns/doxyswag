@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -154,20 +154,6 @@ $(function(){initNavTree('group__drivers__ltc4150.html',''); initResizable(true)
 
 <p>Driver for the Linear Tech LTC4150 Coulomb Counter (a.k.a.  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Driver for the Linear Tech LTC4150 Coulomb Counter (a.k.a. </p>
-<p>battery gauge sensor or power consumption sensor)</p>
-<h1><a class="anchor" id="autotoc_md1667"></a>
-Wiring the LTC4150</h1>
-<p>Hint: M Grusin thankfully created an <a href="https://cdn.sparkfun.com/datasheets/BreakoutBoards/LTC4150_BOB_v10.pdf">open hardware breakout board</a>. As a result, virtually all LTC4150 breakout boards are using this schematic. Whenever this documentation refers to a breakout board, this open hardware board is meant. Of course, this driver works with the "bare" LTC4150 as well.</p>
-<p>Please note that this driver works interrupt driven and does not clear the signal. Thus, the /CLR and /INT pins on the LTC4150 need to be connected (in case of the breakout board: close solder jumper SJ1), so that the signal is automatically cleared.</p>
-<p>Hint: The breakout board uses external pull up resistors on /INT, POL and /SHDN. Therefore /SHDN can be left unconnected and no internal pull ups are required for /INT and POL. In case your board uses 3.3V logic the solder jumpers SJ2 and SJ3 have to be closed, in case of 5V they have to remain open. Connect the VIO pin to the logic level, GND to ground, IN+ and IN- to the power supply and use OUT+ and OUT- to power your board.</p>
-<p>In the easiest case only the /INT pin needs to be connected to a GPIO, and (in case of external pull ups) /SHDN and POL can be left unconnected. The GPIO /INT is connected to support for interrupts, /SHDN and POL (if connected) do not require interrupt support.</p>
-<p>In case a battery is used the POL pin connected to another GPIO. This allows to distinguish between charge drawn from the battery and charge transferred into the battery (used to load it).</p>
-<p>In case support to power off the LTC4150 is desired, the /SHDN pin needs to be connected to a third GPIO.</p>
-<h1><a class="anchor" id="autotoc_md1668"></a>
-Things to keep in mind</h1>
-<p>The LTC4150 creates pulses with a frequency depending on the current drawn. Thus, more interrupts need to be handled when more current is drawn, which in turn increases system load (and power consumption). The interrupt service routing is quite short and even when used outside of specification less than 20 ticks per second will occur. Hence, this effect should hopefully be negligible. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -245,6 +231,20 @@ const <a class="el" href="structltc4150__recorder__t.html">ltc4150_recorder_t</a
 <tr class="memdesc:ga2a4b5144157383f5a4ab76251130ec29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Records the charge transferred within the last minute using. <br /></td></tr>
 <tr class="separator:ga2a4b5144157383f5a4ab76251130ec29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Driver for the Linear Tech LTC4150 Coulomb Counter (a.k.a. </p>
+<p>battery gauge sensor or power consumption sensor)</p>
+<h1><a class="anchor" id="autotoc_md1667"></a>
+Wiring the LTC4150</h1>
+<p>Hint: M Grusin thankfully created an <a href="https://cdn.sparkfun.com/datasheets/BreakoutBoards/LTC4150_BOB_v10.pdf">open hardware breakout board</a>. As a result, virtually all LTC4150 breakout boards are using this schematic. Whenever this documentation refers to a breakout board, this open hardware board is meant. Of course, this driver works with the "bare" LTC4150 as well.</p>
+<p>Please note that this driver works interrupt driven and does not clear the signal. Thus, the /CLR and /INT pins on the LTC4150 need to be connected (in case of the breakout board: close solder jumper SJ1), so that the signal is automatically cleared.</p>
+<p>Hint: The breakout board uses external pull up resistors on /INT, POL and /SHDN. Therefore /SHDN can be left unconnected and no internal pull ups are required for /INT and POL. In case your board uses 3.3V logic the solder jumpers SJ2 and SJ3 have to be closed, in case of 5V they have to remain open. Connect the VIO pin to the logic level, GND to ground, IN+ and IN- to the power supply and use OUT+ and OUT- to power your board.</p>
+<p>In the easiest case only the /INT pin needs to be connected to a GPIO, and (in case of external pull ups) /SHDN and POL can be left unconnected. The GPIO /INT is connected to support for interrupts, /SHDN and POL (if connected) do not require interrupt support.</p>
+<p>In case a battery is used the POL pin connected to another GPIO. This allows to distinguish between charge drawn from the battery and charge transferred into the battery (used to load it).</p>
+<p>In case support to power off the LTC4150 is desired, the /SHDN pin needs to be connected to a third GPIO.</p>
+<h1><a class="anchor" id="autotoc_md1668"></a>
+Things to keep in mind</h1>
+<p>The LTC4150 creates pulses with a frequency depending on the current drawn. Thus, more interrupts need to be handled when more current is drawn, which in turn increases system load (and power consumption). The interrupt service routing is quite short and even when used outside of specification less than 20 ticks per second will occur. Hence, this effect should hopefully be negligible. </p>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="ga4eeeead548222804e141df8f1b205ca8" name="ga4eeeead548222804e141df8f1b205ca8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga4eeeead548222804e141df8f1b205ca8">&#9670;&#160;</a></span>anonymous enum</h2>
@@ -586,7 +586,7 @@ const <a class="el" href="structltc4150__recorder__t.html">ltc4150_recorder_t</a
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

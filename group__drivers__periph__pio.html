@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -153,13 +153,6 @@ $(function(){initNavTree('group__drivers__periph__pio.html',''); initResizable(t
 
 <p>Low-level PIO peripheral driver  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Low-level PIO peripheral driver </p>
-<p>Programmable IO (PIO) is a cycle accurate IO control interface to emulate common IO standards like: I2C, SPI, UART or custom wire protocols as for the well known WS2812B LEDs. PIO programs are written in an MCU specific assembly language and they are saved in .pio files. The programs have to be loaded in the PIOs instruction memory. Once written to memory, a program can be executed by a state machines. A state machine can only execute one program at a time but multiple state machines can run the same program as access to instruction memory is shared. The user is responsible to allocate/deallocate instruction memory and lock/unlock state machines.</p>
-<p>PIO programs are very versatile and execution may depend on hardware quirks, thus specific setup must be performed by the CPU PIO driver implementation and the program code itself. The CPU driver implementation provides a set of known programs for common IO standards but user written programs are also possible and should be placed in cpu//pio to make use of the processor specific PIO interface.</p>
-<p>This API simply takes a look at PIO programs as something that resides in memory and can be executed on demand, by a state machine.</p>
-<dl class="section warning"><dt>Warning</dt><dd><b class="text-danger">This feature is experimental!</b><br  />
- This API is experimental and in an early state - expect changes! </dd></dl>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -224,6 +217,13 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga9fef370d083c93cb6809fbf9edb7ba55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Release the allocated instruction memory occupied by <code>prog</code>.  <br /></td></tr>
 <tr class="separator:ga9fef370d083c93cb6809fbf9edb7ba55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Low-level PIO peripheral driver </p>
+<p>Programmable IO (PIO) is a cycle accurate IO control interface to emulate common IO standards like: I2C, SPI, UART or custom wire protocols as for the well known WS2812B LEDs. PIO programs are written in an MCU specific assembly language and they are saved in .pio files. The programs have to be loaded in the PIOs instruction memory. Once written to memory, a program can be executed by a state machines. A state machine can only execute one program at a time but multiple state machines can run the same program as access to instruction memory is shared. The user is responsible to allocate/deallocate instruction memory and lock/unlock state machines.</p>
+<p>PIO programs are very versatile and execution may depend on hardware quirks, thus specific setup must be performed by the CPU PIO driver implementation and the program code itself. The CPU driver implementation provides a set of known programs for common IO standards but user written programs are also possible and should be placed in cpu//pio to make use of the processor specific PIO interface.</p>
+<p>This API simply takes a look at PIO programs as something that resides in memory and can be executed on demand, by a state machine.</p>
+<dl class="section warning"><dt>Warning</dt><dd><b class="text-danger">This feature is experimental!</b><br  />
+ This API is experimental and in an early state - expect changes! </dd></dl>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga58b295342df50a4362829742b0a3bb1d" name="ga58b295342df50a4362829742b0a3bb1d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga58b295342df50a4362829742b0a3bb1d">&#9670;&#160;</a></span>PIO_DEV</h2>
@@ -514,7 +514,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

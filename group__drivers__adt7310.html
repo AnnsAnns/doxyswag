@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -151,22 +151,6 @@ $(function(){initNavTree('group__drivers__adt7310.html',''); initResizable(true)
 
 <p>Driver for the Analog Devices ADT7310 temperature sensor.  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Driver for the Analog Devices ADT7310 temperature sensor. </p>
-<h2><a class="anchor" id="autotoc_md1614"></a>
-Description</h2>
-<p>The ADT7310 is a high accuracy digital temperature sensor in a narrow SOIC package. It contains a band gap temperature reference and a 13-bit ADC to monitor and digitize the temperature to a 0.0625°C resolution. The ADC resolution, by default, is set to 13 bits (0.0625 °C). This can be changed to 16 bits (0.0078 °C) by setting Bit 7 in the configuration register (Register Address 0x01). The ADT7310 is guaranteed to operate over supply voltages from 2.7 V to 5.5 V. Operating at 3.3 V, the average supply current is typically 210 μA. The ADT7310 has a shutdown mode that powers down the device and offers a shutdown current of typically 2 μA. The ADT7310 is rated for operation over the −55°C to +150°C temperature range.</p>
-<h2><a class="anchor" id="autotoc_md1615"></a>
-Usage</h2>
-<p>See <code>tests/drivers/adt7310</code> for an example application using this driver.</p>
-<h2><a class="anchor" id="autotoc_md1616"></a>
-Caveats</h2>
-<p>This driver is currently missing support for a number of hardware features:</p>
-<ul>
-<li>Interrupt and compare pins are not handled</li>
-<li>There is no public API for setting the temperature alarm levels</li>
-<li>Device SPI reset is not implemented (drive MISO high from the master while clocking SCK) </li>
-</ul>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -264,6 +248,22 @@ Functions</h2></td></tr>
 <tr class="memdesc:gad96dfb2381b6cec2cac284ae29aa20b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shut down (powersave) <br /></td></tr>
 <tr class="separator:gad96dfb2381b6cec2cac284ae29aa20b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Driver for the Analog Devices ADT7310 temperature sensor. </p>
+<h2><a class="anchor" id="autotoc_md1614"></a>
+Description</h2>
+<p>The ADT7310 is a high accuracy digital temperature sensor in a narrow SOIC package. It contains a band gap temperature reference and a 13-bit ADC to monitor and digitize the temperature to a 0.0625°C resolution. The ADC resolution, by default, is set to 13 bits (0.0625 °C). This can be changed to 16 bits (0.0078 °C) by setting Bit 7 in the configuration register (Register Address 0x01). The ADT7310 is guaranteed to operate over supply voltages from 2.7 V to 5.5 V. Operating at 3.3 V, the average supply current is typically 210 μA. The ADT7310 has a shutdown mode that powers down the device and offers a shutdown current of typically 2 μA. The ADT7310 is rated for operation over the −55°C to +150°C temperature range.</p>
+<h2><a class="anchor" id="autotoc_md1615"></a>
+Usage</h2>
+<p>See <code>tests/drivers/adt7310</code> for an example application using this driver.</p>
+<h2><a class="anchor" id="autotoc_md1616"></a>
+Caveats</h2>
+<p>This driver is currently missing support for a number of hardware features:</p>
+<ul>
+<li>Interrupt and compare pins are not handled</li>
+<li>There is no public API for setting the temperature alarm levels</li>
+<li>Device SPI reset is not implemented (drive MISO high from the master while clocking SCK) </li>
+</ul>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga3e28c276fe0f4c94bc24aeba3b951007" name="ga3e28c276fe0f4c94bc24aeba3b951007"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga3e28c276fe0f4c94bc24aeba3b951007">&#9670;&#160;</a></span>ADT7310_CONF_CT_POL</h2>
@@ -546,7 +546,7 @@ INT16_MIN on error </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

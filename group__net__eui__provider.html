@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -152,44 +152,6 @@ $(function(){initNavTree('group__net__eui__provider.html',''); initResizable(tru
 
 <p>MAC address management  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>MAC address management </p>
-<h1><a class="anchor" id="autotoc_md1989"></a>
-About</h1>
-<p>An EUI provider provides an Extended Unique Identifier, that is a hardware address for a network device.</p>
-<p>A board may have an EEPROM with a unique ID (e.g. <a class="el" href="group__drivers__at24mac.html">AT24MAC unique ID chip</a>) that is used to store an address, a unique address is stored in a config area of the board's flash during production, etc.</p>
-<p>The EUI provider is connected to a network device that will then use this address.</p>
-<h1><a class="anchor" id="autotoc_md1990"></a>
-How it works</h1>
-<p>If there is only one EUI provider on the board, the configuration is done through three defines:</p>
-<ul>
-<li><code>EUIxx_PROVIDER_TYPE</code> to specify which device the EUI should be used for. That is to prevent it from matching to 'virtual' devices like ethos or SLIP. It is of course also possible to provide a fixed address for 'virtual' devices this way.</li>
-<li><code>EUIxx_PROVIDER_INDEX</code> to specify which interface the EUI should be used for if there are multiple interfaces.</li>
-<li><code>EUIxx_PROVIDER_FUNC</code> the function that provides the EUI. It can use an optional <code>EUIxx_PROVIDER_ARG</code> argument that is passed unmodified.</li>
-</ul>
-<p>If more than one EUI provider is present on the board, an array of <code>euiXX_conf_t</code> has to be provided to <code>EUI64_PROVIDER_PARAMS</code>:</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EUI64_PROVIDER_PARAMS {              \</span></div>
-<div class="line"><span class="preprocessor">             .provider = _board_get_eui,     \</span></div>
-<div class="line"><span class="preprocessor">             .arg      = BOARD_ADDR_SUBGHZ,  \</span></div>
-<div class="line"><span class="preprocessor">             .type     = NETDEV_AT86RF215,   \</span></div>
-<div class="line"><span class="preprocessor">             .index    = 0,   },             \</span></div>
-<div class="line"><span class="preprocessor">                              {              \</span></div>
-<div class="line"><span class="preprocessor">             .provider = _board_get_eui,     \</span></div>
-<div class="line"><span class="preprocessor">             .arg      = BOARD_ADDR_24GHZ,   \</span></div>
-<div class="line"><span class="preprocessor">             .type     = NETDEV_AT86RF215,   \</span></div>
-<div class="line"><span class="preprocessor">             .index    = 1,   }</span></div>
-</div><!-- fragment --><p>This also assumes a <code>_board_get_eui()</code> function to provide the EUI. For example, it could read an EUI from a config region on the flash that is provided with the memory-mapped addresses <code>BOARD_ADDR_SUBGHZ</code> and <code>BOARD_ADDR_24GHZ</code>. The function would then do</p>
-<div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> _board_get_eui(<span class="keyword">const</span> <span class="keywordtype">void</span> *src, <a class="code hl_union" href="unioneui64__t.html">eui64_t</a> *addr)</div>
-<div class="line">{</div>
-<div class="line">    memcpy(addr, src, <span class="keyword">sizeof</span>(*addr));</div>
-<div class="line">    <span class="keywordflow">return</span> 0;</div>
-<div class="line">}</div>
-<div class="ttc" id="aunioneui64__t_html"><div class="ttname"><a href="unioneui64__t.html">eui64_t</a></div><div class="ttdoc">Data type to represent an EUI-64.</div><div class="ttdef"><b>Definition</b> eui64.h:55</div></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md1991"></a>
-Recommendations</h1>
-<p>Do not use <code>NETDEV_ANY</code> as EUI device type. Otherwise if you have two interfaces both will match the same EUI.</p>
-<p>It is however possible to use <code>NETDEV_INDEX_ANY</code> if you have multiple interfaces of the same type and your EUI provider function takes the index into account (or returns error if the index is out of bounds with the available ids).</p>
-<p>Fixed addresses are only guaranteed if the network devices are also fixed. E.g. if you usually have two netdevs and disable the first one at compile-time the second interface will now use the first slot / index and therefore also use the EUI provider that was previously used by interface in the first slot. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -233,6 +195,44 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga21bf789be9ce8be7fbb12d1698ead8de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a short unicast address from an EUI-64.  <br /></td></tr>
 <tr class="separator:ga21bf789be9ce8be7fbb12d1698ead8de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>MAC address management </p>
+<h1><a class="anchor" id="autotoc_md1989"></a>
+About</h1>
+<p>An EUI provider provides an Extended Unique Identifier, that is a hardware address for a network device.</p>
+<p>A board may have an EEPROM with a unique ID (e.g. <a class="el" href="group__drivers__at24mac.html">AT24MAC unique ID chip</a>) that is used to store an address, a unique address is stored in a config area of the board's flash during production, etc.</p>
+<p>The EUI provider is connected to a network device that will then use this address.</p>
+<h1><a class="anchor" id="autotoc_md1990"></a>
+How it works</h1>
+<p>If there is only one EUI provider on the board, the configuration is done through three defines:</p>
+<ul>
+<li><code>EUIxx_PROVIDER_TYPE</code> to specify which device the EUI should be used for. That is to prevent it from matching to 'virtual' devices like ethos or SLIP. It is of course also possible to provide a fixed address for 'virtual' devices this way.</li>
+<li><code>EUIxx_PROVIDER_INDEX</code> to specify which interface the EUI should be used for if there are multiple interfaces.</li>
+<li><code>EUIxx_PROVIDER_FUNC</code> the function that provides the EUI. It can use an optional <code>EUIxx_PROVIDER_ARG</code> argument that is passed unmodified.</li>
+</ul>
+<p>If more than one EUI provider is present on the board, an array of <code>euiXX_conf_t</code> has to be provided to <code>EUI64_PROVIDER_PARAMS</code>:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EUI64_PROVIDER_PARAMS {              \</span></div>
+<div class="line"><span class="preprocessor">             .provider = _board_get_eui,     \</span></div>
+<div class="line"><span class="preprocessor">             .arg      = BOARD_ADDR_SUBGHZ,  \</span></div>
+<div class="line"><span class="preprocessor">             .type     = NETDEV_AT86RF215,   \</span></div>
+<div class="line"><span class="preprocessor">             .index    = 0,   },             \</span></div>
+<div class="line"><span class="preprocessor">                              {              \</span></div>
+<div class="line"><span class="preprocessor">             .provider = _board_get_eui,     \</span></div>
+<div class="line"><span class="preprocessor">             .arg      = BOARD_ADDR_24GHZ,   \</span></div>
+<div class="line"><span class="preprocessor">             .type     = NETDEV_AT86RF215,   \</span></div>
+<div class="line"><span class="preprocessor">             .index    = 1,   }</span></div>
+</div><!-- fragment --><p>This also assumes a <code>_board_get_eui()</code> function to provide the EUI. For example, it could read an EUI from a config region on the flash that is provided with the memory-mapped addresses <code>BOARD_ADDR_SUBGHZ</code> and <code>BOARD_ADDR_24GHZ</code>. The function would then do</p>
+<div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> _board_get_eui(<span class="keyword">const</span> <span class="keywordtype">void</span> *src, <a class="code hl_union" href="unioneui64__t.html">eui64_t</a> *addr)</div>
+<div class="line">{</div>
+<div class="line">    memcpy(addr, src, <span class="keyword">sizeof</span>(*addr));</div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="aunioneui64__t_html"><div class="ttname"><a href="unioneui64__t.html">eui64_t</a></div><div class="ttdoc">Data type to represent an EUI-64.</div><div class="ttdef"><b>Definition</b> eui64.h:55</div></div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md1991"></a>
+Recommendations</h1>
+<p>Do not use <code>NETDEV_ANY</code> as EUI device type. Otherwise if you have two interfaces both will match the same EUI.</p>
+<p>It is however possible to use <code>NETDEV_INDEX_ANY</code> if you have multiple interfaces of the same type and your EUI provider function takes the index into account (or returns error if the index is out of bounds with the available ids).</p>
+<p>Fixed addresses are only guaranteed if the network devices are also fixed. E.g. if you usually have two netdevs and disable the first one at compile-time the second interface will now use the first slot / index and therefore also use the EUI provider that was previously used by interface in the first slot. </p>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ga21410749f81d4ee52d76cf81b8171cfc" name="ga21410749f81d4ee52d76cf81b8171cfc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga21410749f81d4ee52d76cf81b8171cfc">&#9670;&#160;</a></span>netdev_get_eui48_cb_t</h2>
@@ -393,7 +393,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

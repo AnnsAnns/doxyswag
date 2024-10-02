@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -150,16 +150,7 @@ $(function(){initNavTree('cortexm__common_2include_2cpu_8h.html',''); initResiza
 
 <p>Basic definitions for the Cortex-M common module.  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Basic definitions for the Cortex-M common module. </p>
-<p>When ever you want to do something hardware related, that is accessing MCUs registers, just include this file. It will then make sure that the MCU specific headers are included.</p>
-<dl class="section author"><dt>Author</dt><dd>Stefan Pfeiffer <a href="#" onclick="location.href='mai'+'lto:'+'ste'+'fa'+'n.p'+'fe'+'iff'+'er'+'@fu'+'-b'+'erl'+'in'+'.de'; return false;">stefa<span class="obfuscator">.nosp@m.</span>n.pf<span class="obfuscator">.nosp@m.</span>eiffe<span class="obfuscator">.nosp@m.</span>r@fu<span class="obfuscator">.nosp@m.</span>-berl<span class="obfuscator">.nosp@m.</span>in.d<span class="obfuscator">.nosp@m.</span>e</a> </dd>
-<dd>
-Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
-<dd>
-Joakim Nohlgård <a href="#" onclick="location.href='mai'+'lto:'+'joa'+'ki'+'m.n'+'oh'+'lga'+'rd'+'@ei'+'st'+'ec.'+'se'; return false;">joaki<span class="obfuscator">.nosp@m.</span>m.no<span class="obfuscator">.nosp@m.</span>hlgar<span class="obfuscator">.nosp@m.</span>d@ei<span class="obfuscator">.nosp@m.</span>stec.<span class="obfuscator">.nosp@m.</span>se</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo</a></b></dt><dd>remove include <a class="el" href="irq_8h.html" title="IRQ driver interface.">irq.h</a> once core was adjusted </dd></dl>
-</div><div class="textblock"><code>#include &lt;<a class="el" href="stdio_8h.html">stdio.h</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="stdio_8h.html">stdio.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="irq_8h.html">irq.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="sched_8h.html">sched.h</a>&quot;</code><br />
 <code>#include &quot;thread.h&quot;</code><br />
@@ -217,7 +208,16 @@ Functions</h2></td></tr>
 <tr class="memdesc:gac30423f9a6d611b7b7d0190a8d6dd6e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks is memory address valid or not.  <br /></td></tr>
 <tr class="separator:gac30423f9a6d611b7b7d0190a8d6dd6e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Basic definitions for the Cortex-M common module. </p>
+<p>When ever you want to do something hardware related, that is accessing MCUs registers, just include this file. It will then make sure that the MCU specific headers are included.</p>
+<dl class="section author"><dt>Author</dt><dd>Stefan Pfeiffer <a href="#" onclick="location.href='mai'+'lto:'+'ste'+'fa'+'n.p'+'fe'+'iff'+'er'+'@fu'+'-b'+'erl'+'in'+'.de'; return false;">stefa<span class="obfuscator">.nosp@m.</span>n.pf<span class="obfuscator">.nosp@m.</span>eiffe<span class="obfuscator">.nosp@m.</span>r@fu<span class="obfuscator">.nosp@m.</span>-berl<span class="obfuscator">.nosp@m.</span>in.d<span class="obfuscator">.nosp@m.</span>e</a> </dd>
+<dd>
+Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
+<dd>
+Joakim Nohlgård <a href="#" onclick="location.href='mai'+'lto:'+'joa'+'ki'+'m.n'+'oh'+'lga'+'rd'+'@ei'+'st'+'ec.'+'se'; return false;">joaki<span class="obfuscator">.nosp@m.</span>m.no<span class="obfuscator">.nosp@m.</span>hlgar<span class="obfuscator">.nosp@m.</span>d@ei<span class="obfuscator">.nosp@m.</span>stec.<span class="obfuscator">.nosp@m.</span>se</a></dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo</a></b></dt><dd>remove include <a class="el" href="irq_8h.html" title="IRQ driver interface.">irq.h</a> once core was adjusted </dd></dl>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
@@ -225,7 +225,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_c433b04169c945a1c7f0848f853d4379.html">cpu</a></li><li class="navelem"><a class="el" href="dir_7addd8712ae950a23de5ceb1c6b88c82.html">cortexm_common</a></li><li class="navelem"><a class="el" href="dir_172aa5db7d566734474211d2eacbf16f.html">include</a></li><li class="navelem"><a class="el" href="cortexm__common_2include_2cpu_8h.html">cpu.h</a></li>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:00 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

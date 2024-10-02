@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -149,6 +149,16 @@ $(function(){initNavTree('group__boards__atmega1284p.html',''); initResizable(tr
 
 <p>Support for using the ATmega1284P as standalone board  
 <a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="atmega1284p_2include_2board_8h.html">board.h</a></td></tr>
+<tr class="memdesc:atmega1284p_2include_2board_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Board specific definitions for the standalone ATmega1284P "board". <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boards_2atmega1284p_2include_2periph__conf_8h.html">periph_conf.h</a></td></tr>
+<tr class="memdesc:boards_2atmega1284p_2include_2periph__conf_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Peripheral MCU configuration for the ATmega1284p standalone "board". <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for using the ATmega1284P as standalone board </p>
 <h2><a class="anchor" id="autotoc_md190"></a>
@@ -259,16 +269,6 @@ JTAG Pin Mapping</h3>
 <h3><a class="anchor" id="autotoc_md200"></a>
 Fuse Settings</h3>
 <p>The <code>JTAGEN</code> fuse has to be set in order to use the JTAG interface. The JTAG pins will no longer be available as GPIOs when this fuse is set. With the default settings the MCUs are preprogrammed during manufacturing, the <code>JTAGEN</code> fuse is already set. So with a new and unused package, you're ready directly ready to go. </p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="atmega1284p_2include_2board_8h.html">board.h</a></td></tr>
-<tr class="memdesc:atmega1284p_2include_2board_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Board specific definitions for the standalone ATmega1284P "board". <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boards_2atmega1284p_2include_2periph__conf_8h.html">periph_conf.h</a></td></tr>
-<tr class="memdesc:boards_2atmega1284p_2include_2periph__conf_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Peripheral MCU configuration for the ATmega1284p standalone "board". <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
@@ -276,7 +276,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

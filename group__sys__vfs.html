@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -155,22 +155,6 @@ $(function(){initNavTree('group__sys__vfs.html',''); initResizable(true); });
 
 <p>Provides an interface for accessing files and directories from different devices and file systems  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Provides an interface for accessing files and directories from different devices and file systems </p>
-<p>This layer is modeled as a mix between POSIX syscalls (e.g. open) and the Linux VFS layer implementation, with major reductions in the feature set, in order to fit the resource constrained platforms that RIOT targets.</p>
-<p>The overall design goals are:</p><ul>
-<li>Provide implementations for all newlib "file" syscalls</li>
-<li>Keep it simple, do not add every possible file operation from Linux VFS.</li>
-<li>Easy to map existing file system implementations for resource constrained systems onto the VFS layer API</li>
-<li>Avoid keeping a central <code>enum</code> of all file system drivers that has to be kept up to date with external packages etc.</li>
-<li>Use POSIX <code>&lt;<a class="el" href="errno_8h.html">errno.h</a>&gt;</code> numbers as negative return codes for errors, avoid the global <code>errno</code> variable.</li>
-<li>Only absolute paths to files (no per-process working directory)</li>
-<li>No dynamic memory allocation</li>
-</ul>
-<p>The API should be easy to understand for users who are familiar with the POSIX file functions (open, close, read, write, fstat, lseek etc.)</p>
-<p>The VFS layer keeps track of mounted file systems and open files, the <code>vfs_open</code> function searches the array of mounted file systems and dispatches the call to the file system instance with the longest matching mount point prefix. Subsequent calls to <code>vfs_read</code>, <code>vfs_write</code>, etc will do a look up in the table of open files and dispatch the call to the correct file system driver for handling.</p>
-<p><code>vfs_mount</code> takes a string containing the mount point, a file system driver specification (<code>struct file_system</code>), and an opaque pointer that only the FS driver knows how to use, which can be used to keep driver parameters in order to allow dynamic handling of multiple devices.</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000034">Todo</a></b></dt><dd>VFS layer reference counting and locking for open files and simultaneous access.</dd></dl>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -420,6 +404,22 @@ const <a class="el" href="#gaae22046871c456cbbd1bca6298766b68">vfs_file_ops_t</a
 <tr class="memdesc:ga1e049cb67cd3bca8c6b7b89a3e5525ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">sizeof(nanocoap_fs_file_t) <br /></td></tr>
 <tr class="separator:ga1e049cb67cd3bca8c6b7b89a3e5525ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Provides an interface for accessing files and directories from different devices and file systems </p>
+<p>This layer is modeled as a mix between POSIX syscalls (e.g. open) and the Linux VFS layer implementation, with major reductions in the feature set, in order to fit the resource constrained platforms that RIOT targets.</p>
+<p>The overall design goals are:</p><ul>
+<li>Provide implementations for all newlib "file" syscalls</li>
+<li>Keep it simple, do not add every possible file operation from Linux VFS.</li>
+<li>Easy to map existing file system implementations for resource constrained systems onto the VFS layer API</li>
+<li>Avoid keeping a central <code>enum</code> of all file system drivers that has to be kept up to date with external packages etc.</li>
+<li>Use POSIX <code>&lt;<a class="el" href="errno_8h.html">errno.h</a>&gt;</code> numbers as negative return codes for errors, avoid the global <code>errno</code> variable.</li>
+<li>Only absolute paths to files (no per-process working directory)</li>
+<li>No dynamic memory allocation</li>
+</ul>
+<p>The API should be easy to understand for users who are familiar with the POSIX file functions (open, close, read, write, fstat, lseek etc.)</p>
+<p>The VFS layer keeps track of mounted file systems and open files, the <code>vfs_open</code> function searches the array of mounted file systems and dispatches the call to the file system instance with the longest matching mount point prefix. Subsequent calls to <code>vfs_read</code>, <code>vfs_write</code>, etc will do a look up in the table of open files and dispatch the call to the correct file system driver for handling.</p>
+<p><code>vfs_mount</code> takes a string containing the mount point, a file system driver specification (<code>struct file_system</code>), and an opaque pointer that only the FS driver knows how to use, which can be used to keep driver parameters in order to allow dynamic handling of multiple devices.</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000034">Todo</a></b></dt><dd>VFS layer reference counting and locking for open files and simultaneous access.</dd></dl>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="gaa976da80fd2af755c62ad0dc66eb7c57" name="gaa976da80fd2af755c62ad0dc66eb7c57"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaa976da80fd2af755c62ad0dc66eb7c57">&#9670;&#160;</a></span>LWEXT4_VFS_DIR_BUFFER_SIZE</h2>
@@ -1818,7 +1818,7 @@ NULL if <code>cur</code> is the last element in the list </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

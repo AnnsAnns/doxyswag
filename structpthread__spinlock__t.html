@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -149,10 +149,7 @@ $(function(){initNavTree('structpthread__spinlock__t.html',''); initResizable(tr
 
 <p>A spinlock.  
  <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A spinlock. </p>
-<dl class="section warning"><dt>Warning</dt><dd>Spinlocks should be avoided. They will burn away the battery needlessly, and may not work because RIOT is tickless. Use <a class="el" href="group__core__irq.html#ga7cb620d77da293d98ccc1715d6cb9a02" title="This function sets the IRQ disable bit in the status register.">irq_disable()</a> and <a class="el" href="group__core__irq.html#ga066129c367d18a871d0155d85148fd3e" title="This function restores the IRQ disable bit in the status register to the value contained within passe...">irq_restore()</a> for shortterm locks instead. </dd></dl>
-</div>
+
 <p><code>#include &lt;pthread_spin.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -162,7 +159,10 @@ atomic_flag&#160;</td><td class="memItemRight" valign="bottom"><b>flag</b></td><
 <tr class="memdesc:a5fee314c146ab421672141350aec9100"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current lock state. <br /></td></tr>
 <tr class="separator:a5fee314c146ab421672141350aec9100"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A spinlock. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Spinlocks should be avoided. They will burn away the battery needlessly, and may not work because RIOT is tickless. Use <a class="el" href="group__core__irq.html#ga7cb620d77da293d98ccc1715d6cb9a02" title="This function sets the IRQ disable bit in the status register.">irq_disable()</a> and <a class="el" href="group__core__irq.html#ga066129c367d18a871d0155d85148fd3e" title="This function restores the IRQ disable bit in the status register to the value contained within passe...">irq_restore()</a> for shortterm locks instead. </dd></dl>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>sys/posix/pthread/include/<a class="el" href="pthread__spin_8h.html">pthread_spin.h</a></li>
 </ul>
 </div><!-- contents -->
@@ -173,7 +173,7 @@ atomic_flag&#160;</td><td class="memItemRight" valign="bottom"><b>flag</b></td><
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structpthread__spinlock__t.html">pthread_spinlock_t</a></li>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:03 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:32 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

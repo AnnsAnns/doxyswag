@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -149,19 +149,6 @@ $(function(){initNavTree('group__boards__sodaq-sara-sff.html',''); initResizable
 
 <p>Support for the SODAQ SARA SFF boards  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Support for the SODAQ SARA SFF boards </p>
-<h3><a class="anchor" id="autotoc_md1335"></a>
-General information</h3>
-<p>General information about this board can be found on the <a href="https://support.sodaq.com/Boards/Sara_SFF/">SODAQ support</a> website. Schematic can be found <a href="https://learn.sodaq.com/Boards/Sara_SFF/sodaq_sara_sff_r2.pdf">here</a> )</p>
-<h3><a class="anchor" id="autotoc_md1336"></a>
-Flash the board</h3>
-<p>Use <code>BOARD=sodaq-one</code> with the <code>make</code> command.<br  />
- Example with <code>hello-world</code> application: </p><div class="fragment"><div class="line">make BOARD=sodaq-one -C examples/hello-world flash</div>
-</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>If the application crashes, automatic reflashing via USB, as explained above won't be possible. In this case, the board must be set in bootloader mode by double tapping the reset button before running the flash command.</dd></dl>
-<h3><a class="anchor" id="autotoc_md1337"></a>
-Accessing STDIO via UART</h3>
-<p>STDIO of RIOT is directly available over the USB port. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -178,6 +165,19 @@ Files</h2></td></tr>
 <tr class="memdesc:boards_2sodaq-sara-sff_2include_2periph__conf_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration of CPU peripherals for the SODAQ SARA SFF board. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Support for the SODAQ SARA SFF boards </p>
+<h3><a class="anchor" id="autotoc_md1335"></a>
+General information</h3>
+<p>General information about this board can be found on the <a href="https://support.sodaq.com/Boards/Sara_SFF/">SODAQ support</a> website. Schematic can be found <a href="https://learn.sodaq.com/Boards/Sara_SFF/sodaq_sara_sff_r2.pdf">here</a> )</p>
+<h3><a class="anchor" id="autotoc_md1336"></a>
+Flash the board</h3>
+<p>Use <code>BOARD=sodaq-one</code> with the <code>make</code> command.<br  />
+ Example with <code>hello-world</code> application: </p><div class="fragment"><div class="line">make BOARD=sodaq-one -C examples/hello-world flash</div>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>If the application crashes, automatic reflashing via USB, as explained above won't be possible. In this case, the board must be set in bootloader mode by double tapping the reset button before running the flash command.</dd></dl>
+<h3><a class="anchor" id="autotoc_md1337"></a>
+Accessing STDIO via UART</h3>
+<p>STDIO of RIOT is directly available over the USB port. </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
@@ -185,7 +185,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -150,6 +150,44 @@ $(function(){initNavTree('group__lwm2m__objects__temperature.html',''); initResi
   <div class="headertitle"><div class="title">Temperature<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__pkg__wakaama.html">LwM2M - Lightweight Machine to Machine</a> &raquo; <a class="el" href="group__lwm2m__objects.html">LwM2M Object implementations</a></div></div></div>
 </div><!--header-->
 <div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
+Topics</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__temperature__config.html">LwM2M Temperature Sensor object compile configurations</a></td></tr>
+<tr class="memdesc:group__lwm2m__objects__temperature__config"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="temperature_8h.html">temperature.h</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:gac0a6186111065c691c73a6b148a776f4" id="r_gac0a6186111065c691c73a6b148a776f4"><td class="memItemLeft" align="right" valign="top"><a id="gac0a6186111065c691c73a6b148a776f4" name="gac0a6186111065c691c73a6b148a776f4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LWM2M_TEMPERATURE_OBJECT_ID</b>&#160;&#160;&#160;3303</td></tr>
+<tr class="memdesc:gac0a6186111065c691c73a6b148a776f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">LwM2M Temperature Sensor object ID. <br /></td></tr>
+<tr class="separator:gac0a6186111065c691c73a6b148a776f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga3cab55f9ff5b950d9ad234b1a8afa44a" id="r_ga3cab55f9ff5b950d9ad234b1a8afa44a"><td class="memItemLeft" align="right" valign="top"><a id="ga3cab55f9ff5b950d9ad234b1a8afa44a" name="ga3cab55f9ff5b950d9ad234b1a8afa44a"></a>
+typedef <a class="el" href="group__lwm2m__objects__ipso__sensor__base.html#gaa7308ac56cc712168feff47573d2db39">lwm2m_obj_ipso_base_sensor_args_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>lwm2m_obj_temperature_args_t</b></td></tr>
+<tr class="memdesc:ga3cab55f9ff5b950d9ad234b1a8afa44a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arguments for the creation of a Temperature Sensor object instance. <br /></td></tr>
+<tr class="separator:ga3cab55f9ff5b950d9ad234b1a8afa44a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gaf8fca564bac998c64115db029d76868c" id="r_gaf8fca564bac998c64115db029d76868c"><td class="memItemLeft" align="right" valign="top">lwm2m_object_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf8fca564bac998c64115db029d76868c">lwm2m_object_temperature_init</a> (<a class="el" href="structlwm2m__client__data__t.html">lwm2m_client_data_t</a> *client_data)</td></tr>
+<tr class="memdesc:gaf8fca564bac998c64115db029d76868c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the Temperature Sensor object handle.  <br /></td></tr>
+<tr class="separator:gaf8fca564bac998c64115db029d76868c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga10e1026a8e8fc459d9ebbc798ff2e7a0" id="r_ga10e1026a8e8fc459d9ebbc798ff2e7a0"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga10e1026a8e8fc459d9ebbc798ff2e7a0">lwm2m_object_temperature_instance_create</a> (const <a class="el" href="#ga3cab55f9ff5b950d9ad234b1a8afa44a">lwm2m_obj_temperature_args_t</a> *args)</td></tr>
+<tr class="memdesc:ga10e1026a8e8fc459d9ebbc798ff2e7a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new Temperature Sensor instance.  <br /></td></tr>
+<tr class="separator:ga10e1026a8e8fc459d9ebbc798ff2e7a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8849aa9ea859cf94ff830c3bdcf55b92" id="r_ga8849aa9ea859cf94ff830c3bdcf55b92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8849aa9ea859cf94ff830c3bdcf55b92">lwm2m_object_temperature_update_value</a> (const <a class="el" href="structlwm2m__client__data__t.html">lwm2m_client_data_t</a> *client_data, uint16_t instance_id, int16_t value)</td></tr>
+<tr class="memdesc:ga8849aa9ea859cf94ff830c3bdcf55b92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the value of the temperature sensor and trigger a notification to the observing servers, if any.  <br /></td></tr>
+<tr class="separator:ga8849aa9ea859cf94ff830c3bdcf55b92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Temperature Sensor object implementation for LwM2M client using Wakaama</p>
 <dl class="section warning"><dt>Warning</dt><dd><b class="text-danger">This feature is experimental!</b><br  />
@@ -205,45 +243,7 @@ Usage</h2>
 <div class="fragment"><div class="line">uint16_t instance_id = (uint16_t)res;</div>
 <div class="line"><a class="code hl_function" href="#ga8849aa9ea859cf94ff830c3bdcf55b92">lwm2m_object_temperature_update_value</a>(&amp;client_data, instance_id, new_value);</div>
 <div class="ttc" id="agroup__lwm2m__objects__temperature_html_ga8849aa9ea859cf94ff830c3bdcf55b92"><div class="ttname"><a href="#ga8849aa9ea859cf94ff830c3bdcf55b92">lwm2m_object_temperature_update_value</a></div><div class="ttdeci">void lwm2m_object_temperature_update_value(const lwm2m_client_data_t *client_data, uint16_t instance_id, int16_t value)</div><div class="ttdoc">Update the value of the temperature sensor and trigger a notification to the observing servers,...</div></div>
-</div><!-- fragment --> <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
-Topics</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__temperature__config.html">LwM2M Temperature Sensor object compile configurations</a></td></tr>
-<tr class="memdesc:group__lwm2m__objects__temperature__config"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="temperature_8h.html">temperature.h</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:gac0a6186111065c691c73a6b148a776f4" id="r_gac0a6186111065c691c73a6b148a776f4"><td class="memItemLeft" align="right" valign="top"><a id="gac0a6186111065c691c73a6b148a776f4" name="gac0a6186111065c691c73a6b148a776f4"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>LWM2M_TEMPERATURE_OBJECT_ID</b>&#160;&#160;&#160;3303</td></tr>
-<tr class="memdesc:gac0a6186111065c691c73a6b148a776f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">LwM2M Temperature Sensor object ID. <br /></td></tr>
-<tr class="separator:gac0a6186111065c691c73a6b148a776f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:ga3cab55f9ff5b950d9ad234b1a8afa44a" id="r_ga3cab55f9ff5b950d9ad234b1a8afa44a"><td class="memItemLeft" align="right" valign="top"><a id="ga3cab55f9ff5b950d9ad234b1a8afa44a" name="ga3cab55f9ff5b950d9ad234b1a8afa44a"></a>
-typedef <a class="el" href="group__lwm2m__objects__ipso__sensor__base.html#gaa7308ac56cc712168feff47573d2db39">lwm2m_obj_ipso_base_sensor_args_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>lwm2m_obj_temperature_args_t</b></td></tr>
-<tr class="memdesc:ga3cab55f9ff5b950d9ad234b1a8afa44a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arguments for the creation of a Temperature Sensor object instance. <br /></td></tr>
-<tr class="separator:ga3cab55f9ff5b950d9ad234b1a8afa44a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:gaf8fca564bac998c64115db029d76868c" id="r_gaf8fca564bac998c64115db029d76868c"><td class="memItemLeft" align="right" valign="top">lwm2m_object_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf8fca564bac998c64115db029d76868c">lwm2m_object_temperature_init</a> (<a class="el" href="structlwm2m__client__data__t.html">lwm2m_client_data_t</a> *client_data)</td></tr>
-<tr class="memdesc:gaf8fca564bac998c64115db029d76868c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the Temperature Sensor object handle.  <br /></td></tr>
-<tr class="separator:gaf8fca564bac998c64115db029d76868c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga10e1026a8e8fc459d9ebbc798ff2e7a0" id="r_ga10e1026a8e8fc459d9ebbc798ff2e7a0"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga10e1026a8e8fc459d9ebbc798ff2e7a0">lwm2m_object_temperature_instance_create</a> (const <a class="el" href="#ga3cab55f9ff5b950d9ad234b1a8afa44a">lwm2m_obj_temperature_args_t</a> *args)</td></tr>
-<tr class="memdesc:ga10e1026a8e8fc459d9ebbc798ff2e7a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new Temperature Sensor instance.  <br /></td></tr>
-<tr class="separator:ga10e1026a8e8fc459d9ebbc798ff2e7a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8849aa9ea859cf94ff830c3bdcf55b92" id="r_ga8849aa9ea859cf94ff830c3bdcf55b92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8849aa9ea859cf94ff830c3bdcf55b92">lwm2m_object_temperature_update_value</a> (const <a class="el" href="structlwm2m__client__data__t.html">lwm2m_client_data_t</a> *client_data, uint16_t instance_id, int16_t value)</td></tr>
-<tr class="memdesc:ga8849aa9ea859cf94ff830c3bdcf55b92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the value of the temperature sensor and trigger a notification to the observing servers, if any.  <br /></td></tr>
-<tr class="separator:ga8849aa9ea859cf94ff830c3bdcf55b92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<h2 class="groupheader">Function Documentation</h2>
+</div><!-- fragment --> <h2 class="groupheader">Function Documentation</h2>
 <a id="gaf8fca564bac998c64115db029d76868c" name="gaf8fca564bac998c64115db029d76868c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaf8fca564bac998c64115db029d76868c">&#9670;&#160;</a></span>lwm2m_object_temperature_init()</h2>
 
@@ -341,7 +341,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -152,6 +152,40 @@ $(function(){initNavTree('group__core__sync__cond.html',''); initResizable(true)
 
 <p>Condition variable for thread synchronization  
 <a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cond_8h.html">cond.h</a></td></tr>
+<tr class="memdesc:cond_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Condition variable for thread synchronization. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcond__t.html">cond_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Condition variable structure.  <a href="structcond__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga6a7055a466bff255172e05f6ec82d792" id="r_ga6a7055a466bff255172e05f6ec82d792"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6a7055a466bff255172e05f6ec82d792">COND_INIT</a>&#160;&#160;&#160;{ { NULL } }</td></tr>
+<tr class="memdesc:ga6a7055a466bff255172e05f6ec82d792"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static initializer for <a class="el" href="structcond__t.html" title="Condition variable structure.">cond_t</a>.  <br /></td></tr>
+<tr class="separator:ga6a7055a466bff255172e05f6ec82d792"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga6cae8abe8c0e3d33c644b780fe029a4e" id="r_ga6cae8abe8c0e3d33c644b780fe029a4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6cae8abe8c0e3d33c644b780fe029a4e">cond_init</a> (<a class="el" href="structcond__t.html">cond_t</a> *cond)</td></tr>
+<tr class="memdesc:ga6cae8abe8c0e3d33c644b780fe029a4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a condition variable.  <br /></td></tr>
+<tr class="separator:ga6cae8abe8c0e3d33c644b780fe029a4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3bb3a3c01100efd76dd454216ec48ccf" id="r_ga3bb3a3c01100efd76dd454216ec48ccf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3bb3a3c01100efd76dd454216ec48ccf">cond_wait</a> (<a class="el" href="structcond__t.html">cond_t</a> *cond, <a class="el" href="structmutex__t.html">mutex_t</a> *mutex)</td></tr>
+<tr class="memdesc:ga3bb3a3c01100efd76dd454216ec48ccf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits on a condition.  <br /></td></tr>
+<tr class="separator:ga3bb3a3c01100efd76dd454216ec48ccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9a144677ae4e8e55db693749b5e90dfe" id="r_ga9a144677ae4e8e55db693749b5e90dfe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9a144677ae4e8e55db693749b5e90dfe">cond_signal</a> (<a class="el" href="structcond__t.html">cond_t</a> *cond)</td></tr>
+<tr class="memdesc:ga9a144677ae4e8e55db693749b5e90dfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wakes up one thread waiting on the condition variable.  <br /></td></tr>
+<tr class="separator:ga9a144677ae4e8e55db693749b5e90dfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2f5b0a0d73091b1685877198a8c48182" id="r_ga2f5b0a0d73091b1685877198a8c48182"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2f5b0a0d73091b1685877198a8c48182">cond_broadcast</a> (<a class="el" href="structcond__t.html">cond_t</a> *cond)</td></tr>
+<tr class="memdesc:ga2f5b0a0d73091b1685877198a8c48182"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wakes up all threads waiting on the condition variable.  <br /></td></tr>
+<tr class="separator:ga2f5b0a0d73091b1685877198a8c48182"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Condition variable for thread synchronization </p>
 <p>This file contains a condition variable with Mesa-style semantics.</p>
@@ -237,40 +271,6 @@ $(function(){initNavTree('group__core__sync__cond.html',''); initResizable(true)
 <div class="ttc" id="astructmutex__t_html"><div class="ttname"><a href="structmutex__t.html">mutex_t</a></div><div class="ttdoc">Mutex structure.</div><div class="ttdef"><b>Definition</b> mutex.h:146</div></div>
 <div class="ttc" id="astructriot__pipe_html"><div class="ttname"><a href="structriot__pipe.html">riot_pipe</a></div><div class="ttdoc">A generic pipe.</div><div class="ttdef"><b>Definition</b> pipe.h:55</div></div>
 </div><!-- fragment --><p>Note that this could actually be written with a single condition variable. However, the example includes two for didactic reasons. </p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cond_8h.html">cond.h</a></td></tr>
-<tr class="memdesc:cond_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Condition variable for thread synchronization. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcond__t.html">cond_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Condition variable structure.  <a href="structcond__t.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ga6a7055a466bff255172e05f6ec82d792" id="r_ga6a7055a466bff255172e05f6ec82d792"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6a7055a466bff255172e05f6ec82d792">COND_INIT</a>&#160;&#160;&#160;{ { NULL } }</td></tr>
-<tr class="memdesc:ga6a7055a466bff255172e05f6ec82d792"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static initializer for <a class="el" href="structcond__t.html" title="Condition variable structure.">cond_t</a>.  <br /></td></tr>
-<tr class="separator:ga6a7055a466bff255172e05f6ec82d792"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ga6cae8abe8c0e3d33c644b780fe029a4e" id="r_ga6cae8abe8c0e3d33c644b780fe029a4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6cae8abe8c0e3d33c644b780fe029a4e">cond_init</a> (<a class="el" href="structcond__t.html">cond_t</a> *cond)</td></tr>
-<tr class="memdesc:ga6cae8abe8c0e3d33c644b780fe029a4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a condition variable.  <br /></td></tr>
-<tr class="separator:ga6cae8abe8c0e3d33c644b780fe029a4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3bb3a3c01100efd76dd454216ec48ccf" id="r_ga3bb3a3c01100efd76dd454216ec48ccf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3bb3a3c01100efd76dd454216ec48ccf">cond_wait</a> (<a class="el" href="structcond__t.html">cond_t</a> *cond, <a class="el" href="structmutex__t.html">mutex_t</a> *mutex)</td></tr>
-<tr class="memdesc:ga3bb3a3c01100efd76dd454216ec48ccf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits on a condition.  <br /></td></tr>
-<tr class="separator:ga3bb3a3c01100efd76dd454216ec48ccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9a144677ae4e8e55db693749b5e90dfe" id="r_ga9a144677ae4e8e55db693749b5e90dfe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9a144677ae4e8e55db693749b5e90dfe">cond_signal</a> (<a class="el" href="structcond__t.html">cond_t</a> *cond)</td></tr>
-<tr class="memdesc:ga9a144677ae4e8e55db693749b5e90dfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wakes up one thread waiting on the condition variable.  <br /></td></tr>
-<tr class="separator:ga9a144677ae4e8e55db693749b5e90dfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2f5b0a0d73091b1685877198a8c48182" id="r_ga2f5b0a0d73091b1685877198a8c48182"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2f5b0a0d73091b1685877198a8c48182">cond_broadcast</a> (<a class="el" href="structcond__t.html">cond_t</a> *cond)</td></tr>
-<tr class="memdesc:ga2f5b0a0d73091b1685877198a8c48182"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wakes up all threads waiting on the condition variable.  <br /></td></tr>
-<tr class="separator:ga2f5b0a0d73091b1685877198a8c48182"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga6a7055a466bff255172e05f6ec82d792" name="ga6a7055a466bff255172e05f6ec82d792"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga6a7055a466bff255172e05f6ec82d792">&#9670;&#160;</a></span>COND_INIT</h2>
@@ -405,7 +405,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

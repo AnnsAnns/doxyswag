@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -150,58 +150,6 @@ $(function(){initNavTree('group__lwm2m__objects__device.html',''); initResizable
   <div class="headertitle"><div class="title">Device LwM2M object<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__pkg__wakaama.html">LwM2M - Lightweight Machine to Machine</a> &raquo; <a class="el" href="group__lwm2m__objects.html">LwM2M Object implementations</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Device object implementation for LwM2M client using Wakaama</p>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Name   </th><th class="markdownTableHeadCenter">ID   </th><th class="markdownTableHeadCenter">Mandatory   </th><th class="markdownTableHeadCenter">Type   </th><th class="markdownTableHeadCenter">Range   </th><th class="markdownTableHeadCenter">Units   </th><th class="markdownTableHeadCenter">Implemented    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Manufacturer   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">String   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">Yes    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Model Number   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">String   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">Yes    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Serial Number   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">String   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">Yes    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Firmware Version   </td><td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">String   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">Yes    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Reboot   </td><td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyCenter">Yes   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">Yes    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Factory Reset   </td><td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">No    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Available Power Sources   </td><td class="markdownTableBodyCenter">6   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">Integer   </td><td class="markdownTableBodyCenter">0-7   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">No    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Power Source Voltage   </td><td class="markdownTableBodyCenter">7   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">Integer   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">mV   </td><td class="markdownTableBodyCenter">No    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Power Source Current   </td><td class="markdownTableBodyCenter">8   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">Integer   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">mA   </td><td class="markdownTableBodyCenter">No    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Battery Level   </td><td class="markdownTableBodyCenter">9   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">Integer   </td><td class="markdownTableBodyCenter">0-100   </td><td class="markdownTableBodyCenter">%   </td><td class="markdownTableBodyCenter">No    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Memory Free   </td><td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">Integer   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">KB   </td><td class="markdownTableBodyCenter">No    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Error Code   </td><td class="markdownTableBodyCenter">11   </td><td class="markdownTableBodyCenter">Yes   </td><td class="markdownTableBodyCenter">Integer   </td><td class="markdownTableBodyCenter">0-8   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">No    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Reset Error Code   </td><td class="markdownTableBodyCenter">12   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">No    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Current Time   </td><td class="markdownTableBodyCenter">13   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">Time   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">No    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">UTC Offset   </td><td class="markdownTableBodyCenter">14   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">String   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">No    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Timezone   </td><td class="markdownTableBodyCenter">15   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">String   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">No    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Supported Binding and Modes   </td><td class="markdownTableBodyCenter">16   </td><td class="markdownTableBodyCenter">Yes   </td><td class="markdownTableBodyCenter">String   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">Yes    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Device Type   </td><td class="markdownTableBodyCenter">17   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">String   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">Yes    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Hardware Version   </td><td class="markdownTableBodyCenter">18   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">String   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">Yes    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Software Version   </td><td class="markdownTableBodyCenter">19   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">String   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">Yes    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Battery Status   </td><td class="markdownTableBodyCenter">20   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">Integer   </td><td class="markdownTableBodyCenter">0-6   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">No    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Memory Total   </td><td class="markdownTableBodyCenter">21   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">Integer   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">No    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">ExtDevInfo   </td><td class="markdownTableBodyCenter">22   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">Objlnk   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">No   </td></tr>
-</table>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -281,6 +229,58 @@ Functions</h2></td></tr>
 <tr class="memitem:gadf0b393a7c64a061f7c1e9958122ec87" id="r_gadf0b393a7c64a061f7c1e9958122ec87"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadf0b393a7c64a061f7c1e9958122ec87">lwm2m_device_reboot_requested</a> (void)</td></tr>
 <tr class="memdesc:gadf0b393a7c64a061f7c1e9958122ec87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if a reboot request has been issued to the device by a server.  <br /></td></tr>
 <tr class="separator:gadf0b393a7c64a061f7c1e9958122ec87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Device object implementation for LwM2M client using Wakaama</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Name   </th><th class="markdownTableHeadCenter">ID   </th><th class="markdownTableHeadCenter">Mandatory   </th><th class="markdownTableHeadCenter">Type   </th><th class="markdownTableHeadCenter">Range   </th><th class="markdownTableHeadCenter">Units   </th><th class="markdownTableHeadCenter">Implemented    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Manufacturer   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">String   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">Yes    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Model Number   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">String   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">Yes    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Serial Number   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">String   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">Yes    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Firmware Version   </td><td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">String   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">Yes    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Reboot   </td><td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyCenter">Yes   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">Yes    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Factory Reset   </td><td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">No    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Available Power Sources   </td><td class="markdownTableBodyCenter">6   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">Integer   </td><td class="markdownTableBodyCenter">0-7   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">No    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Power Source Voltage   </td><td class="markdownTableBodyCenter">7   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">Integer   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">mV   </td><td class="markdownTableBodyCenter">No    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Power Source Current   </td><td class="markdownTableBodyCenter">8   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">Integer   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">mA   </td><td class="markdownTableBodyCenter">No    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Battery Level   </td><td class="markdownTableBodyCenter">9   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">Integer   </td><td class="markdownTableBodyCenter">0-100   </td><td class="markdownTableBodyCenter">%   </td><td class="markdownTableBodyCenter">No    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Memory Free   </td><td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">Integer   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">KB   </td><td class="markdownTableBodyCenter">No    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Error Code   </td><td class="markdownTableBodyCenter">11   </td><td class="markdownTableBodyCenter">Yes   </td><td class="markdownTableBodyCenter">Integer   </td><td class="markdownTableBodyCenter">0-8   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">No    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Reset Error Code   </td><td class="markdownTableBodyCenter">12   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">No    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Current Time   </td><td class="markdownTableBodyCenter">13   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">Time   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">No    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">UTC Offset   </td><td class="markdownTableBodyCenter">14   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">String   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">No    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Timezone   </td><td class="markdownTableBodyCenter">15   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">String   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">No    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Supported Binding and Modes   </td><td class="markdownTableBodyCenter">16   </td><td class="markdownTableBodyCenter">Yes   </td><td class="markdownTableBodyCenter">String   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">Yes    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Device Type   </td><td class="markdownTableBodyCenter">17   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">String   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">Yes    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Hardware Version   </td><td class="markdownTableBodyCenter">18   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">String   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">Yes    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Software Version   </td><td class="markdownTableBodyCenter">19   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">String   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">Yes    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Battery Status   </td><td class="markdownTableBodyCenter">20   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">Integer   </td><td class="markdownTableBodyCenter">0-6   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">No    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Memory Total   </td><td class="markdownTableBodyCenter">21   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">Integer   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">No    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">ExtDevInfo   </td><td class="markdownTableBodyCenter">22   </td><td class="markdownTableBodyCenter">No   </td><td class="markdownTableBodyCenter">Objlnk   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyCenter">No   </td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga24b92e708e61008d097f85af659a645e" name="ga24b92e708e61008d097f85af659a645e"></a>
@@ -460,7 +460,7 @@ false reboot has not been requested </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

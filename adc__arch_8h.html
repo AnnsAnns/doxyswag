@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -150,11 +150,7 @@ $(function(){initNavTree('adc__arch_8h.html',''); initResizable(true); });
 
 <p>Architecture specific ADC definitions and functions for ESP32.  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Architecture specific ADC definitions and functions for ESP32. </p>
-<p>All ESP32x SoCs have two SAR ADC units each. However, these have functionalities as well as specific properties that vary between the ESP32x SoC and therefore require different handling for each ESP32x SoC. This is already taken into account in the high-level API of the ESP-IDF. To avoid having to reimplement these specifics and the different handling, the high-level API of the ESP-IDF is used directly for the ADC peripherals.</p>
-<dl class="section author"><dt>Author</dt><dd>Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span class="obfuscator">.nosp@m.</span>@sch<span class="obfuscator">.nosp@m.</span>orcht<span class="obfuscator">.nosp@m.</span>.net</a> </dd></dl>
-</div><div class="textblock"><code>#include &quot;<a class="el" href="adc_8h.html">periph/adc.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="adc_8h.html">periph/adc.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="drivers_2include_2periph_2gpio_8h.html">periph/gpio.h</a>&quot;</code><br />
 <code>#include &quot;driver/adc.h&quot;</code><br />
 <code>#include &quot;hal/adc_types.h&quot;</code><br />
@@ -185,7 +181,11 @@ Functions</h2></td></tr>
 <tr class="memdesc:a1ebca9a3af2ed9a9416949f539ba56b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output reference voltage of a ADC line to GPIO n.  <br /></td></tr>
 <tr class="separator:a1ebca9a3af2ed9a9416949f539ba56b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Architecture specific ADC definitions and functions for ESP32. </p>
+<p>All ESP32x SoCs have two SAR ADC units each. However, these have functionalities as well as specific properties that vary between the ESP32x SoC and therefore require different handling for each ESP32x SoC. This is already taken into account in the high-level API of the ESP-IDF. To avoid having to reimplement these specifics and the different handling, the high-level API of the ESP-IDF is used directly for the ADC peripherals.</p>
+<dl class="section author"><dt>Author</dt><dd>Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span class="obfuscator">.nosp@m.</span>@sch<span class="obfuscator">.nosp@m.</span>orcht<span class="obfuscator">.nosp@m.</span>.net</a> </dd></dl>
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="aa71353583a04674cb8a03f8117e8ecd3" name="aa71353583a04674cb8a03f8117e8ecd3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa71353583a04674cb8a03f8117e8ecd3">&#9670;&#160;</a></span>adc_attenuation_t</h2>
 
@@ -309,7 +309,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_c433b04169c945a1c7f0848f853d4379.html">cpu</a></li><li class="navelem"><a class="el" href="dir_e6b21d86e7d1e166bef83c560415fa91.html">esp32</a></li><li class="navelem"><a class="el" href="dir_0a5788328d3e98738e96d147d1e9ce4a.html">include</a></li><li class="navelem"><a class="el" href="adc__arch_8h.html">adc_arch.h</a></li>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:00 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

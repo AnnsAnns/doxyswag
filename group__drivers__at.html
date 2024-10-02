@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -154,48 +154,6 @@ $(function(){initNavTree('group__drivers__at.html',''); initResizable(true); });
 
 <p>AT (Hayes) command set library  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>AT (Hayes) command set library </p>
-<p>This module provides functions to interact with devices using AT commands.</p>
-<p>Most functions compare the bytes echoed by the device with what they intended to send, and bail out if there's no match.</p>
-<p>Furthermore, the library tries to cope with difficulties regarding different line endings. It usually sends <code>&lt;command&gt;&lt;CR&gt;</code>, but expects <code>&lt;command&gt;\LF\CR</code> as echo.</p>
-<p>As a debugging aid, when compiled with <code>-DAT_PRINT_INCOMING=1</code>, every input byte gets printed.</p>
-<h2><a class="anchor" id="autotoc_md1620"></a>
-Command echoing</h2>
-<p>Most DCEs (Data Circuit-terminating Equipment, aka modem) support command echoing and enable it by default, and so does this driver. If you disabled echoing on the DCE, you can compile this driver NOT to expect echoing by defining CONFIG_AT_SEND_SKIP_ECHO. Note, if the driver is NOT expecting command echoing but the DCE is echoing, it should work just fine if and only if the EOL sequences of both DCE and DTE (Data Terminal Equipmend - i.e. the device using this driver) match, i.e. <code>AT_RECV_EOL_1 AT_RECV_EOL_2 == AT_SEND_EOL</code>. In other words, if you are unsure about the echoing behavior of the DCE or want to support both, set AT_SEND_EOL = AT_RECV_EOL_1 AT_RECV_EOL_2 and define CONFIG_AT_SEND_SKIP_ECHO. This works because the URC (Unsolicited Result Code) logic will intercept the echoes (see below).</p>
-<h2><a class="anchor" id="autotoc_md1621"></a>
-Unsolicited Result Codes (URC)</h2>
-<p>An unsolicited result code is a string message that is not triggered as a information text response to a previous AT command and can be output at any time to inform a specific event or status change.</p>
-<p>Some DCEs (Data Circuit-terminating Equipment, aka modem), like the LTE modules from uBlox define a grace period where URCs are guaranteed NOT to be sent as the time span between:</p><ul>
-<li>the command EOL character reception AND command being internally accepted</li>
-<li>the EOL character of the last response line</li>
-</ul>
-<p>As follows, there is an indeterminate amount of time between:</p><ul>
-<li>the command EOL character being sent</li>
-<li>the command EOL character reception AND command being internally accepted, i.e. the begin of the grace period</li>
-</ul>
-<p>In other words, we can get a URC (or more?) just after issuing the command and before the first line of response. The net effect is that such URCs will appear to be the first line of response to the last issued command.</p>
-<p>Regardless of whether URC handling is enabled or not, URC interception mechanics depend on command echoing:</p><ol type="1">
-<li>echo enabled: by observation, it seems that the grace period begins BEFORE the echoed command. This has the advantage that we ALWAYS know what the first line of response must look like and so if it doesn't, then it's a URC. Thus, any procedure that calls <a class="el" href="#ga702914edf074a4fa28769d47c66e5fbf" title="Send command to device.">at_send_cmd()</a> internally will catch any URC.</li>
-<li>echo disabled: commands that expect a particular type of response (e.g. <a class="el" href="#ga81db2cf0d221f8114e21286ccbfa1c25">at_send_cmd_get_resp_wait_ok()</a> with a non-trivial prefix, <a class="el" href="#ga78c3e2c3c058f89a19d2602d95e71df5">at_send_cmd_wait_ok()</a> etc.) will catch any URC. For the rest, it is the application's responsibility to decide whether the received answer is an URC or not and if yes, then <a class="el" href="#gad7ccb4f94e1dbdf6e3309472df7ae897">at_postprocess_urc()</a> can be called with the response as parameter.</li>
-</ol>
-<p>URC handling can be enabled by adding the <code>at_urc</code> module to the application. This allows to <a class="el" href="#ga062f9c2edf31ed42305296a1baa46f78">register</a> and <a class="el" href="#gaee82b66a03dd98a32986f467a6572274">de-register</a> URC strings to check. Later, URCs can be processed in three different ways:</p><ul>
-<li>automatically, whenever any at_* method that intercepts URCs is called. Such methods are marked in their docstring</li>
-<li>manually, by calling <a class="el" href="#ga62bde713e9dbb260e83dd469cf2d527e" title="Process out-of-band data received from the device.">at_process_urc()</a> periodically</li>
-<li>manually, by calling <a class="el" href="#gad7ccb4f94e1dbdf6e3309472df7ae897" title="Process one URC from the provided buffer.">at_postprocess_urc()</a> with an URC as parameter. The URC is assumed to have been obtained from the device through methods that do not automatically handle URCs (for example through <a class="el" href="#ga67070402b981624b5a2388140aa8cca9">at_recv_bytes()</a>) If a registered URC has been detected the correspondent <a class="el" href="structat__urc__t.html#a345f0cc6969759ff2512c316f68290af">callback function</a> is called.</li>
-</ul>
-<h2><a class="anchor" id="autotoc_md1622"></a>
-Error reporting</h2>
-<p>Most DCEs (Data Circuit-terminating Equipment, aka modem) can return extra error information instead of the rather opaque "ERROR" message. They have the form:</p><ul>
-<li><code>+CMS ERROR: err_code&gt;</code> for SMS-related commands</li>
-<li><code>+CME ERROR: &lt;err_code&gt;</code> for other commands</li>
-</ul>
-<p>For <code>+CME</code>, this behavior is usually off by default and can be toggled with: <code>AT+CMEE=&lt;type&gt;</code> where <code>&lt;type&gt;</code> may be:</p><ul>
-<li>0 disable extended error reporting, return <code>ERROR</code></li>
-<li>1 enable extended error reporting, with <code>&lt;err_code&gt;</code> integer</li>
-<li>2 enable extended error reporting, with <code>&lt;err_code&gt;</code> as string Check your DCE's manual for more information.</li>
-</ul>
-<p>Some of the API calls below support detailed error reporting. Whenever they detect extended error responses, -AT_ERR_EXTENDED is returned and <code>&lt;err_code&gt;</code> can be retrieved by calling <a class="el" href="#gab41a2381cbd97e858119b73e12f43c95">at_get_err_info()</a>. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -322,6 +280,48 @@ Functions</h2></td></tr>
 <tr class="memdesc:gae9b0300aa156d0489e21a69dbe5d0698"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process all URCs from the provided buffer.  <br /></td></tr>
 <tr class="separator:gae9b0300aa156d0489e21a69dbe5d0698"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>AT (Hayes) command set library </p>
+<p>This module provides functions to interact with devices using AT commands.</p>
+<p>Most functions compare the bytes echoed by the device with what they intended to send, and bail out if there's no match.</p>
+<p>Furthermore, the library tries to cope with difficulties regarding different line endings. It usually sends <code>&lt;command&gt;&lt;CR&gt;</code>, but expects <code>&lt;command&gt;\LF\CR</code> as echo.</p>
+<p>As a debugging aid, when compiled with <code>-DAT_PRINT_INCOMING=1</code>, every input byte gets printed.</p>
+<h2><a class="anchor" id="autotoc_md1620"></a>
+Command echoing</h2>
+<p>Most DCEs (Data Circuit-terminating Equipment, aka modem) support command echoing and enable it by default, and so does this driver. If you disabled echoing on the DCE, you can compile this driver NOT to expect echoing by defining CONFIG_AT_SEND_SKIP_ECHO. Note, if the driver is NOT expecting command echoing but the DCE is echoing, it should work just fine if and only if the EOL sequences of both DCE and DTE (Data Terminal Equipmend - i.e. the device using this driver) match, i.e. <code>AT_RECV_EOL_1 AT_RECV_EOL_2 == AT_SEND_EOL</code>. In other words, if you are unsure about the echoing behavior of the DCE or want to support both, set AT_SEND_EOL = AT_RECV_EOL_1 AT_RECV_EOL_2 and define CONFIG_AT_SEND_SKIP_ECHO. This works because the URC (Unsolicited Result Code) logic will intercept the echoes (see below).</p>
+<h2><a class="anchor" id="autotoc_md1621"></a>
+Unsolicited Result Codes (URC)</h2>
+<p>An unsolicited result code is a string message that is not triggered as a information text response to a previous AT command and can be output at any time to inform a specific event or status change.</p>
+<p>Some DCEs (Data Circuit-terminating Equipment, aka modem), like the LTE modules from uBlox define a grace period where URCs are guaranteed NOT to be sent as the time span between:</p><ul>
+<li>the command EOL character reception AND command being internally accepted</li>
+<li>the EOL character of the last response line</li>
+</ul>
+<p>As follows, there is an indeterminate amount of time between:</p><ul>
+<li>the command EOL character being sent</li>
+<li>the command EOL character reception AND command being internally accepted, i.e. the begin of the grace period</li>
+</ul>
+<p>In other words, we can get a URC (or more?) just after issuing the command and before the first line of response. The net effect is that such URCs will appear to be the first line of response to the last issued command.</p>
+<p>Regardless of whether URC handling is enabled or not, URC interception mechanics depend on command echoing:</p><ol type="1">
+<li>echo enabled: by observation, it seems that the grace period begins BEFORE the echoed command. This has the advantage that we ALWAYS know what the first line of response must look like and so if it doesn't, then it's a URC. Thus, any procedure that calls <a class="el" href="#ga702914edf074a4fa28769d47c66e5fbf" title="Send command to device.">at_send_cmd()</a> internally will catch any URC.</li>
+<li>echo disabled: commands that expect a particular type of response (e.g. <a class="el" href="#ga81db2cf0d221f8114e21286ccbfa1c25">at_send_cmd_get_resp_wait_ok()</a> with a non-trivial prefix, <a class="el" href="#ga78c3e2c3c058f89a19d2602d95e71df5">at_send_cmd_wait_ok()</a> etc.) will catch any URC. For the rest, it is the application's responsibility to decide whether the received answer is an URC or not and if yes, then <a class="el" href="#gad7ccb4f94e1dbdf6e3309472df7ae897">at_postprocess_urc()</a> can be called with the response as parameter.</li>
+</ol>
+<p>URC handling can be enabled by adding the <code>at_urc</code> module to the application. This allows to <a class="el" href="#ga062f9c2edf31ed42305296a1baa46f78">register</a> and <a class="el" href="#gaee82b66a03dd98a32986f467a6572274">de-register</a> URC strings to check. Later, URCs can be processed in three different ways:</p><ul>
+<li>automatically, whenever any at_* method that intercepts URCs is called. Such methods are marked in their docstring</li>
+<li>manually, by calling <a class="el" href="#ga62bde713e9dbb260e83dd469cf2d527e" title="Process out-of-band data received from the device.">at_process_urc()</a> periodically</li>
+<li>manually, by calling <a class="el" href="#gad7ccb4f94e1dbdf6e3309472df7ae897" title="Process one URC from the provided buffer.">at_postprocess_urc()</a> with an URC as parameter. The URC is assumed to have been obtained from the device through methods that do not automatically handle URCs (for example through <a class="el" href="#ga67070402b981624b5a2388140aa8cca9">at_recv_bytes()</a>) If a registered URC has been detected the correspondent <a class="el" href="structat__urc__t.html#a345f0cc6969759ff2512c316f68290af">callback function</a> is called.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md1622"></a>
+Error reporting</h2>
+<p>Most DCEs (Data Circuit-terminating Equipment, aka modem) can return extra error information instead of the rather opaque "ERROR" message. They have the form:</p><ul>
+<li><code>+CMS ERROR: err_code&gt;</code> for SMS-related commands</li>
+<li><code>+CME ERROR: &lt;err_code&gt;</code> for other commands</li>
+</ul>
+<p>For <code>+CME</code>, this behavior is usually off by default and can be toggled with: <code>AT+CMEE=&lt;type&gt;</code> where <code>&lt;type&gt;</code> may be:</p><ul>
+<li>0 disable extended error reporting, return <code>ERROR</code></li>
+<li>1 enable extended error reporting, with <code>&lt;err_code&gt;</code> integer</li>
+<li>2 enable extended error reporting, with <code>&lt;err_code&gt;</code> as string Check your DCE's manual for more information.</li>
+</ul>
+<p>Some of the API calls below support detailed error reporting. Whenever they detect extended error responses, -AT_ERR_EXTENDED is returned and <code>&lt;err_code&gt;</code> can be retrieved by calling <a class="el" href="#gab41a2381cbd97e858119b73e12f43c95">at_get_err_info()</a>. </p>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ga7d1acdacf996c040a54c7fa1ea018f29" name="ga7d1acdacf996c040a54c7fa1ea018f29"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga7d1acdacf996c040a54c7fa1ea018f29">&#9670;&#160;</a></span>at_urc_cb_t</h2>
@@ -1500,7 +1500,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

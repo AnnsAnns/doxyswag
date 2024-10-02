@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -149,13 +149,6 @@ $(function(){initNavTree('group__pseudomodules.html',''); initResizable(true); }
 
 <p>Modules influencing general RIOT behavior  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Modules influencing general RIOT behavior </p>
-<p>These are implemented in other modules or core components, and serve to enable certain functionality.</p>
-<p>Here, pseudomodules are used instead of plain defines (that would be set using <code>CFLAGS += -DMODULE_NAME</code>) because they can participate in dependency resolution: they can pull in other modules.</p>
-<p>Pseudomodules are often enabled automatically through module dependencies, but can also be enabled manually by stating <code>USEMODULE += module_name</code> in the Makefile.</p>
-<p>The list of documented pseudomodules is not comprehensive by far; makefiles/pseudomodules.inc.mk lists all that are not defined inside their main modules. Not all modules listed there are "generic" pseudomodules; some are merely optional components of a particular subsystem and should be documented there.</p>
-<p>See also <a href="creating-modules.html#pseudomodules">the documentation on pseudomodules in general</a>. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -220,6 +213,13 @@ Topics</h2></td></tr>
 <tr class="memdesc:group__pseudomodule__ztimer__auto__adjust"><td class="mdescLeft">&#160;</td><td class="mdescRight">A module to set on init ztimer-&gt;adjust_sleep/adjust_set values <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Modules influencing general RIOT behavior </p>
+<p>These are implemented in other modules or core components, and serve to enable certain functionality.</p>
+<p>Here, pseudomodules are used instead of plain defines (that would be set using <code>CFLAGS += -DMODULE_NAME</code>) because they can participate in dependency resolution: they can pull in other modules.</p>
+<p>Pseudomodules are often enabled automatically through module dependencies, but can also be enabled manually by stating <code>USEMODULE += module_name</code> in the Makefile.</p>
+<p>The list of documented pseudomodules is not comprehensive by far; makefiles/pseudomodules.inc.mk lists all that are not defined inside their main modules. Not all modules listed there are "generic" pseudomodules; some are merely optional components of a particular subsystem and should be documented there.</p>
+<p>See also <a href="creating-modules.html#pseudomodules">the documentation on pseudomodules in general</a>. </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
@@ -227,7 +227,7 @@ Topics</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

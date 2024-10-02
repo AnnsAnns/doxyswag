@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -149,54 +149,6 @@ $(function(){initNavTree('group__pkg.html',''); initResizable(true); });
 
 <p>External libraries and applications  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>External libraries and applications </p>
-<p>What are packages? RIOT packages:</p><ul>
-<li>pull a specific tested version most often from the (a) origin source</li>
-<li>patch them to match the RIOT architecture</li>
-<li>provide a specific tested configuration (such configuration may enable or disable features)</li>
-<li>integrate the packages build process into the RIOT one</li>
-<li>they have RIOT tests and/or examples to test/build them</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md1773"></a>
-Using packages</h1>
-<p>To add a package to the list of compiled modules you have to add it to the <code>USEPKG</code> macro in your application's Makefile:</p>
-<div class="fragment"><div class="line">USEPKG += &lt;pkg_name&gt;</div>
-</div><!-- fragment --><p>When the package can be built out-of-source, the source code of external packages is fetched in a global location in:</p>
-<div class="fragment"><div class="line">$(PKGDIRBASE)/$(PKG_NAME)</div>
-</div><!-- fragment --><p>When out-of-source build is not possible (for example because the package build system doesn't allow it), the source code is fetched in the build directory of the application under:</p>
-<div class="fragment"><div class="line">$(BINDIR)/pkg/$(PKG_NAME)</div>
-</div><!-- fragment --><p>In this case, the source and the build directory are the same (currently, this only applies to the micropython package).</p>
-<h1><a class="anchor" id="autotoc_md1774"></a>
-Porting an external library</h1>
-<h2><a class="anchor" id="autotoc_md1775"></a>
-Structure of a package</h2>
-<p>This module provides porting information for libraries and applications to use with RIOT (to build an external module). If you'd like to add a package to RIOT you need to add a directory with the name of your package to this directory. This directory should contain at least one file:</p>
-<ul>
-<li><b>Makefile</b>: A Makefile describing how to get the upstream application, apply the patch and how to build the package as a RIOT module. A rough template for several methods of acquiring a package is provided in <code>pkg/Makefile.git</code> and <code>pkg/Makefile.http</code>.</li>
-</ul>
-<p>If your port or the package provide header files, you need to update the <code>INCLUDES</code> variable in the package's <code>Makefile.include</code>:</p>
-<div class="fragment"><div class="line">INCLUDES += -I$(RIOTPKG)/&lt;pkg_name&gt;/include <span class="comment"># headers provided by the port</span></div>
-<div class="line">INCLUDES += -I$(PKGDIRBASE)/&lt;pkg_name&gt; <span class="comment"># headers provided by the package</span></div>
-</div><!-- fragment --><p>Patch files can be included in a <code>patches</code> directory in the package dir. These are applied to the upstream package to make it build with RIOT.</p>
-<h2><a class="anchor" id="autotoc_md1776"></a>
-Creating a patch with git</h2>
-<p>Assuming your upstream library resides in a git repository, you can create the patch files as follows:</p><ul>
-<li>checkout the targeted version of the upstream application</li>
-<li>create a new branch (e.g. <code>riot-port</code>)</li>
-<li>conduct necessary changes (e.g. edit, add, or remove some files)</li>
-<li>commit your changes using <code>git commit</code></li>
-<li>create the patch files using <code>git format-patch -n riot-port</code></li>
-<li>move the resulting patch files to the patches directory of your package.</li>
-</ul>
-<h2><a class="anchor" id="autotoc_md1777"></a>
-Packages outside of RIOTPKG</h2>
-<p>It can be beneficial to create packages outside of the RIOT tree. For example if one is working on new packages that aren't ready to be committed to upstream or if an application needs its own unique packages. For this, one can use the <code>EXTERNAL_PKG_DIRS</code> make variable. It works similar to the way <a href="src/creating-modules.html#modules-outside-of-riotbase">external modules</a> are handled. In your application's Makefile, in addition to adding the package name to <code>USEPKG</code> as shown above, add the path to a folder that contains your external packages:</p>
-<div class="fragment"><div class="line">EXTERNAL_PKG_DIRS += &lt;PATH_TO_FOLDER_CONTAINING_PACKAGES&gt;</div>
-</div><!-- fragment --><p>The path is allowed to be relative to the application's directory.</p>
-<p><em><b>NOTE:</b></em> The name of an external package must be unique (both in regard to other external packages, as well to native RIOT packages). Additionally, the directory containing the packages must match the package name, e.g. package <code>foo</code>must be located in <code>&lt;PATH_IN_EXTERNAL_PKG_DIRS&gt;/foo</code>.</p>
-<p>An example can be found in <a href="https://github.com/RIOT-OS/RIOT/tree/master/tests/build_system/external_pkg_dirs"><code>tests/build_system/external_pkg_dirs</code></a></p>
-<p>RIOT welcomes new and useful packages. If you'd like to share your work, consider <a href="https://github.com/RIOT-OS/RIOT/tree/master/CONTRIBUTING.md">contributing</a>. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -483,6 +435,54 @@ Topics</h2></td></tr>
 <tr class="memdesc:group__pkg__uzlib"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deflate/Zlib-compatible LZ77 compression/decompression library <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>External libraries and applications </p>
+<p>What are packages? RIOT packages:</p><ul>
+<li>pull a specific tested version most often from the (a) origin source</li>
+<li>patch them to match the RIOT architecture</li>
+<li>provide a specific tested configuration (such configuration may enable or disable features)</li>
+<li>integrate the packages build process into the RIOT one</li>
+<li>they have RIOT tests and/or examples to test/build them</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md1773"></a>
+Using packages</h1>
+<p>To add a package to the list of compiled modules you have to add it to the <code>USEPKG</code> macro in your application's Makefile:</p>
+<div class="fragment"><div class="line">USEPKG += &lt;pkg_name&gt;</div>
+</div><!-- fragment --><p>When the package can be built out-of-source, the source code of external packages is fetched in a global location in:</p>
+<div class="fragment"><div class="line">$(PKGDIRBASE)/$(PKG_NAME)</div>
+</div><!-- fragment --><p>When out-of-source build is not possible (for example because the package build system doesn't allow it), the source code is fetched in the build directory of the application under:</p>
+<div class="fragment"><div class="line">$(BINDIR)/pkg/$(PKG_NAME)</div>
+</div><!-- fragment --><p>In this case, the source and the build directory are the same (currently, this only applies to the micropython package).</p>
+<h1><a class="anchor" id="autotoc_md1774"></a>
+Porting an external library</h1>
+<h2><a class="anchor" id="autotoc_md1775"></a>
+Structure of a package</h2>
+<p>This module provides porting information for libraries and applications to use with RIOT (to build an external module). If you'd like to add a package to RIOT you need to add a directory with the name of your package to this directory. This directory should contain at least one file:</p>
+<ul>
+<li><b>Makefile</b>: A Makefile describing how to get the upstream application, apply the patch and how to build the package as a RIOT module. A rough template for several methods of acquiring a package is provided in <code>pkg/Makefile.git</code> and <code>pkg/Makefile.http</code>.</li>
+</ul>
+<p>If your port or the package provide header files, you need to update the <code>INCLUDES</code> variable in the package's <code>Makefile.include</code>:</p>
+<div class="fragment"><div class="line">INCLUDES += -I$(RIOTPKG)/&lt;pkg_name&gt;/include <span class="comment"># headers provided by the port</span></div>
+<div class="line">INCLUDES += -I$(PKGDIRBASE)/&lt;pkg_name&gt; <span class="comment"># headers provided by the package</span></div>
+</div><!-- fragment --><p>Patch files can be included in a <code>patches</code> directory in the package dir. These are applied to the upstream package to make it build with RIOT.</p>
+<h2><a class="anchor" id="autotoc_md1776"></a>
+Creating a patch with git</h2>
+<p>Assuming your upstream library resides in a git repository, you can create the patch files as follows:</p><ul>
+<li>checkout the targeted version of the upstream application</li>
+<li>create a new branch (e.g. <code>riot-port</code>)</li>
+<li>conduct necessary changes (e.g. edit, add, or remove some files)</li>
+<li>commit your changes using <code>git commit</code></li>
+<li>create the patch files using <code>git format-patch -n riot-port</code></li>
+<li>move the resulting patch files to the patches directory of your package.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md1777"></a>
+Packages outside of RIOTPKG</h2>
+<p>It can be beneficial to create packages outside of the RIOT tree. For example if one is working on new packages that aren't ready to be committed to upstream or if an application needs its own unique packages. For this, one can use the <code>EXTERNAL_PKG_DIRS</code> make variable. It works similar to the way <a href="src/creating-modules.html#modules-outside-of-riotbase">external modules</a> are handled. In your application's Makefile, in addition to adding the package name to <code>USEPKG</code> as shown above, add the path to a folder that contains your external packages:</p>
+<div class="fragment"><div class="line">EXTERNAL_PKG_DIRS += &lt;PATH_TO_FOLDER_CONTAINING_PACKAGES&gt;</div>
+</div><!-- fragment --><p>The path is allowed to be relative to the application's directory.</p>
+<p><em><b>NOTE:</b></em> The name of an external package must be unique (both in regard to other external packages, as well to native RIOT packages). Additionally, the directory containing the packages must match the package name, e.g. package <code>foo</code>must be located in <code>&lt;PATH_IN_EXTERNAL_PKG_DIRS&gt;/foo</code>.</p>
+<p>An example can be found in <a href="https://github.com/RIOT-OS/RIOT/tree/master/tests/build_system/external_pkg_dirs"><code>tests/build_system/external_pkg_dirs</code></a></p>
+<p>RIOT welcomes new and useful packages. If you'd like to share your work, consider <a href="https://github.com/RIOT-OS/RIOT/tree/master/CONTRIBUTING.md">contributing</a>. </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
@@ -490,7 +490,7 @@ Topics</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

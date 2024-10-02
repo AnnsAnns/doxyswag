@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -154,69 +154,6 @@ $(function(){initNavTree('group__drivers__cc110x.html',''); initResizable(true);
 
 <p>This module contains the driver for the TI CC1100/CC110e/CC1101 Sub-GHz transceivers.  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>This module contains the driver for the TI CC1100/CC110e/CC1101 Sub-GHz transceivers. </p>
-<dl class="section warning"><dt>Warning</dt><dd>How the CC1100/CC1101 operate can be configured quite sophistically. This has the drawback, that configurations breaking laws and rules are complete possible. Please make sure that the configured output power, duty cycle, frequency range, etc. conform to the rules, standards and laws that apply in your use case.</dd></dl>
-<h1><a class="anchor" id="autotoc_md1629"></a>
-Supported Hardware and how to obtain</h1>
-<p>This driver has been developed for the CC1101 and the older CC1100 transceiver and tested for both. However, it should work with the CC1100e as well - but this has <em>NOT</em> been tested at all.</p>
-<p>It is suggested to go for the CC1101 when considering to buy one of the supported transceivers. The easiest way is to obtain CC1101 break out boards with a complete antenna circuit &amp; antenna that can be connected via jumper wires using an 8 pin DIP pin header. These are sold in various flavours start from less than 2€ at quantity one at your favourite Far East store. Beware that while the CC1101 chip can operate a various base frequencies, the antenna circuit will only work for a single frequency band. Most break out boards will operate at 433 MHz, which is license free in many countries (but verify that for your country before buying!). EU citizens might prefer the 868 MHz band over the 433 MHz, as more license free bandwidth is available in the 868 MHz band in the EU. (But when deploying only a few dozens of devices, the 433 MHz band is also fine for EU citizens.) US citizens should go for the 900 MHz band (as 868 MHz is not license free in the USA), which even contains more bandwidth than the 868 MHz band. (However, the 900 MHz band has not been tested, as using it would be illegal in the EU.)</p>
-<h1><a class="anchor" id="autotoc_md1630"></a>
-Packet Format</h1>
-<div class="fragment"><div class="line"> 0                   1                   2                   3</div>
-<div class="line"> 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1</div>
-<div class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</div>
-<div class="line">|     Preamble (4 bytes, handled by hardware, see MDMCFG1)      |</div>
-<div class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</div>
-<div class="line">|     Sync Word (4 bytes, handled by hardware, see MDMCFG2)     |</div>
-<div class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</div>
-<div class="line">| Length Field  |  Destination  |    Source     |  Payload...</div>
-<div class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</div>
-<div class="line"> ... (see Length Field)         |  CRC (handled by hardware)    |</div>
-<div class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</div>
-</div><!-- fragment --><table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Field   </th><th class="markdownTableHeadNone">Description    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Preamble   </td><td class="markdownTableBodyNone">4 bytes, handled by hardware    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Sync Word   </td><td class="markdownTableBodyNone">4 bytes, handled by hardware    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Length Field   </td><td class="markdownTableBodyNone">Handled by software &amp; hardware, length of payload + 2    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Destination   </td><td class="markdownTableBodyNone">Handled by software &amp; hardware, destination MAC address    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Source   </td><td class="markdownTableBodyNone">Handled by software only, source MAC address    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Payload   </td><td class="markdownTableBodyNone">Handled by software only, the payload to send    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">CRC   </td><td class="markdownTableBodyNone">2 bytes, handled by hardware   </td></tr>
-</table>
-<p>The Length Field contains the length of the driver supplied data in bytes, not counting the Length Field. Thus, it contains the length of the payload plus the length of the Destination and Source address.</p>
-<h2><a class="anchor" id="autotoc_md1631"></a>
-Layer-2 Addresses</h2>
-<p>The layer 2 addresses of the CC110x transceivers is a single byte long and the special value <code>0x00</code> for the destination address is used in broadcast transmissions. The transceiver is configured by this driver to ignore all packets unless the destination address matches the address of the transceiver or the destination address is <code>0x00</code>.</p>
-<p>Please note that the layer 2 address by default is derived from the CPU ID. Due to the birthday paradox with only 20 devices the probability of a collision is already bigger than 50%. Thus, manual address assignment is supported by providing an implementation of <a class="el" href="group__drivers__cc1xxx.html#ga8bac248ae45d469607592d9e4f4c95d2">cc1xxx_eui_get</a>.</p>
-<h1><a class="anchor" id="autotoc_md1632"></a>
-Base Band, Data Rate, Channel Bandwidth and Channel Map Configuration</h1>
-<p>This driver allows to configure the base band, the data rate and the channel bandwidth using an <a class="el" href="structcc110x__config__t.html">cc110x_config_t</a> data structure. Default configurations are supplied and name using the following scheme: <code>cc110x_config_&lt;BASE-BAND&gt;_&lt;DATA-RATE&gt;_&lt;CHANNEL-BANDWIDTH&gt;</code>. (E.g. <a class="el" href="cc110x__settings_8h.html#a622ee6ea5cfbacb26baa67ce04683c5b">cc110x_config_868mhz_250kbps_300khz</a> is the default configuration used by the MSB-A2 and the MSB-IoT boards.)</p>
-<p>Using the <a class="el" href="structcc110x__chanmap__t.html">cc110x_chanmap_t</a> data structure the channel layout can be defined. This map contains 8 entries, each defines the offset from the base frequency defined in the <a class="el" href="structcc110x__config__t.html">cc110x_config_t</a> data structure for each channel in steps of 50kHz. E.g. <a class="el" href="cc110x__settings_8h.html#a521cfee46deee83e4f87dcd33433603d">cc110x_chanmap_868mhz_lora</a> provides the LoRa channels 10 to 17 in the 868MHz band. (The RIOT channel numbers will always start from 0, and currently only up to eight channels are supported. A special value of 255 as offset from the base frequency in the channel map is used mark the channel as disabled. This can be used if less than 8 non-overlapping channels are possible in the license free band.)</p>
-<p>Please note that the channel map (<a class="el" href="structcc110x__chanmap__t.html">cc110x_chanmap_t</a>) must match the base configuration (<a class="el" href="structcc110x__config__t.html">cc110x_config_t</a>), as the channel map is relative to the configured base frequency. Also, the distance between the channels in the channel map should match the channel bandwidth of the configuration, as otherwise channels could overlap.</p>
-<p>Both configuration and matching channel map can be applied using <a class="el" href="#gab625dd7ec2f9a7e44dbe3f61d766af5c">cc110x_apply_config</a>. Please consider this as a slow operation, as the transceiver needs to be calibrated for each channel in the channel map.</p>
-<h1><a class="anchor" id="autotoc_md1633"></a>
-Calibration of the Frequency Generator</h1>
-<p>The CC110x transceivers use a voltage controlled oscillator (VCO) and a phase locked loop (PLL) for frequency generation. However, they need to be calibrated to work correctly with the given supply voltage and the current temperature. The driver will perform this calibration during startup, but when the supply voltage or the temperature is not stable, a recalibration is required whenever the supply voltage of temperature has changed too much since the last calibration. This can be done by calling <a class="el" href="#ga190d929cb3da4b8c22699a8e60eb839b">cc110x_full_calibration</a>. It is left to the application developer to perform this calibration when needed. During a test of about 2 hours of operation in an in-door environment with a stable temperature the CC1101 has worked reliable without any calibration at all (except for the automatic calibration at start up). So there are use cases which do not require any recalibration at all.</p>
-<h1><a class="anchor" id="autotoc_md1634"></a>
-Troubleshooting</h1>
-<h2><a class="anchor" id="autotoc_md1635"></a>
-The Driver Does Not Initialize Properly</h2>
-<p>Set <code>ENABLE_DEBUG</code> in <code>cc110x_netdev.c</code> to <code>1</code> to get debug output, which will likely tell you what is going wrong. There are basically two things that can fail:</p>
-<p>Upon initialization the driver will read out the part number and version of the transceiver. If those do not match the ones expected for the CC1100, CC1100E, or the CC1101 the driver will refuse to initialize. If this fails, most likely incorrect values are read out and the SPI communication does not work correctly. However, future revisions of the CC110X transceivers might be produced and might have different values for the part number or version. If this should happen and they remain compatible with the driver, their part number &amp; revision needs to be added to the driver.</p>
-<p>After uploading the configuration, the driver will read back the configuration to verify it. If the SPI communication is not reliable (e.g. sporadically bits flip), this will fail from time to time. E.g. on the MSB-IoT boards this is the case when the SPI interface operates at a clock of 5MHz, but it becomes reliable when clocked at 1MHz.</p>
-<h2><a class="anchor" id="autotoc_md1636"></a>
-The Driver Initializes, but Communication Is Impossible</h2>
-<p>If two transceivers are too close to each other and TX power is at maximum, the signal is just too strong to be received correctly. Reducing TX power or increasing the distance (about half a meter should be fine) will solve this issue.</p>
-<p>While the chips can operate at any base frequency offered by the driver, the circuit the chip is connected to and the antenna are build for a single base band. Check if your configuration matches the frequency range the board is build for. E.g. most break out boards operate at 433MHz, but there are also boards for 868MHz. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -358,6 +295,69 @@ Functions</h2></td></tr>
 <tr class="memdesc:gab66a6bd8e228e67b1b80d8f53dffc6c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the transceiver into SLEEP mode.  <br /></td></tr>
 <tr class="separator:gab66a6bd8e228e67b1b80d8f53dffc6c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>This module contains the driver for the TI CC1100/CC110e/CC1101 Sub-GHz transceivers. </p>
+<dl class="section warning"><dt>Warning</dt><dd>How the CC1100/CC1101 operate can be configured quite sophistically. This has the drawback, that configurations breaking laws and rules are complete possible. Please make sure that the configured output power, duty cycle, frequency range, etc. conform to the rules, standards and laws that apply in your use case.</dd></dl>
+<h1><a class="anchor" id="autotoc_md1629"></a>
+Supported Hardware and how to obtain</h1>
+<p>This driver has been developed for the CC1101 and the older CC1100 transceiver and tested for both. However, it should work with the CC1100e as well - but this has <em>NOT</em> been tested at all.</p>
+<p>It is suggested to go for the CC1101 when considering to buy one of the supported transceivers. The easiest way is to obtain CC1101 break out boards with a complete antenna circuit &amp; antenna that can be connected via jumper wires using an 8 pin DIP pin header. These are sold in various flavours start from less than 2€ at quantity one at your favourite Far East store. Beware that while the CC1101 chip can operate a various base frequencies, the antenna circuit will only work for a single frequency band. Most break out boards will operate at 433 MHz, which is license free in many countries (but verify that for your country before buying!). EU citizens might prefer the 868 MHz band over the 433 MHz, as more license free bandwidth is available in the 868 MHz band in the EU. (But when deploying only a few dozens of devices, the 433 MHz band is also fine for EU citizens.) US citizens should go for the 900 MHz band (as 868 MHz is not license free in the USA), which even contains more bandwidth than the 868 MHz band. (However, the 900 MHz band has not been tested, as using it would be illegal in the EU.)</p>
+<h1><a class="anchor" id="autotoc_md1630"></a>
+Packet Format</h1>
+<div class="fragment"><div class="line"> 0                   1                   2                   3</div>
+<div class="line"> 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1</div>
+<div class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</div>
+<div class="line">|     Preamble (4 bytes, handled by hardware, see MDMCFG1)      |</div>
+<div class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</div>
+<div class="line">|     Sync Word (4 bytes, handled by hardware, see MDMCFG2)     |</div>
+<div class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</div>
+<div class="line">| Length Field  |  Destination  |    Source     |  Payload...</div>
+<div class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</div>
+<div class="line"> ... (see Length Field)         |  CRC (handled by hardware)    |</div>
+<div class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</div>
+</div><!-- fragment --><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Field   </th><th class="markdownTableHeadNone">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Preamble   </td><td class="markdownTableBodyNone">4 bytes, handled by hardware    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Sync Word   </td><td class="markdownTableBodyNone">4 bytes, handled by hardware    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Length Field   </td><td class="markdownTableBodyNone">Handled by software &amp; hardware, length of payload + 2    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Destination   </td><td class="markdownTableBodyNone">Handled by software &amp; hardware, destination MAC address    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Source   </td><td class="markdownTableBodyNone">Handled by software only, source MAC address    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Payload   </td><td class="markdownTableBodyNone">Handled by software only, the payload to send    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">CRC   </td><td class="markdownTableBodyNone">2 bytes, handled by hardware   </td></tr>
+</table>
+<p>The Length Field contains the length of the driver supplied data in bytes, not counting the Length Field. Thus, it contains the length of the payload plus the length of the Destination and Source address.</p>
+<h2><a class="anchor" id="autotoc_md1631"></a>
+Layer-2 Addresses</h2>
+<p>The layer 2 addresses of the CC110x transceivers is a single byte long and the special value <code>0x00</code> for the destination address is used in broadcast transmissions. The transceiver is configured by this driver to ignore all packets unless the destination address matches the address of the transceiver or the destination address is <code>0x00</code>.</p>
+<p>Please note that the layer 2 address by default is derived from the CPU ID. Due to the birthday paradox with only 20 devices the probability of a collision is already bigger than 50%. Thus, manual address assignment is supported by providing an implementation of <a class="el" href="group__drivers__cc1xxx.html#ga8bac248ae45d469607592d9e4f4c95d2">cc1xxx_eui_get</a>.</p>
+<h1><a class="anchor" id="autotoc_md1632"></a>
+Base Band, Data Rate, Channel Bandwidth and Channel Map Configuration</h1>
+<p>This driver allows to configure the base band, the data rate and the channel bandwidth using an <a class="el" href="structcc110x__config__t.html">cc110x_config_t</a> data structure. Default configurations are supplied and name using the following scheme: <code>cc110x_config_&lt;BASE-BAND&gt;_&lt;DATA-RATE&gt;_&lt;CHANNEL-BANDWIDTH&gt;</code>. (E.g. <a class="el" href="cc110x__settings_8h.html#a622ee6ea5cfbacb26baa67ce04683c5b">cc110x_config_868mhz_250kbps_300khz</a> is the default configuration used by the MSB-A2 and the MSB-IoT boards.)</p>
+<p>Using the <a class="el" href="structcc110x__chanmap__t.html">cc110x_chanmap_t</a> data structure the channel layout can be defined. This map contains 8 entries, each defines the offset from the base frequency defined in the <a class="el" href="structcc110x__config__t.html">cc110x_config_t</a> data structure for each channel in steps of 50kHz. E.g. <a class="el" href="cc110x__settings_8h.html#a521cfee46deee83e4f87dcd33433603d">cc110x_chanmap_868mhz_lora</a> provides the LoRa channels 10 to 17 in the 868MHz band. (The RIOT channel numbers will always start from 0, and currently only up to eight channels are supported. A special value of 255 as offset from the base frequency in the channel map is used mark the channel as disabled. This can be used if less than 8 non-overlapping channels are possible in the license free band.)</p>
+<p>Please note that the channel map (<a class="el" href="structcc110x__chanmap__t.html">cc110x_chanmap_t</a>) must match the base configuration (<a class="el" href="structcc110x__config__t.html">cc110x_config_t</a>), as the channel map is relative to the configured base frequency. Also, the distance between the channels in the channel map should match the channel bandwidth of the configuration, as otherwise channels could overlap.</p>
+<p>Both configuration and matching channel map can be applied using <a class="el" href="#gab625dd7ec2f9a7e44dbe3f61d766af5c">cc110x_apply_config</a>. Please consider this as a slow operation, as the transceiver needs to be calibrated for each channel in the channel map.</p>
+<h1><a class="anchor" id="autotoc_md1633"></a>
+Calibration of the Frequency Generator</h1>
+<p>The CC110x transceivers use a voltage controlled oscillator (VCO) and a phase locked loop (PLL) for frequency generation. However, they need to be calibrated to work correctly with the given supply voltage and the current temperature. The driver will perform this calibration during startup, but when the supply voltage or the temperature is not stable, a recalibration is required whenever the supply voltage of temperature has changed too much since the last calibration. This can be done by calling <a class="el" href="#ga190d929cb3da4b8c22699a8e60eb839b">cc110x_full_calibration</a>. It is left to the application developer to perform this calibration when needed. During a test of about 2 hours of operation in an in-door environment with a stable temperature the CC1101 has worked reliable without any calibration at all (except for the automatic calibration at start up). So there are use cases which do not require any recalibration at all.</p>
+<h1><a class="anchor" id="autotoc_md1634"></a>
+Troubleshooting</h1>
+<h2><a class="anchor" id="autotoc_md1635"></a>
+The Driver Does Not Initialize Properly</h2>
+<p>Set <code>ENABLE_DEBUG</code> in <code>cc110x_netdev.c</code> to <code>1</code> to get debug output, which will likely tell you what is going wrong. There are basically two things that can fail:</p>
+<p>Upon initialization the driver will read out the part number and version of the transceiver. If those do not match the ones expected for the CC1100, CC1100E, or the CC1101 the driver will refuse to initialize. If this fails, most likely incorrect values are read out and the SPI communication does not work correctly. However, future revisions of the CC110X transceivers might be produced and might have different values for the part number or version. If this should happen and they remain compatible with the driver, their part number &amp; revision needs to be added to the driver.</p>
+<p>After uploading the configuration, the driver will read back the configuration to verify it. If the SPI communication is not reliable (e.g. sporadically bits flip), this will fail from time to time. E.g. on the MSB-IoT boards this is the case when the SPI interface operates at a clock of 5MHz, but it becomes reliable when clocked at 1MHz.</p>
+<h2><a class="anchor" id="autotoc_md1636"></a>
+The Driver Initializes, but Communication Is Impossible</h2>
+<p>If two transceivers are too close to each other and TX power is at maximum, the signal is just too strong to be received correctly. Reducing TX power or increasing the distance (about half a meter should be fine) will solve this issue.</p>
+<p>While the chips can operate at any base frequency offered by the driver, the circuit the chip is connected to and the antenna are build for a single base band. Check if your configuration matches the frequency range the board is build for. E.g. most break out boards operate at 433MHz, but there are also boards for 868MHz. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga2f9855cabc5979533613ecd64a3bf1cb" name="ga2f9855cabc5979533613ecd64a3bf1cb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga2f9855cabc5979533613ecd64a3bf1cb">&#9670;&#160;</a></span>CC110X_MAX_FRAME_SIZE</h2>
@@ -727,7 +727,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -149,26 +149,7 @@ $(function(){initNavTree('structuart__conf__t.html',''); initResizable(true); })
 
 <p>UART device configuration.  
  <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>UART device configuration. </p>
-<p>UART configuration data.</p>
-<p>Configuration details for an UART interface needed by the RPX0XX peripheral.</p>
-<p>MSP430 x1xx UART configuration, board level.</p>
-<p>MSP430 F2xx/G2xx UART configuration, board level.</p>
-<p>UART module configuration options.</p>
-<p>Structure for UART configuration data.</p>
-<p>UART configuration structure type.</p>
-<p>QN908x doesn't have any UART standalone blocks, but it has two FLEXCOMM blocks that can be put in UART mode. The USART_Type* address is one of the FLEXCOMM_Type* addresses as well.</p>
-<pre class="fragment">     The frequency f() of the clock `gclk_src` must fulfill the condition
 
-         16 * baud &lt; f(gclk_src) ≤ 2²⁰ * baud
-
-     in Asynchronous Arithmetic mode and
-
-         16 * baud &lt; f(gclk_src) ≤ 2¹⁷ * baud
-
-     in Asynchronous Fractional mode
-</pre> </div>
 <p><code>#include &lt;cpu_uart.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -402,7 +383,26 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>rcc_mask</b></td>
 <tr class="memdesc:ac308620ca928ccd79894f11b11d9e0ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">alternate function for TX pin <br /></td></tr>
 <tr class="separator:ac308620ca928ccd79894f11b11d9e0ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Field Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>UART device configuration. </p>
+<p>UART configuration data.</p>
+<p>Configuration details for an UART interface needed by the RPX0XX peripheral.</p>
+<p>MSP430 x1xx UART configuration, board level.</p>
+<p>MSP430 F2xx/G2xx UART configuration, board level.</p>
+<p>UART module configuration options.</p>
+<p>Structure for UART configuration data.</p>
+<p>UART configuration structure type.</p>
+<p>QN908x doesn't have any UART standalone blocks, but it has two FLEXCOMM blocks that can be put in UART mode. The USART_Type* address is one of the FLEXCOMM_Type* addresses as well.</p>
+<pre class="fragment">     The frequency f() of the clock `gclk_src` must fulfill the condition
+
+         16 * baud &lt; f(gclk_src) ≤ 2²⁰ * baud
+
+     in Asynchronous Arithmetic mode and
+
+         16 * baud &lt; f(gclk_src) ≤ 2¹⁷ * baud
+
+     in Asynchronous Fractional mode
+</pre> </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a1f5530ae549c109d04f0ad3575644bb7" name="a1f5530ae549c109d04f0ad3575644bb7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1f5530ae549c109d04f0ad3575644bb7">&#9670;&#160;</a></span>dev <span class="overload">[1/3]</span></h2>
 
@@ -572,7 +572,7 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>rcc_mask</b></td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structuart__conf__t.html">uart_conf_t</a></li>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:03 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:32 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

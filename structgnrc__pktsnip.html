@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -149,6 +149,32 @@ $(function(){initNavTree('structgnrc__pktsnip.html',''); initResizable(true); })
 
 <p>Type to represent parts (either headers or payload) of a packet, called snips.  
  <a href="#details">More...</a></p>
+
+<p><code>#include &lt;pkt.h&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:ad6d823f68b2ee82429861342bd86c0a9" id="r_ad6d823f68b2ee82429861342bd86c0a9"><td class="memItemLeft" align="right" valign="top"><a id="ad6d823f68b2ee82429861342bd86c0a9" name="ad6d823f68b2ee82429861342bd86c0a9"></a>
+struct <a class="el" href="structgnrc__pktsnip.html">gnrc_pktsnip</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>next</b></td></tr>
+<tr class="memdesc:ad6d823f68b2ee82429861342bd86c0a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">next snip in the packet <br /></td></tr>
+<tr class="separator:ad6d823f68b2ee82429861342bd86c0a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04ca47171b70901e55f4a5c67399f070" id="r_a04ca47171b70901e55f4a5c67399f070"><td class="memItemLeft" align="right" valign="top"><a id="a04ca47171b70901e55f4a5c67399f070" name="a04ca47171b70901e55f4a5c67399f070"></a>
+void *&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr>
+<tr class="memdesc:a04ca47171b70901e55f4a5c67399f070"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to the data of the snip <br /></td></tr>
+<tr class="separator:a04ca47171b70901e55f4a5c67399f070"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0718f2cde3411a4833f82c10f8ea8d71" id="r_a0718f2cde3411a4833f82c10f8ea8d71"><td class="memItemLeft" align="right" valign="top"><a id="a0718f2cde3411a4833f82c10f8ea8d71" name="a0718f2cde3411a4833f82c10f8ea8d71"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>size</b></td></tr>
+<tr class="memdesc:a0718f2cde3411a4833f82c10f8ea8d71"><td class="mdescLeft">&#160;</td><td class="mdescRight">the length of the snip in byte <br /></td></tr>
+<tr class="separator:a0718f2cde3411a4833f82c10f8ea8d71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ccc7be825c7f5c449825676606921b3" id="r_a4ccc7be825c7f5c449825676606921b3"><td class="memItemLeft" align="right" valign="top"><a id="a4ccc7be825c7f5c449825676606921b3" name="a4ccc7be825c7f5c449825676606921b3"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>users</b></td></tr>
+<tr class="memdesc:a4ccc7be825c7f5c449825676606921b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counter of threads currently having control over this packet. <br /></td></tr>
+<tr class="separator:a4ccc7be825c7f5c449825676606921b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8362d0e56cfabedcf51459377c58db59" id="r_a8362d0e56cfabedcf51459377c58db59"><td class="memItemLeft" align="right" valign="top"><a id="a8362d0e56cfabedcf51459377c58db59" name="a8362d0e56cfabedcf51459377c58db59"></a>
+<a class="el" href="group__net__gnrc__nettype.html#ga2582fbb16a318806983c225a69460902">gnrc_nettype_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
+<tr class="memdesc:a8362d0e56cfabedcf51459377c58db59"><td class="mdescLeft">&#160;</td><td class="mdescRight">protocol of the packet snip <br /></td></tr>
+<tr class="separator:a8362d0e56cfabedcf51459377c58db59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Type to represent parts (either headers or payload) of a packet, called snips. </p>
 <p>The idea behind the packet snips is that they either can represent protocol-specific headers or payload. A packet can be comprised of multiple pktsnip_t elements.</p>
@@ -198,33 +224,7 @@ $(function(){initNavTree('structgnrc__pktsnip.html',''); initResizable(true); })
  * L2 header 4
 </pre><p>The first three fields (next, data, size) match iolist_t (named iol_next, iol_base and iol_len there). That means that any pktsnip can be casted to iolist_t for direct passing to e.g., netdev <a class="el" href="group__posix__sockets.html#ga3ed135eb9019c8945718d03da23546c9" title="Send a message on a socket.">send()</a> functions.</p>
 <dl class="section note"><dt>Note</dt><dd>This type has no initializer on purpose. Please use <a class="el" href="group__net__gnrc__pktbuf.html">Packet buffer</a> as factory. </dd></dl>
-</div>
-<p><code>#include &lt;pkt.h&gt;</code></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Data Fields</h2></td></tr>
-<tr class="memitem:ad6d823f68b2ee82429861342bd86c0a9" id="r_ad6d823f68b2ee82429861342bd86c0a9"><td class="memItemLeft" align="right" valign="top"><a id="ad6d823f68b2ee82429861342bd86c0a9" name="ad6d823f68b2ee82429861342bd86c0a9"></a>
-struct <a class="el" href="structgnrc__pktsnip.html">gnrc_pktsnip</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>next</b></td></tr>
-<tr class="memdesc:ad6d823f68b2ee82429861342bd86c0a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">next snip in the packet <br /></td></tr>
-<tr class="separator:ad6d823f68b2ee82429861342bd86c0a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04ca47171b70901e55f4a5c67399f070" id="r_a04ca47171b70901e55f4a5c67399f070"><td class="memItemLeft" align="right" valign="top"><a id="a04ca47171b70901e55f4a5c67399f070" name="a04ca47171b70901e55f4a5c67399f070"></a>
-void *&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr>
-<tr class="memdesc:a04ca47171b70901e55f4a5c67399f070"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to the data of the snip <br /></td></tr>
-<tr class="separator:a04ca47171b70901e55f4a5c67399f070"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0718f2cde3411a4833f82c10f8ea8d71" id="r_a0718f2cde3411a4833f82c10f8ea8d71"><td class="memItemLeft" align="right" valign="top"><a id="a0718f2cde3411a4833f82c10f8ea8d71" name="a0718f2cde3411a4833f82c10f8ea8d71"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>size</b></td></tr>
-<tr class="memdesc:a0718f2cde3411a4833f82c10f8ea8d71"><td class="mdescLeft">&#160;</td><td class="mdescRight">the length of the snip in byte <br /></td></tr>
-<tr class="separator:a0718f2cde3411a4833f82c10f8ea8d71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ccc7be825c7f5c449825676606921b3" id="r_a4ccc7be825c7f5c449825676606921b3"><td class="memItemLeft" align="right" valign="top"><a id="a4ccc7be825c7f5c449825676606921b3" name="a4ccc7be825c7f5c449825676606921b3"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>users</b></td></tr>
-<tr class="memdesc:a4ccc7be825c7f5c449825676606921b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counter of threads currently having control over this packet. <br /></td></tr>
-<tr class="separator:a4ccc7be825c7f5c449825676606921b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8362d0e56cfabedcf51459377c58db59" id="r_a8362d0e56cfabedcf51459377c58db59"><td class="memItemLeft" align="right" valign="top"><a id="a8362d0e56cfabedcf51459377c58db59" name="a8362d0e56cfabedcf51459377c58db59"></a>
-<a class="el" href="group__net__gnrc__nettype.html#ga2582fbb16a318806983c225a69460902">gnrc_nettype_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
-<tr class="memdesc:a8362d0e56cfabedcf51459377c58db59"><td class="mdescLeft">&#160;</td><td class="mdescRight">protocol of the packet snip <br /></td></tr>
-<tr class="separator:a8362d0e56cfabedcf51459377c58db59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>sys/include/net/gnrc/<a class="el" href="net_2gnrc_2pkt_8h.html">pkt.h</a></li>
 </ul>
 </div><!-- contents -->
@@ -235,7 +235,7 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>users</b></td
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structgnrc__pktsnip.html">gnrc_pktsnip</a></li>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:03 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:32 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

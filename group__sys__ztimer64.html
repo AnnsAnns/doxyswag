@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -152,42 +152,6 @@ $(function(){initNavTree('group__sys__ztimer64.html',''); initResizable(true); }
   <div class="headertitle"><div class="title">ztimer 64bit version<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__sys__ztimer.html">ztimer high level timer abstraction layer</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>ztimer 64bit version</p>
-<h1><a class="anchor" id="autotoc_md2114"></a>
-Introduction</h1>
-<p>This module implements a 64bit version of the ztimer API. All ztimer_* functions have a ztimer64_* equivalent that behaves the same, but allowing offsets &gt;= 2^32.</p>
-<p>In addition to that, ztimer64 offers functions taking absolute target times as parameter. If the absolute target time is in the past, a timer would trigger right away.</p>
-<p>Here's a table for absolute variants:</p>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">relative version   </th><th class="markdownTableHeadNone">absolute version    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="#ga87b08fe883badce9337e9602190bf054" title="Set a timer on a clock (relative version)">ztimer64_set()</a>   </td><td class="markdownTableBodyNone"><a class="el" href="#gaa9f4911ef27bfddbbb44243714d774fb" title="Set a timer on a clock (absolute version)">ztimer64_set_at()</a>    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="#gaac757c41341971b2b09c5e2ec6aebb4e" title="Put the calling thread to sleep for the specified number of ticks.">ztimer64_sleep()</a>   </td><td class="markdownTableBodyNone"><a class="el" href="#ga4efd1bbe6819b641c49aa6c0367e289b" title="Put the calling thread to sleep until the specified time.">ztimer64_sleep_until()</a>    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="#ga64d04d679dff7c117109c80086a0e70e" title="Post a message after a delay (relative version)">ztimer64_set_msg()</a>   </td><td class="markdownTableBodyNone"><a class="el" href="#gae116fad9c3b25b9a16588439b91266ad" title="Post a message at a specified time.">ztimer64_set_msg_at()</a>    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="#ga2bca591fcf1d1b1bd8d9909ad90b582f" title="Set a timer that wakes up a thread (relative version)">ztimer64_set_wakeup()</a>   </td><td class="markdownTableBodyNone"><a class="el" href="#ga0a3ef706a76680957efba00b881f87f1" title="Set a timer that wakes up a thread (absolute version)">ztimer64_set_wakeup_at()</a>    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="#ga3b40cc6cefd8fc220519d4c306f79157" title="Set timeout thread flag after timeout.">ztimer64_set_timeout_flag()</a>   </td><td class="markdownTableBodyNone"><a class="el" href="#ga9f5c3be3d2f5f0b4683786ef38d9307b" title="Set timeout thread flag at target time.">ztimer64_set_timeout_flag_at()</a>    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="#ga76a3062ce65e9a9f3a19700f71ecb0a5" title="receive a message (blocking, with relative timeout)">ztimer64_msg_receive_timeout()</a>   </td><td class="markdownTableBodyNone"><a class="el" href="#gaad2d699f7881c484651ba6a5ce2c03a0" title="receive a message (blocking, with absolute timeout)">ztimer64_msg_receive_until()</a>    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="#ga7ecbcf7731ee8dc3cbb5b36e60468178" title="Try to lock the given mutex, but give up after timeout.">ztimer64_mutex_lock_timeout()</a>   </td><td class="markdownTableBodyNone"><a class="el" href="#ga462c0009a38ce5e0f8069ba7d30ad96a" title="Try to lock the given mutex, but give up at target time.">ztimer64_mutex_lock_until()</a>    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="#gac115b8099a7be028ad30f44718c50ea5" title="Try to lock the given rmutex, but give up after timeout.">ztimer64_rmutex_lock_timeout()</a>   </td><td class="markdownTableBodyNone"><a class="el" href="#gaf9a884d307ac738e8d0980a74007fb50" title="Try to lock the given rmutex, but give up at time.">ztimer64_rmutex_lock_until()</a>   </td></tr>
-</table>
-<h2><a class="anchor" id="autotoc_md2115"></a>
-ztimer64 clocks</h2>
-<p>ztimer64 provides automatic setup of ZTIMER64_SEC, ZTIMER64_MSEC and ZTIMER64_USEC, using the ztimer(32) clocks as base clocks. Enable them by depending on ztimer64_sec, ztimer64_msec and / or ztimer64_usec.</p>
-<dl class="section warning"><dt>Warning</dt><dd>ztimer64 always keeps a timer running on the base clock. Depending on the base clock, this blocks low-power sleep modes. If the hardware supports it, the msec and sec timers should be using a low-power capable timer (e.g., periph_rtt). ztimer64_usec will almost certainly block low-power sleep.</dd></dl>
-<p>TODO:</p><ul>
-<li>some explicit power management</li>
-<li>implement adjust_set and adjust_sleep API</li>
-<li>implement setting a 64bit reference time (epoch) </li>
-</ul>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -329,6 +293,42 @@ Variables</h2></td></tr>
 <tr class="memdesc:gaec9f72ee7e500fa4fbeb9d15cc3b0cec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default ztimer second clock. <br /></td></tr>
 <tr class="separator:gaec9f72ee7e500fa4fbeb9d15cc3b0cec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>ztimer 64bit version</p>
+<h1><a class="anchor" id="autotoc_md2114"></a>
+Introduction</h1>
+<p>This module implements a 64bit version of the ztimer API. All ztimer_* functions have a ztimer64_* equivalent that behaves the same, but allowing offsets &gt;= 2^32.</p>
+<p>In addition to that, ztimer64 offers functions taking absolute target times as parameter. If the absolute target time is in the past, a timer would trigger right away.</p>
+<p>Here's a table for absolute variants:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">relative version   </th><th class="markdownTableHeadNone">absolute version    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="#ga87b08fe883badce9337e9602190bf054" title="Set a timer on a clock (relative version)">ztimer64_set()</a>   </td><td class="markdownTableBodyNone"><a class="el" href="#gaa9f4911ef27bfddbbb44243714d774fb" title="Set a timer on a clock (absolute version)">ztimer64_set_at()</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="#gaac757c41341971b2b09c5e2ec6aebb4e" title="Put the calling thread to sleep for the specified number of ticks.">ztimer64_sleep()</a>   </td><td class="markdownTableBodyNone"><a class="el" href="#ga4efd1bbe6819b641c49aa6c0367e289b" title="Put the calling thread to sleep until the specified time.">ztimer64_sleep_until()</a>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="#ga64d04d679dff7c117109c80086a0e70e" title="Post a message after a delay (relative version)">ztimer64_set_msg()</a>   </td><td class="markdownTableBodyNone"><a class="el" href="#gae116fad9c3b25b9a16588439b91266ad" title="Post a message at a specified time.">ztimer64_set_msg_at()</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="#ga2bca591fcf1d1b1bd8d9909ad90b582f" title="Set a timer that wakes up a thread (relative version)">ztimer64_set_wakeup()</a>   </td><td class="markdownTableBodyNone"><a class="el" href="#ga0a3ef706a76680957efba00b881f87f1" title="Set a timer that wakes up a thread (absolute version)">ztimer64_set_wakeup_at()</a>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="#ga3b40cc6cefd8fc220519d4c306f79157" title="Set timeout thread flag after timeout.">ztimer64_set_timeout_flag()</a>   </td><td class="markdownTableBodyNone"><a class="el" href="#ga9f5c3be3d2f5f0b4683786ef38d9307b" title="Set timeout thread flag at target time.">ztimer64_set_timeout_flag_at()</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="#ga76a3062ce65e9a9f3a19700f71ecb0a5" title="receive a message (blocking, with relative timeout)">ztimer64_msg_receive_timeout()</a>   </td><td class="markdownTableBodyNone"><a class="el" href="#gaad2d699f7881c484651ba6a5ce2c03a0" title="receive a message (blocking, with absolute timeout)">ztimer64_msg_receive_until()</a>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="#ga7ecbcf7731ee8dc3cbb5b36e60468178" title="Try to lock the given mutex, but give up after timeout.">ztimer64_mutex_lock_timeout()</a>   </td><td class="markdownTableBodyNone"><a class="el" href="#ga462c0009a38ce5e0f8069ba7d30ad96a" title="Try to lock the given mutex, but give up at target time.">ztimer64_mutex_lock_until()</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="#gac115b8099a7be028ad30f44718c50ea5" title="Try to lock the given rmutex, but give up after timeout.">ztimer64_rmutex_lock_timeout()</a>   </td><td class="markdownTableBodyNone"><a class="el" href="#gaf9a884d307ac738e8d0980a74007fb50" title="Try to lock the given rmutex, but give up at time.">ztimer64_rmutex_lock_until()</a>   </td></tr>
+</table>
+<h2><a class="anchor" id="autotoc_md2115"></a>
+ztimer64 clocks</h2>
+<p>ztimer64 provides automatic setup of ZTIMER64_SEC, ZTIMER64_MSEC and ZTIMER64_USEC, using the ztimer(32) clocks as base clocks. Enable them by depending on ztimer64_sec, ztimer64_msec and / or ztimer64_usec.</p>
+<dl class="section warning"><dt>Warning</dt><dd>ztimer64 always keeps a timer running on the base clock. Depending on the base clock, this blocks low-power sleep modes. If the hardware supports it, the msec and sec timers should be using a low-power capable timer (e.g., periph_rtt). ztimer64_usec will almost certainly block low-power sleep.</dd></dl>
+<p>TODO:</p><ul>
+<li>some explicit power management</li>
+<li>implement adjust_set and adjust_sleep API</li>
+<li>implement setting a 64bit reference time (epoch) </li>
+</ul>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ga1fbec3365c03bf865e09d2f6f08a87a6" name="ga1fbec3365c03bf865e09d2f6f08a87a6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga1fbec3365c03bf865e09d2f6f08a87a6">&#9670;&#160;</a></span>ztimer64_clock_init()</h2>
@@ -1318,7 +1318,7 @@ Variables</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

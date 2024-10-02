@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -151,6 +151,59 @@ $(function(){initNavTree('group__net__sock__tcp.html',''); initResizable(true); 
 
 <p>Sock submodule for TCP  
 <a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sock_2tcp_8h.html">tcp.h</a></td></tr>
+<tr class="memdesc:sock_2tcp_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">TCP sock definitions. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga882b5e7467eb5820579921241858e912" id="r_ga882b5e7467eb5820579921241858e912"><td class="memItemLeft" align="right" valign="top"><a id="ga882b5e7467eb5820579921241858e912" name="ga882b5e7467eb5820579921241858e912"></a>
+typedef struct <a class="el" href="struct__sock__tl__ep.html">_sock_tl_ep</a>&#160;</td><td class="memItemRight" valign="bottom"><b>sock_tcp_ep_t</b></td></tr>
+<tr class="memdesc:ga882b5e7467eb5820579921241858e912"><td class="mdescLeft">&#160;</td><td class="mdescRight">An end point for a TCP sock object. <br /></td></tr>
+<tr class="separator:ga882b5e7467eb5820579921241858e912"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0144778bc074e291fcb0d43bd35c0179" id="r_ga0144778bc074e291fcb0d43bd35c0179"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structsock__tcp.html">sock_tcp</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0144778bc074e291fcb0d43bd35c0179">sock_tcp_t</a></td></tr>
+<tr class="memdesc:ga0144778bc074e291fcb0d43bd35c0179"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type for a TCP sock object.  <br /></td></tr>
+<tr class="separator:ga0144778bc074e291fcb0d43bd35c0179"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga233763551e481f547f1cb07e7e31f981" id="r_ga233763551e481f547f1cb07e7e31f981"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structsock__tcp__queue.html">sock_tcp_queue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga233763551e481f547f1cb07e7e31f981">sock_tcp_queue_t</a></td></tr>
+<tr class="memdesc:ga233763551e481f547f1cb07e7e31f981"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type for a TCP listening queue.  <br /></td></tr>
+<tr class="separator:ga233763551e481f547f1cb07e7e31f981"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga67c5ddd2a47e6b9b0c60346f71f9ce9e" id="r_ga67c5ddd2a47e6b9b0c60346f71f9ce9e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga67c5ddd2a47e6b9b0c60346f71f9ce9e">sock_tcp_connect</a> (<a class="el" href="group__net__sock__async.html#ga0144778bc074e291fcb0d43bd35c0179">sock_tcp_t</a> *sock, const <a class="el" href="#ga882b5e7467eb5820579921241858e912">sock_tcp_ep_t</a> *remote, uint16_t local_port, uint16_t flags)</td></tr>
+<tr class="memdesc:ga67c5ddd2a47e6b9b0c60346f71f9ce9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Establishes a new TCP sock connection.  <br /></td></tr>
+<tr class="separator:ga67c5ddd2a47e6b9b0c60346f71f9ce9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga50008ef716746eb6d2a50c56615d8547" id="r_ga50008ef716746eb6d2a50c56615d8547"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga50008ef716746eb6d2a50c56615d8547">sock_tcp_listen</a> (<a class="el" href="group__net__sock__async.html#ga233763551e481f547f1cb07e7e31f981">sock_tcp_queue_t</a> *queue, const <a class="el" href="#ga882b5e7467eb5820579921241858e912">sock_tcp_ep_t</a> *local, <a class="el" href="group__net__sock__async.html#ga0144778bc074e291fcb0d43bd35c0179">sock_tcp_t</a> *queue_array, unsigned queue_len, uint16_t flags)</td></tr>
+<tr class="memdesc:ga50008ef716746eb6d2a50c56615d8547"><td class="mdescLeft">&#160;</td><td class="mdescRight">Listen for an incoming connection request on <code>local</code> end point.  <br /></td></tr>
+<tr class="separator:ga50008ef716746eb6d2a50c56615d8547"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad540117597093b7a17ddddc45640a165" id="r_gad540117597093b7a17ddddc45640a165"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad540117597093b7a17ddddc45640a165">sock_tcp_disconnect</a> (<a class="el" href="group__net__sock__async.html#ga0144778bc074e291fcb0d43bd35c0179">sock_tcp_t</a> *sock)</td></tr>
+<tr class="memdesc:gad540117597093b7a17ddddc45640a165"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disconnects a TCP connection.  <br /></td></tr>
+<tr class="separator:gad540117597093b7a17ddddc45640a165"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga56d28140912df5ffc241786a68cb4acc" id="r_ga56d28140912df5ffc241786a68cb4acc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga56d28140912df5ffc241786a68cb4acc">sock_tcp_stop_listen</a> (<a class="el" href="group__net__sock__async.html#ga233763551e481f547f1cb07e7e31f981">sock_tcp_queue_t</a> *queue)</td></tr>
+<tr class="memdesc:ga56d28140912df5ffc241786a68cb4acc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops listening on TCP listening queue.  <br /></td></tr>
+<tr class="separator:ga56d28140912df5ffc241786a68cb4acc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2610c60b32f1a41f2be9ed4b914d4134" id="r_ga2610c60b32f1a41f2be9ed4b914d4134"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2610c60b32f1a41f2be9ed4b914d4134">sock_tcp_get_local</a> (<a class="el" href="group__net__sock__async.html#ga0144778bc074e291fcb0d43bd35c0179">sock_tcp_t</a> *sock, <a class="el" href="#ga882b5e7467eb5820579921241858e912">sock_tcp_ep_t</a> *ep)</td></tr>
+<tr class="memdesc:ga2610c60b32f1a41f2be9ed4b914d4134"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the local end point of a TCP sock object.  <br /></td></tr>
+<tr class="separator:ga2610c60b32f1a41f2be9ed4b914d4134"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaffcad2b28adab9c4c2e8e03c15d7d647" id="r_gaffcad2b28adab9c4c2e8e03c15d7d647"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaffcad2b28adab9c4c2e8e03c15d7d647">sock_tcp_get_remote</a> (<a class="el" href="group__net__sock__async.html#ga0144778bc074e291fcb0d43bd35c0179">sock_tcp_t</a> *sock, <a class="el" href="#ga882b5e7467eb5820579921241858e912">sock_tcp_ep_t</a> *ep)</td></tr>
+<tr class="memdesc:gaffcad2b28adab9c4c2e8e03c15d7d647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the remote end point of a TCP sock object.  <br /></td></tr>
+<tr class="separator:gaffcad2b28adab9c4c2e8e03c15d7d647"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae6a4176bfb0bd94b5c1b26c9f670fd7f" id="r_gae6a4176bfb0bd94b5c1b26c9f670fd7f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae6a4176bfb0bd94b5c1b26c9f670fd7f">sock_tcp_queue_get_local</a> (<a class="el" href="group__net__sock__async.html#ga233763551e481f547f1cb07e7e31f981">sock_tcp_queue_t</a> *queue, <a class="el" href="#ga882b5e7467eb5820579921241858e912">sock_tcp_ep_t</a> *ep)</td></tr>
+<tr class="memdesc:gae6a4176bfb0bd94b5c1b26c9f670fd7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the local end point of a TCP sock queue object.  <br /></td></tr>
+<tr class="separator:gae6a4176bfb0bd94b5c1b26c9f670fd7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7321c9f109c2c8f443237bc716f9c263" id="r_ga7321c9f109c2c8f443237bc716f9c263"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7321c9f109c2c8f443237bc716f9c263">sock_tcp_accept</a> (<a class="el" href="group__net__sock__async.html#ga233763551e481f547f1cb07e7e31f981">sock_tcp_queue_t</a> *queue, <a class="el" href="group__net__sock__async.html#ga0144778bc074e291fcb0d43bd35c0179">sock_tcp_t</a> **sock, uint32_t timeout)</td></tr>
+<tr class="memdesc:ga7321c9f109c2c8f443237bc716f9c263"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives and handles TCP connection requests from other peers.  <br /></td></tr>
+<tr class="separator:ga7321c9f109c2c8f443237bc716f9c263"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaab95990c5902a9a087c6c18b717835cb" id="r_gaab95990c5902a9a087c6c18b717835cb"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaab95990c5902a9a087c6c18b717835cb">sock_tcp_read</a> (<a class="el" href="group__net__sock__async.html#ga0144778bc074e291fcb0d43bd35c0179">sock_tcp_t</a> *sock, void *data, size_t max_len, uint32_t timeout)</td></tr>
+<tr class="memdesc:gaab95990c5902a9a087c6c18b717835cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads data from an established TCP stream.  <br /></td></tr>
+<tr class="separator:gaab95990c5902a9a087c6c18b717835cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac72c6cc4fabd9f34b80a5157e346c24a" id="r_gac72c6cc4fabd9f34b80a5157e346c24a"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac72c6cc4fabd9f34b80a5157e346c24a">sock_tcp_write</a> (<a class="el" href="group__net__sock__async.html#ga0144778bc074e291fcb0d43bd35c0179">sock_tcp_t</a> *sock, const void *data, size_t len)</td></tr>
+<tr class="memdesc:gac72c6cc4fabd9f34b80a5157e346c24a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes data to an established TCP stream.  <br /></td></tr>
+<tr class="separator:gac72c6cc4fabd9f34b80a5157e346c24a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Sock submodule for TCP </p>
 <h2><a class="anchor" id="autotoc_md2085"></a>
@@ -361,60 +414,7 @@ A Simple TCP Echo Client</h3>
 <div class="line">}</div>
 <div class="line"><a class="code hl_function" href="#gad540117597093b7a17ddddc45640a165">sock_tcp_disconnect</a>(&amp;sock);</div>
 <div class="line"><span class="keywordflow">return</span> res;</div>
-</div><!-- fragment --> <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sock_2tcp_8h.html">tcp.h</a></td></tr>
-<tr class="memdesc:sock_2tcp_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">TCP sock definitions. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:ga882b5e7467eb5820579921241858e912" id="r_ga882b5e7467eb5820579921241858e912"><td class="memItemLeft" align="right" valign="top"><a id="ga882b5e7467eb5820579921241858e912" name="ga882b5e7467eb5820579921241858e912"></a>
-typedef struct <a class="el" href="struct__sock__tl__ep.html">_sock_tl_ep</a>&#160;</td><td class="memItemRight" valign="bottom"><b>sock_tcp_ep_t</b></td></tr>
-<tr class="memdesc:ga882b5e7467eb5820579921241858e912"><td class="mdescLeft">&#160;</td><td class="mdescRight">An end point for a TCP sock object. <br /></td></tr>
-<tr class="separator:ga882b5e7467eb5820579921241858e912"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0144778bc074e291fcb0d43bd35c0179" id="r_ga0144778bc074e291fcb0d43bd35c0179"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structsock__tcp.html">sock_tcp</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0144778bc074e291fcb0d43bd35c0179">sock_tcp_t</a></td></tr>
-<tr class="memdesc:ga0144778bc074e291fcb0d43bd35c0179"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type for a TCP sock object.  <br /></td></tr>
-<tr class="separator:ga0144778bc074e291fcb0d43bd35c0179"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga233763551e481f547f1cb07e7e31f981" id="r_ga233763551e481f547f1cb07e7e31f981"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structsock__tcp__queue.html">sock_tcp_queue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga233763551e481f547f1cb07e7e31f981">sock_tcp_queue_t</a></td></tr>
-<tr class="memdesc:ga233763551e481f547f1cb07e7e31f981"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type for a TCP listening queue.  <br /></td></tr>
-<tr class="separator:ga233763551e481f547f1cb07e7e31f981"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ga67c5ddd2a47e6b9b0c60346f71f9ce9e" id="r_ga67c5ddd2a47e6b9b0c60346f71f9ce9e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga67c5ddd2a47e6b9b0c60346f71f9ce9e">sock_tcp_connect</a> (<a class="el" href="group__net__sock__async.html#ga0144778bc074e291fcb0d43bd35c0179">sock_tcp_t</a> *sock, const <a class="el" href="#ga882b5e7467eb5820579921241858e912">sock_tcp_ep_t</a> *remote, uint16_t local_port, uint16_t flags)</td></tr>
-<tr class="memdesc:ga67c5ddd2a47e6b9b0c60346f71f9ce9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Establishes a new TCP sock connection.  <br /></td></tr>
-<tr class="separator:ga67c5ddd2a47e6b9b0c60346f71f9ce9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga50008ef716746eb6d2a50c56615d8547" id="r_ga50008ef716746eb6d2a50c56615d8547"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga50008ef716746eb6d2a50c56615d8547">sock_tcp_listen</a> (<a class="el" href="group__net__sock__async.html#ga233763551e481f547f1cb07e7e31f981">sock_tcp_queue_t</a> *queue, const <a class="el" href="#ga882b5e7467eb5820579921241858e912">sock_tcp_ep_t</a> *local, <a class="el" href="group__net__sock__async.html#ga0144778bc074e291fcb0d43bd35c0179">sock_tcp_t</a> *queue_array, unsigned queue_len, uint16_t flags)</td></tr>
-<tr class="memdesc:ga50008ef716746eb6d2a50c56615d8547"><td class="mdescLeft">&#160;</td><td class="mdescRight">Listen for an incoming connection request on <code>local</code> end point.  <br /></td></tr>
-<tr class="separator:ga50008ef716746eb6d2a50c56615d8547"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad540117597093b7a17ddddc45640a165" id="r_gad540117597093b7a17ddddc45640a165"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad540117597093b7a17ddddc45640a165">sock_tcp_disconnect</a> (<a class="el" href="group__net__sock__async.html#ga0144778bc074e291fcb0d43bd35c0179">sock_tcp_t</a> *sock)</td></tr>
-<tr class="memdesc:gad540117597093b7a17ddddc45640a165"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disconnects a TCP connection.  <br /></td></tr>
-<tr class="separator:gad540117597093b7a17ddddc45640a165"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga56d28140912df5ffc241786a68cb4acc" id="r_ga56d28140912df5ffc241786a68cb4acc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga56d28140912df5ffc241786a68cb4acc">sock_tcp_stop_listen</a> (<a class="el" href="group__net__sock__async.html#ga233763551e481f547f1cb07e7e31f981">sock_tcp_queue_t</a> *queue)</td></tr>
-<tr class="memdesc:ga56d28140912df5ffc241786a68cb4acc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops listening on TCP listening queue.  <br /></td></tr>
-<tr class="separator:ga56d28140912df5ffc241786a68cb4acc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2610c60b32f1a41f2be9ed4b914d4134" id="r_ga2610c60b32f1a41f2be9ed4b914d4134"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2610c60b32f1a41f2be9ed4b914d4134">sock_tcp_get_local</a> (<a class="el" href="group__net__sock__async.html#ga0144778bc074e291fcb0d43bd35c0179">sock_tcp_t</a> *sock, <a class="el" href="#ga882b5e7467eb5820579921241858e912">sock_tcp_ep_t</a> *ep)</td></tr>
-<tr class="memdesc:ga2610c60b32f1a41f2be9ed4b914d4134"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the local end point of a TCP sock object.  <br /></td></tr>
-<tr class="separator:ga2610c60b32f1a41f2be9ed4b914d4134"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaffcad2b28adab9c4c2e8e03c15d7d647" id="r_gaffcad2b28adab9c4c2e8e03c15d7d647"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaffcad2b28adab9c4c2e8e03c15d7d647">sock_tcp_get_remote</a> (<a class="el" href="group__net__sock__async.html#ga0144778bc074e291fcb0d43bd35c0179">sock_tcp_t</a> *sock, <a class="el" href="#ga882b5e7467eb5820579921241858e912">sock_tcp_ep_t</a> *ep)</td></tr>
-<tr class="memdesc:gaffcad2b28adab9c4c2e8e03c15d7d647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the remote end point of a TCP sock object.  <br /></td></tr>
-<tr class="separator:gaffcad2b28adab9c4c2e8e03c15d7d647"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae6a4176bfb0bd94b5c1b26c9f670fd7f" id="r_gae6a4176bfb0bd94b5c1b26c9f670fd7f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae6a4176bfb0bd94b5c1b26c9f670fd7f">sock_tcp_queue_get_local</a> (<a class="el" href="group__net__sock__async.html#ga233763551e481f547f1cb07e7e31f981">sock_tcp_queue_t</a> *queue, <a class="el" href="#ga882b5e7467eb5820579921241858e912">sock_tcp_ep_t</a> *ep)</td></tr>
-<tr class="memdesc:gae6a4176bfb0bd94b5c1b26c9f670fd7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the local end point of a TCP sock queue object.  <br /></td></tr>
-<tr class="separator:gae6a4176bfb0bd94b5c1b26c9f670fd7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7321c9f109c2c8f443237bc716f9c263" id="r_ga7321c9f109c2c8f443237bc716f9c263"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7321c9f109c2c8f443237bc716f9c263">sock_tcp_accept</a> (<a class="el" href="group__net__sock__async.html#ga233763551e481f547f1cb07e7e31f981">sock_tcp_queue_t</a> *queue, <a class="el" href="group__net__sock__async.html#ga0144778bc074e291fcb0d43bd35c0179">sock_tcp_t</a> **sock, uint32_t timeout)</td></tr>
-<tr class="memdesc:ga7321c9f109c2c8f443237bc716f9c263"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives and handles TCP connection requests from other peers.  <br /></td></tr>
-<tr class="separator:ga7321c9f109c2c8f443237bc716f9c263"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaab95990c5902a9a087c6c18b717835cb" id="r_gaab95990c5902a9a087c6c18b717835cb"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaab95990c5902a9a087c6c18b717835cb">sock_tcp_read</a> (<a class="el" href="group__net__sock__async.html#ga0144778bc074e291fcb0d43bd35c0179">sock_tcp_t</a> *sock, void *data, size_t max_len, uint32_t timeout)</td></tr>
-<tr class="memdesc:gaab95990c5902a9a087c6c18b717835cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads data from an established TCP stream.  <br /></td></tr>
-<tr class="separator:gaab95990c5902a9a087c6c18b717835cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac72c6cc4fabd9f34b80a5157e346c24a" id="r_gac72c6cc4fabd9f34b80a5157e346c24a"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac72c6cc4fabd9f34b80a5157e346c24a">sock_tcp_write</a> (<a class="el" href="group__net__sock__async.html#ga0144778bc074e291fcb0d43bd35c0179">sock_tcp_t</a> *sock, const void *data, size_t len)</td></tr>
-<tr class="memdesc:gac72c6cc4fabd9f34b80a5157e346c24a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes data to an established TCP stream.  <br /></td></tr>
-<tr class="separator:gac72c6cc4fabd9f34b80a5157e346c24a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<h2 class="groupheader">Typedef Documentation</h2>
+</div><!-- fragment --> <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ga233763551e481f547f1cb07e7e31f981" name="ga233763551e481f547f1cb07e7e31f981"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga233763551e481f547f1cb07e7e31f981">&#9670;&#160;</a></span>sock_tcp_queue_t</h2>
 
@@ -893,7 +893,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

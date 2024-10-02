@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -150,6 +150,40 @@ $(function(){initNavTree('group__cpu__esp8266.html',''); initResizable(true); })
 
 <p>RIOT-OS port for Espressif's ESP8266 / ESP8285 MCUs  
 <a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
+Topics</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__esp__common__esp__now.html">ESP-NOW netdev interface</a></td></tr>
+<tr class="memdesc:group__cpu__esp__common__esp__now"><td class="mdescLeft">&#160;</td><td class="mdescRight">WiFi based ESP-NOW network device driver <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__esp__common__esp__wifi.html">ESP-WiFi netdev interface</a></td></tr>
+<tr class="memdesc:group__cpu__esp__common__esp__wifi"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structNetwork.html" title="Network struct within mqtt paho.">Network</a> device driver for the ESP SoC WiFi interface <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__esp8266__sdk.html">ESP8266 SDK interface</a></td></tr>
+<tr class="memdesc:group__cpu__esp8266__sdk"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function declarations and mappings for compatibility with ESP8266 SDK <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__esp8266__conf.html">ESP8266 compile configurations</a></td></tr>
+<tr class="memdesc:group__cpu__esp8266__conf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compile-time configuration macros for ESP8266 modules <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="esp8266_2include_2gpio__arch_8h.html">gpio_arch.h</a></td></tr>
+<tr class="memdesc:esp8266_2include_2gpio__arch_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Architecture specific GPIO functions for ESP8266. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="esp8266_2include_2irq__arch_8h.html">irq_arch.h</a></td></tr>
+<tr class="memdesc:esp8266_2include_2irq__arch_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of the kernels irq interface. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="esp8266_2include_2periph__cpu_8h.html">periph_cpu.h</a></td></tr>
+<tr class="memdesc:esp8266_2include_2periph__cpu_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">CPU specific definitions and functions for peripheral handling. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdk__conf_8h.html">sdk_conf.h</a></td></tr>
+<tr class="memdesc:sdk__conf_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">SDK configuration compatible to the ESP-IDF. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="esp8266_2include_2syscalls_8h.html">syscalls.h</a></td></tr>
+<tr class="memdesc:esp8266_2include_2syscalls_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of required system calls. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>RIOT-OS port for Espressif's ESP8266 / ESP8285 MCUs </p>
 <h1><a class="anchor" id="esp8266_riot"></a>
@@ -942,40 +976,6 @@ Limitations of <code>esp_gdbstub</code></h3>
 </div><!-- fragment --><p>Then you should be able to set a breakpoint to this function using command <code>bp</code> and to execute it stepwise after break.</p>
 <p>Another option is to use <code>gdbstub_do_break()</code> wherever you want to break the execution. If you know where you want to break before downloading the program to the target, you can use <code>gdbstub_do_break()</code> as much as you want.</p>
 <p><a class="el" href="#esp8266_toc">Back to table of contents</a> </p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
-Topics</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__esp__common__esp__now.html">ESP-NOW netdev interface</a></td></tr>
-<tr class="memdesc:group__cpu__esp__common__esp__now"><td class="mdescLeft">&#160;</td><td class="mdescRight">WiFi based ESP-NOW network device driver <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__esp__common__esp__wifi.html">ESP-WiFi netdev interface</a></td></tr>
-<tr class="memdesc:group__cpu__esp__common__esp__wifi"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structNetwork.html" title="Network struct within mqtt paho.">Network</a> device driver for the ESP SoC WiFi interface <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__esp8266__sdk.html">ESP8266 SDK interface</a></td></tr>
-<tr class="memdesc:group__cpu__esp8266__sdk"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function declarations and mappings for compatibility with ESP8266 SDK <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__esp8266__conf.html">ESP8266 compile configurations</a></td></tr>
-<tr class="memdesc:group__cpu__esp8266__conf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compile-time configuration macros for ESP8266 modules <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="esp8266_2include_2gpio__arch_8h.html">gpio_arch.h</a></td></tr>
-<tr class="memdesc:esp8266_2include_2gpio__arch_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Architecture specific GPIO functions for ESP8266. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="esp8266_2include_2irq__arch_8h.html">irq_arch.h</a></td></tr>
-<tr class="memdesc:esp8266_2include_2irq__arch_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of the kernels irq interface. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="esp8266_2include_2periph__cpu_8h.html">periph_cpu.h</a></td></tr>
-<tr class="memdesc:esp8266_2include_2periph__cpu_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">CPU specific definitions and functions for peripheral handling. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdk__conf_8h.html">sdk_conf.h</a></td></tr>
-<tr class="memdesc:sdk__conf_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">SDK configuration compatible to the ESP-IDF. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="esp8266_2include_2syscalls_8h.html">syscalls.h</a></td></tr>
-<tr class="memdesc:esp8266_2include_2syscalls_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of required system calls. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
@@ -983,7 +983,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

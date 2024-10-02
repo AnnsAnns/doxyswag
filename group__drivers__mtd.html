@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -156,27 +156,6 @@ $(function(){initNavTree('group__drivers__mtd.html',''); initResizable(true); })
 
 <p>Low level Memory Technology Device interface  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Low level Memory Technology Device interface </p>
-<p>Generic memory technology device interface</p>
-<p>Unlike the <a class="el" href="group__drivers__periph__flashpage.html">Flash page driver</a>, this is device driver based (i.e. all functions take a <a class="el" href="structmtd__dev__t.html">mtd_dev_t</a> as a first argument), so that SPI based EEPROMs (e.g. <a class="el" href="group__drivers__mtd__at25xxx.html">AT25xxx</a>) can be accessed the same way as <a class="el" href="group__drivers__mtd__flashpage.html">internal flash</a> or <a class="el" href="group__drivers__mtd__sdcard.html">SD cards</a>), all inside the same application.</p>
-<p>MTD devices expose a block based erase and write interface. In that, they are the distinct from block devices (like hard disks) on which individual bytes can be overwritten. The <a href="http://www.linux-mtd.infradead.org/faq/general.html">Linux MTD FAQ</a> has a convenient comparison (beware though of terminology differences outlined below). They can be erased (with some granularity, often wearing out the erased area a bit), and erased areas can be written to (sometimes multiple times).</p>
-<p>MTD devices are described in terms of sectors, pages and feature flags:</p>
-<ul>
-<li><p class="startli">A <b>sector</b> is the device's erase unit. Calls to <a class="el" href="#gaabab7f7b0b1cfcdbe2b32d2e26bbf4d7">mtd_erase</a> need to work in alignment with this number (commonly somewhere around 1kiB).</p>
-<p class="startli">(Note that this corresponds to the term "page" as used in the flashpage API, and the term "eraseblock" in Linux's MTD).</p>
-</li>
-<li><p class="startli">A <b>page</b> is the largest a device can write in one transfer.</p>
-<p class="startli">Applications rarely need to deal with this; it offers no guarantees on atomicity, but writing within a page is generally faster than across page boundaries.</p>
-<p class="startli">Pages are a subdivision of sectors.</p>
-</li>
-<li><p class="startli">The <b>write size</b> is the minimum size of writes to the device, and also the required alignment of writes.</p>
-<p class="startli">The write size is a divider of the page. It is often between 1 to 4 bytes long, but may be up to the full page size.</p>
-</li>
-<li>The device's <b>flags</b> indicate features, eg. whether a memory location can be overwritten without erasing it first.</li>
-</ul>
-<p>Unless a flag (such as <a class="el" href="#gacd32ebfc4ee09f64d7e2490c4f5504fb">MTD_DRIVER_FLAG_DIRECT_WRITE</a> or <a class="el" href="#ga08bad3026290086a5215b85bd1c62f51">MTD_DRIVER_FLAG_CLEARING_OVERWRITE</a>) allows it, this MTD API does not allow memory areas to be written to twice between erase operations. Drivers are not expected to count write accesses, and neither do this module's functions: The performance impact would be too great. It is up to the application to only write to erased memory once. Failure to do so may damage hardware.</p>
-<p>This MTD API currently does not specify which value will be read from an erased sector. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -276,6 +255,27 @@ Variables</h2></td></tr>
 <tr class="memdesc:ga47b37b36f751674b439437dfa622aba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default MTD device configuration.  <br /></td></tr>
 <tr class="separator:ga47b37b36f751674b439437dfa622aba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Low level Memory Technology Device interface </p>
+<p>Generic memory technology device interface</p>
+<p>Unlike the <a class="el" href="group__drivers__periph__flashpage.html">Flash page driver</a>, this is device driver based (i.e. all functions take a <a class="el" href="structmtd__dev__t.html">mtd_dev_t</a> as a first argument), so that SPI based EEPROMs (e.g. <a class="el" href="group__drivers__mtd__at25xxx.html">AT25xxx</a>) can be accessed the same way as <a class="el" href="group__drivers__mtd__flashpage.html">internal flash</a> or <a class="el" href="group__drivers__mtd__sdcard.html">SD cards</a>), all inside the same application.</p>
+<p>MTD devices expose a block based erase and write interface. In that, they are the distinct from block devices (like hard disks) on which individual bytes can be overwritten. The <a href="http://www.linux-mtd.infradead.org/faq/general.html">Linux MTD FAQ</a> has a convenient comparison (beware though of terminology differences outlined below). They can be erased (with some granularity, often wearing out the erased area a bit), and erased areas can be written to (sometimes multiple times).</p>
+<p>MTD devices are described in terms of sectors, pages and feature flags:</p>
+<ul>
+<li><p class="startli">A <b>sector</b> is the device's erase unit. Calls to <a class="el" href="#gaabab7f7b0b1cfcdbe2b32d2e26bbf4d7">mtd_erase</a> need to work in alignment with this number (commonly somewhere around 1kiB).</p>
+<p class="startli">(Note that this corresponds to the term "page" as used in the flashpage API, and the term "eraseblock" in Linux's MTD).</p>
+</li>
+<li><p class="startli">A <b>page</b> is the largest a device can write in one transfer.</p>
+<p class="startli">Applications rarely need to deal with this; it offers no guarantees on atomicity, but writing within a page is generally faster than across page boundaries.</p>
+<p class="startli">Pages are a subdivision of sectors.</p>
+</li>
+<li><p class="startli">The <b>write size</b> is the minimum size of writes to the device, and also the required alignment of writes.</p>
+<p class="startli">The write size is a divider of the page. It is often between 1 to 4 bytes long, but may be up to the full page size.</p>
+</li>
+<li>The device's <b>flags</b> indicate features, eg. whether a memory location can be overwritten without erasing it first.</li>
+</ul>
+<p>Unless a flag (such as <a class="el" href="#gacd32ebfc4ee09f64d7e2490c4f5504fb">MTD_DRIVER_FLAG_DIRECT_WRITE</a> or <a class="el" href="#ga08bad3026290086a5215b85bd1c62f51">MTD_DRIVER_FLAG_CLEARING_OVERWRITE</a>) allows it, this MTD API does not allow memory areas to be written to twice between erase operations. Drivers are not expected to count write accesses, and neither do this module's functions: The performance impact would be too great. It is up to the application to only write to erased memory once. Failure to do so may damage hardware.</p>
+<p>This MTD API currently does not specify which value will be read from an erased sector. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga08bad3026290086a5215b85bd1c62f51" name="ga08bad3026290086a5215b85bd1c62f51"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga08bad3026290086a5215b85bd1c62f51">&#9670;&#160;</a></span>MTD_DRIVER_FLAG_CLEARING_OVERWRITE</h2>
@@ -1015,7 +1015,7 @@ Variables</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -149,19 +149,7 @@ $(function(){initNavTree('structlorawan__hdr__t.html',''); initResizable(true); 
 
 <p>Data type to represent a LoRaWAN packet header.  
  <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Data type to represent a LoRaWAN packet header. </p>
-<pre class="fragment">     This definition includes MHDR and FHDR in the same structure.
-     The structure of the header is as follows:
-</pre><div class="fragment"><div class="line">                     1                   2                   3</div>
-<div class="line"> 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1</div>
-<div class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-</div>
-<div class="line">|Mtype| RFU |Maj|           LoRaWAN Address                   ...</div>
-<div class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</div>
-<div class="line">...             | Frame Control |         Frame Counter         |</div>
-<div class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</div>
-</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a href="https://lora-alliance.org/sites/default/files/2018-07/lorawan1.0.3.pdf">LoRaWAN spcefication, section 4 </a> </dd></dl>
-</div>
+
 <p><code>#include &lt;hdr.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -182,7 +170,19 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>fctrl</b></td></tr
 <tr class="memdesc:a4da27db80dcc3700f92f4f56a3615db4"><td class="mdescLeft">&#160;</td><td class="mdescRight">frame counter <br /></td></tr>
 <tr class="separator:a4da27db80dcc3700f92f4f56a3615db4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Field Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Data type to represent a LoRaWAN packet header. </p>
+<pre class="fragment">     This definition includes MHDR and FHDR in the same structure.
+     The structure of the header is as follows:
+</pre><div class="fragment"><div class="line">                     1                   2                   3</div>
+<div class="line"> 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1</div>
+<div class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-</div>
+<div class="line">|Mtype| RFU |Maj|           LoRaWAN Address                   ...</div>
+<div class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</div>
+<div class="line">...             | Frame Control |         Frame Counter         |</div>
+<div class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</div>
+</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a href="https://lora-alliance.org/sites/default/files/2018-07/lorawan1.0.3.pdf">LoRaWAN spcefication, section 4 </a> </dd></dl>
+</div><h2 class="groupheader">Field Documentation</h2>
 <a id="a8df3c3d50da6fbd63ac591ebcdaa3da4" name="a8df3c3d50da6fbd63ac591ebcdaa3da4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8df3c3d50da6fbd63ac591ebcdaa3da4">&#9670;&#160;</a></span>mt_maj</h2>
 
@@ -216,7 +216,7 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>fctrl</b></td></tr
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structlorawan__hdr__t.html">lorawan_hdr_t</a></li>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:03 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:32 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

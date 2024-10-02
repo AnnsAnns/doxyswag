@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -152,17 +152,6 @@ $(function(){initNavTree('group__sys__congure__test.html',''); initResizable(tru
 
 <p>Shell commands to test a CongURE implementation  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Shell commands to test a CongURE implementation </p>
-<p>This module requires an application defined <code>congure_impl.h</code> which defines the <a class="el" href="structcongure__snd__t.html" title="Base state object for CongURE implementations.">congure_snd_t</a> extension of the CongURE implementation as <a class="el" href="#ga68c9620f8a8e8ed6a6fbbd9a7dee6e52">congure_test_snd_t</a> and provides a function declaration <a class="el" href="#gabf7cdab1370b8cff4366ed273274bf65">congure_test_snd_setup()</a> setup said type. E.g.</p>
-<div class="fragment"><div class="line"><span class="keyword">typedef</span> <a class="code hl_struct" href="structcongure__reno__snd.html">congure_reno_snd_t</a> <a class="code hl_typedef" href="#ga68c9620f8a8e8ed6a6fbbd9a7dee6e52">congure_test_snd_t</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="#gabf7cdab1370b8cff4366ed273274bf65">congure_test_snd_setup</a>(<a class="code hl_struct" href="structcongure__snd__t.html">congure_test_snd_t</a> *c, <span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
-<div class="ttc" id="agroup__sys__congure__test_html_ga68c9620f8a8e8ed6a6fbbd9a7dee6e52"><div class="ttname"><a href="#ga68c9620f8a8e8ed6a6fbbd9a7dee6e52">congure_test_snd_t</a></div><div class="ttdeci">congure_snd_t congure_test_snd_t</div><div class="ttdoc">Application-defined type for the CongURE state object under test.</div><div class="ttdef"><b>Definition</b> test.h:54</div></div>
-<div class="ttc" id="agroup__sys__congure__test_html_gabf7cdab1370b8cff4366ed273274bf65"><div class="ttname"><a href="#gabf7cdab1370b8cff4366ed273274bf65">congure_test_snd_setup</a></div><div class="ttdeci">int congure_test_snd_setup(void congure_test_snd_t *c, unsigned id)</div><div class="ttdoc">Setup the application-defined CongURE state object under test.</div></div>
-<div class="ttc" id="astructcongure__reno__snd_html"><div class="ttname"><a href="structcongure__reno__snd.html">congure_reno_snd</a></div><div class="ttdoc">State object for CongURE Reno.</div><div class="ttdef"><b>Definition</b> reno.h:172</div></div>
-<div class="ttc" id="astructcongure__snd__t_html"><div class="ttname"><a href="structcongure__snd__t.html">congure_snd_t</a></div><div class="ttdoc">Base state object for CongURE implementations.</div><div class="ttdef"><b>Definition</b> congure.h:51</div></div>
-</div><!-- fragment --><p>All constants and initial values can then be set within the application specific definition of <a class="el" href="#gabf7cdab1370b8cff4366ed273274bf65">congure_test_snd_setup()</a>. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -212,6 +201,17 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga688738e73166f4dd0504d4309b2ca83e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls one of the <code>report_*()</code> methods for CongURE state object.  <br /></td></tr>
 <tr class="separator:ga688738e73166f4dd0504d4309b2ca83e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Shell commands to test a CongURE implementation </p>
+<p>This module requires an application defined <code>congure_impl.h</code> which defines the <a class="el" href="structcongure__snd__t.html" title="Base state object for CongURE implementations.">congure_snd_t</a> extension of the CongURE implementation as <a class="el" href="#ga68c9620f8a8e8ed6a6fbbd9a7dee6e52">congure_test_snd_t</a> and provides a function declaration <a class="el" href="#gabf7cdab1370b8cff4366ed273274bf65">congure_test_snd_setup()</a> setup said type. E.g.</p>
+<div class="fragment"><div class="line"><span class="keyword">typedef</span> <a class="code hl_struct" href="structcongure__reno__snd.html">congure_reno_snd_t</a> <a class="code hl_typedef" href="#ga68c9620f8a8e8ed6a6fbbd9a7dee6e52">congure_test_snd_t</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="#gabf7cdab1370b8cff4366ed273274bf65">congure_test_snd_setup</a>(<a class="code hl_struct" href="structcongure__snd__t.html">congure_test_snd_t</a> *c, <span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="ttc" id="agroup__sys__congure__test_html_ga68c9620f8a8e8ed6a6fbbd9a7dee6e52"><div class="ttname"><a href="#ga68c9620f8a8e8ed6a6fbbd9a7dee6e52">congure_test_snd_t</a></div><div class="ttdeci">congure_snd_t congure_test_snd_t</div><div class="ttdoc">Application-defined type for the CongURE state object under test.</div><div class="ttdef"><b>Definition</b> test.h:54</div></div>
+<div class="ttc" id="agroup__sys__congure__test_html_gabf7cdab1370b8cff4366ed273274bf65"><div class="ttname"><a href="#gabf7cdab1370b8cff4366ed273274bf65">congure_test_snd_setup</a></div><div class="ttdeci">int congure_test_snd_setup(void congure_test_snd_t *c, unsigned id)</div><div class="ttdoc">Setup the application-defined CongURE state object under test.</div></div>
+<div class="ttc" id="astructcongure__reno__snd_html"><div class="ttname"><a href="structcongure__reno__snd.html">congure_reno_snd</a></div><div class="ttdoc">State object for CongURE Reno.</div><div class="ttdef"><b>Definition</b> reno.h:172</div></div>
+<div class="ttc" id="astructcongure__snd__t_html"><div class="ttname"><a href="structcongure__snd__t.html">congure_snd_t</a></div><div class="ttdoc">Base state object for CongURE implementations.</div><div class="ttdef"><b>Definition</b> congure.h:51</div></div>
+</div><!-- fragment --><p>All constants and initial values can then be set within the application specific definition of <a class="el" href="#gabf7cdab1370b8cff4366ed273274bf65">congure_test_snd_setup()</a>. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga3d66b3b8c27a4983607e31b899dce47b" name="ga3d66b3b8c27a4983607e31b899dce47b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga3d66b3b8c27a4983607e31b899dce47b">&#9670;&#160;</a></span>CONFIG_CONGURE_TEST_LOST_MSG_POOL_SIZE</h2>
@@ -655,7 +655,7 @@ congure_snd_driver_t::report_msg_lost() </dd>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

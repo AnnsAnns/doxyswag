@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -152,15 +152,6 @@ $(function(){initNavTree('group__net__netif.html',''); initResizable(true); });
 
 <p>Common network interface API  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Common network interface API </p>
-<p>This allows access to network interfaces regardless of the network stack implementation. The network stack must provide</p>
-<ul>
-<li>A definition for <code>netif_get_name</code> </li>
-<li>A definition for <code>netif_get_opt</code> </li>
-<li>A definition for <code>netif_set_opt</code> </li>
-</ul>
-<p>The network stack should also register each interface via <code>netif_register</code>. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -222,6 +213,15 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga7e7d61060534a4e3401d43fb1588ad6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the IPv6 address(es) of <b>all</b> interface.  <br /></td></tr>
 <tr class="separator:ga7e7d61060534a4e3401d43fb1588ad6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Common network interface API </p>
+<p>This allows access to network interfaces regardless of the network stack implementation. The network stack must provide</p>
+<ul>
+<li>A definition for <code>netif_get_name</code> </li>
+<li>A definition for <code>netif_get_opt</code> </li>
+<li>A definition for <code>netif_set_opt</code> </li>
+</ul>
+<p>The network stack should also register each interface via <code>netif_register</code>. </p>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ga558452068415539936040af7f9cc30c4" name="ga558452068415539936040af7f9cc30c4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga558452068415539936040af7f9cc30c4">&#9670;&#160;</a></span>netif_get_by_id()</h2>
@@ -712,7 +712,7 @@ NULL, if there is no interface after <code>last</code> </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

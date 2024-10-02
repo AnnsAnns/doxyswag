@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -151,15 +151,6 @@ $(function(){initNavTree('group__drivers__cst816s.html',''); initResizable(true)
   <div class="headertitle"><div class="title">Cst816S touch screen driver<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__sensors.html">Sensor Device Drivers</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Device driver interface for the Hynitron CST816S touch screen</p>
-<p>The CST816S is a touch sensor from Hynitron with integrated gesture detection. It is able to measure both the position of a single finger and a number of basic gestures. The PineTime board has one of these for the touch screen.</p>
-<p>Documentation about the specifics is very limited and most of this driver is based on experimenting with the chip and from community effort on the PineTime.</p>
-<p>Two things about the driver are noteworthy:</p><ol type="1">
-<li>It only responds to I2C commands after an event, such as a touch detection. Do not expect it to respond on init. Instead after a touch event, it will assert the IRQ and respond to I2C reads for a short time.</li>
-<li>While it should be able to detect multiple finger events, this version of the chip always returns only a single finger event and a gesture.</li>
-</ol>
-<p>Reading the display data multiple times during a single event will return the last sampled finger position. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -239,6 +230,15 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><b>cst816s_gestu
 <tr class="memdesc:gaaa37c52f131052310dca796a43d6d8ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">string versions of the cst816 gestures <br /></td></tr>
 <tr class="separator:gaaa37c52f131052310dca796a43d6d8ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Device driver interface for the Hynitron CST816S touch screen</p>
+<p>The CST816S is a touch sensor from Hynitron with integrated gesture detection. It is able to measure both the position of a single finger and a number of basic gestures. The PineTime board has one of these for the touch screen.</p>
+<p>Documentation about the specifics is very limited and most of this driver is based on experimenting with the chip and from community effort on the PineTime.</p>
+<p>Two things about the driver are noteworthy:</p><ol type="1">
+<li>It only responds to I2C commands after an event, such as a touch detection. Do not expect it to respond on init. Instead after a touch event, it will assert the IRQ and respond to I2C reads for a short time.</li>
+<li>While it should be able to detect multiple finger events, this version of the chip always returns only a single finger event and a gesture.</li>
+</ol>
+<p>Reading the display data multiple times during a single event will return the last sampled finger position. </p>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="gac791b66a82093c303b1b2aaf4f185ede" name="gac791b66a82093c303b1b2aaf4f185ede"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gac791b66a82093c303b1b2aaf4f185ede">&#9670;&#160;</a></span>anonymous enum</h2>
@@ -414,7 +414,7 @@ negative on I2C access error </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

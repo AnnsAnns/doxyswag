@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -151,19 +151,6 @@ $(function(){initNavTree('group__net__gnrc__gomach.html',''); initResizable(true
 
 <p>A traffic-adaptive multi-channel MAC  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>A traffic-adaptive multi-channel MAC </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000021">Deprecated</a></b></dt><dd>This module is deprecated and will be removed after the 2024.10 release. As an alternative MAC layer for IEEE 802.15.4, you can use <a class="el" href="group__pkg__opendsme.html">openDSME - IEEE 802.15.4 DSME</a>.</dd></dl>
-<p>GoMacH is, "a General, nearly Optimal MAC protocol for multi-Hop communications", for IEEE 802.15.4 IoT/WSNs networks. It is designed to be a traffic adaptive MAC protocol that provides high traffic adaptability, high energy efficiency and high robustness.</p>
-<h2><a class="anchor" id="autotoc_md2020"></a>
-GoMacH's main features</h2>
-<ul>
-<li>doesn't rely on global synchronization.</li>
-<li>supports for multi-hop and mesh network.</li>
-<li>adopts a duty-cycle scheme to conserve power.</li>
-<li>provides high traffic adaptation for handling burst or dynamic traffics. It achieves this by dynamically allocating transmission slots to intensive senders (that have pending packets), which enables one (or more) sender(s) to burst transmit all of its (their) buffered packets (for the same destination) to the receiver in one shot (or during a shot notice). The burst slotted-transmissions will be ordered by the receiver device in a TDMA period.</li>
-<li>adopts a multi-channel scheme for avoiding/reducing wireless interference jam. </li>
-</ul>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -195,6 +182,19 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga63c2a8855055d2f96e9d172b122dcc37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an IEEE 802.15.4 GoMacH network interface.  <br /></td></tr>
 <tr class="separator:ga63c2a8855055d2f96e9d172b122dcc37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>A traffic-adaptive multi-channel MAC </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000021">Deprecated</a></b></dt><dd>This module is deprecated and will be removed after the 2024.10 release. As an alternative MAC layer for IEEE 802.15.4, you can use <a class="el" href="group__pkg__opendsme.html">openDSME - IEEE 802.15.4 DSME</a>.</dd></dl>
+<p>GoMacH is, "a General, nearly Optimal MAC protocol for multi-Hop communications", for IEEE 802.15.4 IoT/WSNs networks. It is designed to be a traffic adaptive MAC protocol that provides high traffic adaptability, high energy efficiency and high robustness.</p>
+<h2><a class="anchor" id="autotoc_md2020"></a>
+GoMacH's main features</h2>
+<ul>
+<li>doesn't rely on global synchronization.</li>
+<li>supports for multi-hop and mesh network.</li>
+<li>adopts a duty-cycle scheme to conserve power.</li>
+<li>provides high traffic adaptation for handling burst or dynamic traffics. It achieves this by dynamically allocating transmission slots to intensive senders (that have pending packets), which enables one (or more) sender(s) to burst transmit all of its (their) buffered packets (for the same destination) to the receiver in one shot (or during a shot notice). The burst slotted-transmissions will be ordered by the receiver device in a TDMA period.</li>
+<li>adopts a multi-channel scheme for avoiding/reducing wireless interference jam. </li>
+</ul>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ga63c2a8855055d2f96e9d172b122dcc37" name="ga63c2a8855055d2f96e9d172b122dcc37"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga63c2a8855055d2f96e9d172b122dcc37">&#9670;&#160;</a></span>gnrc_netif_gomach_create()</h2>
@@ -261,7 +261,7 @@ negative number on error </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

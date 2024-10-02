@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -154,46 +154,6 @@ $(function(){initNavTree('group__drivers__mrf24j40.html',''); initResizable(true
 
 <p>This module contains drivers for radio devices in Microchip MRF24J40 series.  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>This module contains drivers for radio devices in Microchip MRF24J40 series. </p>
-<p>The driver is aimed to work with all devices of this series.</p>
-<dl class="section warning"><dt>Warning</dt><dd>This driver doesn't handle the wake pin. As of now, it is required that the wake pin is high prior to the initialization (e.g. by connecting it to VCC in the board design). </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>A PR extending <a class="el" href="#ga85a02a43d89b44cc45c213e5f511f900">mrf24j40_params_t</a> to contain the wake pin and adding appropriate handling of the wake pin to the driver logic would be a welcome addition.</dd></dl>
-<p>Default TX power is 0dBm.</p>
-<p>TX power mapping:</p><ul>
-<li>0 -&gt; -36dB</li>
-<li>1 -&gt; -35dB</li>
-<li>2 -&gt; -34dB</li>
-<li>3 -&gt; -33dB</li>
-<li>4 -&gt; -32dB</li>
-<li>5 -&gt; -31dB</li>
-<li>6 -&gt; -30dB</li>
-<li>7 -&gt; -30dB</li>
-<li>8 -&gt; -26dB</li>
-<li>9 -&gt; -25dB</li>
-<li>10 -&gt; -24dB</li>
-<li>11 -&gt; -23dB</li>
-<li>12 -&gt; -22dB</li>
-<li>13 -&gt; -21dB</li>
-<li>14 -&gt; -20dB</li>
-<li>15 -&gt; -20dB</li>
-<li>16 -&gt; -16dB</li>
-<li>17 -&gt; -15dB</li>
-<li>18 -&gt; -14dB</li>
-<li>19 -&gt; -13dB</li>
-<li>20 -&gt; -12dB</li>
-<li>21 -&gt; -11dB</li>
-<li>22 -&gt; -10dB</li>
-<li>23 -&gt; -10dB</li>
-<li>24 -&gt; -6dB</li>
-<li>25 -&gt; -5dB</li>
-<li>26 -&gt; -4dB</li>
-<li>27 -&gt; -3dB</li>
-<li>28 -&gt; -2dB</li>
-<li>29 -&gt; -1dB</li>
-<li>30 -&gt; -0dB</li>
-<li>31 -&gt; -0dB </li>
-</ul>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -371,6 +331,46 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga47062a349a104ccf014cfc34cd5446eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">preloading enabled <br /></td></tr>
 <tr class="separator:ga47062a349a104ccf014cfc34cd5446eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>This module contains drivers for radio devices in Microchip MRF24J40 series. </p>
+<p>The driver is aimed to work with all devices of this series.</p>
+<dl class="section warning"><dt>Warning</dt><dd>This driver doesn't handle the wake pin. As of now, it is required that the wake pin is high prior to the initialization (e.g. by connecting it to VCC in the board design). </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>A PR extending <a class="el" href="#ga85a02a43d89b44cc45c213e5f511f900">mrf24j40_params_t</a> to contain the wake pin and adding appropriate handling of the wake pin to the driver logic would be a welcome addition.</dd></dl>
+<p>Default TX power is 0dBm.</p>
+<p>TX power mapping:</p><ul>
+<li>0 -&gt; -36dB</li>
+<li>1 -&gt; -35dB</li>
+<li>2 -&gt; -34dB</li>
+<li>3 -&gt; -33dB</li>
+<li>4 -&gt; -32dB</li>
+<li>5 -&gt; -31dB</li>
+<li>6 -&gt; -30dB</li>
+<li>7 -&gt; -30dB</li>
+<li>8 -&gt; -26dB</li>
+<li>9 -&gt; -25dB</li>
+<li>10 -&gt; -24dB</li>
+<li>11 -&gt; -23dB</li>
+<li>12 -&gt; -22dB</li>
+<li>13 -&gt; -21dB</li>
+<li>14 -&gt; -20dB</li>
+<li>15 -&gt; -20dB</li>
+<li>16 -&gt; -16dB</li>
+<li>17 -&gt; -15dB</li>
+<li>18 -&gt; -14dB</li>
+<li>19 -&gt; -13dB</li>
+<li>20 -&gt; -12dB</li>
+<li>21 -&gt; -11dB</li>
+<li>22 -&gt; -10dB</li>
+<li>23 -&gt; -10dB</li>
+<li>24 -&gt; -6dB</li>
+<li>25 -&gt; -5dB</li>
+<li>26 -&gt; -4dB</li>
+<li>27 -&gt; -3dB</li>
+<li>28 -&gt; -2dB</li>
+<li>29 -&gt; -1dB</li>
+<li>30 -&gt; -0dB</li>
+<li>31 -&gt; -0dB </li>
+</ul>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ga80322d719b89cdc3317ef20d09e5b22b" name="ga80322d719b89cdc3317ef20d09e5b22b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga80322d719b89cdc3317ef20d09e5b22b">&#9670;&#160;</a></span>mrf24j40_dbm_from_reg()</h2>
@@ -1105,7 +1105,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

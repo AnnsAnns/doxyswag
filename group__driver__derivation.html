@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -147,28 +147,7 @@ $(function(){initNavTree('group__driver__derivation.html',''); initResizable(tru
   <div class="headertitle"><div class="title">Secure Element Key Derivation and Agreement<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__sys__psa__crypto.html">PSA Cryptographic API</a> &raquo; <a class="el" href="group__sys__psa__crypto__se__driver.html">PSA Crypto Secure Element Wrapper</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Key derivation is the process of generating new key material using an existing key and additional parameters, iterating through a basic cryptographic function, such as a hash. Key agreement is a part of cryptographic protocols that allows two parties to agree on the same key value, but starting from different original key material. The flows are similar, and the PSA Crypto Driver Model uses the same functions for both of the flows.</p>
-<p>There are two different final functions for the flows, <code>psa_drv_se_key_derivation_derive</code> and <code>psa_drv_se_key_derivation_export</code>. <code>psa_drv_se_key_derivation_derive</code> is used when the key material should be placed in a slot on the hardware and not exposed to the caller. <code>psa_drv_se_key_derivation_export</code> is used when the key material should be returned to the PSA Cryptographic API implementation.</p>
-<p>Different key derivation algorithms require a different number of inputs. Instead of having an API that takes as input variable length arrays, which can be problemmatic to manage on embedded platforms, the inputs are passed to the driver via a function, <code>psa_drv_se_key_derivation_collateral</code>, that is called multiple times with different <code>collateral_ids</code>. Thus, for a key derivation algorithm that required 3 parameter inputs, the flow would look something like:</p>
-<div class="fragment"><div class="line">psa_drv_se_key_derivation_setup(kdf_algorithm, source_key,</div>
-<div class="line">                                dest_key_size_bytes);</div>
-<div class="line">psa_drv_se_key_derivation_collateral(kdf_algorithm_collateral_id_0,</div>
-<div class="line">                                     p_collateral_0,</div>
-<div class="line">                                     collateral_0_size);</div>
-<div class="line">psa_drv_se_key_derivation_collateral(kdf_algorithm_collateral_id_1,</div>
-<div class="line">                                     p_collateral_1,</div>
-<div class="line">                                     collateral_1_size);</div>
-<div class="line">psa_drv_se_key_derivation_collateral(kdf_algorithm_collateral_id_2,</div>
-<div class="line">                                     p_collateral_2,</div>
-<div class="line">                                     collateral_2_size);</div>
-<div class="line">psa_drv_se_key_derivation_derive();</div>
-</div><!-- fragment --><p>key agreement example: </p><div class="fragment"><div class="line">psa_drv_se_key_derivation_setup(alg, source_key. dest_key_size_bytes);</div>
-<div class="line">psa_drv_se_key_derivation_collateral(DHE_PUBKEY, p_pubkey, pubkey_size);</div>
-<div class="line">psa_drv_se_key_derivation_export(p_session_key,</div>
-<div class="line">                                 session_key_size,</div>
-<div class="line">                                 &amp;session_key_length);</div>
-</div><!-- fragment --> <table class="memberdecls">
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpsa__drv__se__key__derivation__t.html">psa_drv_se_key_derivation_t</a></td></tr>
@@ -190,7 +169,28 @@ Typedefs</h2></td></tr>
 <tr class="memdesc:ga25d0d785a7acd6957891f3c1022f91b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that performs the final step of a secure element key agreement and place the generated key material in a buffer.  <br /></td></tr>
 <tr class="separator:ga25d0d785a7acd6957891f3c1022f91b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Typedef Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Key derivation is the process of generating new key material using an existing key and additional parameters, iterating through a basic cryptographic function, such as a hash. Key agreement is a part of cryptographic protocols that allows two parties to agree on the same key value, but starting from different original key material. The flows are similar, and the PSA Crypto Driver Model uses the same functions for both of the flows.</p>
+<p>There are two different final functions for the flows, <code>psa_drv_se_key_derivation_derive</code> and <code>psa_drv_se_key_derivation_export</code>. <code>psa_drv_se_key_derivation_derive</code> is used when the key material should be placed in a slot on the hardware and not exposed to the caller. <code>psa_drv_se_key_derivation_export</code> is used when the key material should be returned to the PSA Cryptographic API implementation.</p>
+<p>Different key derivation algorithms require a different number of inputs. Instead of having an API that takes as input variable length arrays, which can be problemmatic to manage on embedded platforms, the inputs are passed to the driver via a function, <code>psa_drv_se_key_derivation_collateral</code>, that is called multiple times with different <code>collateral_ids</code>. Thus, for a key derivation algorithm that required 3 parameter inputs, the flow would look something like:</p>
+<div class="fragment"><div class="line">psa_drv_se_key_derivation_setup(kdf_algorithm, source_key,</div>
+<div class="line">                                dest_key_size_bytes);</div>
+<div class="line">psa_drv_se_key_derivation_collateral(kdf_algorithm_collateral_id_0,</div>
+<div class="line">                                     p_collateral_0,</div>
+<div class="line">                                     collateral_0_size);</div>
+<div class="line">psa_drv_se_key_derivation_collateral(kdf_algorithm_collateral_id_1,</div>
+<div class="line">                                     p_collateral_1,</div>
+<div class="line">                                     collateral_1_size);</div>
+<div class="line">psa_drv_se_key_derivation_collateral(kdf_algorithm_collateral_id_2,</div>
+<div class="line">                                     p_collateral_2,</div>
+<div class="line">                                     collateral_2_size);</div>
+<div class="line">psa_drv_se_key_derivation_derive();</div>
+</div><!-- fragment --><p>key agreement example: </p><div class="fragment"><div class="line">psa_drv_se_key_derivation_setup(alg, source_key. dest_key_size_bytes);</div>
+<div class="line">psa_drv_se_key_derivation_collateral(DHE_PUBKEY, p_pubkey, pubkey_size);</div>
+<div class="line">psa_drv_se_key_derivation_export(p_session_key,</div>
+<div class="line">                                 session_key_size,</div>
+<div class="line">                                 &amp;session_key_length);</div>
+</div><!-- fragment --> <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ga3d730798a122772534887ea87e2f9c4e" name="ga3d730798a122772534887ea87e2f9c4e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga3d730798a122772534887ea87e2f9c4e">&#9670;&#160;</a></span>psa_drv_se_key_derivation_collateral_t</h2>
 
@@ -301,7 +301,7 @@ Typedefs</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

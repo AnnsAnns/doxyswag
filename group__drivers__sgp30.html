@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -151,14 +151,6 @@ $(function(){initNavTree('group__drivers__sgp30.html',''); initResizable(true); 
 
 <p>Device driver interface for the Sensirion SGP30 Gas Sensor  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Device driver interface for the Sensirion SGP30 Gas Sensor </p>
-<h1><a class="anchor" id="autotoc_md1732"></a>
-About</h1>
-<p>This driver provides an interface for the Sensirion SGP30 Gas Sensor. The Datasheet can be found <a href="https://www.mouser.com/pdfdocs/Sensirion_Gas_Sensors_SGP30_Datasheet_EN-1148053.pdf">here</a></p>
-<p>After the sensor is powered up and starts measuring air quality for the first 15s <a class="el" href="#ga8cd1c689d7445d85475e5cd0d2392076">sgp30_read_measurements</a> calls will return fixed values of of 400ppm CO2eq and 0ppb TVOC. Afterwards values should be read in regular intervals of 1s for best operation of the dynamic baseline compensation algorithm.</p>
-<p>The above is not done by default unless the <code>sgp30_strict</code> module is included. In that case, if attempting to read before the is completed, then -EAGAIN will be returned. After this periodic readings happen every 1s, and the last value read is returned when calling <a class="el" href="#ga8cd1c689d7445d85475e5cd0d2392076">sgp30_read_measurements</a>. A timestamp is also added to <a class="el" href="structsgp30__data__t.html">sgp30_data_t</a>.</p>
-<p>The sensor features on-chip humidity compensation for the air quality measurements. <a class="el" href="#gaafebc98e9c69c0724cc51497ec69eb63">sgp30_set_absolute_humidity</a> can be used to change the absolute humidity value used. See [SGP30 driver integration] (<a href="https://files.seeedstudio.com/wiki/Grove-VOC_and_eCO2_Gas_Sensor-SGP30/res/Sensirion_Gas_Sensors_SGP30_Driver-Integration-Guide_HW_I2C.pdf">https://files.seeedstudio.com/wiki/Grove-VOC_and_eCO2_Gas_Sensor-SGP30/res/Sensirion_Gas_Sensors_SGP30_Driver-Integration-Guide_HW_I2C.pdf</a>) for more on this. The baseline values for the correction algorithm can also be tweaked with <a class="el" href="#ga8be43c501bcd9eba3ad57e42aec09f8e">sgp30_set_baseline</a>. More on how to implement dynamic baseline compensation can be seen at [SGP30 driver integration] (<a href="https://files.seeedstudio.com/wiki/Grove-VOC_and_eCO2_Gas_Sensor-SGP30/res/Sensirion_Gas_Sensors_SGP30_Driver-Integration-Guide_HW_I2C.pdf">https://files.seeedstudio.com/wiki/Grove-VOC_and_eCO2_Gas_Sensor-SGP30/res/Sensirion_Gas_Sensors_SGP30_Driver-Integration-Guide_HW_I2C.pdf</a>). </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -222,6 +214,14 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga869023edb269f3881bd2d9e1cc98322e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read raw signals H2 (sout_H2) and Ethanol(sout_EthOH)  <br /></td></tr>
 <tr class="separator:ga869023edb269f3881bd2d9e1cc98322e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Device driver interface for the Sensirion SGP30 Gas Sensor </p>
+<h1><a class="anchor" id="autotoc_md1732"></a>
+About</h1>
+<p>This driver provides an interface for the Sensirion SGP30 Gas Sensor. The Datasheet can be found <a href="https://www.mouser.com/pdfdocs/Sensirion_Gas_Sensors_SGP30_Datasheet_EN-1148053.pdf">here</a></p>
+<p>After the sensor is powered up and starts measuring air quality for the first 15s <a class="el" href="#ga8cd1c689d7445d85475e5cd0d2392076">sgp30_read_measurements</a> calls will return fixed values of of 400ppm CO2eq and 0ppb TVOC. Afterwards values should be read in regular intervals of 1s for best operation of the dynamic baseline compensation algorithm.</p>
+<p>The above is not done by default unless the <code>sgp30_strict</code> module is included. In that case, if attempting to read before the is completed, then -EAGAIN will be returned. After this periodic readings happen every 1s, and the last value read is returned when calling <a class="el" href="#ga8cd1c689d7445d85475e5cd0d2392076">sgp30_read_measurements</a>. A timestamp is also added to <a class="el" href="structsgp30__data__t.html">sgp30_data_t</a>.</p>
+<p>The sensor features on-chip humidity compensation for the air quality measurements. <a class="el" href="#gaafebc98e9c69c0724cc51497ec69eb63">sgp30_set_absolute_humidity</a> can be used to change the absolute humidity value used. See [SGP30 driver integration] (<a href="https://files.seeedstudio.com/wiki/Grove-VOC_and_eCO2_Gas_Sensor-SGP30/res/Sensirion_Gas_Sensors_SGP30_Driver-Integration-Guide_HW_I2C.pdf">https://files.seeedstudio.com/wiki/Grove-VOC_and_eCO2_Gas_Sensor-SGP30/res/Sensirion_Gas_Sensors_SGP30_Driver-Integration-Guide_HW_I2C.pdf</a>) for more on this. The baseline values for the correction algorithm can also be tweaked with <a class="el" href="#ga8be43c501bcd9eba3ad57e42aec09f8e">sgp30_set_baseline</a>. More on how to implement dynamic baseline compensation can be seen at [SGP30 driver integration] (<a href="https://files.seeedstudio.com/wiki/Grove-VOC_and_eCO2_Gas_Sensor-SGP30/res/Sensirion_Gas_Sensors_SGP30_Driver-Integration-Guide_HW_I2C.pdf">https://files.seeedstudio.com/wiki/Grove-VOC_and_eCO2_Gas_Sensor-SGP30/res/Sensirion_Gas_Sensors_SGP30_Driver-Integration-Guide_HW_I2C.pdf</a>). </p>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ga3791d42dc8e154435e685b64a0a31983" name="ga3791d42dc8e154435e685b64a0a31983"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga3791d42dc8e154435e685b64a0a31983">&#9670;&#160;</a></span>sgp30_get_baseline()</h2>
@@ -637,7 +637,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

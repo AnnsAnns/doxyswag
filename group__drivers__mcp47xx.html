@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -152,73 +152,6 @@ $(function(){initNavTree('group__drivers__mcp47xx.html',''); initResizable(true)
 
 <p>Device driver for Microchip MCP47xx DAC with I2C interface  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Device driver for Microchip MCP47xx DAC with I2C interface </p>
-<h2><a class="anchor" id="autotoc_md1671"></a>
-Overview</h2>
-<p>The driver supports the different Microchip MCP47xx DAC variants.</p>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadLeft">Expander   </th><th class="markdownTableHeadCenter">Channels   </th><th class="markdownTableHeadCenter">Resolution    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft">MCP4706   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">8-bit    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft">MCP4716   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">10-bit    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft">MCP4725   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">12-bit    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft">MCP4726   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">12-bit    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft">MCP4728   </td><td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyCenter">12-bit   </td></tr>
-</table>
-<dl class="section note"><dt>Note</dt><dd>The following features of MCP47xx DAC devices are not supported at the moment:<ul>
-<li>configuring and reading address bits to/from EEPROM</li>
-<li>writing DAC channel output values to the EEPROM</li>
-<li>setting the UDAC bit and using the LDAC pin for MCP4728</li>
-</ul>
-</dd></dl>
-<h2><a class="anchor" id="autotoc_md1672"></a>
-Usage</h2>
-<p>Multiple MCP47xx DAC devices and different variants can be used at the same time.</p>
-<p>The driver interface is kept as compatible as possible with the peripheral DAC interface. The only differences are that</p>
-<ul>
-<li>functions have the prefix <code>mcp47xx_</code> and</li>
-<li>functions require an additional parameter, the pointer to the MCP47xx device of type <a class="el" href="structmcp47xx__t.html" title="MCP47xx device data structure type.">mcp47xx_t</a>.</li>
-</ul>
-<p>Please refer the test application in <code>tests/drivers/mcp47xx</code> for an example on how to use the driver.</p>
-<h2><a class="anchor" id="autotoc_md1673"></a>
-SAUL Capabilities</h2>
-<p>The driver provides SAUL capabilities that are compatible with SAUL actuators of type <a class="el" href="group__drivers__saul.html#ggaa3dfb65ce3006aaab287357097352604a636f95240e556edd7a3867fbcf5cf7dc" title="actuator: dimmable switch">SAUL_ACT_DIMMER</a>. Each MCP47xx channel can be mapped directly to SAUL by defining an according entry in <code>MCP47XX_SAUL_DAC_PARAMS</code>. Please refer file <code>$RIOTBASE/drivers/mcp47xx/include/mcp47xx_params.h</code> for an example. </p><pre class="fragment"> mcp47xx_saul_dac_params_t mcp47xx_saul_dac_params[] = {
-     {
-         .name = "DAC00",
-         .dev = 0,
-         .channel = 0,
-         .initial = 32768,
-     },
- };
-</pre><p>For each DAC channel that should be used with SAUL, an entry with a name, the device, the channel, and the initial value has to be defined as shown above.</p>
-<h2><a class="anchor" id="autotoc_md1674"></a>
-Using Multiple Devices</h2>
-<p>It is possible to used multiple devices and different variants of MCP47xx DAC devices at the same time. The application has to configure all devices by defining the configuration parameter set <code>mcp47xx_params</code> of type <a class="el" href="structmcp47xx__params__t.html" title="MCP47xx device configuration parameters.">mcp47xx_params_t</a>. As an example, the default configuration for one MCP4725 device is defined in <code>drivers/mcp47xx/mcp47xx_params.h</code>.</p>
-<p>The application can override it by placing a file <code><a class="el" href="mcp47xx__params_8h.html" title="Default configuration for Microchip MCP47xx DAC with I2C interface.">mcp47xx_params.h</a></code> in the application directory <code>$(APPDIR)</code>. For example, the definition of the configuration parameter set for the two devices (one MCP4725 and one MCP4728) could looks like: </p><pre class="fragment"> static const mcp47xx_params_t mcp47xx_params[] = {
-     {
-         .variant = MCP4725,
-         .dev = I2C_DEV(0),
-         .addr = MCP47XX_BASE_ADDR + 2,
-         .gain = MCP47XX_GAIN_1X,
-         .vref = MCP47XX_VDD,
-         .pd_mode = MCP47XX_PD_LARGE,
-     },
-     {
-         .variant = MCP4728,
-         .dev = I2C_DEV(0),
-         .addr = MCP47XX_BASE_ADDR + 3,
-         .gain = MCP47XX_GAIN_2X,
-         .vref = MCP47XX_VREF_INT,
-         .pd_mode = MCP47XX_PD_LARGE,
-     },
- };
-</pre><dl class="section author"><dt>Author</dt><dd>Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span class="obfuscator">.nosp@m.</span>@sch<span class="obfuscator">.nosp@m.</span>orcht<span class="obfuscator">.nosp@m.</span>.net</a> </dd></dl>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -337,6 +270,73 @@ Functions</h2></td></tr>
 <tr class="memdesc:gaa0704b2926e6e0dbe4f567c91e772022"><td class="mdescLeft">&#160;</td><td class="mdescRight">maximum number of channels <br /></td></tr>
 <tr class="separator:gaa0704b2926e6e0dbe4f567c91e772022"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Device driver for Microchip MCP47xx DAC with I2C interface </p>
+<h2><a class="anchor" id="autotoc_md1671"></a>
+Overview</h2>
+<p>The driver supports the different Microchip MCP47xx DAC variants.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Expander   </th><th class="markdownTableHeadCenter">Channels   </th><th class="markdownTableHeadCenter">Resolution    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">MCP4706   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">8-bit    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">MCP4716   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">10-bit    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">MCP4725   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">12-bit    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">MCP4726   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">12-bit    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">MCP4728   </td><td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyCenter">12-bit   </td></tr>
+</table>
+<dl class="section note"><dt>Note</dt><dd>The following features of MCP47xx DAC devices are not supported at the moment:<ul>
+<li>configuring and reading address bits to/from EEPROM</li>
+<li>writing DAC channel output values to the EEPROM</li>
+<li>setting the UDAC bit and using the LDAC pin for MCP4728</li>
+</ul>
+</dd></dl>
+<h2><a class="anchor" id="autotoc_md1672"></a>
+Usage</h2>
+<p>Multiple MCP47xx DAC devices and different variants can be used at the same time.</p>
+<p>The driver interface is kept as compatible as possible with the peripheral DAC interface. The only differences are that</p>
+<ul>
+<li>functions have the prefix <code>mcp47xx_</code> and</li>
+<li>functions require an additional parameter, the pointer to the MCP47xx device of type <a class="el" href="structmcp47xx__t.html" title="MCP47xx device data structure type.">mcp47xx_t</a>.</li>
+</ul>
+<p>Please refer the test application in <code>tests/drivers/mcp47xx</code> for an example on how to use the driver.</p>
+<h2><a class="anchor" id="autotoc_md1673"></a>
+SAUL Capabilities</h2>
+<p>The driver provides SAUL capabilities that are compatible with SAUL actuators of type <a class="el" href="group__drivers__saul.html#ggaa3dfb65ce3006aaab287357097352604a636f95240e556edd7a3867fbcf5cf7dc" title="actuator: dimmable switch">SAUL_ACT_DIMMER</a>. Each MCP47xx channel can be mapped directly to SAUL by defining an according entry in <code>MCP47XX_SAUL_DAC_PARAMS</code>. Please refer file <code>$RIOTBASE/drivers/mcp47xx/include/mcp47xx_params.h</code> for an example. </p><pre class="fragment"> mcp47xx_saul_dac_params_t mcp47xx_saul_dac_params[] = {
+     {
+         .name = "DAC00",
+         .dev = 0,
+         .channel = 0,
+         .initial = 32768,
+     },
+ };
+</pre><p>For each DAC channel that should be used with SAUL, an entry with a name, the device, the channel, and the initial value has to be defined as shown above.</p>
+<h2><a class="anchor" id="autotoc_md1674"></a>
+Using Multiple Devices</h2>
+<p>It is possible to used multiple devices and different variants of MCP47xx DAC devices at the same time. The application has to configure all devices by defining the configuration parameter set <code>mcp47xx_params</code> of type <a class="el" href="structmcp47xx__params__t.html" title="MCP47xx device configuration parameters.">mcp47xx_params_t</a>. As an example, the default configuration for one MCP4725 device is defined in <code>drivers/mcp47xx/mcp47xx_params.h</code>.</p>
+<p>The application can override it by placing a file <code><a class="el" href="mcp47xx__params_8h.html" title="Default configuration for Microchip MCP47xx DAC with I2C interface.">mcp47xx_params.h</a></code> in the application directory <code>$(APPDIR)</code>. For example, the definition of the configuration parameter set for the two devices (one MCP4725 and one MCP4728) could looks like: </p><pre class="fragment"> static const mcp47xx_params_t mcp47xx_params[] = {
+     {
+         .variant = MCP4725,
+         .dev = I2C_DEV(0),
+         .addr = MCP47XX_BASE_ADDR + 2,
+         .gain = MCP47XX_GAIN_1X,
+         .vref = MCP47XX_VDD,
+         .pd_mode = MCP47XX_PD_LARGE,
+     },
+     {
+         .variant = MCP4728,
+         .dev = I2C_DEV(0),
+         .addr = MCP47XX_BASE_ADDR + 3,
+         .gain = MCP47XX_GAIN_2X,
+         .vref = MCP47XX_VREF_INT,
+         .pd_mode = MCP47XX_PD_LARGE,
+     },
+ };
+</pre><dl class="section author"><dt>Author</dt><dd>Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span class="obfuscator">.nosp@m.</span>@sch<span class="obfuscator">.nosp@m.</span>orcht<span class="obfuscator">.nosp@m.</span>.net</a> </dd></dl>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga630863382cb27afd1680006f4cb17756" name="ga630863382cb27afd1680006f4cb17756"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga630863382cb27afd1680006f4cb17756">&#9670;&#160;</a></span>MCP47XX_BASE_ADDR</h2>
@@ -765,7 +765,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

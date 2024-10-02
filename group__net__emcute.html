@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -154,50 +154,6 @@ $(function(){initNavTree('group__net__emcute.html',''); initResizable(true); });
 
 <p>emCute, the MQTT-SN implementation for RIOT  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>emCute, the MQTT-SN implementation for RIOT </p>
-<h1><a class="anchor" id="autotoc_md1985"></a>
-About</h1>
-<p>emCute is the implementation of the OASIS MQTT-SN protocol for RIOT. It is designed with a focus on small memory footprint and usability.</p>
-<h1><a class="anchor" id="autotoc_md1986"></a>
-Design Decisions and Restrictions</h1>
-<ul>
-<li>emCute is designed to run on top of UDP only, making use of <a class="el" href="group__net__sock__udp.html">UDP sock API</a>. The design is not intended to be used with any other transport.</li>
-</ul>
-<p>The implementation is based on a 2-thread model: emCute needs one thread of its own, in which receiving of packets and sending of ping messages are handled. All 'user space functions' have to run from (a) different (i.e. user) thread(s). emCute uses thread flags to synchronize between threads.</p>
-<p>Further know restrictions are:</p><ul>
-<li>ASCII topic names only (no support for UTF8 names, yet)</li>
-<li>topic length is restricted to fit in a single length byte (248 byte max)</li>
-<li>no support for wildcards in topic names. This feature requires more elaborate internal memory management, supposedly at the cost of quite increased ROM and RAM usage</li>
-<li>no retransmit when receiving a REJ_CONG (reject, reason congestion). when getting a REJ_CONG (reject, reason congestion), the spec tells us to resend the original message after T_WAIT (default: &gt;5min). This is not supported, as this would require to block to calling thread (or keep state) for long periods of time and is (in Hauke's opinion) not feasible for constrained nodes.</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md1987"></a>
-Error Handling</h1>
-<p>This implementation tries minimize parameter checks to a minimum, checking as many parameters as feasible using assertions. For the sake of run-time stability and usability, typical overflow checks are always done during run- time and explicit error values returned in case of errors.</p>
-<h1><a class="anchor" id="autotoc_md1988"></a>
-Implementation state</h1>
-<p>In the current state, emCute supports:</p><ul>
-<li>connecting to a gateway</li>
-<li>disconnecting from gateway</li>
-<li>registering a last will topic and message during connection setup</li>
-<li>registering topic names with the gateway (obtaining topic IDs)</li>
-<li>subscribing to topics</li>
-<li>unsubscribing from topics</li>
-<li>updating will topic</li>
-<li>updating will message</li>
-<li>sending out periodic PINGREQ messages</li>
-<li>handling re-transmits</li>
-</ul>
-<p>The following features are however still missing (but planned): </p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000019">Todo</a></b></dt><dd><p class="startdd">Gateway discovery (so far there is no support for handling ADVERTISE, GWINFO, and SEARCHGW). Open question to answer here: how to put / how to encode the IPv(4/6) address AND the port of a gateway in the GwAdd field of the GWINFO message </p>
-<p class="interdd">QOS level 2 </p>
-<p class="interdd">QOS level -1 </p>
-<p class="interdd">put the node to sleep (send DISCONNECT with duration field set) </p>
-<p class="interdd">handle DISCONNECT messages initiated by the broker/gateway </p>
-<p class="interdd">support for pre-defined and short topic IDs </p>
-<p class="interdd">handle (previously) active subscriptions on reconnect/disconnect </p>
-<p class="interdd">handle re-connect/disconnect from unresponsive gateway (in case a number of ping requests are unanswered) </p>
-<p class="enddd">react only to incoming ping requests that are actually send by the gateway we are connected to</p>
-</dd></dl>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -300,6 +256,50 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga7a54f83dfc37978765681648f6b407e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the string representation of the given type value.  <br /></td></tr>
 <tr class="separator:ga7a54f83dfc37978765681648f6b407e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>emCute, the MQTT-SN implementation for RIOT </p>
+<h1><a class="anchor" id="autotoc_md1985"></a>
+About</h1>
+<p>emCute is the implementation of the OASIS MQTT-SN protocol for RIOT. It is designed with a focus on small memory footprint and usability.</p>
+<h1><a class="anchor" id="autotoc_md1986"></a>
+Design Decisions and Restrictions</h1>
+<ul>
+<li>emCute is designed to run on top of UDP only, making use of <a class="el" href="group__net__sock__udp.html">UDP sock API</a>. The design is not intended to be used with any other transport.</li>
+</ul>
+<p>The implementation is based on a 2-thread model: emCute needs one thread of its own, in which receiving of packets and sending of ping messages are handled. All 'user space functions' have to run from (a) different (i.e. user) thread(s). emCute uses thread flags to synchronize between threads.</p>
+<p>Further know restrictions are:</p><ul>
+<li>ASCII topic names only (no support for UTF8 names, yet)</li>
+<li>topic length is restricted to fit in a single length byte (248 byte max)</li>
+<li>no support for wildcards in topic names. This feature requires more elaborate internal memory management, supposedly at the cost of quite increased ROM and RAM usage</li>
+<li>no retransmit when receiving a REJ_CONG (reject, reason congestion). when getting a REJ_CONG (reject, reason congestion), the spec tells us to resend the original message after T_WAIT (default: &gt;5min). This is not supported, as this would require to block to calling thread (or keep state) for long periods of time and is (in Hauke's opinion) not feasible for constrained nodes.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md1987"></a>
+Error Handling</h1>
+<p>This implementation tries minimize parameter checks to a minimum, checking as many parameters as feasible using assertions. For the sake of run-time stability and usability, typical overflow checks are always done during run- time and explicit error values returned in case of errors.</p>
+<h1><a class="anchor" id="autotoc_md1988"></a>
+Implementation state</h1>
+<p>In the current state, emCute supports:</p><ul>
+<li>connecting to a gateway</li>
+<li>disconnecting from gateway</li>
+<li>registering a last will topic and message during connection setup</li>
+<li>registering topic names with the gateway (obtaining topic IDs)</li>
+<li>subscribing to topics</li>
+<li>unsubscribing from topics</li>
+<li>updating will topic</li>
+<li>updating will message</li>
+<li>sending out periodic PINGREQ messages</li>
+<li>handling re-transmits</li>
+</ul>
+<p>The following features are however still missing (but planned): </p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000019">Todo</a></b></dt><dd><p class="startdd">Gateway discovery (so far there is no support for handling ADVERTISE, GWINFO, and SEARCHGW). Open question to answer here: how to put / how to encode the IPv(4/6) address AND the port of a gateway in the GwAdd field of the GWINFO message </p>
+<p class="interdd">QOS level 2 </p>
+<p class="interdd">QOS level -1 </p>
+<p class="interdd">put the node to sleep (send DISCONNECT with duration field set) </p>
+<p class="interdd">handle DISCONNECT messages initiated by the broker/gateway </p>
+<p class="interdd">support for pre-defined and short topic IDs </p>
+<p class="interdd">handle (previously) active subscriptions on reconnect/disconnect </p>
+<p class="interdd">handle re-connect/disconnect from unresponsive gateway (in case a number of ping requests are unanswered) </p>
+<p class="enddd">react only to incoming ping requests that are actually send by the gateway we are connected to</p>
+</dd></dl>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ga8cb06b314ff2eda4230e9f0e33a07d8b" name="ga8cb06b314ff2eda4230e9f0e33a07d8b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga8cb06b314ff2eda4230e9f0e33a07d8b">&#9670;&#160;</a></span>emcute_cb_t</h2>
@@ -785,7 +785,7 @@ EMCUTE_TIMEOUT on response timeout </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

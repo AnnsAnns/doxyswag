@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -152,10 +152,6 @@ $(function(){initNavTree('group__drivers__lpd8808.html',''); initResizable(true)
 
 <p>Driver for LPD8808 based LED strips  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Driver for LPD8808 based LED strips </p>
-<p>LPD8808 based LED strips consist of a number of LEDs driven by LPD8808 chips. In these strips, each LED can be controlled individually. For this, every two LEDs are driven by a LPD8808 chip, which are chained and form a long shift register. To control a certain LED, the target color value needs to be shifted to the LEDs position on the strip.</p>
-<p>This driver implementation does not buffer the current values for each LED. It expects the application to take care of this. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -188,6 +184,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:gafe1888e4baa0b4774bfd0cc5fea979b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the color value of each LED on the strip.  <br /></td></tr>
 <tr class="separator:gafe1888e4baa0b4774bfd0cc5fea979b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Driver for LPD8808 based LED strips </p>
+<p>LPD8808 based LED strips consist of a number of LEDs driven by LPD8808 chips. In these strips, each LED can be controlled individually. For this, every two LEDs are driven by a LPD8808 chip, which are chained and form a long shift register. To control a certain LED, the target color value needs to be shifted to the LEDs position on the strip.</p>
+<p>This driver implementation does not buffer the current values for each LED. It expects the application to take care of this. </p>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ga39cd678b6078a8c3a140323464eced86" name="ga39cd678b6078a8c3a140323464eced86"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga39cd678b6078a8c3a140323464eced86">&#9670;&#160;</a></span>lpd8808_init()</h2>
@@ -260,7 +260,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

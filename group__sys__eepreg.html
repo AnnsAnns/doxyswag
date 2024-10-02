@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -152,29 +152,6 @@ $(function(){initNavTree('group__sys__eepreg.html',''); initResizable(true); });
 
 <p>eepreg provides a facility to easily manage the locations of data stored in EEPROM via a meta-data registry.  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>eepreg provides a facility to easily manage the locations of data stored in EEPROM via a meta-data registry. </p>
-<p>The structure of the meta-data registry is intended to make it easy to detect the exact layout of existent data so that automatic tools may be written to migrate legacy data to new formats. It also allows the addition and removal of new entries dynamically.</p>
-<dl class="section note"><dt>Note</dt><dd>Names are used as identifiers and must be unique! It is also recommended to keep them as short as possible (while still being unique and human readable), as many systems have very small amounts of EEPROM. Disemvowelment can shorten long names while still retaining readability.</dd></dl>
-<div class="fragment"><div class="line">The layout of the EEPROM used looks like this:</div>
-<div class="line">   EEPROM_RESERV_CPU_LOW</div>
-<div class="line">   EEPROM_RESERV_BOARD_LOW</div>
-<div class="line">   Registry magic number (&quot;RIOTREG&quot;)</div>
-<div class="line">   Registry end pointer</div>
-<div class="line">   Registry entry 1 meta-data length (1 byte)</div>
-<div class="line">   Registry entry 1 name (unterminated)</div>
-<div class="line">   Registry entry 1 data pointer</div>
-<div class="line">   Registry entry 2 meta-data length</div>
-<div class="line">   Registry entry 2 name</div>
-<div class="line">   Registry entry 2 data pointer</div>
-<div class="line">   ... (new registry meta-data may be added in ascending order)</div>
-<div class="line">   unused space</div>
-<div class="line">   ... (new data locations may be added in descending order)</div>
-<div class="line">   Entry 2 data</div>
-<div class="line">   Entry 1 data</div>
-<div class="line">   EEPROM_RESERV_BOARD_HI</div>
-<div class="line">   EEPROM_RESERV_CPU_HI</div>
-</div><!-- fragment --><p>Pointer length is dependent on the size of the available EEPROM (see EEPREG_PTR_LEN below). </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -237,6 +214,29 @@ Functions</h2></td></tr>
 <tr class="memdesc:gae245361c595f9a2e8ae3db594291abb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate length of remaining EEPROM free space.  <br /></td></tr>
 <tr class="separator:gae245361c595f9a2e8ae3db594291abb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>eepreg provides a facility to easily manage the locations of data stored in EEPROM via a meta-data registry. </p>
+<p>The structure of the meta-data registry is intended to make it easy to detect the exact layout of existent data so that automatic tools may be written to migrate legacy data to new formats. It also allows the addition and removal of new entries dynamically.</p>
+<dl class="section note"><dt>Note</dt><dd>Names are used as identifiers and must be unique! It is also recommended to keep them as short as possible (while still being unique and human readable), as many systems have very small amounts of EEPROM. Disemvowelment can shorten long names while still retaining readability.</dd></dl>
+<div class="fragment"><div class="line">The layout of the EEPROM used looks like this:</div>
+<div class="line">   EEPROM_RESERV_CPU_LOW</div>
+<div class="line">   EEPROM_RESERV_BOARD_LOW</div>
+<div class="line">   Registry magic number (&quot;RIOTREG&quot;)</div>
+<div class="line">   Registry end pointer</div>
+<div class="line">   Registry entry 1 meta-data length (1 byte)</div>
+<div class="line">   Registry entry 1 name (unterminated)</div>
+<div class="line">   Registry entry 1 data pointer</div>
+<div class="line">   Registry entry 2 meta-data length</div>
+<div class="line">   Registry entry 2 name</div>
+<div class="line">   Registry entry 2 data pointer</div>
+<div class="line">   ... (new registry meta-data may be added in ascending order)</div>
+<div class="line">   unused space</div>
+<div class="line">   ... (new data locations may be added in descending order)</div>
+<div class="line">   Entry 2 data</div>
+<div class="line">   Entry 1 data</div>
+<div class="line">   EEPROM_RESERV_BOARD_HI</div>
+<div class="line">   EEPROM_RESERV_CPU_HI</div>
+</div><!-- fragment --><p>Pointer length is dependent on the size of the available EEPROM (see EEPREG_PTR_LEN below). </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="gaa75bb392911c28e5e1d9a7fa25c19eca" name="gaa75bb392911c28e5e1d9a7fa25c19eca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaa75bb392911c28e5e1d9a7fa25c19eca">&#9670;&#160;</a></span>EEPROM_RESERV_BOARD_HI</h2>
@@ -646,7 +646,7 @@ return value of cb when cb returns &lt; 0 </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

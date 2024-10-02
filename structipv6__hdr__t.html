@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -149,34 +149,7 @@ $(function(){initNavTree('structipv6__hdr__t.html',''); initResizable(true); });
 
 <p>Data type to represent an IPv6 packet header.  
  <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Data type to represent an IPv6 packet header. </p>
-<p>The structure of the header is as follows:</p>
-<div class="fragment"><div class="line">                     1                   2                   3</div>
-<div class="line"> 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1</div>
-<div class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</div>
-<div class="line">|Version| Traffic Class |           Flow Label                  |</div>
-<div class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</div>
-<div class="line">|         Payload Length        |  Next Header  |   Hop Limit   |</div>
-<div class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</div>
-<div class="line">|                                                               |</div>
-<div class="line">+                                                               +</div>
-<div class="line">|                                                               |</div>
-<div class="line">+                         Source Address                        +</div>
-<div class="line">|                                                               |</div>
-<div class="line">+                                                               +</div>
-<div class="line">|                                                               |</div>
-<div class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</div>
-<div class="line">|                                                               |</div>
-<div class="line">+                                                               +</div>
-<div class="line">|                                                               |</div>
-<div class="line">+                      Destination Address                      +</div>
-<div class="line">|                                                               |</div>
-<div class="line">+                                                               +</div>
-<div class="line">|                                                               |</div>
-<div class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</div>
-</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a href="http://tools.ietf.org/html/rfc8200#section-3">RFC 8200, section 3</a> </dd></dl>
-</div>
+
 <p><code>#include &lt;hdr.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -205,7 +178,34 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>hl</b></td></tr>
 <tr class="memdesc:afa5b21178bbd4d0f7fb81bfd931e8951"><td class="mdescLeft">&#160;</td><td class="mdescRight">destination address of this packet. <br /></td></tr>
 <tr class="separator:afa5b21178bbd4d0f7fb81bfd931e8951"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Field Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Data type to represent an IPv6 packet header. </p>
+<p>The structure of the header is as follows:</p>
+<div class="fragment"><div class="line">                     1                   2                   3</div>
+<div class="line"> 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1</div>
+<div class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</div>
+<div class="line">|Version| Traffic Class |           Flow Label                  |</div>
+<div class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</div>
+<div class="line">|         Payload Length        |  Next Header  |   Hop Limit   |</div>
+<div class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</div>
+<div class="line">|                                                               |</div>
+<div class="line">+                                                               +</div>
+<div class="line">|                                                               |</div>
+<div class="line">+                         Source Address                        +</div>
+<div class="line">|                                                               |</div>
+<div class="line">+                                                               +</div>
+<div class="line">|                                                               |</div>
+<div class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</div>
+<div class="line">|                                                               |</div>
+<div class="line">+                                                               +</div>
+<div class="line">|                                                               |</div>
+<div class="line">+                      Destination Address                      +</div>
+<div class="line">|                                                               |</div>
+<div class="line">+                                                               +</div>
+<div class="line">|                                                               |</div>
+<div class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</div>
+</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a href="http://tools.ietf.org/html/rfc8200#section-3">RFC 8200, section 3</a> </dd></dl>
+</div><h2 class="groupheader">Field Documentation</h2>
 <a id="a7ff7c6c9f040993998acccc154950779" name="a7ff7c6c9f040993998acccc154950779"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7ff7c6c9f040993998acccc154950779">&#9670;&#160;</a></span>v_tc_fl</h2>
 
@@ -247,7 +247,7 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>hl</b></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structipv6__hdr__t.html">ipv6_hdr_t</a></li>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:03 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:32 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

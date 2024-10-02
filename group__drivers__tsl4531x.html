@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -152,14 +152,6 @@ $(function(){initNavTree('group__drivers__tsl4531x.html',''); initResizable(true
 
 <p>Device driver for the AMS TSL4531 sensor  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Device driver for the AMS TSL4531 sensor </p>
-<h1><a class="anchor" id="autotoc_md1736"></a>
-Power modes</h1>
-<p>This driver has two power modes: high and low. Its startup mode is configured in the initialization parameters, and it can also be changed during runtime.</p>
-<p>In high power mode, the user application can read from the device using the tsl4531x_simple_read function, and it will return immediately.</p>
-<p>In low power mode, the user application can interact with the driver in a synchronous or asynchronous manner. For synchronous operation, the application can call tsl4531x_simple_read, and the driver will block for the integration time defined in the initialization parameters (plus a small margin, to encompass the max times indicated in the datasheet). For asynchronous operation, the application needs to use the functions tsl4531x_start_sample, tsl4531x_time_until_sample_ready and tsl4531x_get_sample, as described in those functions' descriptions.</p>
-<p>Both modes will work through SAUL, with the low-power mode being synchronous. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -241,6 +233,14 @@ Functions</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>TSL45317_ADDR</b>&#160;&#160;&#160;(0x29)</td></tr>
 <tr class="separator:gacb8924643b4b61248269f4bedec8ea8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Device driver for the AMS TSL4531 sensor </p>
+<h1><a class="anchor" id="autotoc_md1736"></a>
+Power modes</h1>
+<p>This driver has two power modes: high and low. Its startup mode is configured in the initialization parameters, and it can also be changed during runtime.</p>
+<p>In high power mode, the user application can read from the device using the tsl4531x_simple_read function, and it will return immediately.</p>
+<p>In low power mode, the user application can interact with the driver in a synchronous or asynchronous manner. For synchronous operation, the application can call tsl4531x_simple_read, and the driver will block for the integration time defined in the initialization parameters (plus a small margin, to encompass the max times indicated in the datasheet). For asynchronous operation, the application needs to use the functions tsl4531x_start_sample, tsl4531x_time_until_sample_ready and tsl4531x_get_sample, as described in those functions' descriptions.</p>
+<p>Both modes will work through SAUL, with the low-power mode being synchronous. </p>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ga1c9a8afd73189d773f318e42b1e8de94" name="ga1c9a8afd73189d773f318e42b1e8de94"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga1c9a8afd73189d773f318e42b1e8de94">&#9670;&#160;</a></span>tsl4531x_get_sample()</h2>
@@ -428,7 +428,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

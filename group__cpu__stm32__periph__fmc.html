@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -151,36 +151,6 @@ $(function(){initNavTree('group__cpu__stm32__periph__fmc.html',''); initResizabl
 
 <p>The <code>periph_fmc</code> module implements a driver for STM32 FMC/FSMC peripherals.  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>The <code>periph_fmc</code> module implements a driver for STM32 FMC/FSMC peripherals. </p>
-<p>It supports</p><ul>
-<li>NOR Flashes,</li>
-<li>PSRAMs/SRAMs,</li>
-<li>SDRAMs, and</li>
-<li>Display Controllers with MCU 8-/16-bit parallel interface.</li>
-</ul>
-<p>NAND Flashes are not yet supported.</p>
-<p>To use the FMC/FSMC, the <code>periph_fmc</code> module has to be enabled. To keep required data structures and resulting code as small as possible, a couple of pseudomodules are defined that have to be used in addition to the <code>periph_fmc</code> module to enable supported features. These are:</p>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadLeft">Module   </th><th class="markdownTableHeadLeft">Feature    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><code>periph_fmc_nor_sram</code>   </td><td class="markdownTableBodyLeft">enable NOR Flash and PSRAM/SRAM support    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><code>periph_fmc_sdram</code>   </td><td class="markdownTableBodyLeft">enable SDRAM support    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><code>periph_fmc_16bit</code>   </td><td class="markdownTableBodyLeft">enable 16-bit support    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><code>periph_fmc_32bit</code>   </td><td class="markdownTableBodyLeft">enable 32-bit support   </td></tr>
-</table>
-<p><br  />
- The board has then to define</p><ul>
-<li>the corresponding features according to the connected external device,</li>
-<li>the peripheral configuration of the FMC/FSMC of type <a class="el" href="structfmc__conf__t.html">fmc_conf_t</a>,</li>
-<li>the configuration of the FMC banks which describe the connected external devices.</li>
-</ul>
-<p>As examples for such configurations, see <a class="el" href="group__boards__stm32l496g-disco.html">STM32L496G-DISCO</a> (FMC with Display and SRAM) or <a class="el" href="group__boards__stm32f429i-disc1.html">STM32F429I-DISC1</a> (FMC with SDRAM).</p>
-<p>To use the RAM connected to the FMC as heap, the board has also to define <a class="el" href="#gaa0c9f4159e5629c9ed5c62118a4b110c">FMC_RAM_ADDR</a> and <a class="el" href="#ga237ddf955cf211da2030064d96f80c0e">FMC_RAM_LEN</a>. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -282,6 +252,36 @@ typedef uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>fmc_bank_i
 <tr class="memdesc:ga689625e82f72aff1d53930590122c815"><td class="mdescLeft">&#160;</td><td class="mdescRight">FMC bank identifier. <br /></td></tr>
 <tr class="separator:ga689625e82f72aff1d53930590122c815"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>The <code>periph_fmc</code> module implements a driver for STM32 FMC/FSMC peripherals. </p>
+<p>It supports</p><ul>
+<li>NOR Flashes,</li>
+<li>PSRAMs/SRAMs,</li>
+<li>SDRAMs, and</li>
+<li>Display Controllers with MCU 8-/16-bit parallel interface.</li>
+</ul>
+<p>NAND Flashes are not yet supported.</p>
+<p>To use the FMC/FSMC, the <code>periph_fmc</code> module has to be enabled. To keep required data structures and resulting code as small as possible, a couple of pseudomodules are defined that have to be used in addition to the <code>periph_fmc</code> module to enable supported features. These are:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Module   </th><th class="markdownTableHeadLeft">Feature    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>periph_fmc_nor_sram</code>   </td><td class="markdownTableBodyLeft">enable NOR Flash and PSRAM/SRAM support    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>periph_fmc_sdram</code>   </td><td class="markdownTableBodyLeft">enable SDRAM support    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>periph_fmc_16bit</code>   </td><td class="markdownTableBodyLeft">enable 16-bit support    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>periph_fmc_32bit</code>   </td><td class="markdownTableBodyLeft">enable 32-bit support   </td></tr>
+</table>
+<p><br  />
+ The board has then to define</p><ul>
+<li>the corresponding features according to the connected external device,</li>
+<li>the peripheral configuration of the FMC/FSMC of type <a class="el" href="structfmc__conf__t.html">fmc_conf_t</a>,</li>
+<li>the configuration of the FMC banks which describe the connected external devices.</li>
+</ul>
+<p>As examples for such configurations, see <a class="el" href="group__boards__stm32l496g-disco.html">STM32L496G-DISCO</a> (FMC with Display and SRAM) or <a class="el" href="group__boards__stm32f429i-disc1.html">STM32F429I-DISC1</a> (FMC with SDRAM).</p>
+<p>To use the RAM connected to the FMC as heap, the board has also to define <a class="el" href="#gaa0c9f4159e5629c9ed5c62118a4b110c">FMC_RAM_ADDR</a> and <a class="el" href="#ga237ddf955cf211da2030064d96f80c0e">FMC_RAM_LEN</a>. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga4c376973f7069198f5f31c4593383597" name="ga4c376973f7069198f5f31c4593383597"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga4c376973f7069198f5f31c4593383597">&#9670;&#160;</a></span>FMC_ADDR_PIN_NUMOF</h2>
@@ -481,7 +481,7 @@ typedef uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>fmc_bank_i
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

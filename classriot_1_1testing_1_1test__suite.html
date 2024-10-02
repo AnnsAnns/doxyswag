@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -150,16 +150,7 @@ $(function(){initNavTree('classriot_1_1testing_1_1test__suite.html',''); initRes
 
 <p>Test suite base class.  
  <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Test suite base class. </p>
-<p>Should not be instantiated directly. To customize a test suite with custom set_up and tear down methods, inherit from this class and override <a class="el" href="#abd096ab7189f1f8985fdc1dcbd227196" title="method to run before each test">set_up()</a> and/or <a class="el" href="#a23e2b28300c3e3bb0f13aadc82c34c40" title="method to run after each test">tear_down()</a>. They will before / after every test. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__unittests__cpp.html#ga1dcc30e04987b50d0b98ad113ef0e6fc" title="Instantiate a test suite.">TEST_SUITE(name)</a> macro </dd>
-<dd>
-<a class="el" href="group__unittests__cpp.html#ga723dab7c38a17e63879ace89c44dd4b4" title="Instantiate a test suite with custom test fixture.">TEST_SUITE_F(suite, name)</a> macro </dd>
-<dd>
-<a class="el" href="#abd096ab7189f1f8985fdc1dcbd227196" title="method to run before each test">test_suite::set_up()</a> </dd>
-<dd>
-<a class="el" href="#a23e2b28300c3e3bb0f13aadc82c34c40" title="method to run after each test">test_suite::tear_down()</a> </dd></dl>
-</div>
+
 <p><code>#include &lt;cppunit_base.hpp&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -195,7 +186,16 @@ std::array&lt; <a class="el" href="classriot_1_1testing_1_1test.html">test</a> *
 <tr class="memdesc:a6d2bf499dda697095e0920381ca0cd00"><td class="mdescLeft">&#160;</td><td class="mdescRight">array of tests to run <br /></td></tr>
 <tr class="separator:a6d2bf499dda697095e0920381ca0cd00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Test suite base class. </p>
+<p>Should not be instantiated directly. To customize a test suite with custom set_up and tear down methods, inherit from this class and override <a class="el" href="#abd096ab7189f1f8985fdc1dcbd227196" title="method to run before each test">set_up()</a> and/or <a class="el" href="#a23e2b28300c3e3bb0f13aadc82c34c40" title="method to run after each test">tear_down()</a>. They will before / after every test. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__unittests__cpp.html#ga1dcc30e04987b50d0b98ad113ef0e6fc" title="Instantiate a test suite.">TEST_SUITE(name)</a> macro </dd>
+<dd>
+<a class="el" href="group__unittests__cpp.html#ga723dab7c38a17e63879ace89c44dd4b4" title="Instantiate a test suite with custom test fixture.">TEST_SUITE_F(suite, name)</a> macro </dd>
+<dd>
+<a class="el" href="#abd096ab7189f1f8985fdc1dcbd227196" title="method to run before each test">test_suite::set_up()</a> </dd>
+<dd>
+<a class="el" href="#a23e2b28300c3e3bb0f13aadc82c34c40" title="method to run after each test">test_suite::tear_down()</a> </dd></dl>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a2da9b9b5efc6f74053529a087d1b88c3" name="a2da9b9b5efc6f74053529a087d1b88c3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2da9b9b5efc6f74053529a087d1b88c3">&#9670;&#160;</a></span>get_name()</h2>
 
@@ -235,7 +235,7 @@ std::array&lt; <a class="el" href="classriot_1_1testing_1_1test.html">test</a> *
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceriot.html">riot</a></li><li class="navelem"><a class="el" href="namespaceriot_1_1testing.html">testing</a></li><li class="navelem"><a class="el" href="classriot_1_1testing_1_1test__suite.html">test_suite</a></li>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:03 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:32 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

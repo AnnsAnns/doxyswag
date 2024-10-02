@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -149,6 +149,22 @@ $(function(){initNavTree('group__boards__esp32s3__pros3.html',''); initResizable
 
 <p>Support for the ESP32 ProS3 board  
 <a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="esp32s3-pros3_2include_2arduino__iomap_8h.html">arduino_iomap.h</a></td></tr>
+<tr class="memdesc:esp32s3-pros3_2include_2arduino__iomap_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mapping from MCU pins to Arduino pins. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="esp32s3-pros3_2include_2board_8h.html">board.h</a></td></tr>
+<tr class="memdesc:esp32s3-pros3_2include_2board_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Board definitions for ESP32 ProS3 boards. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="esp32s3-pros3_2include_2gpio__params_8h.html">gpio_params.h</a></td></tr>
+<tr class="memdesc:esp32s3-pros3_2include_2gpio__params_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Board specific configuration of direct mapped GPIOs. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boards_2esp32s3-pros3_2include_2periph__conf_8h.html">periph_conf.h</a></td></tr>
+<tr class="memdesc:boards_2esp32s3-pros3_2include_2periph__conf_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Peripheral configurations for ESP32 ProS3 boards. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the ESP32 ProS3 board </p>
 <dl class="section author"><dt>Author</dt><dd>Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span class="obfuscator">.nosp@m.</span>@sch<span class="obfuscator">.nosp@m.</span>orcht<span class="obfuscator">.nosp@m.</span>.net</a></dd></dl>
@@ -276,30 +292,14 @@ Using STDIO</h2>
 <p>Since the board does not have a USB-to-Serial chip, the USB Serial/JTAG interface is used by default for the STDIO (module <code>stdio_usb_serial_jtag</code>) which provides an USB CDC ACM interface.</p>
 <p>If the USB port is used by the USBUS stack or the tinyUSB stack, implicitly the module <code>stdio_cdc_acm</code> or <code>stdio_tinyusb_cdc_acm</code> is used for the STDIO via the USB CDC ACM interface.</p>
 <p>Alternatively, the UART interface could be used with an external USB-to-Serial adapter. Simply add <code>stdio_uart</code> to the list of used modules for this purpose: </p><div class="fragment"><div class="line">BOARD=esp32s3-pros3 USEMODULE=stdio_uart make flash ...</div>
-</div><!-- fragment --> <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="esp32s3-pros3_2include_2arduino__iomap_8h.html">arduino_iomap.h</a></td></tr>
-<tr class="memdesc:esp32s3-pros3_2include_2arduino__iomap_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mapping from MCU pins to Arduino pins. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="esp32s3-pros3_2include_2board_8h.html">board.h</a></td></tr>
-<tr class="memdesc:esp32s3-pros3_2include_2board_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Board definitions for ESP32 ProS3 boards. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="esp32s3-pros3_2include_2gpio__params_8h.html">gpio_params.h</a></td></tr>
-<tr class="memdesc:esp32s3-pros3_2include_2gpio__params_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Board specific configuration of direct mapped GPIOs. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boards_2esp32s3-pros3_2include_2periph__conf_8h.html">periph_conf.h</a></td></tr>
-<tr class="memdesc:boards_2esp32s3-pros3_2include_2periph__conf_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Peripheral configurations for ESP32 ProS3 boards. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-</div><!-- contents -->
+</div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

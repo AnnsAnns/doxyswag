@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -149,111 +149,6 @@ $(function(){initNavTree('group__boards.html',''); initResizable(true); });
 
 <p>Board specific definitions and implementations  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Board specific definitions and implementations </p>
-<p>The boards module contains all definitions and implementations that are specific to a certain board. Generally, boards consist of a fixed configuration of a controller and some external devices such as sensors or radios. All aspects concerning configuration of GPIO pins, MCU clock and device drivers should go into this module.</p>
-<h1><a class="anchor" id="board-selection-guide"></a>
-Board Selection Guide</h1>
-<p>There is no single best board to buy for use with RIOT, as hardware design involves many trade-offs. The challenge is to clearly assess the use case and collect the requirements and to find the best match for those.</p>
-<p>With this in mind, it is still possible to give some hints and recommendations:</p>
-<ol type="1">
-<li>During Development:<ul>
-<li>An integrated programmer/debugger is immensely useful. At the very least a standard JTAG/SWD connector for quick and fool-proof connection is required</li>
-<li>If possible, pick an MCU with <em>more</em> RAM and flash than your target board. This allows to spend the excess in memory for debug features such as utility modules, verbose assert messages, etc. during development</li>
-<li>Standard connectors such as Arduino Headers, or Grove, STEMMA, STEMMA QT, QUIIC connectors etc. make hardware prototyping easier</li>
-</ul>
-</li>
-<li>Final Product:<ul>
-<li>An integrated programmer/debugger is a waste of resources (money, power, space, ...)</li>
-<li>...</li>
-</ul>
-</li>
-</ol>
-<h2><a class="anchor" id="autotoc_md338"></a>
-Popular Boards</h2>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadLeft">Board   </th><th class="markdownTableHeadLeft">Use Case   </th><th class="markdownTableHeadLeft">Performance   </th><th class="markdownTableHeadLeft">Integrated Debugger   </th><th class="markdownTableHeadLeft">Integrated Networking   </th><th class="markdownTableHeadLeft">Native USB   </th><th class="markdownTableHeadLeft">Arduino Headers   </th><th class="markdownTableHeadLeft">Other Connectors   </th><th class="markdownTableHeadLeft">Integrated Sensors/...   </th><th class="markdownTableHeadLeft">Breadboard Friendly   </th><th class="markdownTableHeadLeft">Costs   </th><th class="markdownTableHeadLeft">Remarks    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><a class="el" href="group__boards__arduino-due.html">Arduino Due</a>   </td><td class="markdownTableBodyLeft">Education   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft"><code>+++</code> (Uno, Mega, ISP)   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft"><code>-</code> (1 LED)   </td><td class="markdownTableBodyLeft"><code>+</code>   </td><td class="markdownTableBodyLeft"><code>o</code>   </td><td class="markdownTableBodyLeft">Better buy the nrf52840dk    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><a class="el" href="group__boards__arduino-mega2560.html">Arduino Mega 2560</a>   </td><td class="markdownTableBodyLeft">You have them anyway   </td><td class="markdownTableBodyLeft"><code>--</code>   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft"><code>+++</code> (Uno, Mega, ISP)   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft"><code>-</code> (1 LED)   </td><td class="markdownTableBodyLeft"><code>+</code>   </td><td class="markdownTableBodyLeft"><code>--</code>   </td><td class="markdownTableBodyLeft">Better buy the nrf52840dk    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><a class="el" href="group__boards__arduino-uno.html">Arduino Uno</a>   </td><td class="markdownTableBodyLeft">You have them anyway   </td><td class="markdownTableBodyLeft"><code>---</code>   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft"><code>++</code> (Uno, ISP)   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft"><code>-</code> (1 LED)   </td><td class="markdownTableBodyLeft"><code>+</code>   </td><td class="markdownTableBodyLeft"><code>--</code>   </td><td class="markdownTableBodyLeft">You like pain, don't you?    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><a class="el" href="group__boards__common__nucleo32.html">STM32 Nucleo-32</a>   </td><td class="markdownTableBodyLeft">Development   </td><td class="markdownTableBodyLeft"><code>-/o/+/++</code>   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft"><code>o</code> (Nano)   </td><td class="markdownTableBodyLeft">Custom   </td><td class="markdownTableBodyLeft"><code>o</code> (1 button, 1 LED)   </td><td class="markdownTableBodyLeft"><code>+</code>   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft">Good bang for the buck    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><a class="el" href="group__boards__common__nucleo64.html">STM32 Nucleo-64</a>   </td><td class="markdownTableBodyLeft">Development   </td><td class="markdownTableBodyLeft"><code>o/+/++</code>   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft"><code>+</code> (Uno)   </td><td class="markdownTableBodyLeft">ST Morpho Headers   </td><td class="markdownTableBodyLeft"><code>o</code> (1 button, 1 LED)   </td><td class="markdownTableBodyLeft"><code>+</code>   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft">Good bang for the buck    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><a class="el" href="group__boards__common__nucleo144.html">STM32 Nucleo-144</a>   </td><td class="markdownTableBodyLeft">Development   </td><td class="markdownTableBodyLeft"><code>+/++/+++</code>   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft">(✔) (some have Ethernet)   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft"><code>++</code> (Uno, Mega)   </td><td class="markdownTableBodyLeft">ST Morpho Headers   </td><td class="markdownTableBodyLeft"><code>+</code> (1 button, 3 LEDs)   </td><td class="markdownTableBodyLeft"><code>+</code>   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft">Good bang for the buck    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><a class="el" href="group__boards__esp32__esp-ethernet-kit.html">ESP32-Ethernet-Kit</a>   </td><td class="markdownTableBodyLeft">Development   </td><td class="markdownTableBodyLeft"><code>+++</code>   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft">✔ (WiFi, BLE, Ethernet, custom)   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">Custom   </td><td class="markdownTableBodyLeft"><code>-</code> (1 button)   </td><td class="markdownTableBodyLeft"><code>+</code>   </td><td class="markdownTableBodyLeft"><code>o</code>   </td><td class="markdownTableBodyLeft">Requires proprietary software    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><a class="el" href="group__boards__esp32__wroom-32.html">Generic ESP32-WROOM-32 boards</a>   </td><td class="markdownTableBodyLeft">Prototyping   </td><td class="markdownTableBodyLeft"><code>+++</code>   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✔ (WiFi, BLE, custom)   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">Custom   </td><td class="markdownTableBodyLeft"><code>-</code> (1 button)   </td><td class="markdownTableBodyLeft"><code>+++</code>   </td><td class="markdownTableBodyLeft"><code>+++</code>   </td><td class="markdownTableBodyLeft">Requires proprietary software    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><a class="el" href="group__boards__microbit__v2.html">BBC micro:bit v2</a>   </td><td class="markdownTableBodyLeft">Education   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft">✔ (802.15.4, BLE, custom)   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">micro:bit edge connector   </td><td class="markdownTableBodyLeft"><code>+++</code> (6 buttons, LED matrix, mic, speaker, IMO)   </td><td class="markdownTableBodyLeft"><code>--</code>   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft">Good education board    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><a class="el" href="group__boards__nrf52840dk.html">nRF52840 DK</a>   </td><td class="markdownTableBodyLeft">Development   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft">✔ (802.15.4, BLE, custom)   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft"><code>+++</code>(Uno, Mega)   </td><td class="markdownTableBodyLeft">Custom   </td><td class="markdownTableBodyLeft"><code>+</code> (4 buttons, 4 LEDs)   </td><td class="markdownTableBodyLeft"><code>+</code>   </td><td class="markdownTableBodyLeft"><code>+</code>   </td><td class="markdownTableBodyLeft">Good wireless dev board    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><a class="el" href="group__boards__feather-nrf52840-sense.html">Adafruit Feather nRF52840 Sense</a>   </td><td class="markdownTableBodyLeft">Prototyping/Education   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✔ (802.15.4, BLE, custom)   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">Adafruit Feather   </td><td class="markdownTableBodyLeft"><code>++</code> (orientation, air parameters, light/gestures)   </td><td class="markdownTableBodyLeft"><code>+++</code>   </td><td class="markdownTableBodyLeft"><code>+</code>   </td><td class="markdownTableBodyLeft">used in <a href="https://github.com/inetrg/exercises">inetrg exercises</a>    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><a class="el" href="group__boards__nrf52840dongle.html">nRF52840-Dongle</a>   </td><td class="markdownTableBodyLeft">Prototyping   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✔ (802.15.4, BLE, custom)   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">Custom   </td><td class="markdownTableBodyLeft">o (1 button, 4 LEDs)   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft">Excellent border router    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><a class="el" href="group__boards__nucleo-wl55jc.html">STM32 Nucleo-WL55JC</a>   </td><td class="markdownTableBodyLeft">Development   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft">✔ (LoRa)   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft"><code>+</code> (Uno)   </td><td class="markdownTableBodyLeft">ST Morpho Headers   </td><td class="markdownTableBodyLeft"><code>+</code> (3 buttons, 3 LEDs)   </td><td class="markdownTableBodyLeft"><code>+</code>   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft">Good bang for the buck    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><a class="el" href="group__boards__pinetime.html">PineTime</a>   </td><td class="markdownTableBodyLeft">Gadget   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✔ (BLE)   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft"><code>+++</code> (LCD, button, touch screen, IMU, flash, ...)   </td><td class="markdownTableBodyLeft"><code>---</code>   </td><td class="markdownTableBodyLeft"><code>+++</code>   </td><td class="markdownTableBodyLeft">Buy two: One with SWD access    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><a class="el" href="group__boards__samr21-xpro.html">Atmel SAM R21 Xplained Pro</a>   </td><td class="markdownTableBodyLeft">Development   </td><td class="markdownTableBodyLeft"><code>+</code>   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft">✔ (802.15.4)   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">XPRO Expansion Header   </td><td class="markdownTableBodyLeft"><code>o</code> (1 button, 1 LED)   </td><td class="markdownTableBodyLeft"><code>+</code>   </td><td class="markdownTableBodyLeft"><code>--</code>   </td><td class="markdownTableBodyLeft">Quite expensive    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><a class="el" href="group__boards__samr34-xpro.html">Microchip SAM R34 Xplained Pro</a>   </td><td class="markdownTableBodyLeft">Development   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft">✔ (LoRa)   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">XPRO Expansion Header   </td><td class="markdownTableBodyLeft"><code>o</code> (1 button, 2 LEDs)   </td><td class="markdownTableBodyLeft"><code>+</code>   </td><td class="markdownTableBodyLeft"><code>---</code>   </td><td class="markdownTableBodyLeft">Got a spare kidney to sell?    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><a class="el" href="group__boards__weact-f411ce.html">WeAct-F411CE board</a>   </td><td class="markdownTableBodyLeft">Prototyping   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">Custom   </td><td class="markdownTableBodyLeft"><code>+</code> (1 button, 1 LED, SPI flash)   </td><td class="markdownTableBodyLeft"><code>+++</code>   </td><td class="markdownTableBodyLeft"><code>+++</code>   </td><td class="markdownTableBodyLeft">Excellent bang for the buck   </td></tr>
-</table>
-<dl class="section note"><dt>Note</dt><dd>Only boards with mature RIOT support and decent documentation qualify for above list</dd></dl>
-<p>This list was last updated in April 2024</p>
-<h3><a class="anchor" id="autotoc_md339"></a>
-Notes on Arduino Compatibility</h3>
-<ul>
-<li>Perfect (<code>+++</code>) only if it is fully compatible with both Arduino Uno and Arduino Mega Shields (including SPI via ISP connector)</li>
-<li>Good (<code>++</code>) if it is fully compatible with Arduino Uno shields (including SPI via ISP connector)</li>
-<li>Good (<code>++</code>) if it is partially compatible with both Arduino Uno and Arduino Mega Shields (no SPI via ISP connector)</li>
-<li>Decent (<code>+</code>) if it is partially compatible with Arduino Uno Shields (no SPI via ISP connector)</li>
-<li>Decent (<code>+</code>) if it is fully compatible with Arduino Nano Shields (including SPI via ISP connector)</li>
-<li>OK (<code>o</code>) if it is partially compatible with Arduino Nano Shields</li>
-</ul>
-<h1><a class="anchor" id="pinout_guide"></a>
-Guide to board pinouts</h1>
-<p>The following are the steps to take to locate specific pinouts on boards. This is useful when connecting external hardware to RIOT supported boards.</p>
-<ol type="1">
-<li>Check the <a href="http://doc.riot-os.org/group__boards.html">board documentation</a> to see if the pinout is available</li>
-<li>If the pinout is not available or up to date check the following:<ul>
-<li><code>boards/&lt;BOARD&gt;/include/periph_conf.h</code> for board specific peripherals such as UART or SPI pins</li>
-<li><code>boards/&lt;BOARD&gt;/include/board.h</code> for GPIO specific pins such as <code>LED0</code> or <code>BTN0</code></li>
-<li><code>boards/common/&lt;COMMON_BOARD_OR_CPU&gt;/include/periph_conf_common.h</code> for shared pins that are the same for many different boards (board_common.h or others will be available too)</li>
-<li><code>boards/common/&lt;COMMON_BOARD_OR_CPU&gt;/include/&lt;PERIPH_DECLARATION&gt;</code> also may contain specific periphirals such as <code>PERIPH_DECLARATION = <a class="el" href="cfg__i2c1__pb8__pb9_8h.html" title="Common configuration for STM32 I2C.">cfg_i2c1_pb8_pb9.h</a></code> which indicates I2C pins are on pb8 and pb9</li>
-</ul>
-</li>
-<li>Once the needed pins are determined with either a port where <code>PORTA = PORT_A = PA = 0</code> or <code>PORTB = PORT_B = PB = 1</code> and pin number, such as <code>PA, 1</code>, correlate that to the board (the board may either have the designators or search online to find which GPIO corresponds to physical location on the board)</li>
-<li>Match the <code>GPIO</code> with the specific pin and connect the wires</li>
-</ol>
-<h3><a class="anchor" id="autotoc_md340"></a>
-Examples of finding pinouts</h3>
-<p>The following will be different examples of how to find pinouts</p>
-<h4><a class="anchor" id="autotoc_md341"></a>
-Finding pins of the I2C device 0 on samr21-xpro</h4>
-<ol type="1">
-<li>The documentation says I2C is supported but does not say the pinout</li>
-<li>Checking the pinout in <code><a class="el" href="boards_2samr21-xpro_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the Atmel SAM R21 Xplained Pro board.">boards/samr21-xpro/include/periph_conf.h</a></code> the <code>scl_pin = <a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1" title="Define a CPU specific GPIO pin generator macro.">GPIO_PIN(PA, 17)</a></code> and the <code>sda_pin = <a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1" title="Define a CPU specific GPIO pin generator macro.">GPIO_PIN(PA, 16)</a></code></li>
-<li>Since the board has the GPIO port and pin printed on the board the physical location is <code>PA16</code> and <code>PA17</code></li>
-</ol>
-<h4><a class="anchor" id="autotoc_md342"></a>
-Finding pins of the UART device 1 on nucleo-f103rb</h4>
-<p><em>The dev number is only the location in the array and does not mean the number of the peripheral</em></p><ol type="1">
-<li>The documentation says UART is supported but does not say the pinout</li>
-<li>Checking the pinout in <code><a class="el" href="boards_2nucleo-f103rb_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo-f103rb board.">boards/nucleo-f103rb/include/periph_conf.h</a></code> the <code>rx_pin = <a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1" title="Define a CPU specific GPIO pin generator macro.">GPIO_PIN(PORT_A, 10)</a></code>, the <code>tx_pin = <a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1" title="Define a CPU specific GPIO pin generator macro.">GPIO_PIN(PORT_A, 9)</a></code> and the <code>dev = USART1</code>, though device 1 can equal any USARTn number</li>
-<li>Since the board does not have information on where these pins are physically located it is recommended to search <a href="https://os.mbed.com/platforms/ST-Nucleo-F103RB/">online</a> for that board</li>
-<li>After locating the physical layout the rx_pin can be found on CN9-1 using either <code>PA_10</code> or <code>UART1_RX</code> and the tx_pin can be found on CN5-1 using either <code>PA_9</code> or <code>UART1_TX</code>, it is recommended to use the GPIO pin as sometimes the peripheral may be using an alternate pin </li>
-</ol>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -903,6 +798,111 @@ Topics</h2></td></tr>
 <tr class="memdesc:group__boards__pyboard"><td class="mdescLeft">&#160;</td><td class="mdescRight">Support for the pyboard <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Board specific definitions and implementations </p>
+<p>The boards module contains all definitions and implementations that are specific to a certain board. Generally, boards consist of a fixed configuration of a controller and some external devices such as sensors or radios. All aspects concerning configuration of GPIO pins, MCU clock and device drivers should go into this module.</p>
+<h1><a class="anchor" id="board-selection-guide"></a>
+Board Selection Guide</h1>
+<p>There is no single best board to buy for use with RIOT, as hardware design involves many trade-offs. The challenge is to clearly assess the use case and collect the requirements and to find the best match for those.</p>
+<p>With this in mind, it is still possible to give some hints and recommendations:</p>
+<ol type="1">
+<li>During Development:<ul>
+<li>An integrated programmer/debugger is immensely useful. At the very least a standard JTAG/SWD connector for quick and fool-proof connection is required</li>
+<li>If possible, pick an MCU with <em>more</em> RAM and flash than your target board. This allows to spend the excess in memory for debug features such as utility modules, verbose assert messages, etc. during development</li>
+<li>Standard connectors such as Arduino Headers, or Grove, STEMMA, STEMMA QT, QUIIC connectors etc. make hardware prototyping easier</li>
+</ul>
+</li>
+<li>Final Product:<ul>
+<li>An integrated programmer/debugger is a waste of resources (money, power, space, ...)</li>
+<li>...</li>
+</ul>
+</li>
+</ol>
+<h2><a class="anchor" id="autotoc_md338"></a>
+Popular Boards</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Board   </th><th class="markdownTableHeadLeft">Use Case   </th><th class="markdownTableHeadLeft">Performance   </th><th class="markdownTableHeadLeft">Integrated Debugger   </th><th class="markdownTableHeadLeft">Integrated Networking   </th><th class="markdownTableHeadLeft">Native USB   </th><th class="markdownTableHeadLeft">Arduino Headers   </th><th class="markdownTableHeadLeft">Other Connectors   </th><th class="markdownTableHeadLeft">Integrated Sensors/...   </th><th class="markdownTableHeadLeft">Breadboard Friendly   </th><th class="markdownTableHeadLeft">Costs   </th><th class="markdownTableHeadLeft">Remarks    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a class="el" href="group__boards__arduino-due.html">Arduino Due</a>   </td><td class="markdownTableBodyLeft">Education   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft"><code>+++</code> (Uno, Mega, ISP)   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft"><code>-</code> (1 LED)   </td><td class="markdownTableBodyLeft"><code>+</code>   </td><td class="markdownTableBodyLeft"><code>o</code>   </td><td class="markdownTableBodyLeft">Better buy the nrf52840dk    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a class="el" href="group__boards__arduino-mega2560.html">Arduino Mega 2560</a>   </td><td class="markdownTableBodyLeft">You have them anyway   </td><td class="markdownTableBodyLeft"><code>--</code>   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft"><code>+++</code> (Uno, Mega, ISP)   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft"><code>-</code> (1 LED)   </td><td class="markdownTableBodyLeft"><code>+</code>   </td><td class="markdownTableBodyLeft"><code>--</code>   </td><td class="markdownTableBodyLeft">Better buy the nrf52840dk    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a class="el" href="group__boards__arduino-uno.html">Arduino Uno</a>   </td><td class="markdownTableBodyLeft">You have them anyway   </td><td class="markdownTableBodyLeft"><code>---</code>   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft"><code>++</code> (Uno, ISP)   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft"><code>-</code> (1 LED)   </td><td class="markdownTableBodyLeft"><code>+</code>   </td><td class="markdownTableBodyLeft"><code>--</code>   </td><td class="markdownTableBodyLeft">You like pain, don't you?    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a class="el" href="group__boards__common__nucleo32.html">STM32 Nucleo-32</a>   </td><td class="markdownTableBodyLeft">Development   </td><td class="markdownTableBodyLeft"><code>-/o/+/++</code>   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft"><code>o</code> (Nano)   </td><td class="markdownTableBodyLeft">Custom   </td><td class="markdownTableBodyLeft"><code>o</code> (1 button, 1 LED)   </td><td class="markdownTableBodyLeft"><code>+</code>   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft">Good bang for the buck    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a class="el" href="group__boards__common__nucleo64.html">STM32 Nucleo-64</a>   </td><td class="markdownTableBodyLeft">Development   </td><td class="markdownTableBodyLeft"><code>o/+/++</code>   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft"><code>+</code> (Uno)   </td><td class="markdownTableBodyLeft">ST Morpho Headers   </td><td class="markdownTableBodyLeft"><code>o</code> (1 button, 1 LED)   </td><td class="markdownTableBodyLeft"><code>+</code>   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft">Good bang for the buck    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a class="el" href="group__boards__common__nucleo144.html">STM32 Nucleo-144</a>   </td><td class="markdownTableBodyLeft">Development   </td><td class="markdownTableBodyLeft"><code>+/++/+++</code>   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft">(✔) (some have Ethernet)   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft"><code>++</code> (Uno, Mega)   </td><td class="markdownTableBodyLeft">ST Morpho Headers   </td><td class="markdownTableBodyLeft"><code>+</code> (1 button, 3 LEDs)   </td><td class="markdownTableBodyLeft"><code>+</code>   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft">Good bang for the buck    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a class="el" href="group__boards__esp32__esp-ethernet-kit.html">ESP32-Ethernet-Kit</a>   </td><td class="markdownTableBodyLeft">Development   </td><td class="markdownTableBodyLeft"><code>+++</code>   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft">✔ (WiFi, BLE, Ethernet, custom)   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">Custom   </td><td class="markdownTableBodyLeft"><code>-</code> (1 button)   </td><td class="markdownTableBodyLeft"><code>+</code>   </td><td class="markdownTableBodyLeft"><code>o</code>   </td><td class="markdownTableBodyLeft">Requires proprietary software    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a class="el" href="group__boards__esp32__wroom-32.html">Generic ESP32-WROOM-32 boards</a>   </td><td class="markdownTableBodyLeft">Prototyping   </td><td class="markdownTableBodyLeft"><code>+++</code>   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✔ (WiFi, BLE, custom)   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">Custom   </td><td class="markdownTableBodyLeft"><code>-</code> (1 button)   </td><td class="markdownTableBodyLeft"><code>+++</code>   </td><td class="markdownTableBodyLeft"><code>+++</code>   </td><td class="markdownTableBodyLeft">Requires proprietary software    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a class="el" href="group__boards__microbit__v2.html">BBC micro:bit v2</a>   </td><td class="markdownTableBodyLeft">Education   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft">✔ (802.15.4, BLE, custom)   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">micro:bit edge connector   </td><td class="markdownTableBodyLeft"><code>+++</code> (6 buttons, LED matrix, mic, speaker, IMO)   </td><td class="markdownTableBodyLeft"><code>--</code>   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft">Good education board    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a class="el" href="group__boards__nrf52840dk.html">nRF52840 DK</a>   </td><td class="markdownTableBodyLeft">Development   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft">✔ (802.15.4, BLE, custom)   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft"><code>+++</code>(Uno, Mega)   </td><td class="markdownTableBodyLeft">Custom   </td><td class="markdownTableBodyLeft"><code>+</code> (4 buttons, 4 LEDs)   </td><td class="markdownTableBodyLeft"><code>+</code>   </td><td class="markdownTableBodyLeft"><code>+</code>   </td><td class="markdownTableBodyLeft">Good wireless dev board    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a class="el" href="group__boards__feather-nrf52840-sense.html">Adafruit Feather nRF52840 Sense</a>   </td><td class="markdownTableBodyLeft">Prototyping/Education   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✔ (802.15.4, BLE, custom)   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">Adafruit Feather   </td><td class="markdownTableBodyLeft"><code>++</code> (orientation, air parameters, light/gestures)   </td><td class="markdownTableBodyLeft"><code>+++</code>   </td><td class="markdownTableBodyLeft"><code>+</code>   </td><td class="markdownTableBodyLeft">used in <a href="https://github.com/inetrg/exercises">inetrg exercises</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a class="el" href="group__boards__nrf52840dongle.html">nRF52840-Dongle</a>   </td><td class="markdownTableBodyLeft">Prototyping   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✔ (802.15.4, BLE, custom)   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">Custom   </td><td class="markdownTableBodyLeft">o (1 button, 4 LEDs)   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft">Excellent border router    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a class="el" href="group__boards__nucleo-wl55jc.html">STM32 Nucleo-WL55JC</a>   </td><td class="markdownTableBodyLeft">Development   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft">✔ (LoRa)   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft"><code>+</code> (Uno)   </td><td class="markdownTableBodyLeft">ST Morpho Headers   </td><td class="markdownTableBodyLeft"><code>+</code> (3 buttons, 3 LEDs)   </td><td class="markdownTableBodyLeft"><code>+</code>   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft">Good bang for the buck    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a class="el" href="group__boards__pinetime.html">PineTime</a>   </td><td class="markdownTableBodyLeft">Gadget   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✔ (BLE)   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft"><code>+++</code> (LCD, button, touch screen, IMU, flash, ...)   </td><td class="markdownTableBodyLeft"><code>---</code>   </td><td class="markdownTableBodyLeft"><code>+++</code>   </td><td class="markdownTableBodyLeft">Buy two: One with SWD access    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a class="el" href="group__boards__samr21-xpro.html">Atmel SAM R21 Xplained Pro</a>   </td><td class="markdownTableBodyLeft">Development   </td><td class="markdownTableBodyLeft"><code>+</code>   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft">✔ (802.15.4)   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">XPRO Expansion Header   </td><td class="markdownTableBodyLeft"><code>o</code> (1 button, 1 LED)   </td><td class="markdownTableBodyLeft"><code>+</code>   </td><td class="markdownTableBodyLeft"><code>--</code>   </td><td class="markdownTableBodyLeft">Quite expensive    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a class="el" href="group__boards__samr34-xpro.html">Microchip SAM R34 Xplained Pro</a>   </td><td class="markdownTableBodyLeft">Development   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft">✔ (LoRa)   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">XPRO Expansion Header   </td><td class="markdownTableBodyLeft"><code>o</code> (1 button, 2 LEDs)   </td><td class="markdownTableBodyLeft"><code>+</code>   </td><td class="markdownTableBodyLeft"><code>---</code>   </td><td class="markdownTableBodyLeft">Got a spare kidney to sell?    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a class="el" href="group__boards__weact-f411ce.html">WeAct-F411CE board</a>   </td><td class="markdownTableBodyLeft">Prototyping   </td><td class="markdownTableBodyLeft"><code>++</code>   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">✔   </td><td class="markdownTableBodyLeft">✗   </td><td class="markdownTableBodyLeft">Custom   </td><td class="markdownTableBodyLeft"><code>+</code> (1 button, 1 LED, SPI flash)   </td><td class="markdownTableBodyLeft"><code>+++</code>   </td><td class="markdownTableBodyLeft"><code>+++</code>   </td><td class="markdownTableBodyLeft">Excellent bang for the buck   </td></tr>
+</table>
+<dl class="section note"><dt>Note</dt><dd>Only boards with mature RIOT support and decent documentation qualify for above list</dd></dl>
+<p>This list was last updated in April 2024</p>
+<h3><a class="anchor" id="autotoc_md339"></a>
+Notes on Arduino Compatibility</h3>
+<ul>
+<li>Perfect (<code>+++</code>) only if it is fully compatible with both Arduino Uno and Arduino Mega Shields (including SPI via ISP connector)</li>
+<li>Good (<code>++</code>) if it is fully compatible with Arduino Uno shields (including SPI via ISP connector)</li>
+<li>Good (<code>++</code>) if it is partially compatible with both Arduino Uno and Arduino Mega Shields (no SPI via ISP connector)</li>
+<li>Decent (<code>+</code>) if it is partially compatible with Arduino Uno Shields (no SPI via ISP connector)</li>
+<li>Decent (<code>+</code>) if it is fully compatible with Arduino Nano Shields (including SPI via ISP connector)</li>
+<li>OK (<code>o</code>) if it is partially compatible with Arduino Nano Shields</li>
+</ul>
+<h1><a class="anchor" id="pinout_guide"></a>
+Guide to board pinouts</h1>
+<p>The following are the steps to take to locate specific pinouts on boards. This is useful when connecting external hardware to RIOT supported boards.</p>
+<ol type="1">
+<li>Check the <a href="http://doc.riot-os.org/group__boards.html">board documentation</a> to see if the pinout is available</li>
+<li>If the pinout is not available or up to date check the following:<ul>
+<li><code>boards/&lt;BOARD&gt;/include/periph_conf.h</code> for board specific peripherals such as UART or SPI pins</li>
+<li><code>boards/&lt;BOARD&gt;/include/board.h</code> for GPIO specific pins such as <code>LED0</code> or <code>BTN0</code></li>
+<li><code>boards/common/&lt;COMMON_BOARD_OR_CPU&gt;/include/periph_conf_common.h</code> for shared pins that are the same for many different boards (board_common.h or others will be available too)</li>
+<li><code>boards/common/&lt;COMMON_BOARD_OR_CPU&gt;/include/&lt;PERIPH_DECLARATION&gt;</code> also may contain specific periphirals such as <code>PERIPH_DECLARATION = <a class="el" href="cfg__i2c1__pb8__pb9_8h.html" title="Common configuration for STM32 I2C.">cfg_i2c1_pb8_pb9.h</a></code> which indicates I2C pins are on pb8 and pb9</li>
+</ul>
+</li>
+<li>Once the needed pins are determined with either a port where <code>PORTA = PORT_A = PA = 0</code> or <code>PORTB = PORT_B = PB = 1</code> and pin number, such as <code>PA, 1</code>, correlate that to the board (the board may either have the designators or search online to find which GPIO corresponds to physical location on the board)</li>
+<li>Match the <code>GPIO</code> with the specific pin and connect the wires</li>
+</ol>
+<h3><a class="anchor" id="autotoc_md340"></a>
+Examples of finding pinouts</h3>
+<p>The following will be different examples of how to find pinouts</p>
+<h4><a class="anchor" id="autotoc_md341"></a>
+Finding pins of the I2C device 0 on samr21-xpro</h4>
+<ol type="1">
+<li>The documentation says I2C is supported but does not say the pinout</li>
+<li>Checking the pinout in <code><a class="el" href="boards_2samr21-xpro_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the Atmel SAM R21 Xplained Pro board.">boards/samr21-xpro/include/periph_conf.h</a></code> the <code>scl_pin = <a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1" title="Define a CPU specific GPIO pin generator macro.">GPIO_PIN(PA, 17)</a></code> and the <code>sda_pin = <a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1" title="Define a CPU specific GPIO pin generator macro.">GPIO_PIN(PA, 16)</a></code></li>
+<li>Since the board has the GPIO port and pin printed on the board the physical location is <code>PA16</code> and <code>PA17</code></li>
+</ol>
+<h4><a class="anchor" id="autotoc_md342"></a>
+Finding pins of the UART device 1 on nucleo-f103rb</h4>
+<p><em>The dev number is only the location in the array and does not mean the number of the peripheral</em></p><ol type="1">
+<li>The documentation says UART is supported but does not say the pinout</li>
+<li>Checking the pinout in <code><a class="el" href="boards_2nucleo-f103rb_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo-f103rb board.">boards/nucleo-f103rb/include/periph_conf.h</a></code> the <code>rx_pin = <a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1" title="Define a CPU specific GPIO pin generator macro.">GPIO_PIN(PORT_A, 10)</a></code>, the <code>tx_pin = <a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1" title="Define a CPU specific GPIO pin generator macro.">GPIO_PIN(PORT_A, 9)</a></code> and the <code>dev = USART1</code>, though device 1 can equal any USARTn number</li>
+<li>Since the board does not have information on where these pins are physically located it is recommended to search <a href="https://os.mbed.com/platforms/ST-Nucleo-F103RB/">online</a> for that board</li>
+<li>After locating the physical layout the rx_pin can be found on CN9-1 using either <code>PA_10</code> or <code>UART1_RX</code> and the tx_pin can be found on CN5-1 using either <code>PA_9</code> or <code>UART1_TX</code>, it is recommended to use the GPIO pin as sometimes the peripheral may be using an alternate pin </li>
+</ol>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
@@ -910,7 +910,7 @@ Topics</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

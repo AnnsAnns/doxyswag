@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -152,73 +152,6 @@ $(function(){initNavTree('group__drivers__sdmmc.html',''); initResizable(true); 
   <div class="headertitle"><div class="title">SDIO/SD/MMC Device API (SDMMC)<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__periph.html">Peripheral Driver Interface</a> &#124; <a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__storage.html">Storage Device Drivers</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<dl class="section warning"><dt>Warning</dt><dd><b class="text-danger">This feature is experimental!</b><br  />
- This API is experimental and in an early state - expect changes!</dd></dl>
-<h1><a class="anchor" id="autotoc_md1728"></a>
-Overview</h1>
-<p>The SDIO/SD/MMC Device API (SDMMC) implements an SD host controller driver that provides a high-level API using a low-level SDIO/SD/MMC peripheral driver for accessing</p>
-<ul>
-<li>MultiMediaCards (MMC) and Embedded MultiMediaCards (eMMC)</li>
-<li>SD Memory Cards (SD Cards) with Standard Capacity (SDSC), High Capacity (SDHC) or Extended Capacity (SDXC).</li>
-</ul>
-<p>In the context of this API, the term <em>Card</em> refers to either</p><ul>
-<li>a removable card such as SD Memory Card, SDIO Card, Combo Card or MMC Card or</li>
-<li>an embedded device such as Embedded SD Memory Device, Embedded SDIO device, or eMMC device.</li>
-</ul>
-<p>The term <em>slot</em> refers to the interface for a removable card.</p>
-<p>The SDIO/SD/MMC device API (SDMMC) is divided into two parts:</p>
-<ol type="1">
-<li>The high-level API that implements the SD Host Controller driver and allows<ul>
-<li>to initialize and identify different types of cards,</li>
-<li>to access them either blockwise or bytewise,</li>
-<li>to get information about the used card, and</li>
-<li>to send single commands or application specific commands to the card.</li>
-</ul>
-</li>
-<li>The low-level SDIO/SD/MMC peripheral driver of type <a class="el" href="structsdmmc__driver__t.html">sdmmc_driver_t</a> implements the low-level functions required by the high-level device API. It has to be implemented for each MCU. The support of the low-level SDIO/SD/MMC peripheral driver is indicated by the MCU or board by the <code>periph_sdmmc</code> feature.</li>
-</ol>
-<p>Currently the SDIO/SD/MMC Device API supports the following card types:</p>
-<center> <table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadLeft">Card Type   </th><th class="markdownTableHeadCenter">Support   </th><th class="markdownTableHeadNone">Remark    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft">MMC/eMMC in MultiMediaCard mode   </td><td class="markdownTableBodyCenter">yes   </td><td class="markdownTableBodyNone"></td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft">MMC/eMMC in SPI mode   </td><td class="markdownTableBodyCenter">no   </td><td class="markdownTableBodyNone"></td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft">SD Memory Card in SD mode   </td><td class="markdownTableBodyCenter">yes   </td><td class="markdownTableBodyNone">SDSC, SDHC and SDXC with Default or High Speed    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft">SD Memory Card in SPI mode   </td><td class="markdownTableBodyCenter">no   </td><td class="markdownTableBodyNone"></td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft">SDIO in SD mode   </td><td class="markdownTableBodyCenter">no   </td><td class="markdownTableBodyNone"></td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft">SDIO in SPI mode   </td><td class="markdownTableBodyCenter">no   </td><td class="markdownTableBodyNone"></td></tr>
-</table>
-</center><h1><a class="anchor" id="autotoc_md1729"></a>
-Limitations:</h1>
-<ul>
-<li>Only one card per SDIO/SD/MMC device is supported.</li>
-<li>eMMCs specific features are not supported.</li>
-<li>UHS-I, UHS-II and UHS-III are not supported.</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md1730"></a>
-Features and Modules</h1>
-<p>A board that uses an MCU with an SDIO/SD/MMC peripheral and has a card slot or device connected has to indicate this as feature <code>periph_sdmmc</code> in order to use the SDIO/SD/MMC API or drivers based on it. Furthermore, specific features of the SDIO/SD/MMC peripheral or configurations of the board have to be defined by corresponding features.</p>
-<p>These are in detail:</p>
-<ul>
-<li><b><code>periph_sdmmc</code></b> (<code>HAS_PERIPH_SDMMC</code> in Kconfig) indicates that an SDIO/SD/MMC peripheral is present and used by the board. This feature shall be provided by the board configuration.</li>
-<li><b><code>periph_sdmmc_8bit</code></b> (<code>HAS_PERIPH_SDMMC_8BIT</code> in Kconfig) indicates that the SDIO/SD/MMC peripheral supports the 8-bit bus width and at least one component of the board is connected with 8 data lines. This feature shall be provided by the board configuration, if available.</li>
-<li><b><code>periph_sdmmc_auto_clk</code></b> (<code>HAS_PERIPH_SDMMC_AUTO_CLK</code> in Kconfig) indicates that the SDIO/SD/MMC peripheral supports the Auto-CLK feature, i.e. the automatic activation and deactivation of the SD CLK signal when required to save power. This function shall be provided by the MCU if supported.</li>
-<li><b><code>periph_sdmmc_auto_cmd12</code></b> (<code>HAS_PERIPH_SDMMC_AUTO_CMD12</code> in Kconfig) indicates that the SDIO/SD/MMC peripheral supports the Auto-CMD12 feature, i.e. CMD12 is sent automatically to stop the transmission in multiple block operations. This feature shall be provided by the MCU if supported.</li>
-<li><b><code>periph_sdmmc_hs</code></b> (<code>HAS_PERIPH_SDMMC_HS</code> in Kconfig) indicates that the SDIO/SD/MMC peripheral supports the high speed access, that is 50 MHz for SD and 52 MHz for MMC. This feature shall be provided by the MCU if supported.</li>
-<li><b><code>periph_sdmmc_mmc</code></b> (<code>HAS_PERIPH_SDMMC_MMC</code> in Kconfig) indicates that the SDIO/SD/MMC peripheral supports MMC/eMMCs. This feature shall be provided by the MCU if supported.</li>
-</ul>
-<p>Some functionalities of the SDIO/SD/MMC Device API must be explicitly enabled via modules:</p>
-<ul>
-<li><b><code>sdmmc_mmc</code></b> (<code>MODULE_SDMMC_MMC</code> in Kconfig) enables the support for MMCs/eMMCs.</li>
-<li><b><code>periph_sdmmc_8bit</code></b> (<code>MODULE_PERIPH_SDMMC_8BIT</code> in Kconfig) enables the 8-bit bus width support. It requires the corresponding feature of the board. </li>
-</ul>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -781,6 +714,73 @@ Variables</h2></td></tr>
 <tr class="memdesc:ga6219af4ef8b19abd605f9258703dbff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">SD/MMC device access macro.  <br /></td></tr>
 <tr class="separator:ga6219af4ef8b19abd605f9258703dbff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<dl class="section warning"><dt>Warning</dt><dd><b class="text-danger">This feature is experimental!</b><br  />
+ This API is experimental and in an early state - expect changes!</dd></dl>
+<h1><a class="anchor" id="autotoc_md1728"></a>
+Overview</h1>
+<p>The SDIO/SD/MMC Device API (SDMMC) implements an SD host controller driver that provides a high-level API using a low-level SDIO/SD/MMC peripheral driver for accessing</p>
+<ul>
+<li>MultiMediaCards (MMC) and Embedded MultiMediaCards (eMMC)</li>
+<li>SD Memory Cards (SD Cards) with Standard Capacity (SDSC), High Capacity (SDHC) or Extended Capacity (SDXC).</li>
+</ul>
+<p>In the context of this API, the term <em>Card</em> refers to either</p><ul>
+<li>a removable card such as SD Memory Card, SDIO Card, Combo Card or MMC Card or</li>
+<li>an embedded device such as Embedded SD Memory Device, Embedded SDIO device, or eMMC device.</li>
+</ul>
+<p>The term <em>slot</em> refers to the interface for a removable card.</p>
+<p>The SDIO/SD/MMC device API (SDMMC) is divided into two parts:</p>
+<ol type="1">
+<li>The high-level API that implements the SD Host Controller driver and allows<ul>
+<li>to initialize and identify different types of cards,</li>
+<li>to access them either blockwise or bytewise,</li>
+<li>to get information about the used card, and</li>
+<li>to send single commands or application specific commands to the card.</li>
+</ul>
+</li>
+<li>The low-level SDIO/SD/MMC peripheral driver of type <a class="el" href="structsdmmc__driver__t.html">sdmmc_driver_t</a> implements the low-level functions required by the high-level device API. It has to be implemented for each MCU. The support of the low-level SDIO/SD/MMC peripheral driver is indicated by the MCU or board by the <code>periph_sdmmc</code> feature.</li>
+</ol>
+<p>Currently the SDIO/SD/MMC Device API supports the following card types:</p>
+<center> <table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Card Type   </th><th class="markdownTableHeadCenter">Support   </th><th class="markdownTableHeadNone">Remark    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">MMC/eMMC in MultiMediaCard mode   </td><td class="markdownTableBodyCenter">yes   </td><td class="markdownTableBodyNone"></td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">MMC/eMMC in SPI mode   </td><td class="markdownTableBodyCenter">no   </td><td class="markdownTableBodyNone"></td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">SD Memory Card in SD mode   </td><td class="markdownTableBodyCenter">yes   </td><td class="markdownTableBodyNone">SDSC, SDHC and SDXC with Default or High Speed    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">SD Memory Card in SPI mode   </td><td class="markdownTableBodyCenter">no   </td><td class="markdownTableBodyNone"></td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">SDIO in SD mode   </td><td class="markdownTableBodyCenter">no   </td><td class="markdownTableBodyNone"></td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">SDIO in SPI mode   </td><td class="markdownTableBodyCenter">no   </td><td class="markdownTableBodyNone"></td></tr>
+</table>
+</center><h1><a class="anchor" id="autotoc_md1729"></a>
+Limitations:</h1>
+<ul>
+<li>Only one card per SDIO/SD/MMC device is supported.</li>
+<li>eMMCs specific features are not supported.</li>
+<li>UHS-I, UHS-II and UHS-III are not supported.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md1730"></a>
+Features and Modules</h1>
+<p>A board that uses an MCU with an SDIO/SD/MMC peripheral and has a card slot or device connected has to indicate this as feature <code>periph_sdmmc</code> in order to use the SDIO/SD/MMC API or drivers based on it. Furthermore, specific features of the SDIO/SD/MMC peripheral or configurations of the board have to be defined by corresponding features.</p>
+<p>These are in detail:</p>
+<ul>
+<li><b><code>periph_sdmmc</code></b> (<code>HAS_PERIPH_SDMMC</code> in Kconfig) indicates that an SDIO/SD/MMC peripheral is present and used by the board. This feature shall be provided by the board configuration.</li>
+<li><b><code>periph_sdmmc_8bit</code></b> (<code>HAS_PERIPH_SDMMC_8BIT</code> in Kconfig) indicates that the SDIO/SD/MMC peripheral supports the 8-bit bus width and at least one component of the board is connected with 8 data lines. This feature shall be provided by the board configuration, if available.</li>
+<li><b><code>periph_sdmmc_auto_clk</code></b> (<code>HAS_PERIPH_SDMMC_AUTO_CLK</code> in Kconfig) indicates that the SDIO/SD/MMC peripheral supports the Auto-CLK feature, i.e. the automatic activation and deactivation of the SD CLK signal when required to save power. This function shall be provided by the MCU if supported.</li>
+<li><b><code>periph_sdmmc_auto_cmd12</code></b> (<code>HAS_PERIPH_SDMMC_AUTO_CMD12</code> in Kconfig) indicates that the SDIO/SD/MMC peripheral supports the Auto-CMD12 feature, i.e. CMD12 is sent automatically to stop the transmission in multiple block operations. This feature shall be provided by the MCU if supported.</li>
+<li><b><code>periph_sdmmc_hs</code></b> (<code>HAS_PERIPH_SDMMC_HS</code> in Kconfig) indicates that the SDIO/SD/MMC peripheral supports the high speed access, that is 50 MHz for SD and 52 MHz for MMC. This feature shall be provided by the MCU if supported.</li>
+<li><b><code>periph_sdmmc_mmc</code></b> (<code>HAS_PERIPH_SDMMC_MMC</code> in Kconfig) indicates that the SDIO/SD/MMC peripheral supports MMC/eMMCs. This feature shall be provided by the MCU if supported.</li>
+</ul>
+<p>Some functionalities of the SDIO/SD/MMC Device API must be explicitly enabled via modules:</p>
+<ul>
+<li><b><code>sdmmc_mmc</code></b> (<code>MODULE_SDMMC_MMC</code> in Kconfig) enables the support for MMCs/eMMCs.</li>
+<li><b><code>periph_sdmmc_8bit</code></b> (<code>MODULE_PERIPH_SDMMC_8BIT</code> in Kconfig) enables the 8-bit bus width support. It requires the corresponding feature of the board. </li>
+</ul>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga6d9345157c5fd2e1791b8068b234843e" name="ga6d9345157c5fd2e1791b8068b234843e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga6d9345157c5fd2e1791b8068b234843e">&#9670;&#160;</a></span>SDMMC_ACMD</h2>
@@ -2242,7 +2242,7 @@ Variables</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

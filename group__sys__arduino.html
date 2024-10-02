@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -150,6 +150,37 @@ $(function(){initNavTree('group__sys__arduino.html',''); initResizable(true); })
 
 <p>Arduino in RIOT  
 <a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
+Topics</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__arduino__api.html">Arduino API</a></td></tr>
+<tr class="memdesc:group__sys__arduino__api"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of the Arduino API in RIOT <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Arduino_8h.html">Arduino.h</a></td></tr>
+<tr class="memdesc:Arduino_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper to keep source code compatibility for <a class="el" href="Arduino_8h.html" title="Wrapper to keep source code compatibility for Arduino.h.">Arduino.h</a>. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arduino__board_8h.html">arduino_board.h</a></td></tr>
+<tr class="memdesc:arduino__board_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration of the Arduino API for Arduino Atmega boards. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arduino__board__analog_8h.html">arduino_board_analog.h</a></td></tr>
+<tr class="memdesc:arduino__board__analog_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arduino analog pin map. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arduino__board__pins_8h.html">arduino_board_pins.h</a></td></tr>
+<tr class="memdesc:arduino__board__pins_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arduino digital pin map. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arduino__board__pwm_8h.html">arduino_board_pwm.h</a></td></tr>
+<tr class="memdesc:arduino__board__pwm_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mapping of Arduino digital pin numbers to PWM settings. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SPI_8h.html">SPI.h</a></td></tr>
+<tr class="memdesc:SPI_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper to access the definition of the Arduino 'SPI' interface. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Wire_8h.html">Wire.h</a></td></tr>
+<tr class="memdesc:Wire_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper to keep source code compatibility for <a class="el" href="Wire_8h.html" title="Wrapper to keep source code compatibility for Wire.h.">Wire.h</a>. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Arduino in RIOT </p>
 <h1><a class="anchor" id="sec_about"></a>
@@ -208,37 +239,6 @@ Open issues</h1>
 <p class="interdd">Implement anything else that is missing... </p>
 <p class="enddd">Adapt Arduino build script, so sketches do not have to have the file ending <code>*.sketch</code> anymore </p>
 </dd></dl>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
-Topics</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__arduino__api.html">Arduino API</a></td></tr>
-<tr class="memdesc:group__sys__arduino__api"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of the Arduino API in RIOT <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Arduino_8h.html">Arduino.h</a></td></tr>
-<tr class="memdesc:Arduino_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper to keep source code compatibility for <a class="el" href="Arduino_8h.html" title="Wrapper to keep source code compatibility for Arduino.h.">Arduino.h</a>. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arduino__board_8h.html">arduino_board.h</a></td></tr>
-<tr class="memdesc:arduino__board_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration of the Arduino API for Arduino Atmega boards. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arduino__board__analog_8h.html">arduino_board_analog.h</a></td></tr>
-<tr class="memdesc:arduino__board__analog_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arduino analog pin map. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arduino__board__pins_8h.html">arduino_board_pins.h</a></td></tr>
-<tr class="memdesc:arduino__board__pins_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arduino digital pin map. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arduino__board__pwm_8h.html">arduino_board_pwm.h</a></td></tr>
-<tr class="memdesc:arduino__board__pwm_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mapping of Arduino digital pin numbers to PWM settings. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SPI_8h.html">SPI.h</a></td></tr>
-<tr class="memdesc:SPI_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper to access the definition of the Arduino 'SPI' interface. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Wire_8h.html">Wire.h</a></td></tr>
-<tr class="memdesc:Wire_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper to keep source code compatibility for <a class="el" href="Wire_8h.html" title="Wrapper to keep source code compatibility for Wire.h.">Wire.h</a>. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
@@ -246,7 +246,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

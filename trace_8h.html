@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -147,25 +147,7 @@ $(function(){initNavTree('trace_8h.html',''); initResizable(true); });
 
 <p>Trace program flows.  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Trace program flows. </p>
-<p>This module allows recording program flow traces. It is meant for debugging in multi-threaded applications or when ISR's are involved.</p>
-<p>The <code><a class="el" href="#aca02f556442fb256d95c511c8c99e06a" title="Add entry to trace buffer.">trace()</a></code> function takes an arbitrary (user chosen) uint32 value. Calling the function is safe from anywhere (user code, ISR, ...) and safely logs the function call time and user value in a trace buffer.</p>
-<p>At any point, <code><a class="el" href="#af4e722cf5a8e657cb40cedf429421a97" title="Print the current trace buffer.">trace_dump()</a></code> can be used to print the trace buffer.</p>
-<p>The buffer has a default size of 512 entries, which can be overridden by defining CONFIG_TRACE_BUFSIZE. It can be cleared using <code><a class="el" href="#a950ad632474dff1edbf257729d760186" title="Empty the trace buffer.">trace_reset()</a></code>. The trace buffer works like a ring-buffer. If it is full, it will start overwriting from the beginning.</p>
-<p>Tracing is made thread safe by disabling interrupts for critical sections.</p>
-<p>It does incur some overhead (at least a function call, getting the current time, a pair of enable/disable interrupts and a couple of memory accesses).</p>
-<p>Example:</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="trace_8h.html">trace.h</a>&quot;</span></div>
-<div class="line">...</div>
-<div class="line">trace(&lt;user chosen uint32 value);</div>
-<div class="line"> </div>
-<div class="line"><a class="code hl_function" href="#af4e722cf5a8e657cb40cedf429421a97">trace_dump</a>();</div>
-<div class="ttc" id="atrace_8h_html"><div class="ttname"><a href="trace_8h.html">trace.h</a></div><div class="ttdoc">Trace program flows.</div></div>
-<div class="ttc" id="atrace_8h_html_af4e722cf5a8e657cb40cedf429421a97"><div class="ttname"><a href="#af4e722cf5a8e657cb40cedf429421a97">trace_dump</a></div><div class="ttdeci">void trace_dump(void)</div><div class="ttdoc">Print the current trace buffer.</div></div>
-</div><!-- fragment --><p>Execution tracing module API</p>
-<dl class="section author"><dt>Author</dt><dd>Kaspar Schleiser <a href="#" onclick="location.href='mai'+'lto:'+'kas'+'pa'+'r@s'+'ch'+'lei'+'se'+'r.d'+'e'; return false;">kaspa<span class="obfuscator">.nosp@m.</span>r@sc<span class="obfuscator">.nosp@m.</span>hleis<span class="obfuscator">.nosp@m.</span>er.d<span class="obfuscator">.nosp@m.</span>e</a> </dd></dl>
-</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for trace.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -185,7 +167,25 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>trace_reset</b> (void
 <tr class="memdesc:a950ad632474dff1edbf257729d760186"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty the trace buffer. <br /></td></tr>
 <tr class="separator:a950ad632474dff1edbf257729d760186"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Trace program flows. </p>
+<p>This module allows recording program flow traces. It is meant for debugging in multi-threaded applications or when ISR's are involved.</p>
+<p>The <code><a class="el" href="#aca02f556442fb256d95c511c8c99e06a" title="Add entry to trace buffer.">trace()</a></code> function takes an arbitrary (user chosen) uint32 value. Calling the function is safe from anywhere (user code, ISR, ...) and safely logs the function call time and user value in a trace buffer.</p>
+<p>At any point, <code><a class="el" href="#af4e722cf5a8e657cb40cedf429421a97" title="Print the current trace buffer.">trace_dump()</a></code> can be used to print the trace buffer.</p>
+<p>The buffer has a default size of 512 entries, which can be overridden by defining CONFIG_TRACE_BUFSIZE. It can be cleared using <code><a class="el" href="#a950ad632474dff1edbf257729d760186" title="Empty the trace buffer.">trace_reset()</a></code>. The trace buffer works like a ring-buffer. If it is full, it will start overwriting from the beginning.</p>
+<p>Tracing is made thread safe by disabling interrupts for critical sections.</p>
+<p>It does incur some overhead (at least a function call, getting the current time, a pair of enable/disable interrupts and a couple of memory accesses).</p>
+<p>Example:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="trace_8h.html">trace.h</a>&quot;</span></div>
+<div class="line">...</div>
+<div class="line">trace(&lt;user chosen uint32 value);</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_function" href="#af4e722cf5a8e657cb40cedf429421a97">trace_dump</a>();</div>
+<div class="ttc" id="atrace_8h_html"><div class="ttname"><a href="trace_8h.html">trace.h</a></div><div class="ttdoc">Trace program flows.</div></div>
+<div class="ttc" id="atrace_8h_html_af4e722cf5a8e657cb40cedf429421a97"><div class="ttname"><a href="#af4e722cf5a8e657cb40cedf429421a97">trace_dump</a></div><div class="ttdeci">void trace_dump(void)</div><div class="ttdoc">Print the current trace buffer.</div></div>
+</div><!-- fragment --><p>Execution tracing module API</p>
+<dl class="section author"><dt>Author</dt><dd>Kaspar Schleiser <a href="#" onclick="location.href='mai'+'lto:'+'kas'+'pa'+'r@s'+'ch'+'lei'+'se'+'r.d'+'e'; return false;">kaspa<span class="obfuscator">.nosp@m.</span>r@sc<span class="obfuscator">.nosp@m.</span>hleis<span class="obfuscator">.nosp@m.</span>er.d<span class="obfuscator">.nosp@m.</span>e</a> </dd></dl>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="aca02f556442fb256d95c511c8c99e06a" name="aca02f556442fb256d95c511c8c99e06a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aca02f556442fb256d95c511c8c99e06a">&#9670;&#160;</a></span>trace()</h2>
 
@@ -243,7 +243,7 @@ n=   1 t=+       3 v=0x00000001
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a408b6d3a4a484720bc3ecfeac8947e3.html">sys</a></li><li class="navelem"><a class="el" href="dir_e9e107fc86bbb4b6a326076a6808b9f5.html">include</a></li><li class="navelem"><a class="el" href="trace_8h.html">trace.h</a></li>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

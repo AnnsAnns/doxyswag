@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -153,61 +153,7 @@ $(function(){initNavTree('group__sys__event.html',''); initResizable(true); });
 
 <p>Provides an Event loop  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Provides an Event loop </p>
-<p>This module offers an event queue framework like libevent or libuev.</p>
-<p>An event queue is basically a FIFO queue of events, with some functions to efficiently and safely handle adding and getting events to / from such a queue.</p>
-<p>An event queue is bound to a thread, but any thread or ISR can put events into a queue. In most cases, the owning thread of a queue is set during the queue's initialization. But it is also possible to initialize a queue in a detached state from a different context and to set the owning thread at a later point of time using the <a class="el" href="#ga901462dc0093b6da40ec2fa787ac704f" title="Bind an event queue to the calling thread.">event_queue_claim()</a> function.</p>
-<p>An event is a structure containing a pointer to an event handler. It can be extended to provide context or arguments to the handler. It can also be embedded into existing structures (see examples).</p>
-<p>Compared to msg or mbox, this some fundamental differences:</p>
-<ol type="1">
-<li>events are "sender allocated". Unlike <a class="el" href="group__core__msg.html#gac5347725c3d203ac72604c0ab8b7d6d8" title="Send a message (blocking).">msg_send()</a>, <a class="el" href="#ga2053ce1facf709fffd024bee9e2383ba" title="Queue an event.">event_post()</a> never blocks or fails.</li>
-<li>events contain everything necessary to handle them, thus a thread processing the events of an event queue doesn't need to be changed in order to support new event types.</li>
-<li>events can be safely used (and actually perform best) when used within one thread, e.g., in order to create a state-machine like process flow. This is not (easily) possible using msg queues, as they might fill up.</li>
-<li>an event can only be queued in one event queue at the same time. Notifying many queues using only one event object is not possible with this implementation.</li>
-</ol>
-<p>At the core, <a class="el" href="#ga2bc1e5419b99c43721a97dd8dc51001b" title="Get next event from event queue, blocking.">event_wait()</a> uses thread flags to implement waiting for events to be queued. Thus event queues can be used safely and efficiently in combination with thread flags and msg queues.</p>
-<p>Examples:</p>
-<div class="fragment"><div class="line"><span class="comment">// simple event handler</span></div>
-<div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> handler(<a class="code hl_struct" href="structevent.html">event_t</a> *<a class="code hl_struct" href="structevent.html">event</a>)</div>
-<div class="line">{</div>
-<div class="line">   <a class="code hl_define" href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a>(<span class="stringliteral">&quot;triggered 0x%08x\n&quot;</span>, (<span class="keywordtype">unsigned</span>)<a class="code hl_struct" href="structevent.html">event</a>);</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">static</span> <a class="code hl_struct" href="structevent.html">event_t</a> <span class="keyword">event</span> = { .handler = handler };</div>
-<div class="line"><span class="keyword">static</span> <a class="code hl_struct" href="structPTRTAG.html">event_queue_t</a> queue;</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>)</div>
-<div class="line">{</div>
-<div class="line">    <a class="code hl_function" href="#ga609d4085b10b48c8b8725dab5b465896">event_queue_init</a>(&amp;queue);</div>
-<div class="line">    <a class="code hl_function" href="#ga321751eb630a363f187305e098229e7d">event_loop</a>(&amp;queue);</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line">[...] <a class="code hl_function" href="#ga2053ce1facf709fffd024bee9e2383ba">event_post</a>(&amp;queue, &amp;<a class="code hl_struct" href="structevent.html">event</a>);</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// example for event extended event struct</span></div>
-<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line">    <a class="code hl_struct" href="structevent.html">event_t</a> super;</div>
-<div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> *text;</div>
-<div class="line">} custom_event_t;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> custom_handler(<a class="code hl_struct" href="structevent.html">event_t</a> *<a class="code hl_struct" href="structevent.html">event</a>)</div>
-<div class="line">{</div>
-<div class="line">    custom_event_t *custom_event = <a class="code hl_define" href="container_8h.html#aa06910d90372b14a0756bf14cdc64811">container_of</a>(<a class="code hl_struct" href="structevent.html">event</a>, custom_event_t, super);</div>
-<div class="line">    <a class="code hl_define" href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a>(<span class="stringliteral">&quot;triggered custom event with text: \&quot;%s\&quot;\n&quot;</span>, custom_event-&gt;text);</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">static</span> custom_event_t custom_event = { .super.handler = custom_handler, .text = <span class="stringliteral">&quot;CUSTOM EVENT&quot;</span> };</div>
-<div class="line"> </div>
-<div class="line">[...] <a class="code hl_function" href="#ga2053ce1facf709fffd024bee9e2383ba">event_post</a>(&amp;queue, &amp;custom_event.super)</div>
-<div class="ttc" id="acontainer_8h_html_aa06910d90372b14a0756bf14cdc64811"><div class="ttname"><a href="container_8h.html#aa06910d90372b14a0756bf14cdc64811">container_of</a></div><div class="ttdeci">#define container_of(PTR, TYPE, MEMBER)</div><div class="ttdoc">Returns the container of a pointer to a member.</div><div class="ttdef"><b>Definition</b> container.h:62</div></div>
-<div class="ttc" id="agroup__cpu__avr8__common__stdio__wrapper_html_gad2eb277496af160238e7306fff780ad2"><div class="ttname"><a href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a></div><div class="ttdeci">#define printf(...)</div><div class="ttdoc">A wrapper for the printf() function that passes arguments through unmodified, but fails to compile if...</div><div class="ttdef"><b>Definition</b> stdio.h:60</div></div>
-<div class="ttc" id="agroup__sys__event_html_ga2053ce1facf709fffd024bee9e2383ba"><div class="ttname"><a href="#ga2053ce1facf709fffd024bee9e2383ba">event_post</a></div><div class="ttdeci">void event_post(event_queue_t *queue, event_t *event)</div><div class="ttdoc">Queue an event.</div></div>
-<div class="ttc" id="agroup__sys__event_html_ga321751eb630a363f187305e098229e7d"><div class="ttname"><a href="#ga321751eb630a363f187305e098229e7d">event_loop</a></div><div class="ttdeci">static void event_loop(event_queue_t *queue)</div><div class="ttdoc">Simple event loop.</div><div class="ttdef"><b>Definition</b> event.h:463</div></div>
-<div class="ttc" id="agroup__sys__event_html_ga609d4085b10b48c8b8725dab5b465896"><div class="ttname"><a href="#ga609d4085b10b48c8b8725dab5b465896">event_queue_init</a></div><div class="ttdeci">static void event_queue_init(event_queue_t *queue)</div><div class="ttdoc">Initialize an event queue.</div><div class="ttdef"><b>Definition</b> event.h:187</div></div>
-<div class="ttc" id="astructPTRTAG_html"><div class="ttname"><a href="structPTRTAG.html">PTRTAG</a></div><div class="ttdoc">event queue structure</div><div class="ttdef"><b>Definition</b> event.h:156</div></div>
-<div class="ttc" id="astructevent_html"><div class="ttname"><a href="structevent.html">event</a></div><div class="ttdoc">event structure</div><div class="ttdef"><b>Definition</b> event.h:148</div></div>
-</div><!-- fragment --> <table class="memberdecls">
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="event_8h.html">event.h</a></td></tr>
@@ -325,7 +271,61 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga321751eb630a363f187305e098229e7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple event loop.  <br /></td></tr>
 <tr class="separator:ga321751eb630a363f187305e098229e7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Provides an Event loop </p>
+<p>This module offers an event queue framework like libevent or libuev.</p>
+<p>An event queue is basically a FIFO queue of events, with some functions to efficiently and safely handle adding and getting events to / from such a queue.</p>
+<p>An event queue is bound to a thread, but any thread or ISR can put events into a queue. In most cases, the owning thread of a queue is set during the queue's initialization. But it is also possible to initialize a queue in a detached state from a different context and to set the owning thread at a later point of time using the <a class="el" href="#ga901462dc0093b6da40ec2fa787ac704f" title="Bind an event queue to the calling thread.">event_queue_claim()</a> function.</p>
+<p>An event is a structure containing a pointer to an event handler. It can be extended to provide context or arguments to the handler. It can also be embedded into existing structures (see examples).</p>
+<p>Compared to msg or mbox, this some fundamental differences:</p>
+<ol type="1">
+<li>events are "sender allocated". Unlike <a class="el" href="group__core__msg.html#gac5347725c3d203ac72604c0ab8b7d6d8" title="Send a message (blocking).">msg_send()</a>, <a class="el" href="#ga2053ce1facf709fffd024bee9e2383ba" title="Queue an event.">event_post()</a> never blocks or fails.</li>
+<li>events contain everything necessary to handle them, thus a thread processing the events of an event queue doesn't need to be changed in order to support new event types.</li>
+<li>events can be safely used (and actually perform best) when used within one thread, e.g., in order to create a state-machine like process flow. This is not (easily) possible using msg queues, as they might fill up.</li>
+<li>an event can only be queued in one event queue at the same time. Notifying many queues using only one event object is not possible with this implementation.</li>
+</ol>
+<p>At the core, <a class="el" href="#ga2bc1e5419b99c43721a97dd8dc51001b" title="Get next event from event queue, blocking.">event_wait()</a> uses thread flags to implement waiting for events to be queued. Thus event queues can be used safely and efficiently in combination with thread flags and msg queues.</p>
+<p>Examples:</p>
+<div class="fragment"><div class="line"><span class="comment">// simple event handler</span></div>
+<div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> handler(<a class="code hl_struct" href="structevent.html">event_t</a> *<a class="code hl_struct" href="structevent.html">event</a>)</div>
+<div class="line">{</div>
+<div class="line">   <a class="code hl_define" href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a>(<span class="stringliteral">&quot;triggered 0x%08x\n&quot;</span>, (<span class="keywordtype">unsigned</span>)<a class="code hl_struct" href="structevent.html">event</a>);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">static</span> <a class="code hl_struct" href="structevent.html">event_t</a> <span class="keyword">event</span> = { .handler = handler };</div>
+<div class="line"><span class="keyword">static</span> <a class="code hl_struct" href="structPTRTAG.html">event_queue_t</a> queue;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    <a class="code hl_function" href="#ga609d4085b10b48c8b8725dab5b465896">event_queue_init</a>(&amp;queue);</div>
+<div class="line">    <a class="code hl_function" href="#ga321751eb630a363f187305e098229e7d">event_loop</a>(&amp;queue);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line">[...] <a class="code hl_function" href="#ga2053ce1facf709fffd024bee9e2383ba">event_post</a>(&amp;queue, &amp;<a class="code hl_struct" href="structevent.html">event</a>);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// example for event extended event struct</span></div>
+<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line">    <a class="code hl_struct" href="structevent.html">event_t</a> super;</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> *text;</div>
+<div class="line">} custom_event_t;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> custom_handler(<a class="code hl_struct" href="structevent.html">event_t</a> *<a class="code hl_struct" href="structevent.html">event</a>)</div>
+<div class="line">{</div>
+<div class="line">    custom_event_t *custom_event = <a class="code hl_define" href="container_8h.html#aa06910d90372b14a0756bf14cdc64811">container_of</a>(<a class="code hl_struct" href="structevent.html">event</a>, custom_event_t, super);</div>
+<div class="line">    <a class="code hl_define" href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a>(<span class="stringliteral">&quot;triggered custom event with text: \&quot;%s\&quot;\n&quot;</span>, custom_event-&gt;text);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">static</span> custom_event_t custom_event = { .super.handler = custom_handler, .text = <span class="stringliteral">&quot;CUSTOM EVENT&quot;</span> };</div>
+<div class="line"> </div>
+<div class="line">[...] <a class="code hl_function" href="#ga2053ce1facf709fffd024bee9e2383ba">event_post</a>(&amp;queue, &amp;custom_event.super)</div>
+<div class="ttc" id="acontainer_8h_html_aa06910d90372b14a0756bf14cdc64811"><div class="ttname"><a href="container_8h.html#aa06910d90372b14a0756bf14cdc64811">container_of</a></div><div class="ttdeci">#define container_of(PTR, TYPE, MEMBER)</div><div class="ttdoc">Returns the container of a pointer to a member.</div><div class="ttdef"><b>Definition</b> container.h:62</div></div>
+<div class="ttc" id="agroup__cpu__avr8__common__stdio__wrapper_html_gad2eb277496af160238e7306fff780ad2"><div class="ttname"><a href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a></div><div class="ttdeci">#define printf(...)</div><div class="ttdoc">A wrapper for the printf() function that passes arguments through unmodified, but fails to compile if...</div><div class="ttdef"><b>Definition</b> stdio.h:60</div></div>
+<div class="ttc" id="agroup__sys__event_html_ga2053ce1facf709fffd024bee9e2383ba"><div class="ttname"><a href="#ga2053ce1facf709fffd024bee9e2383ba">event_post</a></div><div class="ttdeci">void event_post(event_queue_t *queue, event_t *event)</div><div class="ttdoc">Queue an event.</div></div>
+<div class="ttc" id="agroup__sys__event_html_ga321751eb630a363f187305e098229e7d"><div class="ttname"><a href="#ga321751eb630a363f187305e098229e7d">event_loop</a></div><div class="ttdeci">static void event_loop(event_queue_t *queue)</div><div class="ttdoc">Simple event loop.</div><div class="ttdef"><b>Definition</b> event.h:463</div></div>
+<div class="ttc" id="agroup__sys__event_html_ga609d4085b10b48c8b8725dab5b465896"><div class="ttname"><a href="#ga609d4085b10b48c8b8725dab5b465896">event_queue_init</a></div><div class="ttdeci">static void event_queue_init(event_queue_t *queue)</div><div class="ttdoc">Initialize an event queue.</div><div class="ttdef"><b>Definition</b> event.h:187</div></div>
+<div class="ttc" id="astructPTRTAG_html"><div class="ttname"><a href="structPTRTAG.html">PTRTAG</a></div><div class="ttdoc">event queue structure</div><div class="ttdef"><b>Definition</b> event.h:156</div></div>
+<div class="ttc" id="astructevent_html"><div class="ttname"><a href="structevent.html">event</a></div><div class="ttdoc">event structure</div><div class="ttdef"><b>Definition</b> event.h:148</div></div>
+</div><!-- fragment --> <h2 class="groupheader">Function Documentation</h2>
 <a id="ga696280baa5719e3c5ef75fec41e81b3a" name="ga696280baa5719e3c5ef75fec41e81b3a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga696280baa5719e3c5ef75fec41e81b3a">&#9670;&#160;</a></span>event_cancel()</h2>
 
@@ -949,7 +949,7 @@ NULL if timeout expired before an event was posted </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -149,18 +149,7 @@ $(function(){initNavTree('core_2lib_2include_2log_8h.html',''); initResizable(tr
 
 <p>System logging header <a class="anchor" id="core_util_log"></a>.  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>System logging header <a class="anchor" id="core_util_log"></a>. </p>
-<p>This header offers a bunch of "LOG_*" functions that, with the default implementation, just use printf, but honour a verbosity level.</p>
-<p>If desired, it is possible to implement a log module which then will be used instead the default printf-based implementation. In order to do so, the log module has to</p>
-<ol type="1">
-<li>provide "log_module.h"</li>
-<li>have a name starting with "log_" <em>or</em> depend on the pseudo-module LOG,</li>
-<li>implement <a class="el" href="#ac814d9c3a77713d364c21742d8aa8021" title="Default log_write function, just maps to printf.">log_write()</a></li>
-</ol>
-<p>See "sys/log/log_printfnoformat" for an example.</p>
-<dl class="section author"><dt>Author</dt><dd>Kaspar Schleiser <a href="#" onclick="location.href='mai'+'lto:'+'kas'+'pa'+'r@s'+'ch'+'lei'+'se'+'r.d'+'e'; return false;">kaspa<span class="obfuscator">.nosp@m.</span>r@sc<span class="obfuscator">.nosp@m.</span>hleis<span class="obfuscator">.nosp@m.</span>er.d<span class="obfuscator">.nosp@m.</span>e</a> </dd></dl>
-</div><div class="textblock"><code>#include &lt;<a class="el" href="stdio_8h.html">stdio.h</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="stdio_8h.html">stdio.h</a>&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for log.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -208,7 +197,18 @@ Macros</h2></td></tr>
 <tr class="memdesc:a754b3d074e0af4ad3c7b918dd77ecb2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">teach some ignorance  <br /></td></tr>
 <tr class="separator:a754b3d074e0af4ad3c7b918dd77ecb2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>System logging header <a class="anchor" id="core_util_log"></a>. </p>
+<p>This header offers a bunch of "LOG_*" functions that, with the default implementation, just use printf, but honour a verbosity level.</p>
+<p>If desired, it is possible to implement a log module which then will be used instead the default printf-based implementation. In order to do so, the log module has to</p>
+<ol type="1">
+<li>provide "log_module.h"</li>
+<li>have a name starting with "log_" <em>or</em> depend on the pseudo-module LOG,</li>
+<li>implement <a class="el" href="#ac814d9c3a77713d364c21742d8aa8021" title="Default log_write function, just maps to printf.">log_write()</a></li>
+</ol>
+<p>See "sys/log/log_printfnoformat" for an example.</p>
+<dl class="section author"><dt>Author</dt><dd>Kaspar Schleiser <a href="#" onclick="location.href='mai'+'lto:'+'kas'+'pa'+'r@s'+'ch'+'lei'+'se'+'r.d'+'e'; return false;">kaspa<span class="obfuscator">.nosp@m.</span>r@sc<span class="obfuscator">.nosp@m.</span>hleis<span class="obfuscator">.nosp@m.</span>er.d<span class="obfuscator">.nosp@m.</span>e</a> </dd></dl>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="acaa1c3fa56061380a29889d703236251" name="acaa1c3fa56061380a29889d703236251"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acaa1c3fa56061380a29889d703236251">&#9670;&#160;</a></span>LOG</h2>
 
@@ -388,7 +388,7 @@ Macros</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a class="el" href="dir_f8fc1035965dbcf3e6094016d717607e.html">lib</a></li><li class="navelem"><a class="el" href="dir_d412f47eb2d89caf346962a58545ba17.html">include</a></li><li class="navelem"><a class="el" href="core_2lib_2include_2log_8h.html">log.h</a></li>
-    <li class="footer">Generated on Tue Oct 1 2024 17:19:59 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

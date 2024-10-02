@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -149,18 +149,7 @@ $(function(){initNavTree('structtimer__conf__t.html',''); initResizable(true); }
 
 <p><a class="el" href="structTimer.html" title="struct to get time references within mqtt paho">Timer</a> device configuration.  
  <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="structTimer.html" title="struct to get time references within mqtt paho">Timer</a> device configuration. </p>
-<p><a class="el" href="structTimer.html" title="struct to get time references within mqtt paho">Timer</a> configuration data.</p>
-<p>Configuration type of a timer device <a class="el" href="#ac09870cf4a21d45ed18e4d3257a73dfe">timer_conf_t::dev</a>, having <a class="el" href="#ae943336badfa91b9c1bfbab89a3f7c14">timer_conf_t::ch_numof</a> number of channels, each one modeled as <a class="el" href="structtimer__channel__conf__t.html">timer_channel_conf_t</a>.</p>
-<p><a class="el" href="structTimer.html" title="struct to get time references within mqtt paho">Timer</a> configuration options.</p>
-<p><a class="el" href="structTimer.html" title="struct to get time references within mqtt paho">Timer</a> configuration on an MSP430 timer.</p>
-<p>Override resolution options.</p>
-<p><a class="el" href="structTimer.html" title="struct to get time references within mqtt paho">Timer</a> configuration.</p>
-<p>All timers can be derived from TC0_t struct. Need check at runtime the type and number of channels to perform all operations.</p>
-<p>General purpose timers (GPT[0-3]) are configured consecutively and in order (without gaps) starting from GPT0, i.e. if multiple timers are enabled.</p>
-<p>Define timer configuration values </p>
-</div>
+
 <p><code>#include &lt;cpu_timer.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -287,7 +276,18 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>rcc_mask</b></td>
 <tr class="memdesc:a3c5e51478a993f8ff6fea8127f75ecd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">corresponding bit in the RCC register <br /></td></tr>
 <tr class="separator:a3c5e51478a993f8ff6fea8127f75ecd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Field Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="structTimer.html" title="struct to get time references within mqtt paho">Timer</a> device configuration. </p>
+<p><a class="el" href="structTimer.html" title="struct to get time references within mqtt paho">Timer</a> configuration data.</p>
+<p>Configuration type of a timer device <a class="el" href="#ac09870cf4a21d45ed18e4d3257a73dfe">timer_conf_t::dev</a>, having <a class="el" href="#ae943336badfa91b9c1bfbab89a3f7c14">timer_conf_t::ch_numof</a> number of channels, each one modeled as <a class="el" href="structtimer__channel__conf__t.html">timer_channel_conf_t</a>.</p>
+<p><a class="el" href="structTimer.html" title="struct to get time references within mqtt paho">Timer</a> configuration options.</p>
+<p><a class="el" href="structTimer.html" title="struct to get time references within mqtt paho">Timer</a> configuration on an MSP430 timer.</p>
+<p>Override resolution options.</p>
+<p><a class="el" href="structTimer.html" title="struct to get time references within mqtt paho">Timer</a> configuration.</p>
+<p>All timers can be derived from TC0_t struct. Need check at runtime the type and number of channels to perform all operations.</p>
+<p>General purpose timers (GPT[0-3]) are configured consecutively and in order (without gaps) starting from GPT0, i.e. if multiple timers are enabled.</p>
+<p>Define timer configuration values </p>
+</div><h2 class="groupheader">Field Documentation</h2>
 <a id="afec75a565cfb09cd94de0875c5092f9a" name="afec75a565cfb09cd94de0875c5092f9a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afec75a565cfb09cd94de0875c5092f9a">&#9670;&#160;</a></span>channel_numof</h2>
 
@@ -427,7 +427,7 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>rcc_mask</b></td>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structtimer__conf__t.html">timer_conf_t</a></li>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:03 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:32 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -149,12 +149,7 @@ $(function(){initNavTree('volatile__utils_8h.html',''); initResizable(true); });
 
 <p>Utility functions for non-atomic but volatile access.  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Utility functions for non-atomic but volatile access. </p>
-<dl class="section author"><dt>Author</dt><dd>Marian Buschsieweke <a href="#" onclick="location.href='mai'+'lto:'+'mar'+'ia'+'n.b'+'us'+'chs'+'ie'+'wek'+'e@'+'ovg'+'u.'+'de'; return false;">maria<span class="obfuscator">.nosp@m.</span>n.bu<span class="obfuscator">.nosp@m.</span>schsi<span class="obfuscator">.nosp@m.</span>ewek<span class="obfuscator">.nosp@m.</span>e@ovg<span class="obfuscator">.nosp@m.</span>u.de</a></dd></dl>
-<p>This functions intentionally have the same signature as the <a class="el" href="group__sys__atomic__utils.html">Utility functions for atomic access</a> but don't guarantee atomic access and sequential consistency (or any other consistency). They basically only guarantee that no compiler optimization is applied to that operation and that the compiler will not reorder these operations in regard to each other or other <code>volatile</code> accesses.</p>
-<dl class="section warning"><dt>Warning</dt><dd>In most cases using this over <a class="el" href="group__sys__atomic__utils.html">Utility functions for atomic access</a> is a bug! </dd></dl>
-</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for volatile_utils.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -250,7 +245,12 @@ Functions</h2></td></tr>
 <tr class="memdesc:gad0b00ac1091b2af1a51071ec099e7c01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unoptimized version of <code>*dest &amp;= val</code>  <br /></td></tr>
 <tr class="separator:gad0b00ac1091b2af1a51071ec099e7c01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Utility functions for non-atomic but volatile access. </p>
+<dl class="section author"><dt>Author</dt><dd>Marian Buschsieweke <a href="#" onclick="location.href='mai'+'lto:'+'mar'+'ia'+'n.b'+'us'+'chs'+'ie'+'wek'+'e@'+'ovg'+'u.'+'de'; return false;">maria<span class="obfuscator">.nosp@m.</span>n.bu<span class="obfuscator">.nosp@m.</span>schsi<span class="obfuscator">.nosp@m.</span>ewek<span class="obfuscator">.nosp@m.</span>e@ovg<span class="obfuscator">.nosp@m.</span>u.de</a></dd></dl>
+<p>This functions intentionally have the same signature as the <a class="el" href="group__sys__atomic__utils.html">Utility functions for atomic access</a> but don't guarantee atomic access and sequential consistency (or any other consistency). They basically only guarantee that no compiler optimization is applied to that operation and that the compiler will not reorder these operations in regard to each other or other <code>volatile</code> accesses.</p>
+<dl class="section warning"><dt>Warning</dt><dd>In most cases using this over <a class="el" href="group__sys__atomic__utils.html">Utility functions for atomic access</a> is a bug! </dd></dl>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
@@ -258,7 +258,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a408b6d3a4a484720bc3ecfeac8947e3.html">sys</a></li><li class="navelem"><a class="el" href="dir_e9e107fc86bbb4b6a326076a6808b9f5.html">include</a></li><li class="navelem"><a class="el" href="volatile__utils_8h.html">volatile_utils.h</a></li>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

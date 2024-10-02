@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -149,6 +149,22 @@ $(function(){initNavTree('group__boards__nrf52840-mdk-dongle.html',''); initResi
 
 <p>Support for the nRF52840 MDK USB Dongle  
 <a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf52840-mdk-dongle_2include_2board_8h.html">board.h</a></td></tr>
+<tr class="memdesc:nrf52840-mdk-dongle_2include_2board_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Board specific configuration for the nRF52840 MDK USB Dongle. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf52840-mdk-dongle_2include_2gpio__params_8h.html">gpio_params.h</a></td></tr>
+<tr class="memdesc:nrf52840-mdk-dongle_2include_2gpio__params_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration of SAUL mapped GPIO pins. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boards_2nrf52840-mdk-dongle_2include_2periph__conf_8h.html">periph_conf.h</a></td></tr>
+<tr class="memdesc:boards_2nrf52840-mdk-dongle_2include_2periph__conf_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Peripheral configuration for the nRF52840 MDK USB Dongle. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf52840-mdk-dongle_2include_2pwm__params_8h.html">pwm_params.h</a></td></tr>
+<tr class="memdesc:nrf52840-mdk-dongle_2include_2pwm__params_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration of SAUL mapped PWM channels. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the nRF52840 MDK USB Dongle </p>
 <h3><a class="anchor" id="autotoc_md610"></a>
@@ -179,22 +195,6 @@ Accessing STDIO</h3>
 <p>The usual way to obtain a console on this board is using an emulated USB serial port (CDC-ACM). This is available automatically using the <code>stdio_cdc_acm</code> module, unless any other stdio module is enabled.</p>
 <p>On Linux systems with ModemManager &lt; 1.10 installed, <code>make term</code> will, in some setups, fail for a few seconds after the device has come up. This is <a href="https://gitlab.freedesktop.org/mobile-broadband/ModemManager/issues/164">fixed in its 1.12.4 version</a>, but should not be more than a short annoyance in earlier versions.</p>
 <p>To ease debugging, pins 0.6 and 0.7 are configured as RX and TX, respectively. They provide stdio if no CDC-ACM is disabled, and can be used as a custom UART otherwise. </p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf52840-mdk-dongle_2include_2board_8h.html">board.h</a></td></tr>
-<tr class="memdesc:nrf52840-mdk-dongle_2include_2board_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Board specific configuration for the nRF52840 MDK USB Dongle. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf52840-mdk-dongle_2include_2gpio__params_8h.html">gpio_params.h</a></td></tr>
-<tr class="memdesc:nrf52840-mdk-dongle_2include_2gpio__params_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration of SAUL mapped GPIO pins. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boards_2nrf52840-mdk-dongle_2include_2periph__conf_8h.html">periph_conf.h</a></td></tr>
-<tr class="memdesc:boards_2nrf52840-mdk-dongle_2include_2periph__conf_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Peripheral configuration for the nRF52840 MDK USB Dongle. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf52840-mdk-dongle_2include_2pwm__params_8h.html">pwm_params.h</a></td></tr>
-<tr class="memdesc:nrf52840-mdk-dongle_2include_2pwm__params_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration of SAUL mapped PWM channels. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
@@ -202,7 +202,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

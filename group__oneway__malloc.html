@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -150,11 +150,6 @@ $(function(){initNavTree('group__oneway__malloc.html',''); initResizable(true); 
 
 <p>A malloc implementation without free for boards where the toolchain does not implement dynamic memory allocation.  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>A malloc implementation without free for boards where the toolchain does not implement dynamic memory allocation. </p>
-<p>The toolchain of MSP-430, for example, does not contain <a class="el" href="#ga9c36d0fe3ec4675cbffdc9b52f5fb399" title="Allocation a block of memory.">malloc()</a> and friends. These functions provide the same interface as the stdlib functions, but the option to free memory.</p>
-<dl class="section note"><dt>Note</dt><dd>You should prefer statically allocated memory whenever possible.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__pkg__tlsf.html" title="TLSF is a general purpose dynamic memory allocator specifically designed to meet real-time requiremen...">Two-Level Segregated Fit memory allocator</a> </dd></dl>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -176,6 +171,11 @@ Functions</h2></td></tr>
 <tr class="memdesc:gafbedc913aa4651b3c3b4b3aecd9b4711"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a no-op.  <br /></td></tr>
 <tr class="separator:gafbedc913aa4651b3c3b4b3aecd9b4711"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>A malloc implementation without free for boards where the toolchain does not implement dynamic memory allocation. </p>
+<p>The toolchain of MSP-430, for example, does not contain <a class="el" href="#ga9c36d0fe3ec4675cbffdc9b52f5fb399" title="Allocation a block of memory.">malloc()</a> and friends. These functions provide the same interface as the stdlib functions, but the option to free memory.</p>
+<dl class="section note"><dt>Note</dt><dd>You should prefer statically allocated memory whenever possible.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__pkg__tlsf.html" title="TLSF is a general purpose dynamic memory allocator specifically designed to meet real-time requiremen...">Two-Level Segregated Fit memory allocator</a> </dd></dl>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ga2fc5f746d640647b01e4f5687b67177f" name="ga2fc5f746d640647b01e4f5687b67177f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga2fc5f746d640647b01e4f5687b67177f">&#9670;&#160;</a></span>calloc()</h2>
@@ -301,7 +301,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

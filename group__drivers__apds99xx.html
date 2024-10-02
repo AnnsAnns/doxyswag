@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -154,119 +154,6 @@ $(function(){initNavTree('group__drivers__apds99xx.html',''); initResizable(true
 
 <p>Device driver for Broadcom APDS99XX proximity and ambient light sensors  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Device driver for Broadcom APDS99XX proximity and ambient light sensors </p>
-<p>The driver can be used with following Broadcom sensors: APDS9900, APDS9901, APDS9930, APDS9950, APDS9960</p>
-<p>The driver is divided into two parts:</p>
-<ul>
-<li><p class="startli"><b>Basic driver</b> <code>apds99xx</code></p>
-<p class="startli">The base driver <code>apds99xx</code> only supports a basic set of functions and has therefore a small size. The procedure for retrieving new data is polling. Ambient light and proximity sensing are supported.</p>
-</li>
-<li><p class="startli"><b>Fully functional driver</b> <code>apds99xx_full</code></p>
-<p class="startli">The fully functional driver <code>apds99xx_full</code> supports all the features supported by the base driver, as well as all other sensor features, including interrupts and their configuration. Data-ready interrupts can be used to retrieve data. In addition, threshold interrupts can be used and configured.</p>
-</li>
-</ul>
-<dl class="section note"><dt>Note</dt><dd>In addition to specifying whether the base driver <code>apds99xx</code> or the fully featured driver <code>apds99xx_full</code> should be used, the application has to declare used sensor by means of various pseudomodules as follows: <pre class="fragment"> APDS9900:     USEMODULE=apds9900
- APDS9901:     USEMODULE=apds9901
- APDS9930:     USEMODULE=apds9930
- APDS9950:     USEMODULE=apds9950
- APDS9960:     USEMODULE=apds9960
-</pre></dd></dl>
-<p>This driver provides <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> capabilities.</p>
-<h1><a class="anchor" id="autotoc_md1617"></a>
-Measurement Cycle</h1>
-<p>APDS99XX sensor <b>measurement cycles</b> consists of the following <b>three steps</b> in the given order:</p>
-<ul>
-<li><p class="startli"><b>Proximity Sensing</b></p>
-<p class="startli">The sensor generates a number of IR LED pulses and measures the amount of the IR energy reflected by an object to determine its distance. The time required for proximity sensing (<code>t_prx</code> ) results from the time it takes to generate the IR LED pulses and to accumulate the reflected IR energy (<code>t_prx_acc</code>) as well as the time for the ADC conversion (<code>t_prx_cnv</code>).</p>
-<p class="startli">t_prx = t_prx_acc + t_prx_cnv</p>
-<p class="startli">The time to generate the IR LED pulses and accumulate reflected IR energy <code>t_prx_acc</code> is defined by the number of pulses (parameter <a class="el" href="structapds99xx__params__t.html#acacd3a0570fbdbbace726e00f87bd773" title="IR LED pulses for proximity sensing.">apds99xx_params_t::prx_pulses</a>) and the period of one pulse <code>t_prx_pulse</code>. </p><pre class="fragment">t_prx_acc = prx_pulses * t_prx_pulse
-</pre><p class="startli">The ADC conversion time <code>t_prx_cnv</code> and the period of one pulse <code>t_prx_pulse</code> depend on used sensor and are available as the defines <a class="el" href="#gaa3762beec647cda32361349791ce57e7" title="Proximity ADC conversion time t_prx_conv in us (tINIT + tCNVT for PPLEN=8 us)">APDS99XX_T_PRX_CNV</a> and <a class="el" href="#gaccc5305d30cde44861c6651d4191c460" title="LED IR pulse period t_pulse in us (for PPLEN=8 us)">APDS99XX_T_PRX_PULSE</a> for calculations by the application. </p><table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Sensor<br  />
-   </th><th class="markdownTableHeadNone">t_prx_pulse<br  />
-APDS99XX_T_PRX_PULSE   </th><th class="markdownTableHeadNone">t_prx_cnv<br  />
-APDS99XX_T_PRX_CNV    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">APDS9900   </td><td class="markdownTableBodyNone">0.016 ms   </td><td class="markdownTableBodyNone">2.720 ms    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">APDS9901   </td><td class="markdownTableBodyNone">0.016 ms   </td><td class="markdownTableBodyNone">2.720 ms    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">APDS9930   </td><td class="markdownTableBodyNone">0.016 ms   </td><td class="markdownTableBodyNone">2.730 ms    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">APDS9950   </td><td class="markdownTableBodyNone">0.014 ms   </td><td class="markdownTableBodyNone">2.400 ms    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">APDS9960   </td><td class="markdownTableBodyNone">0.036 ms   </td><td class="markdownTableBodyNone">0.814 ms   </td></tr>
-</table>
-<p><br  />
-</p>
-<p class="startli">Proximity sensing uses the gain specified by parameter <a class="el" href="structapds99xx__params__t.html#aad606a9b89d1a83625843738eb9e5778" title="Gain used for proximity sensing.">apds99xx_params_t::prx_gain</a> and the LED current specified by parameter <a class="el" href="structapds99xx__params__t.html#adfa2cac890d4a619703f2caccfc183aa" title="IR LED current for proximity sensing (default APDS99XX_PRX_DRIVE_100)">apds99xx_params_t::prx_drive</a>.</p>
-</li>
-<li><p class="startli"><b>Wait</b></p>
-<p class="startli">The sensor waits for <code>t_wait</code> which is defined by the number of waiting steps <code>wait_steps</code> (<a class="el" href="structapds99xx__params__t.html#a5e72cf4feaba8ec3f30d20d36c4c2ad4" title="Waiting time in steps.">apds99xx_params_t::wait_steps</a>), the time per step <code>t_step</code>, and the wait long flag (<a class="el" href="structapds99xx__params__t.html#af3ec0e60fa2ce460c375919f3ab7015b" title="Long waiting time.">apds99xx_params_t::wait_long</a>); </p><pre class="fragment">t_wait = wait_steps * t_wait_step            (if wait_long is false)
-t_wait = wait_steps * t_wait_step * 12       (if wait_long is true)
-</pre><p class="startli">Parameter <a class="el" href="structapds99xx__params__t.html#a5e72cf4feaba8ec3f30d20d36c4c2ad4" title="Waiting time in steps.">apds99xx_params_t::wait_steps</a> can range from 0 to 256. If <a class="el" href="structapds99xx__params__t.html#a5e72cf4feaba8ec3f30d20d36c4c2ad4" title="Waiting time in steps.">apds99xx_params_t::wait_steps</a> is 0, waiting is disabled. The time per step <code>t_wait_step</code> depends on used sensor and is available as the define <a class="el" href="#ga834a9a427c383a2e6880d28eeef995b4" title="Wait time step size t_step in us.">APDS99XX_T_WAIT_STEP</a> for calculations by the application. </p><table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Sensor<br  />
-   </th><th class="markdownTableHeadNone">t_als_step<br  />
-APDS99XX_T_WAIT_STEP   </th><th class="markdownTableHeadNone">t_wait (wait_long=0) <br  />
-   </th><th class="markdownTableHeadNone">t_wait (wait_long=1) <br  />
-    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">APDS9900   </td><td class="markdownTableBodyNone">2.72 ms   </td><td class="markdownTableBodyNone"><code>wait_steps</code> * 2.72 ms   </td><td class="markdownTableBodyNone"><code>wait_steps</code> * 12 * 2.72 ms    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">APDS9901   </td><td class="markdownTableBodyNone">2.72 ms   </td><td class="markdownTableBodyNone"><code>wait_steps</code> * 2.72 ms   </td><td class="markdownTableBodyNone"><code>wait_steps</code> * 12 * 2.72 ms    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">APDS9930   </td><td class="markdownTableBodyNone">2.73 ms   </td><td class="markdownTableBodyNone"><code>wait_steps</code> * 2.73 ms   </td><td class="markdownTableBodyNone"><code>wait_steps</code> * 12 * 2.73 ms    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">APDS9950   </td><td class="markdownTableBodyNone">2.40 ms   </td><td class="markdownTableBodyNone"><code>wait_steps</code> * 2.40 ms   </td><td class="markdownTableBodyNone"><code>wait_steps</code> * 12 * 2.40 ms    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">APDS9960   </td><td class="markdownTableBodyNone">2.78 ms   </td><td class="markdownTableBodyNone"><code>wait_steps</code> * 2.78 ms   </td><td class="markdownTableBodyNone"><code>wait_steps</code> * 12 * 2.78 ms   </td></tr>
-</table>
-<p><br  />
-</p>
-</li>
-<li><p class="startli"><b>Ambient Light Sensing (ALS)</b></p>
-<p class="startli">The sensor converts the amplified photodiode currents using integrating ADCs. The time required for ALS is determined by the ALS integration time <code>t_als_int</code>, which is defined as the number of integration steps <code>als_steps</code> (parameter <a class="el" href="structapds99xx__params__t.html#ae9f2720dd1fa118d2bdd757c043f7fd5" title="ALS integration time in steps.">apds99xx_params_t::als_steps</a>) and the time per step <code>t_als_step</code>. </p><pre class="fragment">t_als_int = als_steps * t_als_step
-</pre><p class="startli">Parameter <a class="el" href="structapds99xx__params__t.html#ae9f2720dd1fa118d2bdd757c043f7fd5" title="ALS integration time in steps.">apds99xx_params_t::als_steps</a> can range from 0 to 256. If <a class="el" href="structapds99xx__params__t.html#ae9f2720dd1fa118d2bdd757c043f7fd5" title="ALS integration time in steps.">apds99xx_params_t::als_steps</a> is 0, ALS is disabled. The time per step <code>t_als_step</code> depends on used sensor and is available as the define <a class="el" href="#ga22175e4925362bae95d45ce26cb73202" title="ALS integration time step size t_step in.">APDS99XX_T_ALS_STEP</a> for calculations by the application.</p>
-<p class="startli">The ALS integration time in steps <code>als_steps</code> (parameter <a class="el" href="structapds99xx__params__t.html#ae9f2720dd1fa118d2bdd757c043f7fd5" title="ALS integration time in steps.">apds99xx_params_t::als_steps</a>) affects the resolution and the full scale range <code>cnt_als_max</code> of ALS data. </p><pre class="fragment">cnt_als_max = als_steps * cnts_p_step
-</pre><p class="startli">The counts per step <code>cnts_p_step</code> depend on used sensor and is available as defines <a class="el" href="#ga616c0877c10bf45b4f9a293ae223d32f" title="Counts per step cnts_p_step">APDS99XX_CNTS_P_STEP</a> for calculations by the application</p>
-<p class="startli">ALS uses the gain specified by parameter <a class="el" href="structapds99xx__params__t.html#a587f685eb3c7ad170181fdacda1411f3" title="Gain used for ALS.">apds99xx_params_t::als_gain</a>. </p><table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Sensor<br  />
-   </th><th class="markdownTableHeadNone">t_als_step<br  />
-APDS99XX_T_ALS_STEP   </th><th class="markdownTableHeadNone">cnts_p_step<br  />
-APDS99XX_CNTS_P_STEP   </th><th class="markdownTableHeadNone">t_als_int<br  />
-   </th><th class="markdownTableHeadNone">cnt_als_max<br  />
-    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">APDS9900   </td><td class="markdownTableBodyNone">2.72 ms   </td><td class="markdownTableBodyNone">1023   </td><td class="markdownTableBodyNone"><code>als_steps</code> * 2.72 ms   </td><td class="markdownTableBodyNone"><code>als_steps</code> * 1023    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">APDS9901   </td><td class="markdownTableBodyNone">2.72 ms   </td><td class="markdownTableBodyNone">1023   </td><td class="markdownTableBodyNone"><code>als_steps</code> * 2.72 ms   </td><td class="markdownTableBodyNone"><code>als_steps</code> * 1023    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">APDS9930   </td><td class="markdownTableBodyNone">2.73 ms   </td><td class="markdownTableBodyNone">1023   </td><td class="markdownTableBodyNone"><code>als_steps</code> * 2.73 ms   </td><td class="markdownTableBodyNone"><code>als_steps</code> * 1023    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">APDS9950   </td><td class="markdownTableBodyNone">2.40 ms   </td><td class="markdownTableBodyNone">1024   </td><td class="markdownTableBodyNone"><code>als_steps</code> * 2.40 ms   </td><td class="markdownTableBodyNone"><code>als_steps</code> * 1024    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">APDS9960   </td><td class="markdownTableBodyNone">2.78 ms   </td><td class="markdownTableBodyNone">1025   </td><td class="markdownTableBodyNone"><code>als_steps</code> * 2.78 ms   </td><td class="markdownTableBodyNone"><code>als_steps</code> * 1025   </td></tr>
-</table>
-</li>
-</ul>
-<p>The overall measurement cycle time is given by: </p><pre class="fragment">t_cycle = t_prx + t_wait + t_als_int
-</pre><p>For a given ALS integration time and a given proximity sensing time, the waiting time can be used to tune the overall measurement cycle time.</p>
-<h1><a class="anchor" id="autotoc_md1618"></a>
-Interrupts</h1>
-<p>With the <code>apds99xx_full</code> driver, interrupts can be used either to fetch ALS and proximity data or to detect when these data exceed defined thresholds.</p>
-<p>To use interrupts, the application must call the <a class="el" href="#ga49cf8d6e99d38576697d504ad4b37923" title="Configure the interrupts of the sensor.">apds99xx_int_config</a> function to specify an <a class="el" href="structapds99xx__int__config__t.html" title="Interrupt configuration.">apds99xx_int_config_t</a> interrupt configuration and an ISR with an optional argument that is invoked when an interrupt is raised. For details about configuring and enabling the interrupts, see <a class="el" href="structapds99xx__int__config__t.html" title="Interrupt configuration.">apds99xx_int_config_t</a>.</p>
-<dl class="section note"><dt>Note</dt><dd>The ISR of the application is executed in the interrupt context. Therefore, it must not be blocking or time consuming. In addition, it must not access the sensor directly via I2C. It should only indicate to the waiting application that an interrupt has occurred, which is then handled in the thread context.</dd></dl>
-<p>While an interrupt is being serviced, the application can use the <a class="el" href="#ga280bcc8343239cd8712f57b1f578afbb" title="Get the source of an interrupt.">apds99xx_int_source</a> function to query the type of interrupts triggered by the sensor. In addition, the function resets the interrupt signal.</p>
-<dl class="section note"><dt>Note</dt><dd>Since the interrupt signal is only reset by the function <a class="el" href="#ga280bcc8343239cd8712f57b1f578afbb" title="Get the source of an interrupt.">apds99xx_int_source</a>, this function <a class="el" href="#ga280bcc8343239cd8712f57b1f578afbb" title="Get the source of an interrupt.">apds99xx_int_source</a> must be executed by application, even if the type of the triggered interrupt is not of interest.</dd></dl>
-<p>For using interrupts, the GPIO to which the sensor's <b>INT</b> output pin is connected has to be defined by the application in configuration parameters. The GPIO is initialized by the driver as soon as the interrupt configuration with the function # apds99xx_int_config is specified.</p>
-<h1><a class="anchor" id="autotoc_md1619"></a>
-Illuminance in Lux and RGB count values</h1>
-<p>For all sensors, the clear channel and the RGB channels provide only count values. APDS9900, APDS9901, and APDS9930 have an IR photodiode in addition to the clear channel photodiode, which can be used to determine the illuminance in Lux with an algorithm described in their datasheets.</p>
-<p>Unfortunately, APDS9950 and APDS9960 do not have such an additional IR photodiode, and there is no document which describes an approach to calculate the illuminance from the RGB channels. Therefore, it is not possible to determine the illuminance for these sensors.</p>
-<dl class="section author"><dt>Author</dt><dd>Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span class="obfuscator">.nosp@m.</span>@sch<span class="obfuscator">.nosp@m.</span>orcht<span class="obfuscator">.nosp@m.</span>.net</a> </dd></dl>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -415,6 +302,119 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga616c0877c10bf45b4f9a293ae223d32f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts per step <code>cnts_p_step</code> <br /></td></tr>
 <tr class="separator:ga616c0877c10bf45b4f9a293ae223d32f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Device driver for Broadcom APDS99XX proximity and ambient light sensors </p>
+<p>The driver can be used with following Broadcom sensors: APDS9900, APDS9901, APDS9930, APDS9950, APDS9960</p>
+<p>The driver is divided into two parts:</p>
+<ul>
+<li><p class="startli"><b>Basic driver</b> <code>apds99xx</code></p>
+<p class="startli">The base driver <code>apds99xx</code> only supports a basic set of functions and has therefore a small size. The procedure for retrieving new data is polling. Ambient light and proximity sensing are supported.</p>
+</li>
+<li><p class="startli"><b>Fully functional driver</b> <code>apds99xx_full</code></p>
+<p class="startli">The fully functional driver <code>apds99xx_full</code> supports all the features supported by the base driver, as well as all other sensor features, including interrupts and their configuration. Data-ready interrupts can be used to retrieve data. In addition, threshold interrupts can be used and configured.</p>
+</li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd>In addition to specifying whether the base driver <code>apds99xx</code> or the fully featured driver <code>apds99xx_full</code> should be used, the application has to declare used sensor by means of various pseudomodules as follows: <pre class="fragment"> APDS9900:     USEMODULE=apds9900
+ APDS9901:     USEMODULE=apds9901
+ APDS9930:     USEMODULE=apds9930
+ APDS9950:     USEMODULE=apds9950
+ APDS9960:     USEMODULE=apds9960
+</pre></dd></dl>
+<p>This driver provides <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> capabilities.</p>
+<h1><a class="anchor" id="autotoc_md1617"></a>
+Measurement Cycle</h1>
+<p>APDS99XX sensor <b>measurement cycles</b> consists of the following <b>three steps</b> in the given order:</p>
+<ul>
+<li><p class="startli"><b>Proximity Sensing</b></p>
+<p class="startli">The sensor generates a number of IR LED pulses and measures the amount of the IR energy reflected by an object to determine its distance. The time required for proximity sensing (<code>t_prx</code> ) results from the time it takes to generate the IR LED pulses and to accumulate the reflected IR energy (<code>t_prx_acc</code>) as well as the time for the ADC conversion (<code>t_prx_cnv</code>).</p>
+<p class="startli">t_prx = t_prx_acc + t_prx_cnv</p>
+<p class="startli">The time to generate the IR LED pulses and accumulate reflected IR energy <code>t_prx_acc</code> is defined by the number of pulses (parameter <a class="el" href="structapds99xx__params__t.html#acacd3a0570fbdbbace726e00f87bd773" title="IR LED pulses for proximity sensing.">apds99xx_params_t::prx_pulses</a>) and the period of one pulse <code>t_prx_pulse</code>. </p><pre class="fragment">t_prx_acc = prx_pulses * t_prx_pulse
+</pre><p class="startli">The ADC conversion time <code>t_prx_cnv</code> and the period of one pulse <code>t_prx_pulse</code> depend on used sensor and are available as the defines <a class="el" href="#gaa3762beec647cda32361349791ce57e7" title="Proximity ADC conversion time t_prx_conv in us (tINIT + tCNVT for PPLEN=8 us)">APDS99XX_T_PRX_CNV</a> and <a class="el" href="#gaccc5305d30cde44861c6651d4191c460" title="LED IR pulse period t_pulse in us (for PPLEN=8 us)">APDS99XX_T_PRX_PULSE</a> for calculations by the application. </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Sensor<br  />
+   </th><th class="markdownTableHeadNone">t_prx_pulse<br  />
+APDS99XX_T_PRX_PULSE   </th><th class="markdownTableHeadNone">t_prx_cnv<br  />
+APDS99XX_T_PRX_CNV    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">APDS9900   </td><td class="markdownTableBodyNone">0.016 ms   </td><td class="markdownTableBodyNone">2.720 ms    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">APDS9901   </td><td class="markdownTableBodyNone">0.016 ms   </td><td class="markdownTableBodyNone">2.720 ms    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">APDS9930   </td><td class="markdownTableBodyNone">0.016 ms   </td><td class="markdownTableBodyNone">2.730 ms    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">APDS9950   </td><td class="markdownTableBodyNone">0.014 ms   </td><td class="markdownTableBodyNone">2.400 ms    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">APDS9960   </td><td class="markdownTableBodyNone">0.036 ms   </td><td class="markdownTableBodyNone">0.814 ms   </td></tr>
+</table>
+<p><br  />
+</p>
+<p class="startli">Proximity sensing uses the gain specified by parameter <a class="el" href="structapds99xx__params__t.html#aad606a9b89d1a83625843738eb9e5778" title="Gain used for proximity sensing.">apds99xx_params_t::prx_gain</a> and the LED current specified by parameter <a class="el" href="structapds99xx__params__t.html#adfa2cac890d4a619703f2caccfc183aa" title="IR LED current for proximity sensing (default APDS99XX_PRX_DRIVE_100)">apds99xx_params_t::prx_drive</a>.</p>
+</li>
+<li><p class="startli"><b>Wait</b></p>
+<p class="startli">The sensor waits for <code>t_wait</code> which is defined by the number of waiting steps <code>wait_steps</code> (<a class="el" href="structapds99xx__params__t.html#a5e72cf4feaba8ec3f30d20d36c4c2ad4" title="Waiting time in steps.">apds99xx_params_t::wait_steps</a>), the time per step <code>t_step</code>, and the wait long flag (<a class="el" href="structapds99xx__params__t.html#af3ec0e60fa2ce460c375919f3ab7015b" title="Long waiting time.">apds99xx_params_t::wait_long</a>); </p><pre class="fragment">t_wait = wait_steps * t_wait_step            (if wait_long is false)
+t_wait = wait_steps * t_wait_step * 12       (if wait_long is true)
+</pre><p class="startli">Parameter <a class="el" href="structapds99xx__params__t.html#a5e72cf4feaba8ec3f30d20d36c4c2ad4" title="Waiting time in steps.">apds99xx_params_t::wait_steps</a> can range from 0 to 256. If <a class="el" href="structapds99xx__params__t.html#a5e72cf4feaba8ec3f30d20d36c4c2ad4" title="Waiting time in steps.">apds99xx_params_t::wait_steps</a> is 0, waiting is disabled. The time per step <code>t_wait_step</code> depends on used sensor and is available as the define <a class="el" href="#ga834a9a427c383a2e6880d28eeef995b4" title="Wait time step size t_step in us.">APDS99XX_T_WAIT_STEP</a> for calculations by the application. </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Sensor<br  />
+   </th><th class="markdownTableHeadNone">t_als_step<br  />
+APDS99XX_T_WAIT_STEP   </th><th class="markdownTableHeadNone">t_wait (wait_long=0) <br  />
+   </th><th class="markdownTableHeadNone">t_wait (wait_long=1) <br  />
+    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">APDS9900   </td><td class="markdownTableBodyNone">2.72 ms   </td><td class="markdownTableBodyNone"><code>wait_steps</code> * 2.72 ms   </td><td class="markdownTableBodyNone"><code>wait_steps</code> * 12 * 2.72 ms    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">APDS9901   </td><td class="markdownTableBodyNone">2.72 ms   </td><td class="markdownTableBodyNone"><code>wait_steps</code> * 2.72 ms   </td><td class="markdownTableBodyNone"><code>wait_steps</code> * 12 * 2.72 ms    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">APDS9930   </td><td class="markdownTableBodyNone">2.73 ms   </td><td class="markdownTableBodyNone"><code>wait_steps</code> * 2.73 ms   </td><td class="markdownTableBodyNone"><code>wait_steps</code> * 12 * 2.73 ms    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">APDS9950   </td><td class="markdownTableBodyNone">2.40 ms   </td><td class="markdownTableBodyNone"><code>wait_steps</code> * 2.40 ms   </td><td class="markdownTableBodyNone"><code>wait_steps</code> * 12 * 2.40 ms    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">APDS9960   </td><td class="markdownTableBodyNone">2.78 ms   </td><td class="markdownTableBodyNone"><code>wait_steps</code> * 2.78 ms   </td><td class="markdownTableBodyNone"><code>wait_steps</code> * 12 * 2.78 ms   </td></tr>
+</table>
+<p><br  />
+</p>
+</li>
+<li><p class="startli"><b>Ambient Light Sensing (ALS)</b></p>
+<p class="startli">The sensor converts the amplified photodiode currents using integrating ADCs. The time required for ALS is determined by the ALS integration time <code>t_als_int</code>, which is defined as the number of integration steps <code>als_steps</code> (parameter <a class="el" href="structapds99xx__params__t.html#ae9f2720dd1fa118d2bdd757c043f7fd5" title="ALS integration time in steps.">apds99xx_params_t::als_steps</a>) and the time per step <code>t_als_step</code>. </p><pre class="fragment">t_als_int = als_steps * t_als_step
+</pre><p class="startli">Parameter <a class="el" href="structapds99xx__params__t.html#ae9f2720dd1fa118d2bdd757c043f7fd5" title="ALS integration time in steps.">apds99xx_params_t::als_steps</a> can range from 0 to 256. If <a class="el" href="structapds99xx__params__t.html#ae9f2720dd1fa118d2bdd757c043f7fd5" title="ALS integration time in steps.">apds99xx_params_t::als_steps</a> is 0, ALS is disabled. The time per step <code>t_als_step</code> depends on used sensor and is available as the define <a class="el" href="#ga22175e4925362bae95d45ce26cb73202" title="ALS integration time step size t_step in.">APDS99XX_T_ALS_STEP</a> for calculations by the application.</p>
+<p class="startli">The ALS integration time in steps <code>als_steps</code> (parameter <a class="el" href="structapds99xx__params__t.html#ae9f2720dd1fa118d2bdd757c043f7fd5" title="ALS integration time in steps.">apds99xx_params_t::als_steps</a>) affects the resolution and the full scale range <code>cnt_als_max</code> of ALS data. </p><pre class="fragment">cnt_als_max = als_steps * cnts_p_step
+</pre><p class="startli">The counts per step <code>cnts_p_step</code> depend on used sensor and is available as defines <a class="el" href="#ga616c0877c10bf45b4f9a293ae223d32f" title="Counts per step cnts_p_step">APDS99XX_CNTS_P_STEP</a> for calculations by the application</p>
+<p class="startli">ALS uses the gain specified by parameter <a class="el" href="structapds99xx__params__t.html#a587f685eb3c7ad170181fdacda1411f3" title="Gain used for ALS.">apds99xx_params_t::als_gain</a>. </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Sensor<br  />
+   </th><th class="markdownTableHeadNone">t_als_step<br  />
+APDS99XX_T_ALS_STEP   </th><th class="markdownTableHeadNone">cnts_p_step<br  />
+APDS99XX_CNTS_P_STEP   </th><th class="markdownTableHeadNone">t_als_int<br  />
+   </th><th class="markdownTableHeadNone">cnt_als_max<br  />
+    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">APDS9900   </td><td class="markdownTableBodyNone">2.72 ms   </td><td class="markdownTableBodyNone">1023   </td><td class="markdownTableBodyNone"><code>als_steps</code> * 2.72 ms   </td><td class="markdownTableBodyNone"><code>als_steps</code> * 1023    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">APDS9901   </td><td class="markdownTableBodyNone">2.72 ms   </td><td class="markdownTableBodyNone">1023   </td><td class="markdownTableBodyNone"><code>als_steps</code> * 2.72 ms   </td><td class="markdownTableBodyNone"><code>als_steps</code> * 1023    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">APDS9930   </td><td class="markdownTableBodyNone">2.73 ms   </td><td class="markdownTableBodyNone">1023   </td><td class="markdownTableBodyNone"><code>als_steps</code> * 2.73 ms   </td><td class="markdownTableBodyNone"><code>als_steps</code> * 1023    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">APDS9950   </td><td class="markdownTableBodyNone">2.40 ms   </td><td class="markdownTableBodyNone">1024   </td><td class="markdownTableBodyNone"><code>als_steps</code> * 2.40 ms   </td><td class="markdownTableBodyNone"><code>als_steps</code> * 1024    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">APDS9960   </td><td class="markdownTableBodyNone">2.78 ms   </td><td class="markdownTableBodyNone">1025   </td><td class="markdownTableBodyNone"><code>als_steps</code> * 2.78 ms   </td><td class="markdownTableBodyNone"><code>als_steps</code> * 1025   </td></tr>
+</table>
+</li>
+</ul>
+<p>The overall measurement cycle time is given by: </p><pre class="fragment">t_cycle = t_prx + t_wait + t_als_int
+</pre><p>For a given ALS integration time and a given proximity sensing time, the waiting time can be used to tune the overall measurement cycle time.</p>
+<h1><a class="anchor" id="autotoc_md1618"></a>
+Interrupts</h1>
+<p>With the <code>apds99xx_full</code> driver, interrupts can be used either to fetch ALS and proximity data or to detect when these data exceed defined thresholds.</p>
+<p>To use interrupts, the application must call the <a class="el" href="#ga49cf8d6e99d38576697d504ad4b37923" title="Configure the interrupts of the sensor.">apds99xx_int_config</a> function to specify an <a class="el" href="structapds99xx__int__config__t.html" title="Interrupt configuration.">apds99xx_int_config_t</a> interrupt configuration and an ISR with an optional argument that is invoked when an interrupt is raised. For details about configuring and enabling the interrupts, see <a class="el" href="structapds99xx__int__config__t.html" title="Interrupt configuration.">apds99xx_int_config_t</a>.</p>
+<dl class="section note"><dt>Note</dt><dd>The ISR of the application is executed in the interrupt context. Therefore, it must not be blocking or time consuming. In addition, it must not access the sensor directly via I2C. It should only indicate to the waiting application that an interrupt has occurred, which is then handled in the thread context.</dd></dl>
+<p>While an interrupt is being serviced, the application can use the <a class="el" href="#ga280bcc8343239cd8712f57b1f578afbb" title="Get the source of an interrupt.">apds99xx_int_source</a> function to query the type of interrupts triggered by the sensor. In addition, the function resets the interrupt signal.</p>
+<dl class="section note"><dt>Note</dt><dd>Since the interrupt signal is only reset by the function <a class="el" href="#ga280bcc8343239cd8712f57b1f578afbb" title="Get the source of an interrupt.">apds99xx_int_source</a>, this function <a class="el" href="#ga280bcc8343239cd8712f57b1f578afbb" title="Get the source of an interrupt.">apds99xx_int_source</a> must be executed by application, even if the type of the triggered interrupt is not of interest.</dd></dl>
+<p>For using interrupts, the GPIO to which the sensor's <b>INT</b> output pin is connected has to be defined by the application in configuration parameters. The GPIO is initialized by the driver as soon as the interrupt configuration with the function # apds99xx_int_config is specified.</p>
+<h1><a class="anchor" id="autotoc_md1619"></a>
+Illuminance in Lux and RGB count values</h1>
+<p>For all sensors, the clear channel and the RGB channels provide only count values. APDS9900, APDS9901, and APDS9930 have an IR photodiode in addition to the clear channel photodiode, which can be used to determine the illuminance in Lux with an algorithm described in their datasheets.</p>
+<p>Unfortunately, APDS9950 and APDS9960 do not have such an additional IR photodiode, and there is no document which describes an approach to calculate the illuminance from the RGB channels. Therefore, it is not possible to determine the illuminance for these sensors.</p>
+<dl class="section author"><dt>Author</dt><dd>Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span class="obfuscator">.nosp@m.</span>@sch<span class="obfuscator">.nosp@m.</span>orcht<span class="obfuscator">.nosp@m.</span>.net</a> </dd></dl>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="gaf267b79e5997a3ecb7f812bf70c59f1f" name="gaf267b79e5997a3ecb7f812bf70c59f1f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaf267b79e5997a3ecb7f812bf70c59f1f">&#9670;&#160;</a></span>apds99xx_als_gain_t</h2>
@@ -959,7 +959,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

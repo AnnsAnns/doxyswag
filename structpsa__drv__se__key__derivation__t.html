@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -149,11 +149,7 @@ $(function(){initNavTree('structpsa__drv__se__key__derivation__t.html',''); init
 
 <p>A struct containing all of the function pointers needed to for secure element key derivation and agreement.  
  <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A struct containing all of the function pointers needed to for secure element key derivation and agreement. </p>
-<p>PSA Crypto API implementations should populate instances of the table as appropriate upon startup.</p>
-<p>If one of the functions is not implemented, it should be set to <code>NULL</code>. </p>
-</div>
+
 <p><code>#include &lt;psa_crypto_se_driver.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -179,7 +175,11 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><b>context_size</b></t
 <tr class="memdesc:a6bb13990ff562b80ae3f53dba12f187c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that perforsm a final key derivation or agreement and exports the key. <br /></td></tr>
 <tr class="separator:a6bb13990ff562b80ae3f53dba12f187c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A struct containing all of the function pointers needed to for secure element key derivation and agreement. </p>
+<p>PSA Crypto API implementations should populate instances of the table as appropriate upon startup.</p>
+<p>If one of the functions is not implemented, it should be set to <code>NULL</code>. </p>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>sys/psa_crypto/include/<a class="el" href="psa__crypto__se__driver_8h.html">psa_crypto_se_driver.h</a></li>
 </ul>
 </div><!-- contents -->
@@ -190,7 +190,7 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><b>context_size</b></t
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structpsa__drv__se__key__derivation__t.html">psa_drv_se_key_derivation_t</a></li>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:03 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:32 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

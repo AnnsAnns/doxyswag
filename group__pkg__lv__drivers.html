@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -147,21 +147,6 @@ $(function(){initNavTree('group__pkg__lv__drivers.html',''); initResizable(true)
 
 <p>Display controller and touchpad driver to can be directly used with LVGL.  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Display controller and touchpad driver to can be directly used with LVGL. </p>
-<dl class="section note"><dt>Note</dt><dd>This package needs the 32bit version of SDL2</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a href="https://github.com/lvgl/lv_drivers">https://github.com/lvgl/lv_drivers</a></dd></dl>
-<h2><a class="anchor" id="autotoc_md1810"></a>
-Configuration options</h2>
-<p>To change the size of the screen <code>SDL_HOR_RES</code> and <code>SDL_VER_RES</code> can be changed via <code>CFLAGS</code> or in <code>lv_drv_conf.h</code>.</p>
-<p>For small screen a zoom factor can be applied through <code>SDL_ZOOM</code>, e.g: <code>SDL_ZOOM=2</code> will apply a x2 zoom to the display.</p>
-<h3><a class="anchor" id="autotoc_md1811"></a>
-SDL Requirements</h3>
-<p>To run lvgl inside a simulator (native), SDL2 is required. Install instructions can be found at <a href="https://docs.lvgl.io/latest/en/html/get-started/pc-simulator.html#install-sdl-2">https://docs.lvgl.io/latest/en/html/get-started/pc-simulator.html#install-sdl-2</a>, note that the 32bit version is needed.</p>
-<p>On debian/ubuntu this could be as simple as installing the <code>libsdl2-dev:i386</code> package.</p>
-<p>Using SDL2 requires more stack so in case you are using it add</p>
-<div class="fragment"><div class="line">CFLAGS += <span class="stringliteral">&#39;-DTHREAD_STACKSIZE_MAIN=48*1024&#39;</span></div>
-</div><!-- fragment --><p>to your makefile. 48kB is enough for the test, other uses may need more or may need this to be applied to other threads using <code>THREAD_STACKSIZE_DEFAULT</code> </p>
 <table class="memberdecls">
 <tr class="memitem:ga44e36145e97d5121b38c95cb9b87059f" id="r_ga44e36145e97d5121b38c95cb9b87059f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga44e36145e97d5121b38c95cb9b87059f">USE_SDL</a>&#160;&#160;&#160;<a class="el" href="modules_8h.html#a185d252af6cac906c5bdf5a7171b85f4">IS_USED</a>(MODULE_LV_DRIVERS_SDL)</td></tr>
 <tr class="memdesc:ga44e36145e97d5121b38c95cb9b87059f"><td class="mdescLeft">&#160;</td><td class="mdescRight">LVGL Drivers SDL2 configuration headers.  <br /></td></tr>
@@ -194,6 +179,21 @@ SDL Requirements</h3>
 <tr class="memdesc:gae87074c94d91ab102022323b387cd26a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open two windows to test multi display support. <br /></td></tr>
 <tr class="separator:gae87074c94d91ab102022323b387cd26a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Display controller and touchpad driver to can be directly used with LVGL. </p>
+<dl class="section note"><dt>Note</dt><dd>This package needs the 32bit version of SDL2</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a href="https://github.com/lvgl/lv_drivers">https://github.com/lvgl/lv_drivers</a></dd></dl>
+<h2><a class="anchor" id="autotoc_md1810"></a>
+Configuration options</h2>
+<p>To change the size of the screen <code>SDL_HOR_RES</code> and <code>SDL_VER_RES</code> can be changed via <code>CFLAGS</code> or in <code>lv_drv_conf.h</code>.</p>
+<p>For small screen a zoom factor can be applied through <code>SDL_ZOOM</code>, e.g: <code>SDL_ZOOM=2</code> will apply a x2 zoom to the display.</p>
+<h3><a class="anchor" id="autotoc_md1811"></a>
+SDL Requirements</h3>
+<p>To run lvgl inside a simulator (native), SDL2 is required. Install instructions can be found at <a href="https://docs.lvgl.io/latest/en/html/get-started/pc-simulator.html#install-sdl-2">https://docs.lvgl.io/latest/en/html/get-started/pc-simulator.html#install-sdl-2</a>, note that the 32bit version is needed.</p>
+<p>On debian/ubuntu this could be as simple as installing the <code>libsdl2-dev:i386</code> package.</p>
+<p>Using SDL2 requires more stack so in case you are using it add</p>
+<div class="fragment"><div class="line">CFLAGS += <span class="stringliteral">&#39;-DTHREAD_STACKSIZE_MAIN=48*1024&#39;</span></div>
+</div><!-- fragment --><p>to your makefile. 48kB is enough for the test, other uses may need more or may need this to be applied to other threads using <code>THREAD_STACKSIZE_DEFAULT</code> </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="gafd7ac89e2126ef74ad931910e7cbb6c0" name="gafd7ac89e2126ef74ad931910e7cbb6c0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gafd7ac89e2126ef74ad931910e7cbb6c0">&#9670;&#160;</a></span>SDL_DOUBLE_BUFFERED</h2>
@@ -238,7 +238,7 @@ SDL Requirements</h3>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

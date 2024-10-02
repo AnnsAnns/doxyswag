@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -151,66 +151,6 @@ $(function(){initNavTree('group__drivers__periph__i2c.html',''); initResizable(t
 
 <p>Low-level I2C peripheral driver  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Low-level I2C peripheral driver </p>
-<p>This interface provides a simple abstraction to use the MCUs I2C peripherals. It provides support for 7-bit and 10-bit addressing and can be used for different kind of register addressing schemes.</p>
-<h1><a class="anchor" id="sec_i2c_usage"></a>
-Usage</h1>
-<p>Example for reading a 8-bit register on a device, using a 10-bit device address and 8-bit register addresses and using a RESTART condition (CAUTION: this example does not check any return values...):</p>
-<div class="fragment"><div class="line"><span class="comment">// initialize the bus (this is normally done during boot time)</span></div>
-<div class="line"><a class="code hl_function" href="#ga2ce7cc916258e7c3fa0b60cba2e4895f">i2c_init</a>(dev);</div>
-<div class="line">...</div>
-<div class="line"><span class="comment">// before accessing the bus, we need to acquire it</span></div>
-<div class="line">i2c_acquire(dev);</div>
-<div class="line"><span class="comment">// next we write the register address, but create no STOP condition when done</span></div>
-<div class="line"><a class="code hl_function" href="#ga062b562b2d2cd123199a2890968ba272">i2c_write_byte</a>(dev, device_addr, reg_addr, (<a class="code hl_enumvalue" href="#gga9ed58f160035134076b56c8907cf0c6bad24d4523893d22e101e27bfc546234c3">I2C_NOSTOP</a> | <a class="code hl_enumvalue" href="#gga9ed58f160035134076b56c8907cf0c6ba1d95c3f463d6bbe98c1a8fbcd5d1e1f2">I2C_ADDR10</a>));</div>
-<div class="line"><span class="comment">// and now we read the register value</span></div>
-<div class="line"><a class="code hl_function" href="#ga81fed3b6aec0ba0956ba6a1efbc74774">i2c_read_byte</a>(dev, device_addr, &amp;reg_value, <a class="code hl_enumvalue" href="#gga9ed58f160035134076b56c8907cf0c6ba1d95c3f463d6bbe98c1a8fbcd5d1e1f2">I2C_ADDR10</a>);</div>
-<div class="line"><span class="comment">// finally we have to release the bus</span></div>
-<div class="line"><a class="code hl_function" href="#ga824e1b86105462b0df022bcf3ea0634b">i2c_release</a>(dev);</div>
-<div class="ttc" id="agroup__drivers__periph__i2c_html_ga062b562b2d2cd123199a2890968ba272"><div class="ttname"><a href="#ga062b562b2d2cd123199a2890968ba272">i2c_write_byte</a></div><div class="ttdeci">int i2c_write_byte(i2c_t dev, uint16_t addr, uint8_t data, uint8_t flags)</div><div class="ttdoc">Convenience function for writing a single byte onto the bus.</div></div>
-<div class="ttc" id="agroup__drivers__periph__i2c_html_ga2ce7cc916258e7c3fa0b60cba2e4895f"><div class="ttname"><a href="#ga2ce7cc916258e7c3fa0b60cba2e4895f">i2c_init</a></div><div class="ttdeci">void i2c_init(i2c_t dev)</div><div class="ttdoc">Initialize the given I2C bus.</div></div>
-<div class="ttc" id="agroup__drivers__periph__i2c_html_ga81fed3b6aec0ba0956ba6a1efbc74774"><div class="ttname"><a href="#ga81fed3b6aec0ba0956ba6a1efbc74774">i2c_read_byte</a></div><div class="ttdeci">int i2c_read_byte(i2c_t dev, uint16_t addr, void *data, uint8_t flags)</div><div class="ttdoc">Convenience function for reading one byte from a device.</div></div>
-<div class="ttc" id="agroup__drivers__periph__i2c_html_ga824e1b86105462b0df022bcf3ea0634b"><div class="ttname"><a href="#ga824e1b86105462b0df022bcf3ea0634b">i2c_release</a></div><div class="ttdeci">void i2c_release(i2c_t dev)</div><div class="ttdoc">Release the given I2C device to be used by others.</div></div>
-<div class="ttc" id="agroup__drivers__periph__i2c_html_gga9ed58f160035134076b56c8907cf0c6ba1d95c3f463d6bbe98c1a8fbcd5d1e1f2"><div class="ttname"><a href="#gga9ed58f160035134076b56c8907cf0c6ba1d95c3f463d6bbe98c1a8fbcd5d1e1f2">I2C_ADDR10</a></div><div class="ttdeci">@ I2C_ADDR10</div><div class="ttdoc">use 10-bit device addressing</div><div class="ttdef"><b>Definition</b> i2c.h:191</div></div>
-<div class="ttc" id="agroup__drivers__periph__i2c_html_gga9ed58f160035134076b56c8907cf0c6bad24d4523893d22e101e27bfc546234c3"><div class="ttname"><a href="#gga9ed58f160035134076b56c8907cf0c6bad24d4523893d22e101e27bfc546234c3">I2C_NOSTOP</a></div><div class="ttdeci">@ I2C_NOSTOP</div><div class="ttdoc">do not issue a STOP condition after transfer</div><div class="ttdef"><b>Definition</b> i2c.h:193</div></div>
-</div><!-- fragment --><p>Example for writing a 16-bit register with 16-bit register addressing and 7-bit device addressing:</p>
-<div class="fragment"><div class="line"><span class="comment">// initialize the bus</span></div>
-<div class="line"><a class="code hl_function" href="#ga2ce7cc916258e7c3fa0b60cba2e4895f">i2c_init</a>(dev);</div>
-<div class="line">...</div>
-<div class="line"><span class="comment">// first, acquire the shared bus again</span></div>
-<div class="line">i2c_acquire(dev);</div>
-<div class="line"><span class="comment">// write the 16-bit register address to the device and prevent STOP condition</span></div>
-<div class="line"><a class="code hl_function" href="#ga062b562b2d2cd123199a2890968ba272">i2c_write_byte</a>(dev, device_addr, reg_addr, <a class="code hl_enumvalue" href="#gga9ed58f160035134076b56c8907cf0c6bad24d4523893d22e101e27bfc546234c3">I2C_NOSTOP</a>);</div>
-<div class="line"><span class="comment">// and write the data after a REPEATED START</span></div>
-<div class="line"><a class="code hl_function" href="#ga2d4c26cb8d79d7a46764fb832e93ff0b">i2c_write_bytes</a>(dev, device_addr, reg_data, 2, 0);</div>
-<div class="line"><span class="comment">// and finally free the bus again</span></div>
-<div class="line"><a class="code hl_function" href="#ga824e1b86105462b0df022bcf3ea0634b">i2c_release</a>(dev);</div>
-<div class="ttc" id="agroup__drivers__periph__i2c_html_ga2d4c26cb8d79d7a46764fb832e93ff0b"><div class="ttname"><a href="#ga2d4c26cb8d79d7a46764fb832e93ff0b">i2c_write_bytes</a></div><div class="ttdeci">int i2c_write_bytes(i2c_t dev, uint16_t addr, const void *data, size_t len, uint8_t flags)</div><div class="ttdoc">Convenience function for writing several bytes onto the bus.</div></div>
-</div><!-- fragment --><h1><a class="anchor" id="sec_i2c_pull"></a>
-Pull Resistors</h1>
-<p>The I2C signal lines SDA/SCL need external pull-up resistors which connect the lines to the positive voltage supply Vcc. The I2C driver implementation should enable the pin's internal pull-up resistors. There are however some use cases for which the internal pull resistors are not strong enough and the I2C bus will show faulty behavior. This can for example happen when connecting a logic analyzer which will raise the capacitance of the bus. In this case you should make sure you connect external pull-up resistors to both I2C bus lines.</p>
-<p>The minimum and maximum resistances are computed by:    </p><p class="formulaDsp">
-<img class="formulaDsp" alt="\begin{eqnarray*}
-R_{min} &amp;=&amp; \frac{V_{DD} - V_{OL(max)}} {I_{OL}}\\
-R_{max} &amp;=&amp; \frac{t_r} {(0.8473 \cdot C_b)}
-\end{eqnarray*}" src="form_16.png"/>
-</p>
-<p><br  />
- where:<br  />
- <img class="formulaInl" alt="$ V_{DD} =$" src="form_17.png"/> Supply voltage, <img class="formulaInl" alt="$ V_{OL(max)} =$" src="form_18.png"/> Low level voltage, <img class="formulaInl" alt="$ I_{OL} =$" src="form_19.png"/> Low level output current, <img class="formulaInl" alt="$ t_r =$" src="form_20.png"/> Signal rise time, <img class="formulaInl" alt="$ C_b =$" src="form_21.png"/> Bus capacitance <br  />
- <br  />
-The pull-up resistors depend on the bus speed. Some typical values are:<br  />
- Normal mode: 10k&Omega;<br  />
- Fast mode: 2k&Omega;<br  />
- Fast plus mode: 2k&Omega;</p>
-<p>For more details refer to section 7.1 in:<br  />
- <a href="http://www.nxp.com/documents/user_manual/UM10204.pdf">http://www.nxp.com/documents/user_manual/UM10204.pdf</a></p>
-<h1><a class="anchor" id="sec_i2c_pm"></a>
-(Low-) power implications</h1>
-<p>The I2C interface realizes a transaction-based access scheme to the bus. From a power management perspective, we can leverage this by only powering on the I2C peripheral while it is actually used, that is inside an <a class="el" href="#gabef11c06afd161e332df53871257169c" title="Get mutually exclusive access to the given I2C bus.">i2c_acquire()</a> - <a class="el" href="#ga824e1b86105462b0df022bcf3ea0634b" title="Release the given I2C device to be used by others.">i2c_release()</a> block.</p>
-<p>After initialization, the I2C peripheral <b>should</b> be powered off (e.g. through peripheral clock gating). It should only be powered on once a transaction on the I2C bus starts, namely in the <a class="el" href="#gabef11c06afd161e332df53871257169c" title="Get mutually exclusive access to the given I2C bus.">i2c_acquire()</a> function. Once the transaction is finished, the corresponding I2C peripheral <b>should</b> be powered off again in the <a class="el" href="#ga824e1b86105462b0df022bcf3ea0634b" title="Release the given I2C device to be used by others.">i2c_release()</a> function.</p>
-<p>If the implementation puts the active thread to sleep while a transfer is in progress (e.g. when using DMA), the implementation might need to block certain power states. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -305,6 +245,66 @@ typedef uint_fast8_t&#160;</td><td class="memItemRight" valign="bottom"><b>i2c_t
 <tr class="memdesc:gad224a6eaa456b1a9682b1ca17c4aacc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default I2C undefined value. <br /></td></tr>
 <tr class="separator:gad224a6eaa456b1a9682b1ca17c4aacc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Low-level I2C peripheral driver </p>
+<p>This interface provides a simple abstraction to use the MCUs I2C peripherals. It provides support for 7-bit and 10-bit addressing and can be used for different kind of register addressing schemes.</p>
+<h1><a class="anchor" id="sec_i2c_usage"></a>
+Usage</h1>
+<p>Example for reading a 8-bit register on a device, using a 10-bit device address and 8-bit register addresses and using a RESTART condition (CAUTION: this example does not check any return values...):</p>
+<div class="fragment"><div class="line"><span class="comment">// initialize the bus (this is normally done during boot time)</span></div>
+<div class="line"><a class="code hl_function" href="#ga2ce7cc916258e7c3fa0b60cba2e4895f">i2c_init</a>(dev);</div>
+<div class="line">...</div>
+<div class="line"><span class="comment">// before accessing the bus, we need to acquire it</span></div>
+<div class="line">i2c_acquire(dev);</div>
+<div class="line"><span class="comment">// next we write the register address, but create no STOP condition when done</span></div>
+<div class="line"><a class="code hl_function" href="#ga062b562b2d2cd123199a2890968ba272">i2c_write_byte</a>(dev, device_addr, reg_addr, (<a class="code hl_enumvalue" href="#gga9ed58f160035134076b56c8907cf0c6bad24d4523893d22e101e27bfc546234c3">I2C_NOSTOP</a> | <a class="code hl_enumvalue" href="#gga9ed58f160035134076b56c8907cf0c6ba1d95c3f463d6bbe98c1a8fbcd5d1e1f2">I2C_ADDR10</a>));</div>
+<div class="line"><span class="comment">// and now we read the register value</span></div>
+<div class="line"><a class="code hl_function" href="#ga81fed3b6aec0ba0956ba6a1efbc74774">i2c_read_byte</a>(dev, device_addr, &amp;reg_value, <a class="code hl_enumvalue" href="#gga9ed58f160035134076b56c8907cf0c6ba1d95c3f463d6bbe98c1a8fbcd5d1e1f2">I2C_ADDR10</a>);</div>
+<div class="line"><span class="comment">// finally we have to release the bus</span></div>
+<div class="line"><a class="code hl_function" href="#ga824e1b86105462b0df022bcf3ea0634b">i2c_release</a>(dev);</div>
+<div class="ttc" id="agroup__drivers__periph__i2c_html_ga062b562b2d2cd123199a2890968ba272"><div class="ttname"><a href="#ga062b562b2d2cd123199a2890968ba272">i2c_write_byte</a></div><div class="ttdeci">int i2c_write_byte(i2c_t dev, uint16_t addr, uint8_t data, uint8_t flags)</div><div class="ttdoc">Convenience function for writing a single byte onto the bus.</div></div>
+<div class="ttc" id="agroup__drivers__periph__i2c_html_ga2ce7cc916258e7c3fa0b60cba2e4895f"><div class="ttname"><a href="#ga2ce7cc916258e7c3fa0b60cba2e4895f">i2c_init</a></div><div class="ttdeci">void i2c_init(i2c_t dev)</div><div class="ttdoc">Initialize the given I2C bus.</div></div>
+<div class="ttc" id="agroup__drivers__periph__i2c_html_ga81fed3b6aec0ba0956ba6a1efbc74774"><div class="ttname"><a href="#ga81fed3b6aec0ba0956ba6a1efbc74774">i2c_read_byte</a></div><div class="ttdeci">int i2c_read_byte(i2c_t dev, uint16_t addr, void *data, uint8_t flags)</div><div class="ttdoc">Convenience function for reading one byte from a device.</div></div>
+<div class="ttc" id="agroup__drivers__periph__i2c_html_ga824e1b86105462b0df022bcf3ea0634b"><div class="ttname"><a href="#ga824e1b86105462b0df022bcf3ea0634b">i2c_release</a></div><div class="ttdeci">void i2c_release(i2c_t dev)</div><div class="ttdoc">Release the given I2C device to be used by others.</div></div>
+<div class="ttc" id="agroup__drivers__periph__i2c_html_gga9ed58f160035134076b56c8907cf0c6ba1d95c3f463d6bbe98c1a8fbcd5d1e1f2"><div class="ttname"><a href="#gga9ed58f160035134076b56c8907cf0c6ba1d95c3f463d6bbe98c1a8fbcd5d1e1f2">I2C_ADDR10</a></div><div class="ttdeci">@ I2C_ADDR10</div><div class="ttdoc">use 10-bit device addressing</div><div class="ttdef"><b>Definition</b> i2c.h:191</div></div>
+<div class="ttc" id="agroup__drivers__periph__i2c_html_gga9ed58f160035134076b56c8907cf0c6bad24d4523893d22e101e27bfc546234c3"><div class="ttname"><a href="#gga9ed58f160035134076b56c8907cf0c6bad24d4523893d22e101e27bfc546234c3">I2C_NOSTOP</a></div><div class="ttdeci">@ I2C_NOSTOP</div><div class="ttdoc">do not issue a STOP condition after transfer</div><div class="ttdef"><b>Definition</b> i2c.h:193</div></div>
+</div><!-- fragment --><p>Example for writing a 16-bit register with 16-bit register addressing and 7-bit device addressing:</p>
+<div class="fragment"><div class="line"><span class="comment">// initialize the bus</span></div>
+<div class="line"><a class="code hl_function" href="#ga2ce7cc916258e7c3fa0b60cba2e4895f">i2c_init</a>(dev);</div>
+<div class="line">...</div>
+<div class="line"><span class="comment">// first, acquire the shared bus again</span></div>
+<div class="line">i2c_acquire(dev);</div>
+<div class="line"><span class="comment">// write the 16-bit register address to the device and prevent STOP condition</span></div>
+<div class="line"><a class="code hl_function" href="#ga062b562b2d2cd123199a2890968ba272">i2c_write_byte</a>(dev, device_addr, reg_addr, <a class="code hl_enumvalue" href="#gga9ed58f160035134076b56c8907cf0c6bad24d4523893d22e101e27bfc546234c3">I2C_NOSTOP</a>);</div>
+<div class="line"><span class="comment">// and write the data after a REPEATED START</span></div>
+<div class="line"><a class="code hl_function" href="#ga2d4c26cb8d79d7a46764fb832e93ff0b">i2c_write_bytes</a>(dev, device_addr, reg_data, 2, 0);</div>
+<div class="line"><span class="comment">// and finally free the bus again</span></div>
+<div class="line"><a class="code hl_function" href="#ga824e1b86105462b0df022bcf3ea0634b">i2c_release</a>(dev);</div>
+<div class="ttc" id="agroup__drivers__periph__i2c_html_ga2d4c26cb8d79d7a46764fb832e93ff0b"><div class="ttname"><a href="#ga2d4c26cb8d79d7a46764fb832e93ff0b">i2c_write_bytes</a></div><div class="ttdeci">int i2c_write_bytes(i2c_t dev, uint16_t addr, const void *data, size_t len, uint8_t flags)</div><div class="ttdoc">Convenience function for writing several bytes onto the bus.</div></div>
+</div><!-- fragment --><h1><a class="anchor" id="sec_i2c_pull"></a>
+Pull Resistors</h1>
+<p>The I2C signal lines SDA/SCL need external pull-up resistors which connect the lines to the positive voltage supply Vcc. The I2C driver implementation should enable the pin's internal pull-up resistors. There are however some use cases for which the internal pull resistors are not strong enough and the I2C bus will show faulty behavior. This can for example happen when connecting a logic analyzer which will raise the capacitance of the bus. In this case you should make sure you connect external pull-up resistors to both I2C bus lines.</p>
+<p>The minimum and maximum resistances are computed by:    </p><p class="formulaDsp">
+<img class="formulaDsp" alt="\begin{eqnarray*}
+R_{min} &amp;=&amp; \frac{V_{DD} - V_{OL(max)}} {I_{OL}}\\
+R_{max} &amp;=&amp; \frac{t_r} {(0.8473 \cdot C_b)}
+\end{eqnarray*}" src="form_16.png"/>
+</p>
+<p><br  />
+ where:<br  />
+ <img class="formulaInl" alt="$ V_{DD} =$" src="form_17.png"/> Supply voltage, <img class="formulaInl" alt="$ V_{OL(max)} =$" src="form_18.png"/> Low level voltage, <img class="formulaInl" alt="$ I_{OL} =$" src="form_19.png"/> Low level output current, <img class="formulaInl" alt="$ t_r =$" src="form_20.png"/> Signal rise time, <img class="formulaInl" alt="$ C_b =$" src="form_21.png"/> Bus capacitance <br  />
+ <br  />
+The pull-up resistors depend on the bus speed. Some typical values are:<br  />
+ Normal mode: 10k&Omega;<br  />
+ Fast mode: 2k&Omega;<br  />
+ Fast plus mode: 2k&Omega;</p>
+<p>For more details refer to section 7.1 in:<br  />
+ <a href="http://www.nxp.com/documents/user_manual/UM10204.pdf">http://www.nxp.com/documents/user_manual/UM10204.pdf</a></p>
+<h1><a class="anchor" id="sec_i2c_pm"></a>
+(Low-) power implications</h1>
+<p>The I2C interface realizes a transaction-based access scheme to the bus. From a power management perspective, we can leverage this by only powering on the I2C peripheral while it is actually used, that is inside an <a class="el" href="#gabef11c06afd161e332df53871257169c" title="Get mutually exclusive access to the given I2C bus.">i2c_acquire()</a> - <a class="el" href="#ga824e1b86105462b0df022bcf3ea0634b" title="Release the given I2C device to be used by others.">i2c_release()</a> block.</p>
+<p>After initialization, the I2C peripheral <b>should</b> be powered off (e.g. through peripheral clock gating). It should only be powered on once a transaction on the I2C bus starts, namely in the <a class="el" href="#gabef11c06afd161e332df53871257169c" title="Get mutually exclusive access to the given I2C bus.">i2c_acquire()</a> function. Once the transaction is finished, the corresponding I2C peripheral <b>should</b> be powered off again in the <a class="el" href="#ga824e1b86105462b0df022bcf3ea0634b" title="Release the given I2C device to be used by others.">i2c_release()</a> function.</p>
+<p>If the implementation puts the active thread to sleep while a transfer is in progress (e.g. when using DMA), the implementation might need to block certain power states. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga45fc6df6bf09a50095f509cadc0083a8" name="ga45fc6df6bf09a50095f509cadc0083a8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga45fc6df6bf09a50095f509cadc0083a8">&#9670;&#160;</a></span>I2C_10BIT_MAGIC</h2>
@@ -1098,7 +1098,7 @@ typedef uint_fast8_t&#160;</td><td class="memItemRight" valign="bottom"><b>i2c_t
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

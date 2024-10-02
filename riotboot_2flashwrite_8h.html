@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -151,29 +151,7 @@ $(function(){initNavTree('riotboot_2flashwrite_8h.html',''); initResizable(true)
 
 <p>riotboot flash writing module  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>riotboot flash writing module </p>
-<p>This module provides an API to reliably write a firmware image to flash.</p>
-<p>The API is similar to stream hashing functions:</p>
-<ol type="1">
-<li>initialize state structure using <a class="el" href="#a43c19f2a98b8671fb9785aad3ba63eea" title="Initialize firmware update (riotboot version)">riotboot_flashwrite_init()</a></li>
-<li>put some data using <a class="el" href="#af8f53f0bca4123772b1221bed52abcca" title="Feed bytes into the firmware writer.">riotboot_flashwrite_putbytes()</a></li>
-<li>repeat 2. until all data has been received</li>
-<li>finish update using <a class="el" href="#af394e6c45f029eaa246c756383be8378" title="Finish a firmware update (riotboot version)">riotboot_flashwrite_finish()</a></li>
-</ol>
-<p>The module will <em>not</em> automatically reboot after an image has been successfully written.</p>
-<p>Under the hood, the module tries to abstract page sizes for writing the image to flash. Verification of the image is left to the caller. If the data is not correctly written, riotboot_put_bytes() will return -1.</p>
-<p>The module makes sure that at no point in time an invalid image is bootable. The algorithm for that makes use of the bootloader verifying checksum and works as follows:</p>
-<ol type="1">
-<li>erase first block (making its checksum invalid)</li>
-<li>write image starting at second block</li>
-<li>write first block</li>
-</ol>
-<p>When using raw mode is used with this module, the need to buffer a full flashpage page is removed, instead it must buffer two times the FLASHPAGE_WRITE_BLOCK_SIZE. One is used to buffer the current write block, the other buffers the first chunk (offset zero, page zero). This first chunk is written when finalizing the flash operation. The minimal size for RIOTBOOT_FLASHPAGE_BUFFER_SIZE is 4, at least the riotboot magic number must fit into this and FLASHPAGE_SIZE must be a multiple of RIOTBOOT_FLASHPAGE_BUFFER_SIZE</p>
-<dl class="section author"><dt>Author</dt><dd>Kaspar Schleiser <a href="#" onclick="location.href='mai'+'lto:'+'kas'+'pa'+'r@s'+'ch'+'lei'+'se'+'r.d'+'e'; return false;">kaspa<span class="obfuscator">.nosp@m.</span>r@sc<span class="obfuscator">.nosp@m.</span>hleis<span class="obfuscator">.nosp@m.</span>er.d<span class="obfuscator">.nosp@m.</span>e</a> </dd>
-<dd>
-Koen Zandberg <a href="#" onclick="location.href='mai'+'lto:'+'koe'+'n@'+'ber'+'gz'+'and'+'.n'+'et'; return false;">koen@<span class="obfuscator">.nosp@m.</span>berg<span class="obfuscator">.nosp@m.</span>zand.<span class="obfuscator">.nosp@m.</span>net</a> </dd></dl>
-</div><div class="textblock"><code>#include &quot;<a class="el" href="slot_8h.html">riotboot/slot.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="slot_8h.html">riotboot/slot.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="flashpage_8h.html">periph/flashpage.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for flashwrite.h:</div>
@@ -248,7 +226,29 @@ Functions</h2></td></tr>
 <tr class="memdesc:a56dfacc4a69c91d00803807521b3d775"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify the digest of an image.  <br /></td></tr>
 <tr class="separator:a56dfacc4a69c91d00803807521b3d775"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>riotboot flash writing module </p>
+<p>This module provides an API to reliably write a firmware image to flash.</p>
+<p>The API is similar to stream hashing functions:</p>
+<ol type="1">
+<li>initialize state structure using <a class="el" href="#a43c19f2a98b8671fb9785aad3ba63eea" title="Initialize firmware update (riotboot version)">riotboot_flashwrite_init()</a></li>
+<li>put some data using <a class="el" href="#af8f53f0bca4123772b1221bed52abcca" title="Feed bytes into the firmware writer.">riotboot_flashwrite_putbytes()</a></li>
+<li>repeat 2. until all data has been received</li>
+<li>finish update using <a class="el" href="#af394e6c45f029eaa246c756383be8378" title="Finish a firmware update (riotboot version)">riotboot_flashwrite_finish()</a></li>
+</ol>
+<p>The module will <em>not</em> automatically reboot after an image has been successfully written.</p>
+<p>Under the hood, the module tries to abstract page sizes for writing the image to flash. Verification of the image is left to the caller. If the data is not correctly written, riotboot_put_bytes() will return -1.</p>
+<p>The module makes sure that at no point in time an invalid image is bootable. The algorithm for that makes use of the bootloader verifying checksum and works as follows:</p>
+<ol type="1">
+<li>erase first block (making its checksum invalid)</li>
+<li>write image starting at second block</li>
+<li>write first block</li>
+</ol>
+<p>When using raw mode is used with this module, the need to buffer a full flashpage page is removed, instead it must buffer two times the FLASHPAGE_WRITE_BLOCK_SIZE. One is used to buffer the current write block, the other buffers the first chunk (offset zero, page zero). This first chunk is written when finalizing the flash operation. The minimal size for RIOTBOOT_FLASHPAGE_BUFFER_SIZE is 4, at least the riotboot magic number must fit into this and FLASHPAGE_SIZE must be a multiple of RIOTBOOT_FLASHPAGE_BUFFER_SIZE</p>
+<dl class="section author"><dt>Author</dt><dd>Kaspar Schleiser <a href="#" onclick="location.href='mai'+'lto:'+'kas'+'pa'+'r@s'+'ch'+'lei'+'se'+'r.d'+'e'; return false;">kaspa<span class="obfuscator">.nosp@m.</span>r@sc<span class="obfuscator">.nosp@m.</span>hleis<span class="obfuscator">.nosp@m.</span>er.d<span class="obfuscator">.nosp@m.</span>e</a> </dd>
+<dd>
+Koen Zandberg <a href="#" onclick="location.href='mai'+'lto:'+'koe'+'n@'+'ber'+'gz'+'and'+'.n'+'et'; return false;">koen@<span class="obfuscator">.nosp@m.</span>berg<span class="obfuscator">.nosp@m.</span>zand.<span class="obfuscator">.nosp@m.</span>net</a> </dd></dl>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="af394e6c45f029eaa246c756383be8378" name="af394e6c45f029eaa246c756383be8378"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af394e6c45f029eaa246c756383be8378">&#9670;&#160;</a></span>riotboot_flashwrite_finish()</h2>
 
@@ -596,7 +596,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a408b6d3a4a484720bc3ecfeac8947e3.html">sys</a></li><li class="navelem"><a class="el" href="dir_e9e107fc86bbb4b6a326076a6808b9f5.html">include</a></li><li class="navelem"><a class="el" href="dir_888ca071a6937418a6d0da1bfc0974d7.html">riotboot</a></li><li class="navelem"><a class="el" href="riotboot_2flashwrite_8h.html">flashwrite.h</a></li>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

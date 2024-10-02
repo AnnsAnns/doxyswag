@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -150,38 +150,6 @@ $(function(){initNavTree('group__cpu__stm32.html',''); initResizable(true); });
 
 <p>All STM32 families code and definitions  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>All STM32 families code and definitions </p>
-<p>This module contains the code and definitions for STM32 cpu families supported by RIOT: F0, F1, F2, F3, F4, F7, G0, G4, L0, L1, L4, L5 and WB.</p>
-<p>All constants described below can be configured using <code>CFLAGS</code> from the command line or in the application Makefile.</p>
-<h1><a class="anchor" id="autotoc_md75"></a>
-Clock configuration</h1>
-<p>All STM32 cpus have clock configuration code and macros. It is recommend to read the reference manual of the CPU of interest to learn about the corresponding clock tree and the possible configurations.</p>
-<p>For all families, different input clock sources are available for the SYSCLK system clock (but only one can be used at a time):</p>
-<ul>
-<li>HSE (High Speed External): HSE depends on the board configuration and its presence is specified by the <code>CONFIG_BOARD_HAS_HSE</code> constant at board level. The <code>CONFIG_CLOCK_HSE</code> constant specifies the frequency of the external oscillator in Hz. To use HSE as system clock (SYSCLK), set <code>CONFIG_USE_CLOCK_HSE</code> constant to 1;</li>
-<li>HSI (High Speed Internal): HSI is either 8MHz or 16MHz, depending on the families. To use HSI as system clock (SYSCLK), set <code>CONFIG_USE_CLOCK_HSI</code> constant to 1;</li>
-<li>MSI (Multi-Speed Internal): This internal oscillator is only available on L0, L1, L4, L5 and WB families. To use MSI as system clock (SYSCLK), set <code>CONFIG_USE_CLOCK_MSI</code> constant to 1 The MSI clock frequency can be configured using the <code>CONFIG_CLOCK_MSI</code> constant (in Hz);</li>
-<li><p class="startli">PLL (Phase-Locked Loop) provides a finely configurable clock source for SYSCLK and allows to reach precise and high clock speeds, depending on the input source. In RIOT, this is the default clock source for SYSCLK. To use the PLL as system clock (SYSCLK), set <code>CONFIG_USE_CLOCK_PLL</code> constant to 1 (default).</p>
-<p class="startli">If an HSE is provided by the board, it is automatically selected as input source for the PLL, otherwise HSI is selected.</p>
-<p class="startli">On L4 and WB, the PLL input source can be selected between HSE, HSI and MSI (default): to configure the PLL input source, just set <code>CONFIG_CLOCK_PLL_SRC_HSI</code>, <code>CONFIG_CLOCK_PLL_SRC_HSE</code> or <code>CONFIG_CLOCK_PLL_SRC_MSI</code> to 1.</p>
-<p class="startli">2 types of PLL are available on STM32:</p><ul>
-<li><p class="startli">for stm32f[2|4|7], stm32g[0|4] and stm32[l4|l5|wb], the PLL can be configured with several parameters M, N, P, Q and R (optional). M is the input divider, N is the multiplier and P, Q and R are output dividers. On stm32f[2|4|7], the clock source from the P output divider is used as SYSCLK input, the clock source from the Q output divider can be used as 48MHz. On stm32g[0|4] and stm32[l4|l5|wb], the clock source from the R output divider is used as SYSCLK input.</p>
-<p class="startli">Constants used to configure the PLL on these families are <code>CONFIG_CLOCK_PLL_M</code>, <code>CONFIG_CLOCK_PLL_N</code>, <code>CONFIG_CLOCK_PLL_P</code>, <code>CONFIG_CLOCK_PLL_Q</code> and <code>CONFIG_CLOCK_PLL_R</code>.</p>
-</li>
-<li>for stm32f[0|1|3] and stm32l[0|1], the PLL can be configured with a predivider parameter and a multiplier parameter. Constants used to configure the PLL on these families are <code>CONFIG_CLOCK_PLL_DIV</code> (l0, l1) or <code>CONFIG_CLOCK_PLL_PREDIV</code> (f0, f1, f3) and <code>CONFIG_CLOCK_PLL_MUL</code>.</li>
-</ul>
-</li>
-</ul>
-<h2><a class="anchor" id="autotoc_md76"></a>
-Advanced Peripheral Bus (APB) clock prescalers:</h2>
-<p>These prescalers are used to compute the PCLK1 and PCLK2 clock values. Use <code>CONFIG_CLOCK_APB1_DIV</code> and <code>CONFIG_CLOCK_APB2_DIV</code> constants to configure the prescalers (just set the frequency factor). APB2 is not available on f0 and g0 families so setting <code>CONFIG_CLOCK_APB2_DIV</code> will have no effect on them.</p>
-<h2><a class="anchor" id="autotoc_md77"></a>
-MCO (Microcontroller Clock Output) parameters:</h2>
-<p>For stm32f[2|4|7], clock outputs can be configured as follows:</p><ul>
-<li>set <code>CONFIG_CLOCK_ENABLE_MCO1</code> to enable MCO1 (on PA8) and use <code>CONFIG_CLOCK_MCO1_PRE</code> constant to specify the MCO1 prescaler (default to 1). Possible sources are HSE, HSI and PLL (the default): set 1 to <code>CONFIG_CLOCK_MCO1_USE_HSE</code>, <code>CONFIG_CLOCK_MCO1_USE_HSI</code> or <code>CONFIG_CLOCK_MCO1_USE_PLL</code> to select the source;</li>
-<li>set <code>CONFIG_CLOCK_ENABLE_MCO2</code> to enable MCO1 (on PC9) and use <code>CONFIG_CLOCK_MCO2_PRE</code> constant to specify the MCO2 prescaler (default to 1). Possible sources are HSE, SYSCLK, PLLI2S and PLL (the default): set 1 to <code>CONFIG_CLOCK_MCO1_USE_HSE</code>, <code>CONFIG_CLOCK_MCO1_USE_SYSCLK</code>, <code>CONFIG_CLOCK_MCO1_USE_PLLI2S</code> or <code>CONFIG_CLOCK_MCO1_USE_PLL</code> to select the source; </li>
-</ul>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -369,6 +337,38 @@ Files</h2></td></tr>
 <tr class="memdesc:cpu_2stm32_2include_2tinyusb__hw__defaults_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">STM32 specific default configurations for tinyUSB. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>All STM32 families code and definitions </p>
+<p>This module contains the code and definitions for STM32 cpu families supported by RIOT: F0, F1, F2, F3, F4, F7, G0, G4, L0, L1, L4, L5 and WB.</p>
+<p>All constants described below can be configured using <code>CFLAGS</code> from the command line or in the application Makefile.</p>
+<h1><a class="anchor" id="autotoc_md75"></a>
+Clock configuration</h1>
+<p>All STM32 cpus have clock configuration code and macros. It is recommend to read the reference manual of the CPU of interest to learn about the corresponding clock tree and the possible configurations.</p>
+<p>For all families, different input clock sources are available for the SYSCLK system clock (but only one can be used at a time):</p>
+<ul>
+<li>HSE (High Speed External): HSE depends on the board configuration and its presence is specified by the <code>CONFIG_BOARD_HAS_HSE</code> constant at board level. The <code>CONFIG_CLOCK_HSE</code> constant specifies the frequency of the external oscillator in Hz. To use HSE as system clock (SYSCLK), set <code>CONFIG_USE_CLOCK_HSE</code> constant to 1;</li>
+<li>HSI (High Speed Internal): HSI is either 8MHz or 16MHz, depending on the families. To use HSI as system clock (SYSCLK), set <code>CONFIG_USE_CLOCK_HSI</code> constant to 1;</li>
+<li>MSI (Multi-Speed Internal): This internal oscillator is only available on L0, L1, L4, L5 and WB families. To use MSI as system clock (SYSCLK), set <code>CONFIG_USE_CLOCK_MSI</code> constant to 1 The MSI clock frequency can be configured using the <code>CONFIG_CLOCK_MSI</code> constant (in Hz);</li>
+<li><p class="startli">PLL (Phase-Locked Loop) provides a finely configurable clock source for SYSCLK and allows to reach precise and high clock speeds, depending on the input source. In RIOT, this is the default clock source for SYSCLK. To use the PLL as system clock (SYSCLK), set <code>CONFIG_USE_CLOCK_PLL</code> constant to 1 (default).</p>
+<p class="startli">If an HSE is provided by the board, it is automatically selected as input source for the PLL, otherwise HSI is selected.</p>
+<p class="startli">On L4 and WB, the PLL input source can be selected between HSE, HSI and MSI (default): to configure the PLL input source, just set <code>CONFIG_CLOCK_PLL_SRC_HSI</code>, <code>CONFIG_CLOCK_PLL_SRC_HSE</code> or <code>CONFIG_CLOCK_PLL_SRC_MSI</code> to 1.</p>
+<p class="startli">2 types of PLL are available on STM32:</p><ul>
+<li><p class="startli">for stm32f[2|4|7], stm32g[0|4] and stm32[l4|l5|wb], the PLL can be configured with several parameters M, N, P, Q and R (optional). M is the input divider, N is the multiplier and P, Q and R are output dividers. On stm32f[2|4|7], the clock source from the P output divider is used as SYSCLK input, the clock source from the Q output divider can be used as 48MHz. On stm32g[0|4] and stm32[l4|l5|wb], the clock source from the R output divider is used as SYSCLK input.</p>
+<p class="startli">Constants used to configure the PLL on these families are <code>CONFIG_CLOCK_PLL_M</code>, <code>CONFIG_CLOCK_PLL_N</code>, <code>CONFIG_CLOCK_PLL_P</code>, <code>CONFIG_CLOCK_PLL_Q</code> and <code>CONFIG_CLOCK_PLL_R</code>.</p>
+</li>
+<li>for stm32f[0|1|3] and stm32l[0|1], the PLL can be configured with a predivider parameter and a multiplier parameter. Constants used to configure the PLL on these families are <code>CONFIG_CLOCK_PLL_DIV</code> (l0, l1) or <code>CONFIG_CLOCK_PLL_PREDIV</code> (f0, f1, f3) and <code>CONFIG_CLOCK_PLL_MUL</code>.</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md76"></a>
+Advanced Peripheral Bus (APB) clock prescalers:</h2>
+<p>These prescalers are used to compute the PCLK1 and PCLK2 clock values. Use <code>CONFIG_CLOCK_APB1_DIV</code> and <code>CONFIG_CLOCK_APB2_DIV</code> constants to configure the prescalers (just set the frequency factor). APB2 is not available on f0 and g0 families so setting <code>CONFIG_CLOCK_APB2_DIV</code> will have no effect on them.</p>
+<h2><a class="anchor" id="autotoc_md77"></a>
+MCO (Microcontroller Clock Output) parameters:</h2>
+<p>For stm32f[2|4|7], clock outputs can be configured as follows:</p><ul>
+<li>set <code>CONFIG_CLOCK_ENABLE_MCO1</code> to enable MCO1 (on PA8) and use <code>CONFIG_CLOCK_MCO1_PRE</code> constant to specify the MCO1 prescaler (default to 1). Possible sources are HSE, HSI and PLL (the default): set 1 to <code>CONFIG_CLOCK_MCO1_USE_HSE</code>, <code>CONFIG_CLOCK_MCO1_USE_HSI</code> or <code>CONFIG_CLOCK_MCO1_USE_PLL</code> to select the source;</li>
+<li>set <code>CONFIG_CLOCK_ENABLE_MCO2</code> to enable MCO1 (on PC9) and use <code>CONFIG_CLOCK_MCO2_PRE</code> constant to specify the MCO2 prescaler (default to 1). Possible sources are HSE, SYSCLK, PLLI2S and PLL (the default): set 1 to <code>CONFIG_CLOCK_MCO1_USE_HSE</code>, <code>CONFIG_CLOCK_MCO1_USE_SYSCLK</code>, <code>CONFIG_CLOCK_MCO1_USE_PLLI2S</code> or <code>CONFIG_CLOCK_MCO1_USE_PLL</code> to select the source; </li>
+</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
@@ -376,7 +376,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

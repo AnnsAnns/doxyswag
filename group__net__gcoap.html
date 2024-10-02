@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -155,193 +155,6 @@ $(function(){initNavTree('group__net__gcoap.html',''); initResizable(true); });
 
 <p>High-level interface to CoAP messaging  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>High-level interface to CoAP messaging </p>
-<p>gcoap provides a high-level interface for writing CoAP messages via RIOT's sock networking API. gcoap internalizes network event processing so an application only needs to focus on request/response handling. For a server, gcoap accepts a list of resource paths with callbacks for writing the response. For a client, gcoap provides a function to send a request, with a callback for reading the server response.</p>
-<p>gcoap allocates a RIOT message processing thread, so a single instance can serve multiple applications. This approach also means gcoap uses a single UDP port, which supports RFC 6282 compression. Internally, gcoap depends on the nanocoap package for base level structs and functionality. gcoap uses nanocoap's Packet API to write message options.</p>
-<p>gcoap supports the Observe extension (RFC 7641) for a server. gcoap provides functions to generate and send an observe notification that are similar to the functions to send a client request. gcoap also supports the Block extension (RFC 7959) with block-specific option functions as well as some helpers.</p>
-<p><em>Contents</em></p>
-<ul>
-<li>Server Operation</li>
-<li>Client Operation</li>
-<li>Observe Server Operation</li>
-<li>Block Operation</li>
-<li>Proxy Operation</li>
-<li>DTLS for transport security</li>
-<li>Implementation Notes</li>
-<li>Implementation Status</li>
-</ul>
-<h2><a class="anchor" id="autotoc_md1992"></a>
-Server Operation</h2>
-<p>gcoap listens for requests on CONFIG_GCOAP_PORT, 5683 by default. You can redefine this by uncommenting the appropriate lines in gcoap's make file.</p>
-<p>gcoap allows an application to specify a collection of request resource paths it wants to be notified about. Create an array of resources (<a class="el" href="structcoap__resource__t.html" title="Type for CoAP resource entry.">coap_resource_t</a> structs) ordered by the resource path, specifically the ASCII encoding of the path characters (digit and capital precede lower case). Use <a class="el" href="#ga1c3b10922136af0308bd70c7bb6f0e52" title="Starts listening for resource paths.">gcoap_register_listener()</a> at application startup to pass in these resources, wrapped in a gcoap_listener_t. Also see <em>Server path matching</em> in the base <a href="group__net__nanocoap.html">nanocoap</a> documentation.</p>
-<p>gcoap itself defines a resource for <code>/.well-known/core</code> discovery, which lists all of the registered paths. See the <em>Resource list creation</em> section below for more.</p>
-<h3><a class="anchor" id="autotoc_md1993"></a>
-Creating a response</h3>
-<p>An application resource includes a callback function, a coap_handler_t. After reading the request, the callback must use functions provided by gcoap to format the response, as described below. The callback <em>must</em> read the request thoroughly before calling the functions, because the response buffer likely reuses the request buffer. See <code>examples/gcoap/client.c</code> for a simple example of a callback.</p>
-<p>Here is the expected sequence for a callback function:</p>
-<p>Read request completely and parse request payload, if any. Use the <a class="el" href="structcoap__pkt__t.html" title="CoAP PDU parsing context structure.">coap_pkt_t</a> <em>payload</em> and <em>payload_len</em> attributes.</p>
-<p>If there is a payload, follow the steps below.</p>
-<ol type="1">
-<li>Call <a class="el" href="#ga1900ec9205ee6844b422312a0af5896a" title="Initializes a CoAP response packet on a buffer.">gcoap_resp_init()</a> to initialize the response.</li>
-<li>Use the coap_opt_add_xxx() functions to include any Options, for example <a class="el" href="group__net__nanocoap.html#ga23be123d046524b6b1269e26fb3150e0" title="Append a Content-Format option to the pkt buffer.">coap_opt_add_format()</a> for Content-Format of the payload. Options <em>must</em> be written in order by option number (see "CoAP option numbers" in <a href="group__net__coap.html">CoAP defines</a>).</li>
-<li>Call <a class="el" href="group__net__nanocoap.html#gaf94c66182f7412d256c32c66d1d7a012" title="Finalizes options as required and prepares for payload.">coap_opt_finish()</a> to complete the PDU metadata. Retain the returned metadata length.</li>
-<li>Write the response payload, starting at the updated <em>payload</em> pointer in the <a class="el" href="structcoap__pkt__t.html" title="CoAP PDU parsing context structure.">coap_pkt_t</a>, for up to <em>payload_len</em> bytes.</li>
-<li>Return the sum of the metadata length and payload length. If some error has occurred, return a negative errno code from the handler, and gcoap will send a server error (5.00).</li>
-</ol>
-<p>If no payload, call only <a class="el" href="#gace6fa0e224d1cd07211e22e3af75f8bd" title="Writes a complete CoAP response PDU when there is no payload.">gcoap_response()</a> to write the full response. If you need to add Options, follow the first three steps in the list above instead.</p>
-<h3><a class="anchor" id="autotoc_md1994"></a>
-Resource list creation</h3>
-<p>gcoap allows customization of the function that provides the list of registered resources for <code>/.well-known/core</code> and CoRE Resource Directory registration. By default gcoap provides <a class="el" href="#gaa097b4388e04ab265cf79cf38c493d07" title="Writes a resource in CoRE Link Format to a provided buffer.">gcoap_encode_link()</a>, which lists only the target path for each link. However, an application may specify a custom function in the gcoap_listener_t it registers with gcoap. For example, this function may add parameters to provide more information about the resource, as described in RFC 6690. See the gcoap example for use of a custom encoder function.</p>
-<h2><a class="anchor" id="autotoc_md1995"></a>
-Client Operation</h2>
-<p>Client operation includes two phases: creating and sending a request, and handling the response asynchronously in a client supplied callback. See <code>examples/gcoap/client.c</code> for a simple example of sending a request and reading the response.</p>
-<h3><a class="anchor" id="autotoc_md1996"></a>
-Creating a request</h3>
-<p>Here is the expected sequence to prepare and send a request:</p>
-<p>Allocate a buffer and a <a class="el" href="structcoap__pkt__t.html" title="CoAP PDU parsing context structure.">coap_pkt_t</a> for the request.</p>
-<p>If there is a payload, follow the steps below.</p>
-<ol type="1">
-<li>Call <a class="el" href="#ga291fd969b90b9571118c5739706b0c50" title="Initializes a CoAP request PDU on a buffer.">gcoap_req_init()</a> to initialize the request.</li>
-<li>Optionally, mark the request confirmable by calling <a class="el" href="group__net__nanocoap.html#ga92058243dac042a617701aaedc58e45d" title="Set the message type for the given CoAP header.">coap_hdr_set_type()</a> with COAP_TYPE_CON.</li>
-<li>Use the coap_opt_add_xxx() functions to include any Options beyond Uri-Path, which was added in the first step. Options <em>must</em> be written in order by option number (see "CoAP option numbers" in <a href="group__net__coap.html">CoAP defines</a>).</li>
-<li>Call <a class="el" href="group__net__nanocoap.html#gaf94c66182f7412d256c32c66d1d7a012" title="Finalizes options as required and prepares for payload.">coap_opt_finish()</a> to complete the PDU metadata. Retain the returned metadata length.</li>
-<li>Write the request payload, starting at the updated <em>payload</em> pointer in the <a class="el" href="structcoap__pkt__t.html" title="CoAP PDU parsing context structure.">coap_pkt_t</a>, for up to <em>payload_len</em> bytes.</li>
-</ol>
-<p>If no payload, call only <a class="el" href="#gaf635d01732aa7c620271d05949103497" title="Writes a complete CoAP request PDU when there is not a payload.">gcoap_request()</a> to write the full request. If you need to add Options, follow the first four steps in the list above instead.</p>
-<p>Finally, call <a class="el" href="#ga3ea1c9c80e663d07e8b8fddc7e272d07" title="Sends a buffer containing a CoAP request to the provided endpoint.">gcoap_req_send()</a> with the sum of the metadata length and payload length, the destination endpoint, and a callback function for the host's response.</p>
-<h3><a class="anchor" id="autotoc_md1997"></a>
-Handling the response</h3>
-<p>When gcoap receives the response to a request, it executes the callback from the request. gcoap also executes the callback when a response is not received within GCOAP_RESPONSE_TIMEOUT.</p>
-<p>Here is the expected sequence for handling a response in the callback.</p>
-<ol type="1">
-<li>Test for a server response or timeout in the <code>state</code> field of the <code>memo</code> callback parameter (<code>memo-&gt;state</code>). See the GCOAP_MEMO... constants.</li>
-<li>Test the response with <a class="el" href="group__net__nanocoap.html#ga68b2d1696412f0c2cfd8ff14c191ef56" title="Get a message&#39;s code class (3 most significant bits of code)">coap_get_code_class()</a> and <a class="el" href="group__net__nanocoap.html#ga7c4d39185482dc994f974f3c7ba3237b" title="Get a message&#39;s code detail (5 least significant bits of code)">coap_get_code_detail()</a>.</li>
-<li>Test the response payload with the <a class="el" href="structcoap__pkt__t.html" title="CoAP PDU parsing context structure.">coap_pkt_t</a> <em>payload_len</em> and <em>content_type</em> attributes.</li>
-<li>Read the payload, if any.</li>
-</ol>
-<h2><a class="anchor" id="autotoc_md1998"></a>
-Observe Server Operation</h2>
-<p>A CoAP client may register for Observe notifications for any resource that an application has registered with gcoap. An application does not need to take any action to support Observe client registration. However, gcoap limits registration for a given resource to a <em>single</em> observer.</p>
-<p>It is <a href="https://tools.ietf.org/html/rfc7641#section-6">suggested</a> that a server adds the 'obs' attribute to resources that are useful for observation (i.e. will produce notifications) as a hint. Keep in mind that this is not mandatory in order to enable the mechanism in RIOT, nor will it prevent a client from observing a resource that does not have this attribute in the link description. See the "Resource list creation" section above for how the gcoap example app publishes the obs attribute.</p>
-<p>An Observe notification is considered a response to the original client registration request. So, the Observe server only needs to create and send the notification &ndash; no further communication or callbacks are required.</p>
-<h3><a class="anchor" id="autotoc_md1999"></a>
-Creating a notification</h3>
-<p>Here is the expected sequence to prepare and send a notification:</p>
-<p>Allocate a buffer and a <a class="el" href="structcoap__pkt__t.html" title="CoAP PDU parsing context structure.">coap_pkt_t</a> for the notification, then follow the steps below.</p>
-<ol type="1">
-<li>Call <a class="el" href="#ga3918d03f99a7312946bc28d5fdb7b610" title="Initializes a CoAP Observe notification packet on a buffer, for the observer registered for a resourc...">gcoap_obs_init()</a> to initialize the notification for a resource. Test the return value, which may indicate there is not an observer for the resource. If so, you are done.</li>
-<li>Use the coap_opt_add_xxx() functions to include any Options, for example <a class="el" href="group__net__nanocoap.html#ga23be123d046524b6b1269e26fb3150e0" title="Append a Content-Format option to the pkt buffer.">coap_opt_add_format()</a> for Content-Format of the payload. Options <em>must</em> be written in order by option number (see "CoAP option numbers" in <a href="group__net__coap.html">CoAP defines</a>).</li>
-<li>Call <a class="el" href="group__net__nanocoap.html#gaf94c66182f7412d256c32c66d1d7a012" title="Finalizes options as required and prepares for payload.">coap_opt_finish()</a> to complete the PDU metadata. Retain the returned metadata length.</li>
-<li>Write the notification payload, starting at the updated <em>payload</em> pointer in the <a class="el" href="structcoap__pkt__t.html" title="CoAP PDU parsing context structure.">coap_pkt_t</a>, for up to <em>payload_len</em> bytes.</li>
-</ol>
-<p>Finally, call <a class="el" href="#gab89faee1f2f999f4d6088ec91ca620bd" title="Sends a buffer containing a CoAP Observe notification to the observer registered for a resource.">gcoap_obs_send()</a> for the resource, with the sum of the metadata length and payload length for the representation.</p>
-<h3><a class="anchor" id="autotoc_md2000"></a>
-Other considerations</h3>
-<p>By default, the value for the Observe option in a notification is three bytes long. For resources that change slowly, this length can be reduced via CONFIG_GCOAP_OBS_VALUE_WIDTH.</p>
-<p>A client always may re-register for a resource with the same token or with a new token to indicate continued interest in receiving notifications about it. Of course the client must not already be using any new token in the registration for a different resource. Successful registration always is indicated by the presence of the Observe option in the response.</p>
-<p>To cancel registration, the server expects to receive a GET request with the Observe option value set to 1. The server does not support cancellation via a reset (RST) response to a non-confirmable notification.</p>
-<h2><a class="anchor" id="autotoc_md2001"></a>
-Block Operation</h2>
-<p>gcoap provides for both server side and client side blockwise messaging for requests and responses. This section outlines how to write a message for each situation.</p>
-<h3><a class="anchor" id="autotoc_md2002"></a>
-CoAP server GET handling</h3>
-<p>The server must slice the full response body into smaller payloads, and identify the slice with a Block2 option. This implementation toggles the actual writing of data as it passes over the code for the full response body. See the _riot_block2_handler() example in <a href="https://github.com/kb2ma/riot-apps/blob/kb2ma-master/gcoap-block-server/gcoap_block.c">gcoap-block-server</a>, which implements the sequence described below.</p>
-<ul>
-<li>Use <a class="el" href="group__net__nanocoap.html#ga847153f464dc80f7f015d3ccbceb71c4" title="Initialize a block2 slicer struct for writing the payload.">coap_block2_init()</a> to initialize a <em>slicer</em> struct from the Block2 option in the request. The slicer tracks boundaries while writing the payload. If no option present in the initial request, the init function defaults to a payload size of 16 bytes.</li>
-<li>Use <a class="el" href="#ga1900ec9205ee6844b422312a0af5896a" title="Initializes a CoAP response packet on a buffer.">gcoap_resp_init()</a> to begin the response.</li>
-<li>Use <a class="el" href="group__net__nanocoap.html#ga15b410e6d2de7e20b3017b3961a6a15a" title="Add block2 option in descriptive use from a slicer object.">coap_opt_add_block2()</a> to write the Block2 option from the slicer. Use 1 as a default for the <em>more</em> parameter. At this point, we don't know yet if this message will be the last in the block exchange. However, we must add the block option at this location in the message.</li>
-<li>Use <a class="el" href="group__net__nanocoap.html#gaf94c66182f7412d256c32c66d1d7a012" title="Finalizes options as required and prepares for payload.">coap_opt_finish()</a> to add a payload marker.</li>
-<li>Add the payload using the <code>coap_blockwise_put_xxx()</code> functions. The slicer knows the current position in the overall body of the response. It writes only the portion of the body specified by the block number and block size in the slicer.</li>
-<li>Finally, use <a class="el" href="group__net__nanocoap.html#ga5d839eb2b07582ff50afb988d2e6e8c1" title="Finish a block2 response.">coap_block2_finish()</a> to finalize the block option with the proper value for the <em>more</em> parameter.</li>
-</ul>
-<h3><a class="anchor" id="autotoc_md2003"></a>
-CoAP server PUT/POST handling</h3>
-<p>The server must ack each blockwise portion of the response body received from the client by writing a Block1 option in the response. See the _sha256_handler() example in <a href="https://github.com/kb2ma/riot-apps/blob/kb2ma-master/gcoap-block-server/gcoap_block.c">gcoap-block-server</a>, which implements the sequence described below.</p>
-<ul>
-<li>Use <a class="el" href="group__net__nanocoap.html#ga843ab80385da82c6c56a7221dd9ffa68" title="Block1 option getter.">coap_get_block1()</a> to initialize a block1 struct from the request.</li>
-<li>Determine the response code. If the block1 <em>more</em> attribute is 1, use COAP_CODE_CONTINUE to request more responses. Otherwise, use COAP_CODE_CHANGED to indicate a successful transfer.</li>
-<li>Use <a class="el" href="#ga1900ec9205ee6844b422312a0af5896a" title="Initializes a CoAP response packet on a buffer.">gcoap_resp_init()</a> to begin the response, including the response code.</li>
-<li>Use <a class="el" href="group__net__nanocoap.html#gaf529432ec861b1ed971a6ebe392b5136" title="Encode the given block1 option in control use.">coap_opt_add_block1_control()</a> to write the Block1 option.</li>
-<li>Use <a class="el" href="group__net__nanocoap.html#gaf94c66182f7412d256c32c66d1d7a012" title="Finalizes options as required and prepares for payload.">coap_opt_finish()</a> to determine the length of the PDU. If appropriate, use the COAP_OPT_FINISH_PAYLOAD parameter and then write the payload.</li>
-</ul>
-<h3><a class="anchor" id="autotoc_md2004"></a>
-CoAP client GET request</h3>
-<p>The client requests a specific blockwise payload from the overall body by writing a Block2 option in the request. See _resp_handler() in the <a href="https://github.com/RIOT-OS/RIOT/blob/master/examples/gcoap/client.c">gcoap</a> example in the RIOT distribution, which implements the sequence described below.</p>
-<ul>
-<li>For the first request, use <a class="el" href="group__net__nanocoap.html#gadabe7197cbe80bf17fea0ecf5ee9bf56" title="Initialize a block struct from content information.">coap_block_object_init()</a> to initialize a new block1 struct. For subsequent requests, first use <a class="el" href="group__net__nanocoap.html#ga68deff4fe341e495eb8c3449e5118c82" title="Block2 option getter.">coap_get_block2()</a> to read the Block2 option in the response to the previous request. If the <em>more</em> attribute indicates no more blocks, you are done.<ul>
-<li>The gcoap example actually does <em>not</em> include a Block2 option in the original request, but the server response includes a blockwise response with a Block2 option anyway. On the other hand, this example shows how blockwise messaging can be supported in a generic way.</li>
-</ul>
-</li>
-<li>If more blocks are available, use <a class="el" href="#ga291fd969b90b9571118c5739706b0c50" title="Initializes a CoAP request PDU on a buffer.">gcoap_req_init()</a> to create a new request.</li>
-<li>Increment the <em>blknum</em> attribute in the block1 struct from the previous response to request the next blockwise payload.</li>
-<li>Use <a class="el" href="group__net__nanocoap.html#ga14bb5cc27fb33ff8abca2d63484b1f10" title="Insert block2 option into buffer in control usage.">coap_opt_put_block2_control()</a> to write the Block2 option to the request.</li>
-<li>Use <a class="el" href="group__net__nanocoap.html#gaf94c66182f7412d256c32c66d1d7a012" title="Finalizes options as required and prepares for payload.">coap_opt_finish()</a> to determine the length of the PDU.</li>
-</ul>
-<h3><a class="anchor" id="autotoc_md2005"></a>
-CoAP client PUT/POST request</h3>
-<p>The client pushes a specific blockwise payload from the overall body to the server by writing a Block1 option in the request. See _do_block_post() in the <a href="https://github.com/kb2ma/riot-apps/blob/kb2ma-master/gcoap-block-client/gcoap_block.c">gcoap-block-client</a> example, which implements the sequence described below.</p>
-<ul>
-<li>For the first request, use <a class="el" href="group__net__nanocoap.html#ga72043847cf561f5f6e926cf4323bbd66" title="Initialize a block slicer struct from content information.">coap_block_slicer_init()</a> to initialize a <em>slicer</em> struct with the desired block number and block size. For subsequent requests, first read the response from the server to the previous request. If the response code is COAP_CODE_CONTINUE, then increment the last block number sent when initializing the slicer struct for the next request.</li>
-<li>Use <a class="el" href="#ga291fd969b90b9571118c5739706b0c50" title="Initializes a CoAP request PDU on a buffer.">gcoap_req_init()</a> to initialize the request.</li>
-<li>Use <a class="el" href="group__net__nanocoap.html#gaf123a387066d0c2cef1548747c72f990" title="Add block1 option in descriptive use from a slicer object.">coap_opt_add_block1()</a> to add the Block1 option from the slicer. Use 1 as a default for the <em>more</em> parameter. At this point, we don't know yet if this message will be the last in the block exchange. However, we must add the block option at this location in the message.</li>
-<li>Use <a class="el" href="group__net__nanocoap.html#gaf94c66182f7412d256c32c66d1d7a012" title="Finalizes options as required and prepares for payload.">coap_opt_finish()</a> with COAP_OPT_FINISH_PAYLOAD to write the payload marker.</li>
-<li>Add the payload using the <code>coap_blockwise_put_xxx()</code> functions. The slicer knows the current position in the overall body of the response. It writes only the portion of the body specified by the block number and block size in the slicer.</li>
-<li>Finally, use <a class="el" href="group__net__nanocoap.html#gab424b844874f0bc98190100fb748909e" title="Finish a block1 request.">coap_block1_finish()</a> to finalize the block option with the proper value for the <em>more</em> parameter.</li>
-</ul>
-<h2><a class="anchor" id="autotoc_md2006"></a>
-Proxy Operation</h2>
-<p>A <a href="https://tools.ietf.org/html/rfc7252#section-5.7.1">CoAP proxy</a> forwards incoming requests to an origin server, or again to another proxy server.</p>
-<h3><a class="anchor" id="autotoc_md2007"></a>
-Proxy Client Handling</h3>
-<p>The current implementation only allows the use of <code>Proxy-Uri</code> to specify the absolute URI for the origin server and resource. A request that includes a <code>Proxy-Uri</code> option must not contain any of the <code>Uri-*</code> options. An example:</p>
-<div class="fragment"><div class="line"><span class="comment">// endpoint for the proxy server</span></div>
-<div class="line"> <a class="code hl_struct" href="struct__sock__tl__ep.html">sock_udp_ep_t</a> *proxy_remote = ...;</div>
-<div class="line"><span class="comment">// absolute URI for the origin server and resource</span></div>
-<div class="line"><span class="keywordtype">char</span> *uri = <span class="stringliteral">&quot;coap://[2001:db8::1]:5683/.well-known/core&quot;</span>;</div>
-<div class="line"> </div>
-<div class="line"><a class="code hl_function" href="#ga291fd969b90b9571118c5739706b0c50">gcoap_req_init</a>(&amp;pdu, buf, <a class="code hl_define" href="group__net__gcoap__conf.html#ga6e17d0741db5fa6da38b769ecdd4c80d">CONFIG_GCOAP_PDU_BUF_SIZE</a>, <a class="code hl_enumvalue" href="group__net__coap.html#ggaf99712dec26d13b1649cc55043580645a025300cb0dc4c4de8eb0b0e0b4eb5317">COAP_METHOD_GET</a>, NULL);</div>
-<div class="line"><a class="code hl_function" href="group__net__nanocoap.html#gabe53a821876c7cbca41eb7df4a109af1">coap_opt_add_proxy_uri</a>(&amp;pdu, uri);</div>
-<div class="line"><span class="keywordtype">unsigned</span> len = <a class="code hl_function" href="group__net__nanocoap.html#gaf94c66182f7412d256c32c66d1d7a012">coap_opt_finish</a>(&amp;pdu, <a class="code hl_define" href="group__net__nanocoap.html#ga88497b423bb62815a4f06345b9bd1e0f">COAP_OPT_FINISH_NONE</a>);</div>
-<div class="line"> </div>
-<div class="line"><a class="code hl_function" href="#ga3ea1c9c80e663d07e8b8fddc7e272d07">gcoap_req_send</a>((uint8_t *) pdu-&gt;hdr, len, proxy_remote, NULL, _resp_handler, NULL,</div>
-<div class="line">               <a class="code hl_enumvalue" href="#gga34f7408f6a5a8313a1937bf2697fdaf1a49638e0c48f336388176798cca6887b8">GCOAP_SOCKET_TYPE_UNDEF</a>);</div>
-<div class="ttc" id="agroup__net__coap_html_ggaf99712dec26d13b1649cc55043580645a025300cb0dc4c4de8eb0b0e0b4eb5317"><div class="ttname"><a href="group__net__coap.html#ggaf99712dec26d13b1649cc55043580645a025300cb0dc4c4de8eb0b0e0b4eb5317">COAP_METHOD_GET</a></div><div class="ttdeci">@ COAP_METHOD_GET</div><div class="ttdoc">GET request (no paylod)</div><div class="ttdef"><b>Definition</b> coap.h:172</div></div>
-<div class="ttc" id="agroup__net__gcoap__conf_html_ga6e17d0741db5fa6da38b769ecdd4c80d"><div class="ttname"><a href="group__net__gcoap__conf.html#ga6e17d0741db5fa6da38b769ecdd4c80d">CONFIG_GCOAP_PDU_BUF_SIZE</a></div><div class="ttdeci">#define CONFIG_GCOAP_PDU_BUF_SIZE</div><div class="ttdoc">Size of the buffer used to build a CoAP request or response.</div><div class="ttdef"><b>Definition</b> gcoap.h:464</div></div>
-<div class="ttc" id="agroup__net__gcoap_html_ga291fd969b90b9571118c5739706b0c50"><div class="ttname"><a href="#ga291fd969b90b9571118c5739706b0c50">gcoap_req_init</a></div><div class="ttdeci">static int gcoap_req_init(coap_pkt_t *pdu, uint8_t *buf, size_t len, unsigned code, const char *path)</div><div class="ttdoc">Initializes a CoAP request PDU on a buffer.</div><div class="ttdef"><b>Definition</b> gcoap.h:969</div></div>
-<div class="ttc" id="agroup__net__gcoap_html_ga3ea1c9c80e663d07e8b8fddc7e272d07"><div class="ttname"><a href="#ga3ea1c9c80e663d07e8b8fddc7e272d07">gcoap_req_send</a></div><div class="ttdeci">ssize_t gcoap_req_send(const uint8_t *buf, size_t len, const sock_udp_ep_t *remote, const sock_udp_ep_t *local, gcoap_resp_handler_t resp_handler, void *context, gcoap_socket_type_t tl_type)</div><div class="ttdoc">Sends a buffer containing a CoAP request to the provided endpoint.</div></div>
-<div class="ttc" id="agroup__net__gcoap_html_gga34f7408f6a5a8313a1937bf2697fdaf1a49638e0c48f336388176798cca6887b8"><div class="ttname"><a href="#gga34f7408f6a5a8313a1937bf2697fdaf1a49638e0c48f336388176798cca6887b8">GCOAP_SOCKET_TYPE_UNDEF</a></div><div class="ttdeci">@ GCOAP_SOCKET_TYPE_UNDEF</div><div class="ttdoc">undefined</div><div class="ttdef"><b>Definition</b> gcoap.h:751</div></div>
-<div class="ttc" id="agroup__net__nanocoap_html_ga88497b423bb62815a4f06345b9bd1e0f"><div class="ttname"><a href="group__net__nanocoap.html#ga88497b423bb62815a4f06345b9bd1e0f">COAP_OPT_FINISH_NONE</a></div><div class="ttdeci">#define COAP_OPT_FINISH_NONE</div><div class="ttdoc">no special handling required</div><div class="ttdef"><b>Definition</b> nanocoap.h:193</div></div>
-<div class="ttc" id="agroup__net__nanocoap_html_gabe53a821876c7cbca41eb7df4a109af1"><div class="ttname"><a href="group__net__nanocoap.html#gabe53a821876c7cbca41eb7df4a109af1">coap_opt_add_proxy_uri</a></div><div class="ttdeci">ssize_t coap_opt_add_proxy_uri(coap_pkt_t *pkt, const char *uri)</div><div class="ttdoc">Adds a single Proxy-URI option into pkt.</div></div>
-<div class="ttc" id="agroup__net__nanocoap_html_gaf94c66182f7412d256c32c66d1d7a012"><div class="ttname"><a href="group__net__nanocoap.html#gaf94c66182f7412d256c32c66d1d7a012">coap_opt_finish</a></div><div class="ttdeci">ssize_t coap_opt_finish(coap_pkt_t *pkt, uint16_t flags)</div><div class="ttdoc">Finalizes options as required and prepares for payload.</div></div>
-<div class="ttc" id="astruct__sock__tl__ep_html"><div class="ttname"><a href="struct__sock__tl__ep.html">_sock_tl_ep</a></div><div class="ttdoc">Common IP-based transport layer end point.</div><div class="ttdef"><b>Definition</b> sock.h:215</div></div>
-</div><!-- fragment --><p>See the gcoap example for a sample implementation.</p>
-<h3><a class="anchor" id="autotoc_md2008"></a>
-Proxy Server Handling</h3>
-<p>Not implemented yet.</p>
-<h2><a class="anchor" id="autotoc_md2009"></a>
-DTLS as transport security</h2>
-<p>GCoAP allows to use DTLS for transport security by using the <a class="el" href="group__net__sock__dtls.html">DTLS sock API</a>. Using the module gcoap_dtls enables the support. GCoAP listens for requests on CONFIG_GCOAPS_PORT, 5684 by default when DTLS is enabled.</p>
-<p>Credentials have to been configured before use. See <a class="el" href="group__net__credman.html">Credman</a> and <a class="el" href="group__net__sock__dtls__creds.html">DTLS sock credentials API</a> for credential managing. Access to the DTLS socket is provided by <a class="el" href="#ga7a65749835295b471d80f85d63e9ba95" title="Get the underlying DTLS socket of gcoap.">gcoap_get_sock_dtls()</a>.</p>
-<p>GCoAP includes a DTLS session management component that stores active sessions. By default, it tries to have CONFIG_GCOAP_DTLS_MINIMUM_AVAILABLE_SESSIONS session slots available to keep the server responsive. If not enough sessions are available the server destroys the session that has not been used for the longest time after CONFIG_GCOAP_DTLS_MINIMUM_AVAILABLE_SESSIONS_TIMEOUT_USEC.</p>
-<h2><a class="anchor" id="autotoc_md2010"></a>
-Implementation Notes</h2>
-<h3><a class="anchor" id="autotoc_md2011"></a>
-Waiting for a response</h3>
-<p>We take advantage of RIOT's asynchronous messaging by using an xtimer to wait for a response, so the gcoap thread does not block while waiting. The user is notified via the same callback, whether the message is received or the wait times out. We track the response with an entry in the <code>_coap_state.open_reqs</code> array.</p>
-<h2><a class="anchor" id="autotoc_md2012"></a>
-Implementation Status</h2>
-<p>gcoap includes server and client capability. Available features include:</p>
-<ul>
-<li>Message Type: Supports non-confirmable (NON) messaging. Additionally provides a callback on timeout. Provides piggybacked ACK response to a confirmable (CON) request.</li>
-<li>Observe extension: Provides server-side registration and notifications and client-side observe.</li>
-<li>Server and Client provide helper functions for writing the response/request. See the CoAP topic in the source documentation for details. See the gcoap example for sample implementations.</li>
-<li>Server allows an application to register a 'listener', which includes an array of endpoint paths and function callbacks used to write a response.</li>
-<li>Server listens on a port at startup; defaults to 5683.</li>
-<li>Client operates asynchronously; sends request and then handles response in a user provided callback.</li>
-<li>Client generates token; length defined at compile time.</li>
-<li>Options: Supports Content-Format for payload. </li>
-</ul>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -579,6 +392,193 @@ Functions</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>GCOAP_RESOURCE_ERROR</b>&#160;&#160;&#160;(3)</td></tr>
 <tr class="separator:gae792f8aaa2788e41d8b8b93224028e62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>High-level interface to CoAP messaging </p>
+<p>gcoap provides a high-level interface for writing CoAP messages via RIOT's sock networking API. gcoap internalizes network event processing so an application only needs to focus on request/response handling. For a server, gcoap accepts a list of resource paths with callbacks for writing the response. For a client, gcoap provides a function to send a request, with a callback for reading the server response.</p>
+<p>gcoap allocates a RIOT message processing thread, so a single instance can serve multiple applications. This approach also means gcoap uses a single UDP port, which supports RFC 6282 compression. Internally, gcoap depends on the nanocoap package for base level structs and functionality. gcoap uses nanocoap's Packet API to write message options.</p>
+<p>gcoap supports the Observe extension (RFC 7641) for a server. gcoap provides functions to generate and send an observe notification that are similar to the functions to send a client request. gcoap also supports the Block extension (RFC 7959) with block-specific option functions as well as some helpers.</p>
+<p><em>Contents</em></p>
+<ul>
+<li>Server Operation</li>
+<li>Client Operation</li>
+<li>Observe Server Operation</li>
+<li>Block Operation</li>
+<li>Proxy Operation</li>
+<li>DTLS for transport security</li>
+<li>Implementation Notes</li>
+<li>Implementation Status</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md1992"></a>
+Server Operation</h2>
+<p>gcoap listens for requests on CONFIG_GCOAP_PORT, 5683 by default. You can redefine this by uncommenting the appropriate lines in gcoap's make file.</p>
+<p>gcoap allows an application to specify a collection of request resource paths it wants to be notified about. Create an array of resources (<a class="el" href="structcoap__resource__t.html" title="Type for CoAP resource entry.">coap_resource_t</a> structs) ordered by the resource path, specifically the ASCII encoding of the path characters (digit and capital precede lower case). Use <a class="el" href="#ga1c3b10922136af0308bd70c7bb6f0e52" title="Starts listening for resource paths.">gcoap_register_listener()</a> at application startup to pass in these resources, wrapped in a gcoap_listener_t. Also see <em>Server path matching</em> in the base <a href="group__net__nanocoap.html">nanocoap</a> documentation.</p>
+<p>gcoap itself defines a resource for <code>/.well-known/core</code> discovery, which lists all of the registered paths. See the <em>Resource list creation</em> section below for more.</p>
+<h3><a class="anchor" id="autotoc_md1993"></a>
+Creating a response</h3>
+<p>An application resource includes a callback function, a coap_handler_t. After reading the request, the callback must use functions provided by gcoap to format the response, as described below. The callback <em>must</em> read the request thoroughly before calling the functions, because the response buffer likely reuses the request buffer. See <code>examples/gcoap/client.c</code> for a simple example of a callback.</p>
+<p>Here is the expected sequence for a callback function:</p>
+<p>Read request completely and parse request payload, if any. Use the <a class="el" href="structcoap__pkt__t.html" title="CoAP PDU parsing context structure.">coap_pkt_t</a> <em>payload</em> and <em>payload_len</em> attributes.</p>
+<p>If there is a payload, follow the steps below.</p>
+<ol type="1">
+<li>Call <a class="el" href="#ga1900ec9205ee6844b422312a0af5896a" title="Initializes a CoAP response packet on a buffer.">gcoap_resp_init()</a> to initialize the response.</li>
+<li>Use the coap_opt_add_xxx() functions to include any Options, for example <a class="el" href="group__net__nanocoap.html#ga23be123d046524b6b1269e26fb3150e0" title="Append a Content-Format option to the pkt buffer.">coap_opt_add_format()</a> for Content-Format of the payload. Options <em>must</em> be written in order by option number (see "CoAP option numbers" in <a href="group__net__coap.html">CoAP defines</a>).</li>
+<li>Call <a class="el" href="group__net__nanocoap.html#gaf94c66182f7412d256c32c66d1d7a012" title="Finalizes options as required and prepares for payload.">coap_opt_finish()</a> to complete the PDU metadata. Retain the returned metadata length.</li>
+<li>Write the response payload, starting at the updated <em>payload</em> pointer in the <a class="el" href="structcoap__pkt__t.html" title="CoAP PDU parsing context structure.">coap_pkt_t</a>, for up to <em>payload_len</em> bytes.</li>
+<li>Return the sum of the metadata length and payload length. If some error has occurred, return a negative errno code from the handler, and gcoap will send a server error (5.00).</li>
+</ol>
+<p>If no payload, call only <a class="el" href="#gace6fa0e224d1cd07211e22e3af75f8bd" title="Writes a complete CoAP response PDU when there is no payload.">gcoap_response()</a> to write the full response. If you need to add Options, follow the first three steps in the list above instead.</p>
+<h3><a class="anchor" id="autotoc_md1994"></a>
+Resource list creation</h3>
+<p>gcoap allows customization of the function that provides the list of registered resources for <code>/.well-known/core</code> and CoRE Resource Directory registration. By default gcoap provides <a class="el" href="#gaa097b4388e04ab265cf79cf38c493d07" title="Writes a resource in CoRE Link Format to a provided buffer.">gcoap_encode_link()</a>, which lists only the target path for each link. However, an application may specify a custom function in the gcoap_listener_t it registers with gcoap. For example, this function may add parameters to provide more information about the resource, as described in RFC 6690. See the gcoap example for use of a custom encoder function.</p>
+<h2><a class="anchor" id="autotoc_md1995"></a>
+Client Operation</h2>
+<p>Client operation includes two phases: creating and sending a request, and handling the response asynchronously in a client supplied callback. See <code>examples/gcoap/client.c</code> for a simple example of sending a request and reading the response.</p>
+<h3><a class="anchor" id="autotoc_md1996"></a>
+Creating a request</h3>
+<p>Here is the expected sequence to prepare and send a request:</p>
+<p>Allocate a buffer and a <a class="el" href="structcoap__pkt__t.html" title="CoAP PDU parsing context structure.">coap_pkt_t</a> for the request.</p>
+<p>If there is a payload, follow the steps below.</p>
+<ol type="1">
+<li>Call <a class="el" href="#ga291fd969b90b9571118c5739706b0c50" title="Initializes a CoAP request PDU on a buffer.">gcoap_req_init()</a> to initialize the request.</li>
+<li>Optionally, mark the request confirmable by calling <a class="el" href="group__net__nanocoap.html#ga92058243dac042a617701aaedc58e45d" title="Set the message type for the given CoAP header.">coap_hdr_set_type()</a> with COAP_TYPE_CON.</li>
+<li>Use the coap_opt_add_xxx() functions to include any Options beyond Uri-Path, which was added in the first step. Options <em>must</em> be written in order by option number (see "CoAP option numbers" in <a href="group__net__coap.html">CoAP defines</a>).</li>
+<li>Call <a class="el" href="group__net__nanocoap.html#gaf94c66182f7412d256c32c66d1d7a012" title="Finalizes options as required and prepares for payload.">coap_opt_finish()</a> to complete the PDU metadata. Retain the returned metadata length.</li>
+<li>Write the request payload, starting at the updated <em>payload</em> pointer in the <a class="el" href="structcoap__pkt__t.html" title="CoAP PDU parsing context structure.">coap_pkt_t</a>, for up to <em>payload_len</em> bytes.</li>
+</ol>
+<p>If no payload, call only <a class="el" href="#gaf635d01732aa7c620271d05949103497" title="Writes a complete CoAP request PDU when there is not a payload.">gcoap_request()</a> to write the full request. If you need to add Options, follow the first four steps in the list above instead.</p>
+<p>Finally, call <a class="el" href="#ga3ea1c9c80e663d07e8b8fddc7e272d07" title="Sends a buffer containing a CoAP request to the provided endpoint.">gcoap_req_send()</a> with the sum of the metadata length and payload length, the destination endpoint, and a callback function for the host's response.</p>
+<h3><a class="anchor" id="autotoc_md1997"></a>
+Handling the response</h3>
+<p>When gcoap receives the response to a request, it executes the callback from the request. gcoap also executes the callback when a response is not received within GCOAP_RESPONSE_TIMEOUT.</p>
+<p>Here is the expected sequence for handling a response in the callback.</p>
+<ol type="1">
+<li>Test for a server response or timeout in the <code>state</code> field of the <code>memo</code> callback parameter (<code>memo-&gt;state</code>). See the GCOAP_MEMO... constants.</li>
+<li>Test the response with <a class="el" href="group__net__nanocoap.html#ga68b2d1696412f0c2cfd8ff14c191ef56" title="Get a message&#39;s code class (3 most significant bits of code)">coap_get_code_class()</a> and <a class="el" href="group__net__nanocoap.html#ga7c4d39185482dc994f974f3c7ba3237b" title="Get a message&#39;s code detail (5 least significant bits of code)">coap_get_code_detail()</a>.</li>
+<li>Test the response payload with the <a class="el" href="structcoap__pkt__t.html" title="CoAP PDU parsing context structure.">coap_pkt_t</a> <em>payload_len</em> and <em>content_type</em> attributes.</li>
+<li>Read the payload, if any.</li>
+</ol>
+<h2><a class="anchor" id="autotoc_md1998"></a>
+Observe Server Operation</h2>
+<p>A CoAP client may register for Observe notifications for any resource that an application has registered with gcoap. An application does not need to take any action to support Observe client registration. However, gcoap limits registration for a given resource to a <em>single</em> observer.</p>
+<p>It is <a href="https://tools.ietf.org/html/rfc7641#section-6">suggested</a> that a server adds the 'obs' attribute to resources that are useful for observation (i.e. will produce notifications) as a hint. Keep in mind that this is not mandatory in order to enable the mechanism in RIOT, nor will it prevent a client from observing a resource that does not have this attribute in the link description. See the "Resource list creation" section above for how the gcoap example app publishes the obs attribute.</p>
+<p>An Observe notification is considered a response to the original client registration request. So, the Observe server only needs to create and send the notification &ndash; no further communication or callbacks are required.</p>
+<h3><a class="anchor" id="autotoc_md1999"></a>
+Creating a notification</h3>
+<p>Here is the expected sequence to prepare and send a notification:</p>
+<p>Allocate a buffer and a <a class="el" href="structcoap__pkt__t.html" title="CoAP PDU parsing context structure.">coap_pkt_t</a> for the notification, then follow the steps below.</p>
+<ol type="1">
+<li>Call <a class="el" href="#ga3918d03f99a7312946bc28d5fdb7b610" title="Initializes a CoAP Observe notification packet on a buffer, for the observer registered for a resourc...">gcoap_obs_init()</a> to initialize the notification for a resource. Test the return value, which may indicate there is not an observer for the resource. If so, you are done.</li>
+<li>Use the coap_opt_add_xxx() functions to include any Options, for example <a class="el" href="group__net__nanocoap.html#ga23be123d046524b6b1269e26fb3150e0" title="Append a Content-Format option to the pkt buffer.">coap_opt_add_format()</a> for Content-Format of the payload. Options <em>must</em> be written in order by option number (see "CoAP option numbers" in <a href="group__net__coap.html">CoAP defines</a>).</li>
+<li>Call <a class="el" href="group__net__nanocoap.html#gaf94c66182f7412d256c32c66d1d7a012" title="Finalizes options as required and prepares for payload.">coap_opt_finish()</a> to complete the PDU metadata. Retain the returned metadata length.</li>
+<li>Write the notification payload, starting at the updated <em>payload</em> pointer in the <a class="el" href="structcoap__pkt__t.html" title="CoAP PDU parsing context structure.">coap_pkt_t</a>, for up to <em>payload_len</em> bytes.</li>
+</ol>
+<p>Finally, call <a class="el" href="#gab89faee1f2f999f4d6088ec91ca620bd" title="Sends a buffer containing a CoAP Observe notification to the observer registered for a resource.">gcoap_obs_send()</a> for the resource, with the sum of the metadata length and payload length for the representation.</p>
+<h3><a class="anchor" id="autotoc_md2000"></a>
+Other considerations</h3>
+<p>By default, the value for the Observe option in a notification is three bytes long. For resources that change slowly, this length can be reduced via CONFIG_GCOAP_OBS_VALUE_WIDTH.</p>
+<p>A client always may re-register for a resource with the same token or with a new token to indicate continued interest in receiving notifications about it. Of course the client must not already be using any new token in the registration for a different resource. Successful registration always is indicated by the presence of the Observe option in the response.</p>
+<p>To cancel registration, the server expects to receive a GET request with the Observe option value set to 1. The server does not support cancellation via a reset (RST) response to a non-confirmable notification.</p>
+<h2><a class="anchor" id="autotoc_md2001"></a>
+Block Operation</h2>
+<p>gcoap provides for both server side and client side blockwise messaging for requests and responses. This section outlines how to write a message for each situation.</p>
+<h3><a class="anchor" id="autotoc_md2002"></a>
+CoAP server GET handling</h3>
+<p>The server must slice the full response body into smaller payloads, and identify the slice with a Block2 option. This implementation toggles the actual writing of data as it passes over the code for the full response body. See the _riot_block2_handler() example in <a href="https://github.com/kb2ma/riot-apps/blob/kb2ma-master/gcoap-block-server/gcoap_block.c">gcoap-block-server</a>, which implements the sequence described below.</p>
+<ul>
+<li>Use <a class="el" href="group__net__nanocoap.html#ga847153f464dc80f7f015d3ccbceb71c4" title="Initialize a block2 slicer struct for writing the payload.">coap_block2_init()</a> to initialize a <em>slicer</em> struct from the Block2 option in the request. The slicer tracks boundaries while writing the payload. If no option present in the initial request, the init function defaults to a payload size of 16 bytes.</li>
+<li>Use <a class="el" href="#ga1900ec9205ee6844b422312a0af5896a" title="Initializes a CoAP response packet on a buffer.">gcoap_resp_init()</a> to begin the response.</li>
+<li>Use <a class="el" href="group__net__nanocoap.html#ga15b410e6d2de7e20b3017b3961a6a15a" title="Add block2 option in descriptive use from a slicer object.">coap_opt_add_block2()</a> to write the Block2 option from the slicer. Use 1 as a default for the <em>more</em> parameter. At this point, we don't know yet if this message will be the last in the block exchange. However, we must add the block option at this location in the message.</li>
+<li>Use <a class="el" href="group__net__nanocoap.html#gaf94c66182f7412d256c32c66d1d7a012" title="Finalizes options as required and prepares for payload.">coap_opt_finish()</a> to add a payload marker.</li>
+<li>Add the payload using the <code>coap_blockwise_put_xxx()</code> functions. The slicer knows the current position in the overall body of the response. It writes only the portion of the body specified by the block number and block size in the slicer.</li>
+<li>Finally, use <a class="el" href="group__net__nanocoap.html#ga5d839eb2b07582ff50afb988d2e6e8c1" title="Finish a block2 response.">coap_block2_finish()</a> to finalize the block option with the proper value for the <em>more</em> parameter.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md2003"></a>
+CoAP server PUT/POST handling</h3>
+<p>The server must ack each blockwise portion of the response body received from the client by writing a Block1 option in the response. See the _sha256_handler() example in <a href="https://github.com/kb2ma/riot-apps/blob/kb2ma-master/gcoap-block-server/gcoap_block.c">gcoap-block-server</a>, which implements the sequence described below.</p>
+<ul>
+<li>Use <a class="el" href="group__net__nanocoap.html#ga843ab80385da82c6c56a7221dd9ffa68" title="Block1 option getter.">coap_get_block1()</a> to initialize a block1 struct from the request.</li>
+<li>Determine the response code. If the block1 <em>more</em> attribute is 1, use COAP_CODE_CONTINUE to request more responses. Otherwise, use COAP_CODE_CHANGED to indicate a successful transfer.</li>
+<li>Use <a class="el" href="#ga1900ec9205ee6844b422312a0af5896a" title="Initializes a CoAP response packet on a buffer.">gcoap_resp_init()</a> to begin the response, including the response code.</li>
+<li>Use <a class="el" href="group__net__nanocoap.html#gaf529432ec861b1ed971a6ebe392b5136" title="Encode the given block1 option in control use.">coap_opt_add_block1_control()</a> to write the Block1 option.</li>
+<li>Use <a class="el" href="group__net__nanocoap.html#gaf94c66182f7412d256c32c66d1d7a012" title="Finalizes options as required and prepares for payload.">coap_opt_finish()</a> to determine the length of the PDU. If appropriate, use the COAP_OPT_FINISH_PAYLOAD parameter and then write the payload.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md2004"></a>
+CoAP client GET request</h3>
+<p>The client requests a specific blockwise payload from the overall body by writing a Block2 option in the request. See _resp_handler() in the <a href="https://github.com/RIOT-OS/RIOT/blob/master/examples/gcoap/client.c">gcoap</a> example in the RIOT distribution, which implements the sequence described below.</p>
+<ul>
+<li>For the first request, use <a class="el" href="group__net__nanocoap.html#gadabe7197cbe80bf17fea0ecf5ee9bf56" title="Initialize a block struct from content information.">coap_block_object_init()</a> to initialize a new block1 struct. For subsequent requests, first use <a class="el" href="group__net__nanocoap.html#ga68deff4fe341e495eb8c3449e5118c82" title="Block2 option getter.">coap_get_block2()</a> to read the Block2 option in the response to the previous request. If the <em>more</em> attribute indicates no more blocks, you are done.<ul>
+<li>The gcoap example actually does <em>not</em> include a Block2 option in the original request, but the server response includes a blockwise response with a Block2 option anyway. On the other hand, this example shows how blockwise messaging can be supported in a generic way.</li>
+</ul>
+</li>
+<li>If more blocks are available, use <a class="el" href="#ga291fd969b90b9571118c5739706b0c50" title="Initializes a CoAP request PDU on a buffer.">gcoap_req_init()</a> to create a new request.</li>
+<li>Increment the <em>blknum</em> attribute in the block1 struct from the previous response to request the next blockwise payload.</li>
+<li>Use <a class="el" href="group__net__nanocoap.html#ga14bb5cc27fb33ff8abca2d63484b1f10" title="Insert block2 option into buffer in control usage.">coap_opt_put_block2_control()</a> to write the Block2 option to the request.</li>
+<li>Use <a class="el" href="group__net__nanocoap.html#gaf94c66182f7412d256c32c66d1d7a012" title="Finalizes options as required and prepares for payload.">coap_opt_finish()</a> to determine the length of the PDU.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md2005"></a>
+CoAP client PUT/POST request</h3>
+<p>The client pushes a specific blockwise payload from the overall body to the server by writing a Block1 option in the request. See _do_block_post() in the <a href="https://github.com/kb2ma/riot-apps/blob/kb2ma-master/gcoap-block-client/gcoap_block.c">gcoap-block-client</a> example, which implements the sequence described below.</p>
+<ul>
+<li>For the first request, use <a class="el" href="group__net__nanocoap.html#ga72043847cf561f5f6e926cf4323bbd66" title="Initialize a block slicer struct from content information.">coap_block_slicer_init()</a> to initialize a <em>slicer</em> struct with the desired block number and block size. For subsequent requests, first read the response from the server to the previous request. If the response code is COAP_CODE_CONTINUE, then increment the last block number sent when initializing the slicer struct for the next request.</li>
+<li>Use <a class="el" href="#ga291fd969b90b9571118c5739706b0c50" title="Initializes a CoAP request PDU on a buffer.">gcoap_req_init()</a> to initialize the request.</li>
+<li>Use <a class="el" href="group__net__nanocoap.html#gaf123a387066d0c2cef1548747c72f990" title="Add block1 option in descriptive use from a slicer object.">coap_opt_add_block1()</a> to add the Block1 option from the slicer. Use 1 as a default for the <em>more</em> parameter. At this point, we don't know yet if this message will be the last in the block exchange. However, we must add the block option at this location in the message.</li>
+<li>Use <a class="el" href="group__net__nanocoap.html#gaf94c66182f7412d256c32c66d1d7a012" title="Finalizes options as required and prepares for payload.">coap_opt_finish()</a> with COAP_OPT_FINISH_PAYLOAD to write the payload marker.</li>
+<li>Add the payload using the <code>coap_blockwise_put_xxx()</code> functions. The slicer knows the current position in the overall body of the response. It writes only the portion of the body specified by the block number and block size in the slicer.</li>
+<li>Finally, use <a class="el" href="group__net__nanocoap.html#gab424b844874f0bc98190100fb748909e" title="Finish a block1 request.">coap_block1_finish()</a> to finalize the block option with the proper value for the <em>more</em> parameter.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md2006"></a>
+Proxy Operation</h2>
+<p>A <a href="https://tools.ietf.org/html/rfc7252#section-5.7.1">CoAP proxy</a> forwards incoming requests to an origin server, or again to another proxy server.</p>
+<h3><a class="anchor" id="autotoc_md2007"></a>
+Proxy Client Handling</h3>
+<p>The current implementation only allows the use of <code>Proxy-Uri</code> to specify the absolute URI for the origin server and resource. A request that includes a <code>Proxy-Uri</code> option must not contain any of the <code>Uri-*</code> options. An example:</p>
+<div class="fragment"><div class="line"><span class="comment">// endpoint for the proxy server</span></div>
+<div class="line"> <a class="code hl_struct" href="struct__sock__tl__ep.html">sock_udp_ep_t</a> *proxy_remote = ...;</div>
+<div class="line"><span class="comment">// absolute URI for the origin server and resource</span></div>
+<div class="line"><span class="keywordtype">char</span> *uri = <span class="stringliteral">&quot;coap://[2001:db8::1]:5683/.well-known/core&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_function" href="#ga291fd969b90b9571118c5739706b0c50">gcoap_req_init</a>(&amp;pdu, buf, <a class="code hl_define" href="group__net__gcoap__conf.html#ga6e17d0741db5fa6da38b769ecdd4c80d">CONFIG_GCOAP_PDU_BUF_SIZE</a>, <a class="code hl_enumvalue" href="group__net__coap.html#ggaf99712dec26d13b1649cc55043580645a025300cb0dc4c4de8eb0b0e0b4eb5317">COAP_METHOD_GET</a>, NULL);</div>
+<div class="line"><a class="code hl_function" href="group__net__nanocoap.html#gabe53a821876c7cbca41eb7df4a109af1">coap_opt_add_proxy_uri</a>(&amp;pdu, uri);</div>
+<div class="line"><span class="keywordtype">unsigned</span> len = <a class="code hl_function" href="group__net__nanocoap.html#gaf94c66182f7412d256c32c66d1d7a012">coap_opt_finish</a>(&amp;pdu, <a class="code hl_define" href="group__net__nanocoap.html#ga88497b423bb62815a4f06345b9bd1e0f">COAP_OPT_FINISH_NONE</a>);</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_function" href="#ga3ea1c9c80e663d07e8b8fddc7e272d07">gcoap_req_send</a>((uint8_t *) pdu-&gt;hdr, len, proxy_remote, NULL, _resp_handler, NULL,</div>
+<div class="line">               <a class="code hl_enumvalue" href="#gga34f7408f6a5a8313a1937bf2697fdaf1a49638e0c48f336388176798cca6887b8">GCOAP_SOCKET_TYPE_UNDEF</a>);</div>
+<div class="ttc" id="agroup__net__coap_html_ggaf99712dec26d13b1649cc55043580645a025300cb0dc4c4de8eb0b0e0b4eb5317"><div class="ttname"><a href="group__net__coap.html#ggaf99712dec26d13b1649cc55043580645a025300cb0dc4c4de8eb0b0e0b4eb5317">COAP_METHOD_GET</a></div><div class="ttdeci">@ COAP_METHOD_GET</div><div class="ttdoc">GET request (no paylod)</div><div class="ttdef"><b>Definition</b> coap.h:172</div></div>
+<div class="ttc" id="agroup__net__gcoap__conf_html_ga6e17d0741db5fa6da38b769ecdd4c80d"><div class="ttname"><a href="group__net__gcoap__conf.html#ga6e17d0741db5fa6da38b769ecdd4c80d">CONFIG_GCOAP_PDU_BUF_SIZE</a></div><div class="ttdeci">#define CONFIG_GCOAP_PDU_BUF_SIZE</div><div class="ttdoc">Size of the buffer used to build a CoAP request or response.</div><div class="ttdef"><b>Definition</b> gcoap.h:464</div></div>
+<div class="ttc" id="agroup__net__gcoap_html_ga291fd969b90b9571118c5739706b0c50"><div class="ttname"><a href="#ga291fd969b90b9571118c5739706b0c50">gcoap_req_init</a></div><div class="ttdeci">static int gcoap_req_init(coap_pkt_t *pdu, uint8_t *buf, size_t len, unsigned code, const char *path)</div><div class="ttdoc">Initializes a CoAP request PDU on a buffer.</div><div class="ttdef"><b>Definition</b> gcoap.h:969</div></div>
+<div class="ttc" id="agroup__net__gcoap_html_ga3ea1c9c80e663d07e8b8fddc7e272d07"><div class="ttname"><a href="#ga3ea1c9c80e663d07e8b8fddc7e272d07">gcoap_req_send</a></div><div class="ttdeci">ssize_t gcoap_req_send(const uint8_t *buf, size_t len, const sock_udp_ep_t *remote, const sock_udp_ep_t *local, gcoap_resp_handler_t resp_handler, void *context, gcoap_socket_type_t tl_type)</div><div class="ttdoc">Sends a buffer containing a CoAP request to the provided endpoint.</div></div>
+<div class="ttc" id="agroup__net__gcoap_html_gga34f7408f6a5a8313a1937bf2697fdaf1a49638e0c48f336388176798cca6887b8"><div class="ttname"><a href="#gga34f7408f6a5a8313a1937bf2697fdaf1a49638e0c48f336388176798cca6887b8">GCOAP_SOCKET_TYPE_UNDEF</a></div><div class="ttdeci">@ GCOAP_SOCKET_TYPE_UNDEF</div><div class="ttdoc">undefined</div><div class="ttdef"><b>Definition</b> gcoap.h:751</div></div>
+<div class="ttc" id="agroup__net__nanocoap_html_ga88497b423bb62815a4f06345b9bd1e0f"><div class="ttname"><a href="group__net__nanocoap.html#ga88497b423bb62815a4f06345b9bd1e0f">COAP_OPT_FINISH_NONE</a></div><div class="ttdeci">#define COAP_OPT_FINISH_NONE</div><div class="ttdoc">no special handling required</div><div class="ttdef"><b>Definition</b> nanocoap.h:193</div></div>
+<div class="ttc" id="agroup__net__nanocoap_html_gabe53a821876c7cbca41eb7df4a109af1"><div class="ttname"><a href="group__net__nanocoap.html#gabe53a821876c7cbca41eb7df4a109af1">coap_opt_add_proxy_uri</a></div><div class="ttdeci">ssize_t coap_opt_add_proxy_uri(coap_pkt_t *pkt, const char *uri)</div><div class="ttdoc">Adds a single Proxy-URI option into pkt.</div></div>
+<div class="ttc" id="agroup__net__nanocoap_html_gaf94c66182f7412d256c32c66d1d7a012"><div class="ttname"><a href="group__net__nanocoap.html#gaf94c66182f7412d256c32c66d1d7a012">coap_opt_finish</a></div><div class="ttdeci">ssize_t coap_opt_finish(coap_pkt_t *pkt, uint16_t flags)</div><div class="ttdoc">Finalizes options as required and prepares for payload.</div></div>
+<div class="ttc" id="astruct__sock__tl__ep_html"><div class="ttname"><a href="struct__sock__tl__ep.html">_sock_tl_ep</a></div><div class="ttdoc">Common IP-based transport layer end point.</div><div class="ttdef"><b>Definition</b> sock.h:215</div></div>
+</div><!-- fragment --><p>See the gcoap example for a sample implementation.</p>
+<h3><a class="anchor" id="autotoc_md2008"></a>
+Proxy Server Handling</h3>
+<p>Not implemented yet.</p>
+<h2><a class="anchor" id="autotoc_md2009"></a>
+DTLS as transport security</h2>
+<p>GCoAP allows to use DTLS for transport security by using the <a class="el" href="group__net__sock__dtls.html">DTLS sock API</a>. Using the module gcoap_dtls enables the support. GCoAP listens for requests on CONFIG_GCOAPS_PORT, 5684 by default when DTLS is enabled.</p>
+<p>Credentials have to been configured before use. See <a class="el" href="group__net__credman.html">Credman</a> and <a class="el" href="group__net__sock__dtls__creds.html">DTLS sock credentials API</a> for credential managing. Access to the DTLS socket is provided by <a class="el" href="#ga7a65749835295b471d80f85d63e9ba95" title="Get the underlying DTLS socket of gcoap.">gcoap_get_sock_dtls()</a>.</p>
+<p>GCoAP includes a DTLS session management component that stores active sessions. By default, it tries to have CONFIG_GCOAP_DTLS_MINIMUM_AVAILABLE_SESSIONS session slots available to keep the server responsive. If not enough sessions are available the server destroys the session that has not been used for the longest time after CONFIG_GCOAP_DTLS_MINIMUM_AVAILABLE_SESSIONS_TIMEOUT_USEC.</p>
+<h2><a class="anchor" id="autotoc_md2010"></a>
+Implementation Notes</h2>
+<h3><a class="anchor" id="autotoc_md2011"></a>
+Waiting for a response</h3>
+<p>We take advantage of RIOT's asynchronous messaging by using an xtimer to wait for a response, so the gcoap thread does not block while waiting. The user is notified via the same callback, whether the message is received or the wait times out. We track the response with an entry in the <code>_coap_state.open_reqs</code> array.</p>
+<h2><a class="anchor" id="autotoc_md2012"></a>
+Implementation Status</h2>
+<p>gcoap includes server and client capability. Available features include:</p>
+<ul>
+<li>Message Type: Supports non-confirmable (NON) messaging. Additionally provides a callback on timeout. Provides piggybacked ACK response to a confirmable (CON) request.</li>
+<li>Observe extension: Provides server-side registration and notifications and client-side observe.</li>
+<li>Server and Client provide helper functions for writing the response/request. See the CoAP topic in the source documentation for details. See the gcoap example for sample implementations.</li>
+<li>Server allows an application to register a 'listener', which includes an array of endpoint paths and function callbacks used to write a response.</li>
+<li>Server listens on a port at startup; defaults to 5683.</li>
+<li>Client operates asynchronously; sends request and then handles response in a user provided callback.</li>
+<li>Client generates token; length defined at compile time.</li>
+<li>Options: Supports Content-Format for payload. </li>
+</ul>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga69c71c7b9977f3b4a3fa064adb527083" name="ga69c71c7b9977f3b4a3fa064adb527083"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga69c71c7b9977f3b4a3fa064adb527083">&#9670;&#160;</a></span>GCOAP_STACK_SIZE</h2>
@@ -1519,7 +1519,7 @@ GCOAP_OBS_INIT_UNUSED if no observer for resource </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

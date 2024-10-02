@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -154,48 +154,6 @@ $(function(){initNavTree('group__drivers__periph__qdec.html',''); initResizable(
 
 <p>Low-level QDEC peripheral driver  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Low-level QDEC peripheral driver </p>
-<p>This file was inspired by <a class="el" href="pwm_8h.html" title="Low-level PWM peripheral driver interface definitions.">pwm.h</a> written by : Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a></p>
-<p>QDEC interface enables access to CPU peripherals acquiring quadrature signals. On most platforms, this interface will be implemented based on hardware timers.</p>
-<p>A quadrature encoder outputs two wave forms that are 90 degrees out of phase.</p>
-<pre class="fragment">*
-* Clockwise (C) :              Counter-clockwise (CC) :
-*  ___________________          ___________________
-* | Phase |  A  |  B  |        | Phase |  A  |  B  |
-* |-------------------|        |-------------------|
-* |   1   |  0  |  0  |        |   1   |  0  |  0  |
-* |-------------------|        |-------------------|
-* |   2   |  0  |  1  |        |   2   |  1  |  0  |
-* |-------------------|        |-------------------|
-* |   3   |  1  |  1  |        |   3   |  1  |  1  |
-* |-------------------|        |-------------------|
-* |   4   |  1  |  0  |        |   4   |  0  |  1  |
-*  -------------------          -------------------
-*         __    __                   __    __
-*      __|  |__|  |_               _|  |__|  |__
-*        __    __                     __    __
-*      _|  |__|  |__               __|  |__|  |_
-*
-* These signals are decoded to produce a count up or a count down.
-* On rising or falling edge of one signal, other signal state is checked to
-* determine direction.
-*
-*  1. Rising edge on A and signal B is up       =&gt; (C)  =&gt; increment counter
-*  2. Rising edge on A and signal B is down     =&gt; (CC) =&gt; decrement counter
-*  3. Falling edge on A and signal B is up      =&gt; (C)  =&gt; decrement counter
-*  4. Falling edge on A and signal B is down    =&gt; (CC) =&gt; increment counter
-*  5. Rising edge on B and signal A is up       =&gt; (C)  =&gt; decrement counter
-*  6. Rising edge on B and signal A is down     =&gt; (CC) =&gt; increment counter
-*  7. Falling edge on B and signal A is up      =&gt; (C)  =&gt; increment counter
-*  8. Falling edge on B and signal A is down    =&gt; (CC) =&gt; decrement counter
-* </pre><p>According to these cases, three modes are available :</p><ul>
-<li>X1 mode : signal A, rising edges (cases 1 and 2)</li>
-<li>X2 mode : signal A, rising and falling edges (cases 1, 2, 3 and 4)</li>
-<li>X4 mode : signals A and B, rising and falling edges (all cases)</li>
-</ul>
-<p>The mapping/configuration of QDEC devices (timers) and the used pins has to be done in the board configuration (the board's `periph_conf.h).</p>
-<p>When using the QDEC interface, first thing you have to do is initialize the QDEC device with the targeted mode. Once the device is initialized, it will start counting quadrature signals on all configured pins immediately. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -256,6 +214,48 @@ Functions</h2></td></tr>
 <tr class="memdesc:gab64e4e295e019c7d8e7542543abecb6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop the given qdec timer.  <br /></td></tr>
 <tr class="separator:gab64e4e295e019c7d8e7542543abecb6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Low-level QDEC peripheral driver </p>
+<p>This file was inspired by <a class="el" href="pwm_8h.html" title="Low-level PWM peripheral driver interface definitions.">pwm.h</a> written by : Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a></p>
+<p>QDEC interface enables access to CPU peripherals acquiring quadrature signals. On most platforms, this interface will be implemented based on hardware timers.</p>
+<p>A quadrature encoder outputs two wave forms that are 90 degrees out of phase.</p>
+<pre class="fragment">*
+* Clockwise (C) :              Counter-clockwise (CC) :
+*  ___________________          ___________________
+* | Phase |  A  |  B  |        | Phase |  A  |  B  |
+* |-------------------|        |-------------------|
+* |   1   |  0  |  0  |        |   1   |  0  |  0  |
+* |-------------------|        |-------------------|
+* |   2   |  0  |  1  |        |   2   |  1  |  0  |
+* |-------------------|        |-------------------|
+* |   3   |  1  |  1  |        |   3   |  1  |  1  |
+* |-------------------|        |-------------------|
+* |   4   |  1  |  0  |        |   4   |  0  |  1  |
+*  -------------------          -------------------
+*         __    __                   __    __
+*      __|  |__|  |_               _|  |__|  |__
+*        __    __                     __    __
+*      _|  |__|  |__               __|  |__|  |_
+*
+* These signals are decoded to produce a count up or a count down.
+* On rising or falling edge of one signal, other signal state is checked to
+* determine direction.
+*
+*  1. Rising edge on A and signal B is up       =&gt; (C)  =&gt; increment counter
+*  2. Rising edge on A and signal B is down     =&gt; (CC) =&gt; decrement counter
+*  3. Falling edge on A and signal B is up      =&gt; (C)  =&gt; decrement counter
+*  4. Falling edge on A and signal B is down    =&gt; (CC) =&gt; increment counter
+*  5. Rising edge on B and signal A is up       =&gt; (C)  =&gt; decrement counter
+*  6. Rising edge on B and signal A is down     =&gt; (CC) =&gt; increment counter
+*  7. Falling edge on B and signal A is up      =&gt; (C)  =&gt; increment counter
+*  8. Falling edge on B and signal A is down    =&gt; (CC) =&gt; decrement counter
+* </pre><p>According to these cases, three modes are available :</p><ul>
+<li>X1 mode : signal A, rising edges (cases 1 and 2)</li>
+<li>X2 mode : signal A, rising and falling edges (cases 1, 2, 3 and 4)</li>
+<li>X4 mode : signals A and B, rising and falling edges (all cases)</li>
+</ul>
+<p>The mapping/configuration of QDEC devices (timers) and the used pins has to be done in the board configuration (the board's `periph_conf.h).</p>
+<p>When using the QDEC interface, first thing you have to do is initialize the QDEC device with the targeted mode. Once the device is initialized, it will start counting quadrature signals on all configured pins immediately. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga101d07334a21ae81666572f918f47cf0" name="ga101d07334a21ae81666572f918f47cf0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga101d07334a21ae81666572f918f47cf0">&#9670;&#160;</a></span>QDEC_DEV</h2>
@@ -463,7 +463,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -149,27 +149,7 @@ $(function(){initNavTree('structcongure__reno__snd__consts__t.html',''); initRes
 
 <p>Constants for the congestion control.  
  <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Constants for the congestion control. </p>
-<p>Example usage:</p>
-<div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_struct" href="structcongure__reno__snd__consts__t.html">congure_reno_snd_consts_t</a> consts = {</div>
-<div class="line">    .fr = _my_fast_retransmit,</div>
-<div class="line">    .same_wnd_adv = _my_same_window_advertised,</div>
-<div class="line">    .init_mss = 1460,</div>
-<div class="line">    .cwnd_upper = 2190,</div>
-<div class="line">    .cwnd_lower = 1095,</div>
-<div class="line">    .init_ssthresh = <a class="code hl_define" href="group__sys__congure.html#ga356c72a12d4bc16dc8adb32532733bf7">CONGURE_WND_SIZE_MAX</a>,</div>
-<div class="line">    .frthresh = 3,</div>
-<div class="line">}</div>
-<div class="line"><span class="keyword">static</span> <a class="code hl_struct" href="structcongure__reno__snd.html">congure_reno_snd_t</a> cong;</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// ...</span></div>
-<div class="line"><a class="code hl_function" href="group__sys__congure__reno.html#ga3537f89f698c97e3ce04659a928f3bf6">congure_reno_snd_setup</a>(&amp;cong, &amp;<span class="keyword">const</span>);</div>
-<div class="ttc" id="agroup__sys__congure__reno_html_ga3537f89f698c97e3ce04659a928f3bf6"><div class="ttname"><a href="group__sys__congure__reno.html#ga3537f89f698c97e3ce04659a928f3bf6">congure_reno_snd_setup</a></div><div class="ttdeci">void congure_reno_snd_setup(congure_reno_snd_t *c, const congure_reno_snd_consts_t *consts)</div><div class="ttdoc">Set-up CongURE implementation of TCP Reno driver and constants.</div></div>
-<div class="ttc" id="agroup__sys__congure_html_ga356c72a12d4bc16dc8adb32532733bf7"><div class="ttname"><a href="group__sys__congure.html#ga356c72a12d4bc16dc8adb32532733bf7">CONGURE_WND_SIZE_MAX</a></div><div class="ttdeci">#define CONGURE_WND_SIZE_MAX</div><div class="ttdoc">Maximum value the window size can take.</div><div class="ttdef"><b>Definition</b> congure.h:35</div></div>
-<div class="ttc" id="astructcongure__reno__snd__consts__t_html"><div class="ttname"><a href="structcongure__reno__snd__consts__t.html">congure_reno_snd_consts_t</a></div><div class="ttdoc">Constants for the congestion control.</div><div class="ttdef"><b>Definition</b> reno.h:60</div></div>
-<div class="ttc" id="astructcongure__reno__snd_html"><div class="ttname"><a href="structcongure__reno__snd.html">congure_reno_snd</a></div><div class="ttdoc">State object for CongURE Reno.</div><div class="ttdef"><b>Definition</b> reno.h:172</div></div>
-</div><!-- fragment --> </div>
+
 <p><code>#include &lt;reno.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -207,7 +187,27 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>frthresh</b></td><
 <tr class="memdesc:abeb9a29173704d836bd81d524b40c9de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Threshold for duplicate ACKs to go into Fast Retransmit. <br /></td></tr>
 <tr class="separator:abeb9a29173704d836bd81d524b40c9de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Field Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Constants for the congestion control. </p>
+<p>Example usage:</p>
+<div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_struct" href="structcongure__reno__snd__consts__t.html">congure_reno_snd_consts_t</a> consts = {</div>
+<div class="line">    .fr = _my_fast_retransmit,</div>
+<div class="line">    .same_wnd_adv = _my_same_window_advertised,</div>
+<div class="line">    .init_mss = 1460,</div>
+<div class="line">    .cwnd_upper = 2190,</div>
+<div class="line">    .cwnd_lower = 1095,</div>
+<div class="line">    .init_ssthresh = <a class="code hl_define" href="group__sys__congure.html#ga356c72a12d4bc16dc8adb32532733bf7">CONGURE_WND_SIZE_MAX</a>,</div>
+<div class="line">    .frthresh = 3,</div>
+<div class="line">}</div>
+<div class="line"><span class="keyword">static</span> <a class="code hl_struct" href="structcongure__reno__snd.html">congure_reno_snd_t</a> cong;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// ...</span></div>
+<div class="line"><a class="code hl_function" href="group__sys__congure__reno.html#ga3537f89f698c97e3ce04659a928f3bf6">congure_reno_snd_setup</a>(&amp;cong, &amp;<span class="keyword">const</span>);</div>
+<div class="ttc" id="agroup__sys__congure__reno_html_ga3537f89f698c97e3ce04659a928f3bf6"><div class="ttname"><a href="group__sys__congure__reno.html#ga3537f89f698c97e3ce04659a928f3bf6">congure_reno_snd_setup</a></div><div class="ttdeci">void congure_reno_snd_setup(congure_reno_snd_t *c, const congure_reno_snd_consts_t *consts)</div><div class="ttdoc">Set-up CongURE implementation of TCP Reno driver and constants.</div></div>
+<div class="ttc" id="agroup__sys__congure_html_ga356c72a12d4bc16dc8adb32532733bf7"><div class="ttname"><a href="group__sys__congure.html#ga356c72a12d4bc16dc8adb32532733bf7">CONGURE_WND_SIZE_MAX</a></div><div class="ttdeci">#define CONGURE_WND_SIZE_MAX</div><div class="ttdoc">Maximum value the window size can take.</div><div class="ttdef"><b>Definition</b> congure.h:35</div></div>
+<div class="ttc" id="astructcongure__reno__snd__consts__t_html"><div class="ttname"><a href="structcongure__reno__snd__consts__t.html">congure_reno_snd_consts_t</a></div><div class="ttdoc">Constants for the congestion control.</div><div class="ttdef"><b>Definition</b> reno.h:60</div></div>
+<div class="ttc" id="astructcongure__reno__snd_html"><div class="ttname"><a href="structcongure__reno__snd.html">congure_reno_snd</a></div><div class="ttdoc">State object for CongURE Reno.</div><div class="ttdef"><b>Definition</b> reno.h:172</div></div>
+</div><!-- fragment --> </div><h2 class="groupheader">Field Documentation</h2>
 <a id="abdc7845b266a64bb6e9348c223b1d3bd" name="abdc7845b266a64bb6e9348c223b1d3bd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abdc7845b266a64bb6e9348c223b1d3bd">&#9670;&#160;</a></span>ca_cwnd_inc</h2>
 
@@ -393,7 +393,7 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>frthresh</b></td><
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structcongure__reno__snd__consts__t.html">congure_reno_snd_consts_t</a></li>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:32 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

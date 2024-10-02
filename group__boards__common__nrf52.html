@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -150,17 +150,7 @@ $(function(){initNavTree('group__boards__common__nrf52.html',''); initResizable(
 
 <p>Common files and configuration for nRF52 boards.  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Common files and configuration for nRF52 boards. </p>
-<h2><a class="anchor" id="autotoc_md311"></a>
-Flashing nrf52 boards</h2>
-<p>By default, nrf52 boards are flashed using Jlink. <a class="el" href="group__boards__nrf52840-mdk.html">nRF52840-MDK</a> uses PyOCD by default.</p>
-<p>To flash the board, use <code>BOARD=&lt;nrf52 board&gt;</code> with the <code>make</code> command.<br  />
- Example with <code>hello-world</code> application: </p><div class="fragment"><div class="line">make BOARD=&lt;nrf52 board&gt; -C examples/hello-world flash</div>
-</div><!-- fragment --><p>OpenOCD can also be used to flash nrf52 boards (except thingy52 and ruuvitag because they are hardly coupled with JLink segger_rtt stdio). For the moment, the latest stable version of OpenOCD (0.10) doesn't contain any support for nrf52 but versions built against the current development version can be used.</p>
-<p>To flash the board with OpenOCD, use the <code>PROGRAMMER</code> variable: </p><div class="fragment"><div class="line">PROGRAMMER=openocd make BOARD=&lt;nrf52 board&gt; -C examples/hello-world flash</div>
-</div><!-- fragment --><p>It is also possible to use the SWD interface of a ST-LINK/V2 in-circuit debugger/programmer with OpenOCD to flash a nrf52 board: </p><div class="fragment"><div class="line">PROGRAMMER=openocd OPENOCD_DEBUG_ADAPTER=stlink make BOARD=&lt;nrf52 board&gt; -C examples/hello-world flash</div>
-</div><!-- fragment --> <table class="memberdecls">
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__boards__common__nrf52xxxdk.html">NRF52 DK common</a></td></tr>
@@ -191,14 +181,24 @@ Files</h2></td></tr>
 <tr class="memdesc:nrf52_2include_2cfg__timer__default_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default timer configuration for nRF52 based boards. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Common files and configuration for nRF52 boards. </p>
+<h2><a class="anchor" id="autotoc_md311"></a>
+Flashing nrf52 boards</h2>
+<p>By default, nrf52 boards are flashed using Jlink. <a class="el" href="group__boards__nrf52840-mdk.html">nRF52840-MDK</a> uses PyOCD by default.</p>
+<p>To flash the board, use <code>BOARD=&lt;nrf52 board&gt;</code> with the <code>make</code> command.<br  />
+ Example with <code>hello-world</code> application: </p><div class="fragment"><div class="line">make BOARD=&lt;nrf52 board&gt; -C examples/hello-world flash</div>
+</div><!-- fragment --><p>OpenOCD can also be used to flash nrf52 boards (except thingy52 and ruuvitag because they are hardly coupled with JLink segger_rtt stdio). For the moment, the latest stable version of OpenOCD (0.10) doesn't contain any support for nrf52 but versions built against the current development version can be used.</p>
+<p>To flash the board with OpenOCD, use the <code>PROGRAMMER</code> variable: </p><div class="fragment"><div class="line">PROGRAMMER=openocd make BOARD=&lt;nrf52 board&gt; -C examples/hello-world flash</div>
+</div><!-- fragment --><p>It is also possible to use the SWD interface of a ST-LINK/V2 in-circuit debugger/programmer with OpenOCD to flash a nrf52 board: </p><div class="fragment"><div class="line">PROGRAMMER=openocd OPENOCD_DEBUG_ADAPTER=stlink make BOARD=&lt;nrf52 board&gt; -C examples/hello-world flash</div>
+</div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->
 <!-- start footer part -->
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

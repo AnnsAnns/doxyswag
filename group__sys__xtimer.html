@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -153,13 +153,6 @@ $(function(){initNavTree('group__sys__xtimer.html',''); initResizable(true); });
 
 <p>Provides a high level timer module to register timers, get current system time, and let a thread sleep for a certain amount of time.  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Provides a high level timer module to register timers, get current system time, and let a thread sleep for a certain amount of time. </p>
-<p>The implementation takes one low-level timer and multiplexes it.</p>
-<p>Insertion and removal of timers has O(n) complexity with (n) being the number of active timers. The reason for this is that multiplexing is realized by next-first singly linked lists.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000033">Deprecated</a></b></dt><dd>xtimer has been deprecated in favor of the <a class="el" href="group__sys__ztimer.html">ztimer high level timer abstraction layer</a> </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>With <a class="el" href="group__sys__ztimer__xtimer__compat.html">ztimer_xtimer_compat: xtimer wrapper</a> a compatibility wrapper is provided that in the vast majority of cases can function as a drop-in replacement. This compatibility wrapper is expected to replace <code>xtimer</code> in the near future and ensure that code still depending on the <code>xtimer</code> API continues to function.</dd></dl>
-<p>Note that at least for long running timers, using <a class="el" href="group__sys__ztimer.html">ztimer high level timer abstraction layer</a> instead of the compatibility layer can yield lower clock drift and lower power consumption compared to using the compatibility layer. For details on how to achieve lower clock drift and lower power consumption please consult the <a class="el" href="group__sys__ztimer.html">ztimer high level timer abstraction layer</a> documentation. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -356,6 +349,13 @@ Functions</h2></td></tr>
 <tr class="memdesc:gaf7a92a792c25cb6fdd24f5ab3a880b68"><td class="mdescLeft">&#160;</td><td class="mdescRight">receive a message blocking but with timeout, 64bit version  <br /></td></tr>
 <tr class="separator:gaf7a92a792c25cb6fdd24f5ab3a880b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Provides a high level timer module to register timers, get current system time, and let a thread sleep for a certain amount of time. </p>
+<p>The implementation takes one low-level timer and multiplexes it.</p>
+<p>Insertion and removal of timers has O(n) complexity with (n) being the number of active timers. The reason for this is that multiplexing is realized by next-first singly linked lists.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000033">Deprecated</a></b></dt><dd>xtimer has been deprecated in favor of the <a class="el" href="group__sys__ztimer.html">ztimer high level timer abstraction layer</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>With <a class="el" href="group__sys__ztimer__xtimer__compat.html">ztimer_xtimer_compat: xtimer wrapper</a> a compatibility wrapper is provided that in the vast majority of cases can function as a drop-in replacement. This compatibility wrapper is expected to replace <code>xtimer</code> in the near future and ensure that code still depending on the <code>xtimer</code> API continues to function.</dd></dl>
+<p>Note that at least for long running timers, using <a class="el" href="group__sys__ztimer.html">ztimer high level timer abstraction layer</a> instead of the compatibility layer can yield lower clock drift and lower power consumption compared to using the compatibility layer. For details on how to achieve lower clock drift and lower power consumption please consult the <a class="el" href="group__sys__ztimer.html">ztimer high level timer abstraction layer</a> documentation. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga370b9e9a079c4cb4f54fd947b67b9f41" name="ga370b9e9a079c4cb4f54fd947b67b9f41"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga370b9e9a079c4cb4f54fd947b67b9f41">&#9670;&#160;</a></span>XTIMER_BACKOFF</h2>
@@ -1895,7 +1895,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

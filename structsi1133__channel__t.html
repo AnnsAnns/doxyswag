@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -149,6 +149,24 @@ $(function(){initNavTree('structsi1133__channel__t.html',''); initResizable(true
 
 <p>Channel configuration the Si1133 sensor.  
  <a href="#details">More...</a></p>
+
+<p><code>#include &lt;si1133.h&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a2d50d8c520519c21f95f06c0f6b75ddc" id="r_a2d50d8c520519c21f95f06c0f6b75ddc"><td class="memItemLeft" align="right" valign="top"><a id="a2d50d8c520519c21f95f06c0f6b75ddc" name="a2d50d8c520519c21f95f06c0f6b75ddc"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>sample_time_log</b></td></tr>
+<tr class="memdesc:a2d50d8c520519c21f95f06c0f6b75ddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log2 of sampling time, 0 to 14. <br /></td></tr>
+<tr class="separator:a2d50d8c520519c21f95f06c0f6b75ddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea48e5f7f3048f1c0413b098ada5e0d8" id="r_aea48e5f7f3048f1c0413b098ada5e0d8"><td class="memItemLeft" align="right" valign="top"><a id="aea48e5f7f3048f1c0413b098ada5e0d8" name="aea48e5f7f3048f1c0413b098ada5e0d8"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>sw_gain</b></td></tr>
+<tr class="memdesc:aea48e5f7f3048f1c0413b098ada5e0d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Software gain, 0 to 7. <br /></td></tr>
+<tr class="separator:aea48e5f7f3048f1c0413b098ada5e0d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ca35b194feb7a32fbf298bb6198b419" id="r_a8ca35b194feb7a32fbf298bb6198b419"><td class="memItemLeft" align="right" valign="top"><a id="a8ca35b194feb7a32fbf298bb6198b419" name="a8ca35b194feb7a32fbf298bb6198b419"></a>
+<a class="el" href="group__drivers__si1133.html#ga0758cd13d94d5c388892a43a84b54e2f">si1133_sensor_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>sensor</b></td></tr>
+<tr class="memdesc:a8ca35b194feb7a32fbf298bb6198b419"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sensor to sample. <br /></td></tr>
+<tr class="separator:a8ca35b194feb7a32fbf298bb6198b419"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Channel configuration the Si1133 sensor. </p>
 <p>The sensor sampling in the Si1133 is done via Analog to Digital "channels" that read from a given sensor (photodiode combination) and output a numeric value. The A/D process has some configuration parameters that affect the acquisition time, the power consumption and the quality of the result.</p>
@@ -167,25 +185,7 @@ The @p hw_gain and @p decimation parameters are configured from a single
 
 An additional software sampling and averaging is possible by selecting a
 "sw_gain"</code> value between 0 and 7. This will cause each A/D measurement to be repeated for a total of (1 &lt;&lt; sw_gain) and accumulated in software in the 24-bit output. The output value will be affected by the sw_gain since it is a sum of samples and not an average. </p>
-</div>
-<p><code>#include &lt;si1133.h&gt;</code></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Data Fields</h2></td></tr>
-<tr class="memitem:a2d50d8c520519c21f95f06c0f6b75ddc" id="r_a2d50d8c520519c21f95f06c0f6b75ddc"><td class="memItemLeft" align="right" valign="top"><a id="a2d50d8c520519c21f95f06c0f6b75ddc" name="a2d50d8c520519c21f95f06c0f6b75ddc"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>sample_time_log</b></td></tr>
-<tr class="memdesc:a2d50d8c520519c21f95f06c0f6b75ddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log2 of sampling time, 0 to 14. <br /></td></tr>
-<tr class="separator:a2d50d8c520519c21f95f06c0f6b75ddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea48e5f7f3048f1c0413b098ada5e0d8" id="r_aea48e5f7f3048f1c0413b098ada5e0d8"><td class="memItemLeft" align="right" valign="top"><a id="aea48e5f7f3048f1c0413b098ada5e0d8" name="aea48e5f7f3048f1c0413b098ada5e0d8"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>sw_gain</b></td></tr>
-<tr class="memdesc:aea48e5f7f3048f1c0413b098ada5e0d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Software gain, 0 to 7. <br /></td></tr>
-<tr class="separator:aea48e5f7f3048f1c0413b098ada5e0d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ca35b194feb7a32fbf298bb6198b419" id="r_a8ca35b194feb7a32fbf298bb6198b419"><td class="memItemLeft" align="right" valign="top"><a id="a8ca35b194feb7a32fbf298bb6198b419" name="a8ca35b194feb7a32fbf298bb6198b419"></a>
-<a class="el" href="group__drivers__si1133.html#ga0758cd13d94d5c388892a43a84b54e2f">si1133_sensor_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>sensor</b></td></tr>
-<tr class="memdesc:a8ca35b194feb7a32fbf298bb6198b419"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sensor to sample. <br /></td></tr>
-<tr class="separator:a8ca35b194feb7a32fbf298bb6198b419"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>drivers/include/<a class="el" href="si1133_8h.html">si1133.h</a></li>
 </ul>
 </div><!-- contents -->
@@ -196,7 +196,7 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>sw_gain</b></td></
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structsi1133__channel__t.html">si1133_channel_t</a></li>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:03 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:32 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

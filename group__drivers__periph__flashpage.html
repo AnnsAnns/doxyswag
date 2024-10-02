@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -152,15 +152,6 @@ $(function(){initNavTree('group__drivers__periph__flashpage.html',''); initResiz
 
 <p>Low-level flash page interface  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Low-level flash page interface </p>
-<p>This interface provides a very simple and straight forward way for writing a MCU's internal flash. This interface is only capable of reading, verifying, and writing complete flash pages, it has no support for partial flash access. This enables for very slim and efficient implementations.</p>
-<p>A module for more fine-grained access of memory locations can easily be programmed on top of this interface.</p>
-<dl class="section note"><dt>Note</dt><dd>Flash memory has only a limited amount of erase cycles (mostly around 10K times), so using this interface in some kind of loops can damage you MCU!</dd></dl>
-<h1><a class="anchor" id="autotoc_md1701"></a>
-(Low-) Power Implications</h1>
-<p>The flashpage driver implementation <b>should</b> make sure, that the CPU uses no additional energy while the flashpage driver is inactive. This means, that any particular CPU peripherals used for reading and writing flash pages <b>should</b> be disabled before the read and write functions return.</p>
-<p>If an implementation puts the calling thread to sleep for a duration of time, the implementation might need to take care of blocking certain power modes. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -238,6 +229,15 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga143664fd0a10dac463c9856d4a036174"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the given page and verify the results.  <br /></td></tr>
 <tr class="separator:ga143664fd0a10dac463c9856d4a036174"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Low-level flash page interface </p>
+<p>This interface provides a very simple and straight forward way for writing a MCU's internal flash. This interface is only capable of reading, verifying, and writing complete flash pages, it has no support for partial flash access. This enables for very slim and efficient implementations.</p>
+<p>A module for more fine-grained access of memory locations can easily be programmed on top of this interface.</p>
+<dl class="section note"><dt>Note</dt><dd>Flash memory has only a limited amount of erase cycles (mostly around 10K times), so using this interface in some kind of loops can damage you MCU!</dd></dl>
+<h1><a class="anchor" id="autotoc_md1701"></a>
+(Low-) Power Implications</h1>
+<p>The flashpage driver implementation <b>should</b> make sure, that the CPU uses no additional energy while the flashpage driver is inactive. This means, that any particular CPU peripherals used for reading and writing flash pages <b>should</b> be disabled before the read and write functions return.</p>
+<p>If an implementation puts the calling thread to sleep for a duration of time, the implementation might need to take care of blocking certain power modes. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga951d0ea82c1cd088012f04eaa4190fa8" name="ga951d0ea82c1cd088012f04eaa4190fa8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga951d0ea82c1cd088012f04eaa4190fa8">&#9670;&#160;</a></span>FLASH_WRITABLE_INIT</h2>
@@ -636,7 +636,7 @@ FLASHPAGE_NOMATCH if data and page content diverge </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:01 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

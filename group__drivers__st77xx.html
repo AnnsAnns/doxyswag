@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -153,16 +153,6 @@ $(function(){initNavTree('group__drivers__st77xx.html',''); initResizable(true);
 
 <p>Driver for displays with a ST77xx display controller  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Driver for displays with a ST77xx display controller </p>
-<p>The ST77xx display controller driver is a driver for small RGB displays using a ST77xx display controller. The driver supports ST7735, ST7789 and ST7796. The support of the respective controller is enabled by the corresponding module <code>st7735</code>, <code>st7789</code> or <code>st7796</code>. The ST77xx controller used by a display must be specified in the board definition in parameter <a class="el" href="structlcd__params__t.html#a5d3c2f9c61bb67b40b08b92840ae8806">lcd_params_t::cntrl</a> or as macro <a class="el" href="adafruit-pybadge_2include_2board_8h.html#af440faa3bfb48627e638d07f98743d4e">ST77XX_PARAM_CNTRL</a> if the default parameter set <a class="el" href="st77xx__params_8h.html#adf80f421a8fd1ef3a69b129ffa7ccab7">ST77XX_PARAMS</a> is used.</p>
-<p>The driver communicates with the device either via an</p>
-<ul>
-<li>SPI serial interface (if module <code>lcd_spi</code> enabled) or an</li>
-<li>MCU 8080 8-/16-bit parallel interface (if module <code>lcd_parallel</code> or module <code>lcd_parallel_16</code> is enabled).</li>
-</ul>
-<p>Usually the device driver is used either for a single display with SPI serial interface or for a display with parallel MCU 8080 8-/16-bit parallel interface. However, the device driver can also be used simultaneously for multiple displays with different interfaces if several of the <code>lcd_spi</code>, <code>lcd_parallel</code> and <code>lcd_parallel_16bit</code> modules are enabled at the same time. In this case, please refer to the notes in <a class="el" href="structlcd__params__t.html">lcd_params_t</a>.</p>
-<p>The device requires colors to be send in big endian RGB-565 format. The <a class="el" href="group__drivers__lcd.html#ga5bf4283c3bb6ed05f6e694d0f152c12f">CONFIG_LCD_LE_MODE</a> compile time option can switch this, but only use this when strictly necessary. This option will slow down the driver as it certainly can't use DMA anymore, every short has to be converted before transfer. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -303,6 +293,16 @@ const <a class="el" href="group__drivers__lcd.html#ga5951c3176e4390d64897680eb78
 <tr class="memdesc:ga5eda99a99c3050ba7efab3f78e90a35f"><td class="mdescLeft">&#160;</td><td class="mdescRight">270 deg counterclockwise  <br /></td></tr>
 <tr class="separator:ga5eda99a99c3050ba7efab3f78e90a35f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Driver for displays with a ST77xx display controller </p>
+<p>The ST77xx display controller driver is a driver for small RGB displays using a ST77xx display controller. The driver supports ST7735, ST7789 and ST7796. The support of the respective controller is enabled by the corresponding module <code>st7735</code>, <code>st7789</code> or <code>st7796</code>. The ST77xx controller used by a display must be specified in the board definition in parameter <a class="el" href="structlcd__params__t.html#a5d3c2f9c61bb67b40b08b92840ae8806">lcd_params_t::cntrl</a> or as macro <a class="el" href="adafruit-pybadge_2include_2board_8h.html#af440faa3bfb48627e638d07f98743d4e">ST77XX_PARAM_CNTRL</a> if the default parameter set <a class="el" href="st77xx__params_8h.html#adf80f421a8fd1ef3a69b129ffa7ccab7">ST77XX_PARAMS</a> is used.</p>
+<p>The driver communicates with the device either via an</p>
+<ul>
+<li>SPI serial interface (if module <code>lcd_spi</code> enabled) or an</li>
+<li>MCU 8080 8-/16-bit parallel interface (if module <code>lcd_parallel</code> or module <code>lcd_parallel_16</code> is enabled).</li>
+</ul>
+<p>Usually the device driver is used either for a single display with SPI serial interface or for a display with parallel MCU 8080 8-/16-bit parallel interface. However, the device driver can also be used simultaneously for multiple displays with different interfaces if several of the <code>lcd_spi</code>, <code>lcd_parallel</code> and <code>lcd_parallel_16bit</code> modules are enabled at the same time. In this case, please refer to the notes in <a class="el" href="structlcd__params__t.html">lcd_params_t</a>.</p>
+<p>The device requires colors to be send in big endian RGB-565 format. The <a class="el" href="group__drivers__lcd.html#ga5bf4283c3bb6ed05f6e694d0f152c12f">CONFIG_LCD_LE_MODE</a> compile time option can switch this, but only use this when strictly necessary. This option will slow down the driver as it certainly can't use DMA anymore, every short has to be converted before transfer. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga66f88c91f0f40d17c78cac0b4872c325" name="ga66f88c91f0f40d17c78cac0b4872c325"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga66f88c91f0f40d17c78cac0b4872c325">&#9670;&#160;</a></span>CONFIG_ST7735_AVDD</h2>
@@ -776,7 +776,7 @@ GVCL = -VRH + VCOM + VCOM_OFFSET
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

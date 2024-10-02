@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -151,19 +151,6 @@ $(function(){initNavTree('group__core__thread__flags.html',''); initResizable(tr
 
 <p><a class="el" href="structThread.html" title="Thread struct within mqtt paho.">Thread</a> flags  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p><a class="el" href="structThread.html" title="Thread struct within mqtt paho.">Thread</a> flags </p>
-<p>This API can be used to notify threads of conditions in a race-free and allocation-less way.</p>
-<p>Each thread can handle up to 16 boolean flags, stored as a bitmask in the flags field of its thread. Those flags can be set or unset, using <a class="el" href="#gac09b3c9e70f1a44d4dfafd183cac57ea" title="Set thread flags, possibly waking it up.">thread_flags_set()</a>, from ISR's, other threads or even by the thread itself.</p>
-<p>A thread can wait for any combination of its flags to become set, using <a class="el" href="#gab3113f4c21484922b730e372eae6dc0a" title="Wait for any flag in mask to become set (blocking)">thread_flags_wait_any()</a> or <a class="el" href="#ga0f07a68cbcdfe464493eb7691c9c1215" title="Wait for all flags in mask to become set (blocking)">thread_flags_wait_all()</a>. Those functions clear flags that caused them to return. It is not possible to wait for flags to become unset.</p>
-<p><a class="el" href="structThread.html" title="Thread struct within mqtt paho.">Thread</a> flags have certain properties that make them the preferred choice over messages or mutexes in some circumstances:</p>
-<ul>
-<li>setting thread flags cannot fail If messages are used to notify a thread of a condition from within an ISR, and the receiving thread is not waiting, has no queue or the queue is full, the ISR cannot deliver the message. A thread flag can always be set.</li>
-<li>thread flags are very flexible With thread flags it is possible to wait for multiple conditions and messages at the same time. When mutexes are used to notify about events, only one event can be waited for.</li>
-</ul>
-<p>Usually, if it is only of interest that an event occurred, but not how many of them, thread flags should be considered.</p>
-<p>Note that some flags (currently the two most significant bits) are used by core functions and should not be set by the user. They can be waited for. Unlike <a class="el" href="group__core__msg.html">messages</a> (which are only ever sent when requested), these flags can be set unprompted. (For example, <a class="el" href="#ga4d6fba599be6a9e97dbaff539fa9a507">THREAD_FLAG_MSG_WAITING</a> is set on a thread automatically with every message sent there).</p>
-<p>This API is optional and must be enabled by adding "core_thread_flags" to USEMODULE. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
@@ -210,6 +197,19 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga28590abc4e3273b6b3ce803fe4873fdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comprehensive set of all predefined flags.  <br /></td></tr>
 <tr class="separator:ga28590abc4e3273b6b3ce803fe4873fdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p><a class="el" href="structThread.html" title="Thread struct within mqtt paho.">Thread</a> flags </p>
+<p>This API can be used to notify threads of conditions in a race-free and allocation-less way.</p>
+<p>Each thread can handle up to 16 boolean flags, stored as a bitmask in the flags field of its thread. Those flags can be set or unset, using <a class="el" href="#gac09b3c9e70f1a44d4dfafd183cac57ea" title="Set thread flags, possibly waking it up.">thread_flags_set()</a>, from ISR's, other threads or even by the thread itself.</p>
+<p>A thread can wait for any combination of its flags to become set, using <a class="el" href="#gab3113f4c21484922b730e372eae6dc0a" title="Wait for any flag in mask to become set (blocking)">thread_flags_wait_any()</a> or <a class="el" href="#ga0f07a68cbcdfe464493eb7691c9c1215" title="Wait for all flags in mask to become set (blocking)">thread_flags_wait_all()</a>. Those functions clear flags that caused them to return. It is not possible to wait for flags to become unset.</p>
+<p><a class="el" href="structThread.html" title="Thread struct within mqtt paho.">Thread</a> flags have certain properties that make them the preferred choice over messages or mutexes in some circumstances:</p>
+<ul>
+<li>setting thread flags cannot fail If messages are used to notify a thread of a condition from within an ISR, and the receiving thread is not waiting, has no queue or the queue is full, the ISR cannot deliver the message. A thread flag can always be set.</li>
+<li>thread flags are very flexible With thread flags it is possible to wait for multiple conditions and messages at the same time. When mutexes are used to notify about events, only one event can be waited for.</li>
+</ul>
+<p>Usually, if it is only of interest that an event occurred, but not how many of them, thread flags should be considered.</p>
+<p>Note that some flags (currently the two most significant bits) are used by core functions and should not be set by the user. They can be waited for. Unlike <a class="el" href="group__core__msg.html">messages</a> (which are only ever sent when requested), these flags can be set unprompted. (For example, <a class="el" href="#ga4d6fba599be6a9e97dbaff539fa9a507">THREAD_FLAG_MSG_WAITING</a> is set on a thread automatically with every message sent there).</p>
+<p>This API is optional and must be enabled by adding "core_thread_flags" to USEMODULE. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga4d6fba599be6a9e97dbaff539fa9a507" name="ga4d6fba599be6a9e97dbaff539fa9a507"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga4d6fba599be6a9e97dbaff539fa9a507">&#9670;&#160;</a></span>THREAD_FLAG_MSG_WAITING</h2>
@@ -441,7 +441,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

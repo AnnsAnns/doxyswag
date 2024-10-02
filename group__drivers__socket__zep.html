@@ -16,9 +16,9 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css" />
-    <link href="global.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="global.css" rel="stylesheet" type="text/css"/>
     <!-- ... other metadata & script includes ... -->
     <script
       type="text/javascript"
@@ -151,31 +151,7 @@ $(function(){initNavTree('group__drivers__socket__zep.html',''); initResizable(t
 
 <p>UDP socket-based IEEE 802.15.4 device over ZEP  
 <a href="#details">More...</a></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>UDP socket-based IEEE 802.15.4 device over ZEP </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__net__zep.html">ZigBee Encapsulation Protocol</a> for protocol definitions</dd></dl>
-<p>This ZEP implementation can send a dummy HELLO packet on startup. This is used to make dispatchers aware of the node. To enable this behavior, add</p>
-<div class="fragment"><div class="line">USEMODULE += socket_zep_hello</div>
-</div><!-- fragment --><p>to your Makefile.</p>
-<p>A ZEP dispatcher can just drop those packets (ZEP type 0xFF) if it chooses to parse the ZEP header.</p>
-<p>The header of the HELLO packet will look like this: </p><pre class="fragment">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|         Preamble (EX)         |  Version (2)  |  Type  (255)  |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|                                                               |
-+                                                               +
-|                                                               |
-+                         Reserved (0)                         +
-|                                                               |
-+                                                               +
-|                                                               |
-+               +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|               |      'H'      |      'E'      |      'L'      |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|      'L'      |      'O'      |       0       |       0       |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|       0       |       0       |       0       |       0       |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-</pre> <table class="memberdecls">
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="socket__zep_8h.html">socket_zep.h</a></td></tr>
@@ -206,7 +182,31 @@ Functions</h2></td></tr>
 <tr class="memdesc:gacb495f445382dda9a8c9e6088fb410f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup socket ZEP in order to be used with the IEEE 802.15.4 Radio HAL.  <br /></td></tr>
 <tr class="separator:gacb495f445382dda9a8c9e6088fb410f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>UDP socket-based IEEE 802.15.4 device over ZEP </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__net__zep.html">ZigBee Encapsulation Protocol</a> for protocol definitions</dd></dl>
+<p>This ZEP implementation can send a dummy HELLO packet on startup. This is used to make dispatchers aware of the node. To enable this behavior, add</p>
+<div class="fragment"><div class="line">USEMODULE += socket_zep_hello</div>
+</div><!-- fragment --><p>to your Makefile.</p>
+<p>A ZEP dispatcher can just drop those packets (ZEP type 0xFF) if it chooses to parse the ZEP header.</p>
+<p>The header of the HELLO packet will look like this: </p><pre class="fragment">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|         Preamble (EX)         |  Version (2)  |  Type  (255)  |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                                                               |
++                                                               +
+|                                                               |
++                         Reserved (0)                         +
+|                                                               |
++                                                               +
+|                                                               |
++               +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|               |      'H'      |      'E'      |      'L'      |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|      'L'      |      'O'      |       0       |       0       |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|       0       |       0       |       0       |       0       |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</pre> <h2 class="groupheader">Function Documentation</h2>
 <a id="ga65823b7cd584ca501e7c2c5cad1874ba" name="ga65823b7cd584ca501e7c2c5cad1874ba"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga65823b7cd584ca501e7c2c5cad1874ba">&#9670;&#160;</a></span>socket_zep_cleanup()</h2>
 
@@ -299,7 +299,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 1 2024 17:20:02 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Wed Oct 2 2024 10:47:31 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>
