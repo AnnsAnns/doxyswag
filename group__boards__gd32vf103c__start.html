@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: GD32VF103C-START</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -149,7 +150,7 @@ $(function(){initNavTree('group__boards__gd32vf103c__start.html',''); initResiza
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the GD32VF103C-START board </p>
 <dl class="section author"><dt>Author</dt><dd>Marian Buschsieweke</dd></dl>
-<h2><a class="anchor" id="autotoc_md422"></a>
+<h2><a class="anchor" id="autotoc_md423"></a>
 Overview</h2>
 <p>The GD32VF103C-START development board is an official starter kit by GigaDevice for the GD32VF103CBT6 MCU, despite the lack of official documentation. It featrures:</p>
 <ul>
@@ -164,7 +165,7 @@ Overview</h2>
 </ul>
 <p><img src="https://raw.githubusercontent.com/zephyrproject-rtos/zephyr/a0ac2faf9bde45b176f1e8b315ffb1b8a9096166/boards/riscv/gd32vf103c_starter/doc/img/gd32vf103c_starter.jpg" alt="Image of the GD32VF103C-START board" class="inline"/></p>
 <dl class="section warning"><dt>Warning</dt><dd>The analog pins are labeled A1 - A6 rather than A0 - A5, as would be the correct Arduino naming. The Arduino pin mapping uses the correct Arduino naming, so that apps written for other boards expecting Arduino UNO compatible shields remain compatible.</dd></dl>
-<h2><a class="anchor" id="autotoc_md423"></a>
+<h2><a class="anchor" id="autotoc_md424"></a>
 Hardware</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -218,7 +219,7 @@ Hardware</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">Board Manual   </td><td class="markdownTableBodyLeft"><a href="https://web.archive.org/web/20240117072723/https://en.maritex.com.pl/product/attachment/154626/6f28fdabafb9dff852537ced7bc0aa71">Board Manual</a>   </td><td class="markdownTableBodyNone"></td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md424"></a>
+<h2><a class="anchor" id="autotoc_md425"></a>
 Flashing</h2>
 <dl class="section warning"><dt>Warning</dt><dd>Flashing seems to fail with some Arduino UNO compatible boards attached. Remove them and try again.</dd></dl>
 <p>By default, flashing is done via OpenOCD using the GD-Link programmer/debugger using:</p>
@@ -231,7 +232,7 @@ Flashing</h2>
 <li>Run <code>make BOARD=gd32vf103c-start PROGRAMMER=dfu-util -C path/to/app flash</code></li>
 <li>Restore the JP4 jumper to position L. Afterwards press the reset button again</li>
 </ol>
-<h2><a class="anchor" id="autotoc_md425"></a>
+<h2><a class="anchor" id="autotoc_md426"></a>
 Connecting to the Serial Output</h2>
 <p>By default RIOT's uses UART for <code>stdio</code>. To access that, connect a mini USB cable to the connector labeled "USART". In addition a jumper needs to be placed on JP2 in the "Usart" position; otherwise RIOT's TXD is not connected to the RXD of the integrated USB UART bridge. Afterwards just run:</p>
 <div class="fragment"><div class="line">make BOARD=gd32vf103c-start -C path/to/app term</div>
@@ -260,7 +261,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

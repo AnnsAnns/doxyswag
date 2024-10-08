@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Differentially Operated Serial Ethernet</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -152,18 +153,18 @@ $(function(){initNavTree('group__drivers__dose.html',''); initResizable(true); }
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Driver for connecting RIOT devices using a single bus wire </p>
-<h1><a class="anchor" id="autotoc_md1653"></a>
+<h1><a class="anchor" id="autotoc_md1654"></a>
 About</h1>
 <p>This driver enables RIOT nodes to communicate by Ethernet over a serial bus. This enables them to interact in an easy and cheap manner using a single bus wire with very low hardware requirements: The used microcontrollers just need to feature at least one UART and one optional GPIO that is able to raise interrupts.</p>
-<h1><a class="anchor" id="autotoc_md1654"></a>
+<h1><a class="anchor" id="autotoc_md1655"></a>
 Wiring</h1>
 <p><img src="dose-wiring.svg" alt="DOSE wiring" style="pointer-events: none;" class="inline"/></p>
 <p>For bus access, you need a CAN transceiver, since the DOSE uses the PHY layer of CAN for the electrical connection of the nodes. Every transceiver IC operating with the right voltage levels should do. (If you are on a 3.3V MCU, you could use an IC such as the SN65HVD233.)</p>
 <p>Basically, UART TX and RX are connected to respective pins of the transceiver. In addition, the RX pin can also be connected to the sense GPIO if the UART does not implement the <code>periph_uart_rxstart_irq</code> feature. In this case, the bus allocation can be detected more precisely and collisions are less likely.</p>
-<h1><a class="anchor" id="autotoc_md1655"></a>
+<h1><a class="anchor" id="autotoc_md1656"></a>
 How it works</h1>
 <p>Some technical details for those interested: The Ethernet frames are sent onto the bus using <code><a class="el" href="group__drivers__periph__uart.html#gae2360fb0e880c387cfc02dd0cbd1c113" title="Write data from the given buffer to the specified UART device.">uart_write()</a></code> while observing the received echo from the bus. This way collisions are detected (received echo != transmitted octet) and retransmissions are scheduled. The frames are appended with a CRC16 to protect the system from transmission errors.</p>
-<h1><a class="anchor" id="autotoc_md1656"></a>
+<h1><a class="anchor" id="autotoc_md1657"></a>
 A note on high data rates</h1>
 <p>When using high UART data rates (1 MBit/s and above) per-byte overhead becomes significant. A major factor here is setting (software) timers which are used to catch error conditions. To speed up the TX path it is therefore recommended to implement hardware collision detection (if available) to avoid the need for setting a timeout for each byte transmitted.</p>
 <p>To speed up the more critical RX path, enable the <code>dose_watchdog</code> module. This requires a dedicated hardware timer <code>DOSE_TIMER_DEV</code> to be configured in e.g. <code>board.h</code>. The timer is shared between all DOSE interfaces and will periodically check if any interface does not make progress with receiving a frame (payload marker did not advance between two timer periods) and abort the RX process. </p>
@@ -409,7 +410,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

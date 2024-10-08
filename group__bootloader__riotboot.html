@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: riotboot</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -141,7 +142,7 @@ $(function(){initNavTree('group__bootloader__riotboot.html',''); initResizable(t
   <div class="headertitle"><div class="title">riotboot<div class="ingroups"><a class="el" href="group__bootloaders.html">Bootloaders</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-<h1><a class="anchor" id="autotoc_md1585"></a>
+<h1><a class="anchor" id="autotoc_md1586"></a>
 Overview</h1>
 <p>This folder contains a simple bootloader called "riotboot". A header with metadata of length <code>RIOTBOOT_HDR_LEN</code> precedes the RIOT firmware. The header contains "RIOT" as a magic number to recognize a RIOT firmware image, a checksum, and the version of the RIOT firmware <code>APP_VER</code>. This bootloader verifies the checksum of the header which is located at an offset (<code>ROM_OFFSET</code>) with respect to the <code>ROM_START_ADDR</code> defined by the CPU, just after the space allocated for riotboot.</p>
 <p>In case of multiple firmware slots, the bootloader iterates through valid headers and boots the newest image.</p>
@@ -153,7 +154,7 @@ Overview</h1>
 <li>a tool in dist/tools/riotboot_gen_hdr for header generation,</li>
 <li>several make targets to glue everything together.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md1586"></a>
+<h2><a class="anchor" id="autotoc_md1587"></a>
 Concept</h2>
 <p><code>riotboot</code> expects the flash to be formatted in slots: at the <code>CPU_FLASH_BASE</code> address resides the bootloader, which is followed by a slot 0 containing a RIOT firmware image. If present, a second firmware image (in slot 1) starts just afterwards.</p>
 <p>The bootloader and a RIOT firmware in slot 0 are depicted below:</p>
@@ -167,22 +168,22 @@ Concept</h2>
 <div class="ttc" id="astructriotboot__hdr__t_html"><div class="ttname"><a href="structriotboot__hdr__t.html">riotboot_hdr_t</a></div><div class="ttdoc">Structure to store image header - All members are little endian.</div><div class="ttdef"><b>Definition</b> hdr.h:51</div></div>
 </div><!-- fragment --><p>Please note that <code>RIOTBOOT_HDR_LEN</code> depends on the architecture of the MCU, since it needs to be aligned to 256B. This is fixed regardless of <code>sizeof(riotboot_hdr_t)</code></p>
 <p>Also note that, if no slot is available with a valid checksum, no image will be booted and the bootloader will enter <code>while(1);</code> endless loop.</p>
-<h1><a class="anchor" id="autotoc_md1587"></a>
+<h1><a class="anchor" id="autotoc_md1588"></a>
 Requirements</h1>
 <p>Try to compile and run tests/riotboot: </p><pre class="fragment">$ BOARD=&lt;board&gt; make -C tests/riotboot flash test
 </pre><p>If the test succeeds, your board is supported. Else you can try to port riotboot to your board (see the below porting guide).</p>
 <p>When building the bootloader, the global define <code>RIOTBOOT</code> is available. You can use this define to skip certain parts in <code><a class="el" href="group__core__init__config.html#ga916f2adc2080b4fe88034086d107a8dc" title="Initialize board specific hardware.">board_init()</a></code> (or <code>cpu_init()</code>) that should not be executed during boot. Note that this define is different from <code>MODULE_RIOTBOOT</code>, which is also defined when building an application that utilizes riotboot.</p>
-<h1><a class="anchor" id="autotoc_md1588"></a>
+<h1><a class="anchor" id="autotoc_md1589"></a>
 Single Slot</h1>
 <p>Just compile your application with <code>FEATURES_REQUIRED += riotboot</code>. The header is generated automatically according to your <code>APP_VER</code>, which can be optionally set (current system time in seconds since 1970 (epoch) by default) in your makefile.</p>
-<h2><a class="anchor" id="autotoc_md1589"></a>
+<h2><a class="anchor" id="autotoc_md1590"></a>
 Flashing example</h2>
 <p>If your application is using the riotboot feature, the usual targets (<code>all</code>, <code>flash</code>, <code>flash-only</code>) will automatically compile and/or flash both the bootloader and slot0, while ensuring that slot 1 is invalidated so slot 0 will be booted.</p>
 <p>The image can also be flashed using <code>riotboot/flash</code> which also flashes the bootloader. Below a concrete example:</p>
 <p><code>BOARD=samr21-xpro FEATURES_REQUIRED+=riotboot APP_VER=$(date +s) make -C examples/hello-world riotboot/flash-combined-slot0</code></p>
 <p>The above compiles a hello world binary and a bootloader, then flashes the combined binary comprising of: bootloader + slot 0 header + slot 0 image. If booted, the device will execute the Hello-World image.</p>
 <p>A comprehensive test is available at tests/riotboot (also see below).</p>
-<h1><a class="anchor" id="autotoc_md1590"></a>
+<h1><a class="anchor" id="autotoc_md1591"></a>
 Multi-Slot</h1>
 <p>When several slots are available, the bootloader iterates through valid headers and boots the newest image (which has the greater <code>VERSION</code>)</p>
 <p>Dedicated make targets are available to build and flash several slots:</p>
@@ -193,13 +194,13 @@ Multi-Slot</h1>
 <li><code>riotboot</code> builds both slot 0 and 1.</li>
 </ul>
 <p>In particular, if one wants to be sure to boot a particular image, using the target <code>riotboot/flash-extended-slot0</code> is the way to go (resulting in only slot 0 being valid, thus being booted). This is done automatically by <code>make flash</code> if the <code>riotboot</code> feature is used.</p>
-<h2><a class="anchor" id="autotoc_md1591"></a>
+<h2><a class="anchor" id="autotoc_md1592"></a>
 Testing riotboot</h2>
 <p>See <a href="https://github.com/RIOT-OS/RIOT/blob/master/tests/riotboot/README.md">tests/riotboot/README.md</a>.</p>
-<h1><a class="anchor" id="autotoc_md1592"></a>
+<h1><a class="anchor" id="autotoc_md1593"></a>
 Quick riotboot porting guide</h1>
 <p>Your board/cpu is not supported yet? Try to port riotboot!</p>
-<h2><a class="anchor" id="autotoc_md1593"></a>
+<h2><a class="anchor" id="autotoc_md1594"></a>
 Porting to a board based on an Arm Cortex-M0+/3/4/7/22/33 MCU</h2>
 <p>Extending riotboot to support another board with a Cortex-M0+/3/4/7/22/33 microcontroller is rather straightforward. You need to:</p>
 <ul>
@@ -216,7 +217,7 @@ Porting to a board based on an Arm Cortex-M0+/3/4/7/22/33 MCU</h2>
 <li>Make sure that <code>RIOTBOOT_LEN</code> size is such that the remainder of the flash can be divided by the number slots while staying <code>FLASHPAGE_SIZE</code> aligned. e.g: <a href="../../cpu/nrf52/Makefile.include">cpu/nrf52/Makefile.include</a></li>
 <li>Check other specific <code>BOARD</code>/<code>CPU</code> flash alignment requirements (e.g.: kinetis vector table must be naturally aligned to the power of two, see <a href="../../cpu/kinetis/Makefile.include">cpu/kinetis/Makefile.include</a>)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md1594"></a>
+<h2><a class="anchor" id="autotoc_md1595"></a>
 Porting to a board based on other types of MCUs</h2>
 <p>For other MCU architectures the following extra requirements must be fulfilled:</p>
 <ul>
@@ -234,7 +235,7 @@ Porting to a board based on other types of MCUs</h2>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:56 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

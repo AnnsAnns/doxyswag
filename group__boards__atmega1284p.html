@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Standalone ATmega1284P</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,10 +149,10 @@ $(function(){initNavTree('group__boards__atmega1284p.html',''); initResizable(tr
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for using the ATmega1284P as standalone board </p>
-<h2><a class="anchor" id="autotoc_md190"></a>
+<h2><a class="anchor" id="autotoc_md191"></a>
 Overview</h2>
 <p>As the ATmega1284P can run from the internal oscillator, placing it on a breadboard, connecting an USB-UART adapter and power is enough to run RIOT on it. (An ISP programmer will be needed to program it; or to program a bootloader to subsequently allow programming via UART.)</p>
-<h3><a class="anchor" id="autotoc_md191"></a>
+<h3><a class="anchor" id="autotoc_md192"></a>
 MCU</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -183,7 +184,7 @@ MCU</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">Datasheet   </td><td class="markdownTableBodyLeft"><a href="http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-42719-ATmega1284P_Datasheet.pdf">Official datasheet</a>   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md192"></a>
+<h3><a class="anchor" id="autotoc_md193"></a>
 Pinout</h3>
 <p> <style>div.image img[src="http://i.imgur.com/ayagBbM.png"]{width:50%;}</style> </p><div class="image">
 <img src="http://i.imgur.com/ayagBbM.png" alt=""/>
@@ -192,17 +193,17 @@ Pinout of the ATmega1284P</div></div>
 <p><br  />
 </p>
 <p>The pinout image was posted in the <a href="https://forum.arduino.cc/index.php?topic=322745.0">Arduino Forum</a>. All credit goes to its poster, hansibull.</p>
-<h3><a class="anchor" id="autotoc_md193"></a>
+<h3><a class="anchor" id="autotoc_md194"></a>
 Clock Frequency</h3>
 <p>The ATmega1284P has two internal oscillators clocked at 8MHz and at 128kHz that allow it to be operated without any external clock source or crystal. By default the fuses are configured to use the internal 8MHz oscillator, but the <code>CKDIV8</code> fuse is set, so that the clock is divided down to 1MHz. By disabling the <code>CKDIV8</code> fuse the clock will operate at 8MHz. This is highly encouraged, and can be done with:</p>
 <div class="fragment"><div class="line">avrdude -c atmelice -p m1284p -B 32 -U lfuse:w:0xc2:m</div>
 </div><!-- fragment --><p>(Replace <code>atmelice</code> with the programmer you are using. The -B 32 might be needed for some programmers to successfully communicate with ATmegas clocked at less than 2MHz. It will no longer be needed after disabling <code>CKDIV8</code>.)</p>
 <p>By setting the environment variable <code>ATMEGA1284P_CLOCK</code> to a custom frequency in Hz (e.g. <code>1000000</code> for 1MHz), this core clock can be changed easily. Refer to the datasheet on how to configure the ATmega1284p to use an external crystal, an external clock source or the clock divider.</p>
-<h3><a class="anchor" id="autotoc_md194"></a>
+<h3><a class="anchor" id="autotoc_md195"></a>
 Relation Between Supply Voltage, Clock Frequency and Power Consumption</h3>
 <p>A higher supply voltage results in a higher current drawn. Thus, lower power consumption can be achieved by using a lower supply voltage. However, higher clock frequencies require higher supply voltages for reliable operation.</p>
 <p>The lowest possible supply voltage at 8 MHz is 2.7V (with some safety margin).</p>
-<h2><a class="anchor" id="autotoc_md195"></a>
+<h2><a class="anchor" id="autotoc_md196"></a>
 Flashing the Device</h2>
 <p>In order to flash the ATmega1284P without a bootloader, an ISP programmer is needed. Connect the programmer as follows:</p>
 <table class="markdownTable">
@@ -223,19 +224,19 @@ Flashing the Device</h2>
 </table>
 <p>The tool <code>avrdude</code> needs to be installed. When using the Atmel ICE for connected via JTAG for programming, running </p><pre class="fragment">make BOARD=atmega1284p flash
 </pre><p>will take care of everything. To use the programmer <code>&lt;FOOBAR&gt;</code> instead, run </p><pre class="fragment">make BOARD=atmega1284p PROGRAMMER=&lt;FOOBAR&gt; flash
-</pre><h2><a class="anchor" id="autotoc_md196"></a>
+</pre><h2><a class="anchor" id="autotoc_md197"></a>
 Serial Terminal</h2>
 <p>Connect a TTL adapter with pins 14/RXD0 and 15/TXD0 an run </p><pre class="fragment">make BOARD=atmega1284p term
 </pre><p>Please note that the supply voltage should be compatible with the logic level of the TTL adapter. Usually everything between 3.3 V and 5 V should work.</p>
-<h2><a class="anchor" id="autotoc_md197"></a>
+<h2><a class="anchor" id="autotoc_md198"></a>
 On-Chip Debugging</h2>
 <p>In order to debug the ATmega1284P, an compatible debugger is needed. The Atmel ICE is the <strike>cheapest</strike> least expensive option currently available. (But at least it can program and debug pretty much all Atmel AVR and ARM chips.)</p>
 <p>Once the Atmel ICE is correctly connected, the ATmega1284P has the JTAG interface enabled, and the required software is installed, debugging can be started using </p><pre class="fragment">make debug
 </pre><dl class="section note"><dt>Note</dt><dd>If you are using a different debugger than the Atmel ICE, you have to export the <code>AVR_DEBUGDEVICE</code> environment variable to the required flag to pass to AVaRICE, e.g. when using the AVR Dragon you have to export <code>AVR_DEBUGDEVICE=--dragon</code>. If the debug device is not connected via USB, you also need to export <code>AVR_DEBUGINTERFACE</code> to the correct value.</dd></dl>
-<h4><a class="anchor" id="autotoc_md198"></a>
+<h4><a class="anchor" id="autotoc_md199"></a>
 Software Requirements</h4>
 <p>In order to debug you'll need an GDB version with AVR support and <a href="http://avarice.sourceforge.net/">AVaRICE</a>. Note that AVaRICE sadly is not being actively maintained and the latest release will not compile on most systems. Thus, unless your distribution already ships a package of the SVN version of AVaRICE, you'll have to build the tool from source.</p>
-<h3><a class="anchor" id="autotoc_md199"></a>
+<h3><a class="anchor" id="autotoc_md200"></a>
 JTAG Pin Mapping</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -253,7 +254,7 @@ JTAG Pin Mapping</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">GND   </td><td class="markdownTableBodyLeft">11   </td><td class="markdownTableBodyLeft">GND   </td><td class="markdownTableBodyLeft">JTAG-2   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md200"></a>
+<h3><a class="anchor" id="autotoc_md201"></a>
 Fuse Settings</h3>
 <p>The <code>JTAGEN</code> fuse has to be set in order to use the JTAG interface. The JTAG pins will no longer be available as GPIOs when this fuse is set. With the default settings the MCUs are preprogrammed during manufacturing, the <code>JTAGEN</code> fuse is already set. So with a new and unused package, you're ready directly ready to go. </p>
 <table class="memberdecls">
@@ -273,7 +274,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

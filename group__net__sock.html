@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Sock API</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -153,7 +154,7 @@ $(function(){initNavTree('group__net__sock.html',''); initResizable(true); });
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Provides a network API for applications and library </p>
-<h1><a class="anchor" id="autotoc_md2069"></a>
+<h1><a class="anchor" id="autotoc_md2070"></a>
 About</h1>
 <div class="fragment"><div class="line">+---------------+</div>
 <div class="line">|  Application  |</div>
@@ -186,14 +187,14 @@ About</h1>
 <li><a class="el" href="group__net__sock__async.html#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a> (<a class="el" href="sock_2dtls_8h.html" title="DTLS sock definitions.">net/sock/dtls.h</a>): DTLS sock</li>
 </ul>
 <p>Note that there might be no relation between the different <code>sock</code> types. So casting e.g. <code>sock_ip_t</code> to <code>sock_udp_t</code> might not be as straight forward, as you think depending on the networking architecture.</p>
-<h1><a class="anchor" id="autotoc_md2070"></a>
+<h1><a class="anchor" id="autotoc_md2071"></a>
 How To Use</h1>
 <p>A RIOT application uses the functions provided by one or more of the <code>sock</code> type headers (for example <a class="el" href="group__net__sock__async.html#ga3cb61a4ee66c9c235e4f22860658698c">sock_udp_t</a>), regardless of the network stack it uses. The network stack used under the bonnet is specified by including the appropriate module (for example <code>USEMODULE += gnrc_sock_udp</code> for <a class="el" href="group__net__gnrc.html">GNRC's</a> version of this API).</p>
 <p>This allows for network stack agnostic code on the application layer. The application code to establish a connection is always the same, allowing the network stack underneath to be switched simply by changing the <code>USEMODULE</code> definitions in the application's Makefile.</p>
 <p>The actual code very much depends on the used <code>sock</code> type. Please refer to their documentation for specific examples.</p>
-<h1><a class="anchor" id="autotoc_md2071"></a>
+<h1><a class="anchor" id="autotoc_md2072"></a>
 Implementer Notes</h1>
-<h3><a class="anchor" id="autotoc_md2072"></a>
+<h3><a class="anchor" id="autotoc_md2073"></a>
 Type definition</h3>
 <p>For simplicity and modularity this API doesn't put any restriction on the actual implementation of the type. For example, one implementation might choose to have all <code>sock</code> types having a common base class or use the raw IP <code>sock</code> type to send e.g. UDP packets, while others will keep them completely separate from each other.</p>
 <dl class="section author"><dt>Author</dt><dd>Alexander Aring <a href="#" onclick="location.href='mai'+'lto:'+'aar'+'@p'+'eng'+'ut'+'ron'+'ix'+'.de'; return false;">aar@p<span class="obfuscator">.nosp@m.</span>engu<span class="obfuscator">.nosp@m.</span>troni<span class="obfuscator">.nosp@m.</span>x.de</a> </dd>
@@ -478,7 +479,7 @@ Enumerations</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

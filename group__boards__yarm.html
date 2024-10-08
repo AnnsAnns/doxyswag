@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Acmesystems YARM board</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,7 +149,7 @@ $(function(){initNavTree('group__boards__yarm.html',''); initResizable(true); })
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the Acmesystems YARM board. </p>
-<h2><a class="anchor" id="autotoc_md1552"></a>
+<h2><a class="anchor" id="autotoc_md1553"></a>
 Overview</h2>
 <p>Yarm is a smart and cost effective solution for system integrators to build their own RF applications at 868 MHz avoiding all the hardware design costs requested to start a new custom RF project.</p>
 <p>Yarm integrates:</p>
@@ -161,10 +162,10 @@ Overview</h2>
 <div class="fragment"><div class="line">USEMODULE=stdio_uart</div>
 </div><!-- fragment --><p>Depending on the connection to your PC, you will probably also need to set PORT_LINUX to a different value (default is /dev/ttyACM0), for instance</p>
 <div class="fragment"><div class="line">PORT_LINUX=/dev/ttyUSB0</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1553"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1554"></a>
 Hardware</h2>
 <p><img src="https://www.acmesystems.it/www/yarm/yarm-dev-yarm.jpg" alt="yarm image" class="inline"/></p>
-<h3><a class="anchor" id="autotoc_md1554"></a>
+<h3><a class="anchor" id="autotoc_md1555"></a>
 MCU</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -196,7 +197,7 @@ MCU</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">Datasheet   </td><td class="markdownTableBodyLeft"><a href="https://ww1.microchip.com/downloads/en/DeviceDoc/SAM_L21_Family_DataSheet_DS60001477C.pdf">Datasheet</a>   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md1555"></a>
+<h3><a class="anchor" id="autotoc_md1556"></a>
 RADIO</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -211,7 +212,7 @@ RADIO</h3>
 <td class="markdownTableBodyLeft">Datasheet   </td><td class="markdownTableBodyLeft"><a href="https://ww1.microchip.com/downloads/en/DeviceDoc/UHF-ASK-FSK-Transceiver-Product-Brief-DS00003077A.pdf">Datasheet</a>   </td></tr>
 </table>
 <p>NOTE:* not all MCU interfaces are available on YARM; see the <a href="https://www.acmesystems.it/pinout_yarm-dev">pinout</a> to know more.</p>
-<h2><a class="anchor" id="autotoc_md1556"></a>
+<h2><a class="anchor" id="autotoc_md1557"></a>
 Implementation Status</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -241,7 +242,7 @@ Implementation Status</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">ADC   </td><td class="markdownTableBodyLeft">yes   </td><td class="markdownTableBodyLeft"></td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md1557"></a>
+<h2><a class="anchor" id="autotoc_md1558"></a>
 Flashing the device</h2>
 <p>Both the MCU and the radio module are flashed using <a href="https://www.microchip.com/DevelopmentTools/ProductDetails/atatmel-ice">Atmel ICE</a>, with the help of a small adapter. The software used is edbg, bundled with RIOT.</p>
 <p><a href="https://www.acmesystems.it/asquini/yarm_avr_programming/ice-wiring.jpg">wiring</a></p>
@@ -253,7 +254,7 @@ Flashing the device</h2>
 <div class="line">END</div>
 <div class="line">) | sudo tee -a /etc/udev/rules.d/99-atmel-ice.rules</div>
 <div class="line">sudo service udev restart</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1558"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1559"></a>
 Supported Toolchains</h2>
 <p>Recommended toolchain for SAML21 is <a href="https://launchpad.net/gcc-arm-embedded">GNU Tools for ARM Embedded Processors</a>. On Debian Buster, the default <a href="https://packages.debian.org/buster/gcc-arm-none-eabi">gcc-arm-none-eabi</a> package works well. </p>
 <table class="memberdecls">
@@ -273,7 +274,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:54 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

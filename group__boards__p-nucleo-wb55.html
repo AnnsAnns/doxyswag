@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: STM32 p-nucleo-wb55</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,19 +149,19 @@ $(function(){initNavTree('group__boards__p-nucleo-wb55.html',''); initResizable(
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the STM32 p-nucleo-wb55 </p>
-<h2><a class="anchor" id="autotoc_md982"></a>
+<h2><a class="anchor" id="autotoc_md983"></a>
 Overview</h2>
 <p>The p-nucleo-wb55 is a multi-protocol wireless and ultra-low-power device embedding a powerful and ultra-low-power radio compliant with the Bluetooth® Low Energy (BLE) SIG specification v5.0 and with IEEE 802.15.4-2011 board. It integrates an ARM Cortex-M4 STM32WB55RG microcontroller with 256KB of RAM and 1MB of ROM Flash.</p>
-<h2><a class="anchor" id="autotoc_md983"></a>
+<h2><a class="anchor" id="autotoc_md984"></a>
 Hardware</h2>
 <p><img src="https://miro.medium.com/max/700/1*9OG-4Ix4EzHX9uBpMve2IA.jpeg" alt="st-nucleo-wb55" class="inline"/></p>
-<h2><a class="anchor" id="autotoc_md984"></a>
+<h2><a class="anchor" id="autotoc_md985"></a>
 Pinout</h2>
 <div class="image">
 <object type="image/svg+xml" data="p-nucleo-wb55.svg" width="50%" style="pointer-events: none;"></object>
 <div class="caption">
 Pinout for the p-nucleo-wb55</div></div>
-<h3><a class="anchor" id="autotoc_md985"></a>
+<h3><a class="anchor" id="autotoc_md986"></a>
 MCU</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -202,25 +203,25 @@ MCU</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">User Manual   </td><td class="markdownTableBodyLeft"><a href="https://www.st.com/content/ccc/resource/technical/document/user_manual/group1/13/58/22/1a/f2/ff/43/5c/DM00517423/files/DM00517423.pdf/jcr:content/translations/en.DM00517423.pdf">User Manual</a>   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md986"></a>
+<h2><a class="anchor" id="autotoc_md987"></a>
 Flashing the device</h2>
-<h3><a class="anchor" id="autotoc_md987"></a>
+<h3><a class="anchor" id="autotoc_md988"></a>
 Flashing the Board Using OpenOCD</h3>
 <p>The ST p-nucleo-wb55 board includes an on-board ST-LINK programmer and can be flashed using OpenOCD (use version 0.11.0 at least).</p>
 <p>To flash this board, just use the following command:</p>
 <div class="fragment"><div class="line">make BOARD=p-nucleo-wb55 flash -C examples/hello-world</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md988"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md989"></a>
 Flashing the Board Using ST-LINK Removable Media</h3>
 <p>On-board ST-LINK programmer provides via composite USB device removable media. Copying the HEX file causes reprogramming of the board. This task could be performed manually; however, the cpy2remed (copy to removable media) PROGRAMMER script does this automatically. To program board in this manner, use the command:</p>
 <div class="fragment"><div class="line">make BOARD=p-nucleo-wb55 PROGRAMMER=cpy2remed flash</div>
 </div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>This PROGRAMMER was tested using ST-LINK firmware 2.37.26. Firmware updates could be found on <a href="https://www.st.com/en/development-tools/sts
 -link007.html">this STM webpage</a>.</dd></dl>
-<h2><a class="anchor" id="autotoc_md989"></a>
+<h2><a class="anchor" id="autotoc_md990"></a>
 Accessing RIOT shell</h2>
 <p>Default RIOT shell access utilize VCP (Virtual COM Port) via USB interface, provided by integrated ST-LINK programmer. In default configuration ST-LINK is connected to the microcontroller USART1. For more details See table 7, page 33 in board User Manual.</p>
 <p>The default baud rate is 115 200.</p>
 <p>Use the <code>term</code> target to open a terminal: </p><div class="fragment"><div class="line">make BOARD=p-nucleo-wb55 -C examples/hello-world term</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md990"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md991"></a>
 User Interface</h2>
 <p>4 Button:</p>
 <table class="markdownTable">
@@ -238,7 +239,7 @@ User Interface</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Pin   </td><td class="markdownTableBodyNone">PB5   </td><td class="markdownTableBodyNone">PB0   </td><td class="markdownTableBodyNone">PB1   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md991"></a>
+<h2><a class="anchor" id="autotoc_md992"></a>
 Implementation Status</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -303,7 +304,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

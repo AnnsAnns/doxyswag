@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: SeeedStudio GD32 RISC-V board</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -151,7 +152,7 @@ $(function(){initNavTree('group__boards__seeedstudio-gd32.html',''); initResizab
 <dl class="section author"><dt>Author</dt><dd>Koen Zandberg <a href="#" onclick="location.href='mai'+'lto:'+'koe'+'n@'+'ber'+'gz'+'and'+'.n'+'et'; return false;">koen@<span class="obfuscator">.nosp@m.</span>berg<span class="obfuscator">.nosp@m.</span>zand.<span class="obfuscator">.nosp@m.</span>net</a> </dd>
 <dd>
 Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span class="obfuscator">.nosp@m.</span>@sch<span class="obfuscator">.nosp@m.</span>orcht<span class="obfuscator">.nosp@m.</span>.net</a></dd></dl>
-<h2><a class="anchor" id="autotoc_md1146"></a>
+<h2><a class="anchor" id="autotoc_md1147"></a>
 Overview</h2>
 <p>The <a href="https://wiki.seeedstudio.com/SeeedStudio-GD32-RISC-V-Dev-Board/">Seedstudio GD32 RISC-V Dev Board</a> is a development board for the GigaDevice GD32VF103VBT6 MCU with the following on-board components:</p>
 <ul>
@@ -168,7 +169,7 @@ Overview</h2>
 <img src="https://files.seeedstudio.com/wiki/GD32VF103/img/GD32VF-103VBT6-pin.jpg" alt="" width="600"/>
 <div class="caption">
 Seeedstudio GD32 RISC-V Dev Board</div></div>
-<h2><a class="anchor" id="autotoc_md1147"></a>
+<h2><a class="anchor" id="autotoc_md1148"></a>
 Hardware:</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -224,7 +225,7 @@ Hardware:</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">Board Schematic   </td><td class="markdownTableBodyLeft"><a href="https://github.com/SeeedDocument/GD32VF103/raw/master/res/GD32VF103VBT6-dev-board.pdf">Board Schematic</a>   </td><td class="markdownTableBodyNone"></td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md1148"></a>
+<h2><a class="anchor" id="autotoc_md1149"></a>
 Pin Layout / Configuration</h2>
 <p>The general pin layout is shown below.</p>
 <div class="image">
@@ -389,12 +390,12 @@ Seeedstudio GD32 RISC-V Dev Board Pinout</div></div>
 <td class="markdownTableBodyLeft">-   </td><td class="markdownTableBodyLeft">VREF   </td><td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft"><a class="el" href="group__drivers__periph__adc.html#gaf0487d2e8711bf1c9e7daa6e61e05888" title="Default ADC line access macro.">ADC_LINE(10)</a>   </td><td class="markdownTableBodyLeft"></td></tr>
 </table>
 <p>All other pins are either not broken out or have no special usage.</p>
-<h2><a class="anchor" id="autotoc_md1149"></a>
+<h2><a class="anchor" id="autotoc_md1150"></a>
 Flashing the Device</h2>
 <p>The board is flashed via a JTAG interface with OpenOCD (at least <a href="https://github.com/openocd-org/openocd/tree/9ea7f3d647c8ecf6b0f1424002dfc3f4504a162c">release version 0.12.0</a>). By default, an FTDI adapter according to the configuration defined in <a href="https://github.com/openocd-org/openocd/blob/9ea7f3d647c8ecf6b0f1424002dfc3f4504a162c/tcl/interface/ftdi/openocd-usb.cfg"><code>interface/openocd-usb.cfg</code></a> is assumed. </p><div class="fragment"><div class="line">BOARD=seeedstudio-gd32 make -C examples/hello-world flash</div>
 </div><!-- fragment --><p> To use an FTDI adapter with a different configuration, the configuration can be defined using the variable <code>OPENOCD_FTDI_ADAPTER</code>, for example: </p><div class="fragment"><div class="line">OPENOCD_FTDI_ADAPTER=tigar BOARD=seeedstudio-gd32 make -C examples/hello-world flash</div>
 </div><!-- fragment --><p> If another adapter is used, it can be specified using variable <code>OPENOCD_DEBUG_ADAPTER</code>, for example for a Segger J-Link adapter: </p><div class="fragment"><div class="line">OPENOCD_DEBUG_ADAPTER=jlink BOARD=seeedstudio-gd32 make -C examples/hello-world flash</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1150"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1151"></a>
 Accessing STDIO</h2>
 <p>By default, the <code>stdio</code> is provided by the USBUS CDC ACM module <code>stdio_cdc_acm</code>. This interface is mapped to <code>/dev/ttyACM&lt;n&gt;</code> on a Linux host, where <code>&lt;n&gt;</code> is the index of the CDC ACM interface, which is 0 by default.</p>
 <p>To use the first UART interface for <code>stdio</code> instead, the <code>stdio_uart</code> module has to be enabled: </p><div class="fragment"><div class="line">USEMODULE=stdio_uart BOARD=seeedstudio-gd32 make -C examples/hello-world flash</div>
@@ -421,7 +422,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

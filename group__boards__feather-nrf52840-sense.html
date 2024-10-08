@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Adafruit Feather nRF52840 Sense</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,17 +149,17 @@ $(function(){initNavTree('group__boards__feather-nrf52840-sense.html',''); initR
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the Adafruit Feather nRF52840 Sense </p>
-<h3><a class="anchor" id="autotoc_md398"></a>
+<h3><a class="anchor" id="autotoc_md399"></a>
 General information</h3>
 <p>The <a href="https://learn.adafruit.com/adafruit-feather-sense">Feather nRF52840 Sense</a> is a development board from Adafruits Feather board family. It is very similar to the <a href="https://learn.adafruit.com/introducing-the-adafruit-nrf52840-feather/">Feather nRF52840 Express</a> but comes with more sensors.</p>
 <p>It provides native USB support, Bluetooth Low Energy and IEEE 802.15.4 support via the nRF52840 MCU.</p>
 <p><img src="https://cdn-learn.adafruit.com/assets/assets/000/089/096/original/sensors_Feather_Sense_top.jpg" alt="top-down view on feather-nrf52840-sense" width="50%" class="inline"/></p>
-<h3><a class="anchor" id="autotoc_md399"></a>
+<h3><a class="anchor" id="autotoc_md400"></a>
 Flashing, Bootloader, and Terminal</h3>
 <p>Refer to the <a href="https://doc.riot-os.org/group__boards__feather-nrf52840.html">Feather nRF52840 Express documentation</a> for further details. Both use the same flasher, bootloader, and terminal settings.</p>
 <p>Example with <code>hello-world</code> application: </p><div class="fragment"><div class="line">make BOARD=feather-nrf52840-sense -C examples/hello-world flash term</div>
 </div><!-- fragment --><p>On "fresh" boards the <a href="https://learn.adafruit.com/adafruit-feather-sense/update-bootloader">bootloader may need to be updated</a>.</p>
-<h4><a class="anchor" id="autotoc_md400"></a>
+<h4><a class="anchor" id="autotoc_md401"></a>
 Updating Old Bootloaders</h4>
 <p>In some cases the bootloader may be too old to even mount on startup. Double tap the reset button to get into bootloader mode and check the <code>INFO_UF2.TXT</code> for bootloader information. If the version is less than <code>0.4.0</code> then one can use the <a href="https://github.com/adafruit/Adafruit_nRF52_Bootloader">Adafruit_nRF52_Bootloader</a> tool to update.</p>
 <p>For example, one can run the following if <code>arm-none-eabi-gcc</code> and <code>adafruit-nrfutil</code> are installed: </p><div class="fragment"><div class="line">git clone https:<span class="comment">//github.com/adafruit/Adafruit_nRF52_Bootloader.git</span></div>
@@ -185,7 +186,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:54 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

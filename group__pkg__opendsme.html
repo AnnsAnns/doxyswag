@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: openDSME - IEEE 802.15.4 DSME</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -153,11 +154,11 @@ $(function(){initNavTree('group__pkg__opendsme.html',''); initResizable(true); }
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for IEEE 802.15.4 Deterministic and Synchronous Multi-channel Extension. </p>
 <dl class="section author"><dt>Author</dt><dd>José I. Álamos <a href="#" onclick="location.href='mai'+'lto:'+'jos'+'e.'+'ala'+'mo'+'s@h'+'aw'+'-ha'+'mb'+'urg'+'.d'+'e'; return false;">jose.<span class="obfuscator">.nosp@m.</span>alam<span class="obfuscator">.nosp@m.</span>os@ha<span class="obfuscator">.nosp@m.</span>w-ha<span class="obfuscator">.nosp@m.</span>mburg<span class="obfuscator">.nosp@m.</span>.de</a></dd></dl>
-<h1><a class="anchor" id="autotoc_md1873"></a>
+<h1><a class="anchor" id="autotoc_md1874"></a>
 About</h1>
 <p>The IEEE 802.15.4 standard with its widespread usage in wireless sensor and actuator networks was extended by several techniques that allow reliable data transmission for critical applications, such as industrial plants. This includes the Deterministic and Synchronous Multi-channel Extension (DSME) that allows for distributed assignment of time slots on multiple channels.</p>
 <p>RIOT provides DSME support via the open source implementation <a href="https://opendsme.org/">openDSME</a>.</p>
-<h1><a class="anchor" id="autotoc_md1874"></a>
+<h1><a class="anchor" id="autotoc_md1875"></a>
 Features</h1>
 <ul>
 <li>Topology agnostic (peer-to-peer, star, mesh, etc).</li>
@@ -166,7 +167,7 @@ Features</h1>
 <li>Frame transmission using either CSMA-CA or multi-channel GTS (guaranteed time slot)</li>
 <li>Built-in slot negotiation (dynamic allocation) and static allocation.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md1875"></a>
+<h2><a class="anchor" id="autotoc_md1876"></a>
 Network formation</h2>
 <p>A PAN coordinator device initializes a DSME superframe structure which consists of a series of superframes that repeat indefinitely. A superframe consists of a Beacon Slot, a Contention Access Period and Contention Free Period. </p><pre class="fragment"> BS                 CAP                      CFP        BS
 +------------------------------------------------------+----
@@ -183,7 +184,7 @@ Network formation</h2>
 </ul>
 <p>DSME allows to extend the number of GTS resources by combining superframes into a multisuperframe structure. The number of superframes per multisuperframes is configurable. This extend the number of GTS to seven times the number of superframes per multisuperframe.</p>
 <p>Joining devices scan for beacons and perform the association procedure with the the (PAN) coordinator. On success, the device is ready to communicate with other devices in the DSME network. To extend the network, coordinator devices can associate to any other coordinator (including the PAN coordinator) and start emitting beacons in a different Beacon Slot offset. Devices can then join the network via the new coordinator. DSME manages beacon scheduling automatically and handles beacon collisions accordingly.</p>
-<h2><a class="anchor" id="autotoc_md1876"></a>
+<h2><a class="anchor" id="autotoc_md1877"></a>
 DSME superframe structure</h2>
 <p>The DSME superframe structure relies on three configuration parameters: Superframe Order (SO), Multisuperframe Order (MO) and Beacon Order (BO). These parameters affect the slot duration (and therefore the superframe duration), the number of superframes per multisuperframe and the beacon interval.</p>
 <p>The DSME standard defines the slot duration as <code>slot_duration = aBaseSlotDuration * aSymbolDuration * 2^SO</code>. and the superframe duration as "sf_duration = 16 * slot_duration". <code>aBaseSlotDuration=60</code> as per standard and <code>aSymbolDuration</code> (us) depends on the underlying PHY (16 for O-QPSK).</p>
@@ -192,18 +193,18 @@ DSME superframe structure</h2>
 <p>For example, an O-QPSK PHY with SO=3, MO=4 and BO=5 renders a slot duration of 7.68 ms, a superframe duration of 122.8 ms, 2 superframes per multisuperframe (msf_duration=245.7 ms) and a beacon interval of 2 multisuperframes (beacon_interval=492 ms).</p>
 <p>The slot duration trades off maximum frame length and transmission delay during GTS transmissions. A value equal or higher than 3 allows transmission of 127 bytes frames. Increasing the number of superframes per multisuperframe increases on one hand transmission delay, because the period of a single GTS is the duration of the multisuperframe. On the other hand it decreases energy consumption, because a device transmit less often. Increasing the beacon interval extends the number of coordinators in wireless reach and reduces energy consumption. However, it slows the scanning and joining procedure.</p>
 <p>The configuration of SO, MO and BO must be compliant with: </p><div class="fragment"><div class="line">0 &lt;= SO &lt;= MO &lt;= BO &lt; 15</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1877"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1878"></a>
 CAP Reduction</h2>
 <p>With the purpose of reducing energy consumption and extending the GTS resources even more, the MAC defines a CAP Reduction mode that turns all CAP (except the first one in a multisuperframe) into CFP. This adds 8 GTS per superframe that reduces CAP.</p>
 <p>With CAP Reduction on, increasing the number of superframes per multisuperframe improves energy efficiency, because nodes spend less time on CAP. However, note that this renders less CAP time which is required for slot negotiation.</p>
-<h2><a class="anchor" id="autotoc_md1878"></a>
+<h2><a class="anchor" id="autotoc_md1879"></a>
 GTS coordinates</h2>
 <p>A slot is defined by a superframe ID, a superframe slot and a channel offset. The superframe ID is contained in <code>{0..n-1}</code>, where <code>n</code> is the number of superframes per multisuperframe. The ID of the first superframe (the one aligned with the start of a multisuperframe) is 0.</p>
 <p>The superframe slot values depend on the superframe ID. </p><div class="fragment"><div class="line">sf_slot = {0..6} <span class="keywordflow">if</span> superframe_ID==0</div>
 <div class="line">sf_slot = {8..14} <span class="keywordflow">if</span> superframe_ID!=0 &amp;&amp; cap_reduction=0</div>
 <div class="line">sf_slot = {0..14} <span class="keywordflow">if</span> superframe_ID!=0 &amp;&amp; cap_reduction=1</div>
 </div><!-- fragment --><p>The channel offset is <code>{0..m-1}</code>, with <code>m</code> the number of channels.</p>
-<h1><a class="anchor" id="autotoc_md1879"></a>
+<h1><a class="anchor" id="autotoc_md1880"></a>
 Usage in RIOT</h1>
 <p>The RIOT implementation uses the <code>DSMEAdaptionLayer</code> wrapper internally (provided by openDSME) to manage scanning/joining and automatic slot allocation. The MAC implementation defines several scheduling strategies, but the default is used (Traffic-aware and Predictive Scheduling). The port introduces an openDSME GNRC <a class="el" href="structNetwork.html" title="Network struct within mqtt paho.">Network</a> Interface, that can be used via <a class="el" href="group__net__gnrc__netapi.html">GNRC communication interface</a> and <a class="el" href="group__net__gnrc__netreg.html">Network protocol registry</a>.</p>
 <p>The following network options (<a class="el" href="group__net__netopt.html">Netopt - Configuration options for network APIs</a>) are used for DSME setup.</p>
@@ -214,7 +215,7 @@ Usage in RIOT</h1>
 <li><a class="el" href="group__net__netopt.html#gga19e30424c1ab107c9c84dc0cb29d9906aa24b591ed7595ffabb167c07b272df09">NETOPT_ACK_REQ</a>. Set the ACK Request bit to enable confirmed transmissions.</li>
 <li><a class="el" href="group__net__netopt.html#gga19e30424c1ab107c9c84dc0cb29d9906a747aff887ecf7b682571a2ed4add9e5d">NETOPT_LINK</a>. Start the DSME network (PAN Coordinator) or join an existing network (Child).</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md1880"></a>
+<h2><a class="anchor" id="autotoc_md1881"></a>
 MAC configuration</h2>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
@@ -385,7 +386,7 @@ negative number on error </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:56 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

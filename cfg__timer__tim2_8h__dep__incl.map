@@ -52,22 +52,24 @@
 <area shape="poly" id="edge25_Node000001_Node000026" title=" " alt="" coords="2830,27,3188,30,3672,41,3921,50,4154,61,4355,76,4506,95,4540,103,4539,109,4505,101,4354,82,4154,67,3921,55,3672,46,3187,36,2830,32"/>
 <area shape="rect" id="Node000027" href="$boards_2stm32f469i-disco_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the STM32F469I&#45;DISCO." alt="" coords="4707,106,4889,151"/>
 <area shape="poly" id="edge26_Node000001_Node000027" title=" " alt="" coords="2829,27,3221,30,3760,40,4040,49,4301,60,4525,76,4696,95,4732,103,4731,109,4695,101,4525,81,4300,66,4039,54,3760,45,3221,35,2829,32"/>
-<area shape="rect" id="Node000029" href="$boards_2stm32f746g-disco_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for STM32F746G&#45;DISCO board." alt="" coords="4913,106,5099,151"/>
-<area shape="poly" id="edge28_Node000001_Node000029" title=" " alt="" coords="2829,26,3257,29,3856,38,4168,46,4460,58,4711,75,4901,95,4938,103,4937,108,4900,101,4710,80,4459,64,4168,52,3856,43,3257,34,2829,32"/>
-<area shape="rect" id="Node000032" href="$boards_2stm32f769i-disco_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the STM32F769I&#45;DISCO board." alt="" coords="5123,106,5305,151"/>
-<area shape="poly" id="edge31_Node000001_Node000032" title=" " alt="" coords="2829,26,3294,26,3955,34,4299,42,4623,55,4901,72,5112,95,5148,103,5147,108,5111,101,4901,78,4622,60,4299,48,3954,39,3294,32,2829,31"/>
-<area shape="rect" id="Node000035" href="$boards_2stm32mp157c-dk2_2include_2periph__conf_8h.html" title="Board specific implementations for the STM32MP157C&#45;DK2 board." alt="" coords="5329,98,5491,160"/>
-<area shape="poly" id="edge34_Node000001_Node000035" title=" " alt="" coords="2830,27,3378,34,4153,48,4889,68,5158,81,5317,95,5329,98,5328,103,5316,101,5157,86,4888,73,4153,53,3378,40,2830,33"/>
+<area shape="rect" id="Node000030" href="$boards_2stm32f746g-disco_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for STM32F746G&#45;DISCO board." alt="" coords="4913,106,5099,151"/>
+<area shape="poly" id="edge29_Node000001_Node000030" title=" " alt="" coords="2829,26,3257,29,3856,38,4168,46,4460,58,4711,75,4901,95,4938,103,4937,108,4900,101,4710,80,4459,64,4168,52,3856,43,3257,34,2829,32"/>
+<area shape="rect" id="Node000033" href="$boards_2stm32f769i-disco_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the STM32F769I&#45;DISCO board." alt="" coords="5123,106,5305,151"/>
+<area shape="poly" id="edge32_Node000001_Node000033" title=" " alt="" coords="2829,26,3294,26,3955,34,4299,42,4623,55,4901,72,5112,95,5148,103,5147,108,5111,101,4901,78,4622,60,4299,48,3954,39,3294,32,2829,31"/>
+<area shape="rect" id="Node000036" href="$boards_2stm32mp157c-dk2_2include_2periph__conf_8h.html" title="Board specific implementations for the STM32MP157C&#45;DK2 board." alt="" coords="5329,98,5491,160"/>
+<area shape="poly" id="edge35_Node000001_Node000036" title=" " alt="" coords="2830,27,3378,34,4153,48,4889,68,5158,81,5317,95,5329,98,5328,103,5316,101,5157,86,4888,73,4153,53,3378,40,2830,33"/>
 <area shape="rect" id="Node000028" href="$stm32f469i-disco_2include_2board_8h.html" title="Board specific definitions for the STM32F469I&#45;DISCO board." alt="" coords="4707,208,4889,252"/>
 <area shape="poly" id="edge27_Node000027_Node000028" title=" " alt="" coords="4800,167,4800,207,4795,207,4795,167"/>
-<area shape="rect" id="Node000030" href="$stm32f746g-disco_2include_2board_8h.html" title="Board specific definitions for the STM32F746G&#45;DISCO." alt="" coords="4913,208,5099,252"/>
-<area shape="poly" id="edge29_Node000029_Node000030" title=" " alt="" coords="5008,167,5008,207,5003,207,5003,167"/>
-<area shape="rect" id="Node000031" href="$stm32f746g-disco_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="4913,300,5099,345"/>
-<area shape="poly" id="edge30_Node000030_Node000031" title=" " alt="" coords="5008,268,5008,300,5003,300,5003,268"/>
-<area shape="rect" id="Node000033" href="$stm32f769i-disco_2include_2board_8h.html" title="Board specific definitions for the STM32F769I&#45;DISCO board." alt="" coords="5123,208,5305,252"/>
-<area shape="poly" id="edge32_Node000032_Node000033" title=" " alt="" coords="5216,167,5216,207,5211,207,5211,167"/>
-<area shape="rect" id="Node000034" href="$stm32f769i-disco_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="5123,300,5305,345"/>
-<area shape="poly" id="edge33_Node000033_Node000034" title=" " alt="" coords="5216,268,5216,300,5211,300,5211,268"/>
-<area shape="rect" id="Node000036" href="$stm32mp157c-dk2_2include_2board_8h.html" title="Board specific definitions for the STM32MP157C&#45;DK2 board." alt="" coords="5329,208,5491,252"/>
-<area shape="poly" id="edge35_Node000035_Node000036" title=" " alt="" coords="5412,175,5412,207,5407,207,5407,175"/>
+<area shape="rect" id="Node000029" href="$stm32f469i-disco_2include_2gpio__params_8h_source.html" title=" " alt="" coords="4707,300,4889,345"/>
+<area shape="poly" id="edge28_Node000028_Node000029" title=" " alt="" coords="4800,268,4800,300,4795,300,4795,268"/>
+<area shape="rect" id="Node000031" href="$stm32f746g-disco_2include_2board_8h.html" title="Board specific definitions for the STM32F746G&#45;DISCO." alt="" coords="4913,208,5099,252"/>
+<area shape="poly" id="edge30_Node000030_Node000031" title=" " alt="" coords="5008,167,5008,207,5003,207,5003,167"/>
+<area shape="rect" id="Node000032" href="$stm32f746g-disco_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="4913,300,5099,345"/>
+<area shape="poly" id="edge31_Node000031_Node000032" title=" " alt="" coords="5008,268,5008,300,5003,300,5003,268"/>
+<area shape="rect" id="Node000034" href="$stm32f769i-disco_2include_2board_8h.html" title="Board specific definitions for the STM32F769I&#45;DISCO board." alt="" coords="5123,208,5305,252"/>
+<area shape="poly" id="edge33_Node000033_Node000034" title=" " alt="" coords="5216,167,5216,207,5211,207,5211,167"/>
+<area shape="rect" id="Node000035" href="$stm32f769i-disco_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="5123,300,5305,345"/>
+<area shape="poly" id="edge34_Node000034_Node000035" title=" " alt="" coords="5216,268,5216,300,5211,300,5211,268"/>
+<area shape="rect" id="Node000037" href="$stm32mp157c-dk2_2include_2board_8h.html" title="Board specific definitions for the STM32MP157C&#45;DK2 board." alt="" coords="5329,208,5491,252"/>
+<area shape="poly" id="edge36_Node000036_Node000037" title=" " alt="" coords="5412,175,5412,207,5407,207,5407,175"/>
 </map>

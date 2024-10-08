@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: LoRa-E5 Development Board - STM32WLE5JC</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -152,7 +153,7 @@ $(function(){initNavTree('group__boards__lora-e5-dev.html',''); initResizable(tr
 <p>The LoRa-E5 Dev Board is an evaluation board for the Seeed Studio LoRa-E5 STM32WLE5JC module. The cpu includes a radio supporting multiple LPWAN protocols in the 868/915 MHz frequency bands, including LoRa, capable of 20.8dBm output at 3.3V.</p>
 <p>Convenient interfaces as Grove and RS-485 are mapped out, and the many pins map most of the modules GPIOs. But watch out! Although it features Arduino style pin headers, they are not arduino compatible.</p>
 <p>The board also includes a JST battery connector as well as control over the external power lines which can be enabled or disabled by software.</p>
-<h3><a class="anchor" id="autotoc_md488"></a>
+<h3><a class="anchor" id="autotoc_md489"></a>
 MCU</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -182,11 +183,11 @@ MCU</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">LoRa-E5 STM32WL5EJC Module wiki   </td><td class="markdownTableBodyLeft"><a href="https://wiki.seeedstudio.com/LoRa-E5_STM32WLE5JC_Module/#2-develop-with-stm32cube-mcu-package">https://wiki.seeedstudio.com/LoRa-E5_STM32WLE5JC_Module/#2-develop-with-stm32cube-mcu-package</a>   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md489"></a>
+<h3><a class="anchor" id="autotoc_md490"></a>
 Pinout</h3>
 <p><img src="https://files.seeedstudio.com/wiki/LoRa-E5_Development_Kit/hardware%20overview/4071615359366_.pic_hd.jpg" alt="lora-e5-dev" class="inline"/></p>
 <p>The default Peripheral Mapping is specified <a href="https://github.com/RIOT-OS/RIOT/blob/master/boards/lora-e5-dev/include/periph_conf.h">here</a></p>
-<h3><a class="anchor" id="autotoc_md490"></a>
+<h3><a class="anchor" id="autotoc_md491"></a>
 Board Interface</h3>
 <p>3 Buttons:</p>
 <table class="markdownTable">
@@ -204,7 +205,7 @@ Board Interface</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Pin   </td><td class="markdownTableBodyNone">PB5   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md491"></a>
+<h3><a class="anchor" id="autotoc_md492"></a>
 Power Lines</h3>
 <p>All power lines are on by default, but some of them can optionally be disabled, namely 3.3V and 5V. These feed all external pins as well as the internal LM75A, more details are available on the schematic.</p>
 <table class="markdownTable">
@@ -217,9 +218,9 @@ Power Lines</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft"></td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md492"></a>
+<h3><a class="anchor" id="autotoc_md493"></a>
 Flashing</h3>
-<h4><a class="anchor" id="autotoc_md493"></a>
+<h4><a class="anchor" id="autotoc_md494"></a>
 Disabling Read Protection</h4>
 <p>The board comes pre-flashed with a DFU bootloader, an AT command Firmware and read protection enabled and set to 1. So before being able to program anything else, read protection needs to be set back to level 0.</p>
 <p>The easiest way of doing this is with the <a href="https://www.st.com/en/development-tools/stm32cubeprog.html">STM32CubeProgramer</a> GUI and setting the RDP option byte to <code>AA</code></p>
@@ -227,7 +228,7 @@ Disabling Read Protection</h4>
 <p>Alternatively you can use the STM32_Programer_CLI:</p>
 <div class="fragment"><div class="line">$ STM32_Programmer_CLI --<a class="code hl_function" href="group__posix__sockets.html#gaeedaa5cac80a95d50232c1d130615a1a">connect</a> port=swd --readunprotect</div>
 <div class="ttc" id="agroup__posix__sockets_html_gaeedaa5cac80a95d50232c1d130615a1a"><div class="ttname"><a href="group__posix__sockets.html#gaeedaa5cac80a95d50232c1d130615a1a">connect</a></div><div class="ttdeci">int connect(int socket, const struct sockaddr *address, socklen_t address_len)</div><div class="ttdoc">Connect a socket.</div></div>
-</div><!-- fragment --><h4><a class="anchor" id="autotoc_md494"></a>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md495"></a>
 Programming with an external ST-LINK</h4>
 <p>Since there is no ST-LINK programmer on the board an external one needs to be connected. Any Nucleo or STM32Discovery board can be used for this by simply removing the ST-LINK jumpers and connecting on the CN4 headers (see <a href="https://www.st.com/resource/en/user_manual/um1724-stm32-nucleo64-boards-mb1136-stmicroelectronics.pdf">UM1724 6.2.4</a> for more details). An example is seen in the following image:</p>
 <p><img src="https://stm32python.gitlab.io/fr-version-lora/site/assets/images/lora/seeestudio_lora_e5_dev_connection.png" alt="LoRa-E5 Dev ST-LINK" class="inline"/></p>
@@ -241,19 +242,19 @@ Programming with an external ST-LINK</h4>
 <div class="line">Pin 6: SWO                   N/C</div>
 </div><!-- fragment --><p>Flashing can then be performed seamlessly with OpenOCD:</p>
 <div class="fragment"><div class="line">BOARD=lora-e5-dev make flash</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md495"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md496"></a>
 Serial connection</h3>
 <p>The default serial connection is through the USB-C port mapping to PB7 (RX) and PB6 (TX) UART pins (a second UART and an LPUART interface is also exposed).</p>
 <div class="fragment"><div class="line">BOARD=lora-e5-dev make term</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md496"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md497"></a>
 Debugging</h3>
 <p>For Debugging an external programmer is required, connected as depicted in the above picture, then the debugger can be attached with:</p>
 <div class="fragment"><div class="line">BOARD=lora-e5-dev make debug</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md497"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md498"></a>
 LoRa</h3>
 <p>This board comes embedded with an <code><a class="el" href="structsx126x.html" title="Device descriptor for the driver.">sx126x</a></code> based LoRa radio. The precise module that needs to be selected is <code>USEMODULE += sx126x_stm32wl</code>, this is also selected with <code>USEMODULE += netdev_default</code>.</p>
 <p>Differently from other <code>stm32wl</code> chips this module only transmits through <code>RFO_HP</code>.</p>
-<h3><a class="anchor" id="autotoc_md498"></a>
+<h3><a class="anchor" id="autotoc_md499"></a>
 Sensors</h3>
 <p>This board includes a <a class="el" href="group__drivers__lm75.html">LM75 Temperature Sensor driver compile configuration</a> temperature sensor. It can be included with <code>USEMODULE += lm75a</code> or through <code>USEMODULE += saul_default</code>. </p>
 <table class="memberdecls">
@@ -279,7 +280,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

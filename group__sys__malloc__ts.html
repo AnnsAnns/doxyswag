@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Thread-safe wrappers for malloc and friends</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -146,10 +147,10 @@ $(function(){initNavTree('group__sys__malloc__ts.html',''); initResizable(true);
 </p>
 <p>This module provides wrappers for malloc, calloc, realloc and free that provide mutually exclusive access to those functions. </p>
 <dl class="section warning"><dt>Warning</dt><dd>This module is automatically selected, if needed. Never add it manually.</dd></dl>
-<h1><a class="anchor" id="autotoc_md2123"></a>
+<h1><a class="anchor" id="autotoc_md2124"></a>
 Background</h1>
 <p>Without support of the OS (or resorting to disabling IRQs), the standard C library is unable to guarantee that at most one thread at a time accesses the heap management data structures. Some C libraries provide hooks for locking (e.g. picolibc and newlib do so optionally), others (e.g. AVR libc) don't. By providing wrapper functions for <code><a class="el" href="group__oneway__malloc.html#ga9c36d0fe3ec4675cbffdc9b52f5fb399" title="Allocation a block of memory.">malloc()</a></code> and friends and instructing the linker to link to those instead of their actual implementations, we can provide thread safe access to the heap regardless of C libraries support.</p>
-<h1><a class="anchor" id="autotoc_md2124"></a>
+<h1><a class="anchor" id="autotoc_md2125"></a>
 Usage</h1>
 <p>This module is intended to be use by platforms not providing the required locking with other means automatically. Hence, application developers and users should never select this module by hand. </p>
 </div><!-- contents -->
@@ -159,7 +160,7 @@ Usage</h1>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

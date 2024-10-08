@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: 6LoWPAN</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -150,7 +151,7 @@ $(function(){initNavTree('group__net__gnrc__sixlowpan.html',''); initResizable(t
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>GNRC's 6LoWPAN implementation </p>
-<h1><a class="anchor" id="autotoc_md2045"></a>
+<h1><a class="anchor" id="autotoc_md2046"></a>
 Internal API and sub-modules</h1>
 <p>Internally, <a class="el" href="group__net__gnrc__sixlowpan.html">6LoWPAN</a> is sub-divided into several sub-modules. They implement certain features of the 6LoWPAN standard. Currently implemented are</p>
 <ul>
@@ -167,10 +168,10 @@ Internal API and sub-modules</h1>
 </div><!-- fragment --><p>A 6LoWPAN frame <code>pkt</code> must pass the sub-modules sequentially in the order of its dispatches on receive or the step that makes most sense next on send. After it was passed into another sub-module using the respective <code>send</code>/<code>recv</code> function a sub-module must not operate on the <code>pkt</code> anymore.</p>
 <p>The <code>ctx</code> parameter can be used to provide data structures of a sub-module to the next sub-module if that needs to modify or read them (e.g. reassembly buffer state for IPHC) otherwise, leave it <code>NULL</code>.</p>
 <p>Finally, the <code>page</code> parameter is to provide a sub-module the current parsing page context according to <a href="https://tools.ietf.org/html/rfc8025">RFC 8025</a>.</p>
-<h1><a class="anchor" id="autotoc_md2046"></a>
+<h1><a class="anchor" id="autotoc_md2047"></a>
 Supported NETAPI commands</h1>
 <p>To interact with other modules this module handles the following <a class="el" href="group__net__gnrc__netapi.html">GNRC communication interface</a> message types:</p>
-<h2><a class="anchor" id="autotoc_md2047"></a>
+<h2><a class="anchor" id="autotoc_md2048"></a>
 <code>GNRC_NETAPI_MSG_TYPE_RCV</code></h2>
 <p><a class="el" href="group__net__gnrc__netapi.html#ga57b7e8cf32c12beecc9b84ca2cc073b5">GNRC_NETAPI_MSG_TYPE_RCV</a> expects a <a class="el" href="group__net__gnrc__pkt.html">Packet</a> (referred to as "packet" in the following) in receive order (link-layer payload first, <a class="el" href="group__net__gnrc__netif__hdr.html">Generic network interface header</a> last) with the payload marked with <a class="el" href="group__net__gnrc__nettype.html#gga2582fbb16a318806983c225a69460902ae3db3bc6ba0636854f94574d7eba0a99">GNRC_NETTYPE_SIXLOWPAN</a>. Every other packet will be silently discarded.</p>
 <p>If the first byte of the payload is <a class="el" href="group__net__sixlowpan.html#ga40387ee7a068a40ce08bffdff6af628e">SIXLOWPAN_UNCOMP</a> this byte will be removed by marking it with a new <a class="el" href="group__net__gnrc__pkt.html#ga961e6ea05309a3d69a4d96f4a2dedb63">gnrc_pktsnip_t</a> and then removing this <a class="el" href="group__net__gnrc__pkt.html#ga961e6ea05309a3d69a4d96f4a2dedb63">gnrc_pktsnip_t</a>, the remaining payload will be marked with <a class="el" href="group__net__gnrc__nettype.html#gga2582fbb16a318806983c225a69460902a5b4cb265411204c95e4a4996dcafe380">GNRC_NETTYPE_IPV6</a> and this module will issue a <a class="el" href="group__net__gnrc__netapi.html#ga57b7e8cf32c12beecc9b84ca2cc073b5">GNRC_NETAPI_MSG_TYPE_RCV</a> to all subscribers registered to <a class="el" href="group__net__gnrc__nettype.html#gga2582fbb16a318806983c225a69460902a5b4cb265411204c95e4a4996dcafe380">GNRC_NETTYPE_IPV6</a> with demultiplex context <a class="el" href="group__net__gnrc__netreg.html#ga1a6359efa13b3bfed70af55deacde7ae">GNRC_NETREG_DEMUX_CTX_ALL</a> in the <a class="el" href="group__net__gnrc__netreg.html">Network protocol registry</a> with the packet. Otherwise, the packet will be silently discarded (except for the cases documented below).</p>
@@ -180,16 +181,16 @@ Supported NETAPI commands</h1>
 <li>If <a class="el" href="group__net__gnrc__sixlowpan__iphc.html">IPv6 header compression (IPHC)</a> is included the packet will not be send to the subscribers to <a class="el" href="group__net__gnrc__nettype.html#gga2582fbb16a318806983c225a69460902a5b4cb265411204c95e4a4996dcafe380">GNRC_NETTYPE_IPV6</a> with demultiplex context <a class="el" href="group__net__gnrc__netreg.html#ga1a6359efa13b3bfed70af55deacde7ae">GNRC_NETREG_DEMUX_CTX_ALL</a> immediately, but it will be checked first if <a class="el" href="group__net__sixlowpan.html#ga49acf596aa5c85128ec25571c77d5181">sixlowpan_iphc_is()</a> is true for its payload. If false it will be send to the <a class="el" href="group__net__gnrc__nettype.html#gga2582fbb16a318806983c225a69460902a5b4cb265411204c95e4a4996dcafe380">GNRC_NETTYPE_IPV6</a> subscribers as usual. If true the IPHC dispatch will be decompressed to a full IPv6 header first. The IPHC dispatch will be replaced by the uncompressed IPHC header, any NHC dispatch will be replaced by their respective uncompressed header. The resulting packet will then be issued to the <a class="el" href="group__net__gnrc__nettype.html#gga2582fbb16a318806983c225a69460902a5b4cb265411204c95e4a4996dcafe380">GNRC_NETTYPE_IPV6</a> subscribers as usual.</li>
 <li>If both <a class="el" href="group__net__gnrc__sixlowpan__frag.html">6LoWPAN Fragmentation</a> and <a class="el" href="group__net__gnrc__sixlowpan__iphc.html">IPv6 header compression (IPHC)</a> are included the and <a class="el" href="group__net__sixlowpan.html#gab08118b367c7e56e8f0474020fd7156d">sixlowpan_frag_is()</a> is true for the packet, the fragmented datagram will be reassembled as described in (1). If for the remainder (after removal of the fragment header) of the first fragment <a class="el" href="group__net__sixlowpan.html#ga49acf596aa5c85128ec25571c77d5181">sixlowpan_iphc_is()</a> is true, it will be decompressed as described in (2), with the exception that the packet will only be send to all receivers of <a class="el" href="group__net__gnrc__nettype.html#gga2582fbb16a318806983c225a69460902a5b4cb265411204c95e4a4996dcafe380">GNRC_NETTYPE_IPV6</a> as soon as the datagram was completely reassembled and not after directly after decompression. If <a class="el" href="group__net__sixlowpan.html#ga49acf596aa5c85128ec25571c77d5181">sixlowpan_iphc_is()</a> is false, reassembly is handled completely as described in (1). It is assumed that a fragment can fit a full compression header (including inlined fields and possibly NHC/GHC headers) as specified in <a href="https://tools.ietf.org/html/rfc6282#section-2">RFC 6282, section 2</a>.</li>
 </ol>
-<h2><a class="anchor" id="autotoc_md2048"></a>
+<h2><a class="anchor" id="autotoc_md2049"></a>
 <code>GNRC_NETAPI_MSG_TYPE_SND</code></h2>
 <p><a class="el" href="group__net__gnrc__netapi.html#gacf009a7a7aa95ec88848b1030ef08b09">GNRC_NETAPI_MSG_TYPE_SND</a> expects a <a class="el" href="group__net__gnrc__pkt.html">Packet</a> (referred to as "packet" in the following) in send order (headers first, payload last) with the first header being a valid <a class="el" href="group__net__gnrc__nettype.html#gga2582fbb16a318806983c225a69460902a591a497a7b4a31427c44c7b24baf17c3">GNRC_NETTYPE_NETIF</a> header and the second a <a class="el" href="group__net__gnrc__nettype.html#gga2582fbb16a318806983c225a69460902a5b4cb265411204c95e4a4996dcafe380">GNRC_NETTYPE_IPV6</a> header. Every other packet will be silently discarded.</p>
 <p>The <a class="el" href="group__net__gnrc__nettype.html#gga2582fbb16a318806983c225a69460902ae3db3bc6ba0636854f94574d7eba0a99">GNRC_NETTYPE_SIXLOWPAN</a> header must at least have the <a class="el" href="structgnrc__netif__hdr__t.html#a27177e629f5187ce530661a053716198" title="PID of network interface.">gnrc_netif_hdr_t::if_pid</a> field set to a legal, 6LoWPAN compatible interface referred to as <code>netif</code> in the following, otherwise the packet will be discarded.</p>
 <p>If <a class="el" href="group__net__gnrc__sixlowpan__iphc.html">IPv6 header compression (IPHC)</a> is included and <a class="el" href="flags_8h.html#abac3987a0e22590d861339e7693a7a17">GNRC_NETIF_FLAGS_6LO_HC</a> is enabled for <code>netif</code> the <a class="el" href="group__net__gnrc__nettype.html#gga2582fbb16a318806983c225a69460902a5b4cb265411204c95e4a4996dcafe380">GNRC_NETTYPE_IPV6</a> header will be compressed according to <a href="https://tools.ietf.org/html/rfc6282#section-3">RFC 6282, section 3</a>. If it is false the <a class="el" href="group__net__sixlowpan.html#ga40387ee7a068a40ce08bffdff6af628e">SIXLOWPAN_UNCOMP</a> dispatch will be appended as a new <a class="el" href="group__net__gnrc__pkt.html#ga961e6ea05309a3d69a4d96f4a2dedb63">gnrc_pktsnip_t</a> to the packet. The false case also applies if <a class="el" href="group__net__gnrc__sixlowpan__iphc.html">IPv6 header compression (IPHC)</a> is not included.</p>
 <p>If the packet without <a class="el" href="group__net__gnrc__nettype.html#gga2582fbb16a318806983c225a69460902a591a497a7b4a31427c44c7b24baf17c3">GNRC_NETTYPE_NETIF</a> header is shorter than gnrc_netif_t::sixlo::max_frag_size of <code>netif</code> the packet will be send to the <code>netif</code>'s thread. Otherwise if <a class="el" href="group__net__gnrc__sixlowpan__frag.html">6LoWPAN Fragmentation</a> is included the packet will be fragmented according to <a href="https://tools.ietf.org/html/rfc4944#section-5.3">RFC 4944, section 5.3</a> if the packet is without <a class="el" href="group__net__gnrc__nettype.html#gga2582fbb16a318806983c225a69460902a591a497a7b4a31427c44c7b24baf17c3">GNRC_NETTYPE_NETIF</a> header shorter than <a class="el" href="group__net__sixlowpan.html#ga95be475c8d0d9102bc00b902f6f9262e">SIXLOWPAN_FRAG_MAX_LEN</a>. If none of these cases apply, the packet will be discarded silently.</p>
-<h2><a class="anchor" id="autotoc_md2049"></a>
+<h2><a class="anchor" id="autotoc_md2050"></a>
 <code>GNRC_NETAPI_MSG_TYPE_SET</code></h2>
 <p><code>GNRC_NETAPI_MSG_TYPE_SET</code> is not supported.</p>
-<h2><a class="anchor" id="autotoc_md2050"></a>
+<h2><a class="anchor" id="autotoc_md2051"></a>
 <code>GNRC_NETAPI_MSG_TYPE_GET</code></h2>
 <p><code>GNRC_NETAPI_MSG_TYPE_GET</code> is not supported. </p>
 <table class="memberdecls">
@@ -262,7 +263,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:54 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

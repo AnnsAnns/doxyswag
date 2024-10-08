@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: ARM Mbed TLS</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -154,16 +155,16 @@ $(function(){initNavTree('group__pkg__mbedtls.html',''); initResizable(true); })
 <dd>
 <b class="text-danger">This feature is experimental!</b><br  />
  This port is in an early state - expect changes.</dd></dl>
-<h1><a class="anchor" id="autotoc_md1820"></a>
+<h1><a class="anchor" id="autotoc_md1821"></a>
 Overview</h1>
 <p>This port includes the ARM Mbed TLS library as a package. A more comprehensive library documentation can be found in the <a href="https://tls.mbed.org/kb">knowledge base</a> and the <a href="https://tls.mbed.org/api/">source code documentation</a>. Mbed TLS is highly configurable and it allows inclusion of alternative hardware or OS specific implementations to be used by the library. A porting guide can be found <a href="https://tls.mbed.org/kb/how-to/how-do-i-port-mbed-tls-to-a-new-environment-OS">here</a>. The configuration and enablement of alternative implementations has to be defined in the <a href="include/riot_mbedtls_config.h">configuration file</a> of this package.</p>
-<h1><a class="anchor" id="autotoc_md1821"></a>
+<h1><a class="anchor" id="autotoc_md1822"></a>
 Tested Submodules</h1>
-<h2><a class="anchor" id="autotoc_md1822"></a>
+<h2><a class="anchor" id="autotoc_md1823"></a>
 Entropy</h2>
 <p>The <code>entropy</code> and <code>entropy_poll</code> components of the Mbed TLS library have been tested in RIOT. The module uses a SHA-256 or a SHA-512 based accumulator. This port enables the SHA-256 accumulator and it adapts the RIOT SHA-256 implementation to be used as a backend. Our reconfiguration disables the internal Mbed TLS implementation. A future compile time configuration in RIOT with transparent hardware crypto acceleration support will be used by the package seamlessly.</p>
 <p>The entropy module is initialized with one or more entropy sources which are polled iteratively and accumulated. Sources for entropy are registered with a function pointer and an assumption about their strength (strong/weak). The module is designed for cryptographic purposes, thus, an entropy poll will fail if there is not a single strong source. Strong sources are typically true (hardware) random number generators with conditioning which will provide full entropy per sample. In contrast, weak sources do not necessarily provide full entropy per sample and act as a complement, even if they only contain few random bits in a sample, which is typically the case for sampled noise sources.</p>
-<h3><a class="anchor" id="autotoc_md1823"></a>
+<h3><a class="anchor" id="autotoc_md1824"></a>
 Entropy Sources</h3>
 <p>RIOT provides default sources to feed the entropy module. Yet, only <a class="el" href="group__drivers__periph__hwrng.html">HWRNG Abstraction</a> and <a class="el" href="group__sys__entropy__source__adc.html">ADC Noise Entropy Source</a> are enabled in this package. It is planned to extend this list. In addition, a user can connect a personal source to the entropy poll by implementing <a href="https://tls.mbed.org/api/entropy_8h.html"><code>mbedtls_entropy_add_source</code></a>.</p>
 <p>It is noteworthy that an entropy module might be required during OS bootstrapping, hence, a module that is added in <code>main()</code> will not be incorporated during <code><a class="el" href="auto__init_8h.html#a923fd92ea17c7891c288f1ddc135f112" title="Initializes all high level modules that do not require parameters for initialization or uses default ...">auto_init()</a></code>.</p>
@@ -175,10 +176,10 @@ Entropy Sources</h3>
 <div class="line">FEATURES_PROVIDED += periph_adc</div>
 </div><!-- fragment --><p>All sources will be enabled by default, if available. Furthermore, a single source can be manually excluded from the entropy poll by disabling it in the applications Makefile.</p>
 <div class="fragment"><div class="line">DISABLE_MODULE += mbedtls_entropy_source_hwrng</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md1824"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md1825"></a>
 Usage</h3>
 <p>The RIOT API <a class="el" href="group__pkg__mbedtls__entropy.html">Access API to Mbed TLS entropy module</a> can be used which wraps around the Mbed TLS API and handles one entropy context internally. Thereby, <a class="el" href="group__pkg__mbedtls__entropy.html#ga59bebd2024df2eaf446ce4c0cb8e81a6">entropy_mbedtls_riot_get</a> initializes the module, retrieves entropy values and uninitializes the context afterwards. Alternatively, the entropy module can be used directly by calling the Mbed TLS API which requires the entropy context to be allocated from application code. The adaptation in this package will then only utilize the first configured entropy source during initialization.</p>
-<h1><a class="anchor" id="autotoc_md1825"></a>
+<h1><a class="anchor" id="autotoc_md1826"></a>
 Testing</h1>
 <p>Many Mbed TLS implementations provide self tests within the boundaries of a module and the <a href="../../tests/pkg/mbedtls">test folder</a> acts as a place to execute these tests in RIOT context. It is noteworthy, that built-in Mbed TLS entropy source tests only execute on the source that is implemented in <code>mbedtls_hardware_poll</code>. The additional sources that were added using <code>mbedtls_entropy_add_source</code> are ignored in the test. </p>
 <table class="memberdecls">
@@ -208,7 +209,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:54 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

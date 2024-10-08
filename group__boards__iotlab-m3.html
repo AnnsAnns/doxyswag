@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: IoT-LAB M3 open node</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,7 +149,7 @@ $(function(){initNavTree('group__boards__iotlab-m3.html',''); initResizable(true
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the iotlab-m3 board </p>
-<h2><a class="anchor" id="autotoc_md464"></a>
+<h2><a class="anchor" id="autotoc_md465"></a>
 Components</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -170,16 +171,16 @@ Components</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">a IEEE802.15.4-compliant radio at 2.4 GHz   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md465"></a>
+<h2><a class="anchor" id="autotoc_md466"></a>
 Board HW overview</h2>
 <p><img src="https://www.iot-lab.info/wp-content/uploads/2013/10/m3opennode.png" alt="IoT-LAB M3 Layout" class="inline"/></p>
-<h3><a class="anchor" id="autotoc_md466"></a>
+<h3><a class="anchor" id="autotoc_md467"></a>
 Board Architecture</h3>
 <p><img src="https://github.com/iot-lab/iot-lab/wiki/Images/archiopenm3.png" alt="IoT-LAB M3 Architecture" class="inline"/></p>
-<h3><a class="anchor" id="autotoc_md467"></a>
+<h3><a class="anchor" id="autotoc_md468"></a>
 <a href="http://github.com/iot-lab/iot-lab/wiki/Docs/openm3-schematics.pdf">Board schematics</a></h3>
 <p>, wiring, pinouts, etc...</p>
-<h2><a class="anchor" id="autotoc_md468"></a>
+<h2><a class="anchor" id="autotoc_md469"></a>
 Implementation Status</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -217,13 +218,13 @@ Implementation Status</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">SPI Flash   </td><td class="markdownTableBodyLeft">N25Q128   </td><td class="markdownTableBodyLeft">yes   </td><td class="markdownTableBodyLeft"></td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md469"></a>
+<h2><a class="anchor" id="autotoc_md470"></a>
 Toolchains</h2>
 <p>See <a href="https://github.com/RIOT-OS/RIOT/wiki/Family:-ARM">ARM Family</a></p>
 <p>Working: <a href="https://github.com/RIOT-OS/RIOT/wiki/Family:-ARM#gcc-
 arm-embedded-toolchain">gcc-arm-embedded</a> <a href="https://github.com/RIOT-OS/RIOT/wiki/Family:-ARM#linaro-
 toolchain">gcc-linaro</a></p>
-<h3><a class="anchor" id="autotoc_md470"></a>
+<h3><a class="anchor" id="autotoc_md471"></a>
 Programming and Debugging</h3>
 <p>In order to program (flash) and debug the node you need <a href="http://openocd.sourceforge.net/">OpenOCD</a> and an ARM version of gdb (<code>arm-none- eabi-gdb</code>), which provided by most toolchains. Most Linux distributions provide also a package for OpenOCD. The required configuration files are provided by RIOT. When starting the debugger with <code>make debug BOARD=iotlab-m3</code> GDB connects to openocd, loads the elf-file and puts the MCU into halt state. Before setting breakpoints it is sometimes needed to use the following workflow </p><div class="fragment"><div class="line">bash</div>
 <div class="line">monitor reset run</div>
@@ -231,13 +232,13 @@ Programming and Debugging</h3>
 <div class="line">b &lt;breakpoint&gt;</div>
 <div class="line">c</div>
 </div><!-- fragment --><p> For best debugging experience also change the <code>-Os</code> flag in <code>Makefile.include</code>'s <code>CFLAGS</code> variable to <code>-O0</code>.</p>
-<h2><a class="anchor" id="autotoc_md471"></a>
+<h2><a class="anchor" id="autotoc_md472"></a>
 Details</h2>
 <p>The M3 Open Node can reset, debug and program the STM32 on JTAG through the FTDI2322H connected to the USB. This component allows also a UART link to the STM32. The Open Node connector gives access to 3 STM32/GPIO and the STM32/I2C. Two power lines are accessible on this connector: a + 5.0 volts for the board power supply a 3.3 volts for the consumption monitoring of the STM32, the RF component and the sensors</p>
 <p>The M3 Open Node can be used standalone without a gateway connected to the M3 Open node connector. The powering of the board is then assumed by a battery or by the USB connector The choice of the power input is done electronically (power management).</p>
 <p><img src="https://www.iot-lab.info/wp-
 content/uploads/2013/10/archiopenm3.png" alt="IoT-LAB M3 architecture" class="inline"/></p>
-<h2><a class="anchor" id="autotoc_md472"></a>
+<h2><a class="anchor" id="autotoc_md473"></a>
 Debugging</h2>
 <p>For debugging you need to open a terminal. Here you simply have to call <code>make debug</code> - assuming that the current directory is your application directory. It establishes an openocd connection to the device and starts gdb connected to the openocd instance. For example, it should look something like this </p><div class="fragment"><div class="line">[user@host RIOT]$ cd examples/<span class="keywordflow">default</span>/</div>
 <div class="line">[user@host <span class="keywordflow">default</span>]$ BOARD=iotlab-m3 make</div>
@@ -283,7 +284,7 @@ Debugging</h2>
 </div><!-- fragment --><p>The node will reboot and you can continue to use <code>gdb</code> like you're used to. In some cases it seems necessary to prepend a <code>monitor reset run</code> before executing continue. In general you can use openocd commands prepended by <code>monitor</code>. In the case the node crashes it can be reset with the following sequence </p><div class="fragment"><div class="line">Bash</div>
 <div class="line">(gdb) monitor reset halt</div>
 <div class="line">(gdb) monitor reset run</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md473"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md474"></a>
 Troubleshooting</h2>
 <p>For terminal output on macOS (<code>make term</code>) you need to install a driver: <a href="http://www.ftdichip.com/Drivers/VCP.htm">http://www.ftdichip.com/Drivers/VCP.htm</a> <a href="http://www.ftdichip.com/Drivers/VCP.htm">http://www.ftdichip.com/Drivers/VCP.htm</a> </p>
 <table class="memberdecls">
@@ -303,7 +304,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

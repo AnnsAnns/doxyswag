@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Helpers for pointer tagging</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -146,11 +147,11 @@ $(function(){initNavTree('group__sys__ptrtag.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<h1><a class="anchor" id="autotoc_md2096"></a>
+<h1><a class="anchor" id="autotoc_md2097"></a>
 Concept</h1>
 <p>Data structures are often aligned in memory to the word size. On 32 bit machines, this often results in the two least significant bits containing no information (as they have to be zero, due to this alignment). In many cases gaining two bits of information storage in RAM is all you need. In these case, pointer tagging can come in handy.</p>
 <p>The tricky part is however to get this working portable on all architectures, possibly even on 8 bit machines that have no alignment requirements. This utility provides helpers to enforce alignment requirements for all platforms, so that pointer tagging can be used everywhere.</p>
-<h1><a class="anchor" id="autotoc_md2097"></a>
+<h1><a class="anchor" id="autotoc_md2098"></a>
 Usage</h1>
 <div class="fragment"><div class="line"> <span class="comment">// Use the PTRTAG attribute to ensure that pointers to this structure can</span></div>
 <div class="line"> <span class="comment">// be tagged, even if structure would not have a suitable alignment</span></div>
@@ -340,7 +341,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

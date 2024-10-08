@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: STM32F469I-DISCO</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,7 +149,7 @@ $(function(){initNavTree('group__boards__stm32f469i-disco.html',''); initResizab
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the STM32F469I-DISCO board </p>
-<h2><a class="anchor" id="autotoc_md1418"></a>
+<h2><a class="anchor" id="autotoc_md1419"></a>
 Table of Contents:</h2>
 <ol type="1">
 <li>Overview</li>
@@ -157,10 +158,10 @@ Table of Contents:</h2>
 <li>Buttons, LEDS and other devices</li>
 <li>Working with this Dev-Kit.</li>
 </ol>
-<h2><a class="anchor" id="autotoc_md1419"></a>
+<h2><a class="anchor" id="autotoc_md1420"></a>
 Overview</h2>
 <p>The STM32F469I Discovery kit is a complete development platform for powered by ARM Cortex-M4 core-based STM32F469NIH6 MCU. The MCU presents a large list of peripherals available, but specifically this development board exposes:</p>
-<h2><a class="anchor" id="autotoc_md1420"></a>
+<h2><a class="anchor" id="autotoc_md1421"></a>
 Hardware</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -210,7 +211,7 @@ Hardware</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">Reference Manual   </td><td class="markdownTableBodyLeft"><a href="https://www.st.com/resource/en/user_manual/um1932-discovery-kit-with-stm32f469ni-mcu-stmicroelectronics.pdf">Dev-Kit Reference Manual</a> (pdf)   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md1421"></a>
+<h2><a class="anchor" id="autotoc_md1422"></a>
 Connectors and Pinout</h2>
 <ul>
 <li>1 USB Mini-B used by the On-board ST-LINK debugger (Ref.CN1)</li>
@@ -220,14 +221,14 @@ Connectors and Pinout</h2>
 <li>Audio 3.5 mm stereo jack</li>
 </ul>
 <p>Through 2 connector we have available:</p>
-<h3><a class="anchor" id="autotoc_md1422"></a>
+<h3><a class="anchor" id="autotoc_md1423"></a>
 CN11</h3>
 <ul>
 <li>I2C1</li>
 <li>Reset</li>
 </ul>
 <p>Also provides power pins, 3V3 and GND</p>
-<h3><a class="anchor" id="autotoc_md1423"></a>
+<h3><a class="anchor" id="autotoc_md1424"></a>
 CN12</h3>
 <p>This extension connector gives access to:</p>
 <ul>
@@ -240,7 +241,7 @@ CN12</h3>
 </ul>
 <p>Also provides some system signals and power.</p>
 <p>Important!** note than some pins are shared between peripherals.</p>
-<h2><a class="anchor" id="autotoc_md1424"></a>
+<h2><a class="anchor" id="autotoc_md1425"></a>
 Buttons, LEDS and other devices</h2>
 <ul>
 <li>1 Button for reset</li>
@@ -249,17 +250,17 @@ Buttons, LEDS and other devices</h2>
 <li>3 Digital microphones</li>
 <li>1 LCD Color 4 inches</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md1425"></a>
+<h2><a class="anchor" id="autotoc_md1426"></a>
 Working with this Dev-Kit</h2>
 <p>To start the <b>gcc-arm-embedded</b> toolchain have to be installed, we can follow the usual process <a href="https://github.com/RIOT-OS/RIOT/wiki/Family:-ARM">here</a>.</p>
-<h2><a class="anchor" id="autotoc_md1426"></a>
+<h2><a class="anchor" id="autotoc_md1427"></a>
 Flashing the device</h2>
-<h3><a class="anchor" id="autotoc_md1427"></a>
+<h3><a class="anchor" id="autotoc_md1428"></a>
 Flashing the Board using OpenOCD</h3>
 <p>The start install <b>OpenOCD</b>, also we can follow the usual process <a href="https://github.com/RIOT-OS/RIOT/wiki/OpenOCD">here</a></p>
 <p>Once everything is installed and ready to work just connect the board through the USB Mini-B connector try to compile and flash some code, type:</p>
 <div class="fragment"><div class="line">make flash BOARD=stm32f469i-disco</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md1428"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md1429"></a>
 Flashing the Board Using ST-LINK Removable Media</h3>
 <p>On-board ST-LINK programmer provides via composite USB device removable media. Copying the HEX file causes reprogramming of the board. This task could be performed manually; however, the cpy2remed (copy to removable media) PROGRAMMER script does this automatically. To program board in this manner, use the command: </p><div class="fragment"><div class="line">make BOARD=stm32f469i-disco PROGRAMMER=cpy2remed flash</div>
 </div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>This PROGRAMMER was tested using ST-LINK firmware 2.37.26. Firmware update s could be found on <a href="https://www.st.com/en/development-tools/sts
@@ -281,7 +282,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

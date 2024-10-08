@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Silicon Labs SLWSTK6220A starter kit</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,13 +149,13 @@ $(function(){initNavTree('group__boards__slwstk6220a.html',''); initResizable(tr
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for Silicon Labs SLWSTK6220A starter kit </p>
-<h2><a class="anchor" id="autotoc_md1296"></a>
+<h2><a class="anchor" id="autotoc_md1297"></a>
 Overview</h2>
 <p>Silicon Labs EZR32WG 868MHz Wireless Starter Kit is equipped with the EFM32 microcontroller. It is specifically designed for low-power applications, having energy-saving peripherals, different energy modes and short wake-up times.</p>
 <p>The starter kit is equipped with an Advanced Energy Monitor. This allows you to actively measure the power consumption of your hardware and code, in real-time.</p>
-<h2><a class="anchor" id="autotoc_md1297"></a>
+<h2><a class="anchor" id="autotoc_md1298"></a>
 Hardware</h2>
-<h3><a class="anchor" id="autotoc_md1298"></a>
+<h3><a class="anchor" id="autotoc_md1299"></a>
 MCU</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -200,7 +201,7 @@ MCU</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Board Schematic   </td><td class="markdownTableBodyNone">Can be downloaded using Silicon Labs' Simplicity Studio   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md1299"></a>
+<h3><a class="anchor" id="autotoc_md1300"></a>
 Pinout</h3>
 <p>This is the pinout of the expansion header on the right side of the board. PIN 1 is the bottom-left contact when the header faces you horizontally.</p>
 <table class="markdownTable">
@@ -229,7 +230,7 @@ Pinout</h3>
 </table>
 <p>Note**: not all starter kits by Silicon Labs share the same pinout!</p>
 <p>Note:** some pins are connected to the board controller, when enabled!</p>
-<h3><a class="anchor" id="autotoc_md1300"></a>
+<h3><a class="anchor" id="autotoc_md1301"></a>
 Peripheral mapping</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -259,7 +260,7 @@ Peripheral mapping</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">LEUART0   </td><td class="markdownTableBodyNone">RX: PD5, TX: PD4   </td><td class="markdownTableBodyNone">Baud rate limited (see below)   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md1301"></a>
+<h3><a class="anchor" id="autotoc_md1302"></a>
 User interface</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -273,7 +274,7 @@ User interface</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">LED1   </td><td class="markdownTableBodyNone">PF7   </td><td class="markdownTableBodyNone">Yellow LED   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md1302"></a>
+<h2><a class="anchor" id="autotoc_md1303"></a>
 Implementation Status</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -309,23 +310,23 @@ Implementation Status</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Temperature + humidity sensor   </td><td class="markdownTableBodyNone">Si7021   </td><td class="markdownTableBodyNone">yes   </td><td class="markdownTableBodyNone">Silicon Labs Temperature + Humidity sensor   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md1303"></a>
+<h2><a class="anchor" id="autotoc_md1304"></a>
 Board configuration</h2>
-<h3><a class="anchor" id="autotoc_md1304"></a>
+<h3><a class="anchor" id="autotoc_md1305"></a>
 Board controller</h3>
 <p>The starter kit is equipped with a Board Controller. This controller provides a virtual serial port. The board controller is enabled via a GPIO pin.</p>
 <p>By default, this pin is enabled. You can disable the board controller module by passing <code>DISABLE_MODULE=silabs_bc</code> to the <code>make</code> command.</p>
 <p>Note:** to use the virtual serial port, ensure you have the latest board controller firmware installed.</p>
 <p>Note:** the board controller <em>always</em> configures the virtual serial port at 115200 baud with 8 bits, no parity and one stop bit. This also means that it expects data from the MCU with the same settings.</p>
 <p>The low power LCD is also used by the board controller when the <code>DISP_SELECTED</code> pin is low. This pin is not initialized by the board, so you have to ensure this pin is initialized by your application if you want to control the low power LCD.</p>
-<h3><a class="anchor" id="autotoc_md1305"></a>
+<h3><a class="anchor" id="autotoc_md1306"></a>
 Advanced Energy Monitor</h3>
 <p>This development kit has an Advanced Energy Monitor. It can be connected to the Simplicity Studio development software.</p>
 <p>This development kit can measure energy consumption and correlate this with the code. It allows you to measure energy consumption on code-level.</p>
 <p>The board controller is responsible for measuring energy consumption. For real-time code correlation, the CoreDebug peripheral will be configured to output MCU register data and interrupt data via the SWO port.</p>
 <p>By default, this feature is enabled. It can be disabled by passing <code>DISABLE_MODULE=silabs_aem</code> to the <code>make</code> command.</p>
 <p>Note that Simplicity Studio requires debug symbols to correlate code. RIOT-OS defaults to GDB debug symbols, but Simplicity Studio requires DWARF-2 debug symbols (<code>-gdwarf-2</code> for GCC).</p>
-<h3><a class="anchor" id="autotoc_md1306"></a>
+<h3><a class="anchor" id="autotoc_md1307"></a>
 Clock selection</h3>
 <p>There are several clock sources that are available for the different peripherals. You are advised to read <a href="https://www.silabs.com/documents/public/application-notes/an0004.0-efm32-cmu.pdf">AN0004.0</a> to get familiar with the different clocks.</p>
 <table class="markdownTable">
@@ -357,28 +358,28 @@ Clock selection</h3>
 <p>The frequencies mentioned in the tables above are specific for this starter kit.</p>
 <p>It is important that the clock speeds are known to the code, for proper calculations of speeds and baud rates. If the HFXO or LFXO are different from the speeds above, ensure to pass <code>EFM32_HFXO_FREQ=freq_in_hz</code> and <code>EFM32_LFXO_FREQ=freq_in_hz</code> to your compiler.</p>
 <p>You can override the branch's clock source by adding <code>CLOCK_LFA=source</code> to your compiler defines, e.g. <code>CLOCK_LFA=cmuSelect_LFRCO</code>.</p>
-<h3><a class="anchor" id="autotoc_md1307"></a>
+<h3><a class="anchor" id="autotoc_md1308"></a>
 Low-power peripherals</h3>
 <p>The low-power UART is capable of providing an UART peripheral using a low-speed clock. When the LFB clock source is the LFRCO or LFXO, it can still be used in EM2. However, this limits the baud rate to 9600 baud. If a higher baud rate is desired, set the clock source to CORELEDIV2.</p>
 <p>Note:** peripheral mappings in your board definitions will not be affected by this setting. Ensure you do not refer to any low-power peripherals.</p>
-<h3><a class="anchor" id="autotoc_md1308"></a>
+<h3><a class="anchor" id="autotoc_md1309"></a>
 RTC or RTT</h3>
 <p>RIOT-OS has support for <em>Real-Time Tickers</em> and <em>Real-Time Clocks</em>.</p>
 <p>However, this board MCU family has support for a 24-bit <em>Real-Time Counter</em> only, which is a ticker only. A compatibility layer for ticker-to-calendar is available, but this includes extra code size to convert from timestamps to time structures and visa versa.</p>
 <p>Configured at 1 Hz interval, the RTC will overflow each 194 days. When using the ticker-to-calendar mode, this interval is extended artificially.</p>
-<h3><a class="anchor" id="autotoc_md1309"></a>
+<h3><a class="anchor" id="autotoc_md1310"></a>
 Hardware crypto</h3>
 <p>This MCUs has support for hardware-accelerated AES128 and AES256.</p>
 <p>A peripheral driver interface is proposed, but not yet implemented.</p>
-<h3><a class="anchor" id="autotoc_md1310"></a>
+<h3><a class="anchor" id="autotoc_md1311"></a>
 Usage of EMLIB</h3>
 <p>This port makes uses of EMLIB by Silicon Labs to abstract peripheral registers. While some overhead is to be expected, it ensures proper setup of devices, provides chip errata and simplifies development. The exact overhead depends on the application and peripheral usage, but the largest overhead is expected during peripheral setup. A lot of read/write/get/set methods are implemented as inline methods or macros (which have no overhead).</p>
 <p>Another advantage of EMLIB are the included assertions. These assertions ensure that peripherals are used properly. To enable this, pass <code>DEBUG_EFM</code> to your compiler.</p>
-<h3><a class="anchor" id="autotoc_md1311"></a>
+<h3><a class="anchor" id="autotoc_md1312"></a>
 Pin locations</h3>
 <p>The EFM32 platform supports peripherals to be mapped to different pins (predefined locations). The definitions in <code>periph_conf.h</code> mostly consist of a location number and the actual pins. The actual pins are required to configure the pins via GPIO driver, while the location is used to map the peripheral to these pins.</p>
 <p>In other words, these definitions must match. Refer to the data sheet for more information.</p>
-<h2><a class="anchor" id="autotoc_md1312"></a>
+<h2><a class="anchor" id="autotoc_md1313"></a>
 Flashing the device</h2>
 <p>To flash, <a href="https://www.segger.com/jlink-software.html">SEGGER JLink</a> is required.</p>
 <p>Flashing is supported by RIOT-OS using the command below:</p>
@@ -389,10 +390,10 @@ Flashing the device</h2>
 <div class="fragment"><div class="line">make debug-server</div>
 </div><!-- fragment --><p>Some boards have (limited) support for emulation, which can be started with:</p>
 <div class="fragment"><div class="line">make emulate</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1313"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1314"></a>
 Supported Toolchains</h2>
 <p>For using the Silicon Labs SLWSTK6220A starter kit we strongly recommend the usage of the <a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm">GNU Tools for ARM Embedded Processors</a> toolchain.</p>
-<h2><a class="anchor" id="autotoc_md1314"></a>
+<h2><a class="anchor" id="autotoc_md1315"></a>
 License information</h2>
 <p>Silicon Labs' EMLIB: zlib-style license (permits distribution of source). </p>
 <table class="memberdecls">
@@ -415,7 +416,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: MSB-430</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -149,7 +150,7 @@ $(function(){initNavTree('group__boards__msb430.html',''); initResizable(true); 
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the ScatterWeb Modular Sensor Board 430 </p>
 <p><img src="https://www.mi.fu-berlin.de/inf/groups/ag-tech/projects/ScatterWeb/modules/mod_MSB-430.html" alt="Photo of the Modular Sensor Board 430" style="width: 512px; max-width: 100%;" class="inline"/></p>
-<h2><a class="anchor" id="autotoc_md552"></a>
+<h2><a class="anchor" id="autotoc_md553"></a>
 MCU</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -192,22 +193,22 @@ MCU</h2>
 When the supply voltage supervisor (SVS) (a.k.a. brownout detection) is used, the supply voltage must initially be at least 2.0 V due to the hysteresis of the SVS circuitry. Afterwards the MCU remains operational with VCC &gt;= 1.8 V. </dd>
 <dd>
 The MSP430F1612 has two USARTS, which can be configured as UART, SPI, or (only in case of USART0) as I2C bus. Each USART can only provide one serial interface at a time; time sharing is theoretically possible but not yet implemented.</dd></dl>
-<h2><a class="anchor" id="autotoc_md553"></a>
+<h2><a class="anchor" id="autotoc_md554"></a>
 Schematics</h2>
 <p><img src="https://www.mi.fu-berlin.de/inf/groups/ag-tech/projects/ScatterWeb/pic/blueprints/MSB430_s1.png" alt="Schematics of the MSB-430 (Part 1 / 2)" style="width: 978px; max-width: 100%;" class="inline"/></p>
 <p><img src="https://www.mi.fu-berlin.de/inf/groups/ag-tech/projects/ScatterWeb/pic/blueprints/MSB430_s2.png" alt="Schematics of the MSB-430 (Part 2 / 2)" style="width: 1368px; max-width: 100%;" class="inline"/></p>
-<h3><a class="anchor" id="autotoc_md554"></a>
+<h3><a class="anchor" id="autotoc_md555"></a>
 Hardware Limitations</h3>
 <p>The GPIOs on the MSP430F1612 only have two MUX settings: Being used as digital input/output or routed to a peripheral. The MCU has two universal serial synchronous/asynchronous communication interfaces (USARTs), which can be used to provide either an UART, an SPI, or (only in case of USART0) an I2C bus. Every USART signal is available at exactly one GPIO pin.</p>
 <p>The UART exposed via the battery holder board (P3.6 and P3.7) can only be provided via USART1. In order to support asynchronous reception (e.g. to allow interaction via the shell), USART1 needs to be continuously configured as UART and cannot be used to provide an SPI bus.</p>
 <p>The SPI bus connected to the SD card socket (P5.1, P5.2, and P5.3) can only be provided via USART1. Hence, it is not possible to use SPI bus connected to the SD card socket while the UART used for <code>stdio</code> is in use, as they use the same USART. They could be used at the same time, if module <code>stdin</code> is not used (the UART is output only). However, sharing USARTs is not yet implemented.</p>
 <p>The SPI bus of the CC1020 transceiver (used for configuration only) is connected to pins P2.0, P2.1, and P2.3. Those pins are not connected to either USART, so no hardware SPI can be used to interact with the transceiver. However, the SPI is only used for configuration and control of the transceiver, so using a slow bit-banging SPI bus won't affect the performance of the transceiver, other than for quick power down after transmission or channel hopping. A second two wire serial interface (not I2C or compatible) is used to feed data into the CC1020 or read data from the CC1020. The serial clock is driven by the transceiver and the MCU needs to keep up with providing the frames to send bit by bit. Unlike modern transceivers, the CC1020 has no frame buffer and the MCU needs to control the transmission and reception on the bit level.</p>
-<h2><a class="anchor" id="autotoc_md555"></a>
+<h2><a class="anchor" id="autotoc_md556"></a>
 Pinout</h2>
-<h3><a class="anchor" id="autotoc_md556"></a>
+<h3><a class="anchor" id="autotoc_md557"></a>
 Pinout of the Main MSB 430 Board</h3>
 <p><img src="https://www.mi.fu-berlin.de/inf/groups/ag-tech/projects/ScatterWeb/pic/blueprints/MSB430_b.png" alt="Pinout of the MSB-430" style="width: 423px; max-width: 100%;" class="inline"/></p>
-<h3><a class="anchor" id="autotoc_md557"></a>
+<h3><a class="anchor" id="autotoc_md558"></a>
 Pinout of the Battery Holder Board</h3>
 <p>The pins above the JTAG header with the pin closest to the power supply switch being denoted as Pin 1, the signals are as follows:</p>
 <table class="markdownTable">
@@ -217,7 +218,7 @@ Pinout of the Battery Holder Board</h3>
 <td class="markdownTableBodyLeft">Signal   </td><td class="markdownTableBodyRight">GND   </td><td class="markdownTableBodyRight">NC   </td><td class="markdownTableBodyRight">5V   </td><td class="markdownTableBodyRight">RXD   </td><td class="markdownTableBodyRight">TXD   </td><td class="markdownTableBodyRight">NC   </td></tr>
 </table>
 <p>The battery holder board contains a 3V power regular that powers the MSB-430 board via 3V pin (pin 1 on JP2). The switch at the bottom can be used to select the input voltage of that power regulator: If the switch is in the position towards the daughter board, it will use the 5V pin of the header above the JTAG header as power supply, otherwise the batteries are used as power supply.</p>
-<h2><a class="anchor" id="autotoc_md558"></a>
+<h2><a class="anchor" id="autotoc_md559"></a>
 Flashing RIOT</h2>
 <p>Place the MSB-430 board into the batter holder board with the SD card socket facing towards the battery holder board and the (likely unpopulated) antenna connector facing away from the switch and JTAG-connector of the battery holder board. (As shown in the picture at the top of the page.)</p>
 <p>Afterwards, connect a JTAG debugger supported by <a href="https://dlbeer.co.nz/mspdebug/">mspdebug</a>; by default the Olimex MSP430-JTAG-Tiny is assumed, which is among the less expensive options.</p>
@@ -226,7 +227,7 @@ Flashing RIOT</h2>
 <p>Once the board is firmly connected in the battery holder and the JTAG cable is connected, just run</p>
 <div class="fragment"><div class="line">make BOARD=msb-430 flash</div>
 </div><!-- fragment --><p>in the application's directory.</p>
-<h2><a class="anchor" id="autotoc_md559"></a>
+<h2><a class="anchor" id="autotoc_md560"></a>
 Using the shell</h2>
 <p>stdio is available via the UART interface with <code>RXD = P3.7</code> (pin 35 on the header) and <code>TXD = P3.6</code> (pin 34 on the header) at 115,200 Baud.</p>
 <p>The easiest way is to connect an USB TTL adapter (such as the cheap <code>cp210x</code> or <code>ch341</code> based adapters) to the battery holder board as follows:</p>
@@ -255,7 +256,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: WDT</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -154,7 +155,7 @@ $(function(){initNavTree('group__drivers__periph__wdt.html',''); initResizable(t
 <p>Watchdog timer peripheral driver </p>
 <p>A watchdog timer (WDT) is an electronic or software timer that is used to detect and recover from unusual or suspect behaviour as well as software malfunctions. During <code>NORMAL</code> operation the application will reset <a class="el" href="#ga17282fdbc67f2150ddb989b910f751a1" title="Reset the watchdog timer counter, delay system reset.">wdt_kick()</a> the timer counter preventing it from hitting 0. If due to software or hardware error the WDT counter isn't reset, it will trigger corrective actions, i.e. a system reboot or callback (not supported by all platforms).</p>
 <p>This interface defines two operation modes <code>NORMAL</code> and <code>WINDOW</code>. In <code>NORMAL</code> operation if the WDT counter isn't reset before <code>max_time</code> then a reboot/callback is triggered. In <code>WINDOW</code> operation if a reset isn't triggered or if it's triggered outside of the time <code>window = [min_time, max_time]</code> a reboot is triggered.</p>
-<h1><a class="anchor" id="autotoc_md1723"></a>
+<h1><a class="anchor" id="autotoc_md1724"></a>
 NORMAL operation</h1>
 <p>In the code snippet and diagram <code>time</code> is an arbitrary value such that <code>time &lt; MAX_TIME</code>.</p>
 <pre class="fragment"> * 0(ms)                                            MAX_TIME(ms)
@@ -189,7 +190,7 @@ NORMAL operation</h1>
 <div class="ttc" id="astdio_8h_html"><div class="ttname"><a href="stdio_8h.html">stdio.h</a></div><div class="ttdoc">stdio wrapper to extend the C libs stdio</div></div>
 <div class="ttc" id="awdt_8h_html"><div class="ttname"><a href="wdt_8h.html">wdt.h</a></div><div class="ttdoc">watchdog peripheral interface definitions</div></div>
 <div class="ttc" id="axtimer_8h_html"><div class="ttname"><a href="xtimer_8h.html">xtimer.h</a></div><div class="ttdoc">xtimer interface definitions</div></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md1724"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md1725"></a>
 WINDOW operation</h1>
 <p>In the code snippet and diagram <code>time</code> is an arbitrary value such that <code>time &lt; (MAX_TIME - MIN_TIME)</code>.</p>
 <pre class="fragment"> * 0(ms)                 MIN_TIME(ms)                MAX_TIME(ms)
@@ -216,7 +217,7 @@ WINDOW operation</h1>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md1725"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md1726"></a>
 WDT callback</h1>
 <p>Before reboot WDT can trigger Early Wakeup Interrupt and execute a callback to perform specific safety operations of data logging before the actual reboot. This function is highly platform dependent so check the platform documentation for details on its constraints.</p>
 <p>The callback will be executed CONFIG_WDT_WARNING_PERIOD before the actual reboot. The value of CONFIG_WDT_WARNING_PERIOD may be configurable or a fixed value. If a platform allows this value to be configured, the feature <code>periph_wdt_warning_period</code> is provided. But is in any case defined at compile time. Specific platform implementation should assert improper values.</p>
@@ -250,7 +251,7 @@ WDT callback</h1>
  *                   wdt_cb()                        reboot
  * </pre><p>To include this feature, (If your platform supports it) in your application Makefile add:</p>
 <div class="fragment"><div class="line">USEMODULE += periph_wdt_cb</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md1726"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md1727"></a>
 WDT Auto-Start</h1>
 <p>It is possible to enable the Watchdog in early boot, before application startup:</p>
 <div class="fragment"><div class="line">USEMODULE += periph_wdt_auto_start</div>
@@ -484,7 +485,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>wdt_kick</b> (void)</
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:56 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

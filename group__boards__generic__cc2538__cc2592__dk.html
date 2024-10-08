@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Generic CC2538-CC2592-DK Board</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,7 +149,7 @@ $(function(){initNavTree('group__boards__generic__cc2538__cc2592__dk.html',''); 
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the 3rd party CC2538-CC2592-DK board </p>
-<h2><a class="anchor" id="autotoc_md426"></a>
+<h2><a class="anchor" id="autotoc_md427"></a>
 Overview</h2>
 <div class="image">
 <img src="https://raw.githubusercontent.com/maribu/images/master/CC2538-CC2592-DK-front.jpeg" alt="" width="50%"/>
@@ -160,7 +161,7 @@ Front side of the CC2538-CC2592-DK board</div></div>
 Back side of the CC2538-CC2592-DK board</div></div>
 <p>The generic CC2538-CC2592-DK board can obtained from various vendors in the typical <a href="https://www.aliexpress.com/wholesale?SearchText=CC2538+CC2592+development+board">online</a> <a href="https://www.ebay.com/sch/i.html?_nkw=CC2538+CC2592+development+board">shops</a>. There are currently few options for readily available and affordable boards featuring a legacy CC2538 MCU; this is one of them.</p>
 <p>The boards seem to be based on the schematics provided by <a href="https://github.com/knowic"><code>@knowic</code></a> via <a href="https://github.com/knowic/CC2538_CC2592_DK">the CC2538_CC2592_DK repo</a>.</p>
-<h2><a class="anchor" id="autotoc_md427"></a>
+<h2><a class="anchor" id="autotoc_md428"></a>
 Hardware</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -192,20 +193,20 @@ Hardware</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">Schematics   </td><td class="markdownTableBodyLeft"><a href="https://github.com/knowic/CC2538_CC2592_DK/blob/main/CC2538_CC2592_DK_1V3.pdf">Board Schematics</a>   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md428"></a>
+<h3><a class="anchor" id="autotoc_md429"></a>
 Schematics</h3>
 <p><img src="https://raw.githubusercontent.com/maribu/images/master/CC2538-CC2592-DK-schematic.svg" alt="Schematics of the CC2538-CC2592-DK board" style="pointer-events: none; width: 100%;" class="inline"/></p>
 <p><a href="https://github.com/knowic/CC2538_CC2592_DK/blob/main/CC2538_CC2592_DK_1V3.pdf">Download schematics from author's repo</a>.</p>
-<h2><a class="anchor" id="autotoc_md429"></a>
+<h2><a class="anchor" id="autotoc_md430"></a>
 Flashing</h2>
 <p>Prior to flashing the bootloader needs to be entered. For this, hold the "SELECT" button, press the "RESET" button, then release the "SELECT" button. Now run</p>
 <div class="fragment"><div class="line">make BOARD=<span class="keyword">generic</span>-cc2538-cc2592-dk flash</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Flashing via J-Link would also be possible by passing <code>PROGRAMMER=jlink</code>, but requires attaching a J-Link programmer/debugger.</dd></dl>
-<h2><a class="anchor" id="autotoc_md430"></a>
+<h2><a class="anchor" id="autotoc_md431"></a>
 Accessing the terminal</h2>
 <p>The board features an CP2102 USB to UART bridge that is used for stdio by default. Just use</p>
 <div class="fragment"><div class="line">make BOARD=<span class="keyword">generic</span>-cc2538-cc2592-dk term</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md431"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md432"></a>
 Debugging</h2>
 <p>Assuming an J-Link (e.g. the J-Link EDU Mini) debugger is connected, debugging is as simple as:</p>
 <div class="fragment"><div class="line">make BOARD=<span class="keyword">generic</span>-cc2538-cc2592-dk debug</div>
@@ -230,7 +231,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

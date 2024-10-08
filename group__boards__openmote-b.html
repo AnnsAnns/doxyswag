@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: OpenMote-b</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,10 +149,10 @@ $(function(){initNavTree('group__boards__openmote-b.html',''); initResizable(tru
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the OpenMote-b board </p>
-<h2><a class="anchor" id="autotoc_md968"></a>
+<h2><a class="anchor" id="autotoc_md969"></a>
 Overview</h2>
 <p>The <a href="http://www.openmote.com/">OpenMote</a> is slim board that comes with a TI SoC combining an ARM Cortex-M3 microcontroller with an IEEE802.15.4 radio.</p>
-<h2><a class="anchor" id="autotoc_md969"></a>
+<h2><a class="anchor" id="autotoc_md970"></a>
 Hardware</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -185,23 +186,23 @@ Hardware</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">Reference Manual   </td><td class="markdownTableBodyLeft"><a href="http://www.ti.com/lit/pdf/swru319">Reference Manual</a>   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md970"></a>
+<h2><a class="anchor" id="autotoc_md971"></a>
 Flashing and Debugging</h2>
 <p>Currently RIOT supports flashing the OpenMote using a Segger JLink JTAG adapter or via USB, using the bootloader on the board.</p>
-<h3><a class="anchor" id="autotoc_md971"></a>
+<h3><a class="anchor" id="autotoc_md972"></a>
 Flashing via USB</h3>
 <p>RIOT support flashing with USB by default.</p>
 <p><code>make flash</code></p>
 <p>You may have to specify the flashing port with <code>PORT_DEV=&lt;my_openmote_port&gt; make flash</code></p>
 <p>The flash tool needs to convert the generated Hex file to RAW format. For this it needs to have the intelhex library installed. </p><pre class="fragment">apt install python3-intelhex
 </pre><p>or </p><pre class="fragment">pip3 install intelhex
-</pre><h3><a class="anchor" id="autotoc_md972"></a>
+</pre><h3><a class="anchor" id="autotoc_md973"></a>
 Flashing via JTAG</h3>
 <p>To be able to flash the board via JTAG you need to install Seggers JLinkExe tool. Once you have this in place, you can simply flash by calling</p>
 <p><code>PROGRAMMER=jlink make flash</code></p>
 <p>from your application folder.</p>
 <p>macOS users may experiment a command line expecting <code>connect</code>. Just type it and the process will continue.</p>
-<h3><a class="anchor" id="autotoc_md973"></a>
+<h3><a class="anchor" id="autotoc_md974"></a>
 Debugging</h3>
 <p>The JTAG interface is required for debugging. On some board revisions the debug may not be able to run. To debug use:</p>
 <p><code>make debug</code> </p>
@@ -225,7 +226,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

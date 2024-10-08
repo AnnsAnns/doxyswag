@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: MSB-A2</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,10 +149,10 @@ $(function(){initNavTree('group__boards__msba2.html',''); initResizable(true); }
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the ScatterWeb MSB-A2 board </p>
-<h2><a class="anchor" id="autotoc_md566"></a>
+<h2><a class="anchor" id="autotoc_md567"></a>
 Overview</h2>
 <p><img src="https://raw.githubusercontent.com/wiki/RIOT-OS/RIOT/images/MSBA2_photo.jpg" alt="MSBA2 image" class="inline"/></p>
-<h2><a class="anchor" id="autotoc_md567"></a>
+<h2><a class="anchor" id="autotoc_md568"></a>
 Hardware</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -161,22 +162,22 @@ Hardware</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Flash:   </td><td class="markdownTableBodyNone">512KiB   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md568"></a>
+<h1><a class="anchor" id="autotoc_md569"></a>
 More info</h1>
-<h2><a class="anchor" id="autotoc_md569"></a>
+<h2><a class="anchor" id="autotoc_md570"></a>
 Board Schematics</h2>
 <p><img src="https://raw.githubusercontent.com/wiki/RIOT-OS/RIOT/images/MSBA2_layout.png" alt="Board schematics" class="inline"/></p>
-<h2><a class="anchor" id="autotoc_md570"></a>
+<h2><a class="anchor" id="autotoc_md571"></a>
 Circuit Diagrams</h2>
 <p><img src="https://raw.githubusercontent.com/wiki/RIOT-OS/RIOT/images/MSBA2_circuit_front.png" alt="Circuit Diagram" class="inline"/></p>
 <p><img src="https://raw.githubusercontent.com/wiki/RIOT-OS/RIOT/images/MSBA2_circuit_back.png" alt="Circuit Diagram II" class="inline"/></p>
 <p><a href="https://www.mi.fu-berlin.de/inf/groups/ag-tech/projects/ScatterWeb/modules/mod_MSB-A2.html">MSB-A2 page @ Freie Universität Berlin/CST</a></p>
-<h2><a class="anchor" id="autotoc_md571"></a>
+<h2><a class="anchor" id="autotoc_md572"></a>
 Flashing</h2>
 <p>The MSB-A2 is programmed via an ISP bootloader over UART. The board includes an FTDI USB-TTL converter, which is connected to the left USB Mini-B connector (see picture above). Connect the MSB-A2 using that connector to your PC and run from within the folder of your application to flash: </p><pre class="fragment">BOARD=msba2 make flash
 </pre><p>You'll notice that during the first invocation takes a bit longer, as the tool <code>lpc2k_pgm</code> used to flash the MSB-A2 is also compiled.</p>
 <p>You can connect to the shell by running: </p><pre class="fragment">BOARD=msba2 make term
-</pre><h2><a class="anchor" id="autotoc_md572"></a>
+</pre><h2><a class="anchor" id="autotoc_md573"></a>
 Debugging</h2>
 <p>Some rigorous hardware modification is needed to access the JTAG interface of the MSB-A2.</p>
 <p><img src="https://raw.githubusercontent.com/maribu/images/master/MSB-A2-JTAG.jpg" alt="MSB-A2 modified to access JTAG" class="inline"/></p>
@@ -223,7 +224,7 @@ Debugging</h2>
 <td class="markdownTableBodyLeft">AD5   </td><td class="markdownTableBodyLeft">RESET   </td></tr>
 </table>
 <p>Once this is done, debugging is as simple as running: </p><pre class="fragment">BOARD=msba2 make debug
-</pre><h3><a class="anchor" id="autotoc_md573"></a>
+</pre><h3><a class="anchor" id="autotoc_md574"></a>
 Flashing via OpenOCD</h3>
 <p>Theoretically you should be able to flash also via JTAG. But do not expect this to be faster. Also: Do you really want to risk bricking the MSB-A2 you spend so much time to modify? The author of this text surely didn't want to risk that... </p>
 <table class="memberdecls">
@@ -243,7 +244,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

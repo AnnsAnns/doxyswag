@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Timer</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -152,7 +153,7 @@ $(function(){initNavTree('group__drivers__periph__timer.html',''); initResizable
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Low-level timer peripheral driver </p>
-<h1><a class="anchor" id="autotoc_md1718"></a>
+<h1><a class="anchor" id="autotoc_md1719"></a>
 (Low-) Power Implications</h1>
 <p>After calling <a class="el" href="#ga63a0c3bdcc4c2f1a93e725614b116da7" title="Initialize the given timer.">timer_init()</a>, the underlying hardware timer <b>should</b> be powered on and running. When a timer is explicitly stopped by calling <a class="el" href="#ga995bb5527183eacd8bb4b835be143613" title="Stop the given timer.">timer_stop()</a>, the timer <b>should</b> be stopped and powered down (e.g. by peripheral clock gating). Once the timer is started again (by calling <a class="el" href="#gafe70538411bdcd344b2f663b1c6073b0" title="Start the given timer.">timer_start()</a>), it should transparently continue its previously configured operation.</p>
 <p>While the timer is active, the implementation might need to block certain power modes on specific CPU implementation. </p>
@@ -770,7 +771,7 @@ Needs to be enabled with <code>FEATURES_REQUIRED += periph_timer_periodic</code>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

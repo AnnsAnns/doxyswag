@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Zigduino</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,17 +149,17 @@ $(function(){initNavTree('group__boards__zigduino.html',''); initResizable(true)
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the Zigduino board </p>
-<h1><a class="anchor" id="autotoc_md1577"></a>
+<h1><a class="anchor" id="autotoc_md1578"></a>
 Hardware</h1>
-<h2><a class="anchor" id="autotoc_md1578"></a>
+<h2><a class="anchor" id="autotoc_md1579"></a>
 Pinout</h2>
 <p><img src="https://www.iot-lab.info/assets/images/docs/boards/zigduino/zigduino.png" alt="Zigduino" class="inline"/> <a href="https://static1.squarespace.com/static/511f4f0de4b09463c7605f13/t/5275c46be4b07e72f74c7438/1383449707749/zigduino-r2-pinout.pdf">Pinout</a></p>
 <dl class="section warning"><dt>Warning</dt><dd>Unlike on other ATmega MCUs, the GPIOs are not 5V tolerant.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The 5V pin cannot be used to power the board, as the board is not equipped with an voltage regulator. The pin is therefore not connected. But it can be used to pass 5V to shields, if connected to a 5V supply voltage.</dd></dl>
-<h2><a class="anchor" id="autotoc_md1579"></a>
+<h2><a class="anchor" id="autotoc_md1580"></a>
 Board</h2>
 <p>The Zigduino board is an Arduino-compatible microcontroller platform that integrates a SOC with a 8-Bit AVR MCU and a IEEE 802.15.4 radio chip (ATmega128RFA1).</p>
-<h2><a class="anchor" id="autotoc_md1580"></a>
+<h2><a class="anchor" id="autotoc_md1581"></a>
 MCU Details</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -199,15 +200,15 @@ MCU Details</h2>
 <td class="markdownTableBodyLeft">Board Manual   </td><td class="markdownTableBodyLeft"><a href="http://www.logos-electro.com/store/zigduino-r2">Product Page</a>   </td></tr>
 </table>
 <p>The MCU comes with a 2.4 GHz IEEE 802.15.4 radio that is compatible with the Atmel AT86RF23x line of transceivers with the only difference being that it is not being accessed over an SPI bus, but instead the radio registers are directly mapped into memory.</p>
-<h1><a class="anchor" id="autotoc_md1581"></a>
+<h1><a class="anchor" id="autotoc_md1582"></a>
 Flashing RIOT</h1>
 <p>Flashing RIOT on the Zigduino is done using the on-board USB-TTL adapter. The ATmega bootloader is present on the MCU. Simply use</p>
 <p><code>make flash BOARD=zigduino</code></p>
-<h1><a class="anchor" id="autotoc_md1582"></a>
+<h1><a class="anchor" id="autotoc_md1583"></a>
 Use on IoT Lab</h1>
 <p>Most of the Zigduino nodes are deployed in the Strasbourg site with sensors. Some of these nodes are also combined with a LoRa modem in order to offer a dual radio stack IEEE 802.15.4/LoRaWAN.</p>
 <p>There are two available configurations:</p>
-<h2><a class="anchor" id="autotoc_md1583"></a>
+<h2><a class="anchor" id="autotoc_md1584"></a>
 Zigduino (atmega128rfa1)</h2>
 <p>A basic Zigduino nodes with embedded sensors:</p>
 <ul>
@@ -216,7 +217,7 @@ Zigduino (atmega128rfa1)</h2>
 <li><a href="https://wiki.seeedstudio.com/Grove-Loudness_Sensor/">Grove Loudness sensor</a> (pin 16, A2)</li>
 <li><a href="https://wiki.seeedstudio.com/Grove-PIR_Motion_Sensor/">Grove PIR Motion sensor</a> (pin 4, D4)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md1584"></a>
+<h2><a class="anchor" id="autotoc_md1585"></a>
 Zigduino (atmega128rfa1_rn2483)</h2>
 <p>This is an extension of the previous Zigduino (atmega128rfa1)</p>
 <ul>
@@ -250,7 +251,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:56 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

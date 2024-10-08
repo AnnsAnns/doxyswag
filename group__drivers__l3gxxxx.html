@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: L3Gxxxx 3-axis gyroscope sensor family</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -334,7 +335,7 @@ Sensor modes</h2>
 <h2><a class="anchor" id="l3gxxxx_odr_filters"></a>
 Output Data Rates and Filters</h2>
 <p>In normal mode, measurements are performed at a defined output rate (ODR) with a user selectable bandwidth.</p>
-<h3><a class="anchor" id="autotoc_md1667"></a>
+<h3><a class="anchor" id="autotoc_md1668"></a>
 Used filter selection</h3>
 <p>L3Gxxxx sensors integrate a combination of two low pass filters (LPF) and one high pass filter (HPF).</p>
 <div class="fragment"><div class="line">                                 +---------------&gt;   <a class="code hl_enumvalue" href="#gga7900fb949e8203954135f0eeb2a58206a499de55e26ccf2fe81fb0d4714f9d8d6">L3GXXXX_NO_FILTER</a></div>
@@ -369,7 +370,7 @@ Used filter selection</h3>
 <p>The default filter selection for the output data is <a class="el" href="#gga7900fb949e8203954135f0eeb2a58206aecd3a2c3d062b3e42adbe2b9a9f36e5b" title="HPF used, LPF2 used.">L3GXXXX_HPF_AND_LPF2</a> and is defined by the default configuration parameter <a class="el" href="l3gxxxx__params_8h.html#a0da4b35a31d33aa1336f95b4af2a4908" title="Default filter selection used for output data.">CONFIG_L3GXXXX_FILTER_SEL</a>. If the module <code>l3gxxxx_config</code> is used, it can be changed at runtime using function <a class="el" href="#ga5ad49b05ea0383384f9c0ed5185baa96" title="Filter selection for raw output data.">l3gxxxx_select_output_filter</a>.</p>
 <p>The default filter selection for event interrupt generation is <a class="el" href="#gga7900fb949e8203954135f0eeb2a58206aecd3a2c3d062b3e42adbe2b9a9f36e5b" title="HPF used, LPF2 used.">L3GXXXX_HPF_AND_LPF2</a> and is defined by default configuration parameter <a class="el" href="l3gxxxx__params_8h.html#a3e3f9afb9206df5e2d556fc0422bb3b2" title="Default filter selection used for INT1 interrupt.">CONFIG_L3GXXXX_INT1_FILTER</a>. It can be changed at runtime with function <a class="el" href="#gaa58f07f558f106c8da65d7fcbe4a4434" title="Set new configuration for event interrupt generation.">l3gxxxx_set_int_event_cfg</a>.</p>
 <dl class="section note"><dt>Note</dt><dd>Since same filters are used for the output data as well as the data used for event interrupt generation (selective axes movement / wake-up), the configuration of the filters always affects both data. If the HPF is enabled for filtering the output data, it is also active for filtering the sensor data used for interrupt generation if the LPF2 is enabled for interrupt generation. The other way around, the HPF is also active for filtering the output data when it is enabled for interrupt generation and when the LPF2 is enabled for the output data.</dd></dl>
-<h3><a class="anchor" id="autotoc_md1668"></a>
+<h3><a class="anchor" id="autotoc_md1669"></a>
 High pass filter mode</h3>
 <p>The high pass filter (HPF) can be used in different modes.</p>
 <center> <table class="markdownTable">
@@ -386,7 +387,7 @@ High pass filter mode</h3>
 </p>
 <p>In normal mode, the HPF can be reset by reading the REFERENCE register, which instantly deletes the DC component of the angular rate. In reference mode, output data are the difference of raw sensor data and the contents of the REFERENCE register. In autoreset mode, HPF is automatically reset when a configured event interrupt occurs.</p>
 <p>The default HPF mode is <a class="el" href="#gga5eca69c108dac106b024b151e08ee1c1ae783b63e831898cd8e6b59535da32f04" title="Normal mode, HPF is reset by reading the REFERENCE register.">L3GXXXX_HPF_NORMAL</a> and is defined by the default configuration parameter <a class="el" href="l3gxxxx__params_8h.html#abdfc69e4be4f0165f3bc5b0b931e74a0" title="Default HPF mode used for output data.">CONFIG_L3GXXXX_HPF_MODE</a>. If module <code>l3gxxxx_config</code> is used, it can be changed at runtime using function <a class="el" href="#gaba38aceb2198303af49d01d62825912d" title="Config HPF (high pass filter) for output data.">l3gxxxx_config_hpf</a>.</p>
-<h3><a class="anchor" id="autotoc_md1669"></a>
+<h3><a class="anchor" id="autotoc_md1670"></a>
 Output data rates and filter cutoff frequencies</h3>
 <p>The cutoff frequencies of LPF1 and LPF2 are determined by used output data rate <a class="el" href="#gaf5451bba86f903b374648fcd8e1ac7b9" title="Sensor output data rates (ODR) and LPF2 cutoff frequencies.">l3gxxxx_odr_t</a>. The following <b>output data rates (ODR)</b> and the LPF1/LPF2 cutoff frequencies are defined (Reference: Application Note AN4506):</p>
 <center> <table class="markdownTable">
@@ -2550,7 +2551,7 @@ Enumerations</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

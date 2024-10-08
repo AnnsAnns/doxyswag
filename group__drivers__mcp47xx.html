@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: MCP47xx DAC with I2C interface</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -151,7 +152,7 @@ $(function(){initNavTree('group__drivers__mcp47xx.html',''); initResizable(true)
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Device driver for Microchip MCP47xx DAC with I2C interface </p>
-<h2><a class="anchor" id="autotoc_md1674"></a>
+<h2><a class="anchor" id="autotoc_md1675"></a>
 Overview</h2>
 <p>The driver supports the different Microchip MCP47xx DAC variants.</p>
 <table class="markdownTable">
@@ -174,7 +175,7 @@ Overview</h2>
 <li>setting the UDAC bit and using the LDAC pin for MCP4728</li>
 </ul>
 </dd></dl>
-<h2><a class="anchor" id="autotoc_md1675"></a>
+<h2><a class="anchor" id="autotoc_md1676"></a>
 Usage</h2>
 <p>Multiple MCP47xx DAC devices and different variants can be used at the same time.</p>
 <p>The driver interface is kept as compatible as possible with the peripheral DAC interface. The only differences are that</p>
@@ -183,7 +184,7 @@ Usage</h2>
 <li>functions require an additional parameter, the pointer to the MCP47xx device of type <a class="el" href="structmcp47xx__t.html" title="MCP47xx device data structure type.">mcp47xx_t</a>.</li>
 </ul>
 <p>Please refer the test application in <code>tests/drivers/mcp47xx</code> for an example on how to use the driver.</p>
-<h2><a class="anchor" id="autotoc_md1676"></a>
+<h2><a class="anchor" id="autotoc_md1677"></a>
 SAUL Capabilities</h2>
 <p>The driver provides SAUL capabilities that are compatible with SAUL actuators of type <a class="el" href="group__drivers__saul.html#ggaa3dfb65ce3006aaab287357097352604a636f95240e556edd7a3867fbcf5cf7dc" title="actuator: dimmable switch">SAUL_ACT_DIMMER</a>. Each MCP47xx channel can be mapped directly to SAUL by defining an according entry in <code>MCP47XX_SAUL_DAC_PARAMS</code>. Please refer file <code>$RIOTBASE/drivers/mcp47xx/include/mcp47xx_params.h</code> for an example. </p><pre class="fragment"> mcp47xx_saul_dac_params_t mcp47xx_saul_dac_params[] = {
      {
@@ -194,7 +195,7 @@ SAUL Capabilities</h2>
      },
  };
 </pre><p>For each DAC channel that should be used with SAUL, an entry with a name, the device, the channel, and the initial value has to be defined as shown above.</p>
-<h2><a class="anchor" id="autotoc_md1677"></a>
+<h2><a class="anchor" id="autotoc_md1678"></a>
 Using Multiple Devices</h2>
 <p>It is possible to used multiple devices and different variants of MCP47xx DAC devices at the same time. The application has to configure all devices by defining the configuration parameter set <code>mcp47xx_params</code> of type <a class="el" href="structmcp47xx__params__t.html" title="MCP47xx device configuration parameters.">mcp47xx_params_t</a>. As an example, the default configuration for one MCP4725 device is defined in <code>drivers/mcp47xx/mcp47xx_params.h</code>.</p>
 <p>The application can override it by placing a file <code><a class="el" href="mcp47xx__params_8h.html" title="Default configuration for Microchip MCP47xx DAC with I2C interface.">mcp47xx_params.h</a></code> in the application directory <code>$(APPDIR)</code>. For example, the definition of the configuration parameter set for the two devices (one MCP4725 and one MCP4728) could looks like: </p><pre class="fragment"> static const mcp47xx_params_t mcp47xx_params[] = {
@@ -762,7 +763,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -6,6 +6,7 @@ var dir_0a5788328d3e98738e96d147d1e9ce4a =
     [ "sys", "dir_274406b60615c77b42b9d0280095233b.html", "dir_274406b60615c77b42b9d0280095233b" ],
     [ "adc_arch.h", "adc__arch_8h.html", "adc__arch_8h" ],
     [ "adc_arch_private.h", "adc__arch__private_8h.html", null ],
+    [ "c11_atomics_compat_cpu.hpp", "esp32_2include_2c11__atomics__compat__cpu_8hpp_source.html", null ],
     [ "can_esp.h", "can__esp_8h.html", "can__esp_8h" ],
     [ "can_params.h", "esp32_2include_2can__params_8h.html", "esp32_2include_2can__params_8h" ],
     [ "cpu_conf.h", "esp32_2include_2cpu__conf_8h.html", "esp32_2include_2cpu__conf_8h" ],

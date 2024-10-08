@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: nRF52840-Dongle</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,7 +149,7 @@ $(function(){initNavTree('group__boards__nrf52840dongle.html',''); initResizable
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the nRF52840-Dongle </p>
-<h3><a class="anchor" id="autotoc_md622"></a>
+<h3><a class="anchor" id="autotoc_md623"></a>
 Quick start</h3>
 <ul>
 <li>Plug into a USB port.</li>
@@ -161,12 +162,12 @@ Quick start</h3>
 </ul>
 </li>
 </ul>
-<h3><a class="anchor" id="autotoc_md623"></a>
+<h3><a class="anchor" id="autotoc_md624"></a>
 General information</h3>
 <p>The nRF52840-Dongle is a bare USB-stick shaped device that houses barely anything than the nRF52840 itself, which offers BLE and 802.15.4 and USB connectivity.</p>
 <p>Unlike similar sticks (like the <a class="el" href="group__boards__nrf52840-mdk.html">nRF52840-MDK</a>), it features no dedicated programmer hardware but relies on direct USB communication with a built-in bootloader.</p>
 <p>The board features two LEDs (LD1: green, LD2: RGB), a user (SW1) and a reset button as well as 15 configurable external pins.</p>
-<h3><a class="anchor" id="autotoc_md624"></a>
+<h3><a class="anchor" id="autotoc_md625"></a>
 Links</h3>
 <ul>
 <li><a href="https://www.nordicsemi.com/?sc_itemid=%7BCDCCA013-FE4C-4655-B20C-1557AB6568C9%7D">nRF52840 web page</a></li>
@@ -178,7 +179,7 @@ Flash the board</h3>
 <p>The nrfutil can turn the binary into a suitable zip file and send it to the bootloader. The process is automated in the usual <code>make flash</code> target.</p>
 <p>If RIOT is already running on the board, it will automatically reset the CPU and enter the bootloader. If some other firmware is running or RIOT crashed, you need to enter the bootloader manually by pressing the board's reset button.</p>
 <p>Readiness of the bootloader is indicated by LD2 pulsing in red.</p>
-<h3><a class="anchor" id="autotoc_md625"></a>
+<h3><a class="anchor" id="autotoc_md626"></a>
 Accessing STDIO</h3>
 <p>The usual way to obtain a console on this board is using an emulated USB serial port (CDC-ACM). This is available automatically using the <code>stdio_cdc_acm</code> module, unless any other stdio module is enabled.</p>
 <p>On Linux systems with ModemManager &lt; 1.10 installed, <code>make term</code> will, in some setups, fail for a few seconds after the device has come up. This is <a href="https://gitlab.freedesktop.org/mobile-broadband/ModemManager/issues/164">fixed in its 1.12.4 version</a>, but should not be more than a short annoyance in earlier versions.</p>
@@ -206,7 +207,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:56 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

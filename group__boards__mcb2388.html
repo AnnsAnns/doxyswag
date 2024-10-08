@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: MCB2388 Evaluation Board</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,10 +149,10 @@ $(function(){initNavTree('group__boards__mcb2388.html',''); initResizable(true);
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the MCB2388 Evaluation Board </p>
-<h2><a class="anchor" id="autotoc_md511"></a>
+<h2><a class="anchor" id="autotoc_md512"></a>
 Overview</h2>
 <p><img src="http://www.keil.com/support/man/docs/mcb2300/mcb2388_board.jpg" alt="MCB2388 image" class="inline"/></p>
-<h2><a class="anchor" id="autotoc_md512"></a>
+<h2><a class="anchor" id="autotoc_md513"></a>
 Hardware</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -193,7 +194,7 @@ Hardware</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Board Manual   </td><td class="markdownTableBodyNone"><a href="https://www.keil.com/mcb2300/mcb2388.asp">Board Manual</a>   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md513"></a>
+<h3><a class="anchor" id="autotoc_md514"></a>
 User Interface</h3>
 <p>1 User button, 8 LED, 1 potentiometer, 1 speaker:</p>
 <table class="markdownTable">
@@ -222,7 +223,7 @@ User Interface</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">SPK0   </td><td class="markdownTableBodyLeft">P0.26   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md514"></a>
+<h2><a class="anchor" id="autotoc_md515"></a>
 Implementation Status</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -258,26 +259,26 @@ Implementation Status</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">Watchdog   </td><td class="markdownTableBodyLeft">no   </td><td class="markdownTableBodyLeft"></td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md515"></a>
+<h1><a class="anchor" id="autotoc_md516"></a>
 More info</h1>
-<h2><a class="anchor" id="autotoc_md516"></a>
+<h2><a class="anchor" id="autotoc_md517"></a>
 Board Schematics</h2>
 <p><a href="http://www.keil.com/mcb2300/mcb2300-schematics.pdf">Board schematics</a></p>
-<h2><a class="anchor" id="autotoc_md517"></a>
+<h2><a class="anchor" id="autotoc_md518"></a>
 Flashing</h2>
 <p>The MCB2388 is programmed via an ISP bootloader over UART. For this you have to connect an USB-RS232 converter to the COM0 port.</p>
 <p>Make sure to have the ISP Jumper set.</p>
 <p>Connect the MCB2388 to your PC using the serial port and run from within the folder of your application to flash: </p><pre class="fragment">BOARD=mcb2388 make flash
 </pre><p>You'll notice that during the first invocation takes a bit longer, as the tool <code>lpc2k_pgm</code> used to flash the MCB2388 is also compiled.</p>
 <p>You can connect to the shell by running: </p><pre class="fragment">BOARD=mcb2388 make term
-</pre><h2><a class="anchor" id="autotoc_md518"></a>
+</pre><h2><a class="anchor" id="autotoc_md519"></a>
 Serial Terminal</h2>
 <p>By default the RST line is connected to the RTS/CTS line of COM0. This will pull the MCU into reset when connecting a terminal. Use <code>pyterm -tg</code> to toggle the pins and complete the reset.</p>
 <p>If you want to connect a terminal application that does not support this, remove the RST jumper from the board. You will not be able to flash the board using <code>lpc2k_pgm</code> if the RST jumper is disconnected.</p>
-<h2><a class="anchor" id="autotoc_md519"></a>
+<h2><a class="anchor" id="autotoc_md520"></a>
 Debugging</h2>
 <p>The development kit comes with a ULINK-ME Debug Unit that supports the CMSIS-DAP protocol. Connect it with the JTAG port on the board, the debugging should work by typing </p><pre class="fragment">BOARD=mcb2388 make debug
-</pre><h3><a class="anchor" id="autotoc_md520"></a>
+</pre><h3><a class="anchor" id="autotoc_md521"></a>
 Flashing via OpenOCD</h3>
 <p>Theoretically you should be able to flash also via JTAG. Unfortunately OpenOCD support for this chip family seems to be pretty buggy. I was unable to flash the board using the ULINK-ME adapter and OpenOCD. (2019)</p>
 <p>The board might get stuck when using OpenOCD, you have to power-cycle it to being able to use ISP programming again. </p>
@@ -304,7 +305,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

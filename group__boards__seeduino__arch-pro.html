@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Seeeduino Arch Pro development kit</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,13 +149,13 @@ $(function(){initNavTree('group__boards__seeduino__arch-pro.html',''); initResiz
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the Seeeduino Arch Pro board </p>
-<h2><a class="anchor" id="autotoc_md1151"></a>
+<h2><a class="anchor" id="autotoc_md1152"></a>
 Overview</h2>
 <p>The Seeeduino Arch Pro is an 32-bit ARM Cortex M3 microprocessor development board, featuring an Arduino-compatible shield interface and a RJ-45 network interface.</p>
-<h2><a class="anchor" id="autotoc_md1152"></a>
+<h2><a class="anchor" id="autotoc_md1153"></a>
 Hardware</h2>
 <p><img src="https://statics3.seeedstudio.com/images/product/arch%20pro.jpg" alt="Seeeduino Arch Pro Development Kit" class="inline"/></p>
-<h3><a class="anchor" id="autotoc_md1153"></a>
+<h3><a class="anchor" id="autotoc_md1154"></a>
 MCU</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -196,9 +197,9 @@ MCU</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Board Schematic   </td><td class="markdownTableBodyNone"><a href="https://raw.githubusercontent.com/SeeedDocument/Arch_Pro/master/res/Arch_Pro_V1.0_Schematic.pdf">Board Schematic</a>   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md1154"></a>
-Pinout</h3>
 <h3><a class="anchor" id="autotoc_md1155"></a>
+Pinout</h3>
+<h3><a class="anchor" id="autotoc_md1156"></a>
 User interface</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -212,14 +213,14 @@ User interface</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">LED3   </td><td class="markdownTableBodyNone">LED4   </td><td class="markdownTableBodyNone">P1_23   </td><td class="markdownTableBodyNone">Yellow LED   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md1156"></a>
+<h2><a class="anchor" id="autotoc_md1157"></a>
 Board configuration</h2>
-<h3><a class="anchor" id="autotoc_md1157"></a>
+<h3><a class="anchor" id="autotoc_md1158"></a>
 Virtual serial port</h3>
 <p>The first UART device is mapped to stdout.</p>
 <p>Note: the board controller always configures the virtual serial port at 115200 baud with 8 bits, no parity and one stop bit. This also means that it expects data from the MCU with the same settings.</p>
 <p>Note: to use the virtual serial port, ensure you have the latest board controller firmware installed.</p>
-<h2><a class="anchor" id="autotoc_md1158"></a>
+<h2><a class="anchor" id="autotoc_md1159"></a>
 Flashing the device</h2>
 <p>To flash, the <a href="http://openocd.org/">OpenOCD Software</a> is required.</p>
 <p>Flashing is supported by RIOT-OS by the command below:</p>
@@ -228,14 +229,14 @@ Flashing the device</h2>
 <div class="fragment"><div class="line">make debug</div>
 </div><!-- fragment --><p>Or, to connect with your own debugger:</p>
 <div class="fragment"><div class="line">make debug-server</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1159"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1160"></a>
 Image checksum</h2>
 <p>LPC ARM Cortext MCUs need a <a href="https://community.nxp.com/thread/389046">flash image checksum</a>. When running <code>make flash</code>, this checksum is automatically generated and inserted into the firmware image right before flashing.</p>
 <p>It depends on the <a href="https://pypi.python.org/pypi/lpc_checksum">lpc_checksum</a> command-line utility, which can be installed using using <code>pip install lpc_checksum</code> or <code>pip3 install lpc_checksum</code>. After installing this utility, it should be available on your command-line.</p>
-<h2><a class="anchor" id="autotoc_md1160"></a>
+<h2><a class="anchor" id="autotoc_md1161"></a>
 Supported toolchains</h2>
 <p>For using the Seeeduino Arch Pro development kit we strongly recommend the usage of the <a href="https://launchpad.net/gcc-arm-embedded">GNU Tools for ARM Embedded Processors</a> toolchain.</p>
-<h2><a class="anchor" id="autotoc_md1161"></a>
+<h2><a class="anchor" id="autotoc_md1162"></a>
 License information</h2>
 <p>Image: taken from Seeeduino website. </p>
 <table class="memberdecls">
@@ -258,7 +259,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

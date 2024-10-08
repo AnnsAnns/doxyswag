@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: im880b</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,10 +149,10 @@ $(function(){initNavTree('group__boards__im880b.html',''); initResizable(true); 
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the im880b with stm32l151cb-a </p>
-<h2><a class="anchor" id="autotoc_md458"></a>
+<h2><a class="anchor" id="autotoc_md459"></a>
 Hardware</h2>
 <p><img src="https://www.wireless-solutions.de/images/stories/products/im880a.png" alt="LoraBox" class="inline"/></p>
-<h3><a class="anchor" id="autotoc_md459"></a>
+<h3><a class="anchor" id="autotoc_md460"></a>
 MCU</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -189,9 +190,9 @@ MCU</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">Board Manual   </td><td class="markdownTableBodyLeft"><a href="https://cdn.sos.sk/productdata/29/eb/a68245ed/im880b-l-lorawan.pdf">Board Manual</a>   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md460"></a>
+<h3><a class="anchor" id="autotoc_md461"></a>
 User Interface</h3>
-<h2><a class="anchor" id="autotoc_md461"></a>
+<h2><a class="anchor" id="autotoc_md462"></a>
 Flashing</h2>
 <p>As no usb connector is present on the device an external programmer must be connected to the board for flashing. You can use JTAG or STLINK programmer. </p><pre class="fragment">JTAG:
   - JTDO: PB_3 / P39
@@ -203,11 +204,11 @@ STLINK:
   - NRST: NRST / P7
   - SWCLK: PA_14 / P37
   - SWDAT: PA_13 / P34
-</pre><h3><a class="anchor" id="autotoc_md462"></a>
+</pre><h3><a class="anchor" id="autotoc_md463"></a>
 STM32 Loader</h3>
 <p>To flash RIOT on the board, after connecting the UART-USB bridge, just run: </p><div class="fragment"><div class="line">BOARD=im880b make flash</div>
 </div><!-- fragment --><p> This uses the stm32loader script to erase the memory and flash it interfacing with the STM32 ROM bootloader.</p>
-<h2><a class="anchor" id="autotoc_md463"></a>
+<h2><a class="anchor" id="autotoc_md464"></a>
 Connecting via Serial</h2>
 <p>The default UART port is the USART1, there is no usb connection a USB/TTL converter must be used to connect to the board TX &amp; RX pins. The default port is /dev/ttyUSB0. The pin connections are: </p><pre class="fragment">USART1:
   - TX: PA_9 / P30
@@ -230,7 +231,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:56 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

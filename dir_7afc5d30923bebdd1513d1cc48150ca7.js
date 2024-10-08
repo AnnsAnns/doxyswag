@@ -9,6 +9,7 @@ var dir_7afc5d30923bebdd1513d1cc48150ca7 =
     [ "gcoap", "dir_b71e45757d14eea4816143b1f2f85ff9.html", "dir_b71e45757d14eea4816143b1f2f85ff9" ],
     [ "gnrc", "dir_cf159672c4bc64dfd629cfa389a5bd8d.html", "dir_cf159672c4bc64dfd629cfa389a5bd8d" ],
     [ "iana", "dir_8e442a842ce3894135560582fe9864cb.html", "dir_8e442a842ce3894135560582fe9864cb" ],
+    [ "ieee802154", "dir_c53834e7b05886c25c3306cfb7f147d8.html", "dir_c53834e7b05886c25c3306cfb7f147d8" ],
     [ "ipv4", "dir_2600d1e90dcb12f8e712b321411e7407.html", "dir_2600d1e90dcb12f8e712b321411e7407" ],
     [ "ipv6", "dir_01b603f34e4a397f3707607a77af4342.html", "dir_01b603f34e4a397f3707607a77af4342" ],
     [ "lorawan", "dir_16b9650085b9d4a6c2882dbfc5acccd3.html", "dir_16b9650085b9d4a6c2882dbfc5acccd3" ],

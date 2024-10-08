@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: ATxmega-A1U Xplained Pro board</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,10 +149,10 @@ $(function(){initNavTree('group__boards__atxmega-a1u-xpro.html',''); initResizab
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the ATxmega-A1U Xplained Pro board </p>
-<h2><a class="anchor" id="autotoc_md231"></a>
+<h2><a class="anchor" id="autotoc_md232"></a>
 Overview</h2>
 <p>The ATxmega-A1U Xplained Pro is the reference to develop with XMEGA's.</p>
-<h3><a class="anchor" id="autotoc_md232"></a>
+<h3><a class="anchor" id="autotoc_md233"></a>
 MCU</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -205,15 +206,15 @@ MCU</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">Design Files   </td><td class="markdownTableBodyLeft"><a href="https://ww1.microchip.com/downloads/en/DeviceDoc/XMEGA-A1U-Xplained-Pro_Design-Documentation.zip">Files</a>   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md233"></a>
+<h2><a class="anchor" id="autotoc_md234"></a>
 Flashing the Device</h2>
 <p>The ATxmega-A1U Xplained Pro came with a full EDBG + CDC-ACM. The EDBG works with default avrdude tool. However, the below programmer must have at /etc/avrdude.conf file:</p>
 <p>programmer id = "xplainedpro_pdi"; desc = "Atmel AVR XplainedPro in PDI mode"; type = "jtagice3_pdi"; connection_type = usb; usbpid = 0x2111; ;</p>
 <p>In order to flash the ATxmega128A1U, simple run: </p><pre class="fragment">make BOARD=atxmega-a1u-xpro flash
-</pre><h2><a class="anchor" id="autotoc_md234"></a>
+</pre><h2><a class="anchor" id="autotoc_md235"></a>
 Serial Terminal</h2>
 <p>The CDC-ACM will enumerate a /dev/ttyACM device. </p><pre class="fragment">make BOARD=atxmega-a1u-xpro term
-</pre><h2><a class="anchor" id="autotoc_md235"></a>
+</pre><h2><a class="anchor" id="autotoc_md236"></a>
 On-Chip Debugging (OCD)</h2>
 <pre class="fragment">make debug
 </pre> <table class="memberdecls">
@@ -236,7 +237,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:54 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

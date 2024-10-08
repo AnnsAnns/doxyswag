@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Atmel SAM R21 Xplained Pro</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,14 +149,14 @@ $(function(){initNavTree('group__boards__samr21-xpro.html',''); initResizable(tr
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the Atmel SAM R21 Xplained Pro board. </p>
-<h2><a class="anchor" id="autotoc_md1126"></a>
+<h2><a class="anchor" id="autotoc_md1127"></a>
 Overview</h2>
 <p>The <code>SAMR21 Xplained Pro</code> is a compact evaluation board by Atmel featuring a ATSAMR21G18A SoC. The SoC includes a SAMD21 ARM Cortex-M0+ micro-controller bundled with Atmel's AT86RF233, a 2.4GHz IEEE802.15.4 compatible radio. For programming the MCU comes with 32Kb of RAM and 256Kb of flash memory.</p>
 <p>The samr21-xpro is available from various hardware vendors for ~40EUR (as of sep. 2014).</p>
-<h2><a class="anchor" id="autotoc_md1127"></a>
+<h2><a class="anchor" id="autotoc_md1128"></a>
 Hardware</h2>
 <p><img src="http://t3.gstatic.com/images?q=tbn:ANd9GcTdbgRUFLgLPWSYq6p26mR7wwikHnO4_vcEwRhwNZqmIHGUwVws3h2nfQ" alt="samr21-xpro image" class="inline"/></p>
-<h3><a class="anchor" id="autotoc_md1128"></a>
+<h3><a class="anchor" id="autotoc_md1129"></a>
 MCU</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -189,7 +190,7 @@ MCU</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">Board Manual   </td><td class="markdownTableBodyLeft"><a href="http://www.atmel.com/Images/Atmel-42243-SAMR21-Xplained-Pro_User-Guide.pdf">Board Manual</a>   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md1129"></a>
+<h3><a class="anchor" id="autotoc_md1130"></a>
 User Interface</h3>
 <p>1 User button and 1 LED:</p>
 <table class="markdownTable">
@@ -200,7 +201,7 @@ User Interface</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">SW0 (button)   </td><td class="markdownTableBodyLeft">PA28   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md1130"></a>
+<h3><a class="anchor" id="autotoc_md1131"></a>
 Radio</h3>
 <p>The SAMR21 SoC includes an on-chip AT86RF233 radio. It is internally connected via SPI and some GPIO pins and behaves in exact the same way as externally connected SPI devices.</p>
 <table class="markdownTable">
@@ -233,7 +234,7 @@ Radio</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">SLP_TR   </td><td class="markdownTableBodyLeft">PA20 (OUT, GPIO output)   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md1131"></a>
+<h2><a class="anchor" id="autotoc_md1132"></a>
 Implementation Status</h2>
 <p>Please refer to <a href="https://github.com/RIOT-OS/RIOT/issues/1646">this tracker</a> to see which projects are work in progress and who is the contact person for this.</p>
 <table class="markdownTable">
@@ -264,7 +265,7 @@ Implementation Status</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">Radio Chip   </td><td class="markdownTableBodyLeft">AT86RF233   </td><td class="markdownTableBodyLeft">yes   </td><td class="markdownTableBodyLeft">using at86rf2xx driver   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md1132"></a>
+<h2><a class="anchor" id="autotoc_md1133"></a>
 Flashing the device</h2>
 <p>Connect the device to your Micro-USB cable using the port labeled as <em>EDBG</em>.</p>
 <p>The standard method for flashing RIOT to the samr21-xpro is using <a href="https://github.com/ataradov/edbg">edbg</a>. by calling: <code>make BOARD=samr21-xpro -C tests/leds flash</code></p>
@@ -275,7 +276,7 @@ Flashing the device</h2>
 <div class="line">echo <span class="stringliteral">&#39;KERNEL==&quot;hidraw*&quot;, SUBSYSTEM==&quot;hidraw&quot;, MODE=&quot;0664&quot;, GROUP=&quot;plugdev&quot;&#39;</span> \</div>
 <div class="line">    | sudo tee -a /etc/udev/rules.d/99-usb.rules</div>
 <div class="line">sudo service udev restart</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md1133"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md1134"></a>
 Arch Linux</h3>
 <p>With yaourt: </p><div class="fragment"><div class="line">yaourt -S libudev0</div>
 <div class="line">yaourt -S hidapi-git</div>
@@ -285,10 +286,10 @@ Arch Linux</h3>
 <div class="line">echo <span class="stringliteral">&#39;KERNEL==&quot;hidraw*&quot;, SUBSYSTEM==&quot;hidraw&quot;, MODE=&quot;0664&quot;, GROUP=&quot;uucp&quot;&#39;</span> \</div>
 <div class="line">    | sudo tee -a /etc/udev/rules.d/99-usb.rules</div>
 <div class="line">sudo udevadm control --reload</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md1134"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md1135"></a>
 Ubuntu</h3>
 <p>See <a href="http://watr.li/samr21-dev-setup-ubuntu.html">http://watr.li/samr21-dev-setup-ubuntu.html</a></p>
-<h2><a class="anchor" id="autotoc_md1135"></a>
+<h2><a class="anchor" id="autotoc_md1136"></a>
 Connecting multiple boards</h2>
 <p>If you have multiple boards connected to the same computer and want to flash, this is what you can do:</p>
 <p>First, run <code>make list-ttys</code>. This will show you a list of currently connected boards, their serial numbers and the names of their TTYs: </p><pre class="fragment">Atmel Corp. EDBG CMSIS-DAP serial: 'ATML2127031800002124', tty(s):
@@ -296,26 +297,26 @@ Connecting multiple boards</h2>
 <p>knowing your serial number, you can flash, open a terminal or debug a specific board like this: </p><pre class="fragment">BOARD=samr21-xpro SERIAL="ATML2127031800002124" make flash
 BOARD=samr21-xpro SERIAL="ATML2127031800002124" make term
 BOARD=samr21-xpro SERIAL="ATML2127031800002124" make debug
-</pre><h2><a class="anchor" id="autotoc_md1136"></a>
+</pre><h2><a class="anchor" id="autotoc_md1137"></a>
 Accessing STDIO via UART</h2>
 <p>STDIO is available through the edbg debugger.</p>
 <p>Use the <code>term</code> target to open a terminal: </p><pre class="fragment">make BOARD=samr21-xpro -C examples/hello-world term
 </pre><p>RTS / CTS hardware flow control is available on <code><a class="el" href="group__drivers__periph__uart.html#gafc5afd63560d27731d2517b3005f3294" title="Default UART device access macro.">UART_DEV(0)</a></code> and <code><a class="el" href="group__drivers__periph__uart.html#gafc5afd63560d27731d2517b3005f3294" title="Default UART device access macro.">UART_DEV(1)</a></code>. This is unavailable when using STDIO directly through the debugger since it does not support it. Therefore to use hardware flow control an external FTDI device must be connected to the board's rx, tx, cts &amp; rts matching pin headers, eg. for <code><a class="el" href="group__drivers__periph__uart.html#gafc5afd63560d27731d2517b3005f3294" title="Default UART device access macro.">UART_DEV(0)</a></code> to <code>PA5</code>, <code>PA4</code>, <code>PA6</code> &amp; <code>PA7</code> (respectively) on EXT1 headers.</p>
-<h2><a class="anchor" id="autotoc_md1137"></a>
+<h2><a class="anchor" id="autotoc_md1138"></a>
 Known Issues / Problems</h2>
-<h3><a class="anchor" id="autotoc_md1138"></a>
+<h3><a class="anchor" id="autotoc_md1139"></a>
 64 character input limit on EDBG UART</h3>
 <p>When using STDIO directly through the debugger UART, no more than 64 bytes can be read at once. This does limit the length of shell command lines to 63 bytes (since a newline is needed) when using a terminal that only transmits whole lines. (e.g. pyterm).</p>
-<h3><a class="anchor" id="autotoc_md1139"></a>
+<h3><a class="anchor" id="autotoc_md1140"></a>
 I2C</h3>
 <p>When connecting an I2C device and a logic analyzer to an I2C port at the same time, the internal pull-up resistors are not sufficient for stable bus operation. You probably have to connect external pull-ups to both bus lines. 10K is a good value to start with.</p>
-<h3><a class="anchor" id="autotoc_md1140"></a>
+<h3><a class="anchor" id="autotoc_md1141"></a>
 Stack sizes</h3>
 <p>The default stack sizes have not been tuned properly yet. If in doubt why your application crashes try increasing the default stack sizes and use <code>ps</code> to find out how much stack is being used. Tracked in <a href="https://github.com/RIOT-OS/RIOT/issues/2228">https://github.com/RIOT-OS/RIOT/issues/2228</a></p>
-<h3><a class="anchor" id="autotoc_md1141"></a>
+<h3><a class="anchor" id="autotoc_md1142"></a>
 User Button</h3>
 <p>When using the SW0 user button as interrupt source it appears that this is triggered when just tipping on the button and not really pressing it.</p>
-<h3><a class="anchor" id="autotoc_md1142"></a>
+<h3><a class="anchor" id="autotoc_md1143"></a>
 Flashing might not work in Virtual Box with macOS as host</h3>
 <p>It might happen that flashing through OpenOCD works once inside Virtual Box. But when you try to flash again, you could get a CMSIS-DAP related error. It seems to only happen with USB 3.0 ports. You can take a look at <a href="http://en.wikipedia.org/wiki/Vagrant_%28software%29">Vagrant</a> and use a virtual Linux to run the virtual RIOT, and flash from macOS. </p>
 <table class="memberdecls">
@@ -344,7 +345,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:54 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: LILYGO TTGO T8 ESP32-S2 Board</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -266,11 +267,11 @@ LILYGO TTGO T8 ESP32-S2 Pinout</div></div>
 <h2><a class="anchor" id="esp32s2_lilygo_ttgo_t8_flashing"></a>
 Flashing the Device</h2>
 <p>Flashing RIOT is quite easy. The board has an USB-C connector which is either connected to the USB-to-UART bridge (default) with a built-in reset/boot/flash logic or to the USB signals of the ESP32-S2 SoC. The flash method depends on the configuration of the DIP switches, see section <a class="el" href="#esp32s2_lilygo_ttgo_t8_pinout">Pinout</a>.</p>
-<h3><a class="anchor" id="autotoc_md372"></a>
+<h3><a class="anchor" id="autotoc_md373"></a>
 USB-C connector is connected to the USB-to-UART bridge (default)</h3>
 <p>Just connect the board to your host computer and type using the programming port: </p><div class="fragment"><div class="line">BOARD=esp32s2-liligo-ttgo-t8 make flash ...</div>
 </div><!-- fragment --><p>For detailed information about ESP32-S2 as well as configuring and compiling RIOT for ESP32-S2 boards, see <a class="el" href="group__cpu__esp32.html#esp32_riot">RIOT-OS on ESP32 SoC Series Boards</a>.</p>
-<h3><a class="anchor" id="autotoc_md373"></a>
+<h3><a class="anchor" id="autotoc_md374"></a>
 USB-C connector is connected to the USB signals of the ESP32-S2 SoC</h3>
 <p>In this configuration the integrated USB-to-JTAG bridge can be used to flash the board. The USB-to-JTAG bridge is automatically activated in the download mode of the bootloader, provided that the eFuses <code>JTAG_SEL_ENABLE</code> and <code>DIS_USB_JTAG</code> are not burned (see also section <a class="el" href="group__cpu__esp32__esp32s2.html#esp32_jtag_interface_esp32s2">JTAG Interface</a> strapping pin GPIO3).</p>
 <p>For this purpose, connect the board to your host computer and enter the following command using the programming port:</p>
@@ -306,7 +307,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Microduino CoreRF</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,17 +149,17 @@ $(function(){initNavTree('group__boards__microduino-corerf.html',''); initResiza
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the Microduino CoreRF board </p>
-<h1><a class="anchor" id="autotoc_md538"></a>
+<h1><a class="anchor" id="autotoc_md539"></a>
 Hardware</h1>
-<h2><a class="anchor" id="autotoc_md539"></a>
+<h2><a class="anchor" id="autotoc_md540"></a>
 Pinout</h2>
 <p><img src="https://wiki.microduinoinc.com/images/d/df/RF%E5%BC%95%E8%84%9A.jpg" alt="corerf-pinout" class="inline"/></p>
 <dl class="section warning"><dt>Warning</dt><dd>Unlike on other ATmega MCUs, the GPIOs are not 5V tolerant.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The 5V pin cannot be used to power the board, as the board is not equipped with an voltage regulator. The pin is therefore not connected. But it can be used to pass 5V to shields, if connected to a 5V supply voltage.</dd></dl>
-<h2><a class="anchor" id="autotoc_md540"></a>
+<h2><a class="anchor" id="autotoc_md541"></a>
 Board</h2>
 <p>The board is just a breakout for the ATmega128RFA1 MCU.</p>
-<h2><a class="anchor" id="autotoc_md541"></a>
+<h2><a class="anchor" id="autotoc_md542"></a>
 MCU Details</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -199,7 +200,7 @@ MCU Details</h2>
 <td class="markdownTableBodyLeft">Board Manual   </td><td class="markdownTableBodyLeft"><a href="https://wiki.microduinoinc.com/Microduino-Module_CoreRF">Wiki Page</a>   </td></tr>
 </table>
 <p>The MCU comes with a 2.4 GHz IEEE 802.15.4 radio that is compatible with the Atmel AT86RF23x line of transceivers with the only difference being that it is not being accessed over an SPI bus, but instead the radio registers are directly mapped into memory.</p>
-<h2><a class="anchor" id="autotoc_md542"></a>
+<h2><a class="anchor" id="autotoc_md543"></a>
 Peripheral interfaces SPI and I2C</h2>
 <p>According to the wiki, SPI and I2C pins are the following:</p>
 <table class="markdownTable">
@@ -222,7 +223,7 @@ Peripheral interfaces SPI and I2C</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">SCL   </td><td class="markdownTableBodyLeft">PD0   </td><td class="markdownTableBodyLeft">D19   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md543"></a>
+<h1><a class="anchor" id="autotoc_md544"></a>
 Flashing RIOT</h1>
 <p>Flashing RIOT on the CoreRF is done using the SPI method. Using a cheap FT232H breakout board, connect the board as follows:</p>
 <table class="markdownTable">
@@ -253,22 +254,22 @@ Flashing RIOT</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">RX   </td><td class="markdownTableBodyLeft">D1   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md544"></a>
+<h1><a class="anchor" id="autotoc_md545"></a>
 Troubleshooting</h1>
-<h2><a class="anchor" id="autotoc_md545"></a>
+<h2><a class="anchor" id="autotoc_md546"></a>
 Using the external crystal oscillator (Transceiver Crystal Oscillator) and deep sleep</h2>
 <p>When the external crystal oscillator is used as system clock and the device is put into deep sleep mode it seems that the clocks for all peripherals are enabled and set to the smallest divider (highest frequency). This leads to a higher power consumption. When the device should be put into deep sleep it is recommended to use the internal RC oscillator as system clock source.</p>
-<h2><a class="anchor" id="autotoc_md546"></a>
+<h2><a class="anchor" id="autotoc_md547"></a>
 Pin Change Interrupts</h2>
 <p>More pins can be used for hardware interrupts using the Pin Change Interrupt feature. See <a class="el" href="group__boards__common__atmega.html">ATmega common</a> for details.</p>
-<h2><a class="anchor" id="autotoc_md547"></a>
+<h2><a class="anchor" id="autotoc_md548"></a>
 Debugging</h2>
 <p>The ATmega128RFR1 supports JTAG debugging. To use the JTAG debugging an external JTAG debugger is required. There are several options for this MCU/board:</p>
 <p><a href="http://www.atmel.com/tools/avrjtagicemkii.aspx">AVR JTAGICE mkII</a> <a href="http://www.atmel.com/tools/jtagice3.aspx">JTAGICE3</a> <a href="http://www.atmel.com/tools/avrdragon.aspx">AVR Dragon</a></p>
 <p>Hint: The AVR Dragon is the <strike>cheapest</strike> least expensive debugger and also is compatible with almost every AVR MCU.</p>
 <dl class="section warning"><dt>Warning</dt><dd>With the default fuse settings, on chip debugging is disabled.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>If you are using a different debugger than the AVR Dragon, you have to export the <code>AVR_DEBUGDEVICE</code> environment variable to the required flag to pass to AVaRICE, e.g. when using the Atmel-ICE you have to export <code>AVR_DEBUGDEVICE=--edbg</code>. If the debug device is not connected via USB, you also need to export <code>AVR_DEBUGINTERFACE</code> to the correct value.</dd></dl>
-<h3><a class="anchor" id="autotoc_md548"></a>
+<h3><a class="anchor" id="autotoc_md549"></a>
 JTAG Pin Mapping</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -286,18 +287,18 @@ JTAG Pin Mapping</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">GND   </td><td class="markdownTableBodyLeft">GND   </td><td class="markdownTableBodyLeft">GND   </td><td class="markdownTableBodyLeft">JTAG-2   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md549"></a>
+<h3><a class="anchor" id="autotoc_md550"></a>
 Fuse Settings</h3>
 <p>Be aware that changing the fuse settings can "brick" your MCU, e.g. if you select a different clock setting that is not available on your board. Or if you disable all options for programming the MCU.</p>
 <p>You can always de-brick your MCU using high voltage programming mode, which can also be done using the AVR Dragon. But being careful to not brick your MCU in the first place is clearly the better option ;-)</p>
 <p>In the following it is assumed that you connect the Dragon ISP header to the Microduino CoreRF for ISP programming.</p>
-<h4><a class="anchor" id="autotoc_md550"></a>
+<h4><a class="anchor" id="autotoc_md551"></a>
 Default Fuse Settings</h4>
 <p>The default fuse settings of the Microduino CoreRF are: <code>E:F5, H:DA, L:FF</code>. These settings can be restored via from the OCD settings via:</p>
 <div class="fragment"><div class="line">avrdude -c dragon_isp -p m128rfa1 -U hfuse:w:0xda:m</div>
 </div><!-- fragment --><p>If you touched other fuse settings, you can restore the fuse settings using:</p>
 <div class="fragment"><div class="line">avrdude -c dragon_isp -p m128rfa1 -U efuse:w:0xf5:m -U hfuse:w:0xda:m -U lfuse:w:0xff:m</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md551"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md552"></a>
 On-Chip Debugging Fuse Settings</h3>
 <p>To enable on-chip debugging, the <code>JTAGEN</code> (enable JTAG) and the <code>OCDEN</code> (enable on-chip debugging) bits should be set: <code>E:F5, H:1A, L:FF</code>. This can be done (when starting with the default settings) via:</p>
 <div class="fragment"><div class="line">avrdude -c dragon_isp -p m128rfa1 -U hfuse:w:0x1a:m</div>
@@ -318,7 +319,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

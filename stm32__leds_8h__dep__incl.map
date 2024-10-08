@@ -1,9 +1,9 @@
 <map id="boards/common/stm32/include/stm32_leds.h" name="boards/common/stm32/include/stm32_leds.h">
 <area shape="rect" id="Node000001" title="Common LED macros." alt="" coords="3911,5,4082,50"/>
-<area shape="rect" id="Node000002" href="$alientek-pandora_2include_2board_8h.html" title="Board specific definitions for the Alientek Pandora board." alt="" coords="8,98,188,143"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="3895,32,3133,39,1979,53,860,74,448,86,205,101,189,103,188,97,205,95,448,81,860,68,1979,48,3133,34,3895,27"/>
-<area shape="rect" id="Node000004" href="$b-l072z-lrwan1_2include_2board_8h.html" title="Board specific definitions for the ST B&#45;L072Z&#45;LRWAN1 board." alt="" coords="216,98,383,143"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="3896,32,3168,39,2074,53,1016,73,627,86,397,101,384,103,383,97,397,95,627,81,1016,68,2074,47,3168,34,3896,27"/>
+<area shape="rect" id="Node000002" href="$alientek-pandora_2include_2board_8h.html" title="Board specific definitions for the Alientek Pandora board." alt="" coords="7,98,187,143"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="3895,32,3133,39,1978,53,859,74,447,86,204,101,188,103,187,97,203,95,447,81,859,68,1978,48,3132,34,3895,27"/>
+<area shape="rect" id="Node000004" href="$b-l072z-lrwan1_2include_2board_8h.html" title="Board specific definitions for the ST B&#45;L072Z&#45;LRWAN1 board." alt="" coords="215,98,381,143"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="3896,32,3168,39,2074,53,1016,73,627,86,397,101,382,103,382,97,397,95,627,81,1016,68,2074,48,3168,34,3896,27"/>
 <area shape="rect" id="Node000006" href="$b-l475e-iot01a_2include_2board_8h.html" title="Board specific definitions for the ST B&#45;L475E&#45;IOT01A board." alt="" coords="409,98,574,143"/>
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="3896,32,3202,39,2167,53,1169,73,802,86,585,101,575,102,574,97,585,95,802,81,1169,68,2167,48,3202,34,3896,27"/>
 <area shape="rect" id="Node000008" href="$b-u585i-iot02a_2include_2board_8h.html" title="Board specific definitions for the ST B&#45;U585I&#45;IOT02A board." alt="" coords="597,98,762,143"/>
@@ -60,30 +60,30 @@
 <area shape="poly" id="edge50_Node000001_Node000051" title=" " alt="" coords="4098,29,4860,51,5296,71,5477,82,5614,95,5626,97,5625,102,5614,101,5476,88,5295,76,4860,56,4098,34"/>
 <area shape="rect" id="Node000053" href="$stm32f469i-disco_2include_2board_8h.html" title="Board specific definitions for the STM32F469I&#45;DISCO board." alt="" coords="5832,98,6015,143"/>
 <area shape="poly" id="edge52_Node000001_Node000053" title=" " alt="" coords="4098,28,4459,35,4957,49,5455,69,5662,81,5820,95,5832,97,5831,102,5819,101,5662,86,5455,74,4956,54,4459,41,4098,33"/>
-<area shape="rect" id="Node000054" href="$stm32f4discovery_2include_2board_8h.html" title="Board specific definitions for the STM32F4Discovery evaluation board." alt="" coords="6038,98,6225,143"/>
-<area shape="poly" id="edge53_Node000001_Node000054" title=" " alt="" coords="4098,28,4497,34,5054,47,5615,67,5849,80,6026,95,6038,97,6038,102,6026,101,5849,85,5615,72,5054,52,4497,39,4098,33"/>
-<area shape="rect" id="Node000056" href="$stm32f723e-disco_2include_2board_8h.html" title="Board specific definitions for the STM32F723E&#45;DISCO board." alt="" coords="6249,98,6435,143"/>
-<area shape="poly" id="edge55_Node000001_Node000056" title=" " alt="" coords="4098,27,4533,33,5151,45,5778,65,6039,79,6237,95,6249,97,6248,102,6237,101,6039,84,5777,70,5151,50,4533,38,4098,33"/>
-<area shape="rect" id="Node000058" href="$stm32f746g-disco_2include_2board_8h.html" title="Board specific definitions for the STM32F746G&#45;DISCO." alt="" coords="6460,98,6646,143"/>
-<area shape="poly" id="edge57_Node000001_Node000058" title=" " alt="" coords="4098,27,4569,31,5248,42,5940,63,6229,77,6448,95,6460,97,6459,102,6447,101,6229,83,5940,68,5248,48,4569,37,4098,32"/>
-<area shape="rect" id="Node000060" href="$stm32f769i-disco_2include_2board_8h.html" title="Board specific definitions for the STM32F769I&#45;DISCO board." alt="" coords="6670,98,6852,143"/>
-<area shape="poly" id="edge59_Node000001_Node000060" title=" " alt="" coords="4098,27,4605,30,5346,40,5736,48,6103,60,6419,76,6658,95,6670,97,6669,102,6658,101,6419,81,6103,66,5736,54,5346,45,4605,35,4098,32"/>
-<area shape="rect" id="Node000062" href="$stm32g0316-disco_2include_2board_8h.html" title="Board specific definitions for the STM32G0316&#45;DISCO." alt="" coords="6876,98,7065,143"/>
-<area shape="poly" id="edge61_Node000001_Node000062" title=" " alt="" coords="4098,26,4640,29,5440,39,5863,47,6261,59,6604,75,6864,95,6875,97,6875,102,6863,101,6604,80,6261,64,5863,52,5440,44,4640,34,4098,32"/>
-<area shape="rect" id="Node000063" href="$stm32l0538-disco_2include_2board_8h.html" title="Board specific definitions for the STM32L0538&#45;DISCO evaluation board." alt="" coords="7090,98,7275,143"/>
-<area shape="poly" id="edge62_Node000001_Node000063" title=" " alt="" coords="4098,26,4675,28,5537,36,5994,45,6425,57,6797,74,7077,95,7090,97,7089,102,7077,101,6796,79,6425,62,5994,50,5537,41,4675,33,4098,32"/>
-<area shape="rect" id="Node000065" href="$stm32l476g-disco_2include_2board_8h.html" title="Support for the STM32L476G&#45;DISCO board." alt="" coords="7299,98,7484,143"/>
-<area shape="poly" id="edge64_Node000001_Node000065" title=" " alt="" coords="4098,26,4710,26,5634,34,6124,42,6587,54,6987,72,7288,95,7299,97,7298,102,7287,101,6986,77,6587,60,6124,47,5634,39,4710,32,4098,31"/>
-<area shape="rect" id="Node000067" href="$stm32l496g-disco_2include_2board_8h.html" title="Board specific definitions for the STM32L496G&#45;DISCO board." alt="" coords="7508,98,7694,143"/>
-<area shape="poly" id="edge66_Node000001_Node000067" title=" " alt="" coords="4098,26,4744,25,5729,32,6253,40,6748,52,7175,71,7352,82,7497,95,7508,97,7508,102,7497,101,7351,87,7175,76,6747,58,6253,45,5729,37,4744,31,4098,31"/>
-<area shape="rect" id="Node000069" href="$ublox-c030-u201_2include_2board_8h.html" title="Board specific definitions for the Ublox C030&#45;U201 board." alt="" coords="7717,98,7895,143"/>
-<area shape="poly" id="edge68_Node000001_Node000069" title=" " alt="" coords="4098,27,4845,34,5974,47,7066,68,7469,81,7706,95,7717,97,7716,102,7706,101,7469,86,7066,73,5974,53,4845,39,4098,32"/>
-<area shape="rect" id="Node000071" href="$weact-g030f6_2include_2board_8h.html" title="Board specific definitions for WeAct&#45;G030F6." alt="" coords="7923,98,8081,143"/>
-<area shape="poly" id="edge70_Node000001_Node000071" title=" " alt="" coords="4098,27,4881,33,6073,45,7230,66,7656,79,7908,95,7923,98,7922,103,7907,101,7656,85,7229,71,6073,50,4881,38,4098,32"/>
+<area shape="rect" id="Node000055" href="$stm32f4discovery_2include_2board_8h.html" title="Board specific definitions for the STM32F4Discovery evaluation board." alt="" coords="6038,98,6225,143"/>
+<area shape="poly" id="edge54_Node000001_Node000055" title=" " alt="" coords="4098,28,4497,34,5054,47,5615,67,5849,80,6026,95,6038,97,6038,102,6026,101,5849,85,5615,72,5054,52,4497,39,4098,33"/>
+<area shape="rect" id="Node000057" href="$stm32f723e-disco_2include_2board_8h.html" title="Board specific definitions for the STM32F723E&#45;DISCO board." alt="" coords="6249,98,6435,143"/>
+<area shape="poly" id="edge56_Node000001_Node000057" title=" " alt="" coords="4098,27,4533,33,5151,45,5778,65,6039,79,6237,95,6249,97,6248,102,6237,101,6039,84,5777,70,5151,50,4533,38,4098,33"/>
+<area shape="rect" id="Node000059" href="$stm32f746g-disco_2include_2board_8h.html" title="Board specific definitions for the STM32F746G&#45;DISCO." alt="" coords="6460,98,6646,143"/>
+<area shape="poly" id="edge58_Node000001_Node000059" title=" " alt="" coords="4098,27,4569,31,5248,42,5940,63,6229,77,6448,95,6460,97,6459,102,6447,101,6229,83,5940,68,5248,48,4569,37,4098,32"/>
+<area shape="rect" id="Node000061" href="$stm32f769i-disco_2include_2board_8h.html" title="Board specific definitions for the STM32F769I&#45;DISCO board." alt="" coords="6670,98,6852,143"/>
+<area shape="poly" id="edge60_Node000001_Node000061" title=" " alt="" coords="4098,27,4605,30,5346,40,5736,48,6103,60,6419,76,6658,95,6670,97,6669,102,6658,101,6419,81,6103,66,5736,54,5346,45,4605,35,4098,32"/>
+<area shape="rect" id="Node000063" href="$stm32g0316-disco_2include_2board_8h.html" title="Board specific definitions for the STM32G0316&#45;DISCO." alt="" coords="6876,98,7065,143"/>
+<area shape="poly" id="edge62_Node000001_Node000063" title=" " alt="" coords="4098,26,4640,29,5440,39,5863,47,6261,59,6604,75,6864,95,6875,97,6875,102,6863,101,6604,80,6261,64,5863,52,5440,44,4640,34,4098,32"/>
+<area shape="rect" id="Node000064" href="$stm32l0538-disco_2include_2board_8h.html" title="Board specific definitions for the STM32L0538&#45;DISCO evaluation board." alt="" coords="7090,98,7275,143"/>
+<area shape="poly" id="edge63_Node000001_Node000064" title=" " alt="" coords="4098,26,4675,28,5537,36,5994,45,6425,57,6797,74,7077,95,7090,97,7089,102,7077,101,6796,79,6425,62,5994,50,5537,41,4675,33,4098,32"/>
+<area shape="rect" id="Node000066" href="$stm32l476g-disco_2include_2board_8h.html" title="Support for the STM32L476G&#45;DISCO board." alt="" coords="7299,98,7484,143"/>
+<area shape="poly" id="edge65_Node000001_Node000066" title=" " alt="" coords="4098,26,4710,26,5634,34,6124,42,6587,54,6987,72,7288,95,7299,97,7298,102,7287,101,6986,77,6587,60,6124,47,5634,39,4710,32,4098,31"/>
+<area shape="rect" id="Node000068" href="$stm32l496g-disco_2include_2board_8h.html" title="Board specific definitions for the STM32L496G&#45;DISCO board." alt="" coords="7508,98,7694,143"/>
+<area shape="poly" id="edge67_Node000001_Node000068" title=" " alt="" coords="4098,26,4744,25,5729,32,6253,40,6748,52,7175,71,7352,82,7497,95,7508,97,7508,102,7497,101,7351,87,7175,76,6747,58,6253,45,5729,37,4744,31,4098,31"/>
+<area shape="rect" id="Node000070" href="$ublox-c030-u201_2include_2board_8h.html" title="Board specific definitions for the Ublox C030&#45;U201 board." alt="" coords="7717,98,7895,143"/>
+<area shape="poly" id="edge69_Node000001_Node000070" title=" " alt="" coords="4098,27,4845,34,5974,47,7066,68,7469,81,7706,95,7717,97,7716,102,7706,101,7469,86,7066,73,5974,53,4845,39,4098,32"/>
+<area shape="rect" id="Node000072" href="$weact-g030f6_2include_2board_8h.html" title="Board specific definitions for WeAct&#45;G030F6." alt="" coords="7923,98,8081,143"/>
+<area shape="poly" id="edge71_Node000001_Node000072" title=" " alt="" coords="4098,27,4881,33,6073,45,7230,66,7656,79,7908,95,7923,98,7922,103,7907,101,7656,85,7229,71,6073,50,4881,38,4098,32"/>
 <area shape="rect" id="Node000003" href="$alientek-pandora_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="5,199,186,244"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="100,158,99,199,93,199,95,158"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="99,158,98,199,93,199,94,158"/>
 <area shape="rect" id="Node000005" href="$b-l072z-lrwan1_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="209,199,382,244"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="301,158,299,199,294,199,295,158"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="300,158,299,199,293,199,295,158"/>
 <area shape="rect" id="Node000007" href="$b-l475e-iot01a_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="405,199,578,244"/>
 <area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="494,158,494,199,489,199,489,158"/>
 <area shape="rect" id="Node000009" href="$b-u585i-iot02a_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="601,199,774,244"/>
@@ -124,22 +124,24 @@
 <area shape="poly" id="edge49_Node000049_Node000050" title=" " alt="" coords="5512,158,5512,199,5506,199,5506,158"/>
 <area shape="rect" id="Node000052" href="$stm32f429i-disc1_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="5626,199,5808,244"/>
 <area shape="poly" id="edge51_Node000051_Node000052" title=" " alt="" coords="5720,158,5720,199,5714,199,5714,158"/>
-<area shape="rect" id="Node000055" href="$stm32f4discovery_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="6038,199,6225,244"/>
-<area shape="poly" id="edge54_Node000054_Node000055" title=" " alt="" coords="6134,158,6134,199,6129,199,6129,158"/>
-<area shape="rect" id="Node000057" href="$stm32f723e-disco_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="6249,199,6435,244"/>
-<area shape="poly" id="edge56_Node000056_Node000057" title=" " alt="" coords="6345,158,6345,199,6340,199,6340,158"/>
-<area shape="rect" id="Node000059" href="$stm32f746g-disco_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="6460,199,6646,244"/>
-<area shape="poly" id="edge58_Node000058_Node000059" title=" " alt="" coords="6556,158,6556,199,6550,199,6550,158"/>
-<area shape="rect" id="Node000061" href="$stm32f769i-disco_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="6670,199,6852,244"/>
-<area shape="poly" id="edge60_Node000060_Node000061" title=" " alt="" coords="6764,158,6764,199,6758,199,6758,158"/>
-<area shape="rect" id="Node000064" href="$stm32l0538-disco_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="7090,199,7275,244"/>
-<area shape="poly" id="edge63_Node000063_Node000064" title=" " alt="" coords="7185,158,7185,199,7180,199,7180,158"/>
-<area shape="rect" id="Node000066" href="$stm32l476g-disco_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="7299,199,7484,244"/>
-<area shape="poly" id="edge65_Node000065_Node000066" title=" " alt="" coords="7394,158,7394,199,7389,199,7389,158"/>
-<area shape="rect" id="Node000068" href="$stm32l496g-disco_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="7508,199,7694,244"/>
-<area shape="poly" id="edge67_Node000067_Node000068" title=" " alt="" coords="7604,158,7604,199,7598,199,7598,158"/>
-<area shape="rect" id="Node000070" href="$ublox-c030-u201_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="7717,199,7895,244"/>
-<area shape="poly" id="edge69_Node000069_Node000070" title=" " alt="" coords="7809,158,7809,199,7804,199,7804,158"/>
-<area shape="rect" id="Node000072" href="$weact-g030f6_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="7920,199,8092,244"/>
-<area shape="poly" id="edge71_Node000071_Node000072" title=" " alt="" coords="8006,158,8008,199,8003,199,8001,158"/>
+<area shape="rect" id="Node000054" href="$stm32f469i-disco_2include_2gpio__params_8h_source.html" title=" " alt="" coords="5832,199,6015,244"/>
+<area shape="poly" id="edge53_Node000053_Node000054" title=" " alt="" coords="5926,158,5926,199,5921,199,5921,158"/>
+<area shape="rect" id="Node000056" href="$stm32f4discovery_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="6038,199,6225,244"/>
+<area shape="poly" id="edge55_Node000055_Node000056" title=" " alt="" coords="6134,158,6134,199,6129,199,6129,158"/>
+<area shape="rect" id="Node000058" href="$stm32f723e-disco_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="6249,199,6435,244"/>
+<area shape="poly" id="edge57_Node000057_Node000058" title=" " alt="" coords="6345,158,6345,199,6340,199,6340,158"/>
+<area shape="rect" id="Node000060" href="$stm32f746g-disco_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="6460,199,6646,244"/>
+<area shape="poly" id="edge59_Node000059_Node000060" title=" " alt="" coords="6556,158,6556,199,6550,199,6550,158"/>
+<area shape="rect" id="Node000062" href="$stm32f769i-disco_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="6670,199,6852,244"/>
+<area shape="poly" id="edge61_Node000061_Node000062" title=" " alt="" coords="6764,158,6764,199,6758,199,6758,158"/>
+<area shape="rect" id="Node000065" href="$stm32l0538-disco_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="7090,199,7275,244"/>
+<area shape="poly" id="edge64_Node000064_Node000065" title=" " alt="" coords="7185,158,7185,199,7180,199,7180,158"/>
+<area shape="rect" id="Node000067" href="$stm32l476g-disco_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="7299,199,7484,244"/>
+<area shape="poly" id="edge66_Node000066_Node000067" title=" " alt="" coords="7394,158,7394,199,7389,199,7389,158"/>
+<area shape="rect" id="Node000069" href="$stm32l496g-disco_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="7508,199,7694,244"/>
+<area shape="poly" id="edge68_Node000068_Node000069" title=" " alt="" coords="7604,158,7604,199,7598,199,7598,158"/>
+<area shape="rect" id="Node000071" href="$ublox-c030-u201_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="7717,199,7895,244"/>
+<area shape="poly" id="edge70_Node000070_Node000071" title=" " alt="" coords="7809,158,7809,199,7804,199,7804,158"/>
+<area shape="rect" id="Node000073" href="$weact-g030f6_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="7920,199,8092,244"/>
+<area shape="poly" id="edge72_Node000072_Node000073" title=" " alt="" coords="8006,158,8008,199,8003,199,8001,158"/>
 </map>

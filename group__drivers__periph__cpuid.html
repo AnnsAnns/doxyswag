@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: CPUID</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -151,7 +152,7 @@ $(function(){initNavTree('group__drivers__periph__cpuid.html',''); initResizable
 <p>Low-level CPU ID peripheral driver </p>
 <p>Provides access the CPU's serial number</p>
 <dl class="section note"><dt>Note</dt><dd>This is <em>distinct</em> from what is called CPUID in ARM CPUs (which only covers variation down to silicon revisions, not down to individual instances of a CPU).</dd></dl>
-<h1><a class="anchor" id="autotoc_md1701"></a>
+<h1><a class="anchor" id="autotoc_md1702"></a>
 (Low-) Power Implications</h1>
 <p>The implementation <b>should</b> make sure, that calling <a class="el" href="#ga562e64bc300b062ac82dac98b8af7cf2" title="Gets the serial number of the CPU.">cpuid_get()</a> does not introduce any long-term power usage penalties. If e.g. some peripheral has to be powered on for the CPU ID to be read, the implementation <b>should</b> take care to disable the peripheral again after the read is finished. </p>
 <table class="memberdecls">
@@ -200,7 +201,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:54 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

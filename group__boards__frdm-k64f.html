@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: NXP FRDM-K64F Board</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,10 +149,10 @@ $(function(){initNavTree('group__boards__frdm-k64f.html',''); initResizable(true
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the NXP FRDM-K64F </p>
-<h2><a class="anchor" id="autotoc_md414"></a>
+<h2><a class="anchor" id="autotoc_md415"></a>
 Overview</h2>
 <p>The board has a K64F Kinetis MCU and is supported by <code>cpu/kinetis_common</code>.</p>
-<h2><a class="anchor" id="autotoc_md415"></a>
+<h2><a class="anchor" id="autotoc_md416"></a>
 Hardware</h2>
 <p><img src="https://www.nxp.com/assets/images/en/dev-board-image/BOARD-FRDM-K64F-PRODUCT-SHOT.png" alt="frdm-k64f" class="inline"/></p>
 <table class="markdownTable">
@@ -194,23 +195,23 @@ Hardware</h2>
 </table>
 <p>The board has an integrated debugger adapter (k20dx128) with the firmware from ARMmbed. There are three interfaces available: Drag-n-drop programming over Mass Storage Device USB Serial Port (/dev/ttyACMx) connected to a K64F UART interface CMSIS-DAP for debugging with e.g. OpenOCD</p>
 <p>Please update the firmware to version 0221, see below.**</p>
-<h2><a class="anchor" id="autotoc_md416"></a>
+<h2><a class="anchor" id="autotoc_md417"></a>
 OpenOCD</h2>
 <p>The latest (01.07.2015) OpenOCD version (also current git) does not support the K64F. There is a <a href="http://openocd.zylin.com/#/c/2773/">patch</a> which makes flashing and debugging possible. A refactored and rebased version can be found <a href="https://github.com/jfischer-phytec-iot/openocd/tree/wip%40phytec">here</a>.<br  />
 </p>
-<h2><a class="anchor" id="autotoc_md417"></a>
+<h2><a class="anchor" id="autotoc_md418"></a>
 Flashing the Device</h2>
-<h4><a class="anchor" id="autotoc_md418"></a>
+<h4><a class="anchor" id="autotoc_md419"></a>
 Over OpenOCD</h4>
 <p>make BOARD=frdm-k64f flash</p>
-<h4><a class="anchor" id="autotoc_md419"></a>
+<h4><a class="anchor" id="autotoc_md420"></a>
 Over MSD</h4>
 <p>Simply mount the mbed Mass Storage Device und copy new RIOT firmware. See also the ARMmbed <a href="https://developer.mbed.org/platforms/FRDM-K64F/#getting-started-
 with-mbed">instructions</a>.</p>
-<h2><a class="anchor" id="autotoc_md420"></a>
+<h2><a class="anchor" id="autotoc_md421"></a>
 Updating the Bootloader</h2>
 <p>A update of CMSIS-DAP firmware is necessary to using the board with OpenOCD. A good step by step guide is available <a href="https://developer.mbed.org/handbook/Firmware-FRDM-K64F">here</a>.</p>
-<h2><a class="anchor" id="autotoc_md421"></a>
+<h2><a class="anchor" id="autotoc_md422"></a>
 I can't flash the device with OpenOCD anymore...</h2>
 <p>When a flash process has failed or a wrong firmware has been programmed, the following OpenOCD message may appear: </p><div class="fragment"><div class="line">START...</div>
 <div class="line">Info : SWD IDCODE 0x2ba01477</div>
@@ -263,7 +264,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

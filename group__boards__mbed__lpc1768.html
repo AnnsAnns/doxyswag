@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: mbed LPC1768 development kit</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,13 +149,13 @@ $(function(){initNavTree('group__boards__mbed__lpc1768.html',''); initResizable(
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the mbed LPC1768 board </p>
-<h2><a class="anchor" id="autotoc_md502"></a>
+<h2><a class="anchor" id="autotoc_md503"></a>
 Overview</h2>
 <p>mbed LPC1768 is a small development board by ARM. A LPC1768, an Ethernet PHY transceiver (DP83848J), a 2MB flash device (AT45DB161D) and a MBED-IF01 (LPC2148) are present on the board. This board aims to make it very easy to flash a new firmware. There is no need for an external programmer. The sole purpose of the MBED-IF01 is to appear as a USB flash drive when the board is connected over USB to a computer. The most recent binary file stored on the USB drive is flashed on the next reset.</p>
 <p>See <a href="https://os.mbed.com/platforms/mbed-LPC1768/">here</a> for more information about the board.</p>
-<h2><a class="anchor" id="autotoc_md503"></a>
+<h2><a class="anchor" id="autotoc_md504"></a>
 Hardware</h2>
-<h3><a class="anchor" id="autotoc_md504"></a>
+<h3><a class="anchor" id="autotoc_md505"></a>
 MCU</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -196,7 +197,7 @@ MCU</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">User Manual   </td><td class="markdownTableBodyLeft"><a href="http://www.nxp.com/documents/user_manual/UM10360.pdf">User Manual</a>   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md505"></a>
+<h3><a class="anchor" id="autotoc_md506"></a>
 User Interface</h3>
 <p>1 Button:</p>
 <table class="markdownTable">
@@ -215,7 +216,7 @@ User Interface</h3>
 <td class="markdownTableBodyNone">Pin   </td><td class="markdownTableBodyNone">P1.18   </td><td class="markdownTableBodyNone">P1.20   </td><td class="markdownTableBodyNone">P1.21   </td><td class="markdownTableBodyNone">P1.23   </td><td class="markdownTableBodyNone">N/A   </td></tr>
 </table>
 <p>Status LED is not controlled by the LPC1768.</p>
-<h2><a class="anchor" id="autotoc_md506"></a>
+<h2><a class="anchor" id="autotoc_md507"></a>
 Implementation Status</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -245,16 +246,16 @@ Implementation Status</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft"><a class="el" href="structTimer.html" title="struct to get time references within mqtt paho">Timer</a>   </td><td class="markdownTableBodyLeft">yes   </td><td class="markdownTableBodyLeft"></td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md507"></a>
+<h2><a class="anchor" id="autotoc_md508"></a>
 Using UART</h2>
 <p>This board opens a serial interface through the USB automatically.</p>
-<h2><a class="anchor" id="autotoc_md508"></a>
+<h2><a class="anchor" id="autotoc_md509"></a>
 Supported Toolchains</h2>
 <p>For using the mbed LPC1768 board we strongly recommend the usage of the <a href="https://launchpad.net/gcc-arm-embedded">GNU Tools for ARM Embedded Processors</a> toolchain.</p>
-<h2><a class="anchor" id="autotoc_md509"></a>
+<h2><a class="anchor" id="autotoc_md510"></a>
 Flashing the device</h2>
 <p>The easiest way to flash the device is to connect to the board via USB. The board appears as a 2MB usb drive. <code>make flash</code> will copy your binary file to the root directory but you need to manually reset your board by pressing the reset button. While the LPC1768 is flashed by the MBED-IF01 with the new firmware, the status LED blinks fast.</p>
-<h2><a class="anchor" id="autotoc_md510"></a>
+<h2><a class="anchor" id="autotoc_md511"></a>
 Known Issues</h2>
 <p>Does not compile with the mentor graphics toolchain (compare <a href="https://github.com/RIOT-OS/RIOT/issues/751">https://github.com/RIOT-OS/RIOT/issues/751</a>) </p>
 <table class="memberdecls">
@@ -277,7 +278,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:56 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

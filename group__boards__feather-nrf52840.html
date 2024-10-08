@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Adafruit Feather nRF52840 Express</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,18 +149,18 @@ $(function(){initNavTree('group__boards__feather-nrf52840.html',''); initResizab
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the Adafruit Feather nRF52840 Express </p>
-<h3><a class="anchor" id="autotoc_md401"></a>
+<h3><a class="anchor" id="autotoc_md402"></a>
 General information</h3>
 <p>The <a href="https://learn.adafruit.com/introducing-the-adafruit-nrf52840-feather/">Feather nRF52840 Express</a> is a development board from Adafruits Feather board family. It provides native USB support, Bluetooth Low Energy and IEEE 802.15.4 support via the nRF52840 MCU.</p>
 <p><img src="https://cdn-learn.adafruit.com/assets/assets/000/068/578/medium800/circuitpython_Screenshot_2019-01-02_at_12.04.27.png" alt="top-down view on feather-nrf52840" width="50%" class="inline"/></p>
-<h3><a class="anchor" id="autotoc_md402"></a>
+<h3><a class="anchor" id="autotoc_md403"></a>
 Flash the board</h3>
 <p>The board is flashed using its on-board UF2 boot loader by default. The boot loader will present a mass storage device that has to be mounted to /media/MDK-DONGLE so <code>uf2conv.py</code> can find it. If you have an auto-mounter installed this will happen automatically.</p>
 <p>The rest of the process is automated in the usual way with <code>BOARD=feather-nrf52840</code>.</p>
 <p>Example with <code>hello-world</code> application: </p><div class="fragment"><div class="line">make BOARD=feather-nrf52840 -C examples/hello-world flash term</div>
 </div><!-- fragment --><p>If RIOT is already running on the board, it will automatically reset the CPU and enter the bootloader. If some other firmware is running or RIOT crashed, you need to enter the bootloader manually by double-tapping the board's reset button while the device is connected.</p>
 <p>Otherwise see the <b>Flashing</b> section in <a class="el" href="group__boards__common__nrf52.html">nRF52 common</a>. The easiest way is to use an external Segger J-Link Programmer connected to the <a href="https://learn.adafruit.com/introducing-the-adafruit-nrf52840-feather/pinouts#swd-connector-3-12">SWD Connector</a>.</p>
-<h4><a class="anchor" id="autotoc_md403"></a>
+<h4><a class="anchor" id="autotoc_md404"></a>
 Flashing the uf2 bootloader</h4>
 <p>To flash the uf2 bootloader (if it is no longer present on your BOARD), you need to have <a href="https://www.nordicsemi.com/Products/Development-tools/nRF-Command-Line-Tools"><code>nrfjprog</code></a> installed, connect a jlink to your BOARD and execute the following commands:</p>
 <div class="fragment"><div class="line">git clone git@github.com:adafruit/Adafruit_nRF52_Bootloader.git</div>
@@ -172,7 +173,7 @@ Flashing the uf2 bootloader</h4>
 <div class="line">pip3 install --user adafruit-nrfutil</div>
 <div class="line">make BOARD=feather_nrf52840_express all</div>
 <div class="line">make BOARD=feather_nrf52840_express flash</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md404"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md405"></a>
 Terminal</h3>
 <p>To connect a terminal to the Feather, RIOT chooses <code>stdio_cdc_acm</code> per default. This lets you access the Feather directly over USB.</p>
 <p>You have several alternative possibilities to connect to the board.</p>
@@ -202,7 +203,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:54 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Decawave DWM1001</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,16 +149,16 @@ $(function(){initNavTree('group__boards__dwm1001.html',''); initResizable(true);
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the Decawave DWM1001 development board </p>
-<h2><a class="anchor" id="autotoc_md343"></a>
+<h2><a class="anchor" id="autotoc_md344"></a>
 Overview</h2>
 <p>The <a href="https://www.decawave.com/product/dwm1001-development-board/">Devawave DWM1001 development board</a> includes a DWM1001 module which is based on a Nordic nRF51832 microcontroller. This microcontroller is an ARM Cortex-M4 with 64KB of RAM and 512KB of flash memory. It also provides in integrated BLE radio. The DWM1001 module also contains an UWB transceiver connected to the microcontroller via SPI (not supported yet).</p>
-<h2><a class="anchor" id="autotoc_md344"></a>
+<h2><a class="anchor" id="autotoc_md345"></a>
 Flash the board</h2>
 <p>This board can be flashed using OpenOCD or JLink. Jlink is the default programmer. To program this board, plug it to your computer via USB and run the following command:</p>
 <div class="fragment"><div class="line">make BOARD=dwm1001 -C examples/hello-world flash</div>
 </div><!-- fragment --><p>To program the board with OpenOCD, use:</p>
 <div class="fragment"><div class="line">PROGRAMMER=openocd make BOARD=dwm1001 -C examples/hello-world flash</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md345"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md346"></a>
 Accessing STDIO via UART</h2>
 <p>The STDIO is directly accessible via the USB port. On a Linux host, it's generally mapped to <code>/dev/ttyACM0</code>.</p>
 <p>Use the <code>term</code> target to connect to the board serial port<br  />
@@ -182,7 +183,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

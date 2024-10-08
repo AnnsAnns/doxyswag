@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Blackpill and Bluepill common code</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,17 +149,17 @@ $(function(){initNavTree('group__boards__common__blxxxpill.html',''); initResiza
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for cheap stm32f103c8 based boards such as bluepill and blackpill. </p>
-<h2><a class="anchor" id="autotoc_md295"></a>
+<h2><a class="anchor" id="autotoc_md296"></a>
 Overview</h2>
 <p>The bluepill and the blackpill are STM32F103 based board which can be bought for around 2€ on sides like AliExpress, eBay and others. Although the STM32F130C8 MCU nominally has 64 KiB flash, most <a href="https://web.archive.org/web/20190428082446/http://wiki.stm32duino.com/index.php?title=Blue_Pill#128_KB_flash_on_C8_version">actually have 128 KiB flash</a>.</p>
 <p>There are also versions that only report to have 32 KiB, but actually have 64 KiB.</p>
-<h2><a class="anchor" id="autotoc_md296"></a>
+<h2><a class="anchor" id="autotoc_md297"></a>
 Pinout</h2>
 <div class="image">
 <object type="image/svg+xml" data="pinout-bluepill.svg" style="pointer-events: none;"></object>
 <div class="caption">
 pinout</div></div>
-    <h2><a class="anchor" id="autotoc_md297"></a>
+    <h2><a class="anchor" id="autotoc_md298"></a>
 MCU</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -190,7 +191,7 @@ MCU</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">Datasheet   </td><td class="markdownTableBodyLeft"><a href="http://www.st.com/content/ccc/resource/technical/document/datasheet/33/d4/6f/1d/df/0b/4c/6d/CD00161566.pdf/files/CD00161566.pdf/jcr:content/translations/en.CD00161566.pdf">Datasheet</a>   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md298"></a>
+<h2><a class="anchor" id="autotoc_md299"></a>
 Implementation Status</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -214,28 +215,28 @@ Implementation Status</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">CAN   </td><td class="markdownTableBodyLeft">no   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md299"></a>
+<h2><a class="anchor" id="autotoc_md300"></a>
 Flashing</h2>
 <p>To program and debug the board you need a SWD capable debugger. The easiest way is using <a href="https://github.com/RIOT-OS/RIOT/wiki/OpenOCD">OpenOCD</a>. By default RIOT uses the hardware reset signal and connects to the chip under reset for flashing. This is required to reliably connect to the device even when the MCU is in a low power mode. Therefore not only SWDIO and SWCLK, but also the RST pin of your debugger need to be connected to the board. Once the device is connected to the debugger and OpenOCD is installed, you can flash the device with: </p><pre class="fragment">$ make BOARD=bluepill-stm32f103c8 flash
 </pre><p>Or for the blackpill with: </p><pre class="fragment">$ make BOARD=blackpill-stm32f103c8 flash
-</pre><h3><a class="anchor" id="autotoc_md300"></a>
+</pre><h3><a class="anchor" id="autotoc_md301"></a>
 Additional Flash</h3>
 <p>Typically, the STM32F103C8 does actually have 128 KiB flash. To make use of this, just flash with </p><pre class="fragment">$ make BOARD=bluepill-stm32f103cb flash
 </pre><p>Or for the blackpill with: </p><pre class="fragment">$ make BOARD=blackpill-stm32f103cb flash
 </pre><p>This sets the <code>CPU_MODEL</code> make variable to <code>stm32f103cb</code>, the default value is <code>stm32f103c8</code>. These two CPU models basically only have one major difference, the former has 128 KiB flash while the latter has 64 KiB.</p>
 <p>In order to flash the *cb variant onto *c8 hardware requires OpenOCD in version 0.11 or later.</p>
-<h2><a class="anchor" id="autotoc_md301"></a>
+<h2><a class="anchor" id="autotoc_md302"></a>
 Connecting via Serial</h2>
 <p>The default UART port used is UART1, which uses pins A9 (TX) and A10 (RX). To use it, configure your UART to operate at a symbol rate of 115200 baud, 1 stop bit and no parity (8N1).</p>
-<h2><a class="anchor" id="autotoc_md302"></a>
+<h2><a class="anchor" id="autotoc_md303"></a>
 Using PWM</h2>
 <p>PWM is available at pins A8 to A11.</p>
-<h2><a class="anchor" id="autotoc_md303"></a>
+<h2><a class="anchor" id="autotoc_md304"></a>
 Known Issues</h2>
-<h3><a class="anchor" id="autotoc_md304"></a>
+<h3><a class="anchor" id="autotoc_md305"></a>
 USB connector</h3>
 <p>The Micro-USB port is sometimes not soldered properly. Also, it is usually equipped with an incorrect resistor. <a href="https://web.archive.org/web/20190428082446/http://wiki.stm32duino.com/index.php?title=Blue_Pill#Hardware_installation">This can be fixed multiple ways</a>.</p>
-<h3><a class="anchor" id="autotoc_md305"></a>
+<h3><a class="anchor" id="autotoc_md306"></a>
 Flashing fails</h3>
 <p>Please check whether the debugger is properly connected, including the hardware reset signal pin.</p>
 <table class="markdownTable">
@@ -259,11 +260,11 @@ Flashing fails</h3>
 <li>(**) Some debuggers monitor the voltage of the target MCU. Their target VCC pin needs to be connected to one of the 3.3V pins of the boards.</li>
 </ul>
 <p>Most very cheap SWD debuggers (especially those imported for about 2€ from far east) do not have a Target VCC pin; they will still work just fine. On these cheap debuggers the pin to send the reset signal to the board is often either not present or defunct. You can work around this by pressing the reset button when OpenOCD wants to connect to the Blue Pill. Hit the reset button again after flashing in order to boot the newly flashed image.</p>
-<h2><a class="anchor" id="autotoc_md306"></a>
+<h2><a class="anchor" id="autotoc_md307"></a>
 Where to buy</h2>
 <p>The board is sold under different names. On some sites it is called <code>bluepill</code> or <code>blue pill</code>. On others you might find it by searching for <code>stm32f103c8</code> or <code>stm32f103c8t6</code>.</p>
 <p>Try <a href="https://www.ebay.com/sch/i.html?_nkw=stm32f103c8">eBay</a> or <a href="https://www.aliexpress.com/wholesale?SearchText=STM32F103C8T6">AliExpress</a>.</p>
-<h2><a class="anchor" id="autotoc_md307"></a>
+<h2><a class="anchor" id="autotoc_md308"></a>
 Further reading</h2>
 <ul>
 <li><a href="https://web.archive.org/web/20190428082446/http://wiki.stm32duino.com/index.php?title=Blue_Pill">Blue Pill Wiki</a></li>
@@ -290,7 +291,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:54 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

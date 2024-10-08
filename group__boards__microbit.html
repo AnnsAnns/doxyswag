@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: BBC micro:bit</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,12 +149,12 @@ $(function(){initNavTree('group__boards__microbit.html',''); initResizable(true)
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the BBC micro:bit </p>
-<h2><a class="anchor" id="autotoc_md531"></a>
+<h2><a class="anchor" id="autotoc_md532"></a>
 Overview</h2>
 <p>The <a href="https://www.microbit.co.uk/">micro:bit</a> was designed by the BBC and released in 2015. The boards was distributed to all 11-12 year old children throughout the UK.</p>
 <p>The board is based on the Nordic nRF51822 SoC, featuring 16KiB of RAM, 256KiB of ROM, and a 2.4GHz radio, that supports Bluetooth Low Energy (BLE) as well as a Nordic proprietary radio mode.</p>
 <p>Additionally the boards features 2 buttons, a 5x5 LED matrix, a MAG3110 3-axis magnetometer, and a MMA8653 3-axis accelerometer.</p>
-<h2><a class="anchor" id="autotoc_md532"></a>
+<h2><a class="anchor" id="autotoc_md533"></a>
 Hardware</h2>
 <p><img src="https://github.com/RIOT-OS/RIOT/wiki/images/board_microbit.png" alt="micro:bit" class="inline"/></p>
 <table class="markdownTable">
@@ -186,23 +187,23 @@ Hardware</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">Reference Manual   </td><td class="markdownTableBodyLeft"><a href="http://infocenter.nordicsemi.com/pdf/nRF51_RM_v3.0.pdf">Reference Manual</a>   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md533"></a>
+<h2><a class="anchor" id="autotoc_md534"></a>
 Flashing and Debugging</h2>
 <p>There are two possibilities to flash the board: using the default ARM DAPLink or you can flash the board using Segger's JLink.</p>
-<h3><a class="anchor" id="autotoc_md534"></a>
+<h3><a class="anchor" id="autotoc_md535"></a>
 DAPLink</h3>
 <p>The <a href="https://www.mbed.com/en/development/hardware/prototyping-production/daplink/daplink-on-kl26z/">DAPLink interface</a> is the default way to flash the board and works out of the box. When you plug the board to your host computer, it shows up as a flash drive. To flash the board, you can simply copy your compiled <code>.hex</code> file onto the board, and that's it.</p>
 <p>The <code>micro:bit</code> port comes with a little script that does this automatically, so you can flash the board as usual with</p>
 <div class="fragment"><div class="line">BOARD=microbit make flash</div>
 </div><!-- fragment --><p>The DAPLink interface provides however not means for debugging the board.</p>
-<h3><a class="anchor" id="autotoc_md535"></a>
+<h3><a class="anchor" id="autotoc_md536"></a>
 JLink</h3>
 <p>Recently, Segger released a JLink firmware for the interface MCU on the <code>micro:bit</code>. You have to follow <a href="https://www.segger.com/bbc-micro-bit.html">these instructions</a> to flash the JLink firmware on your <code>micro:bit</code>. Don't worry, the process is very simple and you can revert the firmware back to the DAPLink default anytime (<a href="https://www.mbed.com/en/development/hardware/prototyping-production/daplink/daplink-on-kl26z/">as described here</a>).</p>
 <p>Once you have flashed the JLink firmware, you can flash the board like this:</p>
 <div class="fragment"><div class="line">BOARD=microbit PROGRAMMER=jlink make flash</div>
 </div><!-- fragment --><p>With the JLink firmware, you can now also do in-circuit debugging etc.</p>
 <p>Note: The current version of the JLink firmware (JLink_OB_BBC_microbit_16-07-29.hex) does not support any serial port over USB, so you can not use the RIOT shell with this firmware.**</p>
-<h3><a class="anchor" id="autotoc_md536"></a>
+<h3><a class="anchor" id="autotoc_md537"></a>
 QEMU emulation</h3>
 <p>The microbit can be partly emulated by QEMU.</p>
 <p>This requires at least QEMU 4.0 with ARM platform support enabled.</p>
@@ -210,7 +211,7 @@ QEMU emulation</h3>
 <p>Use it like this: </p><pre class="fragment">$ cd examples/hello-world
 $ BOARD=microbit make clean all -j4
 $ EMULATE=1 BOARD=microbit make term
-</pre><h2><a class="anchor" id="autotoc_md537"></a>
+</pre><h2><a class="anchor" id="autotoc_md538"></a>
 Display</h2>
 <p>The 5x5 LED matrix display can be driven using the <a class="el" href="group__boards__common__microbit.html">Common microbit LED handling</a>. </p>
 <table class="memberdecls">
@@ -233,7 +234,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:54 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

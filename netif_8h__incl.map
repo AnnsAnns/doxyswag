@@ -1,58 +1,66 @@
 <map id="sys/include/net/netif.h" name="sys/include/net/netif.h">
-<area shape="rect" id="Node000001" title="Common network interface API definitions." alt="" coords="901,5,1066,33"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="372,535,443,563"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="994,32,1020,90,1032,129,1037,169,1037,399,1032,421,1017,441,995,458,966,473,892,499,803,518,706,531,611,540,458,549,458,544,611,535,706,526,802,512,891,494,964,469,992,454,1014,437,1027,419,1032,399,1032,169,1027,130,1016,92,989,35"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="739,459,809,487"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="986,34,986,169,986,248,981,284,968,317,948,348,924,376,868,422,816,454,813,449,865,417,920,372,944,345,963,315,976,282,981,247,981,169,981,34"/>
-<area shape="rect" id="Node000004" href="$list_8h.html" title="Intrusive linked list." alt="" coords="1072,81,1125,109"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1005,31,1067,70,1064,75,1003,36"/>
-<area shape="rect" id="Node000005" href="$netopt_8h.html" title="Definition of global configuration options." alt="" coords="5,308,106,336"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="901,28,657,49,536,64,450,84,393,106,338,132,233,193,146,253,84,300,81,296,143,249,231,188,335,127,391,101,448,78,535,59,657,43,901,23"/>
-<area shape="rect" id="Node000007" href="$ipv6_8h.html" title="IPv6 include gathering header." alt="" coords="460,81,547,109"/>
-<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="901,36,562,87,561,82,901,30"/>
-<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="58,336,60,367,67,407,83,450,94,469,109,485,127,496,152,506,218,522,292,534,357,541,357,546,291,539,217,527,150,511,124,501,106,489,90,472,78,452,62,409,55,367,53,336"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="368,384,450,411"/>
-<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="107,331,353,382,352,387,106,336"/>
-<area shape="rect" id="Node000008" href="$ipv6_2addr_8h.html" title="Definitions for IPv6 addresses." alt="" coords="394,232,514,260"/>
-<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="502,110,466,218,461,216,497,108"/>
-<area shape="rect" id="Node000014" href="$ipv6_2ext_8h.html" title="IPv6 extension header definitions." alt="" coords="220,232,331,260"/>
-<area shape="poly" id="edge23_Node000007_Node000014" title=" " alt="" coords="485,111,309,226,306,222,482,107"/>
-<area shape="rect" id="Node000017" href="$net_2ipv6_2hdr_8h.html" title="IPv6 header type and helper function definitions." alt="" coords="496,157,607,184"/>
-<area shape="poly" id="edge31_Node000007_Node000017" title=" " alt="" coords="514,108,537,142,532,145,510,111"/>
-<area shape="poly" id="edge10_Node000008_Node000003" title=" " alt="" coords="515,248,558,254,606,265,654,281,698,306,729,336,750,373,764,411,772,444,767,445,759,412,745,375,724,339,695,310,652,286,604,270,557,259,514,253"/>
-<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="453,261,420,369,415,368,448,259"/>
-<area shape="rect" id="Node000009" href="$byteorder_8h.html" title="Functions to work with different byte orders." alt="" coords="474,384,570,411"/>
-<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="462,259,512,368,508,371,458,261"/>
-<area shape="rect" id="Node000012" href="$ipv4_2addr_8h.html" title="IPv4 address type and helper functions definitions." alt="" coords="565,308,684,336"/>
-<area shape="poly" id="edge18_Node000008_Node000012" title=" " alt="" coords="486,258,582,299,580,304,484,263"/>
-<area shape="poly" id="edge13_Node000009_Node000002" title=" " alt="" coords="483,414,429,436,407,449,394,461,388,475,388,490,396,520,391,522,383,490,383,474,389,458,404,445,427,432,481,409"/>
-<area shape="poly" id="edge12_Node000009_Node000003" title=" " alt="" coords="568,409,725,455,723,460,566,414"/>
-<area shape="rect" id="Node000010" href="$endian_8h.html" title="libc header for endian conversion" alt="" coords="525,459,602,487"/>
-<area shape="poly" id="edge14_Node000009_Node000010" title=" " alt="" coords="532,411,551,444,546,447,527,413"/>
-<area shape="rect" id="Node000011" href="$unaligned_8h.html" title="Unaligned but safe memory access functions." alt="" coords="403,459,500,487"/>
-<area shape="poly" id="edge16_Node000009_Node000011" title=" " alt="" coords="511,414,476,450,472,446,508,410"/>
-<area shape="poly" id="edge15_Node000010_Node000002" title=" " alt="" coords="537,490,450,530,448,526,534,485"/>
-<area shape="poly" id="edge17_Node000011_Node000002" title=" " alt="" coords="446,489,425,523,421,520,441,486"/>
-<area shape="poly" id="edge20_Node000012_Node000002" title=" " alt="" coords="631,335,637,366,640,406,635,449,628,470,616,489,600,505,582,518,541,537,498,547,458,551,458,545,497,541,539,531,579,513,597,501,612,485,623,468,630,448,635,406,632,366,626,336"/>
-<area shape="poly" id="edge19_Node000012_Node000006" title=" " alt="" coords="587,339,462,381,461,376,585,334"/>
-<area shape="poly" id="edge22_Node000012_Node000009" title=" " alt="" coords="608,338,554,377,551,372,605,334"/>
-<area shape="rect" id="Node000013" title=" " alt="" coords="663,384,736,411"/>
-<area shape="poly" id="edge21_Node000012_Node000013" title=" " alt="" coords="640,334,677,371,673,374,636,338"/>
-<area shape="poly" id="edge24_Node000014_Node000002" title=" " alt="" coords="254,263,215,289,175,325,160,345,150,366,147,388,154,410,172,437,194,459,220,479,248,496,305,520,358,535,356,541,304,525,245,500,217,483,190,463,167,440,149,412,142,389,145,365,155,342,171,321,211,285,251,258"/>
-<area shape="rect" id="Node000015" href="$ipv6_2ext_2frag_8h.html" title="Fragmentation extension definitions." alt="" coords="248,308,389,336"/>
-<area shape="poly" id="edge25_Node000014_Node000015" title=" " alt="" coords="285,259,305,293,301,296,281,262"/>
-<area shape="rect" id="Node000016" href="$ipv6_2ext_2rh_8h.html" title="Routing extension header definitions." alt="" coords="163,384,292,411"/>
-<area shape="poly" id="edge29_Node000014_Node000016" title=" " alt="" coords="266,262,251,283,238,309,231,339,229,368,224,368,226,338,233,307,246,280,262,259"/>
-<area shape="poly" id="edge27_Node000015_Node000002" title=" " alt="" coords="325,335,382,486,397,520,392,522,377,488,320,337"/>
-<area shape="poly" id="edge26_Node000015_Node000006" title=" " alt="" coords="336,334,383,372,379,376,333,338"/>
-<area shape="poly" id="edge28_Node000015_Node000009" title=" " alt="" coords="356,334,472,375,471,381,354,339"/>
-<area shape="poly" id="edge30_Node000016_Node000002" title=" " alt="" coords="237,410,262,446,297,485,329,508,363,526,361,531,327,512,294,489,257,449,233,413"/>
-<area shape="poly" id="edge32_Node000017_Node000002" title=" " alt="" coords="608,171,661,176,723,186,788,204,849,230,882,247,910,264,929,286,934,302,935,320,935,399,933,420,926,437,914,450,900,460,864,474,822,490,774,507,724,521,624,540,531,549,458,551,458,546,531,543,623,535,723,516,772,502,820,484,862,469,897,455,911,446,921,434,928,419,930,399,930,321,929,303,924,289,906,268,880,252,846,235,786,209,722,191,660,181,608,176"/>
-<area shape="poly" id="edge37_Node000017_Node000008" title=" " alt="" coords="536,187,485,225,482,221,532,183"/>
-<area shape="poly" id="edge33_Node000017_Node000009" title=" " alt="" coords="552,185,528,368,523,368,547,184"/>
-<area shape="rect" id="Node000018" href="$inet__csum_8h.html" title="Internet Checksum definitions." alt="" coords="710,232,836,260"/>
-<area shape="poly" id="edge34_Node000017_Node000018" title=" " alt="" coords="592,182,720,224,718,230,590,187"/>
-<area shape="poly" id="edge36_Node000018_Node000013" title=" " alt="" coords="769,261,715,371,710,368,764,259"/>
-<area shape="rect" id="Node000019" href="$inttypes_8h.html" title="Adds include for missing inttype definitions." alt="" coords="810,308,896,336"/>
-<area shape="poly" id="edge35_Node000018_Node000019" title=" " alt="" coords="789,259,829,295,826,299,785,263"/>
+<area shape="rect" id="Node000001" title="Common network interface API definitions." alt="" coords="486,5,650,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="742,535,813,563"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="651,19,815,28,910,38,1004,51,1090,70,1160,95,1188,111,1209,128,1222,147,1227,169,1227,399,1224,421,1217,437,1205,450,1191,459,1112,490,1037,516,960,533,888,543,829,548,828,543,887,538,959,528,1036,511,1110,484,1188,455,1202,446,1212,434,1219,419,1222,399,1222,169,1217,149,1205,131,1185,115,1158,100,1088,75,1003,57,909,43,814,34,650,25"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="397,459,467,487"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="486,28,411,40,373,51,337,65,306,84,281,107,265,135,259,169,259,247,263,293,284,334,310,369,341,400,401,448,398,453,337,404,306,373,279,337,258,295,254,248,254,169,260,133,277,104,303,79,335,60,371,46,410,35,485,22"/>
+<area shape="rect" id="Node000004" href="$unistd_8h_source.html" title=" " alt="" coords="76,232,149,260"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="486,31,346,52,282,66,239,83,201,113,170,150,145,188,127,220,122,217,140,185,165,147,198,109,236,79,281,61,345,47,485,26"/>
+<area shape="rect" id="Node000007" href="$list_8h.html" title="Intrusive linked list." alt="" coords="1262,81,1315,109"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="651,20,916,37,1080,54,1243,78,1247,79,1246,84,1242,84,1079,59,915,42,651,26"/>
+<area shape="rect" id="Node000008" href="$netopt_8h.html" title="Definition of global configuration options." alt="" coords="294,308,394,336"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="561,35,365,297,361,294,556,32"/>
+<area shape="rect" id="Node000010" href="$ipv6_8h.html" title="IPv6 include gathering header." alt="" coords="621,81,707,109"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="587,31,637,69,633,73,584,36"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="76,261,40,280,24,293,12,309,8,322,12,335,28,369,44,395,63,417,84,434,136,460,204,484,249,496,309,507,455,523,727,542,726,548,455,529,308,512,247,501,202,490,134,465,81,438,59,421,40,399,23,371,7,337,3,322,7,307,20,289,37,275,74,256"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="118,384,192,411"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="118,259,150,368,144,369,113,261"/>
+<area shape="rect" id="Node000006" href="$cpu_2avr8__common_2avr__libc__extra_2include_2sys_2types_8h_source.html" title=" " alt="" coords="22,308,117,336"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="107,262,87,296,82,293,102,259"/>
+<area shape="poly" id="edge7_Node000006_Node000002" title=" " alt="" coords="74,335,84,372,93,392,107,409,128,424,154,438,222,463,306,484,398,502,584,527,727,541,726,546,583,533,398,507,305,490,221,468,152,443,125,429,104,413,89,395,79,374,69,337"/>
+<area shape="poly" id="edge8_Node000006_Node000005" title=" " alt="" coords="87,334,130,371,126,375,83,338"/>
+<area shape="poly" id="edge11_Node000008_Node000002" title=" " alt="" coords="346,336,345,367,350,408,363,450,373,469,387,485,412,500,447,512,539,530,641,539,727,544,727,549,640,545,539,535,446,517,409,505,384,489,369,472,358,452,345,409,340,367,340,336"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="568,384,649,411"/>
+<area shape="poly" id="edge12_Node000008_Node000009" title=" " alt="" coords="392,334,553,378,552,383,391,339"/>
+<area shape="rect" id="Node000011" href="$ipv6_2addr_8h.html" title="Definitions for IPv6 addresses." alt="" coords="531,232,651,260"/>
+<area shape="poly" id="edge14_Node000010_Node000011" title=" " alt="" coords="660,110,606,219,602,217,656,108"/>
+<area shape="rect" id="Node000016" href="$ipv6_2ext_8h.html" title="IPv6 extension header definitions." alt="" coords="1075,232,1187,260"/>
+<area shape="poly" id="edge29_Node000010_Node000016" title=" " alt="" coords="706,107,1076,225,1075,230,704,112"/>
+<area shape="rect" id="Node000019" href="$net_2ipv6_2hdr_8h.html" title="IPv6 header type and helper function definitions." alt="" coords="682,157,793,184"/>
+<area shape="poly" id="edge37_Node000010_Node000019" title=" " alt="" coords="679,107,716,144,712,147,675,111"/>
+<area shape="poly" id="edge16_Node000011_Node000003" title=" " alt="" coords="533,263,493,281,475,294,460,310,443,342,434,378,431,413,432,444,426,444,425,413,428,377,438,340,455,306,471,290,490,276,531,258"/>
+<area shape="poly" id="edge15_Node000011_Node000009" title=" " alt="" coords="596,260,604,308,609,368,604,369,599,308,591,261"/>
+<area shape="rect" id="Node000012" href="$byteorder_8h.html" title="Functions to work with different byte orders." alt="" coords="673,384,770,411"/>
+<area shape="poly" id="edge17_Node000011_Node000012" title=" " alt="" coords="604,258,702,370,698,373,600,262"/>
+<area shape="rect" id="Node000015" href="$ipv4_2addr_8h.html" title="IPv4 address type and helper functions definitions." alt="" coords="470,308,589,336"/>
+<area shape="poly" id="edge24_Node000011_Node000015" title=" " alt="" coords="582,262,552,298,548,294,578,259"/>
+<area shape="poly" id="edge19_Node000012_Node000002" title=" " alt="" coords="707,414,691,429,677,447,669,467,673,486,684,500,698,512,729,530,727,535,695,516,680,504,668,488,664,466,672,445,687,425,703,410"/>
+<area shape="poly" id="edge18_Node000012_Node000003" title=" " alt="" coords="674,414,483,462,482,457,672,408"/>
+<area shape="rect" id="Node000013" href="$endian_8h.html" title="libc header for endian conversion" alt="" coords="683,459,760,487"/>
+<area shape="poly" id="edge20_Node000012_Node000013" title=" " alt="" coords="724,412,724,444,719,444,719,412"/>
+<area shape="rect" id="Node000014" href="$unaligned_8h.html" title="Unaligned but safe memory access functions." alt="" coords="785,459,882,487"/>
+<area shape="poly" id="edge22_Node000012_Node000014" title=" " alt="" coords="743,410,803,449,800,453,740,414"/>
+<area shape="poly" id="edge21_Node000013_Node000002" title=" " alt="" coords="734,486,761,521,756,524,729,489"/>
+<area shape="poly" id="edge23_Node000014_Node000002" title=" " alt="" coords="826,489,799,524,794,521,821,486"/>
+<area shape="poly" id="edge26_Node000015_Node000002" title=" " alt="" coords="533,336,541,371,548,391,558,410,596,450,640,483,686,509,729,528,726,533,684,514,637,488,592,454,554,413,543,394,536,373,528,337"/>
+<area shape="poly" id="edge27_Node000015_Node000005" title=" " alt="" coords="470,338,207,389,206,383,469,332"/>
+<area shape="poly" id="edge25_Node000015_Node000009" title=" " alt="" coords="545,334,585,371,581,375,542,338"/>
+<area shape="poly" id="edge28_Node000015_Node000012" title=" " alt="" coords="565,334,674,375,672,380,563,339"/>
+<area shape="poly" id="edge30_Node000016_Node000002" title=" " alt="" coords="1139,259,1151,288,1160,328,1163,371,1159,392,1151,413,1122,451,1085,482,1043,506,997,523,951,536,906,544,828,550,828,545,905,538,950,530,996,518,1041,501,1082,478,1118,448,1146,410,1154,391,1157,371,1155,328,1146,290,1134,261"/>
+<area shape="rect" id="Node000017" href="$ipv6_2ext_2frag_8h.html" title="Fragmentation extension definitions." alt="" coords="875,308,1016,336"/>
+<area shape="poly" id="edge31_Node000016_Node000017" title=" " alt="" coords="1099,263,993,305,991,300,1097,258"/>
+<area shape="rect" id="Node000018" href="$ipv6_2ext_2rh_8h.html" title="Routing extension header definitions." alt="" coords="1008,384,1136,411"/>
+<area shape="poly" id="edge35_Node000016_Node000018" title=" " alt="" coords="1128,261,1085,370,1080,368,1123,259"/>
+<area shape="poly" id="edge33_Node000017_Node000002" title=" " alt="" coords="947,337,944,366,936,406,921,449,897,489,865,516,828,534,826,530,862,512,893,485,916,447,931,405,939,366,942,336"/>
+<area shape="poly" id="edge32_Node000017_Node000009" title=" " alt="" coords="883,339,665,386,664,380,882,334"/>
+<area shape="poly" id="edge34_Node000017_Node000012" title=" " alt="" coords="906,339,776,381,775,376,905,334"/>
+<area shape="poly" id="edge36_Node000018_Node000002" title=" " alt="" coords="1066,413,1036,451,1015,472,991,489,951,510,908,525,829,543,828,538,906,520,948,505,988,485,1011,468,1032,447,1062,410"/>
+<area shape="poly" id="edge38_Node000019_Node000002" title=" " alt="" coords="794,177,853,192,919,216,951,233,981,254,1008,278,1031,307,1035,321,1031,337,925,489,877,518,828,537,826,532,875,513,921,485,1026,335,1029,321,1026,309,1004,282,978,258,948,238,916,221,851,197,793,183"/>
+<area shape="poly" id="edge43_Node000019_Node000011" title=" " alt="" coords="712,187,631,228,629,223,710,182"/>
+<area shape="poly" id="edge39_Node000019_Node000012" title=" " alt="" coords="765,183,792,203,814,231,826,260,830,284,827,309,814,337,795,361,771,378,768,374,792,357,810,334,822,308,825,284,821,261,810,234,789,206,762,187"/>
+<area shape="rect" id="Node000020" href="$inet__csum_8h.html" title="Internet Checksum definitions." alt="" coords="675,232,800,260"/>
+<area shape="poly" id="edge40_Node000019_Node000020" title=" " alt="" coords="740,185,740,217,735,217,735,185"/>
+<area shape="poly" id="edge42_Node000020_Node000005" title=" " alt="" coords="675,261,663,263,555,272,469,273,385,281,337,292,283,310,227,341,182,375,178,371,224,336,280,306,336,287,384,276,468,268,554,267,663,257,674,256"/>
+<area shape="rect" id="Node000021" href="$inttypes_8h.html" title="Adds include for missing inttype definitions." alt="" coords="714,308,801,336"/>
+<area shape="poly" id="edge41_Node000020_Node000021" title=" " alt="" coords="744,260,753,292,747,294,739,261"/>
 </map>

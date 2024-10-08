@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: SenseBox MCU with SAMD21</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,11 +149,11 @@ $(function(){initNavTree('group__boards__sensebox__samd21.html',''); initResizab
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the SenseBox MCU with SAMD21 board. </p>
-<h3><a class="anchor" id="autotoc_md1165"></a>
+<h3><a class="anchor" id="autotoc_md1166"></a>
 General information</h3>
 <p><a href="https://www.sensebox.de/">SenseBox</a> is a do-it-yourself kit for stationary and mobile sensor stations.</p>
 <p>SenseBox board is based on the Atmel SAMD21G18A microcontroller. See <a class="el" href="group__cpu__samd21.html">Atmel SAMD10/SAMD20/SAMD21/SAMR21</a>.</p>
-<h3><a class="anchor" id="autotoc_md1166"></a>
+<h3><a class="anchor" id="autotoc_md1167"></a>
 Flash the board</h3>
 <ol type="1">
 <li>Put the board in bootloader mode by double tapping the reset button.<br  />
@@ -161,25 +162,25 @@ Flash the board</h3>
  Example with <code>hello-world</code> application: <div class="fragment"><div class="line">make BOARD=sensebox_samd21 -C examples/hello-world flash</div>
 </div><!-- fragment --></li>
 </ol>
-<h3><a class="anchor" id="autotoc_md1167"></a>
+<h3><a class="anchor" id="autotoc_md1168"></a>
 Accessing STDIO via UART</h3>
 <p>STDIO of RIOT is directly available over the USB port.</p>
 <p>The <code>TERM_DELAY</code> environment variable can be used to add a delay (in second) before opening the serial terminal. The default value is 2s which should be enough in most of the situation.</p>
-<h3><a class="anchor" id="autotoc_md1168"></a>
+<h3><a class="anchor" id="autotoc_md1169"></a>
 On I2C port</h3>
 <p>I2C port is enabled by default. To disable it use <code>I2C_DISABLE</code>. To re-enable use <code>I2C_ENABLE</code>.</p>
-<h3><a class="anchor" id="autotoc_md1169"></a>
+<h3><a class="anchor" id="autotoc_md1170"></a>
 On XBEE ports</h3>
 <p>XBEE1 and XBEE2 ports are enabled by default. To disable any of them use </p><div class="fragment"><div class="line">_DISABLE</div>
 </div><!-- fragment --><p> . To re-enable use <code>XBEEn_ENABLE</code>.</p>
 <p>On the board there is a reset circuit for this ports that delays the reset signal from the enable signal for about 300ms. Because of that a delay has been introduced in the <code>board_init</code> function, so that any SPI device connected to the ports is reset before use.</p>
-<h4><a class="anchor" id="autotoc_md1170"></a>
+<h4><a class="anchor" id="autotoc_md1171"></a>
 SX127X radio</h4>
 <p>The pin configuration for the SX127X radio on the <a class="el" href="sensebox__samd21_2include_2board_8h.html" title="Support for the SenseBox MCU with SAMD21 board.">boards/sensebox_samd21/include/board.h</a>** file assumes that it will be connected to the XBEE1 port. If a different configuration is needed please modify this file.</p>
-<h4><a class="anchor" id="autotoc_md1171"></a>
+<h4><a class="anchor" id="autotoc_md1172"></a>
 SD card</h4>
 <p>The pin configuration for the mSD-Bee module radio on the <a class="el" href="boards_2sensebox__samd21_2include_2sdcard__spi__params_8h.html" title="SD card configuration for SenseBox MCU with SAMD21 board.">boards/sensebox_samd21/include/sdcard_spi_params.h</a>** file assumes that it will be connected to the XBEE2 port. If a different configuration is needed please modify this file.</p>
-<h4><a class="anchor" id="autotoc_md1172"></a>
+<h4><a class="anchor" id="autotoc_md1173"></a>
 Limitations</h4>
 <p>There is only one interrupt pin on the XBEE headers. This means that interrupt pins DIO0 and DIO1 from the LoRa Bee are multiplexed through an OR gate.</p>
 <p>This has the following limitations:</p>
@@ -210,7 +211,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

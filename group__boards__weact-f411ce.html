@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: WeAct-F411CE board</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -145,14 +146,14 @@ $(function(){initNavTree('group__boards__weact-f411ce.html',''); initResizable(t
 <p>Support for the WeAct-F411CE Board  
 </p>
 <p>Support for the WeAct-F411CE Board </p>
-<h2><a class="anchor" id="autotoc_md1529"></a>
+<h2><a class="anchor" id="autotoc_md1530"></a>
 Overview</h2>
 <p>WeAct-F411CE is a board with the same form-factor as the blue/blackpill, but with an STM32F411CEU6 and a USB-C connector.</p>
 <p>It is available on sites like AliExpress for less than 4€.</p>
-<h2><a class="anchor" id="autotoc_md1530"></a>
+<h2><a class="anchor" id="autotoc_md1531"></a>
 Hardware</h2>
 <p><img src="https://user-images.githubusercontent.com/1301112/69389644-eb5fb080-0ccc-11ea-8002-67d3db851250.png" alt="WeAct-F411CE" class="inline"/></p>
-<h3><a class="anchor" id="autotoc_md1531"></a>
+<h3><a class="anchor" id="autotoc_md1532"></a>
 MCU</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -188,7 +189,7 @@ MCU</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">Reference Manual   </td><td class="markdownTableBodyLeft"><a href="https://www.st.com/content/ccc/resource/technical/document/reference_manual/9b/53/39/1c/f7/01/4a/79/DM00119316.pdf/files/DM00119316.pdf/jcr:content/translations/en.DM00119316.pdf">Reference Manual</a>   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md1532"></a>
+<h2><a class="anchor" id="autotoc_md1533"></a>
 Implementation Status</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -210,7 +211,7 @@ Implementation Status</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft"><a class="el" href="structTimer.html" title="struct to get time references within mqtt paho">Timer</a>   </td><td class="markdownTableBodyLeft">1 32 bit timer (TIM5)   </td><td class="markdownTableBodyLeft"></td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md1533"></a>
+<h2><a class="anchor" id="autotoc_md1534"></a>
 Flashing the device</h2>
 <p>The device comes with a bootloader that allows flashing via <code>dfu-util</code>.</p>
 <p>If RIOT is already running on the board, you can upload your RIOT-firmware by typing</p>
@@ -225,7 +226,7 @@ Flashing the device</h2>
 <p>The board will now show up as <code>0483:df11</code> - <code>STM32 BOOTLOADER</code> and will accept firmware using the DFU protocol.</p>
 <p>Note:* You need to have write permissions to the device. On Linux you could add yourself to the <code>plugdev</code> group and store the following as <code>/etc/udev/rules.d/99-weact-f411ce.rules</code>:</p>
 <div class="fragment"><div class="line">SUBSYSTEMS==<span class="stringliteral">&quot;usb&quot;</span>, ATTRS{idVendor}==<span class="stringliteral">&quot;0483&quot;</span>, ATTRS{idProduct}==<span class="stringliteral">&quot;df11&quot;</span>, GROUP=<span class="stringliteral">&quot;plugdev&quot;</span>, MODE=<span class="stringliteral">&quot;660&quot;</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1534"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1535"></a>
 UART</h2>
 <p>stdio is provided through USB CDC ACM so the board can be used without any extra hardware, save for a USB-C cable. </p>
 </div><!-- contents -->
@@ -235,7 +236,7 @@ UART</h2>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:56 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

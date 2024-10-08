@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: sys/include/event/thread.h File Reference</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -146,7 +147,7 @@ $(function(){initNavTree('sys_2include_2event_2thread_8h.html',''); initResizabl
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Provides utility functions for event handler threads. </p>
-<h1><a class="anchor" id="autotoc_md1979"></a>
+<h1><a class="anchor" id="autotoc_md1980"></a>
 Usage</h1>
 <p>By using the module <code>event_thread</code>, the event queues <a class="el" href="#aa0422767dfeb9b75688f3f89622b6b17">EVENT_PRIO_HIGHEST</a>, <a class="el" href="#abfb7617257bbe74506ab7d8d4ce72792">EVENT_PRIO_MEDIUM</a>, and <a class="el" href="#a3851eacda17689dae7feadbd3dea066a">EVENT_PRIO_LOWEST</a> are provided and declared in the header <code><a class="el" href="sys_2include_2event_2thread_8h.html" title="Provides utility functions for event handler threads.">event/thread.h</a></code>. With default settings, the <code>auto_init</code> module will automatically start one or more threads to handle these queues.</p>
 <p>By default, a single thread with priority <code>EVENT_THREAD_MEDIUM_PRIO</code> will handle all three event queues according to their priority. An already started event handler will not be preempted in this case by an incoming higher priority event. Still, lower priority event queues will only be worked on once the higher priority queues are empty. Hence, the worst case latency is increased by the worst case duration of any possible lower priority event in this configuration.</p>
@@ -164,7 +165,16 @@ Usage</h1>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="sys_2include_2event_2thread_8h__incl.svg" width="204" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-</div><table class="memberdecls">
+</div><div class="textblock"><div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sys_2include_2event_2thread_8h__dep__incl.svg" width="231" height="131"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="sys_2include_2event_2thread_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="memitem:aa0422767dfeb9b75688f3f89622b6b17" id="r_aa0422767dfeb9b75688f3f89622b6b17"><td class="memItemLeft" align="right" valign="top"><a id="aa0422767dfeb9b75688f3f89622b6b17" name="aa0422767dfeb9b75688f3f89622b6b17"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>EVENT_PRIO_HIGHEST</b>&#160;&#160;&#160;(&amp;event_thread_queues[<a class="el" href="#a9ef8dcf274b6eac0ec8bacc8303b366aacccd9c310333d17b3d1377cf1debf2d2">EVENT_QUEUE_PRIO_HIGHEST</a>])</td></tr>
 <tr class="memdesc:aa0422767dfeb9b75688f3f89622b6b17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the event queue handling highest priority events. <br /></td></tr>
@@ -330,7 +340,7 @@ Usage</h1>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a408b6d3a4a484720bc3ecfeac8947e3.html">sys</a></li><li class="navelem"><a class="el" href="dir_e9e107fc86bbb4b6a326076a6808b9f5.html">include</a></li><li class="navelem"><a class="el" href="dir_16bd925a5206111e6116d92c1371f9d2.html">event</a></li><li class="navelem"><a class="el" href="sys_2include_2event_2thread_8h.html">thread.h</a></li>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:53 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:28 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

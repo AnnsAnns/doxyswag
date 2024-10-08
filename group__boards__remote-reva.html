@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: RE-Mote Revision A</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -151,7 +152,7 @@ $(function(){initNavTree('group__boards__remote-reva.html',''); initResizable(tr
 <p>The <code>RE-Mote</code> has three versions, a first prototype A (<code>remote-pa</code>) only distributed to beta testers, its following revision A (<code>remote-reva</code>), and the latest revision B (<code>remote-revb</code>) which are commercially available. The following section focuses on the revision A.</p>
 <p>The official RE-Mote wiki page is maintained by Zolertia at:</p>
 <p><a href="https://github.com/Zolertia/Resources/wiki/RE-Mote">https://github.com/Zolertia/Resources/wiki/RE-Mote</a></p>
-<h1><a class="anchor" id="autotoc_md1032"></a>
+<h1><a class="anchor" id="autotoc_md1033"></a>
 Components</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -167,7 +168,7 @@ Components</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Others   </td><td class="markdownTableBodyNone">RGB LED, power management block (150nA when the mote is shutdown)   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md1033"></a>
+<h1><a class="anchor" id="autotoc_md1034"></a>
 Porting status</h1>
 <p>In terms of hardware support, the following drivers have been implemented for CC2538 System-on-Chip:</p>
 <ul>
@@ -190,23 +191,23 @@ Porting status</h1>
 <li>USB (in CDC-ACM).</li>
 <li>uDMA Controller.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md1034"></a>
+<h1><a class="anchor" id="autotoc_md1035"></a>
 Layout</h1>
 <p><img src="http://i.imgur.com/4bV6lyYl.png" alt="layout" class="inline"/></p>
-<h1><a class="anchor" id="autotoc_md1035"></a>
+<h1><a class="anchor" id="autotoc_md1036"></a>
 Flashing</h1>
 <p>The RE-Mote has built-in support to flash over USB using the BSL. Previous versions required to unlock the bootloader by manually pressing the <code>user button</code> and <code>reset button</code>, but the current version handles the sequence with an on-board PIC, so automatically unlocks the bootloader upon flashing.</p>
 <p>e.g. </p><div class="fragment"><div class="line">Bash</div>
 <div class="line">$ make BOARD=remote-reva flash</div>
 </div><!-- fragment --><p>The RE-Mote Revision A has the following pin-out:</p>
 <p><img src="https://raw.githubusercontent.com/contiki-os/contiki/master/platform/zoul/images/remote-reva-pinout-front.png" alt="RE-Mote pin-out (front)" class="inline"/> <img src="https://raw.githubusercontent.com/contiki-os/contiki/master/platform/zoul/images/remote-reva-pinout-back.png" alt="RE-Mote pin-out (back)" class="inline"/></p>
-<h1><a class="anchor" id="autotoc_md1036"></a>
+<h1><a class="anchor" id="autotoc_md1037"></a>
 Pin out and connectors</h1>
-<h2><a class="anchor" id="autotoc_md1037"></a>
+<h2><a class="anchor" id="autotoc_md1038"></a>
 RE-Mote ports and connectors</h2>
 <p><img src="http://i.imgur.com/TF21Hin.png" alt="" class="inline"/></p>
 <p><img src="http://i.imgur.com/J7aisKJ.png" alt="" class="inline"/></p>
-<h2><a class="anchor" id="autotoc_md1038"></a>
+<h2><a class="anchor" id="autotoc_md1039"></a>
 RE-Mote on-board connectors pin-out</h2>
 <p>The RE-Mote uses the <a href="http://datasheets.globalspec.com/ds/5843/DigiKey/6D12815C-098E-40A3-86A0-22A3C50B75BA">Molex 5-pin WM4903-ND male header connector</a> to connect digital sensors based on I2C and SPI protocols, as well as other sensors or actuators you may need to connect. The pins are 2.54 mm spaced and the connector has the following pin-out:</p>
 <p><img src="http://i.imgur.com/2DZ17PV.png" alt="" class="inline"/> <img src="http://i.imgur.com/q7Hb7Y8.png" alt="" class="inline"/> </p>
@@ -233,7 +234,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

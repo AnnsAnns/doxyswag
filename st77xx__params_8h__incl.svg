@@ -12,9 +12,9 @@
 <g id="Node000001" class="node">
 <title>Node1</title>
 <g id="a_Node000001"><a xlink:title="Default configuration for ST77xx LCD controllers.">
-<polygon fill="#999999" stroke="#666666" points="192.62,-544.25 68.62,-544.25 68.62,-510.75 192.62,-510.75 192.62,-544.25"/>
-<text text-anchor="start" x="76.62" y="-530.75" font-family="Helvetica,sans-Serif" font-size="10.00">drivers/st77xx/include</text>
-<text text-anchor="middle" x="130.62" y="-518" font-family="Helvetica,sans-Serif" font-size="10.00">/st77xx_params.h</text>
+<polygon fill="#999999" stroke="#666666" points="219.62,-544.25 95.62,-544.25 95.62,-510.75 219.62,-510.75 219.62,-544.25"/>
+<text text-anchor="start" x="103.62" y="-530.75" font-family="Helvetica,sans-Serif" font-size="10.00">drivers/st77xx/include</text>
+<text text-anchor="middle" x="157.62" y="-518" font-family="Helvetica,sans-Serif" font-size="10.00">/st77xx_params.h</text>
 </a>
 </g>
 </g>
@@ -31,8 +31,8 @@
 <g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
 <g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M126.98,-510.6C122.18,-489.62 113.7,-452.62 108.39,-429.43"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="111.85,-428.87 106.21,-419.91 105.03,-430.44 111.85,-428.87"/>
+<path fill="none" stroke="#63b8ff" d="M147.85,-510.51C141.9,-500.45 134.37,-487.07 128.62,-474.75 121.64,-459.76 115.08,-442.23 110.44,-428.99"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="113.79,-427.98 107.24,-419.66 107.17,-430.25 113.79,-427.98"/>
 </a>
 </g>
 </g>
@@ -49,8 +49,26 @@
 <g id="edge2_Node000001_Node000003" class="edge">
 <title>Node1&#45;&gt;Node3</title>
 <g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M137.72,-510.44C141.07,-502.84 145.12,-493.69 148.68,-485.62"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="151.83,-487.16 152.67,-476.6 145.42,-484.33 151.83,-487.16"/>
+<path fill="none" stroke="#63b8ff" d="M157.62,-510.44C157.62,-503.1 157.62,-494.32 157.62,-486.46"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="161.13,-486.73 157.63,-476.73 154.13,-486.73 161.13,-486.73"/>
+</a>
+</g>
+</g>
+<!-- Node34 -->
+<g id="Node000034" class="node">
+<title>Node34</title>
+<g id="a_Node000034"><a xlink:href="st7735__params_8h_source.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="295.62,-474.75 195.62,-474.75 195.62,-454 295.62,-454 295.62,-474.75"/>
+<text text-anchor="middle" x="245.62" y="-461.25" font-family="Helvetica,sans-Serif" font-size="10.00">st7735_params.h</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node34 -->
+<g id="edge60_Node000001_Node000034" class="edge">
+<title>Node1&#45;&gt;Node34</title>
+<g id="a_edge60_Node000001_Node000034"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M180.75,-510.44C193.57,-501.53 209.47,-490.49 222.32,-481.56"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="224,-484.66 230.21,-476.08 220,-478.91 224,-484.66"/>
 </a>
 </g>
 </g>
@@ -76,8 +94,8 @@
 <g id="edge4_Node000003_Node000004" class="edge">
 <title>Node3&#45;&gt;Node4</title>
 <g id="a_edge4_Node000003_Node000004"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M177.51,-461.68C267.29,-454.01 635.74,-422.54 758.57,-412.05"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="758.83,-415.54 768.5,-411.2 758.23,-408.56 758.83,-415.54"/>
+<path fill="none" stroke="#63b8ff" d="M177.74,-456.19C180.69,-455.34 183.72,-454.57 186.62,-454 399.16,-412.39 660.03,-408.25 758.48,-408.31"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="758.41,-411.81 768.42,-408.33 758.43,-404.81 758.41,-411.81"/>
 </a>
 </g>
 </g>

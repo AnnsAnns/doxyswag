@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: FIDO2 - Fast Identity Online 2</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -156,7 +157,7 @@ The FIDO2 implementation currently stores private keys in plain text inside flas
 This implementation persists FIDO CTAP data across reboots and when unpowered; any firmware update loses the data because it will be overwritten. This applies both to firmware updates through bootloaders and to firmware updates through external programmers.</dd></dl>
 <p>FIDO2 is an authentication standard that seeks to solve the password problem by enabling passwordless authentication. Instead of using passwords to authenticate to web services, FIDO2 enables users to use common devices (authenticators) to create cryptographic credentials which are then used for authentication. FIDO2 consists of the <a href="https://www.w3.org/TR/2019/REC-webauthn-1-20190304/">W3C Web Authentication specification (WebAuthn)</a> and the <a href="https://fidoalliance.org/specs/fido-v2.0-ps-20190130/fido-client-to-authenticator-protocol-v2.0-ps-20190130.html">Client to Authenticator Protocol (CTAP)</a>.</p>
 <p><b>This code implements the FIDO2 CTAP protocol.</b></p>
-<h3><a class="anchor" id="autotoc_md1967"></a>
+<h3><a class="anchor" id="autotoc_md1968"></a>
 General</h3>
 <p>Following is an overview of the entities of this implementation and their relationships:</p>
 <pre class="fragment">                +-----------+  +-----------+   +-----------+   +-----------+
@@ -209,7 +210,7 @@ General</h3>
 <p>Adds additional functionality to speedup flash accesses (e.g. by checking if a flash page is erased to avoid unnecessary erasures of flash pages).</p>
 <p><b>ctap_utils</b></p>
 <p>Abstraction for GPIO functionality and LED animations.</p>
-<h3><a class="anchor" id="autotoc_md1968"></a>
+<h3><a class="anchor" id="autotoc_md1969"></a>
 Implemented features</h3>
 <p><b>FIDO2 CTAP methods</b></p>
 <p>All methods defined in the FIDO2 CTAP specification are implemented. Specifically these are:</p><ul>
@@ -244,7 +245,7 @@ Implemented features</h3>
 <p><b>Attestation types</b></p>
 <p>Currently only self attestation is supported.</p>
 <p>For more information about available attestation types refer to the <a href="https://www.w3.org/TR/2019/REC-webauthn-1-20190304/#sctn-attestation-types">WebAuthn specification</a>.</p>
-<h3><a class="anchor" id="autotoc_md1969"></a>
+<h3><a class="anchor" id="autotoc_md1970"></a>
 Unimplemented features</h3>
 <p><b>Backward compatibility with FIDO1</b></p>
 <p>For more information about the backward compatibility of FIDO2 to FIDO1 refer to the <a href="https://fidoalliance.org/specs/fido-v2.0-ps-20190130/fido-client-to-authenticator-protocol-v2.0-ps-20190130.html#u2f-interoperability">CTAP specification</a>.</p>
@@ -265,7 +266,7 @@ Unimplemented features</h3>
 <p>For information about CTAP extensions refer to the <a href="https://fidoalliance.org/specs/fido-v2.0-ps-20190130/fido-client-to-authenticator-protocol-v2.0-ps-20190130.html#sctn-defined-extensions">CTAP specification</a></p>
 <p><b>CTAP 2.1 support</b></p>
 <p>None of the additions from the <a href="https://fidoalliance.org/specs/fido-v2.1-ps-20210615/fido-client-to-authenticator-protocol-v2.1-ps-20210615.html">CTAP 2.1 specification</a> are implemented.</p>
-<h3><a class="anchor" id="autotoc_md1970"></a>
+<h3><a class="anchor" id="autotoc_md1971"></a>
 Testing</h3>
 <p>Testing is done with the help of the fido2-tests package based on the <a href="https://github.com/solokeys/fido2-tests">solokeys fido2-tests</a>.</p>
 <p>For for more information about testing the FIDO2 CTAP implementation refer to the README of the test application (<code>/tests/sys/fido2_ctap</code>).</p>
@@ -273,7 +274,7 @@ Testing</h3>
 <ul>
 <li>The expected return codes of some tests were changed due to different opinions of how to interpret the CTAP2 specification. Refer to the <a href="https://github.com/solokeys/fido2-tests/issues/55">issue</a> for more information. As of writing this the issue is still open.</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md1971"></a>
+<h3><a class="anchor" id="autotoc_md1972"></a>
 Configuration</h3>
 <p>There are two CFLAGS which can be used to change the behavior of the FIDO2 CTAP implementation:</p>
 <ul>
@@ -281,7 +282,7 @@ Configuration</h3>
 <li><b>FIDO2_CTAP_DISABLE_LED</b>: Disables LED animations which are used to indicate that user action is needed.</li>
 </ul>
 <p>The CFLAGS can either be set in the Makefile or configured via KConfig.</p>
-<h3><a class="anchor" id="autotoc_md1972"></a>
+<h3><a class="anchor" id="autotoc_md1973"></a>
 Future work</h3>
 <p>Future improvements / extensions to the FIDO2 CTAP implementation that should be implemented are:</p>
 <ul>
@@ -305,7 +306,7 @@ Topics</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: MSB-IoT</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,13 +149,13 @@ $(function(){initNavTree('group__boards__msbiot.html',''); initResizable(true); 
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the MSB-IoT board </p>
-<h1><a class="anchor" id="autotoc_md574"></a>
+<h1><a class="anchor" id="autotoc_md575"></a>
 Overview</h1>
 <p>The MSB-IoT was developed at FU Berlin and is based on a STM32F415RG MCU.</p>
 <p><img src="https://raw.githubusercontent.com/wiki/RIOT-OS/RIOT/images/msbiot-components.png" alt="MSB-IoT" class="inline"/></p>
-<h1><a class="anchor" id="autotoc_md575"></a>
+<h1><a class="anchor" id="autotoc_md576"></a>
 Hardware</h1>
-<h3><a class="anchor" id="autotoc_md576"></a>
+<h3><a class="anchor" id="autotoc_md577"></a>
 MCU</h3>
 <p>The centerpiece of the MSB-IoT is the STM32F415RG MCU. With a maximum frequency of 168 MHz it offers high performance for a microcontroller of its category. The STM32F415RG comes with a huge set of accessible communication interfaces and features that are listed <a href="http://www.st.com/web/catalog/mmc/FM141/SC1169/SS1577/LN1035/PF252143?sc=internet/mcu/product/252143.jsp">here</a>.</p>
 <table class="markdownTable">
@@ -191,13 +192,13 @@ MCU</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">Programming Manual   </td><td class="markdownTableBodyLeft"><a href="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/programming_manual/DM00046982.pdf">Programming Manual</a>   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md577"></a>
+<h3><a class="anchor" id="autotoc_md578"></a>
 GPIO Pins</h3>
 <p>The following picture shows the easily accessible pins of the board:</p>
 <p><img src="https://raw.githubusercontent.com/wiki/RIOT-OS/RIOT/images/msbiot-pinout.png" alt="MSB-IoT Pinout" class="inline"/></p>
-<h3><a class="anchor" id="autotoc_md578"></a>
+<h3><a class="anchor" id="autotoc_md579"></a>
 User Interface</h3>
-<h4><a class="anchor" id="autotoc_md579"></a>
+<h4><a class="anchor" id="autotoc_md580"></a>
 3 Buttons</h4>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -207,7 +208,7 @@ User Interface</h3>
 </table>
 <p>The user buttons are mapped to GPIO_0 (Button T2) and GPIO_8 (Button T1) in the board's default configuration file for RIOT. To configure and use the buttons, you can use RIOT's <a class="el" href="group__drivers__periph__gpio.html">GPIO</a>.</p>
 <p>Pushing the reset button will always reset the board and restart your application.</p>
-<h4><a class="anchor" id="autotoc_md580"></a>
+<h4><a class="anchor" id="autotoc_md581"></a>
 3 user controllable LEDs</h4>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -223,7 +224,7 @@ User Interface</h3>
 </table>
 <p>The LEDs can be controlled inside your RIOT application by using the LED macros LED0_ON, LED0_OFF, and LED0_TOGGLE for the red LED, <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#aadd4c7ae0cd4e9bbb17f7055dd51fe08">LED1_ON</a>, <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a343fd2d3ce61b84f88ddfaea32c67c58">LED1_OFF</a>, and <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a267fdbba1d750146b73da35c1731fd17">LED1_TOGGLE</a> for the yellow LED, and <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#ab55f588eb2c5177d3f7806e60d379fba">LED2_ON</a>, <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#ac6468b1df4dfabcca0bb142044d6f976">LED2_OFF</a>, and <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#acd16785845ce7004334b91a98707f8eb">LED2_TOGGLE</a> for the green LED.</p>
 <p>There is also a yellow charge LED on the board indicating the charging process of the battery.</p>
-<h4><a class="anchor" id="autotoc_md581"></a>
+<h4><a class="anchor" id="autotoc_md582"></a>
 1 Beeper</h4>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -232,7 +233,7 @@ User Interface</h3>
 <td class="markdownTableBodyLeft">Pin   </td><td class="markdownTableBodyLeft">PB09   </td></tr>
 </table>
 <p>The board's beeper allows for acoustic feedback. It needs a PWM signal between 1-5 kHz and is connected to pin PB9 and mapped to PWM_0 in RIOT. To configure and use the beeper inside your application, you can use RIOT's <a class="el" href="group__drivers__periph__pwm.html">PWM</a>.</p>
-<h3><a class="anchor" id="autotoc_md582"></a>
+<h3><a class="anchor" id="autotoc_md583"></a>
 CC1101 Sub-1GHz RF Transceiver</h3>
 <p>The board has an integrated CC1101 Sub-1GHz RF Transceiver which is connected to the MCU using the SPI. The transceiver allows for energy-efficient local communication in the frequency band below 1 GHz. The driver for the CC1101 automatically loaded when the pseudo module <code>netdev_default</code> is used.</p>
 <table class="markdownTable">
@@ -265,7 +266,7 @@ CC1101 Sub-1GHz RF Transceiver</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">GDO2   </td><td class="markdownTableBodyLeft">PC5   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md583"></a>
+<h3><a class="anchor" id="autotoc_md584"></a>
 CC3000 802.11b/g Wi-Fi Module</h3>
 <p>In addition to the CC1101, the MSB-IoT also features a CC3000 Wi-Fi Module. The CC3000 is a self-contained wireless network module with a full embedded IPv4 TCP/IP stack that for example allows to use the MSB-IoT as a gateway node to the internet. Please note that the CC3000 only supports operation in infrastructure mode and therefore always needs to be connected to an access point to be used for communication.</p>
 <p>The CC3000's driver implementation for RIOT includes the full driver provided by Texas Instruments. The API documentation from TI can be found <a href="http://software-dl.ti.com/ecs/simplelink/cc3000/public/doxygen_API/v1.14/html/index.html">here</a>. To use the CC3000 in RIOT, just add <code>USEMODULE += cc3000</code> to your application's Makefile.</p>
@@ -302,7 +303,7 @@ CC3000 802.11b/g Wi-Fi Module</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">IRQ Line   </td><td class="markdownTableBodyLeft">PA10   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md584"></a>
+<h3><a class="anchor" id="autotoc_md585"></a>
 MPU-9150 Nine-Axis MotionTracking Device</h3>
 <p>The MSB-IoT is equipped with a MPU-9150 MotionTracking Device from Invensense. The device combines a gyroscope, a magnetometer and an accelerometer in one module.</p>
 <p>Due to licensing issues, the current MPU-9150 driver implementation for RIOT is not based on Invensense's 'Motion Driver' library and offers only a limited set of features. Nonetheless, the RIOT driver allows to configure and read values from all three sensors of the device. For an overview on the supported features, you can check the driver's documentation in <a class="el" href="group__drivers__mpu9x50.html">MPU-9X50 (MPU9150 and MPU9250) accelerometer/magnetometer/gyroscope</a>.</p>
@@ -329,20 +330,20 @@ MPU-9150 Nine-Axis MotionTracking Device</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">IRQ Line   </td><td class="markdownTableBodyLeft">PB11   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md585"></a>
+<h3><a class="anchor" id="autotoc_md586"></a>
 Other components</h3>
 <p>For the following components of the MSB-IoT, there is currently no support in RIOT: <a href="http://www.ti.com/product/tca6416">TCA6416 16-Bit I/O Expander</a> Micro-SD-Card Interface</p>
-<h1><a class="anchor" id="autotoc_md586"></a>
+<h1><a class="anchor" id="autotoc_md587"></a>
 Compiling, Flashing and Debugging</h1>
 <p>This section only covers the automated functionality provided by RIOT's makefile system. If you don't want to rely on RIOT's make targets for flashing or debugging (for instance to use a different flashing tool), please check the documentation of your used tools.</p>
-<h3><a class="anchor" id="autotoc_md587"></a>
+<h3><a class="anchor" id="autotoc_md588"></a>
 Prerequisites</h3>
 <p>We strongly recommend the usage of the <a href="https://launchpad.net/gcc-arm-embedded">GNU Tools for ARM Embedded Processors</a> toolchain for the MSB-IoT. Support for other toolchains was not tested!</p>
 <p>RIOT's provided functionality for debugging and flashing the MSB-IoT is based on the <a href="http://openocd.org/">Open On-Chip Debugger</a> tool. A wiki page with installation instructions and some other information can be found <a href="https://github.com/RIOT-OS/RIOT/wiki/OpenOCD">here</a>.</p>
-<h3><a class="anchor" id="autotoc_md588"></a>
+<h3><a class="anchor" id="autotoc_md589"></a>
 Quick start</h3>
 <p>For a quick getting started guide you can stick to the steps explained on <a href="https://github.com/RIOT-OS/RIOT/wiki/Getting-started-with-STM32F%5B0%7C3%7C4%5Ddiscovery-boards">this page</a>. Just make sure to use "msbiot" as the respective board name.</p>
-<h3><a class="anchor" id="autotoc_md589"></a>
+<h3><a class="anchor" id="autotoc_md590"></a>
 Compiling</h3>
 <div class="fragment"><div class="line">fabian@fabian-ThinkPad-L412:~/myriot/RIOT/examples/hello-world$ BOARD=msbiot</div>
 <div class="line">make</div>
@@ -360,7 +361,7 @@ Compiling</h3>
 <div class="line">  11116      116    6444   17676    450c</div>
 <div class="line">/home/fabian/myriot/RIOT/examples/hello-world/bin/msbiot/hello-world.elf</div>
 <div class="ttc" id="aauto__init_8h_html_a923fd92ea17c7891c288f1ddc135f112"><div class="ttname"><a href="auto__init_8h.html#a923fd92ea17c7891c288f1ddc135f112">auto_init</a></div><div class="ttdeci">void auto_init(void)</div><div class="ttdoc">Initializes all high level modules that do not require parameters for initialization or uses default ...</div></div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md590"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md591"></a>
 Flashing</h3>
 <div class="fragment"><div class="line">fabian@fabian-ThinkPad-L412:~/myriot/RIOT/examples/hello-world$ BOARD=msbiot</div>
 <div class="line">make flash</div>
@@ -425,7 +426,7 @@ Flashing</h3>
 <div class="line"><span class="stringliteral">shutdown command invoked</span></div>
 <div class="line"><span class="stringliteral">shutdown command invoked</span></div>
 <div class="line"><span class="stringliteral">Done flashing</span></div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md591"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md592"></a>
 Debugging</h3>
 <div class="fragment"><div class="line">fabian@fabian-ThinkPad-L412:~/myriot/RIOT/examples/hello-world$ BOARD=msbiot</div>
 <div class="line">make debug</div>
@@ -451,7 +452,7 @@ Debugging</h3>
 <div class="line">54   {</div>
 <div class="line">(gdb)</div>
 <div class="ttc" id="agroup__oneway__malloc_html_gafbedc913aa4651b3c3b4b3aecd9b4711"><div class="ttname"><a href="group__oneway__malloc.html#gafbedc913aa4651b3c3b4b3aecd9b4711">free</a></div><div class="ttdeci">void free(void *ptr)</div><div class="ttdoc">This is a no-op.</div></div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md592"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md593"></a>
 Using the UART for STDIO</h3>
 <p>The MCU's USART2 is set as the default input/output for the MSB-IoT inside RIOT (mapped to UART_0). It is initialized and configured automatically for every RIOT application and can be used for communication with your computer. The easiest way is to use an USB to TTL adapter:</p>
 <p>Step 1: Connect your adapter and the boards pin strip with RX&lt;=&gt;PA02, TX&lt;=&gt;PA03 and GND&lt;=&gt;GND</p>
@@ -475,7 +476,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

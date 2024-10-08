@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Packet buffer</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -411,9 +412,9 @@ NULL, if no space is left in the packet buffer. </dd></dl>
 
 <p>Merge pktsnip chain to single pktsnip. </p>
 <p>Specifically it calls <a class="el" href="#ga3d9a8b1307f8971680299b2f86ac4a3e">gnrc_pktbuf_realloc_data()</a> on <code>pkt</code>, then copies the data of all following packet snips into that reallocated space, and removes the packet snip the data was copied from afterwards.</p>
-<h3><a class="anchor" id="autotoc_md2037"></a>
+<h3><a class="anchor" id="autotoc_md2038"></a>
 Example</h3>
-<h4><a class="anchor" id="autotoc_md2038"></a>
+<h4><a class="anchor" id="autotoc_md2039"></a>
 Input</h4>
 <pre class="fragment">                                                    buffer
 +---------------------------+                      +------+
@@ -432,7 +433,7 @@ Input</h4>
 | size = 14                 | data +--------------&gt;|      |
 | type = NETTYPE_UNDEF      |------+               +------+
 +---------------------------+                      .      .
-</pre><h4><a class="anchor" id="autotoc_md2039"></a>
+</pre><h4><a class="anchor" id="autotoc_md2040"></a>
 Output</h4>
 <pre class="fragment">                                                    buffer
 +---------------------------+                      +------+
@@ -679,7 +680,7 @@ NULL, if <a class="el" href="structgnrc__pktsnip.html#a4ccc7be825c7f5c4498256766
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

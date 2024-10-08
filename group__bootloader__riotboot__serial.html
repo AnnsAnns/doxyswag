@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: riotboot serial bootloader</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -141,13 +142,13 @@ $(function(){initNavTree('group__bootloader__riotboot__serial.html',''); initRes
   <div class="headertitle"><div class="title">riotboot serial bootloader<div class="ingroups"><a class="el" href="group__bootloaders.html">Bootloaders</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-<h1><a class="anchor" id="autotoc_md1600"></a>
+<h1><a class="anchor" id="autotoc_md1601"></a>
 Overview</h1>
 <p><code>riotboot_serial</code> is a variation on <a class="el" href="group__bootloader__riotboot.html">riotboot</a> that adds the capability to flash a new firmware using a serial (UART) connection.</p>
 <p>After reset, riotboot will wait for <code>RIOTBOOT_DELAY_MS</code> ms, if within that time no command is received it will automatically start the application.</p>
 <p>If it reads the <code>B</code> character, it will enter bootloader mode where flash sectors can be erased and written.</p>
 <p>The application in <code>dist/tools/riotboot_serial</code> is used to talk to the bootloader and to flash <code>.hex</code> files using the bootloader's serial protocol.</p>
-<h1><a class="anchor" id="autotoc_md1601"></a>
+<h1><a class="anchor" id="autotoc_md1602"></a>
 Flashing a device</h1>
 <p>To flash a device that is equipped with the riotboot serial bootloader, set the <code>PROGRAMMER</code> variable to <code>riotboot_serial</code> and chose the <code>PORT</code> accordingly.</p>
 <p>e.g. </p><pre class="fragment">make BOARD=same54-xpro PORT=/dev/ttyACM0 PROGRAMMER=riotboot_serial flash
@@ -158,7 +159,7 @@ Flashing a device</h1>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:56 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

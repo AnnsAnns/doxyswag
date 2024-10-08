@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: ADC</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -156,7 +157,7 @@ $(function(){initNavTree('group__drivers__periph__adc.html',''); initResizable(t
 <p>As of now, the interface does not allow for any advanced ADC concepts (e.g. continuous mode, scan sequences, injections). It is to be determined, if these features will ever be integrated in this interface, or if it does make more sense to create a second, advanced ADC interface for this.</p>
 <p>The ADC driver interface is built around the concept of ADC lines. An ADC line in this context is a tuple consisting out of a hardware ADC device (an ADC functional unit on the MCU) and an ADC channel connected to pin.</p>
 <p>If a MCU has more than one hardware ADC unit, the ADC lines can be mapped in a way, that it is possible to sample multiple lines in parallel, given that the ADC implementation allows for interruption of the program flow while waiting for the result of a conversion (e.g. through putting the calling thread to sleep while waiting for the conversion results).</p>
-<h1><a class="anchor" id="autotoc_md1700"></a>
+<h1><a class="anchor" id="autotoc_md1701"></a>
 (Low-) Power Implications</h1>
 <p>The ADC peripheral(s) <b>should</b> only be powered on while <a class="el" href="#ga0ffa20b26f649b1879b487f9aa0aa4b4" title="Sample a value from the given ADC line.">adc_sample()</a> is active. For implementing <a class="el" href="#ga0ffa20b26f649b1879b487f9aa0aa4b4" title="Sample a value from the given ADC line.">adc_sample()</a> this means, that the peripheral should be powered on (i.e. through peripheral clock gating) at the beginning of the function and it should be powered back off at the end of the function.</p>
 <p>If the <a class="el" href="#ga0ffa20b26f649b1879b487f9aa0aa4b4" title="Sample a value from the given ADC line.">adc_sample()</a> function is implemented in a way, that it will put the active thread to sleep for a certain amount of time, the implementation might need to block certain power states.</p>
@@ -409,7 +410,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:54 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

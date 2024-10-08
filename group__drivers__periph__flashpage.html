@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Flash page driver</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -154,7 +155,7 @@ $(function(){initNavTree('group__drivers__periph__flashpage.html',''); initResiz
 <p>This interface provides a very simple and straight forward way for writing a MCU's internal flash. This interface is only capable of reading, verifying, and writing complete flash pages, it has no support for partial flash access. This enables for very slim and efficient implementations.</p>
 <p>A module for more fine-grained access of memory locations can easily be programmed on top of this interface.</p>
 <dl class="section note"><dt>Note</dt><dd>Flash memory has only a limited amount of erase cycles (mostly around 10K times), so using this interface in some kind of loops can damage you MCU!</dd></dl>
-<h1><a class="anchor" id="autotoc_md1704"></a>
+<h1><a class="anchor" id="autotoc_md1705"></a>
 (Low-) Power Implications</h1>
 <p>The flashpage driver implementation <b>should</b> make sure, that the CPU uses no additional energy while the flashpage driver is inactive. This means, that any particular CPU peripherals used for reading and writing flash pages <b>should</b> be disabled before the read and write functions return.</p>
 <p>If an implementation puts the calling thread to sleep for a duration of time, the implementation might need to take care of blocking certain power modes. </p>
@@ -633,7 +634,7 @@ FLASHPAGE_NOMATCH if data and page content diverge </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

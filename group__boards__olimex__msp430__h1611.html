@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Olimex MSP430-H1611</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -149,7 +150,7 @@ $(function(){initNavTree('group__boards__olimex__msp430__h1611.html',''); initRe
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the Olimex MSP430-H1611 board </p>
 <p><img src="https://github.com/maribu/images/raw/master/Olimex%20MSP430-H1611.jpeg" alt="Photo of Olimex MSP430-H1611 Board" style="width: 512px; max-width: 100%;" class="inline"/></p>
-<h2><a class="anchor" id="autotoc_md926"></a>
+<h2><a class="anchor" id="autotoc_md927"></a>
 MCU</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -189,14 +190,14 @@ MCU</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">Website   </td><td class="markdownTableBodyLeft"><a href="https://www.olimex.com/Products/MSP430/Header/MSP430-H1611/">MSP430-H1611 Website</a>   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md927"></a>
+<h2><a class="anchor" id="autotoc_md928"></a>
 Schematics</h2>
 <p><img src="https://www.olimex.com/Products/MSP430/Header/_resources/MSP430-Hxxx-sch.gif" alt="Schematics of the Olimex MSP430-H1611 Board" style="max-width: 100%;" class="inline"/></p>
-<h2><a class="anchor" id="autotoc_md928"></a>
+<h2><a class="anchor" id="autotoc_md929"></a>
 Pinout</h2>
 <p>The 64 pins on the edges of the PCB are connected to the corresponding MCU pins. Hence, the following pinout of the naked MSP430-F1611 MCU chip matches the pinout of the header board:</p>
 <p><img src="https://github.com/maribu/images/raw/master/MSP430F1611%20Pinout.svg" alt="Pinout of the naked MSP430-F1611 MCU" style="pointer-events: none; width: 512px; max-width: 100%;" class="inline"/></p>
-<h2><a class="anchor" id="autotoc_md929"></a>
+<h2><a class="anchor" id="autotoc_md930"></a>
 Flashing RIOT</h2>
 <p><img src="https://github.com/maribu/images/raw/master/Olimex%20MSP430-H1611%20with%20Debugger.jpeg" alt="Photo of Olimex MSP430-H1611 Board connected to a JTAG Debugger" style="width: 512px; max-width: 100%;" class="inline"/></p>
 <p>Connect the board to a JTAG debugger supported by <a href="https://dlbeer.co.nz/mspdebug/">mspdebug</a>; by default the Olimex MSP430-JTAG-Tiny (as shown in the picture above) is assumed, which is among the less expensive options.</p>
@@ -209,7 +210,7 @@ A jumper in <code>P_OUT</code> is mutually exclusive to a jumper in <code>P_IN</
 <dl class="section note"><dt>Note</dt><dd>Pin 1 on the JTAG connector has a small white triangle next to it and square pad, compared to the round pad used by all other JTAG pins.</dd></dl>
 <p>Once the jumper is correctly placed in either <code>P_IN</code> or in <code>P_OUT</code> and the JTAG cable is connected just run</p>
 <div class="fragment"><div class="line">make BOARD=olimex-msp430-h1611 flash</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md930"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md931"></a>
 Using the shell</h2>
 <p>stdio is available via the UART interface with <code>TXD = P3.6</code> (pin 35 on the header) and <code>RXD = P3.7</code> (pin 34 on the header) at 9,600 Baud.</p>
 <p>The easiest way is to connect an USB TTL adapter (such as the cheap <code>cp210x</code> or <code>ch341</code> based adapters) as follows:</p>
@@ -237,7 +238,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

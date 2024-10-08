@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Dragino LSN50 LoRa Sensor Node</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,7 +149,7 @@ $(function(){initNavTree('group__boards__lsn50.html',''); initResizable(true); }
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the Dragino LSN50 LoRa Sensor Node </p>
-<h3><a class="anchor" id="autotoc_md499"></a>
+<h3><a class="anchor" id="autotoc_md500"></a>
 Introduction</h3>
 <p>This board is a waterproof board with a LoRa SX1276 radio.</p>
 <p><img src="https://docs.zephyrproject.org/latest/_images/dragino_lsn50.jpg" alt="LSN50" class="inline"/></p>
@@ -159,11 +160,11 @@ Introduction</h3>
 <li>Board schematics are <a href="https://github.com/dragino/Lora/tree/master/LSN50">here</a></li>
 <li>Radio connection schematics are <a href="https://github.com/dragino/Lora/tree/master/LoRaST">here</a></li>
 </ul>
-<h3><a class="anchor" id="autotoc_md500"></a>
+<h3><a class="anchor" id="autotoc_md501"></a>
 Flashing the board</h3>
 <p>To flash the board, use an external ST-Link programmer/debugger, plugged on available SWD pins: PA13 (SWDIO), PA14 (SWCLK) and NRST (this pin is not exposed with v1.0). Ensure SW1 is on <code>flash</code> position. Then use the following command: </p><pre class="fragment">make BOARD=lsn50 -C examples/hello-world flash
 </pre><p>On the v1.0 version of the board, no NRST pin is exposed so one has to press the reset button during flash and release it when OpenOCD prints <code>adapter speed: 240 kHz</code> the first time. The reset button must also be pressed a second time after flashing to start the new application.</p>
-<h3><a class="anchor" id="autotoc_md501"></a>
+<h3><a class="anchor" id="autotoc_md502"></a>
 STDIO</h3>
 <p>STDIO is connected to pins PA9 (TX) and PA10 (RX) so an USB to UART adapter is required. Use the <code>term</code> target to open a terminal: </p><pre class="fragment">make BOARD=lsn50 -C examples/hello-world term
 </pre><p>If an external ST-Link adapter is used, RX and TX pins can be directly connected to it. In this case, STDIO is available on /dev/ttyACMx (Linux case). </p>
@@ -184,7 +185,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

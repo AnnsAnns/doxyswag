@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Utility functions for atomic access</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -151,7 +152,7 @@ $(function(){initNavTree('group__sys__atomic__utils.html',''); initResizable(tru
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>This modules adds some utility functions to perform atomic accesses. </p>
-<h1><a class="anchor" id="autotoc_md1973"></a>
+<h1><a class="anchor" id="autotoc_md1974"></a>
 Usage</h1>
 <p>The atomic utilitys allow atomic access to regular variables.</p>
 <div class="fragment"><div class="line">uint32_t global_counter;</div>
@@ -185,7 +186,7 @@ Usage</h1>
 <div class="line">}</div>
 <div class="ttc" id="agroup__sys__atomic__utils_html_ga398731da7ac71e7cee0fc749c74e33cf"><div class="ttname"><a href="#ga398731da7ac71e7cee0fc749c74e33cf">atomic_load_u32</a></div><div class="ttdeci">static uint32_t atomic_load_u32(const volatile uint32_t *var)</div><div class="ttdoc">Load an uint32_t atomically.</div></div>
 <div class="ttc" id="agroup__sys__atomic__utils_html_gaa662e27310799fc5aabd6d625fb274bc"><div class="ttname"><a href="#gaa662e27310799fc5aabd6d625fb274bc">atomic_store_u32</a></div><div class="ttdeci">static void atomic_store_u32(volatile uint32_t *dest, uint32_t val)</div><div class="ttdoc">Store an uint32_t atomically.</div></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md1974"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md1975"></a>
 Motivation</h1>
 <p>There are some reasons why these functions might be chosen over the <a href="https://en.cppreference.com/w/c/atomic">C11 Atomic Operations Library</a> in some advanced use cases:</p>
 <ul>
@@ -195,14 +196,14 @@ Motivation</h1>
 <li>In some cases the fallback implementation performs better than the lock free implementation. E.g. if a specific platform has an atomic compare and swap instruction, this could be used to perform a read-modify-write in a loop until the value initially read was not changed in between. Just disabling IRQs to implement an atomic read-modify-write operation is likely more efficient. C11 atomics will however always use the lock free implementation (if such exists), assuming that this is more efficient. This assumption was made with desktop class hardware in mind, but is not generally true for bare metal targets. These function allow to optimize for the actual hardware RIOT is running on.</li>
 <li>This library provides "semi-atomic" read-modify-write operations, which are useful when at most one thread is ever writing to memory. In that case, only the write part of the read-modify-write operation needs to be performed in an atomic fashion in order for the reading threads to perceive atomic updates of the variable. This is significantly cheaper than atomic read-modify-write operations for many platforms</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md1975"></a>
+<h1><a class="anchor" id="autotoc_md1976"></a>
 Guarantees</h1>
 <ul>
 <li>Every utility function here acts as a barrier for code reordering regarding</li>
 <li>For the <code>atomic_*()</code> family of functions: The whole operation will be done in an non-interruptible fashion</li>
 <li>For the <code>semi_atomic_*()</code> family of functions: The write part of the operation is done atomically. If at most one thread is ever performing changes to a variable using the <code>semi_atomic_()</code> functions, those changes will appear as if they were atomic to all other threads.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md1976"></a>
+<h1><a class="anchor" id="autotoc_md1977"></a>
 Porting to new CPUs</h1>
 <p>At the bare minimum, create an empty <code>atomic_utils_arch.h</code> file. This will result in the fallback implementations being used.</p>
 <p>To expose lock-free atomic operations, add an implementation to the <code>atomic_utils_arch.h</code> file and disable the fallback implementation by defining <code>HAS_&lt;FN_NAME_ALL_CAPS&gt;</code>, where <code>&lt;FN_NAME_ALL_CAPS&gt;</code> is the name of the function provided in all upper case. E.g. most platforms will be able to provide lock-free reads and writes up to their word size and can expose this as follows for GCC:</p>
@@ -3106,7 +3107,7 @@ Macros</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:56 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

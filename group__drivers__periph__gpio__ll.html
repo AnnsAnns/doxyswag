@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: GPIO Low-Level API</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -156,12 +157,12 @@ $(function(){initNavTree('group__drivers__periph__gpio__ll.html',''); initResiza
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Peripheral GPIO Low-Level API </p>
 <dl class="section warning"><dt>Warning</dt><dd>This API is not stable yet and intended for internal use only as of now.</dd></dl>
-<h1><a class="anchor" id="autotoc_md1706"></a>
+<h1><a class="anchor" id="autotoc_md1707"></a>
 Design Goals</h1>
 <p>This API aims to provide low-level access to GPIOs with as little abstraction and overhead in place as possible for the hot code paths, while providing a relatively high-level and feature complete API for the configuration of GPIO pins. The former is to enable sophisticated use cases such at bit-banging parallel protocols, bit-banging at high data rates, bit-banging with strict timing requirements, or any combination of these. The latter is to expose as much of the features the (arguably) most important peripheral of the MCU as possible.</p>
 <p>It is possible to implement the high level pin-based GPIO API of RIOT, <a class="el" href="group__drivers__periph__gpio.html">GPIO</a>, on top of this API. It is expected that for many use cases the high level API will still remain the API of choice, since it is more concise an easier to use.</p>
 <p>Note that this API is likely to be faster moving than the high level GPIO API, as it intents to match the hardware features more closely. Hence, new support for new MCUs are more likely to result in API changes here. This is another reason why only users interested in the low level access to GPIOs should be using the this low level API, while the high level API will cater all the LED blinking and button sensing use cases with a more convenient and more very stable interface.</p>
-<h1><a class="anchor" id="autotoc_md1707"></a>
+<h1><a class="anchor" id="autotoc_md1708"></a>
 Thread Safety</h1>
 <p>All functions provided by this API have to be implemented in a thread-safe manner, except for <a class="el" href="#ga36fb58574afbc7e78c816ffa9549d26e">gpio_ll_prepare_write</a> and <a class="el" href="#ga6602f963303bbdc892dae43f1f87c860">gpio_ll_prepare_write_all_outputs</a>. If the read-modify-write operations <a class="el" href="#ga1451ee80727c089c109efef0bd0eb496">gpio_ll_set</a>, <a class="el" href="#gabd4d6cbd80d67e51f5b1385460fd80f6">gpio_ll_clear</a>, and <a class="el" href="#gacbc8595de0d410e2f5a4caa0dabb7ac9">gpio_ll_toggle</a> can be done atomically in hardware with predictable timing, this must be used in the implementation. Otherwise IRQs have to be disabled during read-modify-write sequences. Calls to <a class="el" href="#gad34ca0dda04bf8311af36068e821a93e">gpio_ll_write</a> are inherently thread-safe and lock-less, but sharing pins on the same port between threads is still requires a lock between the calls to <a class="el" href="#ga36fb58574afbc7e78c816ffa9549d26e">gpio_ll_prepare_write</a> and <a class="el" href="#gad34ca0dda04bf8311af36068e821a93e">gpio_ll_write</a> in the general case.</p>
 <p>Under no circumstances two threads may call <a class="el" href="#ga35be9a52fbb31805167c0f7d6f5677db">gpio_ll_init</a> on the same port / pin combination concurrently. </p>
@@ -1734,7 +1735,7 @@ Each affected GPIO pin is either configured as input or as push-pull output. </d
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

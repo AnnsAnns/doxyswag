@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Waveshare nRF52840 Eval Kit</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -149,7 +150,7 @@ $(function(){initNavTree('group__boards__waveshare__nrf52840__eval__kit.html',''
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the Waveshare nRF52840 Eval Kit </p>
 <dl class="section author"><dt>Author</dt><dd>Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span class="obfuscator">.nosp@m.</span>@sch<span class="obfuscator">.nosp@m.</span>orcht<span class="obfuscator">.nosp@m.</span>.net</a></dd></dl>
-<h2><a class="anchor" id="autotoc_md1511"></a>
+<h2><a class="anchor" id="autotoc_md1512"></a>
 Overview</h2>
 <p>The <a href="https://www.waveshare.com/NRF52840-Eval-Kit.htm">Waveshare nRF52840 Eval Kit</a> is an evaluation board for the nRF52840 SoC with the following on-board components:</p>
 <ol type="1">
@@ -173,7 +174,7 @@ Overview</h2>
 </ol>
 <p><img src="https://www.waveshare.com/img/devkit/accBoard/NRF52840-Eval-Kit/NRF52840-Eval-Kit-intro.jpg" alt="Waveshare nRF52840 Eval Kit" class="inline"/></p>
 <p>Using the onboard Arduino and Raspberry Pi compatible headers, both Arduino shields and Raspberry Pi HATs can be used at the same time.</p>
-<h2><a class="anchor" id="autotoc_md1512"></a>
+<h2><a class="anchor" id="autotoc_md1513"></a>
 Hardware:</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -223,7 +224,7 @@ Hardware:</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">Board Schematic   </td><td class="markdownTableBodyLeft"><a href="https://www.waveshare.com/w/upload/f/f2/NRF52840-Eval-Kit-Schematic.pdf">Board Schematic</a>   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md1513"></a>
+<h2><a class="anchor" id="autotoc_md1514"></a>
 Pin Layout / Configuration</h2>
 <p>The following table shows the connection of the on-board components with the MCU pins. All these connections are jumpered and can be removed.</p>
 <table class="markdownTable">
@@ -323,7 +324,7 @@ Pin Layout / Configuration</h2>
 <td class="markdownTableBodyLeft">P1.15   </td><td class="markdownTableBodyLeft">SPI0 SCK   </td><td class="markdownTableBodyLeft"><a class="el" href="group__drivers__periph__spi.html#gafb9420809bc7722e41488a090b53eaf9" title="Default SPI device access macro.">SPI_DEV(0)</a>SCK   </td><td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">D13 / SCK   </td><td class="markdownTableBodyLeft"></td></tr>
 </table>
 <p>(*)** Raspberry Pi header pins are given by the labels as used on the board. These labels correspond to the pins and names as used by the 'WiringPi' library. For detailed information on how these numbers are mapped to the GPIOs of the BCM SoCs, see <a href="https://pinout.xyz/pinout/wiringpi">this document</a>. The numbers in the brackets are the pin numbers of the 40-pin header.</p>
-<h2><a class="anchor" id="autotoc_md1514"></a>
+<h2><a class="anchor" id="autotoc_md1515"></a>
 Flash the board</h2>
 <p>See the <code>Flashing</code> section in <a class="el" href="group__boards__common__nrf52.html">nRF52 common</a>.</p>
 <p>The easiest way is to use a Segger J-Link and connect it to the SWD header of the board as follows:</p>
@@ -331,12 +332,12 @@ Flash the board</h2>
 <li>Segger J-Link Pin 7 with SWD Header pin <code>DIN</code></li>
 <li>Segger J-Link Pin 9 with SWD Header pin <code>CLK</code></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md1515"></a>
+<h2><a class="anchor" id="autotoc_md1516"></a>
 Accessing STDIO via UART</h2>
 <p>The <code>stdio</code> is directly accessible via the on-board CP2102 USB to UART bridge. On a Linux host, this interface is mapped to <code>/dev/ttyUSB&lt;n&gt;</code> where <code>&lt;n&gt;</code> is the index of the UART interface which is 0 by default.</p>
 <p>Use the <code>term</code> target to connect to the board serial port using <code>/dev/ttyUSB0</code>: </p><div class="fragment"><div class="line">make BOARD=waveshare-nrf52840-eval-kit -C examples/hello-world term</div>
 </div><!-- fragment --><p> If the UART interface index of board's USB to UART bridge is not 0, use the following command to connect to the board serial port: </p><div class="fragment"><div class="line">make BOARD=waveshare-nrf52840-eval-kit -C examples/hello-world PORT=/dev/ttyUSB&lt;n&gt; term</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1516"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1517"></a>
 RESET Pin Configuration</h2>
 <p>On nRF52840 boards, the RESET pin is not configured out-of-the box. This means, that simply nothing happens if the RESET button is pressed. To change this, RIOT provides a little tool in <code>dist/tools/nrf52_resetpin_cfg</code>: </p><div class="fragment"><div class="line">RESET_PIN=<span class="stringliteral">&#39;GPIO_PIN\&zwj;(0,18\&zwj;)&#39;</span> make BOARD=waveshare-nrf52840-eval-kit -C dist/tools/nrf52_resetpin_cfg/ flash</div>
 </div><!-- fragment --><p> Simply compile, flash, and run that tool on your board, and the reset pin should work for the time being. </p>
@@ -363,7 +364,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:56 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

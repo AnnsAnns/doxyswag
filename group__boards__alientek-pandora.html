@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Alientek Pandora</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,16 +149,16 @@ $(function(){initNavTree('group__boards__alientek-pandora.html',''); initResizab
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the Alientek Pandora board </p>
-<h2><a class="anchor" id="autotoc_md113"></a>
+<h2><a class="anchor" id="autotoc_md114"></a>
 Overview</h2>
 <p>The Alientek Pandora is a development board manufactured jointly by Alientek and RT-Thread company. It is based on STM32L475VET6 and have on-board LCD, SD card and WiFi access. Users may connect to its on board ST-Link 2.1 compatible debugger to flash or debug.</p>
 <p>Documents of this board are available on its <a href="http://www.alientek.com/productinfo/716137.html">Alientek official website</a>. It may require a translation software to read it in English. Additional resources may be found on <a href="https://gitee.com/rtthread/rt-thread/tree/master/bsp/stm32/stm32l475-atk-pandora">RT-Thread bsp support page</a>.</p>
-<h3><a class="anchor" id="autotoc_md114"></a>
+<h3><a class="anchor" id="autotoc_md115"></a>
 Flashing the board</h3>
 <p>To flash the board, use the on board ST-Link programmer/debugger. Input the following command: </p><pre class="fragment">make BOARD=alientek-pandora -C examples/hello-world flash
 </pre><p>The NRST pin is connected to the on board debugger, so users do not need to reset manually every time it requires to flash.</p>
 <p>If the operating system raised a fault, users may manually reset the chip by pressing the reset button. This button has a black color and is located between the four keys and the LED light.</p>
-<h3><a class="anchor" id="autotoc_md115"></a>
+<h3><a class="anchor" id="autotoc_md116"></a>
 STDIO</h3>
 <p>STDIO is connected to pins PA9 (TX) and PA10 (RX). Before you begin, check that the both the jumper caps marked as 'USART1' is connected.</p>
 <p>Use the <code>term</code> target to open a terminal: </p><pre class="fragment">make BOARD=alientek-pandora -C examples/hello-world term
@@ -182,7 +183,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:54 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

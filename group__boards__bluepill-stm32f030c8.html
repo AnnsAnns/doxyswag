@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: STM32F030C8 based Bluepill</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,13 +149,13 @@ $(function(){initNavTree('group__boards__bluepill-stm32f030c8.html',''); initRes
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the STM32F030C8 based Bluepill </p>
-<h2><a class="anchor" id="autotoc_md252"></a>
+<h2><a class="anchor" id="autotoc_md253"></a>
 Overview</h2>
 <p>The STM32F030C8 based Bluepill is a very cheap breakout board for the STM32F030C8 MCU.</p>
-<h2><a class="anchor" id="autotoc_md253"></a>
+<h2><a class="anchor" id="autotoc_md254"></a>
 Hardware</h2>
 <p><img src="https://camo.githubusercontent.com/f33ec5f4068e1dcc4c549dbe3dc70d2ed784c19abf1c177f9640835180f88005/68747470733a2f2f696d616765732d6e612e73736c2d696d616765732d616d617a6f6e2e636f6d2f696d616765732f492f3631474765592532424c306a4c2e5f41435f534c313030305f2e6a7067" alt="STM32F030C8 based Bluepill" class="inline"/></p>
-<h3><a class="anchor" id="autotoc_md254"></a>
+<h3><a class="anchor" id="autotoc_md255"></a>
 MCU</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -192,16 +193,16 @@ MCU</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">Programming Manual   </td><td class="markdownTableBodyLeft"><a href="http://www.st.com/resource/en/programming_manual/dm00051352.pdf">Programming Manual</a>   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md255"></a>
+<h2><a class="anchor" id="autotoc_md256"></a>
 Flashing the device</h2>
 <p>The STM32F030C8 based Bluepill board does not include a programmer. You have to connect a separate ST-Link programmer to the (SW)DIO, (SW)CLK and GND pins on the board.</p>
 <p>If you want a serial terminal, you have to connect a separate USB-Serial adapter to the PA09 (TX) and PA10 (RX) pins on the board.</p>
 <p>The easiest way to program the board is to use OpenOCD. Once you have installed OpenOCD (look <a href="https://github.com/RIOT-OS/RIOT/wiki/OpenOCD">here</a> for installation instructions), you can flash the board simply by typing</p>
 <div class="fragment"><div class="line">make BOARD=bluepill-stm32f030c8 flash</div>
 </div><!-- fragment --><p> and debug via GDB by simply typing </p><div class="fragment"><div class="line">make BOARD=bluepill-stm32f030c8 debug</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md256"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md257"></a>
 Known Issues</h2>
-<h3><a class="anchor" id="autotoc_md257"></a>
+<h3><a class="anchor" id="autotoc_md258"></a>
 Flashing fails</h3>
 <p>The board does not expose a pin for the reset signal but wires it only to the reset button. You can work around this by pressing the reset button when OpenOCD wants to connect to the Blue Pill, or keep it pressed until OpenOCD tries to connect. Hit the reset button again after flashing in order to boot the newly flashed image. </p>
 <table class="memberdecls">
@@ -224,7 +225,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

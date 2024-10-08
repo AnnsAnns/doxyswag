@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: NZ32-SC151</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -149,12 +150,12 @@ $(function(){initNavTree('group__boards__nz32-sc151.html',''); initResizable(tru
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the Modtronix nz32-sc151 board. </p>
 <p>This board provider is <a href="http://modtronix.com">modtronix</a>. They don't supply data sheet's but there wiki can be found <a href="http://wiki.modtronix.com/doku.php?id=products:nz-stm32:nz32-sc151">HERE</a>. The schematic for there board can be found <a href="http://modtronix.com/prod/nz32/nz32-sc151/nz32-sc151-r1.pdf">HERE</a>.</p>
-<h2><a class="anchor" id="autotoc_md920"></a>
+<h2><a class="anchor" id="autotoc_md921"></a>
 Hardware</h2>
 <p><img src="http://wiki.modtronix.com/lib/exe/fetch.php?media=products:nz-
 stm32:nz32-sc151-r1_pinout_diagram_782.jpg" alt="st-
 nucleo-l1" class="inline"/></p>
-<h3><a class="anchor" id="autotoc_md921"></a>
+<h3><a class="anchor" id="autotoc_md922"></a>
 MCU</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -196,7 +197,7 @@ MCU</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">Board WIKI   </td><td class="markdownTableBodyLeft"><a href="https://wiki.modtronix.com/doku.php?id=products:nz-stm32:nz32-sc151#schematics">WIKI nz32-sc151</a>   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md922"></a>
+<h3><a class="anchor" id="autotoc_md923"></a>
 User Interface</h3>
 <p>2 Button:</p>
 <table class="markdownTable">
@@ -214,10 +215,10 @@ User Interface</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Pin   </td><td class="markdownTableBodyNone">PB2   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md923"></a>
+<h2><a class="anchor" id="autotoc_md924"></a>
 Using UART</h2>
 <p>This board doesn't open an UART or serial interface threw the USB automatically, and the USB device driver hasn't been implemented to RIOT yet. Therefore, to open an UART interface one hast to connect a usb/ttl converter to the UART3 pins PB11 (RX3) and PB10 (TX3).</p>
-<h2><a class="anchor" id="autotoc_md924"></a>
+<h2><a class="anchor" id="autotoc_md925"></a>
 Flashing the device</h2>
 <p>The standard method for flashing RIOT to the nz32-sc151 is using dfu. On linux you must get dfu-util package v.8.0 or newer. You can try:</p>
 <div class="fragment"><div class="line">sudo apt-get install dfu-util</div>
@@ -225,7 +226,7 @@ Flashing the device</h2>
 <p>Once dfu-util is installed you can just flash as a normal board, although sudo privileges are required.</p>
 <div class="fragment"><div class="line">sudo make BOARD=nz32-sc151 flash</div>
 </div><!-- fragment --><p>NOTE: this only works for linux, for windows you can use <a href="http://www.st.com/en/development-tools/stsw-stm32080.html">ST Microelectronics DFU Bootloader</a> although you will need to build the files independently.</p>
-<h2><a class="anchor" id="autotoc_md925"></a>
+<h2><a class="anchor" id="autotoc_md926"></a>
 Implementation Status</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -280,7 +281,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

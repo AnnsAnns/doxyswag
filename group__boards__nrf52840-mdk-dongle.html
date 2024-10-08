@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: nRF52840 MDK USB Dongle</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,30 +149,30 @@ $(function(){initNavTree('group__boards__nrf52840-mdk-dongle.html',''); initResi
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the nRF52840 MDK USB Dongle </p>
-<h3><a class="anchor" id="autotoc_md610"></a>
+<h3><a class="anchor" id="autotoc_md611"></a>
 General information</h3>
 <p>Refer to <a href="https://github.com/makerdiary/nrf52840-mdk-usb-dongle">The makerdiary Github repo</a> or <a href="https://wiki.makerdiary.com/nrf52840-mdk-usb-dongle/">The nrf52840-mdk-usb-dongle wiki</a> for more details about the device.</p>
 <p>This is pretty much just the nRF52840 with a useful number of pins exposed for your pleasure along with one RGB LED and an onboard antenna in a USB stick form factor with room for headers on the sides.</p>
 <p>Unlike similar sticks (like the <a class="el" href="group__boards__nrf52840-mdk.html">nRF52840-MDK</a>), it features no dedicated programmer hardware but relies on direct USB communication with a built-in bootloader.</p>
 <p>The board features an RGB LED, a user/reset button as well as 12 configurable external pins.</p>
-<h3><a class="anchor" id="autotoc_md611"></a>
+<h3><a class="anchor" id="autotoc_md612"></a>
 Pinout</h3>
 <div class="image">
 <img src="https://wiki.makerdiary.com/nrf52840-mdk-usb-dongle/assets/images/nrf52840-mdk-usb-dongle-pinout.png" alt="" width="66%"/>
 </div>
-<h3><a class="anchor" id="autotoc_md612"></a>
+<h3><a class="anchor" id="autotoc_md613"></a>
 Links</h3>
 <ul>
 <li><a href="https://infocenter.nordicsemi.com/topic/struct_nrf52/struct/nrf52840.html">nRF52840 documentation</a></li>
 <li><a href="https://wiki.makerdiary.com/nrf52840-mdk-usb-dongle/hardware/nrf52840-mdk-usb-dongle-sch_v1_0.pdf">Schematic</a></li>
 </ul>
-<h3><a class="anchor" id="autotoc_md613"></a>
+<h3><a class="anchor" id="autotoc_md614"></a>
 Flash the board</h3>
 <p>The board is flashed using its on-board UF2 boot loader. The boot loader will present a mass storage device that has to be mounted to /media/MDK-DONGLE so <code>uf2conv.py</code> can find it. If you have an auto-mounter installed this will happen automatically.</p>
 <p>The rest of the process is automated in the usual <code>make flash</code> target.</p>
 <p>If RIOT is already running on the board, it will automatically reset the CPU and enter the bootloader. If some other firmware is running or RIOT crashed, you need to enter the bootloader manually by pressing the board's reset button while plugging the device into the USB port.</p>
 <p>Readiness of the bootloader is indicated by the LED glowing green.</p>
-<h3><a class="anchor" id="autotoc_md614"></a>
+<h3><a class="anchor" id="autotoc_md615"></a>
 Accessing STDIO</h3>
 <p>The usual way to obtain a console on this board is using an emulated USB serial port (CDC-ACM). This is available automatically using the <code>stdio_cdc_acm</code> module, unless any other stdio module is enabled.</p>
 <p>On Linux systems with ModemManager &lt; 1.10 installed, <code>make term</code> will, in some setups, fail for a few seconds after the device has come up. This is <a href="https://gitlab.freedesktop.org/mobile-broadband/ModemManager/issues/164">fixed in its 1.12.4 version</a>, but should not be more than a short annoyance in earlier versions.</p>
@@ -199,7 +200,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:56 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

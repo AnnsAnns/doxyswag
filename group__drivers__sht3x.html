@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: SHT3x Humidity and Temperature Sensor Series</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,10 +149,10 @@ $(function(){initNavTree('group__drivers__sht3x.html',''); initResizable(true); 
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Device Driver for Sensirion SHT30/SHT31/SHT35 Humidity and Temperature Sensors </p>
-<h1><a class="anchor" id="autotoc_md1752"></a>
+<h1><a class="anchor" id="autotoc_md1753"></a>
 Driver for SHT3x Digital Temperature and Humidity Sensors</h1>
 <p>The driver is for the usage with <a href="https://github.com/RIOT-OS/RIOT">RIOT-OS</a>. It supports the Sensirion SHT30, SHT31, and SHT35 digital temperature and humidity sensors.</p>
-<h2><a class="anchor" id="autotoc_md1753"></a>
+<h2><a class="anchor" id="autotoc_md1754"></a>
 About the sensors</h2>
 <p>SHT3x are a digital temperature and humidity sensors that use an I2C interface with up to 1 MHz communication speed. They can operate with <b>three levels of repeatability</b> (<a class="el" href="sht3x_8h.html#aa85887f2dbeb5b218a3fbc9f1a415926" title="SHT3x repeatability levels.">sht3x_repeat_t</a>)</p>
 <ul>
@@ -166,10 +167,10 @@ About the sensors</h2>
 </ul>
 <p>In periodic mode, the SHT3x sensors support an <b>Alert Mode</b>, which allows to define temperature and humidity limits and indicate an alert by a dedicated ALERT pin or a status flag if any of the limits is reached reached.</p>
 <dl class="section note"><dt>Note</dt><dd>The Alert Mode is not yet supported.</dd></dl>
-<h2><a class="anchor" id="autotoc_md1754"></a>
+<h2><a class="anchor" id="autotoc_md1755"></a>
 Measurement process</h2>
 <p>Once a SHT3x sensor is initialized using the <a class="el" href="sht3x_8h.html#aae26482bfb0ffbe6461b3be443d5427c" title="Initialize the SHT3x sensor device.">sht3x_init</a> function, it can be used for measurements.</p>
-<h3><a class="anchor" id="autotoc_md1755"></a>
+<h3><a class="anchor" id="autotoc_md1756"></a>
 Single shot mode</h3>
 <p>In <b>single shot mode</b>, a measurement command triggers the acquisition of <b>exactly one data pair</b>. Each data pair consists of temperature and humidity as 16-bit decimal values.</p>
 <p>Due to the measurement duration of up to 16 ms, the measurement process is separated into steps to avoid blocking of the system during measurements:</p>
@@ -181,7 +182,7 @@ Single shot mode</h3>
 <p>For convenience the high level function <a class="el" href="sht3x_8h.html#a53d8225e4a1af1b8ca43b64d6315e442" title="Read SHT3x measurement results (temperature and humidity)">sht3x_read</a> comprises all three steps above in only one function to perform a measurement.</p>
 <dl class="section note"><dt>Note</dt><dd>Since in single-shot measurement mode the measurement is only started when <a class="el" href="sht3x_8h.html#a53d8225e4a1af1b8ca43b64d6315e442" title="Read SHT3x measurement results (temperature and humidity)">sht3x_read</a> function is called, it delays the calling task up to 16 ms, depending on the configured repeatability, in order to wait for the results of the measurement.</dd></dl>
 <p>The advantage of this mode is that the sensor can switch between successive measurements into the sleep mode, which is more energy-efficient. This is particularly useful when the measurement rate is less than 1 measurement per second.</p>
-<h3><a class="anchor" id="autotoc_md1756"></a>
+<h3><a class="anchor" id="autotoc_md1757"></a>
 Periodic mode</h3>
 <p>In this mode, one issued measurement command yields a stream of data pairs. Each data pair consists again of temperature and humidity as 16-bit decimal values. As soon as the measurement command has been sent to the sensor, it automatically performs measurements <b>periodically at a rate of 0.5, 1, 2, 4 or 10 measurements per second (mps)</b>. The data pairs can be fetched with the same rate or a lower rate.</p>
 <p>As in <em>single shot mode</em>, the measurement process is separated into the following steps:</p>
@@ -192,7 +193,7 @@ Periodic mode</h3>
 </ol>
 <p>While periodic measurement is started (step 1) already in the <a class="el" href="sht3x_8h.html#aae26482bfb0ffbe6461b3be443d5427c" title="Initialize the SHT3x sensor device.">sht3x_init</a> function, the application has to call the <a class="el" href="sht3x_8h.html#a53d8225e4a1af1b8ca43b64d6315e442" title="Read SHT3x measurement results (temperature and humidity)">sht3x_read</a> function on a regular base to fetch the results from last periodic measurement. Possible periodic measurement modes are defined by <a class="el" href="sht3x_8h.html#a5e7001f3a8976f5618aab4ff97243946" title="SHT3x measurement modes.">sht3x_mode_t</a>.</p>
 <dl class="section note"><dt>Note</dt><dd>The <a class="el" href="sht3x_8h.html#a53d8225e4a1af1b8ca43b64d6315e442" title="Read SHT3x measurement results (temperature and humidity)">sht3x_read</a> function should be called less frequently than the periodic measurements are performed. Otherwise, the function implicitly delays the calling task until the results of the next measurement cycle become available to avoid data underrun and sensor blocking.</dd></dl>
-<h2><a class="anchor" id="autotoc_md1757"></a>
+<h2><a class="anchor" id="autotoc_md1758"></a>
 Measurement results</h2>
 <p>Once new measurement results are available, the <a class="el" href="sht3x_8h.html#a53d8225e4a1af1b8ca43b64d6315e442" title="Read SHT3x measurement results (temperature and humidity)">sht3x_read</a> function</p>
 <ul>
@@ -207,10 +208,10 @@ Measurement results</h2>
 <li>the relative humidity in hundredths of percents</li>
 </ul>
 <p>For either the <code>temp</code> or <code>hum</code> parameter also <code>NULL</code> can be passed, if only one value is of interest.</p>
-<h2><a class="anchor" id="autotoc_md1758"></a>
+<h2><a class="anchor" id="autotoc_md1759"></a>
 Error Handling</h2>
 <p>All driver functions return 0 on success or one of a negative error code defined by <a class="el" href="sht3x_8h.html#a699ceeac8cdedf1ed37ca231cdfff354" title="Driver error codes (returned as negative values)">sht3x_error_codes</a>.</p>
-<h2><a class="anchor" id="autotoc_md1759"></a>
+<h2><a class="anchor" id="autotoc_md1760"></a>
 Repeatability</h2>
 <p>The SHT3x sensor supports <b>three levels of repeatability</b> (low, medium and high). The stated repeatability is 3 times the standard deviation of multiple consecutive measurements at the stated repeatability and at constant ambient conditions. It is a measure for the noise on the physical sensor output. Different measurement modes allow for high/medium/low repeatability. <a href="https://developer.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT3x_Datasheet_digital.pdf">Datasheet SHT3x-DIS</a></p>
 <p>The repeatability settings influences the measurement duration as well as the power consumption of the sensor. The measurement takes typically 2.5 ms with low repeatability, 4.5 ms with medium repeatability and 12.5 ms with high repeatability. That is, the measurement produces a noticeable delay in execution.</p>
@@ -226,7 +227,7 @@ Repeatability</h2>
 </table>
 <p>While the sensor measures at the lowest repeatability, the average current consumption is 800 μA. That is, the higher the repeatability level, the longer the measurement takes and the higher the power consumption. The sensor consumes only 0.2 μA in standby mode.</p>
 <p>Possible repeatabilities are defined by <a class="el" href="sht3x_8h.html#aa85887f2dbeb5b218a3fbc9f1a415926" title="SHT3x repeatability levels.">sht3x_repeat_t</a>.</p>
-<h2><a class="anchor" id="autotoc_md1760"></a>
+<h2><a class="anchor" id="autotoc_md1761"></a>
 Usage</h2>
 <p>Before using the SHT3x driver, the configuration has to be defined and the <a class="el" href="sht3x_8h.html#aae26482bfb0ffbe6461b3be443d5427c" title="Initialize the SHT3x sensor device.">sht3x_init</a> function needs to be called to initialize and configure the sensor device of type <a class="el" href="structsht3x__dev__t.html" title="SHT3x sensor device data structure.">sht3x_dev_t</a>.</p>
 <p>The structure of a configuration is defined in <a class="el" href="structsht3x__params__t.html" title="SHT3x device initialization parameters.">sht3x_params_t</a> and consists of the following parameters:</p>
@@ -331,7 +332,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

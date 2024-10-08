@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: PCA9685 I2C PWM controller</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -152,7 +153,7 @@ $(function(){initNavTree('group__drivers__pca9685.html',''); initResizable(true)
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Device driver for the NXP PCA9685 </p>
-<h2><a class="anchor" id="autotoc_md1691"></a>
+<h2><a class="anchor" id="autotoc_md1692"></a>
 Overview</h2>
 <p>The driver supports the NXP PCA9685 16-channel, 12-bit PWM LED controller connected to I2C. Although the controller is optimized for LED control, the 12-bit resolution also allows the control of servos with a resolution of 4 us at 60 Hz refresh signal.</p>
 <p>The following features of the PCA9685 are supported by the driver:</p>
@@ -165,7 +166,7 @@ Overview</h2>
 <li>Active LOW Output Enable (OE) input pin</li>
 <li>External clock input with max. 50 MHz</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md1692"></a>
+<h2><a class="anchor" id="autotoc_md1693"></a>
 Usage</h2>
 <p>The driver interface is kept as compatible as possible with the peripheral PWM interface. The only differences are that</p>
 <ul>
@@ -173,7 +174,7 @@ Usage</h2>
 <li>functions require an additional parameter, the pointer to the PWM device of type <a class="el" href="structpca9685__t.html" title="PCA9685 PWM device data structure type.">pca9685_t</a>.</li>
 </ul>
 <p>Please refer the test application in <code>tests/drivers/pca9685</code> for an example on how to use the driver.</p>
-<h2><a class="anchor" id="autotoc_md1693"></a>
+<h2><a class="anchor" id="autotoc_md1694"></a>
 SAUL Capabilities</h2>
 <p>The driver provides SAUL capabilities that are compatible to the SAUL actuators of type <a class="el" href="group__drivers__saul.html#ggaa3dfb65ce3006aaab287357097352604aa837edbaeb82d77107eeba99a9bf19cd" title="actuator: servo motor">SAUL_ACT_SERVO</a>.</p>
 <p>Each PCA9685 channel can be mapped directly to SAUL by defining an according entry in <code>PCA9685_SAUL_PWM_PARAMS</code>. Please refer file <code>$RIOTBASE/drivers/pca9685/include/pca9685_params.h</code> for an example. </p><pre class="fragment"> pca9685_saul_pwm_params_t pca9685_saul_pwm_params[] = {
@@ -605,7 +606,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

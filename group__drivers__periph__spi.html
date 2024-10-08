@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: SPI</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -163,7 +164,7 @@ $(function(){initNavTree('group__drivers__periph__spi.html',''); initResizable(t
 <li><code><a class="el" href="#ga1ed20d7e5b67938bd35139a819a8c982" title="Initialize the given chip select pin.">spi_init_cs()</a></code> should be called during device driver initialization, as each chip select pin/line is used uniquely by a specific device, i.e. chip select lines are no shared resource.</li>
 <li><code><a class="el" href="#ga31d89f231c0d6b18a71f2c8f3804e042" title="Start a new SPI transaction.">spi_acquire()</a></code> needs to be called for each new transaction. This function configures the bus with specific parameters (clock, mode) for the duration of that transaction.</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md1717"></a>
+<h1><a class="anchor" id="autotoc_md1718"></a>
 (Low-) Power Implications</h1>
 <p>As SPI buses are shared peripherals and the interfaces implements a transaction based paradigm, we leverage this for the SPI peripherals power management. After calling <a class="el" href="#gada6e52541835bc04dcc6ec62f2c74c3a" title="Basic initialization of the given SPI bus.">spi_init()</a>, the SPI peripheral <b>should</b> be completely powered off (e.g. through peripheral clock gating). It <b>should</b> subsequently only be powered on and enabled in between <a class="el" href="#ga31d89f231c0d6b18a71f2c8f3804e042" title="Start a new SPI transaction.">spi_acquire()</a> and <a class="el" href="#ga9e36100f2b58917366872fca2f9f3bc6" title="Finish an ongoing SPI transaction by releasing the given SPI bus.">spi_release()</a> blocks.</p>
 <p>In case the SPI driver implementation puts the active thread to sleep during data transfer (e.g. when using DMA), the implementation might need to block certain power states during that time. </p>
@@ -998,7 +999,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

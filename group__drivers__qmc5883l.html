@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: QMC5883L 3-Axis Digital Magnetic Sensor</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -152,17 +153,17 @@ $(function(){initNavTree('group__drivers__qmc5883l.html',''); initResizable(true
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Driver for QST QMC5883L digital magnetic sensor </p>
-<h1><a class="anchor" id="autotoc_md1727"></a>
+<h1><a class="anchor" id="autotoc_md1728"></a>
 About</h1>
 <p>This module provides a device driver for the QML5883L magnetic sensor (digital compass) by QST. This device is a successor and similar to the Honeywell HMC5883L, it does use a different register map and uses a different style of configuration.</p>
-<h1><a class="anchor" id="autotoc_md1728"></a>
+<h1><a class="anchor" id="autotoc_md1729"></a>
 Usage</h1>
 <p>Use the <a class="el" href="#gaefb5771db3d3891abb2f47dfe5f649b4" title="Initialize the given QMC5883L magnetic sensor.">qmc5883l_init()</a> function to initialize your sensor. On exit of the initialization function, the sensor is put into continuous sampling mode (power on) mode.</p>
 <p>For reading the sampled data, you have two options: use polling or use interrupt based notifications.</p>
-<h2><a class="anchor" id="autotoc_md1729"></a>
+<h2><a class="anchor" id="autotoc_md1730"></a>
 Polling</h2>
 <p>You call periodically call qmc5883l_read[_raw]() directly and simply check the return value to be QMC5883L_OK or QMC5883L_OVERFLOW for valid data. Alternatively call <a class="el" href="#gafeb7738287859a3833797d55d7bed1e5" title="Check if new data is available.">qmc5883l_data_ready()</a> to explicitly ask the sensor if new data is available.</p>
-<h2><a class="anchor" id="autotoc_md1730"></a>
+<h2><a class="anchor" id="autotoc_md1731"></a>
 Interrupt based</h2>
 <p>For the interrupt mode to be available, you have to build the driver with the associated functions using <code>USEMODULE += qmc5883l_int</code>.</p>
 <p>To configure and enable interrupt notifications for data ready events use the <a class="el" href="#gad76786c21c71180d424f0d1d9ff35047" title="Initialize data ready (DRDY) interrupt notifications.">qmc5883l_init_int()</a> function. This will setup the configured interrupt pin (params-&gt;pin_drdy) and enable the DRDY pin output for the QMC5883L sensor.</p>
@@ -700,7 +701,7 @@ QMC5883L_BUSERR on any I2C bus error </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

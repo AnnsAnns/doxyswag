@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Lobaro Lorabox</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,10 +149,10 @@ $(function(){initNavTree('group__boards__lobaro__lorabox.html',''); initResizabl
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the Lobaro LoraBox with stm32l151cb-a </p>
-<h2><a class="anchor" id="autotoc_md480"></a>
+<h2><a class="anchor" id="autotoc_md481"></a>
 Hardware</h2>
 <p><img src="https://www.lobaro.com/wp/wp-content/uploads/2017/03/Lobaro_wMBUS_LoRaWAN_Bridge.jpg" alt="LoraBox" class="inline"/></p>
-<h3><a class="anchor" id="autotoc_md481"></a>
+<h3><a class="anchor" id="autotoc_md482"></a>
 MCU</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -189,7 +190,7 @@ MCU</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">Board Manual   </td><td class="markdownTableBodyLeft"><a href="https://www.lobaro.com/download/7250/">Board Manual</a>   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md482"></a>
+<h3><a class="anchor" id="autotoc_md483"></a>
 User Interface</h3>
 <p>1 LEDs:</p>
 <table class="markdownTable">
@@ -200,9 +201,9 @@ User Interface</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Pin   </td><td class="markdownTableBodyNone">P1   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md483"></a>
+<h2><a class="anchor" id="autotoc_md484"></a>
 Flashing</h2>
-<h3><a class="anchor" id="autotoc_md484"></a>
+<h3><a class="anchor" id="autotoc_md485"></a>
 Connections</h3>
 <p>To flash using the STM32 ROM bootloader on the board, use the provided UART-USB bridge and connect it to the <em>Config</em> port. The <em>Config</em> port pinout is the following:</p>
 <div class="fragment"><div class="line">---------------     ---------------</div>
@@ -216,15 +217,15 @@ Connections</h3>
 <div class="line">4: TX1</div>
 <div class="line">5: Boot0</div>
 <div class="line">6: GND</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md485"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md486"></a>
 STM32 Loader</h3>
 <p>To flash RIOT on the board, after connection the UART-USB bridge, just run: </p><div class="fragment"><div class="line">BOARD=lobaro-lorabox make flash</div>
 </div><!-- fragment --><p> This uses the stm32loader script to erase the memory and flash it interfacing with the STM32 ROM bootloader.</p>
-<h3><a class="anchor" id="autotoc_md486"></a>
+<h3><a class="anchor" id="autotoc_md487"></a>
 Lobaro Tool</h3>
 <p>Another way of interfacing with the STM32 ROM bootloader is using the <b>Lobaro Maintenance Tool</b> provided <a href="https://www.lobaro.com/lobaro-maintenance-tool/">online</a> for free for Linux, Mac &amp; Windows. It allows flashing and accessing the UART.</p>
 <p><img src="https://www.lobaro.com/wp/wp-content/uploads/2018/03/Lobaro_Tool_FirmwareUpdateFeature.png" alt="LobaroTool" class="inline"/></p>
-<h2><a class="anchor" id="autotoc_md487"></a>
+<h2><a class="anchor" id="autotoc_md488"></a>
 Connecting via Serial</h2>
 <p>The default UART port is the USART1, the same that is used for flashing, so it is available on the <em>Config</em> port. The default port is /dev/ttyUSB0. To access the port run: </p><div class="fragment"><div class="line">BOARD=lobaro-lorabox make term</div>
 </div><!-- fragment --><p> Note:** If you want to access the port with a different application please keep in mind that RTS must be set to '0' and DTR to '1' as the provided UART-USB bridge seems to invert this lines. </p>
@@ -248,7 +249,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

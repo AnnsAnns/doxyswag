@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: LwM2M - Lightweight Machine to Machine</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -150,7 +151,7 @@ $(function(){initNavTree('group__pkg__wakaama.html',''); initResizable(true); })
 <p>LwM2M implementation based on the Wakaama package </p>
 <p>Lightweight Machine to Machine is a device management protocol designed for sensor networks, designed for remote management of M2M devices and related service enablement. It defines an extensible resource and data model and builds top of CoAP. LwM2M has been specified by the OMA SpecWorks Device Management Working Group. The specification is freely available <a href="http://openmobilealliance.org/wp/index.html">here</a>.</p>
 <p>For a list of the supported objects see <a class="el" href="group__lwm2m__objects.html">LwM2M Object implementations</a>. The client implementation is based on the Eclipse <a href="https://github.com/eclipse/wakaama">Wakaama project</a></p>
-<h2><a class="anchor" id="autotoc_md1929"></a>
+<h2><a class="anchor" id="autotoc_md1930"></a>
 Usage</h2>
 <p>A LwM2M Client organizes resources as object instances. The LwM2M engine is independent of the objects that the client exposes, but it needs at least 3 mandatory ones: <a class="el" href="group__lwm2m__objects__device.html">Device object</a>, <a class="el" href="group__lwm2m__objects__security.html">Security object</a> and a Server object.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="lwm2m__client_8h.html">lwm2m_client.h</a>&quot;</span></div>
@@ -218,11 +219,11 @@ Usage</h2>
 <div class="ttc" id="astructlwm2m__client__data__t_html"><div class="ttname"><a href="structlwm2m__client__data__t.html">lwm2m_client_data_t</a></div><div class="ttdoc">LwM2M client descriptor.</div><div class="ttdef"><b>Definition</b> lwm2m_client.h:70</div></div>
 <div class="ttc" id="astructlwm2m__obj__security__args_html"><div class="ttname"><a href="structlwm2m__obj__security__args.html">lwm2m_obj_security_args</a></div><div class="ttdoc">Arguments for a new Security object instance creation (lwm2m_object_security_instance_create).</div><div class="ttdef"><b>Definition</b> security.h:311</div></div>
 </div><!-- fragment --><p>The LwM2M Client will connect to the specified LwM2M server and register itself. After that, the server will be able to perform Read, Write, Create, Delete, Execute and Observe operations on the resources.</p>
-<h3><a class="anchor" id="autotoc_md1930"></a>
+<h3><a class="anchor" id="autotoc_md1931"></a>
 DTLS support</h3>
 <p>With the configuration above plain CoAP is used. To secure the connection with the LwM2M Server, a credential is needed in the Security object instance. To enable DTLS support add the module <code>wakaama_client_dtls</code>. This uses the <a class="el" href="group__net__sock__dtls.html">DTLS sock API</a>, so you will need to select an implementation of it (e.g. <code>USEPKG += tinydtls</code>). Currently Pre-Shared Key (PSK) and Raw Public Key (RPK) modes are supported.</p>
 <p>To see how to use DTLS credentials, go to the usage section of <a class="el" href="group__lwm2m__objects__security.html">Security LwM2M object</a>.</p>
-<h3><a class="anchor" id="autotoc_md1931"></a>
+<h3><a class="anchor" id="autotoc_md1932"></a>
 Using a LwM2M Bootstrap Server</h3>
 <p>A bootstrap server gives a LwM2M deployment more flexibility. Information on how to connect to the LwM2M bootstrap server is defined at compile-time in the client (including URI and potentially needed credentials). The client connects to the bootstrap server on boot, which installs on the node the information needed to connect to the LwM2M servers.</p>
 <p>To enable bootstrap support, set the <code>LWM2M_BOOTSTRAP</code> option on Kconfig or set the CFLAG <code>CONFIG_LWM2M_BOOTSTRAP=1</code>. You will also need to specify during the security object instantiation that the information corresponds to a bootstrap server. DTLS is also supported for the bootstrap server:</p>
@@ -266,7 +267,7 @@ Topics</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

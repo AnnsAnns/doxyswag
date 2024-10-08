@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: nanoCoAP Sock</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -153,7 +154,7 @@ $(function(){initNavTree('group__net__nanosock.html',''); initResizable(true); }
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Synchronous sock based messaging with nanocoap </p>
 <p>nanocoap sock uses the nanocoap CoAP library to provide a synchronous interface to RIOT's sock networking API to read and write CoAP messages. For a server, nanocoap sock accepts a list of resource paths with callbacks for writing the response. For a client, nanocoap sock provides a function to send a request and waits for the server response. nanocoap sock uses nanocoap's Buffer API to write message options.</p>
-<h2><a class="anchor" id="autotoc_md2057"></a>
+<h2><a class="anchor" id="autotoc_md2058"></a>
 Server Operation</h2>
 <p>See the nanocoap_server example, which is built on the <code><a class="el" href="#gaa8dc99f3f6c9b49ce8a4da7f15260766" title="Start a nanocoap server instance.">nanocoap_server()</a></code> function. A server must define CoAP resources for which it responds.</p>
 <p>Each <a class="el" href="structcoap__resource__t.html">coap_resource_t</a> is added to the XFA with <a class="el" href="group__net__nanocoap.html#gaf3b7751818e477148bf210c79683ae0c" title="CoAP XFA resource entry.">NANOCOAP_RESOURCE(name)</a> followed by the declaration of the CoAP resource, e.g.:</p>
@@ -163,17 +164,17 @@ Server Operation</h2>
 <div class="ttc" id="agroup__net__nanocoap_html_gaf3b7751818e477148bf210c79683ae0c"><div class="ttname"><a href="group__net__nanocoap.html#gaf3b7751818e477148bf210c79683ae0c">NANOCOAP_RESOURCE</a></div><div class="ttdeci">#define NANOCOAP_RESOURCE(name)</div><div class="ttdoc">CoAP XFA resource entry.</div><div class="ttdef"><b>Definition</b> nanocoap.h:430</div></div>
 </div><!-- fragment --><p>nanocoap itself provides the COAP_WELL_KNOWN_CORE_DEFAULT_HANDLER entry for <code>/.well-known/core</code>.</p>
 <p>To use the CoAP resource XFA, enable the <code>nanocoap_resources</code> module.</p>
-<h3><a class="anchor" id="autotoc_md2058"></a>
+<h3><a class="anchor" id="autotoc_md2059"></a>
 Handler functions</h3>
 <p>For each resource, you must implement a <a class="el" href="group__net__nanocoap.html#ga8b44fbd36baf301f3bf531d1fcfadf9f" title="Resource handler type.">coap_handler_t</a> handler function. nanocoap provides functions to help implement the handler. If the handler is called via <a class="el" href="#gaa8dc99f3f6c9b49ce8a4da7f15260766" title="Start a nanocoap server instance.">nanocoap_server()</a>, the response buffer provided to the handler reuses the buffer for the request. So, your handler must read the request thoroughly before writing the response.</p>
 <p>To read the request, use the functions in the <em>Header</em> and <em>Options Read</em> sections of the <a href="group__net__nanocoap.html">nanocoap</a> documentation. If the pkt <em>payload_len</em> attribute is a positive value, start to read it at the <em>payload</em> pointer attribute.</p>
 <p>If a response does not require specific CoAP options, use <a class="el" href="group__net__nanocoap.html#ga82578bcdaeadcb10bdc3ecc52b0b6888" title="Create CoAP reply (convenience function)">coap_reply_simple()</a>. If there is a payload, it writes a Content-Format option with the provided value.</p>
 <p>For a response with additional CoAP options, start by calling <a class="el" href="group__net__nanocoap.html#ga38b2f76446070e80183a13e6b33d7cff" title="Build reply to CoAP request.">coap_build_reply()</a>. Then use the Buffer API to write the rest of the response. See the instructions in the section <em>Write Options and Payload</em> below.</p>
-<h2><a class="anchor" id="autotoc_md2059"></a>
+<h2><a class="anchor" id="autotoc_md2060"></a>
 Client Operation</h2>
 <p>Follow the instructions in the section <em>Write Options and Payload</em> below.</p>
 <p>To send the message and await the response, see <a class="el" href="#ga829870b2ff3a51a4a908f86ad98303c2" title="Simple synchronous CoAP request.">nanocoap_sock_request()</a> as well as <a class="el" href="#gab66959ad47fd44afa1ebdf9d44d0b394" title="Simple synchronous CoAP (confirmable) GET.">nanocoap_sock_get()</a>, which additionally copies the response payload to a user supplied buffer. Finally, read the response as described above in the server <em>Handler functions</em> section for reading a request.</p>
-<h2><a class="anchor" id="autotoc_md2060"></a>
+<h2><a class="anchor" id="autotoc_md2061"></a>
 Write Options and Payload</h2>
 <p>For both server responses and client requests, CoAP uses an Option mechanism to encode message metadata that is not required for each message. For example, the resource URI path is required only for a request, and is encoded as the Uri-Path option.</p>
 <p>nanocoap sock uses the nanocoap Buffer API for options. The caller must provide the last option number written as well as the buffer position. The caller is primarily responsible for tracking and managing the space remaining in the buffer.</p>
@@ -181,7 +182,7 @@ Write Options and Payload</h2>
 <p>Next, use the functions in the <em>Options Write Buffer API</em> section of <a href="group__net__nanocoap.html">nanocoap</a> to write each option. These functions require the position in the buffer to start writing, and return the number of bytes written. Options <em>must</em> be written in order by option number (see "CoAP option numbers" in <a href="group__net__coap.html">CoAP defines</a>).</p>
 <dl class="section note"><dt>Note</dt><dd>You must ensure the buffer has enough space remaining to write each option. The API does not verify the safety of writing an option.</dd></dl>
 <p>If there is a payload, append a payload marker (0xFF). Then write the payload to within the maximum length remaining in the buffer.</p>
-<h1><a class="anchor" id="autotoc_md2061"></a>
+<h1><a class="anchor" id="autotoc_md2062"></a>
 Create a Block-wise Response (Block2)</h1>
 <p>Block-wise is a CoAP extension (RFC 7959) to divide a large payload across multiple physical packets. This section describes how to write a block-wise payload for a response, and is known as Block2. (Block1 is for a block-wise payload in a request.) See _riot_board_handler() in the nanocoap_server example for an example handler implementation.</p>
 <p>Start with <a class="el" href="group__net__nanocoap.html#ga847153f464dc80f7f015d3ccbceb71c4" title="Initialize a block2 slicer struct for writing the payload.">coap_block2_init()</a> to read the client request and initialize a coap_slicer_t struct with the size and location for this slice of the overall payload. Then write the block2 option in the response with <a class="el" href="group__net__nanocoap.html#ga5bfad86a61eb99c3727ae624c6e2594f" title="Insert block2 option into buffer.">coap_opt_put_block2()</a>. The option includes an indicator ("more") that a slice completes the overall payload transfer. You may not know the value for <em>more</em> at this point, but you must initialize the space in the packet for the option before writing the payload. The option is rewritten later.</p>
@@ -1953,7 +1954,7 @@ any error on </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:56 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

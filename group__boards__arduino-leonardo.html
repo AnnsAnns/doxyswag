@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Arduino Leonardo</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,13 +149,13 @@ $(function(){initNavTree('group__boards__arduino-leonardo.html',''); initResizab
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the Arduino Leonardo board </p>
-<h2><a class="anchor" id="autotoc_md118"></a>
+<h2><a class="anchor" id="autotoc_md119"></a>
 Overview</h2>
 <p>The Arduino Leonardo is a microcontroller board based on the ATmega32u4.</p>
 <p>Similar to an Arduino UNO, can be recognized by computer as a mouse or keyboard. Otherwise it's the same. Brief descriptions of both boards are available at the official <a href="https://www.arduino.cc/en/Main/Boards">Arduino web site.</a></p>
 <p>It has 20 digital input/output pins (of which 7 can be used as PWM outputs and 12 as analog inputs), a 16 MHz crystal oscillator, a micro USB connection, a power jack, an ICSP header, and a reset button. It contains everything needed to support the microcontroller; simply connect it to a computer with a USB cable or power it with a AC-to-DC adapter or battery to get started.</p>
 <p>For details, please look at the <a class="el" href="group__boards__arduino-leonardo.html">Leonardo page.</a></p>
-<h2><a class="anchor" id="autotoc_md119"></a>
+<h2><a class="anchor" id="autotoc_md120"></a>
 Using the shell</h2>
 <p>The shell is using the TTL (5V) serial because the USB (CDC) communication is not currently supported.</p>
 <p>The TTL serial cable must be connected as described below:</p><ul>
@@ -163,10 +164,10 @@ Using the shell</h2>
 <li>FTDI GND goes to GND</li>
 </ul>
 <p>Keep in mind that the Arduino Leonardo is not automatically restarted upon <code>make BOARD=arduino-leonardo</code>, so you'll need to hit the reset button. Please be patient, as the bootloader waits a few seconds before starting your code.</p>
-<h2><a class="anchor" id="autotoc_md120"></a>
+<h2><a class="anchor" id="autotoc_md121"></a>
 Flashing the device</h2>
 <p>Flashing RIOT on the Arduino Leonardo is bit different compared to the other Arduinos, as the device cannot be restarted automatically to enter the bootloader. Therefore, you'll need to press the reset button in time to allow avrdude (the tool used to flash the firmware) to connect to the bootloader.</p>
-<h3><a class="anchor" id="autotoc_md121"></a>
+<h3><a class="anchor" id="autotoc_md122"></a>
 On a Fast Host</h3>
 <ol type="1">
 <li>Type <code>make BOARD=arduino-leonardo flash</code> but do not hit enter yet</li>
@@ -174,7 +175,7 @@ On a Fast Host</h3>
 <li>Hit enter</li>
 </ol>
 <p>In case the compilation takes longer than the bootloader waits before starting the user program, flashing will fail. See below to work around</p>
-<h3><a class="anchor" id="autotoc_md122"></a>
+<h3><a class="anchor" id="autotoc_md123"></a>
 On a Slow Host</h3>
 <ol type="1">
 <li>Run <code>make BOARD=arduino-leonardo</code></li>
@@ -182,7 +183,7 @@ On a Slow Host</h3>
 <li>Press the reset button on the Arduino Leonardo</li>
 <li>Hit enter</li>
 </ol>
-<h2><a class="anchor" id="autotoc_md123"></a>
+<h2><a class="anchor" id="autotoc_md124"></a>
 Mac Users</h2>
 <p>Mac Users have export the environment variable both <code>PORT</code> and <code>PROG_DEV</code> to point to the device file of the TTL adapter (<code>PORT</code>) and the device file of the Arduino Leonardo (<code>PROG_DEV</code>). </p>
 <table class="memberdecls">
@@ -199,7 +200,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:54 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

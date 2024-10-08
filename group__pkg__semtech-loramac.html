@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Semtech LoRaMAC implementation</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,10 +149,10 @@ $(function(){initNavTree('group__pkg__semtech-loramac.html',''); initResizable(t
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Provides a RIOT adaption of Semtech LoRaMAC implementation </p>
-<h1><a class="anchor" id="autotoc_md1908"></a>
+<h1><a class="anchor" id="autotoc_md1909"></a>
 Introduction</h1>
 <p>This package provides an API built on top of the <a href="https://github.com/Lora-net/LoRaMac-node">Semtech LoRaMAC-node</a> reference implementation of a LoRa network.</p>
-<h1><a class="anchor" id="autotoc_md1909"></a>
+<h1><a class="anchor" id="autotoc_md1910"></a>
 Importing this package in an application</h1>
 <p>This package works with Semtech SX1261, SX1262, SX1268, SX1272 and SX1276 radio devices. Thus, in order to use it properly, the application <code>Makefile</code> must import the corresponding device driver: </p><div class="fragment"><div class="line">USEMODULE += sx1261  <span class="comment"># for a SX1261 radio device</span></div>
 <div class="line">USEMODULE += sx1262  <span class="comment"># for a SX1262 radio device</span></div>
@@ -160,7 +161,7 @@ Importing this package in an application</h1>
 <div class="line">USEMODULE += sx1276  <span class="comment"># for a SX1276 radio device</span></div>
 </div><!-- fragment --><p>In order to use this package in an application, add the following in the application <code>Makefile</code>: </p><div class="fragment"><div class="line">USEPKG += semtech-loramac</div>
 </div><!-- fragment --><p>Since the LoRa radio depends on regional parameters regarding the access to the physical support, the region where the device is used needs to be set at compile time. Example for EU868: </p><div class="fragment"><div class="line">LORA_REGION = EU868</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md1910"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md1911"></a>
 Using the package API</h1>
 <p>The package provides a simple API for initializing the MAC, setting/getting parameters, joining a network and sending/receiving packets to/from a LoRa <a class="el" href="structNetwork.html" title="Network struct within mqtt paho.">Network</a>.</p>
 <p>In your <code>main.c</code>, some header files must be first included: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="loramac_8h.html">net/loramac.h</a>&quot;</span>     <span class="comment">/* core loramac definitions */</span></div>
@@ -263,18 +264,18 @@ Using the package API</h1>
 <div class="ttc" id="athread__config_8h_html_ac57374d1c51374ebf95d9679281af818"><div class="ttname"><a href="thread__config_8h.html#ac57374d1c51374ebf95d9679281af818">THREAD_PRIORITY_MAIN</a></div><div class="ttdeci">#define THREAD_PRIORITY_MAIN</div><div class="ttdoc">Priority of the main thread.</div><div class="ttdef"><b>Definition</b> thread_config.h:135</div></div>
 </div><!-- fragment --></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md1911"></a>
+<h1><a class="anchor" id="autotoc_md1912"></a>
 Persistence</h1>
 <p>If the board CPU provides an internal EEPROM, this package provides a mechanism for storing EUIs, keys and some MAC parameters (frame counter, join status). After a successful join procedure, use <code>semtech_loramac_save</code> function to persist this information and it will be loaded automatically at the next reboot. If the device is already joined to a network, to avoid another OTAA join procedure use <code>semtech_loramac_is_mac_joined</code> function to check the join status of the device.</p>
 <p>This mechanism is especially useful when using deep sleep power modes that don't preserve RAM.</p>
-<h1><a class="anchor" id="autotoc_md1912"></a>
+<h1><a class="anchor" id="autotoc_md1913"></a>
 Low power considerations</h1>
 <p>The internal implementation of the required LoRaWAN timings (delay before opening RX windows, duty-cycle delays) automatically achieves the lowest possible power consumption while remaining usable when RIOT's low power modes are not blocked. All timings are managed by the <a class="el" href="group__sys__ztimer.html">ztimer high level timer abstraction layer</a> running on the low-level <a class="el" href="group__drivers__periph__rtt.html">RTT</a> peripheral which allows for:</p><ul>
 <li>going to a deep-sleep mode with RAM retention (no reboot) between TX and RX1 and between RX1 and RX2 windows, and as a result reduces the power consumption</li>
 <li>using deep-sleep mode with RAM retention and have the duty-cycle restriction still usable between each active cycle (wake-up, measure, send, receive, sleep). As a result, this package can only be used on boards that provide the <code>periph_rtt</code> feature.</li>
 </ul>
 <dl class="section warning"><dt>Warning</dt><dd>It is not possible to directly call the original LoRaMAC-node API using this package. This package should only be considered as a wrapper around the original LoRaMAC-node API and only the API provided by this package should be used.</dd></dl>
-<h1><a class="anchor" id="autotoc_md1913"></a>
+<h1><a class="anchor" id="autotoc_md1914"></a>
 License</h1>
 <p>The library is using the BSD 3-clause license.</p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://github.com/Lora-net/LoRaMac-node">https://github.com/Lora-net/LoRaMac-node</a> </dd></dl>
@@ -295,7 +296,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

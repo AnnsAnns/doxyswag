@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Firefly Board</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,7 +149,7 @@ $(function(){initNavTree('group__boards__firefly.html',''); initResizable(true);
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the Firefly board </p>
-<h1><a class="anchor" id="autotoc_md405"></a>
+<h1><a class="anchor" id="autotoc_md406"></a>
 Zolertia Firefly platform</h1>
 <p> <style>div.image img[src="http://i.imgur.com/m2acovV.png?1"]
 {width:400px;}</style> </p><div class="image">
@@ -166,7 +167,7 @@ Firefly</div></div>
 <li>Built-in battery charger (500mA), Energy Harvesting and Solar Panels to be connected to standards LiPo batteries.</li>
 <li>Power input with 2.3-5.1VDC depending on battery or USB supply</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md406"></a>
+<h1><a class="anchor" id="autotoc_md407"></a>
 Port Features</h1>
 <p>In terms of hardware support, the following drivers have been implemented for the CC2538 System-on-Chip:</p>
 <ul>
@@ -188,14 +189,14 @@ Port Features</h1>
 <li>USB (in CDC-ACM).</li>
 <li>uDMA Controller.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md407"></a>
+<h1><a class="anchor" id="autotoc_md408"></a>
 Requirements</h1>
 <ul>
 <li>Toolchain to compile RIOT for the CC2538</li>
 <li>Drivers to enable your host to communicate with the platform</li>
 <li>Built-in BSL programming over USB using cc2538-bsl (included)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md408"></a>
+<h2><a class="anchor" id="autotoc_md409"></a>
 Install a Toolchain</h2>
 <p>The toolchain used to build is arm-gcc, to check if it is currently installed run: </p><pre class="fragment">$ arm-none-eabi-gcc -v
 Using built-in specs.
@@ -207,17 +208,17 @@ Configured with: /scratch/julian/lite-respin/eabi/src/gcc-4.3/configure
 Thread model: single
 gcc version 4.3.2 (Sourcery G++ Lite 2008q3-66)
 </pre><p>Else install from <a href="https://launchpad.net/gcc-arm-embedded">https://launchpad.net/gcc-arm-embedded</a></p>
-<h2><a class="anchor" id="autotoc_md409"></a>
+<h2><a class="anchor" id="autotoc_md410"></a>
 Drivers</h2>
 <p>The Firefly features a CP2104 serial-to-USB module, the driver is commonly found in most OS, but if required it can be downloaded from <a href="https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers">https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers</a></p>
-<h3><a class="anchor" id="autotoc_md410"></a>
+<h3><a class="anchor" id="autotoc_md411"></a>
 For the CC2538EM (USB CDC-ACM)</h3>
 <p>The Firefly has built-in support for USB 2.0 USB, Vendor and Product IDs are the following: </p><pre class="fragment">VID 0x0451
 PID 0x16C8
 </pre><p>On Linux and macOS this is straightforward, on windows you need to install the following driver:</p>
 <p><a href="https://github.com/alignan/lufa/blob/remote-zongle/LUFA/CodeTemplates/WindowsINF/LUFA%20CDC-ACM.inf">https://github.com/alignan/lufa/blob/remote-zongle/LUFA/CodeTemplates/WindowsINF/LUFA%20CDC-ACM.inf</a></p>
 <p>And replace the IDs accordingly.</p>
-<h3><a class="anchor" id="autotoc_md411"></a>
+<h3><a class="anchor" id="autotoc_md412"></a>
 Device Enumerations</h3>
 <p>For the UART, serial line settings are 115200 8N1, no flow control.</p>
 <p>Once all drivers have been installed correctly:</p>
@@ -229,11 +230,11 @@ Device Enumerations</h3>
 <li>Firefly over CP2104: <code>ttyUSB0</code></li>
 <li>Firefly over USB driver (in CDC-ACM): <code>ttyACMn</code> (n=0, 1, ....)</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md412"></a>
+<h1><a class="anchor" id="autotoc_md413"></a>
 Emulator</h1>
 <p>To emulate this board you need an updated version of <a href="https://github.com/renode/renode">renode</a> installed, at least version 1.9.</p>
 <div class="fragment"><div class="line">BOARD=firefly make all emulate</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md413"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md414"></a>
 More Reading</h1>
 <ol type="1">
 <li><a href="https://zolertia.io/product/firefly" title="Zolertia Firefly">Zolertia Firefly website</a></li>
@@ -264,7 +265,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

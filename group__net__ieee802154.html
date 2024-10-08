@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: IEEE 802.15.4</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,7 +149,7 @@ $(function(){initNavTree('group__net__ieee802154.html',''); initResizable(true);
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>IEEE 802.15.4 components </p>
-<h2><a class="anchor" id="autotoc_md2127"></a>
+<h2><a class="anchor" id="autotoc_md2128"></a>
 General introduction</h2>
 <p>The IEEE 802.15.4 standard describes radio communication for low-rate local wireless networks, operating in different frequency bands, modulations and MACs; all of these have been extended over time in revisions of the standard. It also describes topologies and roles of devices (eg. a PAN coordinator that is a FFD (Full Function Device) and RFDs (Reduced Function Devices) and clusters that use different PAN IDs to keep their traffic apart), without prescribing how they are formed or managed.</p>
 <p>Common frequencies used are the 868 MHz band (one channel, in Europe), the 915 MHz band (10 channels, in America) and the 2.4GHz band (16 channels); several more are defined between 169MHz and 9GHz.</p>
@@ -170,7 +171,7 @@ General introduction</h2>
 </li>
 </ul>
 <p>Due to the variation both in the 802.15.4 internal layer and the protocols used on top of it, applications always need to pick their components; that selection is often guided by standards or organizations that pick an interoperable set of components (higher-level protocol, MAC, band and others), like <a href="https://openthread.io/guides/thread-primer">Thread</a> (6LoWPAN, nonbeacon-enabled, 2.4GHz), WirelessHART (HART, TSCH, 2.4GHz) or 6TiSCH (6LoWPAN, TSCH).</p>
-<h2><a class="anchor" id="autotoc_md2128"></a>
+<h2><a class="anchor" id="autotoc_md2129"></a>
 Availability in RIOT</h2>
 <p>One way of using the 802.15.4 layer in RIOT is by <a class="el" href="group__net__sixlowpan.html">6LoWPAN</a>, which provides IPv6 connectivity atop of it. In these setups, the GNRC network stack is used, and details like band or short addresses are configured manually at build time (<a class="el" href="group__net__ieee802154__conf.html#ga3ce7993741c7ab943712750e050256f6">CONFIG_IEEE802154_DEFAULT_PANID</a> etc.) or at runtime (eg. through <code>ifconfig</code>). Boards using a radio driver that is already ported to <a class="el" href="group__net__ieee802154__submac.html">IEEE802.15.4 SubMAC layer</a> are used in "submac" mode; all others use whatever their driver provides (varying from "YOLO" to some features of "submac").</p>
 <p>Alternatively, the <a class="el" href="group__pkg__openwsn.html">OpenWSN network stack</a> and <a class="el" href="group__pkg__openthread.html">OpenThread network stack</a> modules provide standalone network stacks that conform to the 6TiSCH and <a class="el" href="structThread.html" title="Thread struct within mqtt paho.">Thread</a> specifications, respectively. </p>
@@ -194,7 +195,7 @@ Topics</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

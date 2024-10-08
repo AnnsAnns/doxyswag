@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: SODAQ Autonomo</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,14 +149,14 @@ $(function(){initNavTree('group__boards__sodaq-autonomo.html',''); initResizable
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the SODAQ Autonomo board. </p>
-<h2><a class="anchor" id="autotoc_md1315"></a>
+<h2><a class="anchor" id="autotoc_md1316"></a>
 Overview</h2>
 <p>The <code>SODAQ Autonomo</code> is a board by SODAQ featuring a ATSAMD21J18A. The SAMD21 is a ARM Cortex-M0+ micro-controller. It has 256Kb of flash memory and 32Kb of RAM.</p>
 <p>The Autonomo is available from the SODAQ <a href="http://shop.sodaq.com/">shop</a>.</p>
-<h2><a class="anchor" id="autotoc_md1316"></a>
+<h2><a class="anchor" id="autotoc_md1317"></a>
 Hardware</h2>
 <p><img src="https://support.sodaq.com/Boards/Autonomo/sodaq_autonomo.png" alt="sodaq-autonomo image" class="inline"/></p>
-<h3><a class="anchor" id="autotoc_md1317"></a>
+<h3><a class="anchor" id="autotoc_md1318"></a>
 MCU</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -187,7 +188,7 @@ MCU</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">Datasheet   </td><td class="markdownTableBodyLeft"><a href="http://ww1.microchip.com/downloads/en/DeviceDoc/SAM_D21_DA1_Family_Data%20Sheet_DS40001882E.pdf">Datasheet</a>   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md1318"></a>
+<h3><a class="anchor" id="autotoc_md1319"></a>
 User Interface</h3>
 <p>1 LED:</p>
 <table class="markdownTable">
@@ -196,7 +197,7 @@ User Interface</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">LED0   </td><td class="markdownTableBodyLeft">PA19   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md1319"></a>
+<h2><a class="anchor" id="autotoc_md1320"></a>
 Implementation Status</h2>
 <p>Please refer to <a href="https://github.com/RIOT-OS/RIOT/issues/1646">this tracker</a> to see which projects are work in progress and who is the contact person for this. Notice that the initial support for the Autonomo was based on samr21-xpro. At some point we will add a separate issue to track changes for this board.</p>
 <table class="markdownTable">
@@ -227,7 +228,7 @@ Implementation Status</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft"><a class="el" href="structTimer.html" title="struct to get time references within mqtt paho">Timer</a>   </td><td class="markdownTableBodyLeft">yes   </td><td class="markdownTableBodyLeft"></td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md1320"></a>
+<h2><a class="anchor" id="autotoc_md1321"></a>
 Features of the board</h2>
 <p>Besides the SAMD21 the board has the following features:</p>
 <table class="markdownTable">
@@ -268,21 +269,21 @@ Features of the board</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">LED's   </td><td class="markdownTableBodyLeft">Yellow charge LED and green LED on pin 13   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md1321"></a>
+<h2><a class="anchor" id="autotoc_md1322"></a>
 Flashing the device</h2>
 <p>Use <code>BOARD=sodaq-autonomo</code> with the <code>make</code> command.<br  />
  Example with <code>hello-world</code> application: </p><div class="fragment"><div class="line">make BOARD=sodaq-autonomo -C examples/hello-world flash</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>If the application crashes, automatic reflashing via USB, as explained above won't be possible. In this case, the board must be set in bootloader mode by double tapping the reset button before running the flash command.</dd></dl>
-<h2><a class="anchor" id="autotoc_md1322"></a>
+<h2><a class="anchor" id="autotoc_md1323"></a>
 Accessing STDIO via UART</h2>
 <p>STDIO of RIOT is directly available over the USB port.</p>
 <p>The <code>TERM_DELAY</code> environment variable can be used to add a delay (in second) before opening the serial terminal. The default value is 2s which should be enough in most of the situation.</p>
-<h2><a class="anchor" id="autotoc_md1323"></a>
+<h2><a class="anchor" id="autotoc_md1324"></a>
 Supported Toolchains</h2>
 <p>To build software for the autonomo board we strongly recommend the usage of the <a href="https://launchpad.net/gcc-arm-embedded">GNU Tools for ARM Embedded Processors</a> toolchain.</p>
-<h2><a class="anchor" id="autotoc_md1324"></a>
+<h2><a class="anchor" id="autotoc_md1325"></a>
 Known Issues / Problems</h2>
-<h3><a class="anchor" id="autotoc_md1325"></a>
+<h3><a class="anchor" id="autotoc_md1326"></a>
 Stack sizes</h3>
 <p>The default stack sizes have not been tuned properly yet. If in doubt why your application crashes try increasing the default stack sizes and use <code>ps</code> to find out how much stack is being used. Tracked in <a href="https://github.com/RIOT-OS/RIOT/issues/2228">https://github.com/RIOT-OS/RIOT/issues/2228</a> </p>
 <table class="memberdecls">
@@ -311,7 +312,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

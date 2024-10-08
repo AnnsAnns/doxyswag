@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: IRQ Support in Peripheral GPIO Low-Level API</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -153,7 +154,7 @@ $(function(){initNavTree('group__drivers__periph__gpio__ll__irq.html',''); initR
 <p>IRQ Support in Peripheral GPIO Low-Level API </p>
 <dl class="section warning"><dt>Warning</dt><dd>This API is not stable yet and intended for internal use only as of now. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>This API can only be used, if the features <code>periph_gpio_ll_irq</code> is used. Not every MCU will implement the features required for this API or will have a suitable driver available.</dd></dl>
-<h1><a class="anchor" id="autotoc_md1708"></a>
+<h1><a class="anchor" id="autotoc_md1709"></a>
 Motivation</h1>
 <p>The IRQ related GPIO Low-Level API is very similar to the one of <a class="el" href="group__drivers__periph__gpio.html">GPIO</a> - however two aspects have been changed (in addition to using separate port and pin parameters): First, level triggered IRQs that many MCUs support are now exposed. (Note: They can also be trivially be emulated, see the STM32 implementation as example.) Second, the configuration of the GPIO pin and the associated IRQ have been split into two functions. This allows reconfiguring the trigger of an IRQ with less overhead. This can result in reconfiguring the IRQ trigger being less effort than filtering out unneeded events and hence consume power due to longer power saving phases. </p>
 <table class="memberdecls">
@@ -466,7 +467,7 @@ The trigger in <code>trig</code> is supported by the MCU</dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

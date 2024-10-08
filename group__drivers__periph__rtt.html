@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: RTT</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -151,7 +152,7 @@ $(function(){initNavTree('group__drivers__periph__rtt.html',''); initResizable(t
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Low-level RTT (Real Time <a class="el" href="structTimer.html" title="struct to get time references within mqtt paho">Timer</a>) peripheral driver </p>
-<h1><a class="anchor" id="autotoc_md1716"></a>
+<h1><a class="anchor" id="autotoc_md1717"></a>
 (Low-) Power Implications</h1>
 <p>After the RTT has been initialized (i.e. after calling <a class="el" href="#ga3e16bf1873240a35b0cb2791ae90aeaf" title="Initialize RTT module.">rtt_init()</a>), the RTT should be powered on and running. The RTT can then be powered off manually at a later point in time by calling the <a class="el" href="#ga751b330bc1bf39518cb13b8950fd9cca" title="Turn the RTT hardware module off.">rtt_poweroff()</a> function. When the RTT is powered back on using the <a class="el" href="#ga3a36637034462b2ce440f407f1090957" title="Turn the RTT hardware module on.">rtt_poweron()</a> function, it <b>should</b> transparently continue its previously configured operation.</p>
 <p>On many CPUs, certain power states might need to be blocked in <a class="el" href="#ga3e16bf1873240a35b0cb2791ae90aeaf" title="Initialize RTT module.">rtt_init()</a>, so that it is ensured that the RTT will function properly while it is enabled.</p>
@@ -649,7 +650,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>rtt_poweroff</b> (voi
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

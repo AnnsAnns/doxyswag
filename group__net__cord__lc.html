@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: CoRE RD Lookup Client</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -153,14 +154,14 @@ $(function(){initNavTree('group__net__cord__lc.html',''); initResizable(true); }
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Library for using RIOT as CoRE Resource Directory (RD) lookup client </p>
 <p>This module implements a CoRE Resource Directory lookup client library, that allows RIOT nodes to lookup resources, endpoints and groups with resource directories. It implements the standard lookup functionality as defined in draft-ietf-core-resource-directory-27. </p><dl class="section see"><dt>See also</dt><dd><a href="https://tools.ietf.org/html/draft-ietf-core-resource-directory-27">https://tools.ietf.org/html/draft-ietf-core-resource-directory-27</a></dd></dl>
-<h2><a class="anchor" id="autotoc_md1986"></a>
+<h2><a class="anchor" id="autotoc_md1987"></a>
 Lookup modes</h2>
 <p>The module defines two types of lookup for interacting with a RD server:</p>
 <ul>
 <li>raw: result of the lookup is returned as is. No <code>page</code> or <code>count</code> filter is applied by default. Use <a class="el" href="#ga417cf995f0097422380f3f8427f267bb">cord_lc_raw()</a> for this mode.</li>
 <li>pre-parsed: result of the lookup is parsed and returned in a <a class="el" href="#ga7c4af49abfb90e41627cbf9b77bf59ae">cord_lc_res_t</a> or <a class="el" href="#gacdd878279d8e993f010232680b164c16">cord_lc_ep_t</a> depending on the type of the lookup. The default <code>count</code> filter is set to <code>1</code> and <code>page</code> filter is incremented after each successful call and resets to <code>0</code> when lookup result is empty. Use <a class="el" href="#ga1c8285178cd7d1877ccd1c3ec92d2cf0">cord_lc_res()</a> or <a class="el" href="#ga5b7faacd77694322abd537b08be6acc3" title="Get one endpoint from RD server.">cord_lc_ep()</a> for this mode.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md1987"></a>
+<h2><a class="anchor" id="autotoc_md1988"></a>
 Limitations</h2>
 <p>Currently, this module cannot do more than a single request concurrently and the request is fully synchronous. The client can only connects to one RD server at a time. The client will disconnect when a connection to a new RD server is made, regardless of whether the connection attempt is successful or not. </p>
 <table class="memberdecls">
@@ -611,7 +612,7 @@ CORD_LC_ERR on any other internal error </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:54 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

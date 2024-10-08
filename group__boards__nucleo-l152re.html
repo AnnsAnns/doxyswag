@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: STM32 Nucleo-L152RE</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,19 +149,19 @@ $(function(){initNavTree('group__boards__nucleo-l152re.html',''); initResizable(
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the STM32 Nucleo-L152RE </p>
-<h2><a class="anchor" id="autotoc_md858"></a>
+<h2><a class="anchor" id="autotoc_md859"></a>
 Overview</h2>
 <p>The Nucleo-L152RE is a board from ST's Nucleo family supporting a ARM Cortex-M3 STM32L152RE microcontroller with 80KiB of RAM and 512KiB of Flash.</p>
-<h2><a class="anchor" id="autotoc_md859"></a>
+<h2><a class="anchor" id="autotoc_md860"></a>
 Hardware</h2>
 <p><img src="http://www.open-electronics.org/wp-content/uploads/2015/08/Figura2-500x467.png" alt="Nucleo64 L152RE" class="inline"/></p>
-<h2><a class="anchor" id="autotoc_md860"></a>
+<h2><a class="anchor" id="autotoc_md861"></a>
 Pinout</h2>
 <div class="image">
 <object type="image/svg+xml" data="nucleo-l152re.svg" width="50%" style="pointer-events: none;"></object>
 <div class="caption">
 Pinout for the nucleo-l152re</div></div>
-<h3><a class="anchor" id="autotoc_md861"></a>
+<h3><a class="anchor" id="autotoc_md862"></a>
 MCU</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -200,7 +201,7 @@ MCU</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">Board Manual   </td><td class="markdownTableBodyLeft"><a href="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/user_manual/DM00105823.pdf">Board Manual</a>   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md862"></a>
+<h3><a class="anchor" id="autotoc_md863"></a>
 User Interface</h3>
 <p>2 Buttons:</p>
 <table class="markdownTable">
@@ -218,22 +219,22 @@ User Interface</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Pin   </td><td class="markdownTableBodyNone">PA5   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md863"></a>
+<h2><a class="anchor" id="autotoc_md864"></a>
 Supported Toolchains</h2>
 <p>For using the Nucleo-L152RE board we strongly recommend the usage of the <a href="https://launchpad.net/gcc-arm-embedded">GNU Tools for ARM Embedded Processors</a> toolchain.</p>
-<h2><a class="anchor" id="autotoc_md864"></a>
+<h2><a class="anchor" id="autotoc_md865"></a>
 Flashing the device</h2>
-<h3><a class="anchor" id="autotoc_md865"></a>
+<h3><a class="anchor" id="autotoc_md866"></a>
 Flashing the Board Using OpenOCD</h3>
 <p>Please use an OpenOCD version checked out after Jan. 26th 2015. Building instructions can be found <a href="https://github.com/RIOT-OS/RIOT/wiki/OpenOCD">here</a>.</p>
-<h3><a class="anchor" id="autotoc_md866"></a>
+<h3><a class="anchor" id="autotoc_md867"></a>
 Flashing the Board Using ST-LINK Removable Media</h3>
 <p>On-board ST-LINK programmer provides via composite USB device removable media. Copying the HEX file causes reprogramming of the board. This task could be performed manually; however, the cpy2remed (copy to removable media) PROGRAMMER script does this automatically. To program board in this manner, use the command: </p><div class="fragment"><div class="line">make BOARD=nucleo-l152re PROGRAMMER=cpy2remed flash</div>
 </div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>This PROGRAMMER was tested using ST-LINK firmware 2.37.26. Firmware updates could be found on <a href="https://www.st.com/en/development-tools/stsw-link007.html">this STM webpage</a>.</dd></dl>
-<h2><a class="anchor" id="autotoc_md867"></a>
+<h2><a class="anchor" id="autotoc_md868"></a>
 Using UART</h2>
 <p>Using the UART isn't too stable right now. For some using the USB interface just works, others have to connect the USB interface to a active USB hub and others again can only transmit over the USB interface and receive using an external UART adapter.</p>
-<h4><a class="anchor" id="autotoc_md868"></a>
+<h4><a class="anchor" id="autotoc_md869"></a>
 Connecting an external UART adapter</h4>
 <ol type="1">
 <li>connect your usb tty to the st-link header as marked <img src="https://cloud.githubusercontent.com/assets/56618/5190200/f36aafe0-74e3-11e4-96bd-f755dd2a8b01.png" alt="st-link-header" class="inline"/></li>
@@ -253,7 +254,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -4,6 +4,7 @@ var dir_a408b6d3a4a484720bc3ecfeac8947e3 =
     [ "auto_init", "dir_6d5fbb22e520d26bffa63c06a95c7a1f.html", "dir_6d5fbb22e520d26bffa63c06a95c7a1f" ],
     [ "clif", "dir_159123b1f1ae6ba3db465c27902dbee0.html", "dir_159123b1f1ae6ba3db465c27902dbee0" ],
     [ "cpp11-compat", "dir_3949ef25ef9fffb2163ff049d9397b03.html", "dir_3949ef25ef9fffb2163ff049d9397b03" ],
+    [ "crypto", "dir_8be449c6bbc520801387072f402ecf1c.html", "dir_8be449c6bbc520801387072f402ecf1c" ],
     [ "embunit", "dir_9a32546bc978d7d566e87b22e36cece8.html", "dir_9a32546bc978d7d566e87b22e36cece8" ],
     [ "fs", "dir_3a51a65573640343eff9ad6b5e5a7ad8.html", "dir_3a51a65573640343eff9ad6b5e5a7ad8" ],
     [ "include", "dir_e9e107fc86bbb4b6a326076a6808b9f5.html", "dir_e9e107fc86bbb4b6a326076a6808b9f5" ],

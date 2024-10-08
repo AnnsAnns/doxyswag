@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: netdev BLE mode</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -152,22 +153,22 @@ $(function(){initNavTree('group__drivers__netdev__ble.html',''); initResizable(t
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>BLE adaption of netdev </p>
 <dl class="section warning"><dt>Warning</dt><dd>This API is experimental and in an early state - expect significant changes!</dd></dl>
-<h1><a class="anchor" id="autotoc_md1686"></a>
+<h1><a class="anchor" id="autotoc_md1687"></a>
 About</h1>
 <p>BLE defines a very specific environment for the used radio, both in terms of communication sequences and in terms of timings. BLE communication is structured in so called events, where each event is a sequence of request and reply packets send between two peers. A radio context (frequency, CRC initializer, and access address) is used throughout such an event and typically changed for the next one. In addition, the timing of the packets sent in a sequence is fixed to an inter-frame-spacing of exactly 150us.</p>
 <p>To cater with these specific attributes of BLE, this interface tailors the generic netdev interface to be used for BLE radios.</p>
-<h1><a class="anchor" id="autotoc_md1687"></a>
+<h1><a class="anchor" id="autotoc_md1688"></a>
 Interface Adaption / Netdev Interpretation</h1>
-<h2><a class="anchor" id="autotoc_md1688"></a>
+<h2><a class="anchor" id="autotoc_md1689"></a>
 Transmission Sequence Based Approach</h2>
 <p>To be able to handle the exact inter-packet-spacing if 150us seconds, this interface expects the device driver to stay in a continuous alternating RX-TX sequence, until it is manually aborted. While in this sequence, the radio driver needs to take care of switching to RX mode 150us after sending the last packet, and to send the next packet 150us after the last packet was received.</p>
 <p>Such a transmission sequence is started by calling either the radio's send or receive function while the radio is in idle/standby mode.</p>
 <p>Once a transmission sequence is in progress, the next packet to be send, or the next reception buffer to be used is specified also using the send/recv functions. They should be called in the <code>event_callback</code> right after the last transmission (RX or TX) was finished.</p>
 <p>The transmission sequence is aborted by calling <code>netdev_ble_stop(dev)</code> (<code>netdev-&gt;set(dev, NETOPT_BLE_CTX, NULL, 0)</code>). This will put the radio back into idle/standby mode.</p>
-<h2><a class="anchor" id="autotoc_md1689"></a>
+<h2><a class="anchor" id="autotoc_md1690"></a>
 Radio Context</h2>
 <p>As BLE uses time sliced channel hopping, the used channel needs to be set regularly. Additionally, also the used access address and the CRC initializer need to be set regularly, as they differ for different BLE connections. To make setting these values more efficient, this interface combines these three values in to a so called <code>radio context</code> and adds a <code>netopt</code> option to set all three values at once using <code>netdev_ble_set_ctx(dev, ctx)</code> (<code>netdev-&gt;set(dev, NETOPT_BLE_CTX, ctx, sizeof(netdev_ble_ctx_t))</code>).</p>
-<h1><a class="anchor" id="autotoc_md1690"></a>
+<h1><a class="anchor" id="autotoc_md1691"></a>
 Implementation Status and Limitations</h1>
 <ul>
 <li>This interface works for memory mapped radios only (no support for bus-connected devices). This is mainly for timing reasons.</li>
@@ -385,7 +386,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:56 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

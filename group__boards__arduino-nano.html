@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Arduino Nano</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,10 +149,10 @@ $(function(){initNavTree('group__boards__arduino-nano.html',''); initResizable(t
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the Arduino Nano board </p>
-<h2><a class="anchor" id="autotoc_md154"></a>
+<h2><a class="anchor" id="autotoc_md155"></a>
 Overview</h2>
 <p>The Arduino Nano is the cheapest member of the Arduino family. It is based on Atmel's AVR architecture and sports an ATmega328p MCU. It is like many Arduinos extensible by using shields.</p>
-<h3><a class="anchor" id="autotoc_md155"></a>
+<h3><a class="anchor" id="autotoc_md156"></a>
 MCU</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -183,37 +184,37 @@ MCU</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">Board Manual   </td><td class="markdownTableBodyLeft"><a href="https://www.arduino.cc/en/uploads/Main/ArduinoNanoManual23.pdf">Board Manual</a>   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md156"></a>
+<h2><a class="anchor" id="autotoc_md157"></a>
 Flashing the Device</h2>
 <p>Flashing RIOT on the Arduino Nano is quite straight forward, just connect your Arduino Nano via the USB connector to your host computer and type:</p>
 <p><code>make BOARD=arduino-nano flash</code></p>
 <p>This should take care of everything!</p>
 <p>We use the open <code>avrdude</code> tool to write the new code into the ATmega328p's flash</p>
-<h2><a class="anchor" id="autotoc_md157"></a>
+<h2><a class="anchor" id="autotoc_md158"></a>
 Using Optiboot</h2>
 <p>You can use the <a href="https://github.com/Optiboot/optiboot">Optiboot</a> bootloader instead of the stock bootloader for faster programming. Optiboot also is smaller (512 byte instead of 2 KiB), so that 1.5 KiB more program memory is available for RIOT. Refer to the project page for instructions on how to build an flash the bootloader. Don't forgot to also update the fuse settings to set the bootloader size to 256 words (512 bytes).</p>
 <p>Compile and flash with <code>make BOARD=arduino-nano ATMEGA_BOOTLOADER=optiboot flash</code> or use <code>export ARDUINO_NANO_BOOTLOADER=optiboot</code> in order to not have to specify the bootloader during compilation and flashing.</p>
-<h2><a class="anchor" id="autotoc_md158"></a>
+<h2><a class="anchor" id="autotoc_md159"></a>
 Issues</h2>
-<h3><a class="anchor" id="autotoc_md159"></a>
+<h3><a class="anchor" id="autotoc_md160"></a>
 RIOT Stuck in Reboot Loop</h3>
 <p>If RIOT is stuck in a reboot loop e.g. after restarting the device with the <code>reboot</code> shell command, this is likely caused by an <a href="https://forum.arduino.cc/index.php?topic=150419.0">issue with the stock bootloader</a> that can be solved by using Optiboot as bootloader instead (see above).</p>
-<h2><a class="anchor" id="autotoc_md160"></a>
+<h2><a class="anchor" id="autotoc_md161"></a>
 On-Chip Debugging</h2>
 <p>On-Chip Debugging on the Arduino Nano is not supported via the usual JTAG interface used in ATmega MCUs with higher pin counts, but via debugWIRE. While debugWIRE has the advantage of only using the RESET pin to transfer data, the features provided are extremely limited. If the same issue can be reproduced on an Arduino Mega2560, which supports JTAG, it will be much easier and more productive to debug your code on the Arduino Mega2560. If the bug cannot be reproduced, limited on chip debugging is possible on the Arduino Nano nonetheless.</p>
-<h3><a class="anchor" id="autotoc_md161"></a>
+<h3><a class="anchor" id="autotoc_md162"></a>
 Prerequisites</h3>
-<h4><a class="anchor" id="autotoc_md162"></a>
+<h4><a class="anchor" id="autotoc_md163"></a>
 Debugging Hardware</h4>
 <p>In order to be able to use On-Chip Debugging you will need the AVR Dragon, which is the <strike>cheapest</strike> least expensive programmer and debugger available that supports programming via SPI ("normal ISP"), High Voltage Serial Programming, and Parallel Programming, as well as debugging via JTAG, debugWIRE, PDI and aWire. So at least can use it for just about every AVR device.</p>
-<h4><a class="anchor" id="autotoc_md163"></a>
+<h4><a class="anchor" id="autotoc_md164"></a>
 Board Modifications</h4>
 <p>On the Arduino Nano the RESET pin of the MCU is connected to a 100 nF capacitor, which in turn is connected to the DTR pin of the FT232RL USB-UART bridge. This allows the device to be automatically reset when you connected to the board via a serial. This is particularly useful during programming via the bootloader (without external ISP programmer), as avrdude can trigger the reset and, thus, start the bootloader without the user having to press a button.</p>
 <p>In order to use on-chip debugging, the capacitor needs however to be disconnected from the reset pin. You can either carefully de-solder it (which allows you to solder it back in after debugging), or just break it off with pinch-nose pliers (which usually destroys the capacitor, making the modification permanent). After this modification, flashing via bootloader requires a manual press on the reset button.</p>
-<h4><a class="anchor" id="autotoc_md164"></a>
+<h4><a class="anchor" id="autotoc_md165"></a>
 Software</h4>
 <p>You need to have <a href="http://avarice.sourceforge.net/">AVaRICE</a> installed. Some distros have this packaged already. If you need to compile it by hand, go for the latest SVN revision. The latest release cannot be compiled on anything but historic platforms and contains bugs that prevent it from debugging the ATmega328P anyway.</p>
-<h4><a class="anchor" id="autotoc_md165"></a>
+<h4><a class="anchor" id="autotoc_md166"></a>
 Fuses</h4>
 <p>In order to use On-Chip Debugging, the <code>DWEN</code> bit in the high fuse needs to be enabled (set to zero). The exact fuse settings for debugging and the default fuse setting are these:</p>
 <table class="markdownTable">
@@ -229,14 +230,14 @@ Fuses</h4>
 <p>You can enable debugWIRE debugging by running (replace <code>&lt;PROGRAMMER&gt;</code> by the name of your programmer, e.g. <code>dragon_isp</code> in case of the AVR Dragon): </p><pre class="fragment">avrdude -p m328p -c &lt;PROGRAMMER&gt; -U hfuse:w:0x9a:m
 </pre><p>And disable debugging via: </p><pre class="fragment">avrdude -p m328p -c &lt;PROGRAMMER&gt; -U hfuse:w:0xda:m
 </pre><dl class="section note"><dt>Note</dt><dd>You can use a different ISP to enable debugging, but disabling it again will only work with the AVR Dragon: The ISP will require the RESET pin to work, but the RESET pin is re-purposed for debugWIRE when debugging is enabled. Recent versions of avrdude will use the debugWIRE interface to temporarily disable debugWIRE and restore the RESET pin's default behavior in order to use the ISP. But this requires a programmer/debugger that can be used as both ISP and debugWIRE debugger using the same connector. So don't enable debugging unless you have an AVR Dragon or another plan on how to disable debugging again.</dd></dl>
-<h3><a class="anchor" id="autotoc_md166"></a>
+<h3><a class="anchor" id="autotoc_md167"></a>
 Debugging</h3>
 <p>With the AVR Dragon, debugging is as simple as running: </p><pre class="fragment">make BOARD=arduino-nano debug
 </pre><dl class="section warning"><dt>Warning</dt><dd>For flashing the device via ISP, avrdude will temporarily disable debugWIRE. If AVaRICE complains that synchronization with the device is not possible after having it flashed, the device might need a cold boot to enable debugWIRE again.</dd></dl>
 <p>The memory map of the ELF file does not take the bootloader into account. The author of this text used an ISP to program the Arduino Nano during debugging to avoid any issues. You might want to do the same, e.g. via: </p><pre class="fragment">make BOARD=arduino-nano PROGRAMMER=dragon_isp flash
 </pre><dl class="section warning"><dt>Warning</dt><dd>Flashing via ISP overwrites the bootloader. But you can restore it easily using the ISP. Consult the Arduino documentation on how to restore the bootloader.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>If you are using a different debugger than the AVR Dragon, you have to export the <code>AVR_DEBUGDEVICE</code> environment variable to the required flag to pass to AVaRICE, e.g. when using the Atmel-ICE you have to export <code>AVR_DEBUGDEVICE=--edbg</code>. If the debug device is not connected via USB, you also need to export <code>AVR_DEBUGINTERFACE</code> to the correct value.</dd></dl>
-<h2><a class="anchor" id="autotoc_md167"></a>
+<h2><a class="anchor" id="autotoc_md168"></a>
 Caution</h2>
 <p>Don't expect having a working network stack due to very limited resources. </p>
 <table class="memberdecls">
@@ -253,7 +254,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:54 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

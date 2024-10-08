@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: IEEE EUI-48/64 provider</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -151,12 +152,12 @@ $(function(){initNavTree('group__net__eui__provider.html',''); initResizable(tru
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>MAC address management </p>
-<h1><a class="anchor" id="autotoc_md1992"></a>
+<h1><a class="anchor" id="autotoc_md1993"></a>
 About</h1>
 <p>An EUI provider provides an Extended Unique Identifier, that is a hardware address for a network device.</p>
 <p>A board may have an EEPROM with a unique ID (e.g. <a class="el" href="group__drivers__at24mac.html">AT24MAC unique ID chip</a>) that is used to store an address, a unique address is stored in a config area of the board's flash during production, etc.</p>
 <p>The EUI provider is connected to a network device that will then use this address.</p>
-<h1><a class="anchor" id="autotoc_md1993"></a>
+<h1><a class="anchor" id="autotoc_md1994"></a>
 How it works</h1>
 <p>If there is only one EUI provider on the board, the configuration is done through three defines:</p>
 <ul>
@@ -182,7 +183,7 @@ How it works</h1>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 <div class="ttc" id="aunioneui64__t_html"><div class="ttname"><a href="unioneui64__t.html">eui64_t</a></div><div class="ttdoc">Data type to represent an EUI-64.</div><div class="ttdef"><b>Definition</b> eui64.h:55</div></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md1994"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md1995"></a>
 Recommendations</h1>
 <p>Do not use <code>NETDEV_ANY</code> as EUI device type. Otherwise if you have two interfaces both will match the same EUI.</p>
 <p>It is however possible to use <code>NETDEV_INDEX_ANY</code> if you have multiple interfaces of the same type and your EUI provider function takes the index into account (or returns error if the index is out of bounds with the available ids).</p>
@@ -390,7 +391,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

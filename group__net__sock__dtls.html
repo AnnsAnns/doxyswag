@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: DTLS sock API</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -153,9 +154,9 @@ $(function(){initNavTree('group__net__sock__dtls.html',''); initResizable(true);
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Sock submodule for DTLS </p>
 <p>DTLS sock acts as a wrapper for the underlying DTLS module to provide encryption for applications using the UDP sock API.</p>
-<h2><a class="anchor" id="autotoc_md2075"></a>
+<h2><a class="anchor" id="autotoc_md2076"></a>
 How To Use</h2>
-<h3><a class="anchor" id="autotoc_md2076"></a>
+<h3><a class="anchor" id="autotoc_md2077"></a>
 Summary</h3>
 <ul>
 <li>Include module implementing the DTLS sock API in the Makefile</li>
@@ -191,12 +192,12 @@ Summary</h3>
 </ol>
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md2077"></a>
+<h2><a class="anchor" id="autotoc_md2078"></a>
 Makefile Includes</h2>
 <p>First, we need to include a module that implements this API in our applications Makefile. For example the module that implements this API for <a class="el" href="group__pkg__tinydtls.html">tinydtls</a> is called &lsquo;tinydtls_sock_dtls&rsquo;.</p>
 <p>The corresponding <a class="el" href="group__pkg.html">pkg</a> providing the DTLS implementation will be automatically included so there is no need to use <code>USEPKG</code> to add the pkg manually.</p>
 <p>Each DTLS implementation may have its own configuration options and caveat. This can be found at <a class="el" href="group__net__dtls.html">DTLS</a>.</p>
-<h3><a class="anchor" id="autotoc_md2078"></a>
+<h3><a class="anchor" id="autotoc_md2079"></a>
 Adding credentials</h3>
 <p>Before using this API, either as a server or a client, we first need to add the credentials to be used for the encryption using <a class="el" href="group__net__credman.html">credman</a>. Note that credman does not copy the credentials given into the system, it only has information about the credentials and where it is located at. So it is your responsibility to make sure that the credential is valid during the lifetime of your application.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="stdio_8h.html">stdio.h</a>&gt;</span></div>
@@ -293,7 +294,7 @@ Adding credentials</h3>
 <div class="line">}</div>
 </div><!-- fragment --><p>After credential information is filled, we can add it to the credential pool using <a class="el" href="group__net__credman.html#ga541badb0086366236a741db3f50eb3dc">credman_add()</a>.</p>
 <p>For adding credentials of other types, you can follow the steps above except <a class="el" href="structcredman__credential__t.html#a528287ec61d5a9eb2dbae51470102701" title="Type of the credential.">credman_credential_t::type</a> and <a class="el" href="structcredman__credential__t.html#a88361bff5ce2f9f08e2c09f8ec91cfa5" title="Credential parameters.">credman_credential_t::params</a> depend on the type of credential used.</p>
-<h3><a class="anchor" id="autotoc_md2079"></a>
+<h3><a class="anchor" id="autotoc_md2080"></a>
 Server Operation</h3>
 <p>After credentials are added, we can start the server.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="stdio_8h.html">stdio.h</a>&gt;</span></div>
@@ -392,7 +393,7 @@ Server Operation</h3>
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="line"><span class="keywordflow">return</span> 0;</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md2080"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md2081"></a>
 Client Operation</h3>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="sock_2udp_8h.html">net/sock/udp.h</a>&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="sock_2dtls_8h.html">net/sock/dtls.h</a>&quot;</span></div>
@@ -553,17 +554,17 @@ Client Operation</h3>
 <div class="line">sock_dtls_close(&amp;dtls_sock);</div>
 <div class="line"><a class="code hl_function" href="group__net__sock__udp.html#ga9bab7d0998b2c49e66bab0f03367298a">sock_udp_close</a>(&amp;udp_sock);</div>
 <div class="line"><span class="keywordflow">return</span> 0;</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md2081"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md2082"></a>
 Multi-credential handling</h3>
 <p>Each sock needs at least one credential tag to operate. <code>sock_dtls_create</code> allows to optionally assign an initial credential. Extra credentials can be added and removed using <a class="el" href="group__net__sock__dtls__creds.html#gae9388932dba7c8ade1245ff296e810f7">sock_dtls_add_credential</a> and <a class="el" href="group__net__sock__dtls__creds.html#gad9d8b4af474253a60dc78078835a6e4d">sock_dtls_remove_credential</a> respectively (found in <code><a class="el" href="creds_8h.html" title="DTLS sock definitions.">net/sock/dtls/creds.h</a></code>).</p>
-<h4><a class="anchor" id="autotoc_md2082"></a>
+<h4><a class="anchor" id="autotoc_md2083"></a>
 Pre-shared Keys Cipher Suites</h4>
 <p>In the case of PSK, a server can optionally indicate a hint to help the client to decide which PSK Identity to use, using <a class="el" href="group__net__sock__dtls__creds.html#ga0023a4097d185cd6ee21e5097f51a49a">sock_dtls_set_server_psk_id_hint</a> (see <a href="https://tools.ietf.org/html/rfc4279#section-5.2">https://tools.ietf.org/html/rfc4279#section-5.2</a>). The client application can decide which credential to use based on the sent hint and/or the session information, by registering a callback with <a class="el" href="group__net__sock__dtls__creds.html#ga14d2d11e9dcf19049f330ad5c667580e">sock_dtls_set_client_psk_cb</a>. If no callback is registered, or fails to chose a tag (i.e. it returns <a class="el" href="group__net__credman.html#gaef3b87d09d3032ab13e653756f34da92">CREDMAN_TAG_EMPTY</a>), the credential is chosen as follows: if a hint is sent by the server, all credentials registered to the sock are checked for a matching <a class="el" href="structpsk__params__t.html#a2995108ed4d4a1a50651d6af4d609ef0">hint</a>. A credential is selected on matching hint. If no credential matches the hint or no hint is provided, the first PSK credential registered in the sock is used.</p>
-<h4><a class="anchor" id="autotoc_md2083"></a>
+<h4><a class="anchor" id="autotoc_md2084"></a>
 Elliptic Curve Cryptography Cipher Suites</h4>
 <p>When using ECC both client and server applications can register a callback to decide which of the registered credentials should be used, based on the session information. This is done using <a class="el" href="group__net__sock__dtls__creds.html#ga7524206606ab503113c5ffa83df1a2af">sock_dtls_set_rpk_cb</a>.</p>
 <p>In both cases, if no callbacks are registered, the sock implementation will try to find a registered credential in the Sock's credential list, that matches the needed type. The first one that matches is used.</p>
-<h4><a class="anchor" id="autotoc_md2084"></a>
+<h4><a class="anchor" id="autotoc_md2085"></a>
 Public key verification when using ECC</h4>
 <p>By enabling the pseudomodule <code>sock_dtls_verify_public_key</code> the DTLS sock will verify the public key of the remote peer. When enabled, the DTLS sock will only accept a connection if the provided public key is in the list of public keys assigned to the specified sock. This only applies when using ECC ciphersuites (i.e., not PSK). </p>
 <table class="memberdecls">
@@ -1632,7 +1633,7 @@ Function blocks if no packet is currently waiting.</dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

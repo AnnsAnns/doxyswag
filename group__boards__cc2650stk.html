@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: CC2650STK</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -155,7 +156,7 @@ $(function(){initNavTree('group__boards__cc2650stk.html',''); initResizable(true
 <li><a href="https://www.ti.com/product/CC2650">Platform</a> &lt;- CPU data sheet here</li>
 </ul>
 <p>Use <code>BOARD=cc2650stk</code> for building RIOT for this platform.</p>
-<h2><a class="anchor" id="autotoc_md286"></a>
+<h2><a class="anchor" id="autotoc_md287"></a>
 Components</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -191,7 +192,7 @@ Components</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">Reference Manual   </td><td class="markdownTableBodyLeft"><a href="https://www.ti.com/lit/ug/swcu117h/swcu117h.pdf">Reference Manual</a>   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md287"></a>
+<h2><a class="anchor" id="autotoc_md288"></a>
 Implementation Status</h2>
 <p>It's an ongoing process...</p>
 <table class="markdownTable">
@@ -210,10 +211,10 @@ Implementation Status</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">RF core   </td><td class="markdownTableBodyLeft">Work in progress   </td><td class="markdownTableBodyLeft">See <a href="https://github.com/yogo1212/RIOT/tree/cc26x0_rfc">here</a>.   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md288"></a>
+<h2><a class="anchor" id="autotoc_md289"></a>
 Toolchains</h2>
 <p>The arm-none-eabi toolchain works fine. You can get it <a href="https://launchpad.net/gcc-arm-embedded/+download">here</a>.</p>
-<h2><a class="anchor" id="autotoc_md289"></a>
+<h2><a class="anchor" id="autotoc_md290"></a>
 Programming and Debugging</h2>
 <p>You'll need <a href="https://processors.wiki.ti.com/index.php?title=CC13xx_CC26xx_Tools_Overview#Debuggers">debugging hardware</a>. So far, the <a href="https://www.ti.com/tool/CC-DEVPACK-DEBUG">XDS110 debug probe</a> has been tested. That bugger requires you to load a firmware onto it each time it powers up. The tool is contained in the Uniflash utility or the <code>CodeComposer Studio</code> from TI. Look for a folder called <code>uscif</code> in the installation directory, go to the folder <code>xds110</code> therein, and follow the instructions in the <code>ReadMe.txt</code>.</p>
 <p>The process is relying on proprietary TI softsoftware. If you're on Windows you can use the stuff linked to on the product websites.</p>
@@ -227,12 +228,12 @@ Programming and Debugging</h2>
 </ol>
 <p>In both cases you can add <code>term</code> at the end of the <code>make</code> command to enter the pyterm console directly. After the board has been flashed, it needs to be manually reset using the reset button on the XDS110 probe.</p>
 <p>WORK IN PROGRESS</p>
-<h1><a class="anchor" id="autotoc_md290"></a>
+<h1><a class="anchor" id="autotoc_md291"></a>
 <b>Bluetooth Low Energy on the CC2650STK</b></h1>
 <p>This section is meant to provide information regarding the BLE specifications as well as their implementation on the CC2650.</p>
 <p>BLE support two main data format: one for advertising channels packets and the other for data channels packets. Both formats will be described in details in the first half of the guide. The second half will provide guidance on how to implement the most common roles of a BLE network.</p>
 <p>References: <a href="https://www.bluetooth.org/DocMan/handlers/DownloadDoc.ashx?doc_id=286439">BlueTooth Core Specification v4.2</a>, <a href="https://www.bluetooth.org/DocMan/handlers/DownloadDoc.ashx?doc_id=302735">Core Specification Supplement v6</a>, <a href="https://www.ti.com/lit/an/swra475a/swra475a.pdf">BLE Becons by TI</a></p>
-<h2><a class="anchor" id="autotoc_md291"></a>
+<h2><a class="anchor" id="autotoc_md292"></a>
 BLE packet format for advertising channels</h2>
 <p><img src="https://cloud.githubusercontent.com/assets/14371243/15826178/dac1490a-2c06-11e6-95fb-4d27bdb7fd8d.png" alt="pdu" class="inline"/></p>
 <table class="markdownTable">
@@ -247,7 +248,7 @@ BLE packet format for advertising channels</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">CRC   </td><td class="markdownTableBodyLeft">3 bytes   </td><td class="markdownTableBodyLeft">BLE specification   </td><td class="markdownTableBodyLeft">Result of a polynomial calculated based on the PDU   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md292"></a>
+<h3><a class="anchor" id="autotoc_md293"></a>
 PDU for advertising channels</h3>
 <p>The RF Core will automatically build the PDU based on the content of the radio operation command. The following table describes the format of the PDU for advertising channels, as well as the corresponding variables in the RIOT command.</p>
 <div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>__attribute__ ((aligned(4))) {</div>
@@ -295,7 +296,7 @@ PDU for advertising channels</h3>
 <td class="markdownTableBodyLeft">CMD_BLE_ADV_SCAN   </td><td class="markdownTableBodyLeft">ADV_SCAN_IND   </td><td class="markdownTableBodyLeft">0110b   </td><td class="markdownTableBodyLeft">TxAdd: advertiser's address is public (0) or random (1). RxAdd: not defined.   </td><td class="markdownTableBodyLeft">Scannable undirected advertising event   </td></tr>
 </table>
 <p>The Advertising Data (AD) field can be populated with a set of basic data types described in chapter 1 of the <a href="https://www.bluetooth.com/specifications/adopted-specifications">BLE core specification supplement</a>, e.g. service UUID, flags or manufacturer specific data.</p>
-<h2><a class="anchor" id="autotoc_md293"></a>
+<h2><a class="anchor" id="autotoc_md294"></a>
 BLE packet format for data channels</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -309,7 +310,7 @@ BLE packet format for data channels</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">CRC   </td><td class="markdownTableBodyLeft">3 bytes   </td><td class="markdownTableBodyLeft">BLE specification   </td><td class="markdownTableBodyLeft">Result of a polynomial calculated based on the PDU   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md294"></a>
+<h2><a class="anchor" id="autotoc_md295"></a>
 Configuring a BLE beacon</h2>
 <p>In order to configure a BLE beacon, a radio operation command <code>cmd</code> of type <code>ble_rop_cmd_t</code> must be sent to the RF core.</p>
 <ol type="1">
@@ -349,7 +350,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:54 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

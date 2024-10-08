@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: drivers/include/cc1xxx_common.h File Reference</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -156,10 +157,10 @@ $(function(){initNavTree('cc1xxx__common_8h.html',''); initResizable(true); });
 Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
 <dd>
 Marian Buschsieweke <a href="#" onclick="location.href='mai'+'lto:'+'mar'+'ia'+'n.b'+'us'+'chs'+'ie'+'wek'+'e@'+'ovg'+'u.'+'de'; return false;">maria<span class="obfuscator">.nosp@m.</span>n.bu<span class="obfuscator">.nosp@m.</span>schsi<span class="obfuscator">.nosp@m.</span>ewek<span class="obfuscator">.nosp@m.</span>e@ovg<span class="obfuscator">.nosp@m.</span>u.de</a></dd></dl>
-<h1><a class="anchor" id="autotoc_md1640"></a>
+<h1><a class="anchor" id="autotoc_md1641"></a>
 Supported Transceivers</h1>
 <p>This adaption layer is written to be used by CC110x and CC1200 transceivers, but any transceiver using layer 2 addresses which are 1 byte in size would likely be able to use it. Keep in mind that both CC110x and CC1200 are able to transmit frames of up to 255 bytes (thus 253 bytes of payload, as the layer 2 header is 2 bytes in size). Other transceivers only supporting smaller frames may not be able to use all the upper layer protocols supported by the CC110x and CC1200 transceivers.</p>
-<h1><a class="anchor" id="autotoc_md1641"></a>
+<h1><a class="anchor" id="autotoc_md1642"></a>
 Frame Format</h1>
 <pre class="fragment"> 0                   1                   2                   3
  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
@@ -176,16 +177,16 @@ Frame Format</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Payload   </td><td class="markdownTableBodyNone">The payload (variable size)   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md1642"></a>
+<h1><a class="anchor" id="autotoc_md1643"></a>
 Layer 2 Broadcast</h1>
 <p>This adaption layer assumes that the layer 2 address <code>0x00</code> (see <a class="el" href="group__drivers__cc1xxx.html#gac6d916a60413ec736a926e6e800712ec">CC1XXX_BCAST_ADDR</a>) is reserved for layer 2 broadcast, which is true for CC110x and CC1200 transceivers (provided they are configured accordingly). If more users of this adaption layer are added, this behaviour might needs to be more generalized. </p>
-</div><div class="textblock"><code>#include &quot;<a class="el" href="gnrc_2netif_8h.html">net/gnrc/netif.h</a>&quot;</code><br />
+</div><div class="textblock"><code>#include &quot;<a class="el" href="gnrc_2netif_8h_source.html">net/gnrc/netif.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for cc1xxx_common.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="cc1xxx__common_8h__incl.svg" width="3902" height="812"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="cc1xxx__common_8h__incl.svg" width="3754" height="812"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
@@ -194,7 +195,9 @@ Layer 2 Broadcast</h1>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="cc1xxx__common_8h__dep__incl.svg" width="203" height="316"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-</div><table class="memberdecls">
+</div>
+<p><a href="cc1xxx__common_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcc1xxx__l2hdr__t.html">cc1xxx_l2hdr_t</a></td></tr>
@@ -243,7 +246,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_14bc92f4b96c8519b376567118ac28b3.html">drivers</a></li><li class="navelem"><a class="el" href="dir_ee023d43c33bfccc31aa50a48a76892b.html">include</a></li><li class="navelem"><a class="el" href="cc1xxx__common_8h.html">cc1xxx_common.h</a></li>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:53 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:28 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Atmel SAM D21 Xplained Pro</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,14 +149,14 @@ $(function(){initNavTree('group__boards__samd21-xpro.html',''); initResizable(tr
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the Atmel SAM D21 Xplained Pro board. </p>
-<h2><a class="anchor" id="autotoc_md1088"></a>
+<h2><a class="anchor" id="autotoc_md1089"></a>
 Overview</h2>
 <p>The <code>SAMD21 Xplained Pro</code> is an ultra-low power evaluation board by Atmel featuring an ATSAMD21J18A SoC. The SoC includes a SAMD21 ARM Cortex-M0+ micro- controller. For programming the MCU comes with 32Kb of RAM and 256Kb of flash memory.</p>
 <p>The samd21-xpro is available from various hardware vendors for ~30USD (as of 2017 May).</p>
-<h2><a class="anchor" id="autotoc_md1089"></a>
+<h2><a class="anchor" id="autotoc_md1090"></a>
 Hardware</h2>
 <p><img src="http://www.microchip.com/_ImagedCopy/ATSAMD21-XPRO_angle.jpg" alt="samd21-xpro image" class="inline"/></p>
-<h3><a class="anchor" id="autotoc_md1090"></a>
+<h3><a class="anchor" id="autotoc_md1091"></a>
 MCU</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -189,7 +190,7 @@ MCU</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">Board Manual   </td><td class="markdownTableBodyLeft"><a href="http://www.atmel.com/Images/Atmel-42220-SAMD21-Xplained-Pro_User-Guide.pdf">Board Manual</a>   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md1091"></a>
+<h3><a class="anchor" id="autotoc_md1092"></a>
 User Interface</h3>
 <p>1 User button and 1 LED:</p>
 <table class="markdownTable">
@@ -200,7 +201,7 @@ User Interface</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">SW0 (button)   </td><td class="markdownTableBodyLeft">PA15   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md1092"></a>
+<h2><a class="anchor" id="autotoc_md1093"></a>
 Implementation Status</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -228,7 +229,7 @@ Implementation Status</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft"><a class="el" href="structTimer.html" title="struct to get time references within mqtt paho">Timer</a>   </td><td class="markdownTableBodyLeft">yes   </td><td class="markdownTableBodyLeft"></td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md1093"></a>
+<h2><a class="anchor" id="autotoc_md1094"></a>
 Flashing the device</h2>
 <p>Connect the device to your Micro-USB cable using the port labeled as <em>DEBUG USB</em>.</p>
 <p>The standard method for flashing RIOT to the samd21-xpro is using <a href="https://github.com/ataradov/edbg">edbg</a>. by calling: <code>make BOARD=samd21-xpro -C tests/leds flash</code></p>
@@ -238,16 +239,16 @@ Flashing the device</h2>
 <div class="line">echo <span class="stringliteral">&#39;KERNEL==&quot;hidraw*&quot;, SUBSYSTEM==&quot;hidraw&quot;, MODE=&quot;0664&quot;, GROUP=&quot;plugdev&quot;&#39;</span> \</div>
 <div class="line">    | sudo tee -a /etc/udev/rules.d/99-usb.rules</div>
 <div class="line">sudo service udev restart</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md1094"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md1095"></a>
 Arch Linux</h3>
 <p>With yaourt: </p><div class="fragment"><div class="line">yaourt -S libudev0</div>
 <div class="line">yaourt -S hidapi-git</div>
 <div class="line">yaourt -S openocd-git</div>
 <div class="line"><span class="preprocessor"># edit PKGBUILD, add &quot;cmsis-dap hidapi-libusb&quot; to &quot;_features&quot;</span></div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md1095"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md1096"></a>
 Ubuntu</h3>
 <p>Although this refers to setting up the SAMR21, this guide is still very helpful to understanding how to set up a solid RIOT development environment for the SAMD21: <a href="http://watr.li/samr21-dev-setup-ubuntu.html">http://watr.li/samr21-dev-setup-ubuntu.html</a></p>
-<h2><a class="anchor" id="autotoc_md1096"></a>
+<h2><a class="anchor" id="autotoc_md1097"></a>
 Known Issues / Problems</h2>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
@@ -269,7 +270,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:54 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

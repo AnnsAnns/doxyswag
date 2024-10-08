@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Simple-Subnet auto-configuration</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -149,7 +150,7 @@ $(function(){initNavTree('group__net__gnrc__ipv6__auto__subnets.html',''); initR
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Automatic configuration for cascading subnets </p>
-<h1><a class="anchor" id="autotoc_md2183"></a>
+<h1><a class="anchor" id="autotoc_md2184"></a>
 About</h1>
 <p>This module provides an automatic configuration for networks with a (simple) tree topology.</p>
 <p>If a sufficiently large IPv6 subnet (prefix length &lt; /64) is provided via Router Advertisements, a routing node with this module will automatically configure subnets from it by dividing it into sub-prefixes for each downstream interface.</p>
@@ -161,7 +162,7 @@ About</h1>
 <p><img src="gnrc_ipv6_auto_subnets.svg" alt="Example Topology with multiple routers" style="pointer-events: none;" class="inline"/></p>
 <p>The downstream network(s) receive the sub-prefix via Router Advertisements and the process repeats until the bits of the prefix are exhausted. The smallest subnet must still have a /64 prefix.</p>
 <p>The new subnet must no longer be considered on-link by the hosts in the parent network. Therefore the downstream router will send a router advertisement, which only contains a Route Information Option, to the upstream network. The Route Information Option contains the prefix of the downstream network so that upstream routers will no longer consider hosts in this subnet on-link, but instead will use the downstream router to route to the new subnet.</p>
-<h2><a class="anchor" id="autotoc_md2184"></a>
+<h2><a class="anchor" id="autotoc_md2185"></a>
 The need for a Route Information Option</h2>
 <p>All nodes that want to communicate with hosts in a downstream subnet must implement parsing of the Route Information Option. For routing RIOT nodes this is enabled by default, non-routing nodes need to enable the <code>gnrc_ipv6_nib_rio</code> module.</p>
 <p>This is because all addresses in the subnet are also within the original network, so without further information hosts would consider those addresses on-link and perform neighbor solicitation to communicate with them.</p>
@@ -169,7 +170,7 @@ The need for a Route Information Option</h2>
 <p><img src="gnrc_ipv6_auto_subnets-without_rio.svg" alt="Auto-Subnets without RIO" style="pointer-events: none;" class="inline"/></p>
 <p>To solve this, the routing node Ⓐ also sends a Router Advertisement to the <em>upstream</em> network that only contains a Route Information Option for each downstream network created by that router. This way hosts in the upstream network will prefer the route via Ⓐ over link-local transmission as it is a stronger match than the upstream prefix:</p>
 <p><img src="gnrc_ipv6_auto_subnets-with_rio.svg" alt="Auto-Subnets with RIO" style="pointer-events: none;" class="inline"/></p>
-<h1><a class="anchor" id="autotoc_md2185"></a>
+<h1><a class="anchor" id="autotoc_md2186"></a>
 Usage</h1>
 <p>Simply add the <code>gnrc_ipv6_auto_subnets</code> or <code>gnrc_ipv6_auto_subnets_simple</code> module to the nodes that should act as routers in the cascading network. The upstream network will be automatically chosen as the one that first receives a router advertisement. </p>
 <table class="memberdecls">
@@ -290,7 +291,7 @@ Macros</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Autoconn</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -153,23 +154,23 @@ $(function(){initNavTree('group__pkg__nimble__autoconn.html',''); initResizable(
 <p>Simple connection manager that automatically opens BLE connections to any node that fits some given filter criteria </p>
 <dl class="section warning"><dt>Warning</dt><dd><b class="text-danger">This feature is experimental!</b><br  />
  </dd></dl>
-<h1><a class="anchor" id="autotoc_md1851"></a>
+<h1><a class="anchor" id="autotoc_md1852"></a>
 WARNING</h1>
 <p>This module is highly experimental! Expect bugs, instabilities and sudden API changes :-)</p>
-<h1><a class="anchor" id="autotoc_md1852"></a>
+<h1><a class="anchor" id="autotoc_md1853"></a>
 About</h1>
 <p>This NimBLE submodule implements a connection manager for BLE. It takes care of scanning, advertising, and opening connections to neighboring nodes. For this autoconn periodically switches between advertising and scanning mode, hence from accepting incoming connection requests to scanning actively for new neighbors.</p>
-<h1><a class="anchor" id="autotoc_md1853"></a>
+<h1><a class="anchor" id="autotoc_md1854"></a>
 Concept</h1>
 <p>The IETF and BT SIG standards describing IP-over-BLE only describe how to transfer IP data over L2CAP connection oriented channels. But they do not say anything about when BLE connections should be established between two BLE nodes in the first place. While this can be done manually (e.g. via RIOTs <code>ble</code> shell command), this is certainly no option in massive M2M deployments.</p>
 <p>To enable nodes to automatically connect to their neighbors, autoconn implements a naive strategy which makes nodes to connect to any neighbor they see, as long as the neighbor signals a predefined set of capabilities.</p>
 <p>In particular, neighbors are simply filtered by looking at the 16-bit service UUIDs included in the <code>Incomplete List of 16-bit Service UUIDs</code> field in the advertising data that is received from neighbors.</p>
 <p>The logical network topology (as seen by IP) is formed by the established BLE link layer connections. It is important to node, that the autoconn module will form a random topology on the link layer, as no further context information is used for the connection decisions. This can potentially lead to fragmented, non-connected sub-networks in larger deployments!</p>
-<h1><a class="anchor" id="autotoc_md1854"></a>
+<h1><a class="anchor" id="autotoc_md1855"></a>
 State Machine</h1>
 <p>Autoconn implements a state machine, that switches a nodes role periodically between scanning and advertising. To make sure, that nodes always have a chance to see each other, especially when booted at the same point in time, the intervals of each role consist of a constant amount of time plus a random interval. This way two nodes will eventually see each other and be able to establish a connection.</p>
 <p>All timing values for the interval duration and the maximum amount of the random offset are configurable.</p>
-<h1><a class="anchor" id="autotoc_md1855"></a>
+<h1><a class="anchor" id="autotoc_md1856"></a>
 Usage</h1>
 <p>In the current state, the filtering of neighbors is hard coded into the autoconn module. Two options are implemented:</p>
 <ol type="1">
@@ -182,7 +183,7 @@ Usage</h1>
 <li>&lsquo;USEMODULE += nibmle_autoconn_ndnsp&rsquo;</li>
 </ol>
 <dl class="section note"><dt>Note</dt><dd>The NDN support service (NDNSP) is defined by us and it is not at all standardized nor sanctioned by the BT SIG. For experimental use only...</dd></dl>
-<h1><a class="anchor" id="autotoc_md1856"></a>
+<h1><a class="anchor" id="autotoc_md1857"></a>
 Implementation Status</h1>
 <ul>
 <li>The filter function could be more powerful. It is probably a good idea to extend this module to allow for passing custom filter functions using a function pointer</li>
@@ -390,7 +391,7 @@ NIMBLE_AUTOCONN_INVALID if given parameters can not be applied </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:54 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Adafruit Feather M0</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,7 +149,7 @@ $(function(){initNavTree('group__boards__feather-m0.html',''); initResizable(tru
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the Adafruit Feather M0. </p>
-<h3><a class="anchor" id="autotoc_md392"></a>
+<h3><a class="anchor" id="autotoc_md393"></a>
 General information</h3>
 <p>Feather M0 boards are development boards shipped by <a href="https://learn.adafruit.com/adafruit-feather-m0-basic-proto/">Adafruit</a>.</p>
 <p>All the feather M0 boards are built based on the same Atmel SAMD21G18A microcontroller. See <a class="el" href="group__cpu__samd21.html">Atmel SAMD10/SAMD20/SAMD21/SAMR21</a>.</p>
@@ -159,7 +160,7 @@ General information</h3>
 <li><a href="https://learn.adafruit.com/adafruit-feather-m0-radio-with-lora-radio-module">Feather M0 LoRa</a></li>
 </ul>
 <p>The different modules used to differentiate the boards (ATWINC1500 WiFi, Bluefruit LE, SD card, LoRa) are connected via SPI (<a class="el" href="group__drivers__periph__spi.html#gafb9420809bc7722e41488a090b53eaf9" title="Default SPI device access macro.">SPI_DEV(0)</a>) to the SAMD21 mcu.</p>
-<h3><a class="anchor" id="autotoc_md393"></a>
+<h3><a class="anchor" id="autotoc_md394"></a>
 Pinout</h3>
 <p><img src="https://cdn-learn.adafruit.com/assets/assets/000/030/921/original/adafruit_products_2772_pinout_v1_0.png" alt="Adafruit Feather M0 proto pinout" style="width:800px;" class="inline"/><br  />
 </p>
@@ -173,22 +174,22 @@ Pinout</h3>
 <div class="ttc" id="agroup__drivers__periph__adc_html_ga0ffa20b26f649b1879b487f9aa0aa4b4"><div class="ttname"><a href="group__drivers__periph__adc.html#ga0ffa20b26f649b1879b487f9aa0aa4b4">adc_sample</a></div><div class="ttdeci">int32_t adc_sample(adc_t line, adc_res_t res)</div><div class="ttdoc">Sample a value from the given ADC line.</div></div>
 <div class="ttc" id="agroup__drivers__periph__adc_html_gaf0487d2e8711bf1c9e7daa6e61e05888"><div class="ttname"><a href="group__drivers__periph__adc.html#gaf0487d2e8711bf1c9e7daa6e61e05888">ADC_LINE</a></div><div class="ttdeci">#define ADC_LINE(x)</div><div class="ttdoc">Default ADC line access macro.</div><div class="ttdef"><b>Definition</b> adc.h:86</div></div>
 <div class="ttc" id="agroup__drivers__periph__adc_html_ggae4d48fdca21097fd8b34324f33ae4020ae21291741a3a61209b20161449066b5a"><div class="ttname"><a href="group__drivers__periph__adc.html#ggae4d48fdca21097fd8b34324f33ae4020ae21291741a3a61209b20161449066b5a">ADC_RES_10BIT</a></div><div class="ttdeci">@ ADC_RES_10BIT</div><div class="ttdoc">ADC resolution: 10 bit.</div><div class="ttdef"><b>Definition</b> adc.h:96</div></div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md394"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md395"></a>
 Flash the board</h3>
 <p>Use <code>BOARD=feather-m0</code> with the <code>make</code> command.<br  />
  Example with <code>hello-world</code> application: </p><div class="fragment"><div class="line">make BOARD=feather-m0 -C examples/hello-world flash</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>If the application crashes, automatic reflashing via USB, as explained above won't be possible. In this case, the board must be set in bootloader mode by double tapping the reset button before running the flash command.</dd></dl>
-<h3><a class="anchor" id="autotoc_md395"></a>
+<h3><a class="anchor" id="autotoc_md396"></a>
 Using the WiFi interface</h3>
 <p>To enable the WiFi interface of the Feather M0 WiFi variant of the board automatically for networking applications, use <code>feather-m0-wifi</code> as board and define the required WiFi parameters, for example: </p><div class="fragment"><div class="line">CFLAGS=<span class="stringliteral">&#39;-DWIFI_SSID=\&quot;&lt;ssid&gt;\&quot; -DWIFI_PASS=\&quot;&lt;pass&gt;\&quot;&#39;</span> \</div>
 <div class="line">make BOARD=feather-m0-wifi -C examples/gnrc_networking</div>
 </div><!-- fragment --><p>For detailed information about the parameters, see section <a class="el" href="group__drivers__atwinc15x0.html">ATWINC15x0 WiFi module driver</a>.</p>
-<h3><a class="anchor" id="autotoc_md396"></a>
+<h3><a class="anchor" id="autotoc_md397"></a>
 Using with LoRa module</h3>
 <p>To enable the LoRa module available on the <a href="https://learn.adafruit.com/adafruit-feather-m0-radio-with-lora-radio-module">Feather M0 LoRa</a> variant of the board automatically for LoRa applications, use <code>feather-m0-lora</code> as board:</p>
 <div class="fragment"><div class="line">make BOARD=feather-m0-lora -C examples/gnrc_lorawan</div>
 </div><!-- fragment --><p>For detailed information about the parameters, see section <a class="el" href="group__drivers__sx127x.html">Semtech SX1272 and SX1276 radios driver</a>.</p>
-<h3><a class="anchor" id="autotoc_md397"></a>
+<h3><a class="anchor" id="autotoc_md398"></a>
 Accessing STDIO via UART</h3>
 <p>STDIO of RIOT is directly available over the USB port.</p>
 <p>The <code>TERM_DELAY</code> environment variable can be used to add a delay (in second) before opening the serial terminal. The default value is 2s which should be enough in most of the situation. </p>
@@ -218,7 +219,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:54 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:29 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

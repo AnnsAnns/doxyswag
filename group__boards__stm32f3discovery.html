@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: STM32F3Discovery</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,15 +149,15 @@ $(function(){initNavTree('group__boards__stm32f3discovery.html',''); initResizab
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the STM32F3Discovery board </p>
-<h2><a class="anchor" id="autotoc_md1407"></a>
+<h2><a class="anchor" id="autotoc_md1408"></a>
 Overview</h2>
 <p>The STM32F3-discovery is cheap evaluation board designed by ST for pushing the STM32F3 microcontoller to a broad audience. It features an STM32F303VC microcontroller with 48Kb of RAM and 256Kb flash memory running with up to 72MHz. Addionially it provides USB host capabilities, 8 LEDs and sensors for a 9-degree of freedom initial measurement unit (3-axis accelerometer, 3-axis gyro and 3-axis magnetometer).</p>
 <p>The board does however not provide any radio capabilities, radio devices have to be connected externally via I2C, SPI, UART or similar.</p>
 <p>See <a href="https://github.com/RIOT-OS/RIOT/wiki/Getting-started-with-STM32F%5B0%7C3%7C4%5Ddiscovery-boards">this page</a> for a quick getting started guide.</p>
-<h2><a class="anchor" id="autotoc_md1408"></a>
+<h2><a class="anchor" id="autotoc_md1409"></a>
 Hardware</h2>
 <p><img src="https://www.st.com/bin/ecommerce/api/image.PF254044.en.feature-description-include-personalized-no-cpn-large.jpg" alt="STM32F3discovery image" class="inline"/></p>
-<h3><a class="anchor" id="autotoc_md1409"></a>
+<h3><a class="anchor" id="autotoc_md1410"></a>
 MCU</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -194,10 +195,10 @@ MCU</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">Board Manual   </td><td class="markdownTableBodyLeft"><a href="https://www.st.com/resource/en/user_manual/dm00063382.pdf">Board Manual</a>   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md1410"></a>
+<h3><a class="anchor" id="autotoc_md1411"></a>
 RIOT static pin mapping</h3>
 <p>please refer to <a href="https://docs.google.com/spreadsheets/d/1gnxsux5WpFrn-33Ivb9nGgTBqooqgDYxRkhZms-cvsc/edit?usp=sharing">this</a> document for the pin mapping as implemenented in <code><a class="el" href="boards_2stm32f3discovery_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the STM32F3discovery board.">boards/stm32f3discovery/include/periph_conf.h</a></code></p>
-<h3><a class="anchor" id="autotoc_md1411"></a>
+<h3><a class="anchor" id="autotoc_md1412"></a>
 User Interface</h3>
 <p>2 Buttons:</p>
 <table class="markdownTable">
@@ -215,7 +216,7 @@ User Interface</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Pin   </td><td class="markdownTableBodyNone">PE9   </td><td class="markdownTableBodyNone">PE8   </td><td class="markdownTableBodyNone">PE10   </td><td class="markdownTableBodyNone">PE15   </td><td class="markdownTableBodyNone">PE11   </td><td class="markdownTableBodyNone">PE14   </td><td class="markdownTableBodyNone">PE12   </td><td class="markdownTableBodyNone">PE13   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md1412"></a>
+<h3><a class="anchor" id="autotoc_md1413"></a>
 E-Compass / Accelerometer</h3>
 <p>The board has an on-board MEMS-chip that is an integrated accelerometer and e-compass.</p>
 <table class="markdownTable">
@@ -244,7 +245,7 @@ E-Compass / Accelerometer</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">INT2   </td><td class="markdownTableBodyLeft">PE5 (IN)   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md1413"></a>
+<h3><a class="anchor" id="autotoc_md1414"></a>
 Gyroscope</h3>
 <p>An 3-axis gyroscope is soldered on the board.</p>
 <table class="markdownTable">
@@ -278,7 +279,7 @@ Gyroscope</h3>
 <td class="markdownTableBodyLeft">INT2/DRDY   </td><td class="markdownTableBodyLeft">PE1 (IN)   </td></tr>
 </table>
 <p>[1] L3GD20 (up to rev. D01), IG34250D (from rev. E02) The driver detects automatically which sensor variant is on the board.</p>
-<h2><a class="anchor" id="autotoc_md1414"></a>
+<h2><a class="anchor" id="autotoc_md1415"></a>
 Implementation Status</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -308,15 +309,15 @@ Implementation Status</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">Gyroscope   </td><td class="markdownTableBodyLeft">L3GD20/I3G4250D   </td><td class="markdownTableBodyLeft">yes   </td><td class="markdownTableBodyLeft"></td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md1415"></a>
+<h2><a class="anchor" id="autotoc_md1416"></a>
 Flashing the device</h2>
 <p>The STM32F3discovery board includes an on-board ST-LINK V2 programmer. The easiest way to program the board is to use OpenOCD. Once you have installed OpenOCD (look <a href="https://github.com/RIOT-OS/RIOT/wiki/OpenOCD">here</a> for installation instructions), you can flash the board simply by typing</p>
 <div class="fragment"><div class="line">make flash</div>
 </div><!-- fragment --><p> and debug via GDB by simply typing </p><div class="fragment"><div class="line">make debug</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1416"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1417"></a>
 Supported Toolchains</h2>
 <p>For using the STM32F3discovery board we strongly recommend the usage of the <a href="https://launchpad.net/gcc-arm-embedded">GNU Tools for ARM Embedded Processors</a> toolchain.</p>
-<h2><a class="anchor" id="autotoc_md1417"></a>
+<h2><a class="anchor" id="autotoc_md1418"></a>
 Using UART</h2>
 <ol type="1">
 <li>connect your usb tty to: RX=PA10 TX=PA9 and GND=GND<ul>
@@ -346,7 +347,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

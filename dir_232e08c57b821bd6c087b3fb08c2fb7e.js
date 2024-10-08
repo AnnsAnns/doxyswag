@@ -12,5 +12,6 @@ var dir_232e08c57b821bd6c087b3fb08c2fb7e =
     [ "periph_rtc.h", "periph__rtc_8h.html", "periph__rtc_8h" ],
     [ "periph_rtt.h", "periph__rtt_8h.html", "periph__rtt_8h" ],
     [ "periph_timer.h", "periph__timer_8h.html", "periph__timer_8h" ],
+    [ "stopwatch.h", "stopwatch_8h_source.html", null ],
     [ "xtimer_compat.h", "ztimer_2xtimer__compat_8h.html", null ]
 ];

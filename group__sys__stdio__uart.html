@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: STDIO over UART</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -152,17 +153,17 @@ $(function(){initNavTree('group__sys__stdio__uart.html',''); initResizable(true)
 <p>Standard input/output backend using UART </p>
 <p>To enable stdio over UART, enable the <code>stdio_uart</code> module: </p><pre class="fragment">USEMODULE += stdio_uart
 </pre><dl class="section note"><dt>Note</dt><dd>For many board, <code>stdio_uart</code> is already the default stdio backend and therefore already enabled.</dd></dl>
-<h2><a class="anchor" id="autotoc_md2104"></a>
+<h2><a class="anchor" id="autotoc_md2105"></a>
 Input</h2>
 <dl class="section warning"><dt>Warning</dt><dd>Standard input is disabled by default on UART. To enable it, load the <code>stdin</code> module in your application: <div class="fragment"><div class="line">USEMODULE += stdin</div>
 </div><!-- fragment --></dd></dl>
-<h2><a class="anchor" id="autotoc_md2105"></a>
+<h2><a class="anchor" id="autotoc_md2106"></a>
 UART Configuration</h2>
 <dl class="section note"><dt>Note</dt><dd>Running <code>make BOARD=&lt;your_board&gt; term</code> will launch <code>pyterm</code> with the correct parameters, so mostly you do not really need to care about the UART configuration.</dd></dl>
 <p>By convention RIOT boards used 8N1 encoding with a symbol rate of 115200 Bd for the UART used as stdio. However, some boards may have a different configuration due to hardware limitations. Most notably, many AVR boards use 9600 Bd as symbol rate instead, as they otherwise frequently loose an input character due to losing interrupts.</p>
 <p>By default UNIX style line endings (<code>\n</code>) are used. However, some terminal programs default to DOS style line endings (<code>\r\n</code>). It usually is better to configure the terminal program on the host to use UNIX style line endings. In scenarios this is not possible/desired, you can enable the (pseudo-) module <a class="el" href="group__sys__stdio__uart__onlcr.html">Support for DOS line endings in STDIO-UART</a> to emit DOS style line endings instead.</p>
 <p>RIOT's shell happily accepts both DOS and UNIX style line endings in any case, so typically no line ending conversion is needed on the input.</p>
-<h2><a class="anchor" id="autotoc_md2106"></a>
+<h2><a class="anchor" id="autotoc_md2107"></a>
 STDIO from ISR</h2>
 <dl class="section attention"><dt>Attention</dt><dd>Using STDIO over UART from interrupt context should be avoided, except for debugging purposes</dd></dl>
 <p>For testing purposes and using STDIO within an ISR should mostly work good enough and for some platforms even reliable. Production code however should fully avoid any access to STDIO from interrupt context. Instead, e.g. an event could be posted to an <a class="el" href="group__sys__event.html">Event Queue</a> and the actual STDIO operation being deferred to thread context.</p>
@@ -205,7 +206,7 @@ Macros</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

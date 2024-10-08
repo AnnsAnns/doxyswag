@@ -1,12 +1,14 @@
 <map id="drivers/st77xx/include/st77xx_params.h" name="drivers/st77xx/include/st77xx_params.h">
-<area shape="rect" id="Node000001" title="Default configuration for ST77xx LCD controllers." alt="" coords="97,5,262,50"/>
+<area shape="rect" id="Node000001" title="Default configuration for ST77xx LCD controllers." alt="" coords="133,5,298,50"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="108,174,179,201"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,51,152,159,147,158,172,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="205,52,179,99,155,160,150,158,174,97,200,49"/>
 <area shape="rect" id="Node000003" href="$lcd_8h.html" title=" " alt="" coords="189,98,242,126"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="191,49,206,82,201,85,187,51"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="218,50,218,82,213,82,213,50"/>
+<area shape="rect" id="Node000034" href="$st7735__params_8h_source.html" title=" " alt="" coords="266,98,400,126"/>
+<area shape="poly" id="edge60_Node000001_Node000034" title=" " alt="" coords="248,48,303,87,300,91,245,53"/>
 <area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="205,128,169,164,165,161,201,124"/>
 <area shape="rect" id="Node000004" href="$mutex_8h.html" title="Mutex for thread synchronization." alt="" coords="1032,174,1108,201"/>
-<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="242,113,1017,179,1017,184,242,118"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="243,120,255,123,363,142,475,156,693,174,882,182,1017,184,1017,189,882,188,692,180,474,161,363,147,254,128,242,125"/>
 <area shape="rect" id="Node000028" href="$spi_8h.html" title="Low&#45;level SPI peripheral driver interface definition." alt="" coords="254,476,351,504"/>
 <area shape="poly" id="edge46_Node000003_Node000028" title=" " alt="" coords="228,125,246,149,265,182,281,220,287,262,287,340,292,405,300,461,294,461,286,406,282,340,282,262,276,222,261,184,241,152,224,128"/>
 <area shape="rect" id="Node000033" href="$drivers_2include_2periph_2gpio_8h.html" title="Low&#45;level GPIO peripheral driver interface definitions." alt="" coords="84,552,190,580"/>

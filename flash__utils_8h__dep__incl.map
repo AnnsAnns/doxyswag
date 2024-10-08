@@ -1,106 +1,128 @@
 <map id="sys/include/flash_utils.h" name="sys/include/flash_utils.h">
-<area shape="rect" id="Node000001" title="Utility functions, macros, and types for read&#45;only memory." alt="" coords="2533,5,2710,33"/>
-<area shape="rect" id="Node000002" href="$stdio_8h.html" title="stdio wrapper to extend the C libs stdio" alt="" coords="2525,81,2718,126"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2616,48,2616,80,2611,80,2610,49"/>
-<area shape="rect" id="Node000045" href="$shell_8h.html" title="Shell interface definition." alt="" coords="3722,90,3863,117"/>
-<area shape="poly" id="edge57_Node000001_Node000045" title=" " alt="" coords="2726,25,3721,94,3721,100,2726,30"/>
-<area shape="poly" id="edge47_Node000002_Node000001" title=" " alt="" coords="2628,65,2626,34,2631,33,2633,65"/>
-<area shape="rect" id="Node000003" href="$debug_8h.html" title="Debug&#45;header." alt="" coords="4065,182,4242,210"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="2733,101,2973,103,3301,113,3675,134,3866,150,4054,171,4099,179,4098,184,4053,176,3866,155,3675,139,3300,118,2972,109,2733,107"/>
-<area shape="rect" id="Node000004" href="$core_2lib_2include_2log_8h.html" title="System logging header ." alt="" coords="4266,182,4422,210"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="2734,104,3064,111,3503,125,3937,145,4117,157,4254,171,4296,179,4295,184,4253,176,4116,162,3936,150,3502,130,3064,117,2733,109"/>
-<area shape="rect" id="Node000005" href="$atmega__gpio_8h.html" title="Macros and inline functions for accessing GPIOs of the ATmega family." alt="" coords="4447,174,4660,218"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="2733,104,3588,127,4077,147,4280,158,4435,171,4447,172,4446,178,4435,176,4280,164,4077,152,3587,132,2733,110"/>
-<area shape="rect" id="Node000006" href="$avr8__common_2include_2cpu_8h.html" title="Common implementations and headers for AVR&#45;8 family based micro&#45;controllers." alt="" coords="72,174,264,218"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="2510,108,2052,113,1407,125,754,146,482,159,276,176,265,178,264,172,276,171,482,154,754,140,1407,120,2052,108,2510,103"/>
-<area shape="rect" id="Node000007" href="$avr8__common_2include_2irq__arch_8h.html" title="Implementation of the kernels irq interface." alt="" coords="5,275,198,320"/>
-<area shape="poly" id="edge8_Node000002_Node000007" title=" " alt="" coords="2510,108,1928,114,1119,127,726,136,393,148,158,161,90,168,62,176,55,186,52,197,56,224,69,250,85,273,81,276,64,253,51,225,47,197,50,184,59,171,89,163,158,155,393,142,726,131,1118,122,1928,109,2510,103"/>
-<area shape="rect" id="Node000008" href="$flash__utils__arch_8h.html" title="Implementation of flash_utils." alt="" coords="288,174,480,218"/>
-<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="2510,109,2090,115,1507,127,921,148,677,161,492,176,481,178,480,172,492,171,677,155,921,142,1507,122,2090,110,2510,103"/>
-<area shape="rect" id="Node000009" href="$cc2538_2include_2periph__cpu_8h.html" title="CPU specific definitions for internal peripheral handling." alt="" coords="505,174,650,218"/>
-<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="2510,108,2120,113,1587,125,1053,145,831,159,663,176,651,178,650,173,662,171,831,154,1053,140,1587,119,2120,108,2510,103"/>
-<area shape="rect" id="Node000010" href="$cortexm__common_2include_2cpu_8h.html" title="Basic definitions for the Cortex&#45;M common module." alt="" coords="674,174,841,218"/>
-<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="2510,109,2155,116,1676,129,1200,149,1003,162,852,176,841,178,841,173,852,171,1002,156,1200,144,1676,124,2155,111,2510,104"/>
-<area shape="rect" id="Node000011" href="$esp__common_2include_2cpu_8h.html" title="CPU common functions for ESP SoCs." alt="" coords="864,174,1051,218"/>
-<area shape="poly" id="edge11_Node000002_Node000011" title=" " alt="" coords="2510,106,2251,108,1892,117,1480,138,1270,155,1063,176,1051,178,1051,173,1063,171,1269,149,1480,132,1892,111,2251,103,2510,101"/>
-<area shape="rect" id="Node000012" href="$cpu_2esp__common_2include_2log__module_8h.html" title="Log module to realize consistent log messages for ESP SoCs." alt="" coords="1075,174,1261,218"/>
-<area shape="poly" id="edge12_Node000002_Node000012" title=" " alt="" coords="2510,108,2283,111,1976,121,1627,142,1448,157,1274,176,1262,178,1261,173,1273,171,1448,152,1626,137,1976,116,2283,106,2510,102"/>
-<area shape="rect" id="Node000013" href="$ncv7356_8h.html" title="ncv7356 generic CAN transceiver interface initialization" alt="" coords="1286,182,1474,210"/>
-<area shape="poly" id="edge13_Node000002_Node000013" title=" " alt="" coords="2510,109,2316,115,2062,126,1776,146,1487,176,1440,184,1439,179,1486,171,1775,141,2062,121,2316,110,2510,104"/>
-<area shape="rect" id="Node000014" href="$nrf24l01p_8h.html" title=" " alt="" coords="1498,182,1694,210"/>
-<area shape="poly" id="edge14_Node000002_Node000014" title=" " alt="" coords="2510,112,2152,133,1930,151,1707,176,1659,184,1658,179,1706,171,1929,146,2151,127,2509,106"/>
-<area shape="rect" id="Node000015" href="$srf04_8h.html" title="Device driver for the srf04 ultra sonic range finder." alt="" coords="1718,182,1885,210"/>
-<area shape="poly" id="edge15_Node000002_Node000015" title=" " alt="" coords="2510,114,2231,136,2064,154,1898,176,1857,184,1856,179,1897,171,2064,148,2231,131,2510,108"/>
-<area shape="rect" id="Node000017" href="$tja1042_8h.html" title="tja1042 generic CAN transceiver interface initialization" alt="" coords="1909,182,2091,210"/>
-<area shape="poly" id="edge17_Node000002_Node000017" title=" " alt="" coords="2510,120,2320,144,2105,176,2062,184,2061,179,2104,171,2319,139,2510,115"/>
-<area shape="rect" id="Node000018" href="$kw2xrf__spi_8h.html" title="Definition of KW2XRF SPI functions." alt="" coords="2116,174,2282,218"/>
-<area shape="poly" id="edge18_Node000002_Node000018" title=" " alt="" coords="2511,130,2294,176,2283,179,2282,173,2293,171,2509,125"/>
-<area shape="rect" id="Node000019" href="$cc_8h.html" title="Compiler/platform abstraction." alt="" coords="2306,182,2495,210"/>
-<area shape="poly" id="edge19_Node000002_Node000019" title=" " alt="" coords="2556,134,2433,184,2431,179,2554,129"/>
-<area shape="rect" id="Node000020" href="$dsme__platform_8h.html" title=" " alt="" coords="2748,174,2956,218"/>
-<area shape="poly" id="edge20_Node000002_Node000020" title=" " alt="" coords="2692,129,2798,171,2796,176,2690,134"/>
-<area shape="rect" id="Node000023" href="$dsme__settings_8h.html" title=" " alt="" coords="2519,174,2724,218"/>
-<area shape="poly" id="edge23_Node000002_Node000023" title=" " alt="" coords="2624,141,2624,173,2619,173,2619,141"/>
-<area shape="rect" id="Node000024" href="$lwm2m__client_8h.html" title="Definitions and public API for a LwM2M client using Wakaama." alt="" coords="3031,174,3196,218"/>
-<area shape="poly" id="edge26_Node000002_Node000024" title=" " alt="" coords="2733,121,3013,171,3032,175,3031,180,3012,176,2732,126"/>
-<area shape="rect" id="Node000030" href="$pkg_2wakaama_2include_2objects_2device_8h.html" title=" " alt="" coords="2414,275,2578,320"/>
-<area shape="poly" id="edge45_Node000002_Node000030" title=" " alt="" coords="2734,104,2834,113,2883,121,2926,132,2960,147,2982,166,2987,178,2987,191,2981,205,2970,220,2940,240,2898,253,2846,259,2789,262,2676,263,2627,264,2590,269,2560,277,2558,272,2589,264,2627,259,2676,257,2789,257,2845,254,2896,248,2938,236,2966,216,2976,202,2981,190,2981,179,2977,169,2957,151,2924,137,2882,126,2833,118,2733,110"/>
-<area shape="rect" id="Node000036" href="$security_8h.html" title=" " alt="" coords="3723,275,3888,320"/>
-<area shape="poly" id="edge46_Node000002_Node000036" title=" " alt="" coords="2734,107,2858,115,2995,128,3120,147,3171,158,3209,171,3226,182,3236,194,3245,206,3260,216,3324,240,3380,252,3432,256,3481,255,3584,250,3644,253,3713,264,3744,272,3743,277,3712,269,3643,258,3584,255,3481,260,3431,261,3380,257,3323,245,3258,221,3241,210,3231,198,3222,186,3207,176,3169,163,3119,152,2994,134,2857,121,2733,113"/>
-<area shape="rect" id="Node000037" href="$aes128__cmac_8h.html" title="AES128_CMAC interface definition." alt="" coords="3271,174,3415,218"/>
-<area shape="poly" id="edge48_Node000002_Node000037" title=" " alt="" coords="2733,110,2973,133,3113,150,3253,171,3271,174,3270,180,3252,176,3112,155,2972,138,2733,116"/>
-<area shape="rect" id="Node000038" href="$net_2lorawan_2hdr_8h.html" title="LoRaWAN header type and helper function definitions." alt="" coords="3490,174,3665,218"/>
-<area shape="poly" id="edge49_Node000002_Node000038" title=" " alt="" coords="2734,107,3065,128,3268,147,3471,171,3490,174,3489,179,3470,176,3267,152,3064,134,2733,112"/>
-<area shape="rect" id="Node000039" href="$gnrc__lorawan__internal_8h.html" title="GNRC LoRaWAN internal header." alt="" coords="3912,266,4080,328"/>
-<area shape="poly" id="edge56_Node000002_Node000039" title=" " alt="" coords="2733,103,2905,108,3106,119,3294,139,3371,153,3428,171,3444,182,3454,194,3464,206,3479,216,3538,238,3591,250,3638,254,3684,254,3780,251,3836,254,3901,264,3912,266,3911,272,3900,269,3836,259,3780,256,3684,259,3638,260,3590,255,3537,243,3476,221,3460,210,3450,198,3441,186,3426,176,3369,159,3294,144,3106,124,2905,113,2733,108"/>
-<area shape="rect" id="Node000043" href="$expect_8h.html" title="test &quot;expect condition&quot; utility function" alt="" coords="3689,174,3847,218"/>
-<area shape="poly" id="edge54_Node000002_Node000043" title=" " alt="" coords="2733,103,2915,108,3150,120,3413,140,3678,171,3689,173,3688,178,3677,176,3413,145,3150,125,2914,114,2733,109"/>
-<area shape="rect" id="Node000044" href="$sys_2log__printfnoformat_2include_2log__module_8h.html" title="log_module header" alt="" coords="3872,174,4041,218"/>
-<area shape="poly" id="edge55_Node000002_Node000044" title=" " alt="" coords="2733,102,2943,106,3223,117,3540,137,3701,152,3859,171,3871,173,3870,178,3858,176,3701,157,3539,142,3223,122,2943,111,2733,108"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="147,233,118,276,114,273,143,230"/>
-<area shape="rect" id="Node000016" href="$srf04__params_8h.html" title="Default configuration for srf04 devices." alt="" coords="1724,275,1879,320"/>
-<area shape="poly" id="edge16_Node000015_Node000016" title=" " alt="" coords="1804,225,1804,274,1799,274,1799,225"/>
-<area shape="rect" id="Node000021" href="$DSMEMessage_8h.html" title="DSME Message interface implementation for GNRC." alt="" coords="2184,275,2390,320"/>
-<area shape="poly" id="edge21_Node000020_Node000021" title=" " alt="" coords="2733,221,2566,243,2493,253,2402,269,2367,277,2366,272,2401,264,2492,248,2565,238,2732,216"/>
-<area shape="rect" id="Node000022" href="$DSMEPlatform_8h.html" title="DSME Platform interface implementation." alt="" coords="2116,376,2319,421"/>
-<area shape="poly" id="edge22_Node000021_Node000022" title=" " alt="" coords="2265,334,2235,377,2230,374,2261,331"/>
-<area shape="poly" id="edge24_Node000023_Node000021" title=" " alt="" coords="2534,226,2361,277,2359,272,2533,221"/>
-<area shape="poly" id="edge25_Node000023_Node000022" title=" " alt="" coords="2504,221,2420,225,2321,229,2273,233,2231,240,2197,252,2174,268,2167,280,2164,293,2169,321,2183,350,2201,374,2196,377,2179,352,2164,323,2159,293,2162,278,2170,265,2195,247,2230,235,2273,228,2321,223,2419,220,2504,216"/>
-<area shape="rect" id="Node000025" href="$lwm2m__client__connection_8h.html" title="Public API and definitions of the connection handle for LwM2M client implementation using Wakaama." alt="" coords="3492,275,3700,320"/>
-<area shape="poly" id="edge27_Node000024_Node000025" title=" " alt="" coords="3211,215,3215,216,3345,239,3474,264,3510,272,3509,277,3473,269,3344,244,3214,221,3210,220"/>
-<area shape="rect" id="Node000026" href="$lwm2m__client__objects_8h.html" title="Public API and definitions for the helper functions to interact with basic objects from a LwM2M clien..." alt="" coords="2602,275,2785,320"/>
-<area shape="poly" id="edge28_Node000024_Node000026" title=" " alt="" coords="3017,220,2805,269,2774,277,2773,272,2804,264,3016,215"/>
-<area shape="rect" id="Node000027" href="$barometer_8h.html" title=" " alt="" coords="2869,376,3033,421"/>
-<area shape="poly" id="edge29_Node000024_Node000027" title=" " alt="" coords="3100,234,3074,281,3040,330,3013,356,2985,378,2982,373,3009,352,3035,326,3070,278,3095,231"/>
-<area shape="rect" id="Node000028" href="$pkg_2wakaama_2include_2objects_2common_8h.html" title=" " alt="" coords="2861,275,3025,320"/>
-<area shape="poly" id="edge30_Node000024_Node000028" title=" " alt="" coords="3064,229,2982,277,2979,272,3062,224"/>
-<area shape="rect" id="Node000029" href="$current_8h.html" title=" " alt="" coords="3057,376,3221,421"/>
-<area shape="poly" id="edge31_Node000024_Node000029" title=" " alt="" coords="3121,233,3139,375,3133,376,3115,234"/>
-<area shape="poly" id="edge32_Node000024_Node000030" title=" " alt="" coords="3017,220,3013,221,2894,236,2800,241,2708,249,2590,269,2559,277,2558,272,2589,264,2707,244,2800,236,2893,230,3012,216,3016,215"/>
-<area shape="rect" id="Node000031" href="$humidity_8h.html" title=" " alt="" coords="3245,376,3409,421"/>
-<area shape="poly" id="edge33_Node000024_Node000031" title=" " alt="" coords="3211,220,3287,244,3315,255,3330,265,3343,292,3346,323,3343,352,3337,376,3332,375,3337,351,3340,323,3338,294,3326,268,3313,260,3286,249,3210,225"/>
-<area shape="rect" id="Node000032" href="$illuminance_8h.html" title=" " alt="" coords="3433,376,3597,421"/>
-<area shape="poly" id="edge34_Node000024_Node000032" title=" " alt="" coords="3212,218,3295,241,3356,264,3414,309,3492,374,3488,378,3411,313,3354,269,3293,247,3210,223"/>
-<area shape="rect" id="Node000033" href="$ipso__sensor__base_8h.html" title=" " alt="" coords="3151,266,3316,328"/>
-<area shape="poly" id="edge35_Node000024_Node000033" title=" " alt="" coords="3153,226,3199,264,3195,268,3150,230"/>
-<area shape="rect" id="Node000034" href="$temperature_8h.html" title=" " alt="" coords="3621,376,3790,421"/>
-<area shape="poly" id="edge43_Node000024_Node000034" title=" " alt="" coords="3212,216,3412,264,3434,279,3448,295,3461,311,3481,326,3541,349,3622,373,3621,378,3539,354,3479,330,3457,314,3444,298,3430,283,3410,269,3210,221"/>
-<area shape="rect" id="Node000035" href="$voltage_8h.html" title=" " alt="" coords="2681,376,2845,421"/>
-<area shape="poly" id="edge44_Node000024_Node000035" title=" " alt="" coords="3017,218,2919,241,2878,254,2850,268,2833,287,2813,316,2776,377,2772,374,2808,313,2829,283,2847,264,2876,249,2918,236,3016,212"/>
-<area shape="poly" id="edge42_Node000024_Node000036" title=" " alt="" coords="3212,215,3215,216,3355,231,3464,235,3574,242,3713,264,3744,272,3743,277,3712,269,3573,247,3464,241,3354,236,3214,221,3211,220"/>
-<area shape="poly" id="edge36_Node000033_Node000027" title=" " alt="" coords="3138,335,3014,378,3012,373,3136,330"/>
-<area shape="poly" id="edge37_Node000033_Node000029" title=" " alt="" coords="3196,341,3161,377,3158,374,3192,338"/>
-<area shape="poly" id="edge38_Node000033_Node000031" title=" " alt="" coords="3274,338,3308,374,3305,377,3271,341"/>
-<area shape="poly" id="edge39_Node000033_Node000032" title=" " alt="" coords="3331,330,3454,373,3452,378,3329,335"/>
-<area shape="poly" id="edge40_Node000033_Node000034" title=" " alt="" coords="3331,316,3610,373,3621,376,3620,381,3609,379,3330,321"/>
-<area shape="poly" id="edge41_Node000033_Node000035" title=" " alt="" coords="3137,321,2857,379,2846,381,2845,376,2856,373,3136,315"/>
-<area shape="poly" id="edge50_Node000038_Node000039" title=" " alt="" coords="3681,217,3901,264,3912,267,3911,272,3900,269,3680,222"/>
-<area shape="rect" id="Node000040" href="$lorawan_8h.html" title="GNRC LoRaWAN API definition." alt="" coords="3920,376,4072,421"/>
-<area shape="poly" id="edge51_Node000039_Node000040" title=" " alt="" coords="3999,344,3999,376,3994,376,3994,344"/>
-<area shape="rect" id="Node000041" href="$region_8h.html" title="GNRC LoRaWAN region specific functions." alt="" coords="3832,469,3984,513"/>
-<area shape="poly" id="edge52_Node000040_Node000041" title=" " alt="" coords="3967,434,3931,470,3927,467,3963,430"/>
-<area shape="rect" id="Node000042" href="$netif_2lorawan_8h.html" title="LoRaWAN adaption for Network interface API." alt="" coords="4008,469,4160,513"/>
-<area shape="poly" id="edge53_Node000040_Node000042" title=" " alt="" coords="4029,430,4065,467,4062,470,4026,434"/>
-<area shape="rect" id="Node000046" href="$shell__lock_8h.html" title="Shell interface definition." alt="" coords="4684,182,4860,210"/>
-<area shape="poly" id="edge58_Node000045_Node000046" title=" " alt="" coords="3879,105,4226,125,4449,144,4673,171,4716,179,4715,184,4672,176,4448,149,4226,130,3878,110"/>
+<area shape="rect" id="Node000001" title="Utility functions, macros, and types for read&#45;only memory." alt="" coords="3078,5,3256,33"/>
+<area shape="rect" id="Node000002" href="$stdio_8h.html" title="stdio wrapper to extend the C libs stdio" alt="" coords="3071,81,3263,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="3161,48,3161,80,3156,80,3156,49"/>
+<area shape="rect" id="Node000056" href="$shell_8h.html" title="Shell interface definition." alt="" coords="4602,90,4743,117"/>
+<area shape="poly" id="edge68_Node000001_Node000056" title=" " alt="" coords="3271,23,4601,95,4601,101,3271,29"/>
+<area shape="poly" id="edge56_Node000002_Node000001" title=" " alt="" coords="3173,65,3171,34,3176,33,3178,65"/>
+<area shape="rect" id="Node000003" href="$debug_8h.html" title="Debug&#45;header." alt="" coords="5281,182,5458,210"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="3279,103,3694,109,4269,121,4847,141,5087,155,5270,171,5316,179,5315,184,5269,176,5087,160,4846,146,4269,126,3694,114,3279,108"/>
+<area shape="rect" id="Node000004" href="$core_2lib_2include_2log_8h.html" title="System logging header ." alt="" coords="5482,182,5638,210"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="3278,104,4454,130,5096,150,5331,160,5470,171,5512,179,5511,184,5469,176,5330,166,5096,155,4454,135,3278,109"/>
+<area shape="rect" id="Node000005" href="$atmega__gpio_8h.html" title="Macros and inline functions for accessing GPIOs of the ATmega family." alt="" coords="5663,174,5876,218"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="3279,103,3760,108,4446,120,5141,141,5431,155,5651,171,5663,172,5662,178,5651,176,5431,160,5141,146,4446,126,3760,114,3278,108"/>
+<area shape="rect" id="Node000006" href="$avr8__common_2include_2cpu_8h.html" title="Common implementations and headers for AVR&#45;8 family based micro&#45;controllers." alt="" coords="5,174,198,218"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="3055,108,2494,111,1672,121,1240,129,833,141,482,157,216,176,199,178,198,173,216,171,481,151,833,136,1240,124,1672,115,2494,105,3055,102"/>
+<area shape="rect" id="Node000007" href="$avr8__common_2include_2irq__arch_8h.html" title="Implementation of the kernels irq interface." alt="" coords="72,275,264,320"/>
+<area shape="poly" id="edge8_Node000002_Node000007" title=" " alt="" coords="3055,107,2418,109,1511,117,1063,126,677,138,395,155,307,165,261,176,233,196,210,223,179,276,175,273,206,220,230,192,259,171,306,160,395,149,677,133,1063,121,1511,112,2417,104,3055,102"/>
+<area shape="rect" id="Node000008" href="$flash__utils__arch_8h.html" title="Implementation of flash_utils." alt="" coords="272,174,464,218"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="3055,108,2537,111,1792,122,1033,142,716,157,476,176,465,178,464,172,476,171,716,152,1033,137,1792,116,2537,106,3055,102"/>
+<area shape="rect" id="Node000009" href="$cc2538_2include_2periph__cpu_8h.html" title="CPU specific definitions for internal peripheral handling." alt="" coords="489,174,634,218"/>
+<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="3055,107,2566,109,1870,118,1506,126,1164,138,870,155,647,176,635,178,634,173,646,171,869,150,1164,133,1506,121,1870,112,2566,104,3055,102"/>
+<area shape="rect" id="Node000010" href="$cortexm__common_2include_2cpu_8h.html" title="Basic definitions for the Cortex&#45;M common module." alt="" coords="658,174,825,218"/>
+<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="3055,108,2600,112,1959,123,1311,143,1041,158,836,176,825,178,825,173,836,171,1040,153,1311,138,1959,117,2600,107,3055,103"/>
+<area shape="rect" id="Node000011" href="$esp__common_2include_2cpu_8h.html" title="CPU common functions for ESP SoCs." alt="" coords="848,174,1035,218"/>
+<area shape="poly" id="edge11_Node000002_Node000011" title=" " alt="" coords="3055,109,2636,115,2057,127,1474,147,1231,161,1047,176,1035,178,1035,173,1047,171,1231,155,1474,142,2056,122,2636,109,3055,103"/>
+<area shape="rect" id="Node000012" href="$cpu_2esp__common_2include_2log__module_8h.html" title="Log module to realize consistent log messages for ESP SoCs." alt="" coords="1059,174,1245,218"/>
+<area shape="poly" id="edge12_Node000002_Node000012" title=" " alt="" coords="3055,109,2675,116,2156,129,1637,149,1421,162,1258,176,1246,178,1245,173,1257,171,1421,157,1637,144,2156,124,2675,111,3055,104"/>
+<area shape="rect" id="Node000013" href="$lpc23xx_2include_2cpu_8h_source.html" title=" " alt="" coords="1269,174,1419,218"/>
+<area shape="poly" id="edge13_Node000002_Node000013" title=" " alt="" coords="3055,109,2705,115,2236,128,1771,148,1578,161,1431,176,1420,178,1419,173,1430,171,1577,156,1771,143,2236,123,2705,110,3055,104"/>
+<area shape="rect" id="Node000015" href="$native_2include_2cpu_8h_source.html" title=" " alt="" coords="1443,174,1584,218"/>
+<area shape="poly" id="edge15_Node000002_Node000015" title=" " alt="" coords="3055,109,2736,116,2315,129,1899,149,1726,162,1595,176,1585,178,1584,173,1594,171,1726,156,1898,144,2314,124,2736,111,3055,104"/>
+<area shape="rect" id="Node000017" href="$native__internal_8h_source.html" title=" " alt="" coords="1607,174,1748,218"/>
+<area shape="poly" id="edge17_Node000002_Node000017" title=" " alt="" coords="3056,110,2393,132,2026,151,1875,163,1759,176,1749,178,1748,173,1758,171,1874,158,2026,146,2393,126,3055,105"/>
+<area shape="rect" id="Node000018" href="$ncv7356_8h.html" title="ncv7356 generic CAN transceiver interface initialization" alt="" coords="1771,182,1960,210"/>
+<area shape="poly" id="edge18_Node000002_Node000018" title=" " alt="" coords="3055,109,2852,114,2583,125,2279,145,1973,176,1925,184,1924,179,1972,171,2279,140,2583,120,2852,108,3055,103"/>
+<area shape="rect" id="Node000019" href="$nrf24l01p_8h.html" title=" " alt="" coords="1984,182,2179,210"/>
+<area shape="poly" id="edge19_Node000002_Node000019" title=" " alt="" coords="3056,111,2673,131,2433,150,2193,176,2144,184,2143,179,2192,171,2433,145,2672,126,3055,106"/>
+<area shape="rect" id="Node000020" href="$srf04_8h.html" title="Device driver for the srf04 ultra sonic range finder." alt="" coords="2204,182,2370,210"/>
+<area shape="poly" id="edge20_Node000002_Node000020" title=" " alt="" coords="3055,113,2751,134,2567,152,2383,176,2341,184,2340,179,2382,171,2567,147,2751,129,3055,107"/>
+<area shape="rect" id="Node000022" href="$tja1042_8h.html" title="tja1042 generic CAN transceiver interface initialization" alt="" coords="2394,182,2577,210"/>
+<area shape="poly" id="edge22_Node000002_Node000022" title=" " alt="" coords="3056,118,2839,142,2590,176,2547,184,2546,179,2589,171,2839,137,3055,113"/>
+<area shape="rect" id="Node000023" href="$kw2xrf__spi_8h.html" title="Definition of KW2XRF SPI functions." alt="" coords="2601,174,2767,218"/>
+<area shape="poly" id="edge23_Node000002_Node000023" title=" " alt="" coords="3056,126,2779,176,2768,179,2767,173,2778,171,3055,121"/>
+<area shape="rect" id="Node000024" href="$schc__config_8h_source.html" title=" " alt="" coords="2792,174,2937,218"/>
+<area shape="poly" id="edge24_Node000002_Node000024" title=" " alt="" coords="3081,133,2937,176,2936,171,3079,128"/>
+<area shape="rect" id="Node000025" href="$cc_8h.html" title="Compiler/platform abstraction." alt="" coords="2962,182,3151,210"/>
+<area shape="poly" id="edge25_Node000002_Node000025" title=" " alt="" coords="3131,137,3074,184,3071,180,3127,133"/>
+<area shape="rect" id="Node000026" href="$dsme__platform_8h.html" title=" " alt="" coords="3404,174,3612,218"/>
+<area shape="poly" id="edge26_Node000002_Node000026" title=" " alt="" coords="3263,127,3427,171,3426,176,3262,133"/>
+<area shape="rect" id="Node000029" href="$dsme__settings_8h.html" title=" " alt="" coords="3175,174,3380,218"/>
+<area shape="poly" id="edge29_Node000002_Node000029" title=" " alt="" coords="3206,133,3253,171,3249,175,3203,138"/>
+<area shape="rect" id="Node000030" href="$spiffs__config_8h_source.html" title=" " alt="" coords="3636,174,3772,218"/>
+<area shape="poly" id="edge32_Node000002_Node000030" title=" " alt="" coords="3279,115,3443,139,3625,171,3636,174,3635,179,3624,176,3442,144,3278,121"/>
+<area shape="rect" id="Node000032" href="$lwm2m__client_8h.html" title="Definitions and public API for a LwM2M client using Wakaama." alt="" coords="3847,174,4012,218"/>
+<area shape="poly" id="edge34_Node000002_Node000032" title=" " alt="" coords="3279,110,3531,133,3680,150,3829,171,3847,174,3846,179,3828,176,3680,156,3531,139,3279,116"/>
+<area shape="rect" id="Node000038" href="$pkg_2wakaama_2include_2objects_2device_8h.html" title=" " alt="" coords="3318,275,3482,320"/>
+<area shape="poly" id="edge53_Node000002_Node000038" title=" " alt="" coords="3278,107,3424,115,3582,128,3715,147,3761,158,3786,172,3806,197,3810,214,3796,224,3768,229,3663,239,3587,250,3494,269,3465,277,3463,272,3493,264,3586,244,3663,233,3767,223,3794,219,3805,212,3801,199,3782,176,3759,163,3714,152,3582,133,3424,120,3278,112"/>
+<area shape="rect" id="Node000044" href="$security_8h.html" title=" " alt="" coords="4629,275,4793,320"/>
+<area shape="poly" id="edge54_Node000002_Node000044" title=" " alt="" coords="3279,102,3462,106,3678,116,3784,125,3881,137,3963,152,4025,171,4042,182,4052,194,4061,206,4076,216,4149,242,4213,256,4271,261,4326,260,4443,253,4511,254,4590,264,4629,272,4628,277,4589,269,4511,260,4443,258,4326,265,4271,266,4212,262,4147,248,4074,221,4057,210,4047,198,4038,186,4023,176,3962,157,3880,142,3783,131,3677,122,3461,111,3279,108"/>
+<area shape="rect" id="Node000045" href="$sock__tls_8h_source.html" title=" " alt="" coords="4087,174,4239,218"/>
+<area shape="poly" id="edge55_Node000002_Node000045" title=" " alt="" coords="3279,105,3632,125,3850,144,4069,171,4086,174,4086,179,4068,176,3849,149,3631,130,3278,111"/>
+<area shape="rect" id="Node000046" href="$aes128__cmac_8h.html" title="AES128_CMAC interface definition." alt="" coords="4263,174,4407,218"/>
+<area shape="poly" id="edge57_Node000002_Node000046" title=" " alt="" coords="3279,102,3464,106,3707,117,3978,138,4116,152,4251,171,4263,173,4262,178,4250,176,4116,158,3978,143,3706,122,3464,112,3278,108"/>
+<area shape="rect" id="Node000047" href="$submac_8h_source.html" title=" " alt="" coords="4431,174,4630,218"/>
+<area shape="poly" id="edge58_Node000002_Node000047" title=" " alt="" coords="3279,103,3491,108,3774,120,4095,140,4419,171,4431,173,4430,178,4419,176,4095,145,3774,125,3490,114,3279,109"/>
+<area shape="rect" id="Node000049" href="$net_2lorawan_2hdr_8h.html" title="LoRaWAN header type and helper function definitions." alt="" coords="4655,174,4830,218"/>
+<area shape="poly" id="edge60_Node000002_Node000049" title=" " alt="" coords="3279,101,3525,103,3864,112,4251,133,4449,149,4643,171,4655,173,4654,178,4642,176,4449,155,4251,138,3863,117,3525,108,3279,106"/>
+<area shape="rect" id="Node000050" href="$gnrc__lorawan__internal_8h.html" title="GNRC LoRaWAN internal header." alt="" coords="5061,266,5230,328"/>
+<area shape="poly" id="edge67_Node000002_Node000050" title=" " alt="" coords="3278,102,3651,106,4138,115,4377,124,4587,136,4749,152,4806,161,4844,171,4861,181,4871,193,4880,205,4895,216,5062,267,5060,272,4892,221,4877,209,4867,196,4857,185,4842,176,4805,166,4748,157,4587,141,4377,130,4138,121,3651,111,3278,108"/>
+<area shape="rect" id="Node000054" href="$expect_8h.html" title="test &quot;expect condition&quot; utility function" alt="" coords="4905,174,5063,218"/>
+<area shape="poly" id="edge65_Node000002_Node000054" title=" " alt="" coords="3279,104,3625,111,4089,125,4550,145,4742,157,4887,171,4905,174,4904,179,4887,176,4741,162,4550,150,4089,130,3625,117,3278,109"/>
+<area shape="rect" id="Node000055" href="$sys_2log__printfnoformat_2include_2log__module_8h.html" title="log_module header" alt="" coords="5088,174,5257,218"/>
+<area shape="poly" id="edge66_Node000002_Node000055" title=" " alt="" coords="3279,103,3660,110,4178,123,4696,143,4912,156,5075,171,5087,173,5086,178,5075,176,4911,161,4696,148,4178,128,3660,115,3279,109"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="127,230,156,273,152,276,122,233"/>
+<area shape="rect" id="Node000014" href="$lpc23xx_2include_2periph__cpu_8h.html" title="CPU specific definitions for internal peripheral handling." alt="" coords="1269,275,1419,320"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="1347,234,1347,275,1342,275,1342,234"/>
+<area shape="rect" id="Node000016" href="$eeprom__native_8h.html" title=" " alt="" coords="1443,275,1584,320"/>
+<area shape="poly" id="edge16_Node000015_Node000016" title=" " alt="" coords="1516,234,1516,275,1511,275,1511,234"/>
+<area shape="rect" id="Node000021" href="$srf04__params_8h.html" title="Default configuration for srf04 devices." alt="" coords="2210,275,2364,320"/>
+<area shape="poly" id="edge21_Node000020_Node000021" title=" " alt="" coords="2290,225,2290,274,2284,274,2284,225"/>
+<area shape="rect" id="Node000027" href="$DSMEMessage_8h.html" title="DSME Message interface implementation for GNRC." alt="" coords="2883,275,3088,320"/>
+<area shape="poly" id="edge27_Node000026_Node000027" title=" " alt="" coords="3389,221,3243,244,3101,269,3066,277,3065,272,3100,264,3242,238,3389,216"/>
+<area shape="rect" id="Node000028" href="$DSMEPlatform_8h.html" title="DSME Platform interface implementation." alt="" coords="2814,376,3018,421"/>
+<area shape="poly" id="edge28_Node000027_Node000028" title=" " alt="" coords="2964,334,2933,377,2929,374,2959,331"/>
+<area shape="poly" id="edge30_Node000029_Node000027" title=" " alt="" coords="3200,226,3050,277,3049,272,3198,221"/>
+<area shape="poly" id="edge31_Node000029_Node000028" title=" " alt="" coords="3160,221,2999,231,2922,243,2893,254,2873,268,2866,280,2863,293,2868,322,2882,350,2899,374,2895,377,2878,353,2863,323,2858,293,2861,278,2869,265,2890,249,2920,238,2999,226,3160,216"/>
+<area shape="rect" id="Node000031" href="$spiffs__fs_8h.html" title="SPIFFS integration with vfs." alt="" coords="3112,283,3294,311"/>
+<area shape="poly" id="edge33_Node000030_Node000031" title=" " alt="" coords="3621,221,3532,236,3462,245,3393,253,3306,269,3245,285,3243,280,3305,264,3392,248,3461,239,3531,231,3621,216"/>
+<area shape="rect" id="Node000033" href="$lwm2m__client__connection_8h.html" title="Public API and definitions of the connection handle for LwM2M client implementation using Wakaama." alt="" coords="4138,275,4345,320"/>
+<area shape="poly" id="edge35_Node000032_Node000033" title=" " alt="" coords="4013,221,4174,272,4172,277,4012,226"/>
+<area shape="rect" id="Node000034" href="$lwm2m__client__objects_8h.html" title="Public API and definitions for the helper functions to interact with basic objects from a LwM2M clien..." alt="" coords="4370,275,4553,320"/>
+<area shape="poly" id="edge36_Node000032_Node000034" title=" " alt="" coords="4027,215,4031,216,4123,230,4195,238,4267,247,4358,264,4391,272,4390,277,4357,269,4266,252,4194,243,4122,235,4030,221,4026,220"/>
+<area shape="rect" id="Node000035" href="$barometer_8h.html" title=" " alt="" coords="4427,376,4592,421"/>
+<area shape="poly" id="edge37_Node000032_Node000035" title=" " alt="" coords="4028,215,4031,216,4134,221,4305,226,4474,239,4534,249,4555,256,4567,264,4576,278,4579,293,4572,323,4554,353,4534,377,4529,374,4550,350,4567,321,4574,293,4571,280,4564,268,4552,261,4533,255,4473,244,4305,232,4133,226,4031,221,4027,220"/>
+<area shape="rect" id="Node000036" href="$pkg_2wakaama_2include_2objects_2common_8h.html" title=" " alt="" coords="3506,275,3670,320"/>
+<area shape="poly" id="edge38_Node000032_Node000036" title=" " alt="" coords="3841,226,3690,269,3663,277,3662,272,3689,264,3839,220"/>
+<area shape="rect" id="Node000037" href="$current_8h.html" title=" " alt="" coords="3435,376,3600,421"/>
+<area shape="poly" id="edge39_Node000032_Node000037" title=" " alt="" coords="3848,227,3802,246,3758,269,3736,284,3721,299,3706,314,3684,330,3633,357,3583,378,3581,373,3631,352,3681,326,3703,310,3718,295,3733,280,3755,264,3800,241,3846,222"/>
+<area shape="poly" id="edge40_Node000032_Node000038" title=" " alt="" coords="3833,220,3829,221,3734,235,3661,242,3587,251,3494,269,3464,277,3463,272,3493,264,3586,246,3660,237,3734,229,3828,216,3832,215"/>
+<area shape="rect" id="Node000039" href="$humidity_8h.html" title=" " alt="" coords="3623,376,3788,421"/>
+<area shape="poly" id="edge41_Node000032_Node000039" title=" " alt="" coords="3879,229,3823,268,3766,325,3724,377,3720,374,3762,322,3820,264,3876,225"/>
+<area shape="rect" id="Node000040" href="$illuminance_8h.html" title=" " alt="" coords="3811,376,3976,421"/>
+<area shape="poly" id="edge42_Node000032_Node000040" title=" " alt="" coords="3872,229,3852,247,3837,268,3831,283,3829,296,3837,327,3851,352,3870,374,3866,377,3847,355,3832,329,3824,297,3826,282,3832,265,3848,243,3869,225"/>
+<area shape="rect" id="Node000041" href="$ipso__sensor__base_8h.html" title=" " alt="" coords="3847,266,4012,328"/>
+<area shape="poly" id="edge43_Node000032_Node000041" title=" " alt="" coords="3932,234,3932,266,3927,266,3927,234"/>
+<area shape="rect" id="Node000042" href="$temperature_8h.html" title=" " alt="" coords="4000,376,4169,421"/>
+<area shape="poly" id="edge51_Node000032_Node000042" title=" " alt="" coords="3982,225,4005,243,4026,265,4045,292,4061,322,4081,375,4076,377,4056,324,4041,295,4022,268,4002,247,3979,229"/>
+<area shape="rect" id="Node000043" href="$voltage_8h.html" title=" " alt="" coords="4193,376,4357,421"/>
+<area shape="poly" id="edge52_Node000032_Node000043" title=" " alt="" coords="3993,223,4062,264,4081,281,4095,296,4108,310,4127,326,4172,352,4218,373,4216,378,4170,357,4124,330,4104,314,4091,299,4078,285,4059,269,3990,228"/>
+<area shape="poly" id="edge50_Node000032_Node000044" title=" " alt="" coords="4028,215,4031,216,4119,226,4193,232,4321,236,4448,242,4523,250,4610,264,4644,272,4643,277,4609,269,4522,255,4448,247,4321,241,4193,237,4118,232,4030,221,4027,220"/>
+<area shape="poly" id="edge44_Node000041_Node000035" title=" " alt="" coords="4027,312,4427,380,4426,386,4027,318"/>
+<area shape="poly" id="edge45_Node000041_Node000037" title=" " alt="" coords="3833,324,3601,380,3599,375,3832,319"/>
+<area shape="poly" id="edge46_Node000041_Node000039" title=" " alt="" coords="3848,337,3756,378,3754,373,3846,332"/>
+<area shape="poly" id="edge47_Node000041_Node000040" title=" " alt="" coords="3916,344,3904,376,3899,375,3911,342"/>
+<area shape="poly" id="edge48_Node000041_Node000042" title=" " alt="" coords="3991,334,4052,373,4049,378,3988,339"/>
+<area shape="poly" id="edge49_Node000041_Node000043" title=" " alt="" coords="4028,324,4200,373,4199,378,4026,329"/>
+<area shape="rect" id="Node000048" href="$ieee802154__submac_8h_source.html" title=" " alt="" coords="4817,275,5037,320"/>
+<area shape="poly" id="edge59_Node000047_Node000048" title=" " alt="" coords="4633,220,4840,272,4839,277,4632,225"/>
+<area shape="poly" id="edge61_Node000049_Node000050" title=" " alt="" coords="4846,216,5050,264,5061,267,5060,272,5049,269,4845,221"/>
+<area shape="rect" id="Node000051" href="$lorawan_8h.html" title="GNRC LoRaWAN API definition." alt="" coords="5070,376,5221,421"/>
+<area shape="poly" id="edge62_Node000050_Node000051" title=" " alt="" coords="5148,344,5148,376,5143,376,5143,344"/>
+<area shape="rect" id="Node000052" href="$region_8h.html" title="GNRC LoRaWAN region specific functions." alt="" coords="4982,469,5133,513"/>
+<area shape="poly" id="edge63_Node000051_Node000052" title=" " alt="" coords="5116,434,5080,470,5076,467,5112,430"/>
+<area shape="rect" id="Node000053" href="$netif_2lorawan_8h.html" title="LoRaWAN adaption for Network interface API." alt="" coords="5158,469,5309,513"/>
+<area shape="poly" id="edge64_Node000051_Node000053" title=" " alt="" coords="5179,430,5215,467,5211,470,5175,434"/>
+<area shape="rect" id="Node000057" href="$shell__lock_8h.html" title="Shell interface definition." alt="" coords="5900,182,6076,210"/>
+<area shape="poly" id="edge69_Node000056_Node000057" title=" " alt="" coords="4758,102,4960,106,5240,117,5562,137,5727,152,5889,171,5933,179,5932,184,5888,176,5727,157,5562,142,5240,122,4960,111,4758,108"/>
 </map>

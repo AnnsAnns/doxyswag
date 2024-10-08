@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: STM32MP157C-DK2 board</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,13 +149,13 @@ $(function(){initNavTree('group__boards__stm32mp157c-dk2.html',''); initResizabl
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the STM32MP157C-DK2 board </p>
-<h2><a class="anchor" id="autotoc_md1486"></a>
+<h2><a class="anchor" id="autotoc_md1487"></a>
 Overview</h2>
 <p>The STM32MP157C-DK2 is a board from ST featuring a double architecture based on a dual Cortex-A7 and a Cortex-M4 STM32MP157C microcontroller with 384KB of SRAM and no ROM Flash.</p>
-<h2><a class="anchor" id="autotoc_md1487"></a>
+<h2><a class="anchor" id="autotoc_md1488"></a>
 Hardware</h2>
 <p><img src="https://www.st.com/bin/ecommerce/api/image.PF267415.en.feature-description-include-personalized-no-cpn-medium.jpg" alt="STM32MP157C-DK2" class="inline"/></p>
-<h3><a class="anchor" id="autotoc_md1488"></a>
+<h3><a class="anchor" id="autotoc_md1489"></a>
 MCU</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -198,7 +199,7 @@ MCU</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">Board Manual   </td><td class="markdownTableBodyLeft"><a href="https://www.st.com/resource/en/user_manual/dm00591354-discovery-kits-with-stm32mp157-mpus-stmicroelectronics.pdf">Board Manual</a>   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md1489"></a>
+<h2><a class="anchor" id="autotoc_md1490"></a>
 Implementation Status</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -212,10 +213,10 @@ Implementation Status</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft"><a class="el" href="structTimer.html" title="struct to get time references within mqtt paho">Timer</a>   </td><td class="markdownTableBodyLeft">one 32 bit timer   </td><td class="markdownTableBodyLeft">TIM2   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md1490"></a>
+<h2><a class="anchor" id="autotoc_md1491"></a>
 Flashing the device</h2>
 <p>Note that the STM32MP157C-DK2 board has no ROM Flash, thus the firmware needs to be reflashed each time the board is rebooted.</p>
-<h3><a class="anchor" id="autotoc_md1491"></a>
+<h3><a class="anchor" id="autotoc_md1492"></a>
 Boot selection jumper:</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -225,12 +226,12 @@ Boot selection jumper:</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">SD Card (Linux)   </td><td class="markdownTableBodyLeft">0   </td><td class="markdownTableBodyLeft">1   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md1492"></a>
+<h3><a class="anchor" id="autotoc_md1493"></a>
 Engineering mode</h3>
 <p>The STM32MP157C-DK2 board includes an on-board ST-LINK V2 programmer. The easiest way to program the board is to use OpenOCD. Once you have installed OpenOCD (look <a href="https://github.com/RIOT-OS/RIOT/wiki/OpenOCD">here</a> for installation instructions), you can flash the board simply by typing inside your application directory:</p>
 <div class="fragment"><div class="line">USEMODULE=<span class="stringliteral">&#39;stm32mp1_eng_mode&#39;</span> make BOARD=stm32mp157c-dk2 flash</div>
 </div><!-- fragment --><p> and debug via GDB by simply typing </p><div class="fragment"><div class="line">USEMODULE=<span class="stringliteral">&#39;stm32mp1_eng_mode&#39;</span> make BOARD=stm32mp157c-dk2 debug</div>
-</div><!-- fragment --> <h3><a class="anchor" id="autotoc_md1493"></a>
+</div><!-- fragment --> <h3><a class="anchor" id="autotoc_md1494"></a>
 SD Card (Linux) mode</h3>
 <p>This assumes that Linux is booted and that your Linux kernel supports STM32 remoteproc framework.</p>
 <p>Build the firmware inside your application directory: </p><div class="fragment"><div class="line">make BOARD=stm32mp157c-dk2</div>
@@ -238,7 +239,7 @@ SD Card (Linux) mode</h3>
 <p>Then simply launch this commands on the Linux system as root user: </p><div class="fragment"><div class="line">echo firmware.elf &gt; /sys/<span class="keyword">class</span>/remoteproc/remoteproc0/firmware</div>
 <div class="line">echo start &gt; /sys/<span class="keyword">class</span>/remoteproc/remoteproc0/state</div>
 </div><!-- fragment --><p>You can stop RIOT from Linux command line: </p><div class="fragment"><div class="line">echo stop &gt; /sys/<span class="keyword">class</span>/remoteproc/remoteproc0/state</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1494"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1495"></a>
 Supported Toolchains</h2>
 <p>For using the STM32MP157C-DK2 board we strongly recommend the usage of the <a href="https://launchpad.net/gcc-arm-embedded">GNU Tools for ARM Embedded Processors</a> toolchain. </p>
 <table class="memberdecls">
@@ -258,7 +259,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

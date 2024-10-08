@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: STM32G0316-DISCO</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,18 +149,18 @@ $(function(){initNavTree('group__boards__stm32g0316-disco.html',''); initResizab
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the STM32G0316-DISCO board. </p>
-<h3><a class="anchor" id="autotoc_md1462"></a>
+<h3><a class="anchor" id="autotoc_md1463"></a>
 General information</h3>
 <p>The ST <a href="https://www.st.com/en/evaluation-tools/stm32g0316-disco.html">STM32G0316-DISCO</a> is an evaluation board supporting a ARM Cortex-M0 STM32G031J6 microcontroller with 8KB of RAM and 32KB of ROM Flash.</p>
-<h3><a class="anchor" id="autotoc_md1463"></a>
+<h3><a class="anchor" id="autotoc_md1464"></a>
 Pinout</h3>
 <p>In an SO8 package, this MCU uses multi-bonding to run multiple ports to the same pins. See <a href="https://www.st.com/resource/en/application_note/dm00443870-getting-started-with-stm32g0-series-hardware-development-stmicroelectronics.pdf">this application note as reference</a>. This means the responsibility is on the firmware configurer to take special care when configured IO, ensuring that ports are not conflicting on each pin.</p>
-<h3><a class="anchor" id="autotoc_md1464"></a>
+<h3><a class="anchor" id="autotoc_md1465"></a>
 Flash the board</h3>
 <p>The STM32G0316-DISCO board includes an on-board ST-LINK programmer and can be flashed using OpenOCD.</p>
 <p>To flash this board, just use the following command:</p>
 <div class="fragment"><div class="line">make BOARD=stm32g0316-disco flash -C examples/hello-world</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md1465"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md1466"></a>
 UART Terminal Interaction</h3>
 <p>Due to the limited number of pins, to get stdio UART traffic, use a USB-&gt;UART adapter like the CP2104 from Adafruit (<a href="http://adafru.it/954">http://adafru.it/954</a>). Connect the adapter's TX line to the MCU RX pin (PB6, Pin 8) and the adapter's RX line to the MCU's TX pin - (PB7, pin 1) </p>
 <table class="memberdecls">
@@ -179,7 +180,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

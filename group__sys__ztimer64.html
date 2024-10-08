@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: ztimer 64bit version</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -151,7 +152,7 @@ $(function(){initNavTree('group__sys__ztimer64.html',''); initResizable(true); }
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>ztimer 64bit version</p>
-<h1><a class="anchor" id="autotoc_md2117"></a>
+<h1><a class="anchor" id="autotoc_md2118"></a>
 Introduction</h1>
 <p>This module implements a 64bit version of the ztimer API. All ztimer_* functions have a ztimer64_* equivalent that behaves the same, but allowing offsets &gt;= 2^32.</p>
 <p>In addition to that, ztimer64 offers functions taking absolute target times as parameter. If the absolute target time is in the past, a timer would trigger right away.</p>
@@ -176,7 +177,7 @@ Introduction</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><a class="el" href="#gac115b8099a7be028ad30f44718c50ea5" title="Try to lock the given rmutex, but give up after timeout.">ztimer64_rmutex_lock_timeout()</a>   </td><td class="markdownTableBodyNone"><a class="el" href="#gaf9a884d307ac738e8d0980a74007fb50" title="Try to lock the given rmutex, but give up at time.">ztimer64_rmutex_lock_until()</a>   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md2118"></a>
+<h2><a class="anchor" id="autotoc_md2119"></a>
 ztimer64 clocks</h2>
 <p>ztimer64 provides automatic setup of ZTIMER64_SEC, ZTIMER64_MSEC and ZTIMER64_USEC, using the ztimer(32) clocks as base clocks. Enable them by depending on ztimer64_sec, ztimer64_msec and / or ztimer64_usec.</p>
 <dl class="section warning"><dt>Warning</dt><dd>ztimer64 always keeps a timer running on the base clock. Depending on the base clock, this blocks low-power sleep modes. If the hardware supports it, the msec and sec timers should be using a low-power capable timer (e.g., periph_rtt). ztimer64_usec will almost certainly block low-power sleep.</dd></dl>
@@ -1315,7 +1316,7 @@ Variables</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:56 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

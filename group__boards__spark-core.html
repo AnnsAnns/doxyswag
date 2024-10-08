@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="generator" content="Doxygen 1.12.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <title>RIOT OS: Spark-Core</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -148,14 +149,14 @@ $(function(){initNavTree('group__boards__spark-core.html',''); initResizable(tru
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Support for the spark-core board </p>
-<h2><a class="anchor" id="autotoc_md1338"></a>
+<h2><a class="anchor" id="autotoc_md1339"></a>
 Overview</h2>
 <p>Spark's hardware dev kit, the Spark Core, provides everything you need to build a connected product. We combine a powerful ARM Cortex M3 micro-controller with a Wi-Fi module to get you started quickly. The design is open source, so when you're ready to integrate the Core into your product, you can.</p>
-<h2><a class="anchor" id="autotoc_md1339"></a>
+<h2><a class="anchor" id="autotoc_md1340"></a>
 Hardware</h2>
 <p><img src="https://raw.githubusercontent.com/wiki/RIOT-OS/RIOT/images/spark-core.jpg" alt="Spark-Core image" class="inline"/></p>
 <p>Link to <a href="http://docs.spark.io/hardware/">product website</a>.</p>
-<h3><a class="anchor" id="autotoc_md1340"></a>
+<h3><a class="anchor" id="autotoc_md1341"></a>
 MCU</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -193,7 +194,7 @@ MCU</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">Board Manual   </td><td class="markdownTableBodyLeft"><a href="http://docs.spark.io/hardware/">Board Manual</a>   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md1341"></a>
+<h1><a class="anchor" id="autotoc_md1342"></a>
 Hardware connection</h1>
 <p>First of all make sure the your spark core device is detected and can be accessed properly. In Linux you might have to adept your udev rules accordingly:</p>
 <div class="fragment"><div class="line">$ cat 50-openmoko.rules</div>
@@ -212,11 +213,11 @@ Hardware connection</h1>
 <div class="line">sudo udevadm control --reload-rules</div>
 <div class="line">sudo udevadm trigger</div>
 </div><!-- fragment --><p>now replug the usb cable and flash.</p>
-<h1><a class="anchor" id="autotoc_md1342"></a>
+<h1><a class="anchor" id="autotoc_md1343"></a>
 Flashing</h1>
 <p>To flash RIOT to the spark core you need to install <code>dfu-util</code> (tested with 0.7 and 0.8).</p>
 <p>Power the device and press the the <code>mode</code> button until the LED flashes yellow/orange: now the device is ready to get flashed.</p>
-<h1><a class="anchor" id="autotoc_md1343"></a>
+<h1><a class="anchor" id="autotoc_md1344"></a>
 Firmware upgrade</h1>
 <p>To run RIOT it is required that you run the newest spark bootloader on your core: from <a href="https://community.spark.io/t/replace-core-firmware-with-riot-os/7007/7">https://community.spark.io/t/replace-core-firmware-with-riot-os/7007/7</a></p>
 <div class="fragment"><div class="line">Here is the core-firmware branch <span class="keywordflow">for</span> <span class="keyword">this</span>:</div>
@@ -234,21 +235,21 @@ Firmware upgrade</h1>
 <div class="line">normal core-firmware should start executing.</div>
 <div class="line">8)Congrats! your core is loaded with latest bootloader without the hassle of</div>
 <div class="line">going through ST-Link JTAG programming</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md1344"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md1345"></a>
 Build and flash</h1>
 <ol type="1">
 <li>clone RIOT-OS</li>
 <li>cd to e.g. <code>examples/hello_world</code></li>
 <li>enter <code>BOARD=spark-core make clean all flash</code></li>
 </ol>
-<h1><a class="anchor" id="autotoc_md1345"></a>
+<h1><a class="anchor" id="autotoc_md1346"></a>
 Use the UART</h1>
 <ol type="1">
 <li>RIOT is using the UART PINs on the board, they are labeled as <code>RT</code> and <code>TX</code>.</li>
 <li>Connect your TTY to them and <code>BOARD=spark-core make term</code>.</li>
 <li>In a different terminal enter <code>BOARD=spark-core make reset</code></li>
 </ol>
-<h1><a class="anchor" id="autotoc_md1346"></a>
+<h1><a class="anchor" id="autotoc_md1347"></a>
 Pin mapping in RIOT</h1>
 <p>The following image shows RIOT's static pin mapping chosen for this board. This mapping is completely arbitrary, it can be adjusted in <code><a class="el" href="boards_2spark-core_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the spark-core board.">boards/spark-core/include/periph_conf.h</a></code> <img src="http://docs.spark.io/assets/images/spark-pinout.png" alt="Pin Mappin" class="inline"/> </p>
 <table class="memberdecls">
@@ -268,7 +269,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 8 2024 11:15:55 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 11:52:30 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

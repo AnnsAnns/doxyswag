@@ -76,10 +76,10 @@
 </a>
 </g>
 </g>
-<!-- Node48 -->
-<g id="Node000048" class="node">
-<title>Node48</title>
-<g id="a_Node000048"><a xlink:href="cfg__usb__otg__fs__u5_8h.html" target="_top" xlink:title="Common configuration for STM32 OTG FS peripheral for U5 family.">
+<!-- Node49 -->
+<g id="Node000049" class="node">
+<title>Node49</title>
+<g id="a_Node000049"><a xlink:href="cfg__usb__otg__fs__u5_8h.html" target="_top" xlink:title="Common configuration for STM32 OTG FS peripheral for U5 family.">
 <polygon fill="white" stroke="#666666" points="3196,-267.5 3067.5,-267.5 3067.5,-221.25 3196,-221.25 3196,-267.5"/>
 <text text-anchor="start" x="3075.5" y="-254" font-family="Helvetica,sans-Serif" font-size="10.00">boards/common/stm32</text>
 <text text-anchor="start" x="3075.5" y="-241.25" font-family="Helvetica,sans-Serif" font-size="10.00">/include/cfg_usb_otg</text>
@@ -87,19 +87,19 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node48 -->
-<g id="edge47_Node000001_Node000048" class="edge">
-<title>Node1&#45;&gt;Node48</title>
-<g id="a_edge47_Node000001_Node000048"><a xlink:title=" ">
+<!-- Node1&#45;&gt;Node49 -->
+<g id="edge48_Node000001_Node000049" class="edge">
+<title>Node1&#45;&gt;Node49</title>
+<g id="a_edge48_Node000001_Node000049"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M3131.75,-291.89C3131.75,-283.96 3131.75,-275.41 3131.75,-267.82"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="3128.25,-291.71 3131.75,-301.71 3135.25,-291.71 3128.25,-291.71"/>
 </a>
 </g>
 </g>
-<!-- Node51 -->
-<g id="Node000051" class="node">
-<title>Node51</title>
-<g id="a_Node000051"><a xlink:href="cfg__usb__otg__hs__phy__fs_8h.html" target="_top" xlink:title="Common configuration for STM32 OTG HS peripheral with on&#45;chip FS PHY.">
+<!-- Node52 -->
+<g id="Node000052" class="node">
+<title>Node52</title>
+<g id="a_Node000052"><a xlink:href="cfg__usb__otg__hs__phy__fs_8h.html" target="_top" xlink:title="Common configuration for STM32 OTG HS peripheral with on&#45;chip FS PHY.">
 <polygon fill="white" stroke="#666666" points="3343,-267.5 3214.5,-267.5 3214.5,-221.25 3343,-221.25 3343,-267.5"/>
 <text text-anchor="start" x="3222.5" y="-254" font-family="Helvetica,sans-Serif" font-size="10.00">boards/common/stm32</text>
 <text text-anchor="start" x="3222.5" y="-241.25" font-family="Helvetica,sans-Serif" font-size="10.00">/include/cfg_usb_otg</text>
@@ -107,19 +107,19 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node51 -->
-<g id="edge50_Node000001_Node000051" class="edge">
-<title>Node1&#45;&gt;Node51</title>
-<g id="a_edge50_Node000001_Node000051"><a xlink:title=" ">
+<!-- Node1&#45;&gt;Node52 -->
+<g id="edge51_Node000001_Node000052" class="edge">
+<title>Node1&#45;&gt;Node52</title>
+<g id="a_edge51_Node000001_Node000052"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M3174.28,-297.88C3192.92,-288.51 3214.82,-277.5 3233.74,-267.99"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="3172.73,-294.74 3165.36,-302.36 3175.87,-301 3172.73,-294.74"/>
 </a>
 </g>
 </g>
-<!-- Node55 -->
-<g id="Node000055" class="node">
-<title>Node55</title>
-<g id="a_Node000055"><a xlink:href="cfg__usb__otg__hs__phy__utmi_8h.html" target="_top" xlink:title="Common configuration for STM32 OTG HS peripheral with internal UTMI HS PHY.">
+<!-- Node56 -->
+<g id="Node000056" class="node">
+<title>Node56</title>
+<g id="a_Node000056"><a xlink:href="cfg__usb__otg__hs__phy__utmi_8h.html" target="_top" xlink:title="Common configuration for STM32 OTG HS peripheral with internal UTMI HS PHY.">
 <polygon fill="white" stroke="#666666" points="3490,-267.5 3361.5,-267.5 3361.5,-221.25 3490,-221.25 3490,-267.5"/>
 <text text-anchor="start" x="3369.5" y="-254" font-family="Helvetica,sans-Serif" font-size="10.00">boards/common/stm32</text>
 <text text-anchor="start" x="3369.5" y="-241.25" font-family="Helvetica,sans-Serif" font-size="10.00">/include/cfg_usb_otg</text>
@@ -127,29 +127,29 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node55 -->
-<g id="edge54_Node000001_Node000055" class="edge">
-<title>Node1&#45;&gt;Node55</title>
-<g id="a_edge54_Node000001_Node000055"><a xlink:title=" ">
+<!-- Node1&#45;&gt;Node56 -->
+<g id="edge55_Node000001_Node000056" class="edge">
+<title>Node1&#45;&gt;Node56</title>
+<g id="a_edge55_Node000001_Node000056"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M3206.22,-302.89C3248.96,-293.21 3303.55,-280.36 3351.75,-267.5 3354.86,-266.67 3358.04,-265.8 3361.24,-264.91"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="3205.52,-299.46 3196.54,-305.07 3207.06,-306.29 3205.52,-299.46"/>
 </a>
 </g>
 </g>
-<!-- Node56 -->
-<g id="Node000056" class="node">
-<title>Node56</title>
-<g id="a_Node000056"><a xlink:href="esp32_2include_2periph__cpu_8h.html" target="_top" xlink:title="Peripheral configuration that is common for all ESP32x SoCs.">
+<!-- Node57 -->
+<g id="Node000057" class="node">
+<title>Node57</title>
+<g id="a_Node000057"><a xlink:href="esp32_2include_2periph__cpu_8h.html" target="_top" xlink:title="Peripheral configuration that is common for all ESP32x SoCs.">
 <polygon fill="white" stroke="#666666" points="3645.5,-261.12 3508,-261.12 3508,-227.62 3645.5,-227.62 3645.5,-261.12"/>
 <text text-anchor="start" x="3516" y="-247.62" font-family="Helvetica,sans-Serif" font-size="10.00">cpu/esp32/include/periph</text>
 <text text-anchor="middle" x="3576.75" y="-234.88" font-family="Helvetica,sans-Serif" font-size="10.00">_cpu.h</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node56 -->
-<g id="edge55_Node000001_Node000056" class="edge">
-<title>Node1&#45;&gt;Node56</title>
-<g id="a_edge55_Node000001_Node000056"><a xlink:title=" ">
+<!-- Node1&#45;&gt;Node57 -->
+<g id="edge56_Node000001_Node000057" class="edge">
+<title>Node1&#45;&gt;Node57</title>
+<g id="a_edge56_Node000001_Node000057"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M3206.33,-311.75C3280.85,-303.55 3398.45,-288.69 3498.75,-267.5 3506.74,-265.81 3515.11,-263.75 3523.28,-261.58"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="3206.27,-308.24 3196.7,-312.8 3207.02,-315.2 3206.27,-308.24"/>
 </a>
@@ -688,108 +688,89 @@
 </a>
 </g>
 </g>
-<!-- Node34 -->
-<g id="Node000034" class="node">
-<title>Node34</title>
-<g id="a_Node000034"><a xlink:href="boards_2stm32f4discovery_2include_2periph__conf_8h.html" target="_top" xlink:title=" ">
+<!-- Node35 -->
+<g id="Node000035" class="node">
+<title>Node35</title>
+<g id="a_Node000035"><a xlink:href="boards_2stm32f4discovery_2include_2periph__conf_8h.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="3025.62,-178.88 2885.88,-178.88 2885.88,-145.38 3025.62,-145.38 3025.62,-178.88"/>
 <text text-anchor="start" x="2893.88" y="-165.38" font-family="Helvetica,sans-Serif" font-size="10.00">boards/stm32f4discovery</text>
 <text text-anchor="middle" x="2955.75" y="-152.62" font-family="Helvetica,sans-Serif" font-size="10.00">/include/periph_conf.h</text>
 </a>
 </g>
 </g>
-<!-- Node16&#45;&gt;Node34 -->
-<g id="edge33_Node000016_Node000034" class="edge">
-<title>Node16&#45;&gt;Node34</title>
-<g id="a_edge33_Node000016_Node000034"><a xlink:title=" ">
+<!-- Node16&#45;&gt;Node35 -->
+<g id="edge34_Node000016_Node000035" class="edge">
+<title>Node16&#45;&gt;Node35</title>
+<g id="a_edge34_Node000016_Node000035"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M2303.8,-240.97C2428.04,-236.21 2672.6,-222.58 2876.75,-185.25 2885.3,-183.69 2894.26,-181.61 2902.95,-179.36"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="2303.9,-237.47 2294.04,-241.34 2304.16,-244.46 2303.9,-237.47"/>
 </a>
 </g>
 </g>
-<!-- Node37 -->
-<g id="Node000037" class="node">
-<title>Node37</title>
-<g id="a_Node000037"><a xlink:href="boards_2stm32f723e-disco_2include_2periph__conf_8h.html" target="_top" xlink:title="Peripheral MCU configuration for the STM32F723E&#45;DISCO board.">
+<!-- Node38 -->
+<g id="Node000038" class="node">
+<title>Node38</title>
+<g id="a_Node000038"><a xlink:href="boards_2stm32f723e-disco_2include_2periph__conf_8h.html" target="_top" xlink:title="Peripheral MCU configuration for the STM32F723E&#45;DISCO board.">
 <polygon fill="white" stroke="#666666" points="3183.62,-178.88 3043.88,-178.88 3043.88,-145.38 3183.62,-145.38 3183.62,-178.88"/>
 <text text-anchor="start" x="3051.88" y="-165.38" font-family="Helvetica,sans-Serif" font-size="10.00">boards/stm32f723e&#45;disco</text>
 <text text-anchor="middle" x="3113.75" y="-152.62" font-family="Helvetica,sans-Serif" font-size="10.00">/include/periph_conf.h</text>
 </a>
 </g>
 </g>
-<!-- Node16&#45;&gt;Node37 -->
-<g id="edge36_Node000016_Node000037" class="edge">
-<title>Node16&#45;&gt;Node37</title>
-<g id="a_edge36_Node000016_Node000037"><a xlink:title=" ">
+<!-- Node16&#45;&gt;Node38 -->
+<g id="edge37_Node000016_Node000038" class="edge">
+<title>Node16&#45;&gt;Node38</title>
+<g id="a_edge37_Node000016_Node000038"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M2303.69,-242.96C2450.48,-241.02 2769.95,-231.32 3034.75,-185.25 3043.59,-183.71 3052.86,-181.59 3061.82,-179.27"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="2304.04,-239.46 2294.08,-243.08 2304.12,-246.46 2304.04,-239.46"/>
 </a>
 </g>
 </g>
-<!-- Node40 -->
-<g id="Node000040" class="node">
-<title>Node40</title>
-<g id="a_Node000040"><a xlink:href="boards_2stm32f746g-disco_2include_2periph__conf_8h.html" target="_top" xlink:title="Configuration of CPU peripherals for STM32F746G&#45;DISCO board.">
+<!-- Node41 -->
+<g id="Node000041" class="node">
+<title>Node41</title>
+<g id="a_Node000041"><a xlink:href="boards_2stm32f746g-disco_2include_2periph__conf_8h.html" target="_top" xlink:title="Configuration of CPU peripherals for STM32F746G&#45;DISCO board.">
 <polygon fill="white" stroke="#666666" points="3341.62,-178.88 3201.88,-178.88 3201.88,-145.38 3341.62,-145.38 3341.62,-178.88"/>
 <text text-anchor="start" x="3209.88" y="-165.38" font-family="Helvetica,sans-Serif" font-size="10.00">boards/stm32f746g&#45;disco</text>
 <text text-anchor="middle" x="3271.75" y="-152.62" font-family="Helvetica,sans-Serif" font-size="10.00">/include/periph_conf.h</text>
 </a>
 </g>
 </g>
-<!-- Node16&#45;&gt;Node40 -->
-<g id="edge39_Node000016_Node000040" class="edge">
-<title>Node16&#45;&gt;Node40</title>
-<g id="a_edge39_Node000016_Node000040"><a xlink:title=" ">
+<!-- Node16&#45;&gt;Node41 -->
+<g id="edge40_Node000016_Node000041" class="edge">
+<title>Node16&#45;&gt;Node41</title>
+<g id="a_edge40_Node000016_Node000041"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M2303.98,-240.74C2505.17,-233.85 3022.61,-213.84 3192.75,-185.25 3201.6,-183.76 3210.88,-181.67 3219.84,-179.35"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="2304.02,-237.23 2294.14,-241.07 2304.25,-244.23 2304.02,-237.23"/>
 </a>
 </g>
 </g>
-<!-- Node43 -->
-<g id="Node000043" class="node">
-<title>Node43</title>
-<g id="a_Node000043"><a xlink:href="boards_2stm32f769i-disco_2include_2periph__conf_8h.html" target="_top" xlink:title="Peripheral MCU configuration for the STM32F769I&#45;DISCO board.">
+<!-- Node44 -->
+<g id="Node000044" class="node">
+<title>Node44</title>
+<g id="a_Node000044"><a xlink:href="boards_2stm32f769i-disco_2include_2periph__conf_8h.html" target="_top" xlink:title="Peripheral MCU configuration for the STM32F769I&#45;DISCO board.">
 <polygon fill="white" stroke="#666666" points="3496.12,-178.88 3359.38,-178.88 3359.38,-145.38 3496.12,-145.38 3496.12,-178.88"/>
 <text text-anchor="start" x="3367.38" y="-165.38" font-family="Helvetica,sans-Serif" font-size="10.00">boards/stm32f769i&#45;disco</text>
 <text text-anchor="middle" x="3427.75" y="-152.62" font-family="Helvetica,sans-Serif" font-size="10.00">/include/periph_conf.h</text>
 </a>
 </g>
 </g>
-<!-- Node16&#45;&gt;Node43 -->
-<g id="edge42_Node000016_Node000043" class="edge">
-<title>Node16&#45;&gt;Node43</title>
-<g id="a_edge42_Node000016_Node000043"><a xlink:title=" ">
+<!-- Node16&#45;&gt;Node44 -->
+<g id="edge43_Node000016_Node000044" class="edge">
+<title>Node16&#45;&gt;Node44</title>
+<g id="a_edge43_Node000016_Node000044"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M2304.02,-241.6C2527.69,-236.31 3149.12,-218.96 3350.75,-185.25 3359.53,-183.78 3368.73,-181.67 3377.6,-179.32"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="2304.14,-238.09 2294.23,-241.82 2304.31,-245.09 2304.14,-238.09"/>
-</a>
-</g>
-</g>
-<!-- Node46 -->
-<g id="Node000046" class="node">
-<title>Node46</title>
-<g id="a_Node000046"><a xlink:href="boards_2stm32l476g-disco_2include_2periph__conf_8h.html" target="_top" xlink:title="Peripheral MCU configuration for the STM32L476G&#45;DISCO board.">
-<polygon fill="white" stroke="#666666" points="3653.25,-178.88 3514.25,-178.88 3514.25,-145.38 3653.25,-145.38 3653.25,-178.88"/>
-<text text-anchor="start" x="3522.25" y="-165.38" font-family="Helvetica,sans-Serif" font-size="10.00">boards/stm32l476g&#45;disco</text>
-<text text-anchor="middle" x="3583.75" y="-152.62" font-family="Helvetica,sans-Serif" font-size="10.00">/include/periph_conf.h</text>
-</a>
-</g>
-</g>
-<!-- Node16&#45;&gt;Node46 -->
-<g id="edge45_Node000016_Node000046" class="edge">
-<title>Node16&#45;&gt;Node46</title>
-<g id="a_edge45_Node000016_Node000046"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M2303.92,-242.11C2547.87,-237.93 3271.97,-222.62 3504.75,-185.25 3513.75,-183.81 3523.19,-181.7 3532.28,-179.35"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="2304.12,-238.61 2294.18,-242.28 2304.24,-245.61 2304.12,-238.61"/>
 </a>
 </g>
 </g>
 <!-- Node47 -->
 <g id="Node000047" class="node">
 <title>Node47</title>
-<g id="a_Node000047"><a xlink:href="boards_2stm32l496g-disco_2include_2periph__conf_8h.html" target="_top" xlink:title="Peripheral MCU configuration for the STM32L496G&#45;DISCO board.">
-<polygon fill="white" stroke="#666666" points="3810.25,-178.88 3671.25,-178.88 3671.25,-145.38 3810.25,-145.38 3810.25,-178.88"/>
-<text text-anchor="start" x="3679.25" y="-165.38" font-family="Helvetica,sans-Serif" font-size="10.00">boards/stm32l496g&#45;disco</text>
-<text text-anchor="middle" x="3740.75" y="-152.62" font-family="Helvetica,sans-Serif" font-size="10.00">/include/periph_conf.h</text>
+<g id="a_Node000047"><a xlink:href="boards_2stm32l476g-disco_2include_2periph__conf_8h.html" target="_top" xlink:title="Peripheral MCU configuration for the STM32L476G&#45;DISCO board.">
+<polygon fill="white" stroke="#666666" points="3653.25,-178.88 3514.25,-178.88 3514.25,-145.38 3653.25,-145.38 3653.25,-178.88"/>
+<text text-anchor="start" x="3522.25" y="-165.38" font-family="Helvetica,sans-Serif" font-size="10.00">boards/stm32l476g&#45;disco</text>
+<text text-anchor="middle" x="3583.75" y="-152.62" font-family="Helvetica,sans-Serif" font-size="10.00">/include/periph_conf.h</text>
 </a>
 </g>
 </g>
@@ -797,6 +778,25 @@
 <g id="edge46_Node000016_Node000047" class="edge">
 <title>Node16&#45;&gt;Node47</title>
 <g id="a_edge46_Node000016_Node000047"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M2303.92,-242.11C2547.87,-237.93 3271.97,-222.62 3504.75,-185.25 3513.75,-183.81 3523.19,-181.7 3532.28,-179.35"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="2304.12,-238.61 2294.18,-242.28 2304.24,-245.61 2304.12,-238.61"/>
+</a>
+</g>
+</g>
+<!-- Node48 -->
+<g id="Node000048" class="node">
+<title>Node48</title>
+<g id="a_Node000048"><a xlink:href="boards_2stm32l496g-disco_2include_2periph__conf_8h.html" target="_top" xlink:title="Peripheral MCU configuration for the STM32L496G&#45;DISCO board.">
+<polygon fill="white" stroke="#666666" points="3810.25,-178.88 3671.25,-178.88 3671.25,-145.38 3810.25,-145.38 3810.25,-178.88"/>
+<text text-anchor="start" x="3679.25" y="-165.38" font-family="Helvetica,sans-Serif" font-size="10.00">boards/stm32l496g&#45;disco</text>
+<text text-anchor="middle" x="3740.75" y="-152.62" font-family="Helvetica,sans-Serif" font-size="10.00">/include/periph_conf.h</text>
+</a>
+</g>
+</g>
+<!-- Node16&#45;&gt;Node48 -->
+<g id="edge47_Node000016_Node000048" class="edge">
+<title>Node16&#45;&gt;Node48</title>
+<g id="a_edge47_Node000016_Node000048"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M2304.01,-241.22C2588.38,-233.5 3528.79,-206.64 3662.75,-185.25 3671.78,-183.81 3681.26,-181.67 3690.37,-179.29"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="2303.98,-237.71 2294.08,-241.48 2304.17,-244.71 2303.98,-237.71"/>
 </a>
@@ -821,32 +821,32 @@
 </a>
 </g>
 </g>
-<!-- Node35 -->
-<g id="Node000035" class="node">
-<title>Node35</title>
-<g id="a_Node000035"><a xlink:href="stm32f4discovery_2include_2board_8h.html" target="_top" xlink:title="Board specific definitions for the STM32F4Discovery evaluation board.">
-<polygon fill="white" stroke="#666666" points="3025.62,-103 2885.88,-103 2885.88,-69.5 3025.62,-69.5 3025.62,-103"/>
-<text text-anchor="start" x="2893.88" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">boards/stm32f4discovery</text>
-<text text-anchor="middle" x="2955.75" y="-76.75" font-family="Helvetica,sans-Serif" font-size="10.00">/include/board.h</text>
+<!-- Node34 -->
+<g id="Node000034" class="node">
+<title>Node34</title>
+<g id="a_Node000034"><a xlink:href="stm32f469i-disco_2include_2gpio__params_8h_source.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="2868.12,-33.5 2731.38,-33.5 2731.38,0 2868.12,0 2868.12,-33.5"/>
+<text text-anchor="start" x="2739.38" y="-20" font-family="Helvetica,sans-Serif" font-size="10.00">boards/stm32f469i&#45;disco</text>
+<text text-anchor="middle" x="2799.75" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">/include/gpio_params.h</text>
 </a>
 </g>
 </g>
-<!-- Node34&#45;&gt;Node35 -->
-<g id="edge34_Node000034_Node000035" class="edge">
-<title>Node34&#45;&gt;Node35</title>
-<g id="a_edge34_Node000034_Node000035"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M2955.75,-133.74C2955.75,-123.47 2955.75,-112.15 2955.75,-103.25"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="2952.25,-133.58 2955.75,-143.58 2959.25,-133.58 2952.25,-133.58"/>
+<!-- Node33&#45;&gt;Node34 -->
+<g id="edge33_Node000033_Node000034" class="edge">
+<title>Node33&#45;&gt;Node34</title>
+<g id="a_edge33_Node000033_Node000034"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M2799.75,-57.81C2799.75,-49.59 2799.75,-40.84 2799.75,-33.63"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="2796.25,-57.74 2799.75,-67.74 2803.25,-57.74 2796.25,-57.74"/>
 </a>
 </g>
 </g>
 <!-- Node36 -->
 <g id="Node000036" class="node">
 <title>Node36</title>
-<g id="a_Node000036"><a xlink:href="stm32f4discovery_2include_2gpio__params_8h.html" target="_top" xlink:title="Board specific configuration of direct mapped GPIOs.">
-<polygon fill="white" stroke="#666666" points="3025.62,-33.5 2885.88,-33.5 2885.88,0 3025.62,0 3025.62,-33.5"/>
-<text text-anchor="start" x="2893.88" y="-20" font-family="Helvetica,sans-Serif" font-size="10.00">boards/stm32f4discovery</text>
-<text text-anchor="middle" x="2955.75" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">/include/gpio_params.h</text>
+<g id="a_Node000036"><a xlink:href="stm32f4discovery_2include_2board_8h.html" target="_top" xlink:title="Board specific definitions for the STM32F4Discovery evaluation board.">
+<polygon fill="white" stroke="#666666" points="3025.62,-103 2885.88,-103 2885.88,-69.5 3025.62,-69.5 3025.62,-103"/>
+<text text-anchor="start" x="2893.88" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">boards/stm32f4discovery</text>
+<text text-anchor="middle" x="2955.75" y="-76.75" font-family="Helvetica,sans-Serif" font-size="10.00">/include/board.h</text>
 </a>
 </g>
 </g>
@@ -854,37 +854,37 @@
 <g id="edge35_Node000035_Node000036" class="edge">
 <title>Node35&#45;&gt;Node36</title>
 <g id="a_edge35_Node000035_Node000036"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M2955.75,-133.74C2955.75,-123.47 2955.75,-112.15 2955.75,-103.25"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="2952.25,-133.58 2955.75,-143.58 2959.25,-133.58 2952.25,-133.58"/>
+</a>
+</g>
+</g>
+<!-- Node37 -->
+<g id="Node000037" class="node">
+<title>Node37</title>
+<g id="a_Node000037"><a xlink:href="stm32f4discovery_2include_2gpio__params_8h.html" target="_top" xlink:title="Board specific configuration of direct mapped GPIOs.">
+<polygon fill="white" stroke="#666666" points="3025.62,-33.5 2885.88,-33.5 2885.88,0 3025.62,0 3025.62,-33.5"/>
+<text text-anchor="start" x="2893.88" y="-20" font-family="Helvetica,sans-Serif" font-size="10.00">boards/stm32f4discovery</text>
+<text text-anchor="middle" x="2955.75" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">/include/gpio_params.h</text>
+</a>
+</g>
+</g>
+<!-- Node36&#45;&gt;Node37 -->
+<g id="edge36_Node000036_Node000037" class="edge">
+<title>Node36&#45;&gt;Node37</title>
+<g id="a_edge36_Node000036_Node000037"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M2955.75,-57.81C2955.75,-49.59 2955.75,-40.84 2955.75,-33.63"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="2952.25,-57.74 2955.75,-67.74 2959.25,-57.74 2952.25,-57.74"/>
-</a>
-</g>
-</g>
-<!-- Node38 -->
-<g id="Node000038" class="node">
-<title>Node38</title>
-<g id="a_Node000038"><a xlink:href="stm32f723e-disco_2include_2board_8h.html" target="_top" xlink:title="Board specific definitions for the STM32F723E&#45;DISCO board.">
-<polygon fill="white" stroke="#666666" points="3183.62,-103 3043.88,-103 3043.88,-69.5 3183.62,-69.5 3183.62,-103"/>
-<text text-anchor="start" x="3051.88" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">boards/stm32f723e&#45;disco</text>
-<text text-anchor="middle" x="3113.75" y="-76.75" font-family="Helvetica,sans-Serif" font-size="10.00">/include/board.h</text>
-</a>
-</g>
-</g>
-<!-- Node37&#45;&gt;Node38 -->
-<g id="edge37_Node000037_Node000038" class="edge">
-<title>Node37&#45;&gt;Node38</title>
-<g id="a_edge37_Node000037_Node000038"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M3113.75,-133.74C3113.75,-123.47 3113.75,-112.15 3113.75,-103.25"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="3110.25,-133.58 3113.75,-143.58 3117.25,-133.58 3110.25,-133.58"/>
 </a>
 </g>
 </g>
 <!-- Node39 -->
 <g id="Node000039" class="node">
 <title>Node39</title>
-<g id="a_Node000039"><a xlink:href="stm32f723e-disco_2include_2gpio__params_8h.html" target="_top" xlink:title="Board specific configuration of direct mapped GPIOs.">
-<polygon fill="white" stroke="#666666" points="3183.62,-33.5 3043.88,-33.5 3043.88,0 3183.62,0 3183.62,-33.5"/>
-<text text-anchor="start" x="3051.88" y="-20" font-family="Helvetica,sans-Serif" font-size="10.00">boards/stm32f723e&#45;disco</text>
-<text text-anchor="middle" x="3113.75" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">/include/gpio_params.h</text>
+<g id="a_Node000039"><a xlink:href="stm32f723e-disco_2include_2board_8h.html" target="_top" xlink:title="Board specific definitions for the STM32F723E&#45;DISCO board.">
+<polygon fill="white" stroke="#666666" points="3183.62,-103 3043.88,-103 3043.88,-69.5 3183.62,-69.5 3183.62,-103"/>
+<text text-anchor="start" x="3051.88" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">boards/stm32f723e&#45;disco</text>
+<text text-anchor="middle" x="3113.75" y="-76.75" font-family="Helvetica,sans-Serif" font-size="10.00">/include/board.h</text>
 </a>
 </g>
 </g>
@@ -892,37 +892,37 @@
 <g id="edge38_Node000038_Node000039" class="edge">
 <title>Node38&#45;&gt;Node39</title>
 <g id="a_edge38_Node000038_Node000039"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M3113.75,-133.74C3113.75,-123.47 3113.75,-112.15 3113.75,-103.25"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="3110.25,-133.58 3113.75,-143.58 3117.25,-133.58 3110.25,-133.58"/>
+</a>
+</g>
+</g>
+<!-- Node40 -->
+<g id="Node000040" class="node">
+<title>Node40</title>
+<g id="a_Node000040"><a xlink:href="stm32f723e-disco_2include_2gpio__params_8h.html" target="_top" xlink:title="Board specific configuration of direct mapped GPIOs.">
+<polygon fill="white" stroke="#666666" points="3183.62,-33.5 3043.88,-33.5 3043.88,0 3183.62,0 3183.62,-33.5"/>
+<text text-anchor="start" x="3051.88" y="-20" font-family="Helvetica,sans-Serif" font-size="10.00">boards/stm32f723e&#45;disco</text>
+<text text-anchor="middle" x="3113.75" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">/include/gpio_params.h</text>
+</a>
+</g>
+</g>
+<!-- Node39&#45;&gt;Node40 -->
+<g id="edge39_Node000039_Node000040" class="edge">
+<title>Node39&#45;&gt;Node40</title>
+<g id="a_edge39_Node000039_Node000040"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M3113.75,-57.81C3113.75,-49.59 3113.75,-40.84 3113.75,-33.63"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="3110.25,-57.74 3113.75,-67.74 3117.25,-57.74 3110.25,-57.74"/>
-</a>
-</g>
-</g>
-<!-- Node41 -->
-<g id="Node000041" class="node">
-<title>Node41</title>
-<g id="a_Node000041"><a xlink:href="stm32f746g-disco_2include_2board_8h.html" target="_top" xlink:title="Board specific definitions for the STM32F746G&#45;DISCO.">
-<polygon fill="white" stroke="#666666" points="3341.62,-103 3201.88,-103 3201.88,-69.5 3341.62,-69.5 3341.62,-103"/>
-<text text-anchor="start" x="3209.88" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">boards/stm32f746g&#45;disco</text>
-<text text-anchor="middle" x="3271.75" y="-76.75" font-family="Helvetica,sans-Serif" font-size="10.00">/include/board.h</text>
-</a>
-</g>
-</g>
-<!-- Node40&#45;&gt;Node41 -->
-<g id="edge40_Node000040_Node000041" class="edge">
-<title>Node40&#45;&gt;Node41</title>
-<g id="a_edge40_Node000040_Node000041"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M3271.75,-133.74C3271.75,-123.47 3271.75,-112.15 3271.75,-103.25"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="3268.25,-133.58 3271.75,-143.58 3275.25,-133.58 3268.25,-133.58"/>
 </a>
 </g>
 </g>
 <!-- Node42 -->
 <g id="Node000042" class="node">
 <title>Node42</title>
-<g id="a_Node000042"><a xlink:href="stm32f746g-disco_2include_2gpio__params_8h.html" target="_top" xlink:title="Board specific configuration of direct mapped GPIOs.">
-<polygon fill="white" stroke="#666666" points="3341.62,-33.5 3201.88,-33.5 3201.88,0 3341.62,0 3341.62,-33.5"/>
-<text text-anchor="start" x="3209.88" y="-20" font-family="Helvetica,sans-Serif" font-size="10.00">boards/stm32f746g&#45;disco</text>
-<text text-anchor="middle" x="3271.75" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">/include/gpio_params.h</text>
+<g id="a_Node000042"><a xlink:href="stm32f746g-disco_2include_2board_8h.html" target="_top" xlink:title="Board specific definitions for the STM32F746G&#45;DISCO.">
+<polygon fill="white" stroke="#666666" points="3341.62,-103 3201.88,-103 3201.88,-69.5 3341.62,-69.5 3341.62,-103"/>
+<text text-anchor="start" x="3209.88" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">boards/stm32f746g&#45;disco</text>
+<text text-anchor="middle" x="3271.75" y="-76.75" font-family="Helvetica,sans-Serif" font-size="10.00">/include/board.h</text>
 </a>
 </g>
 </g>
@@ -930,37 +930,37 @@
 <g id="edge41_Node000041_Node000042" class="edge">
 <title>Node41&#45;&gt;Node42</title>
 <g id="a_edge41_Node000041_Node000042"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M3271.75,-133.74C3271.75,-123.47 3271.75,-112.15 3271.75,-103.25"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="3268.25,-133.58 3271.75,-143.58 3275.25,-133.58 3268.25,-133.58"/>
+</a>
+</g>
+</g>
+<!-- Node43 -->
+<g id="Node000043" class="node">
+<title>Node43</title>
+<g id="a_Node000043"><a xlink:href="stm32f746g-disco_2include_2gpio__params_8h.html" target="_top" xlink:title="Board specific configuration of direct mapped GPIOs.">
+<polygon fill="white" stroke="#666666" points="3341.62,-33.5 3201.88,-33.5 3201.88,0 3341.62,0 3341.62,-33.5"/>
+<text text-anchor="start" x="3209.88" y="-20" font-family="Helvetica,sans-Serif" font-size="10.00">boards/stm32f746g&#45;disco</text>
+<text text-anchor="middle" x="3271.75" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">/include/gpio_params.h</text>
+</a>
+</g>
+</g>
+<!-- Node42&#45;&gt;Node43 -->
+<g id="edge42_Node000042_Node000043" class="edge">
+<title>Node42&#45;&gt;Node43</title>
+<g id="a_edge42_Node000042_Node000043"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M3271.75,-57.81C3271.75,-49.59 3271.75,-40.84 3271.75,-33.63"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="3268.25,-57.74 3271.75,-67.74 3275.25,-57.74 3268.25,-57.74"/>
-</a>
-</g>
-</g>
-<!-- Node44 -->
-<g id="Node000044" class="node">
-<title>Node44</title>
-<g id="a_Node000044"><a xlink:href="stm32f769i-disco_2include_2board_8h.html" target="_top" xlink:title="Board specific definitions for the STM32F769I&#45;DISCO board.">
-<polygon fill="white" stroke="#666666" points="3496.12,-103 3359.38,-103 3359.38,-69.5 3496.12,-69.5 3496.12,-103"/>
-<text text-anchor="start" x="3367.38" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">boards/stm32f769i&#45;disco</text>
-<text text-anchor="middle" x="3427.75" y="-76.75" font-family="Helvetica,sans-Serif" font-size="10.00">/include/board.h</text>
-</a>
-</g>
-</g>
-<!-- Node43&#45;&gt;Node44 -->
-<g id="edge43_Node000043_Node000044" class="edge">
-<title>Node43&#45;&gt;Node44</title>
-<g id="a_edge43_Node000043_Node000044"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M3427.75,-133.74C3427.75,-123.47 3427.75,-112.15 3427.75,-103.25"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="3424.25,-133.58 3427.75,-143.58 3431.25,-133.58 3424.25,-133.58"/>
 </a>
 </g>
 </g>
 <!-- Node45 -->
 <g id="Node000045" class="node">
 <title>Node45</title>
-<g id="a_Node000045"><a xlink:href="stm32f769i-disco_2include_2gpio__params_8h.html" target="_top" xlink:title="Board specific configuration of direct mapped GPIOs.">
-<polygon fill="white" stroke="#666666" points="3496.12,-33.5 3359.38,-33.5 3359.38,0 3496.12,0 3496.12,-33.5"/>
-<text text-anchor="start" x="3367.38" y="-20" font-family="Helvetica,sans-Serif" font-size="10.00">boards/stm32f769i&#45;disco</text>
-<text text-anchor="middle" x="3427.75" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">/include/gpio_params.h</text>
+<g id="a_Node000045"><a xlink:href="stm32f769i-disco_2include_2board_8h.html" target="_top" xlink:title="Board specific definitions for the STM32F769I&#45;DISCO board.">
+<polygon fill="white" stroke="#666666" points="3496.12,-103 3359.38,-103 3359.38,-69.5 3496.12,-69.5 3496.12,-103"/>
+<text text-anchor="start" x="3367.38" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">boards/stm32f769i&#45;disco</text>
+<text text-anchor="middle" x="3427.75" y="-76.75" font-family="Helvetica,sans-Serif" font-size="10.00">/include/board.h</text>
 </a>
 </g>
 </g>
@@ -968,75 +968,75 @@
 <g id="edge44_Node000044_Node000045" class="edge">
 <title>Node44&#45;&gt;Node45</title>
 <g id="a_edge44_Node000044_Node000045"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M3427.75,-133.74C3427.75,-123.47 3427.75,-112.15 3427.75,-103.25"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="3424.25,-133.58 3427.75,-143.58 3431.25,-133.58 3424.25,-133.58"/>
+</a>
+</g>
+</g>
+<!-- Node46 -->
+<g id="Node000046" class="node">
+<title>Node46</title>
+<g id="a_Node000046"><a xlink:href="stm32f769i-disco_2include_2gpio__params_8h.html" target="_top" xlink:title="Board specific configuration of direct mapped GPIOs.">
+<polygon fill="white" stroke="#666666" points="3496.12,-33.5 3359.38,-33.5 3359.38,0 3496.12,0 3496.12,-33.5"/>
+<text text-anchor="start" x="3367.38" y="-20" font-family="Helvetica,sans-Serif" font-size="10.00">boards/stm32f769i&#45;disco</text>
+<text text-anchor="middle" x="3427.75" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">/include/gpio_params.h</text>
+</a>
+</g>
+</g>
+<!-- Node45&#45;&gt;Node46 -->
+<g id="edge45_Node000045_Node000046" class="edge">
+<title>Node45&#45;&gt;Node46</title>
+<g id="a_edge45_Node000045_Node000046"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M3427.75,-57.81C3427.75,-49.59 3427.75,-40.84 3427.75,-33.63"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="3424.25,-57.74 3427.75,-67.74 3431.25,-57.74 3424.25,-57.74"/>
-</a>
-</g>
-</g>
-<!-- Node49 -->
-<g id="Node000049" class="node">
-<title>Node49</title>
-<g id="a_Node000049"><a xlink:href="boards_2b-u585i-iot02a_2include_2periph__conf_8h.html" target="_top" xlink:title="Peripheral MCU configuration for the ST B&#45;U585I&#45;IOT02A board.">
-<polygon fill="white" stroke="#666666" points="3951.38,-178.88 3828.12,-178.88 3828.12,-145.38 3951.38,-145.38 3951.38,-178.88"/>
-<text text-anchor="start" x="3836.12" y="-165.38" font-family="Helvetica,sans-Serif" font-size="10.00">boards/b&#45;u585i&#45;iot02a</text>
-<text text-anchor="middle" x="3889.75" y="-152.62" font-family="Helvetica,sans-Serif" font-size="10.00">/include/periph_conf.h</text>
-</a>
-</g>
-</g>
-<!-- Node48&#45;&gt;Node49 -->
-<g id="edge48_Node000048_Node000049" class="edge">
-<title>Node48&#45;&gt;Node49</title>
-<g id="a_edge48_Node000048_Node000049"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M3207.44,-221.21C3477.07,-175.43 3554.6,-234.14 3819.75,-185.25 3827.77,-183.77 3836.16,-181.65 3844.22,-179.3"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="3206.86,-217.76 3197.6,-222.92 3208.05,-224.65 3206.86,-217.76"/>
 </a>
 </g>
 </g>
 <!-- Node50 -->
 <g id="Node000050" class="node">
 <title>Node50</title>
-<g id="a_Node000050"><a xlink:href="boards_2nucleo-u575zi-q_2include_2periph__conf_8h.html" target="_top" xlink:title="Peripheral MCU configuration for the nucleo&#45;u575zi&#45;q board.">
+<g id="a_Node000050"><a xlink:href="boards_2b-u585i-iot02a_2include_2periph__conf_8h.html" target="_top" xlink:title="Peripheral MCU configuration for the ST B&#45;U585I&#45;IOT02A board.">
+<polygon fill="white" stroke="#666666" points="3951.38,-178.88 3828.12,-178.88 3828.12,-145.38 3951.38,-145.38 3951.38,-178.88"/>
+<text text-anchor="start" x="3836.12" y="-165.38" font-family="Helvetica,sans-Serif" font-size="10.00">boards/b&#45;u585i&#45;iot02a</text>
+<text text-anchor="middle" x="3889.75" y="-152.62" font-family="Helvetica,sans-Serif" font-size="10.00">/include/periph_conf.h</text>
+</a>
+</g>
+</g>
+<!-- Node49&#45;&gt;Node50 -->
+<g id="edge49_Node000049_Node000050" class="edge">
+<title>Node49&#45;&gt;Node50</title>
+<g id="a_edge49_Node000049_Node000050"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M3207.44,-221.21C3477.07,-175.43 3554.6,-234.14 3819.75,-185.25 3827.77,-183.77 3836.16,-181.65 3844.22,-179.3"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="3206.86,-217.76 3197.6,-222.92 3208.05,-224.65 3206.86,-217.76"/>
+</a>
+</g>
+</g>
+<!-- Node51 -->
+<g id="Node000051" class="node">
+<title>Node51</title>
+<g id="a_Node000051"><a xlink:href="boards_2nucleo-u575zi-q_2include_2periph__conf_8h.html" target="_top" xlink:title="Peripheral MCU configuration for the nucleo&#45;u575zi&#45;q board.">
 <polygon fill="white" stroke="#666666" points="4101.88,-178.88 3969.62,-178.88 3969.62,-145.38 4101.88,-145.38 4101.88,-178.88"/>
 <text text-anchor="start" x="3977.62" y="-165.38" font-family="Helvetica,sans-Serif" font-size="10.00">boards/nucleo&#45;u575zi</text>
 <text text-anchor="middle" x="4035.75" y="-152.62" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;q/include/periph_conf.h</text>
 </a>
 </g>
 </g>
-<!-- Node48&#45;&gt;Node50 -->
-<g id="edge49_Node000048_Node000050" class="edge">
-<title>Node48&#45;&gt;Node50</title>
-<g id="a_edge49_Node000048_Node000050"><a xlink:title=" ">
+<!-- Node49&#45;&gt;Node51 -->
+<g id="edge50_Node000049_Node000051" class="edge">
+<title>Node49&#45;&gt;Node51</title>
+<g id="a_edge50_Node000049_Node000051"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M3207,-221.3C3538.91,-166.35 3633.06,-240.57 3960.75,-185.25 3969.32,-183.8 3978.29,-181.7 3986.93,-179.35"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="3206.88,-217.77 3197.6,-222.88 3208.04,-224.67 3206.88,-217.77"/>
-</a>
-</g>
-</g>
-<!-- Node52 -->
-<g id="Node000052" class="node">
-<title>Node52</title>
-<g id="a_Node000052"><a xlink:href="boards_2stm32f429i-disc1_2include_2periph__conf_8h.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="4257.12,-178.88 4120.38,-178.88 4120.38,-145.38 4257.12,-145.38 4257.12,-178.88"/>
-<text text-anchor="start" x="4128.38" y="-165.38" font-family="Helvetica,sans-Serif" font-size="10.00">boards/stm32f429i&#45;disc1</text>
-<text text-anchor="middle" x="4188.75" y="-152.62" font-family="Helvetica,sans-Serif" font-size="10.00">/include/periph_conf.h</text>
-</a>
-</g>
-</g>
-<!-- Node51&#45;&gt;Node52 -->
-<g id="edge51_Node000051_Node000052" class="edge">
-<title>Node51&#45;&gt;Node52</title>
-<g id="a_edge51_Node000051_Node000052"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M3354.04,-221.29C3687.23,-166.12 3781.47,-239.04 4110.75,-185.25 4119.64,-183.8 4128.96,-181.69 4137.94,-179.34"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="3353.88,-217.77 3344.6,-222.88 3355.04,-224.67 3353.88,-217.77"/>
 </a>
 </g>
 </g>
 <!-- Node53 -->
 <g id="Node000053" class="node">
 <title>Node53</title>
-<g id="a_Node000053"><a xlink:href="stm32f429i-disc1_2include_2board_8h.html" target="_top" xlink:title="Board specific definitions for the STM32F429I&#45;DISC1 evaluation board.">
-<polygon fill="white" stroke="#666666" points="4257.12,-103 4120.38,-103 4120.38,-69.5 4257.12,-69.5 4257.12,-103"/>
-<text text-anchor="start" x="4128.38" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">boards/stm32f429i&#45;disc1</text>
-<text text-anchor="middle" x="4188.75" y="-76.75" font-family="Helvetica,sans-Serif" font-size="10.00">/include/board.h</text>
+<g id="a_Node000053"><a xlink:href="boards_2stm32f429i-disc1_2include_2periph__conf_8h.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="4257.12,-178.88 4120.38,-178.88 4120.38,-145.38 4257.12,-145.38 4257.12,-178.88"/>
+<text text-anchor="start" x="4128.38" y="-165.38" font-family="Helvetica,sans-Serif" font-size="10.00">boards/stm32f429i&#45;disc1</text>
+<text text-anchor="middle" x="4188.75" y="-152.62" font-family="Helvetica,sans-Serif" font-size="10.00">/include/periph_conf.h</text>
 </a>
 </g>
 </g>
@@ -1044,18 +1044,18 @@
 <g id="edge52_Node000052_Node000053" class="edge">
 <title>Node52&#45;&gt;Node53</title>
 <g id="a_edge52_Node000052_Node000053"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M4188.75,-133.74C4188.75,-123.47 4188.75,-112.15 4188.75,-103.25"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="4185.25,-133.58 4188.75,-143.58 4192.25,-133.58 4185.25,-133.58"/>
+<path fill="none" stroke="#63b8ff" d="M3354.04,-221.29C3687.23,-166.12 3781.47,-239.04 4110.75,-185.25 4119.64,-183.8 4128.96,-181.69 4137.94,-179.34"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="3353.88,-217.77 3344.6,-222.88 3355.04,-224.67 3353.88,-217.77"/>
 </a>
 </g>
 </g>
 <!-- Node54 -->
 <g id="Node000054" class="node">
 <title>Node54</title>
-<g id="a_Node000054"><a xlink:href="stm32f429i-disc1_2include_2gpio__params_8h.html" target="_top" xlink:title="Board specific configuration of direct mapped GPIOs.">
-<polygon fill="white" stroke="#666666" points="4257.12,-33.5 4120.38,-33.5 4120.38,0 4257.12,0 4257.12,-33.5"/>
-<text text-anchor="start" x="4128.38" y="-20" font-family="Helvetica,sans-Serif" font-size="10.00">boards/stm32f429i&#45;disc1</text>
-<text text-anchor="middle" x="4188.75" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">/include/gpio_params.h</text>
+<g id="a_Node000054"><a xlink:href="stm32f429i-disc1_2include_2board_8h.html" target="_top" xlink:title="Board specific definitions for the STM32F429I&#45;DISC1 evaluation board.">
+<polygon fill="white" stroke="#666666" points="4257.12,-103 4120.38,-103 4120.38,-69.5 4257.12,-69.5 4257.12,-103"/>
+<text text-anchor="start" x="4128.38" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">boards/stm32f429i&#45;disc1</text>
+<text text-anchor="middle" x="4188.75" y="-76.75" font-family="Helvetica,sans-Serif" font-size="10.00">/include/board.h</text>
 </a>
 </g>
 </g>
@@ -1063,6 +1063,25 @@
 <g id="edge53_Node000053_Node000054" class="edge">
 <title>Node53&#45;&gt;Node54</title>
 <g id="a_edge53_Node000053_Node000054"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M4188.75,-133.74C4188.75,-123.47 4188.75,-112.15 4188.75,-103.25"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="4185.25,-133.58 4188.75,-143.58 4192.25,-133.58 4185.25,-133.58"/>
+</a>
+</g>
+</g>
+<!-- Node55 -->
+<g id="Node000055" class="node">
+<title>Node55</title>
+<g id="a_Node000055"><a xlink:href="stm32f429i-disc1_2include_2gpio__params_8h.html" target="_top" xlink:title="Board specific configuration of direct mapped GPIOs.">
+<polygon fill="white" stroke="#666666" points="4257.12,-33.5 4120.38,-33.5 4120.38,0 4257.12,0 4257.12,-33.5"/>
+<text text-anchor="start" x="4128.38" y="-20" font-family="Helvetica,sans-Serif" font-size="10.00">boards/stm32f429i&#45;disc1</text>
+<text text-anchor="middle" x="4188.75" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">/include/gpio_params.h</text>
+</a>
+</g>
+</g>
+<!-- Node54&#45;&gt;Node55 -->
+<g id="edge54_Node000054_Node000055" class="edge">
+<title>Node54&#45;&gt;Node55</title>
+<g id="a_edge54_Node000054_Node000055"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M4188.75,-57.81C4188.75,-49.59 4188.75,-40.84 4188.75,-33.63"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="4185.25,-57.74 4188.75,-67.74 4192.25,-57.74 4185.25,-57.74"/>
 </a>
