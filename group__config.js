@@ -43,6 +43,7 @@ var group__config =
     [ "Wakaama LwM2M platform adaption", "group__lwm2m__platform__conf.html", "group__lwm2m__platform__conf" ],
     [ "libSCHC compile-time configuration", "group__pkg__libschc__config.html", "group__pkg__libschc__config" ],
     [ "nanoCoAP compile configurations", "group__net__nanocoap__conf.html", "group__net__nanocoap__conf" ],
+    [ "riotbuild.h: Preprocessor Constants to Query the Build System Configuration", "group__config__riotbuild.html", "group__config__riotbuild" ],
     [ "cpu_conf_esp32.h", "cpu__conf__esp32_8h.html", null ],
     [ "cpu_conf_esp32c3.h", "cpu__conf__esp32c3_8h.html", null ],
     [ "cpu_conf_esp32s2.h", "cpu__conf__esp32s2_8h.html", null ],

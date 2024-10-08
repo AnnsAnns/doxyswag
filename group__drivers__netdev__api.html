@@ -154,7 +154,7 @@ $(function(){initNavTree('group__drivers__netdev__api.html',''); initResizable(t
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>This is a generic low-level network driver interface </p>
-<h1><a class="anchor" id="autotoc_md1677"></a>
+<h1><a class="anchor" id="autotoc_md1680"></a>
 About</h1>
 <p>This interface provides a uniform API for network stacks to interact with network device drivers. This interface is designed in a way, that it is completely agnostic to the used network stack. This way, device drivers for network devices (e.g. IEEE802.15.4 radios, Ethernet devices, ...) have to implemented once and can be used with any supported network stack in RIOT.</p>
 <p>The functions provided by the interface cover three major parts:</p><ol type="1">
@@ -162,17 +162,17 @@ About</h1>
 <li>network device configuration through reading and setting device parameters</li>
 <li>event handling</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md1678"></a>
+<h1><a class="anchor" id="autotoc_md1681"></a>
 The Interrupt Context Problem</h1>
 <p><a class="el" href="structNetwork.html" title="Network struct within mqtt paho.">Network</a> devices are typically connected to the host CPU via some sort of bus, most commonly via SPI. This type of connection has the disadvantage, that the bus is not used by the network device alone, but it may be shared with other devices. This makes it necessary to synchronize access to the bus to prevent bus access collisions.</p>
 <p>To illustrate this behavior, let's look at a typical error situation, that leads to a very hard to find and debug latent failure: say we have two devices A and B on the same SPI bus. Our CPU is now transferring a chunk of 100 bytes to device A. After 20 bytes were transferred, device B triggers an external interrupt on the host CPU. The interrupt handling now typically requires the reading of some sort of status register on the 'triggering' device, device B in this case. So what would happen here, is that the device driver for device B would initiate a new SPI transfer on the already used bus to read B's status register -&gt; BAM.</p>
 <p>The peripheral drivers for shared buses (i.e. SPI and I2C) implement access synchronization using mutexes, which are locked and unlocked in the driver's <code>require</code> and <code>release</code> functions. The problem is now, that this type of synchronization does only work in thread context, but not in interrupt context. With reasonable effort and resource usage, we have no means of synchronizing the bus access also in interrupt context.</p>
 <p>The solution to this problem as implemented by this interface is <b>not to call any function that interacts with a device directly from interrupt context</b>. Unfortunately this requires some added complexity for synchronization efforts between thread and interrupt context to be able to handle device events (i.e. external interrupts). See section <a class="el" href="#netdev_sec_events">Events</a> for more information.</p>
-<h1><a class="anchor" id="autotoc_md1679"></a>
+<h1><a class="anchor" id="autotoc_md1682"></a>
 Context requirements</h1>
 <p>The <code>netdev</code> interface expects the network device drivers to run in thread context (see section above). The interface was however designed in a way, to allow more than one device driver to be serviced in the same thread.</p>
 <p>The key design element for <code>netdev</code> is, that device drivers implementing this interface are not able to run stand-alone in a thread, but need some bootstrapping code. This bootstrapping code can be anything from a simple <a class="el" href="group__core__msg.html#gae3e05f08bd71d6f65dc727624c4d5f7a" title="Receive a message.">msg_receive()</a> loop (as done for the GNRC adaption) to a complete network stack that works without messaging entirely but is build on function call interfaces.</p>
-<h1><a class="anchor" id="autotoc_md1680"></a>
+<h1><a class="anchor" id="autotoc_md1683"></a>
 Sending and Receiving</h1>
 <p>Sending data using the <code>netdev</code> interface is straight forward: simply call the drivers <a class="el" href="structnetdev__driver.html#a39585137953a92c1c58b5e0ad3262096">send()</a> function, passing it the data that should be sent. The caller of the <a class="el" href="structnetdev__driver.html#a39585137953a92c1c58b5e0ad3262096">send()</a> function (e.g. a network stack) must hereby make sure, that the data is in the correct format expected by the specific network device driver. Typically, the data needs to contain a pre-filled link layer header as e.g. an IEEE802.15.4 or Ethernet header.</p>
 <p>Receiving data using the <code>netdev</code> interface requires typically four steps:</p><ol type="1">
@@ -183,7 +183,7 @@ Sending and Receiving</h1>
 </ol>
 <p>This receive sequence can of course be simplified by skipping steps 2 and 3 when using fixed sized pre-allocated buffers or similar means. *</p>
 <dl class="section note"><dt>Note</dt><dd>The <a class="el" href="structnetdev__driver.html#a39585137953a92c1c58b5e0ad3262096">send()</a> and <a class="el" href="structnetdev__driver.html#ae2c8cad80067e3b1f9979931ddb3cc8b">recv()</a> functions <b>must</b> never be called from interrupt context.</dd></dl>
-<h1><a class="anchor" id="autotoc_md1681"></a>
+<h1><a class="anchor" id="autotoc_md1684"></a>
 Device Configuration</h1>
 <p>The <code>netdev</code> interface covers a wide variety of network devices, which differ to some extend in their configuration parameters (e.g. radios vs. wired interfaces, channel selection vs. link status detection). To cover this variety, <code>netdev</code> provides a generic configuration interface by exposing simple <a class="el" href="structnetdev__driver.html#a0f7bbd084d7a51756fba665903884317">get()</a> and <a class="el" href="structnetdev__driver.html#ad5c8c409276a702877ad50ad09e87a58">set()</a> functions. These are based on a globally defined and <b>extendable</b> list of options as defined in <a class="el" href="netopt_8h.html">netopt.h</a>.</p>
 <p>Every device driver can choose the options which it supports for reading and/or writing from this list. If an option is not supported by the device driver, the driver simply returns <code>-ENOTSUP</code>.</p>
@@ -201,7 +201,7 @@ Events</h1>
 <p>The way that is used for waking up the hosting thread and telling is to call the <a class="el" href="structnetdev__driver.html#aef446b76f05e6b5cfef52ab7460f3cd6">isr()</a> function is completely up to the <code>netdev</code> external code and can be done in many ways (e.g. sending messages, # setting thread flags, unlocking mutexes, etc.).</p>
 <p>Any event that is not of type <a class="el" href="#ggaef91a5201cb4a25d1c3ef41b783a395ba168994cf166acb43cd2a84d3d6ffb3b2">NETDEV_EVENT_ISR</a> is expected to be triggered from thread context. This enables the code that sits on top of <code>netdev</code> to perform the necessary actions right away, as for example reading the received data from the network device or similar.</p>
 <dl class="section note"><dt>Note</dt><dd>The <a class="el" href="#gad323355be0487ba68c16dea102740275">netdev_event_cb_t</a> function runs in interrupt context when called for <a class="el" href="#ggaef91a5201cb4a25d1c3ef41b783a395ba168994cf166acb43cd2a84d3d6ffb3b2">NETDEV_EVENT_ISR</a>, but it <b>must</b> run in thread context for all other events.</dd></dl>
-<h1><a class="anchor" id="autotoc_md1682"></a>
+<h1><a class="anchor" id="autotoc_md1685"></a>
 Example</h1>
 <p>The following example illustrates a receive sequence triggered by an external interrupt:</p>
 <ol type="1">
@@ -731,7 +731,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 10:09:06 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

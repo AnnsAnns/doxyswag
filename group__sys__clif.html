@@ -154,7 +154,7 @@ $(function(){initNavTree('group__sys__clif.html',''); initResizable(true); });
 <dl class="section see"><dt>See also</dt><dd>RFC 6690: <a href="https://tools.ietf.org/html/rfc6690">https://tools.ietf.org/html/rfc6690</a></dd></dl>
 <p>clif provides a high-level API for CoRE Link Format encoding and decoding of links, through the <a class="el" href="#gaee6e4e90a7fa04a2382b9cfda5eebff7">clif_encode_link</a> and <a class="el" href="#ga34e06cd7b46af940a401f8960b40db27">clif_decode_link</a> respectively.</p>
 <p>The high-level API is built on top of low-level functions provided by clif, such as <a class="el" href="#ga64bff762fe47c265b22d2aeb68bc9488">clif_add_target</a>, <a class="el" href="#gaf8dc42338d1803aaa6ff52ac2867bc07">clif_add_attr</a>, and <a class="el" href="#gace6bb544828672a1ed5ee37bfb7fb7f6">clif_get_attr</a>. Also, some convenience functions like <a class="el" href="#gae2121fe08acabfbdd028a4df2544318c">clif_get_attr_type</a>, <a class="el" href="#ga2de9d1863bc8f638a311d8e83e258dee">clif_attr_type_to_str</a> and <a class="el" href="#ga8dddd9a82a434717cfc318b153bbbaf1">clif_init_attr</a> are provided, to facilitate the work with links.</p>
-<h3><a class="anchor" id="autotoc_md1974"></a>
+<h3><a class="anchor" id="autotoc_md1977"></a>
 Decoding</h3>
 <p><a class="el" href="#ga34e06cd7b46af940a401f8960b40db27">clif_decode_link</a> takes a buffer which contains an encoded link and returns the information of it in a <a class="el" href="structclif__t.html">clif_t</a> structure and each attribute in a <a class="el" href="structclif__attr__t.html">clif_attr_t</a> structure of a given array.</p>
 <div class="fragment"><div class="line"><span class="comment">// A buffer &#39;input_buf&#39; of length &#39;input_len&#39; contains the links to decode</span></div>
@@ -181,7 +181,7 @@ Decoding</h3>
 <div class="ttc" id="astructclif__attr__t_html"><div class="ttname"><a href="structclif__attr__t.html">clif_attr_t</a></div><div class="ttdoc">Link format attribute descriptor.</div><div class="ttdef"><b>Definition</b> clif.h:137</div></div>
 <div class="ttc" id="astructclif__t_html"><div class="ttname"><a href="structclif__t.html">clif_t</a></div><div class="ttdoc">Link format descriptor.</div><div class="ttdef"><b>Definition</b> clif.h:147</div></div>
 <div class="ttc" id="astructclif__t_html_a457f91e6a8cae6fe1e3ba8a11ea6d8bd"><div class="ttname"><a href="structclif__t.html#a457f91e6a8cae6fe1e3ba8a11ea6d8bd">clif_t::attrs_len</a></div><div class="ttdeci">unsigned attrs_len</div><div class="ttdoc">size of array of attributes</div><div class="ttdef"><b>Definition</b> clif.h:151</div></div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md1975"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md1978"></a>
 Encoding</h3>
 <p><a class="el" href="#gaee6e4e90a7fa04a2382b9cfda5eebff7">clif_encode_link</a> encodes a given link into a buffer, it can be called with a NULL pointer, in that case it will only calculate the amount of bytes needed to encode the link. After every call to this function a separator needs to be added to the buffer.</p>
 <div class="fragment"><div class="line"><span class="comment">// A &#39;links&#39; array of clif_t, of length &#39;links_len&#39; contains the links to encode</span></div>
@@ -809,7 +809,7 @@ CLIF_NOT_FOUND if no valid target is found </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 10:09:06 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

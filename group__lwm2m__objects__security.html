@@ -153,7 +153,7 @@ $(function(){initNavTree('group__lwm2m__objects__security.html',''); initResizab
  This API is considered experimental and may change in future releases without deprecation process.</dd></dl>
 <p>This implements the LwM2M Security object as specified in the Appendix E1 of the LwM2M specification.</p>
 <p>So far only NO_SEC, PSK (Pre-shared key) and RPK (Raw public key) modes are available.</p>
-<h2><a class="anchor" id="autotoc_md1940"></a>
+<h2><a class="anchor" id="autotoc_md1943"></a>
 Resources</h2>
 <p>For an XML description of the object see <a href="https://raw.githubusercontent.com/OpenMobileAlliance/lwm2m-registry/prod/version_history/0-1_0.xml">https://raw.githubusercontent.com/OpenMobileAlliance/lwm2m-registry/prod/version_history/0-1_0.xml</a>.</p>
 <table class="markdownTable">
@@ -186,9 +186,9 @@ Resources</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">BS Account Timeout   </td><td class="markdownTableBodyNone">12   </td><td class="markdownTableBodyNone">No   </td><td class="markdownTableBodyNone">Integer   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">s   </td><td class="markdownTableBodyNone">Yes   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md1941"></a>
+<h2><a class="anchor" id="autotoc_md1944"></a>
 Usage</h2>
-<h3><a class="anchor" id="autotoc_md1942"></a>
+<h3><a class="anchor" id="autotoc_md1945"></a>
 Pre-shared keys</h3>
 <div class="fragment"><div class="line"><span class="comment">// assuming buffers psk_id and psk_key containing credential information</span></div>
 <div class="line"><span class="comment">// assuming client_data is a valid lwm2m_client_data_t instance</span></div>
@@ -217,7 +217,7 @@ Pre-shared keys</h3>
 <div class="ttc" id="agroup__lwm2m__objects__security_html_ga73b38a32ea3203d845d8e3824ad47667"><div class="ttname"><a href="#ga73b38a32ea3203d845d8e3824ad47667">lwm2m_object_security_init</a></div><div class="ttdeci">lwm2m_object_t * lwm2m_object_security_init(lwm2m_client_data_t *client_data)</div><div class="ttdoc">Initialize the Security object.</div></div>
 <div class="ttc" id="agroup__lwm2m__objects__security_html_gafd3eaae1ec622a3529f7963acc166a4f"><div class="ttname"><a href="#gafd3eaae1ec622a3529f7963acc166a4f">lwm2m_object_security_instance_create</a></div><div class="ttdeci">int lwm2m_object_security_instance_create(const lwm2m_obj_security_args_t *args, int32_t instance_id)</div><div class="ttdoc">Create a new Security instance and add it to the object list.</div></div>
 <div class="ttc" id="astructlwm2m__obj__security__args_html"><div class="ttname"><a href="structlwm2m__obj__security__args.html">lwm2m_obj_security_args</a></div><div class="ttdoc">Arguments for a new Security object instance creation (lwm2m_object_security_instance_create).</div><div class="ttdef"><b>Definition</b> security.h:311</div></div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md1943"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md1946"></a>
 Raw public keys</h3>
 <p>To use this security mode the following keys are required:</p><ul>
 <li>server public key (<code>SubjectPublicKeyInfo</code> DER encoded, according to RFC5280)</li>
@@ -250,7 +250,7 @@ Raw public keys</h3>
 <div class="line"> <span class="comment">// instantiate a new security object with next available instance ID</span></div>
 <div class="line"> <span class="keywordtype">int</span> <span class="keywordtype">id</span> = <a class="code hl_function" href="#gafd3eaae1ec622a3529f7963acc166a4f">lwm2m_object_security_instance_create</a>(&amp;args, -1);</div>
 <div class="ttc" id="agroup__lwm2m__objects__security_html_gaa0a975f82146b4d8369d8f81fe441d63"><div class="ttname"><a href="#gaa0a975f82146b4d8369d8f81fe441d63">LWM2M_SECURITY_MODE_RAW_PUBLIC_KEY</a></div><div class="ttdeci">#define LWM2M_SECURITY_MODE_RAW_PUBLIC_KEY</div><div class="ttdoc">Raw public keys mode.</div><div class="ttdef"><b>Definition</b> security.h:189</div></div>
-</div><!-- fragment --><h4><a class="anchor" id="autotoc_md1944"></a>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md1947"></a>
 Generating the keys</h4>
 <p>The local key pair can be generated using <a href="https://www.openssl.org/">OpenSSL</a>.</p><ol type="1">
 <li>Generate the key pair using the secp256r1 parameters: <div class="fragment"><div class="line">$ openssl ecparam -name secp256r1 -genkey -outform der -out keys.der</div>
@@ -485,7 +485,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 10:09:07 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

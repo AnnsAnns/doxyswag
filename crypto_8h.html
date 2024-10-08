@@ -3681,7 +3681,7 @@ $(function(){initNavTree('crypto_8h.html',''); initResizable(true); });
 <p>When this function returns successfully, the operation becomes inactive. If this function returns an error status, the operation enters an error state and must be aborted by calling <a class="el" href="#ab0b4d5f9912a615559497a467b532928">psa_hash_abort()</a>.</p>
 <p>Hash suspend and resume is not defined for the SHA3 family of hash algorithms. Hash suspend state defines the format of the output from <a class="el" href="#a32b41f2790027e066b373552af2c5c60">psa_hash_suspend()</a>.</p>
 <dl class="section warning"><dt>Warning</dt><dd>Applications must not use any of the hash suspend state as if it was a hash output. Instead, the suspend state must only be used to resume a hash operation, and <a class="el" href="#a4795fd06a0067b0adcd92e9627b8c97e">psa_hash_finish()</a> or <a class="el" href="#a7be923c5700c9c70ef77ee9b76d1a5c0">psa_hash_verify()</a> can then calculate or verify the final hash value.</dd></dl>
-<h2><a class="anchor" id="autotoc_md2091"></a>
+<h2><a class="anchor" id="autotoc_md2094"></a>
 Usage</h2>
 <p>The sequence of operations to suspend and resume a hash operation is as follows:</p><ol type="1">
 <li>Compute the first part of the hash.<ol type="a">
@@ -6212,7 +6212,7 @@ When using secure elements as backends in this implementation, the key type can 
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a408b6d3a4a484720bc3ecfeac8947e3.html">sys</a></li><li class="navelem"><a class="el" href="dir_e9e107fc86bbb4b6a326076a6808b9f5.html">include</a></li><li class="navelem"><a class="el" href="dir_14b0884ebc0651f02ef04389a9079935.html">psa_crypto</a></li><li class="navelem"><a class="el" href="dir_128cd62e7289e660ff8bc4577d4016d1.html">psa</a></li><li class="navelem"><a class="el" href="crypto_8h.html">crypto.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 10:09:05 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

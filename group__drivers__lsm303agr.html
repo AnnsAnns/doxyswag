@@ -152,13 +152,13 @@ $(function(){initNavTree('group__drivers__lsm303agr.html',''); initResizable(tru
 <li>it needs Rust installed on the build machine as described in using-rust, and</li>
 <li>it downloads additional Rust code from crates.io (in versions pinned by RIOT) when first used.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md1747"></a>
+<h2><a class="anchor" id="autotoc_md1750"></a>
 Usage</h2>
 <p>When configured on a board, the devices are initialized at a fixed data acquisition rate and the chip's default range of +-2g. Data values are obtained on demand whenever queried through <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a>.</p>
 <p>For each device, two SAUL entries are registered labelled "LSM303AGR accelerometer" and "LSM303AGR magnetometer", which produces 3-axis values in units of g and Tesla, respectively. Accelerometer values are always scaled to milli-g (they come that way and don't exceed the i16 range of SAUL phydats); magnetometer readings are dynamically downscaled from their original i32 Nanotesla readings to fit in a phydat.</p>
 <p>The driver is configured for a board by placing an <code>lsm303agr-config.rs</code> file in the board's include directory, which lists the I2C device(s) on which an accelerometer should be found:</p>
 <div class="fragment"><div class="line"><span class="keyword">const</span> I2C_DEVICES: &amp;[u8] = &amp;[0];</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1748"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1751"></a>
 Limitations</h2>
 <ul>
 <li>Advanced features of the sensor (adjusting acquisition rate or resolution, free-fall detection, interrupts etc.) are not exposed.</li>
@@ -171,7 +171,7 @@ Limitations</h2>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 10:09:06 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

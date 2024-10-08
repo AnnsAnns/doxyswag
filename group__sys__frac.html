@@ -147,7 +147,7 @@ $(function(){initNavTree('group__sys__frac.html',''); initResizable(true); });
 <p>This header provides some functions for scaling integers by fractions, while preserving as many bits as possible. </p>
 <p>The implementation requires that <a class="el" href="structfrac__t.html">frac_t</a> is initialized properly, either by calling <a class="el" href="frac_8h.html#a9bc15fd5646240db351f4c49d37fc05b">frac_init</a>, which will compute the algorithm parameters at runtime, or via a precomputed initializer.</p>
 <p>Precomputing the <a class="el" href="structfrac__t.html" title="frac descriptor for fraction consisting of two 32 bit integers">frac_t</a> values can be done via the application found in <code>tests/sys/frac-config</code> in the RIOT tree.</p>
-<h3><a class="anchor" id="autotoc_md1979"></a>
+<h3><a class="anchor" id="autotoc_md1982"></a>
 Numeric precision</h3>
 <p>The algorithm will under certain circumstances give an incorrectly rounded result, more precisely, the result may sometimes be rounded up instead of rounded down when the product in the numerator, $p = x * num$, would result in $p &gt;= 2^{31}$. Fortunately, the relative error of this rounding mistake is small.</p>
 <p>This tradeoff is a design choice to make the algorithm faster.</p>
@@ -159,7 +159,7 @@ Numeric precision</h3>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 10:09:06 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

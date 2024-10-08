@@ -261,7 +261,7 @@ Fetching data</h2>
 <div class="ttc" id="agroup__drivers__vl6180x_html_gaec9a64cf95727d24706d55c7977c432c"><div class="ttname"><a href="#gaec9a64cf95727d24706d55c7977c432c">vl6180x_rng_data_ready</a></div><div class="ttdeci">int vl6180x_rng_data_ready(const vl6180x_t *dev)</div><div class="ttdoc">Range data ready status function.</div></div>
 <div class="ttc" id="agroup__sys__time__units_html_ga31ae5fdfe8827f4d8def045948d3986e"><div class="ttname"><a href="group__sys__time__units.html#ga31ae5fdfe8827f4d8def045948d3986e">US_PER_MS</a></div><div class="ttdeci">#define US_PER_MS</div><div class="ttdoc">The number of microseconds per millisecond.</div><div class="ttdef"><b>Definition</b> time_units.h:90</div></div>
 <div class="ttc" id="agroup__sys__xtimer_html_ga01ded1a98b76eea8a1c4c45975781989"><div class="ttname"><a href="group__sys__xtimer.html#ga01ded1a98b76eea8a1c4c45975781989">xtimer_usleep</a></div><div class="ttdeci">static void xtimer_usleep(uint32_t microseconds)</div><div class="ttdoc">Pause the execution of a thread for some microseconds.</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1737"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1740"></a>
 Output data format</h2>
 <p>Function <a class="el" href="#ga794a9ed589a84d731dcba0dfb60f4bfd" title="Read one ambient light sensing (ALS) data sample.">vl6180x_als_read</a> returns one ALS data sample as raw count value and, if required, as illuminance in Lux. The range of the count value depends on</p>
 <ul>
@@ -376,9 +376,9 @@ Low level functions</h1>
 <div class="ttc" id="agroup__drivers__vl6180x_html_ga0df80d924d4a6afdc89d5409dd8a28a4"><div class="ttname"><a href="#ga0df80d924d4a6afdc89d5409dd8a28a4">vl6180x_reg_read</a></div><div class="ttdeci">int vl6180x_reg_read(const vl6180x_t *dev, uint16_t reg, uint8_t *data, uint8_t len)</div><div class="ttdoc">Direct read from register.</div></div>
 <div class="ttc" id="agroup__drivers__vl6180x_html_gac107470f68ea711cf0f65229a6b74a03"><div class="ttname"><a href="#gac107470f68ea711cf0f65229a6b74a03">vl6180x_reg_write</a></div><div class="ttdeci">int vl6180x_reg_write(const vl6180x_t *dev, uint16_t reg, const uint8_t *data, uint8_t len)</div><div class="ttdoc">Direct write to register.</div></div>
 </div><!-- fragment --><dl class="section warning"><dt>Warning</dt><dd>These functions should only be used to do something special that is not covered by the high level interface AND if you exactly know what you do and what it might affect. Please be aware that it might affect the high level interface.</dd></dl>
-<h1><a class="anchor" id="autotoc_md1738"></a>
+<h1><a class="anchor" id="autotoc_md1741"></a>
 Configuration</h1>
-<h2><a class="anchor" id="autotoc_md1739"></a>
+<h2><a class="anchor" id="autotoc_md1742"></a>
 Default configuration</h2>
 <p>Default sensor hardware configurations are set in file <code><a class="el" href="vl6180x__params_8h.html" title="Default configuration for ST VL6180X Ranging and Ambient Light Sensing (ALS) module.">vl6180x_params.h</a></code> using the following defines:</p>
 <center> <table class="markdownTable">
@@ -430,7 +430,7 @@ Default configuration</h2>
 <p>Single or all parameters of the default configuration can be overridden either by placing a modified file <code><a class="el" href="vl6180x__params_8h.html" title="Default configuration for ST VL6180X Ranging and Ambient Light Sensing (ALS) module.">vl6180x_params.h</a></code> in the application directory or by defining them in the variable <code>CFLAGS</code> in the make command line. For example to configure a measurement period of 500 ms and a maximum convergence time for ranging of 60 ms, the following command could be used: </p><div class="fragment"><div class="line">USEMODULE=<span class="stringliteral">&#39;vl6180x_rng vl6180x_als` \</span></div>
 <div class="line"><span class="stringliteral">CLFAGS=&#39;</span>-DCONFIG_VL6180X_MEAS_PERIOD=50 -DCONFIG_VL6180X_RNG_MAX_TIME=60&#39; \</div>
 <div class="line">BOARD=... make -C tests/drivers/vl6180x</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1740"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1743"></a>
 Configuration at runtime</h2>
 <p>If module <code>vl6180x_config</code> is used, the following functions can be used to change the default sensor configuration at runtime.</p>
 <table class="markdownTable">
@@ -1619,7 +1619,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 10:09:07 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

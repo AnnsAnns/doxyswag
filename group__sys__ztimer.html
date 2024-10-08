@@ -154,7 +154,7 @@ $(function(){initNavTree('group__sys__ztimer.html',''); initResizable(true); });
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>High level timer abstraction layer </p>
-<h1><a class="anchor" id="autotoc_md2105"></a>
+<h1><a class="anchor" id="autotoc_md2108"></a>
 Introduction</h1>
 <p>ztimer provides a high level abstraction of hardware timers for application timing needs.</p>
 <p>The basic functions of the ztimer module are <a class="el" href="#gabcd8174ea28626e102b40143075ed9c8" title="Get the current time from a clock.">ztimer_now()</a>, <a class="el" href="#gade98636e198f2d571c8acd861d29d360" title="Put the calling thread to sleep for the specified number of ticks.">ztimer_sleep()</a>, <a class="el" href="#ga8934a79a89e35d58673418a1e4a2e69c" title="Set a timer on a clock.">ztimer_set()</a> and <a class="el" href="#gadf7bdfdd20c4eaa767abd39efe6d5e50" title="Remove a timer from a clock.">ztimer_remove()</a>.</p>
@@ -185,7 +185,7 @@ Introduction</h1>
 <div class="ttc" id="agroup__sys__ztimer_html_gade98636e198f2d571c8acd861d29d360"><div class="ttname"><a href="#gade98636e198f2d571c8acd861d29d360">ztimer_sleep</a></div><div class="ttdeci">void ztimer_sleep(ztimer_clock_t *clock, uint32_t duration)</div><div class="ttdoc">Put the calling thread to sleep for the specified number of ticks.</div></div>
 <div class="ttc" id="astructztimer__t_html"><div class="ttname"><a href="structztimer__t.html">ztimer_t</a></div><div class="ttdoc">ztimer structure</div><div class="ttdef"><b>Definition</b> ztimer.h:318</div></div>
 <div class="ttc" id="aztimer_8h_html"><div class="ttname"><a href="ztimer_8h.html">ztimer.h</a></div><div class="ttdoc">ztimer API</div></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md2106"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md2109"></a>
 ztimer best practices</h1>
 <ol type="1">
 <li>Don't use ZTIMER_USEC unless the increased resolution is really needed. ZTIMER_USEC will, on most platforms, prevent low-power sleep modes.</li>
@@ -194,9 +194,9 @@ ztimer best practices</h1>
 </li>
 <li>Don't compare <a class="el" href="#gabcd8174ea28626e102b40143075ed9c8" title="Get the current time from a clock.">ztimer_now()</a> values from different clocks. The clocks are almost certainly not synchronized.</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md2107"></a>
+<h1><a class="anchor" id="autotoc_md2110"></a>
 Design</h1>
-<h2><a class="anchor" id="autotoc_md2108"></a>
+<h2><a class="anchor" id="autotoc_md2111"></a>
 clocks, virtual timers, chaining</h2>
 <p>The system is composed of clocks (virtual ztimer devices) which can be chained to create an abstract view of a hardware timer/counter device. Each ztimer clock acts as a operation on the next clock in the chain. At the end of each ztimer chain there is always some kind of counter device object.</p>
 <p>Each clock device handles multiplexing (allowing multiple timers to be set) and extension to full 32bit.</p>
@@ -218,7 +218,7 @@ clocks, virtual timers, chaining</h2>
 </ol>
 <p>This is how e.g., the clock ZTIMER_MSEC might be configured on a specific system.</p>
 <p>Every clock in the chain can always be used on its own. E.g. in the example above, the ztimer_periph object can be used as ztimer clock with 1024Hz ticks in addition to the ztimer_convert_frac with 1000Hz.</p>
-<h2><a class="anchor" id="autotoc_md2109"></a>
+<h2><a class="anchor" id="autotoc_md2112"></a>
 Timer handling</h2>
 <p>Timers in ztimer are stored in a clock using a linked list for which each entry stores the difference to the previous entry in the timer (T[n]). The clock also stores the absolute time on which the relative offsets are based (B), effectively storing the absolute target time for each entry (as B + sum(T[0-n])). Storing the entries in this way allows all entries to use the full width of the used uint32_t, compared to storing the absolute time.</p>
 <p>In order to prevent timer processing offset to add up, whenever a timer triggers, the list's absolute base time is set to the <em>expected</em> trigger time (B + T[0]). The underlying clock is then set to alarm at (now() + (now() - B) + T[1]). Thus even though the list is keeping relative offsets, the time keeping is done by keeping track of the absolute times.</p>
@@ -232,14 +232,14 @@ Timer handling</h2>
 </ul>
 <p>By making the list doubly-linked, removal of timer objects could be easily made a constant operation, at the price of another pointer per timer object (for "previous" element).</p>
 <p>If deemed necessary, the linked list can be exchanged our augmented with another data structure providing better algorithmic guarantees. It remains to be shown whether the increased complexity would lead to better performance for any reasonable amount of active timers.</p>
-<h2><a class="anchor" id="autotoc_md2110"></a>
+<h2><a class="anchor" id="autotoc_md2113"></a>
 Clock extension</h2>
 <p>The API always allows setting full 32bit relative offsets for every clock.</p>
 <p>In some cases (e.g., a hardware timer only allowing getting/setting smaller values or a conversion which would overflow uint32_t for large intervals), ztimer takes care of extending timers. This is enabled automatically for every ztimer clock that has a "max_value" setting smaller than 2**32-1. If a <a class="el" href="#ga8934a79a89e35d58673418a1e4a2e69c" title="Set a timer on a clock.">ztimer_set()</a> would overflow that value, intermediate intervals of length (max_value / 2) are set until the remaining interval fits into max_value. If extension is enabled for a clock, <a class="el" href="#gabcd8174ea28626e102b40143075ed9c8" title="Get the current time from a clock.">ztimer_now()</a> uses interval checkpointing, storing the current time and corresponding clock tick value on each call and using that information to calculate the current time. This ensures correct <a class="el" href="#gabcd8174ea28626e102b40143075ed9c8" title="Get the current time from a clock.">ztimer_now()</a> values if <a class="el" href="#gabcd8174ea28626e102b40143075ed9c8" title="Get the current time from a clock.">ztimer_now()</a> is called at least once every "max_value" ticks. This is ensured by scheduling intermediate callbacks every (max_value / 2) ticks (even if no timeout is configured).</p>
-<h2><a class="anchor" id="autotoc_md2111"></a>
+<h2><a class="anchor" id="autotoc_md2114"></a>
 Reliability</h2>
 <p>Care has been taken to avoid any unexpected behaviour of ztimer. In particular, ztimer tries hard to avoid underflows (setting a backend timer to a value at or behind the current time, causing the timer interrupt to trigger one whole timer period too late). This is done by always setting relative timeouts to backend timers, with interrupts disabled and ensuring that very small values don't cause underflows.</p>
-<h2><a class="anchor" id="autotoc_md2112"></a>
+<h2><a class="anchor" id="autotoc_md2115"></a>
 Configuration and convention</h2>
 <p>As timer hardware and capabilities is diverse and ztimer allows configuring and using arbitrary clock backends and conversions, it is envisioned to provide default configurations that application developers can assume to be available.</p>
 <p>These are implemented by using pointers to ztimer clocks using default names.</p>
@@ -250,7 +250,7 @@ Configuration and convention</h2>
 <p>If <code>periph_rtt</code> is required with direct access by another MODULE or application, <code>ztimer_no_periph_rtt</code> can be included to avoid automatic selection of <code>ztimer_periph_rtt</code> as a backend for ZTIMER_SEC and ZTIMER_MSEC. i.e.: <code>USEMODULE += ztimer_no_periph_rtt</code>.</p>
 <p>These pointers are defined in <code><a class="el" href="ztimer_8h.html" title="ztimer API">ztimer.h</a></code> and can be used like this: </p><pre class="fragment">ztimer_now(ZTIMER_USEC);
 </pre><p>They also need to be added to USEMODULE using the names <code>ztimer_usec</code>, <code>ztimer_msec</code> and <code>ztimer_sec</code>.</p>
-<h2><a class="anchor" id="autotoc_md2113"></a>
+<h2><a class="anchor" id="autotoc_md2116"></a>
 Some notes on ztimer's accuracy</h2>
 <ol type="1">
 <li>ztimer <em>should</em> wait "at least" the specified timeout</li>
@@ -1216,7 +1216,7 @@ Make sure to call <a class="el" href="#gaaff51039476f11e6969da09493e7ccb0">ztime
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 10:09:07 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

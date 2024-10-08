@@ -149,24 +149,24 @@ $(function(){initNavTree('group__pkg__cryptoauthlib.html',''); initResizable(tru
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Provides the library for Microchip CryptoAuth devices </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://github.com/MicrochipTech/cryptoauthlib">https://github.com/MicrochipTech/cryptoauthlib</a></dd></dl>
-<h1><a class="anchor" id="autotoc_md1764"></a>
+<h1><a class="anchor" id="autotoc_md1767"></a>
 Introduction</h1>
 <p>This package provides support for the official library for Microchip CryptoAuth devices.</p>
 <dl class="section warning"><dt>Warning</dt><dd>Some functions can only be used, when the data, config and otp zones of the device are locked. Locking is permanent and cannot be undone. Be careful if you're not sure you've configured everything correctly. For more information please refer to the data sheet of the device.</dd></dl>
-<h2><a class="anchor" id="autotoc_md1765"></a>
+<h2><a class="anchor" id="autotoc_md1768"></a>
 Usage</h2>
 <p>Add </p><div class="fragment"><div class="line">USEPKG += cryptoauthlib</div>
 </div><!-- fragment --><p> to your Makefile.</p>
-<h3><a class="anchor" id="autotoc_md1766"></a>
+<h3><a class="anchor" id="autotoc_md1769"></a>
 Shell</h3>
 <p>To facilitate the device configuration the RIOT shell provides some helper commands. Currently there are shell commands to read the device's config zone, to lock the config zone (this will lock the config zone permanently and cannot be undone) and to check whether config and data zone are locked. The shell handler is enabled, if cryptoauthlib is included as a package in the Makefile of an application that also includes the shell (e.g. examples/default).</p>
-<h3><a class="anchor" id="autotoc_md1767"></a>
+<h3><a class="anchor" id="autotoc_md1770"></a>
 No poll mode</h3>
 <p>After sending a command to the device, responses are usually polled to enable quicker response times. Alternatively ATCA_NO_POLL can be enabled through CFLAGS to simply wait for the max execution time of a command before reading the response.</p>
-<h2><a class="anchor" id="autotoc_md1768"></a>
+<h2><a class="anchor" id="autotoc_md1771"></a>
 Implementation status</h2>
 <p>This implementation was partly tested with ATECC508A and ATECC608A devices. Currently the functions <code>hal_i2c_release</code>, <code>hal_i2c_discover_devices</code> and <code>hal_i2c_discover_buses</code> are unimplemented, as well as <code>hal_i2c_post_init</code>.</p>
-<h2><a class="anchor" id="autotoc_md1769"></a>
+<h2><a class="anchor" id="autotoc_md1772"></a>
 Tests</h2>
 <p>The library provides unittests for the library functions. There is a directory called "pkg_cryptoauthlib_internal_tests" in the RIOT testfolder which runs part of the unittests. Some of the provided tests can only be run when the config, data and/or otp zones of the device are locked. Some tests (but not all) will automatically lock zones as needed. We omit those tests at the moment, because zones can only be locked permanently. Unlocking is not possible! Also there is a test for comparing the runtime of the RIOT software implementation and the CryptoAuth hardware implementation for calculating a SHA-256 hash value.</p>
 <h2><a class="anchor" id="multi-ateccx08a"></a>
@@ -238,7 +238,7 @@ Using Cryptoauthlib as a backend for PSA Crypto</h2>
 <div class="line"><span class="preprocessor">                                                .rx_retries = ATCA_RX_RETRIES } \</span></div>
 <div class="line"><span class="preprocessor">                                        }</span></div>
 </div><!-- fragment --><p>When using multiple SEs, just add more device parameters as shown in section <a class="el" href="#multi-ateccx08a">Using Multiple ATECCX08A Devices</a>.</p>
-<h2><a class="anchor" id="autotoc_md1770"></a>
+<h2><a class="anchor" id="autotoc_md1773"></a>
 Slot Configurations</h2>
 <p>The ATECCX08A devices have their own key management, which can be configured by setting flags in the device's configuration and data zone. There is a large variety of possible configurations, which can not entirely be represented by PSA Crypto.</p>
 <p>For now we assume that users are familiar with their device's datasheet and have configured it in a way that it is usable. PSA can not yet work with keys that are already stored on the device, which means all key slots must be writable after locking the configuration and data zone.</p>
@@ -276,9 +276,9 @@ Slot Configurations</h2>
 <div class="line"><span class="preprocessor">                                     ...          \</span></div>
 <div class="line"><span class="preprocessor">                             { ATCA_SLOTS_DEVX }</span></div>
 </div><!-- fragment --><p>A usage example for this can be found in <code>examples/psa_crypto</code>.</p>
-<h2><a class="anchor" id="autotoc_md1771"></a>
+<h2><a class="anchor" id="autotoc_md1774"></a>
 Troubleshooting</h2>
-<h3><a class="anchor" id="autotoc_md1772"></a>
+<h3><a class="anchor" id="autotoc_md1775"></a>
 Device Initialization fails</h3>
 <p>Make sure the I2C bus speed is set to <code>I2C_SPEED_NORMAL</code>. </p>
 <table class="memberdecls">
@@ -303,7 +303,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 10:09:06 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

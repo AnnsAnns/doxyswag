@@ -150,15 +150,15 @@ $(function(){initNavTree('group__pkg__nimble__rpble.html',''); initResizable(tru
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>RPL-over-BLE for Nimble implementation </p>
-<h1><a class="anchor" id="autotoc_md1858"></a>
+<h1><a class="anchor" id="autotoc_md1861"></a>
 About</h1>
 <p>This module implements a BLE connection manager the manages BLE connections for (multi-hop) IP over BLE networks based on meta data provided by RPL.</p>
-<h1><a class="anchor" id="autotoc_md1859"></a>
+<h1><a class="anchor" id="autotoc_md1862"></a>
 Concept</h1>
 <p>In their initial state, after power up or reboot, nodes start to scan for BLE advertisements containing a specific advertising data (AD) field which holds information about RPL DODAGs. For a configured amount of time, the node ranks all senders of the received advertising packets based on a given metric. After this time, the node selects the best fitting parent based on this ranking and tries to connect to that peer.</p>
 <p>After a node has successfully opened a connection to its parent node, the node starts to advertise its own RPL context data to accept connections from potential child nodes.</p>
 <p>This approach leads to a BLE network topology that is equal to the IP routing topology created by RPL on top.</p>
-<h2><a class="anchor" id="autotoc_md1860"></a>
+<h2><a class="anchor" id="autotoc_md1863"></a>
 Advertising data structure</h2>
 <p>To include RPL context information into (legacy) BLE advertisements, it must be encoded into the BLE advertising data format. This implementation uses a custom sub-format that is included into the 16-bit UUID Service Data (type: 0x16) field (Supplement to Bluetooth Core Specification CSSv8, 1.11). The 16-bit UUID in this field is set to the IPSS service ID (0x1820).</p>
 <p>The following sub-format is used to encode the RPL context data: </p><div class="fragment"><div class="line"><span class="keywordtype">byte</span>     1: instance ID (1b)</div>
@@ -168,14 +168,14 @@ Advertising data structure</h2>
 <div class="line"><span class="keywordtype">byte</span> 20-21: rank (2b)</div>
 <div class="line"><span class="keywordtype">byte</span>    22: number of <a class="code hl_function" href="group__oneway__malloc.html#gafbedc913aa4651b3c3b4b3aecd9b4711">free</a> BLE connection slots (1b)</div>
 <div class="ttc" id="agroup__oneway__malloc_html_gafbedc913aa4651b3c3b4b3aecd9b4711"><div class="ttname"><a href="group__oneway__malloc.html#gafbedc913aa4651b3c3b4b3aecd9b4711">free</a></div><div class="ttdeci">void free(void *ptr)</div><div class="ttdoc">This is a no-op.</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1861"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1864"></a>
 Ranking of potential parents</h2>
 <p>The currently implemented ranking metric is very simple: the potential parent node with the smallest rank is chosen. Additionally, nodes advertise the number of free BLE connection slots. In case where multiple nodes advertise the same RPL rank, the one with the largest number of open BLE connection slots is selected. The idea behind this is to balance the number of BLE connections per node, and with that also to balance the RPL DODAG.</p>
-<h1><a class="anchor" id="autotoc_md1862"></a>
+<h1><a class="anchor" id="autotoc_md1865"></a>
 Usage</h1>
 <p>To use this module, simply include <code>nimble_rpble</code> into your build. If nothing is explicitly configured, the module will use the default configuration as specified in <code><a class="el" href="nimble__rpble__params_8h.html" title="Default configuration for the nimble_netif_rpble module.">pkg/nimble/rpble/include/nimble_rpble_params.h</a></code>.</p>
 <p>Once a node is configured as RPL root (e.g. using the <code>rpl root ..</code> shell command), it will automatically start to advertise itself. Non-RPL-root nodes will automatically scan for potential parent nodes and join the network as soon as they find fitting neighbors.</p>
-<h2><a class="anchor" id="autotoc_md1863"></a>
+<h2><a class="anchor" id="autotoc_md1866"></a>
 Implementation status</h2>
 <p>In its current state, the implementation only works for environments where a single RPL network with a single DODAG are present. The DODAG ID, instance ID, and DODAG version are currently pretty much ignored when scanning for potential parents. </p>
 <table class="memberdecls">
@@ -328,7 +328,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 10:09:06 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

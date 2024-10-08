@@ -148,25 +148,25 @@ $(function(){initNavTree('group__pkg__micropython.html',''); initResizable(true)
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>MicroPython - Python for microcontrollers </p>
-<h1><a class="anchor" id="autotoc_md1829"></a>
+<h1><a class="anchor" id="autotoc_md1832"></a>
 MicroPython RIOT package</h1>
 <p>"MicroPython is a lean and efficient implementation of the Python 3
     programming language that includes a small subset of the Python standard
     library and is optimised to run on microcontrollers and in constrained
     environments."</p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://micropython.org">https://micropython.org</a></dd></dl>
-<h2><a class="anchor" id="autotoc_md1830"></a>
+<h2><a class="anchor" id="autotoc_md1833"></a>
 Status</h2>
 <p>MicroPython on RIOT has to be considered experimental. While the basic interpreter works fairly well on native and Cortex-M, it has not seen much testing.</p>
-<h2><a class="anchor" id="autotoc_md1831"></a>
+<h2><a class="anchor" id="autotoc_md1834"></a>
 Configuration options</h2>
 <p>Use the following environment variables in the application Makefile or from the command line to configure MicroPython:</p>
 <p>MP_RIOT_HEAPSIZE: heap size for MicroPython, in bytes. Defaults to 16KiB.</p>
 <p>Example on the command line: </p><div class="fragment"><div class="line">MP_RIOT_HEAPSIZE=2048 make -C examples/micropython</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1832"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1835"></a>
 Implementation details</h2>
 <p>The RIOT port of MicroPython currently resides in a fork at <a href="https://github.com/kaspar030/micropython">https://github.com/kaspar030/micropython</a> (in branch add_riot_port). It is based on Micropython's "ports/minimal" with some extra modules enabled. It reuses the gc_collect code from ports/unix, which has special support for i386 and Cortex-M. On other platforms, it uses setjmp() to collect registers.</p>
-<h2><a class="anchor" id="autotoc_md1833"></a>
+<h2><a class="anchor" id="autotoc_md1836"></a>
 MicroPython's test suite</h2>
 <p>It is possible to run MicroPython's test suite for testing this port.</p>
 <p>Steps:</p>
@@ -177,18 +177,18 @@ MicroPython's test suite</h2>
 <li>cd tests</li>
 <li>./run-tests &ndash;target pyboard &ndash;device ${PORT}</li>
 </ol>
-<h2><a class="anchor" id="autotoc_md1834"></a>
+<h2><a class="anchor" id="autotoc_md1837"></a>
 MicroPython modules</h2>
 <p>Currently, the port enables only a subset of the available MycroPython modules. See "ports/riot/mpconfigport.h" for details.</p>
 <p>For now, the utime module has RIOT specific code and should work as expected.</p>
-<h2><a class="anchor" id="autotoc_md1835"></a>
+<h2><a class="anchor" id="autotoc_md1838"></a>
 RIOT specific modules</h2>
 <p>Currently, these are implemented:</p>
-<h3><a class="anchor" id="autotoc_md1836"></a>
+<h3><a class="anchor" id="autotoc_md1839"></a>
 thread_getpid()</h3>
 <pre class="fragment">&gt;&gt;&gt; import riot
 &gt;&gt;&gt; print(riot.thread_getpid())
-</pre><h3><a class="anchor" id="autotoc_md1837"></a>
+</pre><h3><a class="anchor" id="autotoc_md1840"></a>
 xtimer</h3>
 <pre class="fragment">&gt;&gt;&gt; import xtimer
 &gt;&gt;&gt;
@@ -200,7 +200,7 @@ xtimer</h3>
 &gt;&gt;&gt; t = xtimer.xtimer(inc_a)
 &gt;&gt;&gt; t.set(100000)
 &gt;&gt;&gt; print(a)
-</pre><h2><a class="anchor" id="autotoc_md1838"></a>
+</pre><h2><a class="anchor" id="autotoc_md1841"></a>
 How to use</h2>
 <p>See examples/micropython for example code. </p>
 <table class="memberdecls">
@@ -217,7 +217,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 10:09:06 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

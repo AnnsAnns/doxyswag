@@ -153,13 +153,13 @@ $(function(){initNavTree('group__net__nanocoap__fileserver.html',''); initResiza
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Library for serving files from the VFS to CoAP clients </p>
-<h1><a class="anchor" id="autotoc_md2052"></a>
+<h1><a class="anchor" id="autotoc_md2055"></a>
 About</h1>
 <p>This maps files in the local file system onto a resources in CoAP. In that, it is what is called a static web server in the unconstrained web.</p>
 <p>As usual, GET operations are used to read files and PUT writes to files. In the current implementation, PUTs are expressed as random-access, meaning that files are not updated atomically, although files are created atomically. The Content-Format option is not checked in the current implementation. Conditional file modification and deletion is supported using the If-Match option. The If-Match option carries a previously received Etag or in case of zero length, requires a request to be processed only if the resource exists. In opposite, the If-None-Match option requires a request to be processed, only if the resource does not yet exist, and is most useful for file creation.</p>
 <p>Directories are expressed to URIs with trailing slashes. Directories and their content are deleted as if one would do an <code>$rm -r</code>. If you only would like to delete a directory if it is empty, you must supply an If-Match option with the special value <a class="el" href="#ga6361921051a327323fed06922e0182fd">COAPFILESERVER_DIR_DELETE_ETAG</a>.</p>
 <dl class="section note"><dt>Note</dt><dd>The file server uses ETag for cache validation. The ETags are built from the file system stat values. As clients rely on the ETag to differ when the file changes, it is important that file modification times are set. The precise time values do not matter, but if a file is changed in place and neither its length nor its modification time is varied, then clients will not become aware of the change or may even mix up the versions half way through if they have a part of the old version cached.</dd></dl>
-<h1><a class="anchor" id="autotoc_md2053"></a>
+<h1><a class="anchor" id="autotoc_md2056"></a>
 Usage</h1>
 <ul>
 <li><code>USEMODULE += nanocoap_fileserver</code></li>
@@ -371,7 +371,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 10:09:06 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

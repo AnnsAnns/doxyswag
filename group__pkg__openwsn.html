@@ -152,60 +152,60 @@ $(function(){initNavTree('group__pkg__openwsn.html',''); initResizable(true); })
 <dl class="section see"><dt>See also</dt><dd><a href="https://github.com/openwsn-berkeley/openwsn-fw">https://github.com/openwsn-berkeley/openwsn-fw</a> </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd><b class="text-danger">This feature is experimental!</b><br  />
  </dd></dl>
-<h1><a class="anchor" id="autotoc_md1878"></a>
+<h1><a class="anchor" id="autotoc_md1881"></a>
 OpenWSN RIOT Port</h1>
 <p>This implementation integrates the <a href="https://github.com/openwsn-berkeley/openwsn-fw">OpenWSN</a> full network stack (UDP, IPv6 (6LoWPAN), RPL, 6TiSCH) into RIOT.</p>
 <p>It can be used instead of GNRC on supported 802.15.4 radios, and compared to GNRC, provides a full 6TiSCH implementation. It supports RIOT's <a class="el" href="group__net__sock.html">Sock API</a> API, so it can be used as a drop-in replacement for application built on top of <a class="el" href="group__net__sock.html">Sock API</a>.</p>
 <p>This port provides a new RIOT "board" to the OpenWSN software. In this way RIOT's hardware abstraction connects to OpenWSN's interfaces.</p>
 <p>The simple scheduling mechanism in OpenWSN is run in a RIOT thread with second highest priority after the radio thread (THREAD_PRIORITY_MAIN - 4).</p>
 <p>The current port of OpenWSN currently needs a root node that works along an external tool that performs routing and handles join procedure: <a href="https://github.com/openwsn-berkeley/openvisualizer">Openvisualizer</a></p>
-<h2><a class="anchor" id="autotoc_md1879"></a>
+<h2><a class="anchor" id="autotoc_md1882"></a>
 Joining a network</h2>
 <p>The first thing a new mote will need to do is to find a network. On boot it will actively be listening for enhanced beacons. Once a beacon is received it will adjust its timers drift and synchronize with the network. Re-synchronization will be happening constantly to compensate for oscillator and timer drifts.</p>
 <p>Once synchronized the node will need to join the network. OpenWSN uses CoJP <a href="https://datatracker.ietf.org/doc/draft-ietf-6tisch-minimal-security/">constrained join protocol</a> an the stack itself only handles Join Requests. The JRC (join registrar/coordinator, a central entity) is not running on the root node, but alongside it, in the <code>OpenVisualizer</code> external tool. This functionality is now optional but can be included through the <code>openwsn_cjoin</code> module.</p>
 <p>Once joined the device has the required keys to start listening to DIS (DODAG Information Solicitation) messages and to send DIO (DODAG Information Object) requests. Once it knows about the topology of the network it is able to send packets.</p>
 <p>OpenWSN uses source routing. This means that unless the recipient of a packet is one of the parents in the RPL tree the packet will have to go up the tree to the root node. But in OpenWSN RPL implementation the node does not know how to route, instead it is <code>OpenVisualizer</code> which generates an SRH (Source Routing Header), attaches to the incoming packet and sends it down the tree.</p>
-<h2><a class="anchor" id="autotoc_md1880"></a>
+<h2><a class="anchor" id="autotoc_md1883"></a>
 Hardware abstraction implementation</h2>
 <p>Following, details about the implementation of selected hardware modules.</p>
-<h3><a class="anchor" id="autotoc_md1881"></a>
+<h3><a class="anchor" id="autotoc_md1884"></a>
 sctimer</h3>
 <p>The <code>sctimer</code> ("single compare timer") in OpenWSN is the lowest timer abstraction which is used by the higher layer timer module <code>opentimers</code>. In the end it is responsible for scheduling on the MAC layer. To enable low power energy modes, this timer usually uses the RTC (real time clock) or RTT (real time timer) module.</p>
 <p>This port has two possible implementations or sctimer, one on top of periph_rtt and another on top of ztimer, <code>sctimer_rtt</code> and <code>sctimer_ztimer</code> respectively. If possible <code>ztimer</code> should be preferred, being a virtual timer it will allow RIOT applications/modules to use the low level RTT timer. But ztimer (any virtual timer) has some overhead which can be costly depending on the different platforms used, specially when <code>openserial</code> is required. More on this in openserial and Known Issues.</p>
-<h4><a class="anchor" id="autotoc_md1882"></a>
+<h4><a class="anchor" id="autotoc_md1885"></a>
 sctimer_ztimer</h4>
 <p>In order to get the most portable code, this implementation uses ztimer and defines a new <code><a class="el" href="structztimer__clock.html" title="ztimer device structure">ztimer_clock</a></code> (<code>ZTIMER_32768</code>) that operates at 32768Khz to have a resolution of ~30usec/tick (same as OpenWSN).</p>
 <p>When available <code>ZTIMER_32768</code> will be built on top of <code>periph_rtt</code> to get low power capabilities. If not it will be built on top of a regular timer. In either case it will be shifted up if the base frequency is lower than 32768Hz or frac if higher.</p>
 <p>When next interrupt to schedule is already late, current time, implementations in OpenWSN directly trigger a hardware interrupt. Until able to trigger sw isr directly a callback is set 0 ticks in the future, which internally will be set to <code>now + RTT_MIN_OFFSET</code>.</p>
-<h4><a class="anchor" id="autotoc_md1883"></a>
+<h4><a class="anchor" id="autotoc_md1886"></a>
 sctimer_rtt</h4>
 <p>In order to reduce overhead this implementation uses bare RTT. It expects a RTT running at 32768Hz to have a resolution of ~30usec/tick (same as OpenWSN). If <code>RTT_FREQUENCY</code> is lower than 32768Hz then a simple time-division mechanism will be used to speed up the clock. This only works if <code>RTT_FREQUENCY</code> is 32768Hz/2.</p>
 <p>When next interrupt to schedule is already late, current time, Implementations in OpenWSN directly trigger a hardware interrupt. Until able to trigger sw isr directly a callback is set <code>RTT_MIN_OFFSET</code> ticks in the future.</p>
-<h3><a class="anchor" id="autotoc_md1884"></a>
+<h3><a class="anchor" id="autotoc_md1887"></a>
 radio</h3>
 <p>The radio adaptation maps to RIOT's <a class="el" href="structnetdev.html">netdev</a> API or on <a class="el" href="group__drivers__ieee802154__hal.html">IEEE802.15.4 Radio Hardware Abstraction Layer</a> API. The later is preferred but not yet supported by all boards.</p>
 <p>Hardware MAC layer features such as CSMA/CA, ACK handling and retransmissions are handled by OpenWSN, so the radio driver must support disabling AUTOACK and CSMA handling by the hardware. Frame filtering must as well be disabled.</p>
 <p>OpenWSN needs to be notified when a frame reception/transmission starts and when it ends. Without these synchronization can still work but in a deteriorated way.</p>
 <p>OpenWSN expects to recover crc information on every received frame even if it will simply drop frames with invalid crc. The stack can function correctly if radio drivers automatically drop frames with an invalid crc (i.e. the stack doesn't get notified about these frames).</p>
-<h4><a class="anchor" id="autotoc_md1885"></a>
+<h4><a class="anchor" id="autotoc_md1888"></a>
 ieee802154_hal</h4>
 <p>The radio drivers should support the following caps: </p><pre class="fragment">- `IEEE802154_CAP_IRQ_RX_START`
 - `IEEE802154_CAP_IRQ_TX_START`
 </pre><p>For CRC error handling: </p><pre class="fragment">- `IEEE802154_CAP_IRQ_CRC_ERROR`
-</pre><h4><a class="anchor" id="autotoc_md1886"></a>
+</pre><h4><a class="anchor" id="autotoc_md1889"></a>
 netdev</h4>
 <p>The radio adaptation preloads the buffer so <code>NETOPT_PRELOADING</code> must be supported.</p>
 <p>The radio drivers should support the following netdev events: </p><pre class="fragment">- `NETDEV_EVENT_RX_STARTED`
 - `NETDEV_EVENT_TX_STARTED`
 - `NETDEV_EVENT_RX_COMPLETE`
 - `NETDEV_EVENT_TX_COMPLETE`
-</pre><h3><a class="anchor" id="autotoc_md1887"></a>
+</pre><h3><a class="anchor" id="autotoc_md1890"></a>
 uart</h3>
 <p>In RIOT, the first configured uart device is mapped to STDIO in most cases. In OpenWSN however, the <code>openserial</code> tool uses uart to feed external software running on a host computer such as <a href="https://github.com/openwsn-berkeley/openvisualizer">Openvisualizer</a>. To enable use of these tools, an uart adaptation is provided.</p>
 <p>This is provided through the <code>openwsn_serial</code> (<code>openserial</code>) module. It will use the next available uart that is not used by STDIO (checking STDIO_UART_DEV). When multiple uart are available STDIO and <code>openserial</code> can be used in parallel. If <code>stdio_null</code> is used then <code>openserial</code> will use <code>STDIO_UART_DEV</code>, otherwise it will use the next available uart. e.g. If <code>STDIO_UART_DEV = <a class="el" href="group__drivers__periph__uart.html#gafc5afd63560d27731d2517b3005f3294" title="Default UART device access macro.">UART_DEV(1)</a></code> <code>OPENWSN_UART_DEV = <a class="el" href="group__drivers__periph__uart.html#gafc5afd63560d27731d2517b3005f3294" title="Default UART device access macro.">UART_DEV(0)</a></code> if there are uarts.</p>
 <p>OpenWSN uart abstraction makes use of tx hardware interrupts to execute a previously registered callback after every byte is sent out. These interrupts are currently not defined in RIOT in a generic way, so instead a timer is set to fire shortly after a byte is written.</p>
 <p>It uses <code>ztimer</code> to set the timer since it's already pulled in as a dependency.</p>
-<h3><a class="anchor" id="autotoc_md1888"></a>
+<h3><a class="anchor" id="autotoc_md1891"></a>
 Openserial</h3>
 <p>As was mentioned before any OpenWSN network will require a root node which is connected to an <code>OpenVisualizer</code> instance running on a host computer. Interaction between <code>OpenVisualizer</code> and the root-node is done over serial. As OpenWSN uses source routing, this means that ultimately all network traffic must go from the root node to <code>OpenVisualizer</code> and back.</p>
 <p>OpenSerial uses software flow control (XonXoff) to turn off serial activity while time critical TSCH operation are ongoing. But software flow control can cause issues since delays in the serial pipe (either because of a remote connection, buffers, etc..) can lead to bytes being transmitted when one side is not yet ready.</p>
@@ -227,10 +227,10 @@ Openserial</h3>
 <p>Since a 115200 baudrate means ~1byte every 10us, none of the above can take longer than that or bytes could be lost at that baudrate.</p>
 <p>Because of the above mentioned reasons, it is preferable to use <code>sctimer_rtt</code> for the root node or "border router" on an OpenWSN network, since this reduces the likeliness of packets being lost. For non root nodes, OpenSerial only provides debugging information so no special care needs to be taken.</p>
 <p>It is also recommended that the root node should act as a border router running only the OpenWSN stack to avoid other threads/ISR disrupting serial reception.</p>
-<h2><a class="anchor" id="autotoc_md1889"></a>
+<h2><a class="anchor" id="autotoc_md1892"></a>
 Tested Platforms and Pin configurations</h2>
 <p>So far, this has been successfully tested on <code>iotlab-m3</code>,<code>nucleo-f103</code> and <code>samr21-xpro</code>, all based on at86rf23x radios. These radios make use of the <code>radio_netdev</code> adaptation.</p>
-<h3><a class="anchor" id="autotoc_md1890"></a>
+<h3><a class="anchor" id="autotoc_md1893"></a>
 Synchronization</h3>
 <p>To join a network a node must first receive EB (enhanced beacons). Once an EB is received the node will be synchronized with the network. Synchronization times are not deterministic, they depend on the following:</p>
 <p><code>SLOTFRAME_LENGTH*SLOTDURATION*P_CHANNEL*P_EB</code></p>
@@ -238,18 +238,18 @@ Synchronization</h3>
 <p>On the other hand if channel hopping is enabled then the joining node picks a random channel to start listening on. The transmitter also picks a random channel to start transmitting on and then follows a channel hopping template. This would take on average ~8 tries for it to hit the correct channel for the first time, and then it would hit it every 16 hops, on average this could lead synchronization times of around <code>320s</code>.</p>
 <p>If nodes are having trouble in staying synchronized increasing <code>P_EB</code> by reducing the value of <code>EB_PORTION</code> can also be done. Note that <code>EB_PORTION</code> and <code>SLOTFRAME_LENGTH</code> are not configurable by default so need to be overridden with <code>CFLAGS</code>.</p>
 <p>See <a href="https://openwsn.atlassian.net/wiki/spaces/OW/pages/132055073/Tune+parameters+in+OpenWSN">Tune parameters in OpenWSN</a> for more details.</p>
-<h3><a class="anchor" id="autotoc_md1891"></a>
+<h3><a class="anchor" id="autotoc_md1894"></a>
 Timing</h3>
 <p>Timing is essential for OpenWSN to work properly. For optimal results most parameters in <code><a class="el" href="board__info_8h.html">board_info.h</a></code> should be measured for the specific hardware used. OpenWSN has done that for most of their boards. These values can not be taken directly from OpenWSN since they do not necessarily use the same TIMER's or clock speeds.</p>
 <p>For more details on those parameters refer to: <a href="https://openwsn.atlassian.net/wiki/spaces/OW/pages/688251/State+Machine">https://openwsn.atlassian.net/wiki/spaces/OW/pages/688251/State+Machine</a></p>
 <p>Since all these parameters are HW dependent, it also means that hybrid networks (different type of underlying hardware) might desynchronize often, or not manage to keep in sync at all.</p>
 <p>Print messages during TSCH operation should be avoided since these can disrupt TSCH timings.</p>
-<h3><a class="anchor" id="autotoc_md1892"></a>
+<h3><a class="anchor" id="autotoc_md1895"></a>
 ledpins &amp; debugpins</h3>
 <p>The OpenWSN software provides different hooks all over the stack to toggle different LEDs as well as debug pins to examine state and scheduling of a node. Default configuration files are provided for both. The LED configuration maps to RIOTs <code>LEDX_PIN</code> definitions, if available. On Nucleo boards LED0 line is shared SPI, so is not used.</p>
 <p>The default configuration can be overwritten by setting <code>OPENWSN_LEDS_DEFAULT</code> in the form of <code>leds_config_t</code>. The debugpins work similarly by setting <code>OPENWSN_DEBUGPINS_BOARD</code> in the form of <code>debugpins_config_t</code>.</p>
 <p>The default configuration maps to OpenWSN reference hardware <code>openmote-b</code>.</p>
-<h2><a class="anchor" id="autotoc_md1893"></a>
+<h2><a class="anchor" id="autotoc_md1896"></a>
 Optional Modules and Features</h2>
 <p>The following modules are optional and can be disabled if not needed, or to lower the stack footprint.</p>
 <ul>
@@ -258,7 +258,7 @@ Optional Modules and Features</h2>
 <li><code>openwsn_iee802154e_security</code>: enable link layer security</li>
 <li><code>openwsn_adaptive_msf</code>: allow the MSF algorithm to dynamically remove and allocate slots</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md1894"></a>
+<h2><a class="anchor" id="autotoc_md1897"></a>
 Testing and debugging</h2>
 <p>List of some items which are helpful to explore the functionality of OpenWSN:</p>
 <ul>
@@ -288,7 +288,7 @@ Testing and debugging</h2>
 </div><!-- fragment --></li>
 </ul>
 <p>The test should be considered passing if success rate is &gt; 98%.</p>
-<h2><a class="anchor" id="autotoc_md1895"></a>
+<h2><a class="anchor" id="autotoc_md1898"></a>
 Known Issues</h2>
 <p>The following errors might be visible when using <code>openwsn_serial</code>:</p>
 <ul>
@@ -331,13 +331,13 @@ Known Issues</h2>
 <li>missed characters over stdio</li>
 </ul>
 <p>TSCH state machine disable occurs in IRQ context and disables IRQ during time critical sections. This can cause bytes sent over stdio to be missed.</p>
-<h2><a class="anchor" id="autotoc_md1896"></a>
+<h2><a class="anchor" id="autotoc_md1899"></a>
 Todos</h2>
 <ul>
 <li><code>sctimer</code> to trigger an ISR immediately using software interrupts.</li>
 <li>The UART wrapper uses ztimer to fake an interrupt after one byte has been sent. This should also be done with software interrupts.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md1897"></a>
+<h2><a class="anchor" id="autotoc_md1900"></a>
 Future Steps</h2>
 <p>It would be desirable to achieve an extraction of the MAC layer. </p>
 <table class="memberdecls">
@@ -388,7 +388,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 10:09:06 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

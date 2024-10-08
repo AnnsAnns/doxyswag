@@ -150,14 +150,14 @@ $(function(){initNavTree('group__net__gnrc.html',''); initResizable(true); });
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>RIOT's modular default IP network stack. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://www.riot-os.org/assets/pdfs/mlenders_msc.pdf">Martine Lenders' master thesis</a> about GNRC's design and evaluation and the slide set of <a href="https://www.riot-os.org/assets/pdfs/mlenders_msc_def.pdf">its defense</a>.</dd></dl>
-<h1><a class="anchor" id="autotoc_md2013"></a>
+<h1><a class="anchor" id="autotoc_md2016"></a>
 About</h1>
 <p>This module is currently the default network stack for RIOT and includes many components ranging from a <a class="el" href="group__net__gnrc__netif.html">Network interface API</a> through a fully-featured <a class="el" href="group__net__gnrc__ipv6.html">IPv6</a> implementation with <a class="el" href="group__net__gnrc__sixlowpan.html">6LowPAN</a> extensions to an <a class="el" href="group__net__gnrc__udp.html">UDP</a> implementation and <a class="el" href="group__net__gnrc__rpl.html">RPL</a>.</p>
 <p>A list of all features contained in the <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> is available in the <code>Modules</code> section above.</p>
-<h1><a class="anchor" id="autotoc_md2014"></a>
+<h1><a class="anchor" id="autotoc_md2017"></a>
 Integration into RIOT</h1>
 <p>From the application layer the <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> can be accessed through the <a class="el" href="group__net__sock.html">Sock API</a>, while the interface to the <a class="el" href="group__drivers__netdev__api.html">Netdev - Network Device Driver API</a> is defined by the <a class="el" href="group__net__gnrc__netif.html">Network interface API</a>.</p>
-<h1><a class="anchor" id="autotoc_md2015"></a>
+<h1><a class="anchor" id="autotoc_md2018"></a>
 Architecture</h1>
 <p><img src="riot-gnrc.svg" alt="GNRC Network Stack" style="pointer-events: none;" class="inline"/></p>
 <p>Each layer of the network stack runs in its own thread and each lower layer thread has a higher priority than any upper layer thread. In this regard, the thread of the MAC layer implementation has the highest priority and threads on the application layer have the lowest priority. The communication between threads is handled by the kernel's <a class="el" href="group__core__msg.html">Messaging / IPC</a> functionality and by the <a class="el" href="group__net__gnrc__netapi.html">GNRC communication interface</a>. Most of the times IPC will take place between threads of neighboring layers for packets that traverse the network stack up or down.</p>
@@ -200,10 +200,10 @@ Architecture</h1>
 <div class="ttc" id="astructgnrc__netreg__entry_html"><div class="ttname"><a href="structgnrc__netreg__entry.html">gnrc_netreg_entry</a></div><div class="ttdoc">Entry to the Network protocol registry.</div><div class="ttdef"><b>Definition</b> netreg.h:167</div></div>
 <div class="ttc" id="astructmsg__t_html"><div class="ttname"><a href="structmsg__t.html">msg_t</a></div><div class="ttdoc">Describes a message object which can be sent between threads.</div><div class="ttdef"><b>Definition</b> msg.h:196</div></div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>As an example have a look at the event loops of <a class="el" href="group__net__gnrc__ipv6.html">IPv6</a> and <a class="el" href="group__net__gnrc__rpl.html">RPL</a></dd></dl>
-<h1><a class="anchor" id="autotoc_md2016"></a>
+<h1><a class="anchor" id="autotoc_md2019"></a>
 Receiving / Transmitting Packets</h1>
 <p>Packets can be received or transmitted by interacting with the <a class="el" href="group__net__gnrc__netapi.html">GNRC communication interface</a>.</p>
-<h2><a class="anchor" id="autotoc_md2017"></a>
+<h2><a class="anchor" id="autotoc_md2020"></a>
 Receiving Packets</h2>
 <p>The reception of a <a class="el" href="group__net__gnrc__pkt.html">Packet</a> from another thread is handled by the <a class="el" href="group__net__gnrc__netapi.html">GNRC communication interface</a> module. In order to receive a <a class="el" href="group__net__gnrc__pkt.html">Packet</a> of a specific type, it is necessary to register for the appropriate <a class="el" href="group__net__gnrc__nettype.html">gnrc_nettype: Protocol type</a> first. Your thread will then be able to receive certain commands defined in the <a class="el" href="group__net__gnrc__netapi.html">GNRC communication interface</a> module (e.g. net_gnrc_netapi::GNRC_NETAPI_MSG_TYPE_RCV) for all <a class="el" href="group__net__gnrc__pkt.html">Packets</a> that your thread registered for.</p>
 <p>The following example will sketch how to receive incoming and outgoing UDP traffic on port 80.</p>
@@ -256,7 +256,7 @@ Receiving Packets</h2>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>When receiving a message of type <a class="el" href="group__net__gnrc__netapi.html#ga81e297b6dd96cf0a565a9dc77cc54e11">GNRC_NETAPI_MSG_TYPE_SET</a> or <a class="el" href="group__net__gnrc__netapi.html#gacc19be168656448df4d274293dc23916">GNRC_NETAPI_MSG_TYPE_GET</a>, it is necessary to acknowledge it by calling <a class="el" href="group__core__msg.html#ga2e7b09dc269eb4847f6e08b9900ffda9">msg_reply()</a> with a message of type <a class="el" href="group__net__gnrc__netapi.html#ga6edd8d8871394091cff19457fc3da1b5">GNRC_NETAPI_MSG_TYPE_ACK</a> which contains the actual size of the GET message's content on success or an error code otherwise.</dd>
 <dd>
 Do not forget to unregister with <a class="el" href="group__net__gnrc__netreg.html#gad68b86ef84f5b1c6391067bdd8b16f2b">gnrc_netreg_unregister()</a> if you leave the function context</dd></dl>
-<h2><a class="anchor" id="autotoc_md2018"></a>
+<h2><a class="anchor" id="autotoc_md2021"></a>
 Transmitting Packets</h2>
 <p>A packet is transmitted by relaying it to threads interested in handling (and dispatching) packets of its type. To do this, the <a class="el" href="group__net__gnrc__netapi.html">GNRC communication interface</a> offers dispatch helper functions called <a class="el" href="group__net__gnrc__netapi.html#ga2b5b0f662061aa332cc1cbb9c145ee07">gnrc_netapi_dispatch_send()</a> and <a class="el" href="group__net__gnrc__netapi.html#ga29426dfcc0b46e451efab9939b41d95e" title="Sends a GNRC_NETAPI_MSG_TYPE_RCV command to all subscribers to (type, demux_ctx).">gnrc_netapi_dispatch_receive()</a>.</p>
 <p>The following example sketches the usage and assumes a valid <a class="el" href="group__net__gnrc__pkt.html">Packet</a> named <code>pkt</code>.</p>
@@ -282,7 +282,7 @@ Transmitting Packets</h2>
 <dl class="section note"><dt>Note</dt><dd>If the data to be sent requires extra headers to be added for successful transmission (in the example, this would be IP and UDP headers), these have to be built manually before calling <a class="el" href="group__net__gnrc__netapi.html#ga2b5b0f662061aa332cc1cbb9c145ee07">gnrc_netapi_dispatch_send()</a>. In the interest of conciseness, this is omitted in this tutorial; please refer to <a class="el" href="group__net__gnrc__udp.html#ga5a2d0ea8110f6e0573fe2c31b06e0daf">gnrc_udp_hdr_build()</a>, <a class="el" href="group__net__gnrc__ipv6__hdr.html#gaef0cd5f794f79cc55638d1d84ee7de58">gnrc_ipv6_hdr_build()</a> etc. for more information.</dd>
 <dd>
 GNRC is implemented according to the respective standards. So please note, that sending to a IPv6 link-local address always requires you by definition to also provide the interface you want to send to, otherwise address resolution might fail.</dd></dl>
-<h1><a class="anchor" id="autotoc_md2019"></a>
+<h1><a class="anchor" id="autotoc_md2022"></a>
 How To Use</h1>
 <p><a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> is highly modular and can be adjusted to include only the desired features. In the following several of the available modules will be stated that you can include in your application's Makefile.</p>
 <ul>
@@ -385,7 +385,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 10:09:06 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

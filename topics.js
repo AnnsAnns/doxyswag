@@ -1,12 +1,5 @@
 var topics =
 [
-    [ "Features", "index.html#autotoc_md2180", null ],
-    [ "Getting RIOT", "index.html#autotoc_md2181", null ],
-    [ "Getting Started", "index.html#autotoc_md2182", null ],
-    [ "Forum", "index.html#autotoc_md2183", null ],
-    [ "Contribute", "index.html#autotoc_md2184", null ],
-    [ "Mailing Lists", "index.html#autotoc_md2185", null ],
-    [ "License", "index.html#autotoc_md2186", null ],
     [ "Boards", "group__boards.html", "group__boards" ],
     [ "Bootloaders", "group__bootloaders.html", "group__bootloaders" ],
     [ "C++", "group__cpp.html", "group__cpp" ],

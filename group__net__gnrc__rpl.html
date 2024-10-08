@@ -152,9 +152,9 @@ $(function(){initNavTree('group__net__gnrc__rpl.html',''); initResizable(true); 
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>RPL implementation for GNRC </p>
-<h1><a class="anchor" id="autotoc_md2037"></a>
+<h1><a class="anchor" id="autotoc_md2040"></a>
 Configuration</h1>
-<h2><a class="anchor" id="autotoc_md2038"></a>
+<h2><a class="anchor" id="autotoc_md2041"></a>
 USEMODULE</h2>
 <ul>
 <li>RPL (Storing Mode) <div class="fragment"><div class="line">USEMODULE += gnrc_rpl</div>
@@ -162,12 +162,12 @@ USEMODULE</h2>
 <li>RPL auto-initialization on interface <div class="fragment"><div class="line">USEMODULE += auto_init_gnrc_rpl</div>
 </div><!-- fragment --></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md2039"></a>
+<h2><a class="anchor" id="autotoc_md2042"></a>
 Auto-Initialization</h2>
 <p>If the application defines only one interface (<a class="el" href="group__net__gnrc__netif.html#gaf7f4305f1d02f1ea9c14e0d4b3e0b2d4">gnrc_netif_highlander()</a> returns true), then RPL will be initialized on this interface.</p>
 <p>If the application defines several interfaces (<a class="el" href="group__net__gnrc__netif.html#gaf7f4305f1d02f1ea9c14e0d4b3e0b2d4">gnrc_netif_highlander()</a> returns false), then RPL will be initialized on the interface <code>CONFIG_GNRC_RPL_DEFAULT_NETIF</code>. Your application is responsible for setting <code>CONFIG_GNRC_RPL_DEFAULT_NETIF</code> to a valid interface PID, e.g. via <code>CFLAGS</code> or menuconfig.</p>
 <p>Initializing RPL on multiple interfaces automatically is currently not supported. Call <code><a class="el" href="#gae8ab2a9620466139008b48106a5bc657" title="Initialization of the RPL thread.">gnrc_rpl_init()</a></code> manually from your application for the desired interfaces in this case.</p>
-<h2><a class="anchor" id="autotoc_md2040"></a>
+<h2><a class="anchor" id="autotoc_md2043"></a>
 CFLAGS</h2>
 <ul>
 <li>Exclude Prefix Information Options from DIOs <div class="fragment"><div class="line">CFLAGS += -DCONFIG_GNRC_RPL_WITHOUT_PIO</div>
@@ -191,7 +191,7 @@ CFLAGS</h2>
 <p class="startli">e.g. for one alternative parent, set </p><div class="fragment"><div class="line">CFLAGS += -DCONFIG_GNRC_IPV6_NIB_DEFAULT_ROUTER_NUMOF=2</div>
 </div><!-- fragment --></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md2041"></a>
+<h2><a class="anchor" id="autotoc_md2044"></a>
 TODO</h2>
 <p>The GNRC RPL implementation only implements storing mode with OF0 (<a href="https://tools.ietf.org/html/rfc6552">RFC6552</a>). The RPL routing header is parsed by the nodes when the <a class="el" href="group__net__gnrc__rpl__srh.html"><code>gnrc_rpl_srh</code> </a> module is used, but anything else for non-storing mode is missing. For interoperability with other RPL implementations, open task include:</p>
 <ul>
@@ -1457,7 +1457,7 @@ NULL, otherwise. </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 10:09:06 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

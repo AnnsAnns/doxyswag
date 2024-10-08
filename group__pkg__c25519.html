@@ -146,13 +146,13 @@ $(function(){initNavTree('group__pkg__c25519.html',''); initResizable(true); });
 </p>
 <p>Curve25519 and Ed25519 for low-memory systems </p>
 <p>This package contains portable public-domain implementations of Daniel J. Bernstein's Curve255191 Diffie-Hellman function, and of the Ed25519 signature system. The memory consumption is low enough that they could be reasonably considered for most microcontroller applications. In particular, Curve25519 scalar multiplication uses less than half a kB of peak stack usage.</p>
-<h2><a class="anchor" id="autotoc_md1758"></a>
+<h2><a class="anchor" id="autotoc_md1761"></a>
 Requirements</h2>
 <p>C25519 requires around 1K of stack, so beware that you're allocating at least <code>THREAD_STACKSIZE_DEFAULT + 1K</code> bytes.</p>
 <p>You can do it easily by adding:</p>
 <div class="fragment"><div class="line">CFLAGS += &#39;-DTHREAD_STACKSIZE_MAIN=(THREAD_STACKSIZE_DEFAULT + 1024)&#39;</div>
 </div><!-- fragment --><p>to your makefile.</p>
-<h2><a class="anchor" id="autotoc_md1759"></a>
+<h2><a class="anchor" id="autotoc_md1762"></a>
 Usage</h2>
 <p>Just add it as a package in your application:</p>
 <div class="fragment"><div class="line">USEPKG += c25519</div>
@@ -164,7 +164,7 @@ Usage</h2>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 10:09:05 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

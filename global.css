@@ -840,3 +840,65 @@ video {
   font-size: 95%;
   /** Overwrite doxygen making them waaaaay too small */
 }
+
+h1 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+}
+
+h5 {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+}
+
+p {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  a {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+  a {
+    --tw-text-opacity: 1;
+    color: rgb(59 130 246 / var(--tw-text-opacity));
+  }
+  a:hover {
+    --tw-text-opacity: 1;
+    color: rgb(29 78 216 / var(--tw-text-opacity));
+  }
+}
+
+ul {
+  list-style-position: inside;
+  list-style-type: disc;
+  /* Indent the list items */
+  margin-left: 1rem;
+}
+
+/** Hides the top level "RIOT" item in the sidebar since it makes the navbar needlessly complicated and unintuitive */
+
+#nav-tree-contents > ul:nth-child(2) > li:nth-child(1) > div:nth-child(1) {
+  display: none;
+}

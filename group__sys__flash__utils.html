@@ -151,12 +151,12 @@ $(function(){initNavTree('group__sys__flash__utils.html',''); initResizable(true
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>read-only memory </p>
 <p>This modules adds utility functions, macros, and functions for read-only memory. The goal is to hide the differences between modified architectures that map flash into the data address space (e.g. ARM) and those which doesn't (e.g. most AVR, Xtensa).</p>
-<h1><a class="anchor" id="autotoc_md1977"></a>
+<h1><a class="anchor" id="autotoc_md1980"></a>
 Usage</h1>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="flash__utils_8h.html">flash_utils.h</a>&quot;</span></div>
 <div class="ttc" id="aflash__utils_8h_html"><div class="ttname"><a href="flash__utils_8h.html">flash_utils.h</a></div><div class="ttdoc">Utility functions, macros, and types for read-only memory.</div></div>
 </div><!-- fragment --><p>No module needs to be selected, this is a header-only implementation that is always available.</p>
-<h1><a class="anchor" id="autotoc_md1978"></a>
+<h1><a class="anchor" id="autotoc_md1981"></a>
 Porting Code to Use <code>flash_utils</code></h1>
 <p>This is mainly targeting applications developers to ease developing apps that work well on both legacy modified Harvard architectures (e.g. ATmega) and modern modified Harvard architectures (e.g. ARM, ATtiny, ...) as well as von-Neumann machines.</p>
 <p>The intention is to limit in-tree use to a very small number of modules that yield the most "bang for the buck" and not leak the use of <code>flash_utils</code> through the API. Specifically, reverting to not using <code>flash_utils</code> should not be noticed by any user (unless looking at memory consumption). </p>
@@ -662,7 +662,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>flash_print_st
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 10:09:07 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

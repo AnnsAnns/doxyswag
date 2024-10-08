@@ -151,17 +151,17 @@ $(function(){initNavTree('group__drivers__periph__ptp.html',''); initResizable(t
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Low-level PTP clock peripheral driver </p>
-<h1><a class="anchor" id="autotoc_md1707"></a>
+<h1><a class="anchor" id="autotoc_md1710"></a>
 Introduction</h1>
 <p>The <a href="https://standards.ieee.org/content/ieee-standards/en/standard/1588-2019.html">Precision Time Protocol (PTP)</a> can be used to synchronize clocks with hardware support in an Ethernet PHY, that allows to precisely estimate (and, thus, compensate) network delay between time server and client. This allows PTP synchronization to be highly accurate (&lt;&lt; 1 µs offset between server and client), but requires hardware support on each synchronized node and the PTP server, all nodes to be connected to the same* Ethernet network, and (for best results) hardware support in all intermediate switches.</p>
-<h1><a class="anchor" id="autotoc_md1708"></a>
+<h1><a class="anchor" id="autotoc_md1711"></a>
 (No) Synchronization Using This API</h1>
 <p>This API is intended to provide basic access to a PTP hardware clock. This does not cover any synchronization. Some PTP hardware clocks (e.g. on the STM32) can be used without synchronization by manually setting the time. Thus, the PTP clock can be useful even without synchronization implemented.</p>
 <p>It is intended that the actual synchronization is implemented externally later on. The functions <a class="el" href="#gadf6f865c88a6ed893bd77ae813ef892b">ptp_clock_adjust</a> and <a class="el" href="#ga70461154180e423d2084ee56a0b42be9">ptp_clock_adjust_speed</a> are specified with the needs of a synchronization solution in mind.</p>
-<h1><a class="anchor" id="autotoc_md1709"></a>
+<h1><a class="anchor" id="autotoc_md1712"></a>
 Clock vs Timer</h1>
 <p>This API provides both <code>ptp_clock_*()</code> and <code>ptp_timer_*()</code> functions, to distinguish between the feature set being used. A PTP peripheral might only support the feature <code>periph_ptp</code>, but not <code>periph_ptp_timer</code>.</p>
-<h1><a class="anchor" id="autotoc_md1710"></a>
+<h1><a class="anchor" id="autotoc_md1713"></a>
 (Lack of) Power Considerations</h1>
 <p>It is assumed that a board connected to a wired network is also powered from mains. Additionally, a high-resolution high-accuracy clock that is periodically synced over network is just not going to play well with low-power application scenarios. </p>
 <table class="memberdecls">
@@ -774,7 +774,7 @@ This function implies feature <code>periph_ptp_timer</code> </dd></dl>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 10:09:06 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

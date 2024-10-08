@@ -146,7 +146,7 @@ $(function(){initNavTree('sys_2include_2event_2thread_8h.html',''); initResizabl
 <a href="#details">More...</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Provides utility functions for event handler threads. </p>
-<h1><a class="anchor" id="autotoc_md1976"></a>
+<h1><a class="anchor" id="autotoc_md1979"></a>
 Usage</h1>
 <p>By using the module <code>event_thread</code>, the event queues <a class="el" href="#aa0422767dfeb9b75688f3f89622b6b17">EVENT_PRIO_HIGHEST</a>, <a class="el" href="#abfb7617257bbe74506ab7d8d4ce72792">EVENT_PRIO_MEDIUM</a>, and <a class="el" href="#a3851eacda17689dae7feadbd3dea066a">EVENT_PRIO_LOWEST</a> are provided and declared in the header <code><a class="el" href="sys_2include_2event_2thread_8h.html" title="Provides utility functions for event handler threads.">event/thread.h</a></code>. With default settings, the <code>auto_init</code> module will automatically start one or more threads to handle these queues.</p>
 <p>By default, a single thread with priority <code>EVENT_THREAD_MEDIUM_PRIO</code> will handle all three event queues according to their priority. An already started event handler will not be preempted in this case by an incoming higher priority event. Still, lower priority event queues will only be worked on once the higher priority queues are empty. Hence, the worst case latency is increased by the worst case duration of any possible lower priority event in this configuration.</p>
@@ -330,7 +330,7 @@ Usage</h1>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a408b6d3a4a484720bc3ecfeac8947e3.html">sys</a></li><li class="navelem"><a class="el" href="dir_e9e107fc86bbb4b6a326076a6808b9f5.html">include</a></li><li class="navelem"><a class="el" href="dir_16bd925a5206111e6116d92c1371f9d2.html">event</a></li><li class="navelem"><a class="el" href="sys_2include_2event_2thread_8h.html">thread.h</a></li>
-    <li class="footer">Generated on Wed Oct 2 2024 16:54:08 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 10:09:04 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

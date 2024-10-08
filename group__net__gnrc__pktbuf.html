@@ -411,9 +411,9 @@ NULL, if no space is left in the packet buffer. </dd></dl>
 
 <p>Merge pktsnip chain to single pktsnip. </p>
 <p>Specifically it calls <a class="el" href="#ga3d9a8b1307f8971680299b2f86ac4a3e">gnrc_pktbuf_realloc_data()</a> on <code>pkt</code>, then copies the data of all following packet snips into that reallocated space, and removes the packet snip the data was copied from afterwards.</p>
-<h3><a class="anchor" id="autotoc_md2034"></a>
+<h3><a class="anchor" id="autotoc_md2037"></a>
 Example</h3>
-<h4><a class="anchor" id="autotoc_md2035"></a>
+<h4><a class="anchor" id="autotoc_md2038"></a>
 Input</h4>
 <pre class="fragment">                                                    buffer
 +---------------------------+                      +------+
@@ -432,7 +432,7 @@ Input</h4>
 | size = 14                 | data +--------------&gt;|      |
 | type = NETTYPE_UNDEF      |------+               +------+
 +---------------------------+                      .      .
-</pre><h4><a class="anchor" id="autotoc_md2036"></a>
+</pre><h4><a class="anchor" id="autotoc_md2039"></a>
 Output</h4>
 <pre class="fragment">                                                    buffer
 +---------------------------+                      +------+
@@ -679,7 +679,7 @@ NULL, if <a class="el" href="structgnrc__pktsnip.html#a4ccc7be825c7f5c4498256766
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 10:09:06 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

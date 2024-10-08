@@ -153,16 +153,16 @@ $(function(){initNavTree('group__pkg__nimble__statconn.html',''); initResizable(
 <p>Static connection manager for NimBLE netif that keeps opens connections on demand and takes care of keeping them open. </p>
 <dl class="section warning"><dt>Warning</dt><dd><b class="text-danger">This feature is experimental!</b><br  />
  </dd></dl>
-<h1><a class="anchor" id="autotoc_md1864"></a>
+<h1><a class="anchor" id="autotoc_md1867"></a>
 WARNING</h1>
 <p>This module is highly experimental! Expect bugs, instabilities and sudden API changes :-)</p>
-<h1><a class="anchor" id="autotoc_md1865"></a>
+<h1><a class="anchor" id="autotoc_md1868"></a>
 About</h1>
 <p>Statconn is the implementation of a static connection manager for the NimBLE netif module. It initiates new connections when told and additionally takes care of reopening connections in case of connection loss.</p>
-<h1><a class="anchor" id="autotoc_md1866"></a>
+<h1><a class="anchor" id="autotoc_md1869"></a>
 Usage</h1>
 <p>A node can either be a master, the one initiating the connection, or a slave, the one advertising its presence, w.r.t. to BLE connections. To open a connection between two nodes, call <a class="el" href="#ga52f36085ab5d1de08b2ad33cc35364f3" title="Connect to a peer (slave) with a given address as master.">nimble_statconn_add_slave()</a> with the BLE address of the slave node on the designated master node and call <a class="el" href="#ga4bc4dbf8957fbba42be1c1e87986e145" title="Connect to peer (master) with a given address as slave.">nimble_statconn_add_master()</a> with the address of the master node on the designated slave node. From that point on, statconn will take care of opening and maintaining the connection between these two nodes.</p>
-<h1><a class="anchor" id="autotoc_md1867"></a>
+<h1><a class="anchor" id="autotoc_md1870"></a>
 Configuration</h1>
 <p>This module is configured completely statically. All relevant configuration options are set at compile time using a couple of macros. </p>
 <table class="memberdecls">
@@ -437,7 +437,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 10:09:07 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -151,12 +151,12 @@ $(function(){initNavTree('group__pkg__lua.html',''); initResizable(true); });
 <dl class="section see"><dt>See also</dt><dd><a href="https://github.com/lua/lua">https://github.com/lua/lua</a> </dd>
 <dd>
 sys_lua</dd></dl>
-<h1><a class="anchor" id="autotoc_md1802"></a>
+<h1><a class="anchor" id="autotoc_md1805"></a>
 Lua programming language support</h1>
-<h2><a class="anchor" id="autotoc_md1803"></a>
+<h2><a class="anchor" id="autotoc_md1806"></a>
 Introduction</h2>
 <p>This package embeds a <a href="https://www.lua.org/">Lua 5.3</a> interpreter into RIOT. With a few exceptions, all the APIs mentioned in the <a href="https://www.lua.org/manual/5.3/">official documentation</a> are available in this package too.</p>
-<h2><a class="anchor" id="autotoc_md1804"></a>
+<h2><a class="anchor" id="autotoc_md1807"></a>
 Running Lua code.</h2>
 <p><a class="el" href="lua__run_8h.html" title="Convenience functions for running Lua code.">lua_run.h</a> contains functions that make it easy to setup the interpreter and catch errors in a safe way. The functions from Lua's auxlib can still be used but then you must supply your own allocator and panic routines, load the builtin modules, etc.</p>
 <p>To run a chunk of code stored in an array use: </p><div class="fragment"><div class="line"><a class="code hl_function" href="lua__run_8h.html#a94e40235e7a20671c8c9e20a66ab3e48">lua_riot_do_buffer</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *buf, <span class="keywordtype">size_t</span> buflen, <span class="keywordtype">void</span> *memory,</div>
@@ -166,12 +166,12 @@ Running Lua code.</h2>
 <p>To save some memory, some builtin modules can be left out. <code>modmask</code> specifies which builtins to load. Note that if a builtin is not loaded by C code, then it cannot be loaded by Lua code later.</p>
 <p><code>lua_riot_do_buffer</code> takes care of setting up the Lua state, registering a panic handler that does not crash the application, configuring an allocator, loading libraries, etc.</p>
 <p>To run a module as a script use <code>lua_riot_do_module</code>. This is roughly equivalent to executing: </p><div class="fragment"><div class="line">require(<span class="stringliteral">&#39;modulename&#39;</span>)</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1805"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1808"></a>
 Memory requirements</h2>
 <p>While generally efficient, the Lua interpreter was not really designed for constrained devices.</p>
 <p>A basic interpreter session typically requires about 12kB RAM. The stack but it depends on the functions used (string handling tends to use more stack). It also depends on the platform.</p>
 <p>There is currently no easy way to determine the stack needs other than trial and error. Future versions of the package will include instrumentation to this end.</p>
-<h2><a class="anchor" id="autotoc_md1806"></a>
+<h2><a class="anchor" id="autotoc_md1809"></a>
 Adding your own modules.</h2>
 <p><code>lua_loadlib.c</code> contains two loaders, one for modules written in Lua and another one for C extensions.</p>
 <p>An index to the modules is stored in a table (there are two, one for each kind of module). The tables are indexed by the module name and must be sorted in ascending order by this key.</p>
@@ -189,7 +189,7 @@ Adding your own modules.</h2>
 <div class="ttc" id="astructlua__riot__builtin__c_html"><div class="ttname"><a href="structlua__riot__builtin__c.html">lua_riot_builtin_c</a></div><div class="ttdoc">Entry describing a c lua module built into the application binary.</div><div class="ttdef"><b>Definition</b> lua_builtin.h:60</div></div>
 <div class="ttc" id="astructlua__riot__builtin__lua_html"><div class="ttname"><a href="structlua__riot__builtin__lua.html">lua_riot_builtin_lua</a></div><div class="ttdoc">Entry describing a pure lua module whose source is built into the application binary.</div><div class="ttdef"><b>Definition</b> lua_builtin.h:50</div></div>
 </div><!-- fragment --><p>Currently, these must be defined manually in the application code. In the future a script will generate this tables, populating them with both RIOT modules and the user modules.</p>
-<h2><a class="anchor" id="autotoc_md1807"></a>
+<h2><a class="anchor" id="autotoc_md1810"></a>
 Customizations</h2>
 <p>The upstream Lua code is used without with the following modifications.</p>
 <p>Modifications that affect the API:</p>
@@ -204,12 +204,12 @@ Customizations</h2>
 <li>There is a patch changing the Makefile. This updated makefile is not used in the package, but is provided to aid development in a PC.</li>
 <li>Some patches to reduce stack and memory usage.</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md1808"></a>
+<h3><a class="anchor" id="autotoc_md1811"></a>
 Patches</h3>
 <p>A version of Lua with the patches applied is available at [GitHub] (<a href="https://github.com/riot-appstore/lua">https://github.com/riot-appstore/lua</a>) It can be downloaded and compiled in desktop computer, and the official <a href="https://www.lua.org/tests/">test suite</a> can then be run.</p>
 <p>Alternatively, the patches in this package can be directly applied to the official distribution.</p>
 <p>The updated makefile creates two standalone executables. Tests should be run with the debug executable.</p>
-<h2><a class="anchor" id="autotoc_md1809"></a>
+<h2><a class="anchor" id="autotoc_md1812"></a>
 TODO</h2>
 <p>The following features are missing and will be eventually added:</p>
 <ul>
@@ -242,7 +242,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 10:09:06 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

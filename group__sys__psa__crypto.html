@@ -158,11 +158,11 @@ About</h1>
 <p>PSA Crypto has an integrated key management module, which stores keys internally without exposing them to applications. To learn how to use keys with PSA, read <a class="el" href="#using-keys">Using Keys</a>.</p>
 <p>A basic usage and configuration example can be found in <code>examples/psa_crypto</code>. For more usage instructions, please read the documentation.</p>
 <p>If you want to add your own crypto backend, see <a class="el" href="#porting-guide">Porting Guide</a>.</p>
-<h1><a class="anchor" id="autotoc_md2126"></a>
+<h1><a class="anchor" id="autotoc_md2129"></a>
 Basic Usage</h1>
 <p>To use PSA Crypto, add <code><a class="el" href="crypto_8h.html" title="Function declarations for PSA Crypto.">psa/crypto.h</a></code> to your includes. This will make all operations and macros available.</p>
 <p>Call <code><a class="el" href="crypto_8h.html#a2de150803fc2f7dc6101d5af7e921dd9" title="Library initialization.">psa_crypto_init()</a></code> before calling any other operation.</p>
-<h2><a class="anchor" id="autotoc_md2127"></a>
+<h2><a class="anchor" id="autotoc_md2130"></a>
 Structure Initialization</h2>
 <p>Whenever you declare a PSA Crypto structure (e.g. operation contexts or key attributes), it needs to be initialized with zeroes. A structure that is not initialized will be interpreted by PSA as <em>active</em> and can not be used for a new operation. The example function and macro shown below result in the same thing: A new, inactive structure.</p>
 <div class="fragment"><div class="line"><span class="comment">// Choose one of these options</span></div>
@@ -176,7 +176,7 @@ Structure Initialization</h2>
 <h1><a class="anchor" id="using-keys"></a>
 Using Keys</h1>
 <p>PSA can only operate on keys, that are registered with and stored within the internal key storage module. This means you need to either generate keys with PSA or import an existing key. For this purpose there are a number of <a href="https://armmbed.github.io/mbed-crypto/html/api/keys/management.html">key management functions</a> (external link).</p>
-<h2><a class="anchor" id="autotoc_md2128"></a>
+<h2><a class="anchor" id="autotoc_md2131"></a>
 Key Attributes</h2>
 <p>When creating a key for PSA, the implementation needs to know what kind of key it is dealing with, what it can be used for, where it's supposed to be stored, etc. That information needs to be specified in a set of <a href="https://armmbed.github.io/mbed-crypto/html/api/keys/attributes.html">Key Attributes</a> (external link).</p>
 <p>The example below defines attributes for an AES-128 key, which can be used for CBC encryption and decryption and will be stored in local volatile memory. </p><div class="fragment"><div class="line"><span class="comment">// Initializes empty attributes structure</span></div>
@@ -217,12 +217,12 @@ Key Attributes</h2>
 </div><!-- fragment --><p>All the supported key types, algorithms and usage flags can be found in the documentation.</p>
 <h3><a class="anchor" id="key-lifetime"></a>
 Key Lifetime</h3>
-<h4><a class="anchor" id="autotoc_md2129"></a>
+<h4><a class="anchor" id="autotoc_md2132"></a>
 Volatile vs. Persistent</h4>
 <p>The PSA API specifies two ways of storing keys: volatile and persistent. Volatile keys will be stored only in RAM, which means they will be destroyed after application termination or a device reset. Persistent keys will also be written into flash memory for later access. To destroy them they must be explicitly deleted with the <code><a class="el" href="crypto_8h.html#af503cd251eff1a0d6cd7d8e47003b92e" title="Destroy a key.">psa_destroy_key()</a></code> function.</p>
 <dl class="section note"><dt>Note</dt><dd>Persistent key storage can be optionally enabled on <code>native</code> and on the <code>nRF52840dk</code>. For this, add <code>USEMODULE += psa_persistent_storage</code> to your application makefile or <code>CONFIG_MODULE_PSA_PERSISTENT_STORAGE=y</code> to your <code>app.config.test</code> file. Example: <code>tests/sys/psa_crypto_persistent_storage</code></dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Be aware that the current implementation writes keys in plain text to flash memory. Anyone with hardware access can read them.</dd></dl>
-<h4><a class="anchor" id="autotoc_md2130"></a>
+<h4><a class="anchor" id="autotoc_md2133"></a>
 Lifetime Encoding</h4>
 <p>When creating a key, the user needs to specify a lifetime value, which actually consists of two values: persistence and location. The location defines the actual memory location of the key (e.g. whether the key will be stored in RAM, in a hardware protected memory slot or on an external device like a secure element).</p>
 <p>The persistence value defines whether the key will be stored in RAM (volatile) in flash (persistent). Some default values that exist are:</p><ul>
@@ -234,7 +234,7 @@ Lifetime Encoding</h4>
 <h1><a class="anchor" id="configuration"></a>
 Configuration</h1>
 <p>Currently there are two ways to configure PSA Crypto: Kconfig and Makefiles. An example for both can be found in <code>RIOT/examples/psa_crypto</code>.</p>
-<h2><a class="anchor" id="autotoc_md2131"></a>
+<h2><a class="anchor" id="autotoc_md2134"></a>
 Kconfig</h2>
 <p>We recommend using Kconfig and choosing your features in <code>menuconfig</code>. You can access the GUI by calling</p>
 <div class="fragment"><div class="line">TEST_KCONFIG=1 BOARD=&lt;your board&gt; make menuconfig</div>
@@ -244,7 +244,7 @@ Kconfig</h2>
 <p>In the <code>app.config.test</code> file, modules can be chosen with the following syntax: <code>CONFIG_MODULE_&lt;MODULENAME&gt;=y</code>, as shown below. </p><div class="fragment"><div class="line">CONFIG_MODULE_PSA_CRYPTO=y</div>
 <div class="line">CONFIG_MODULE_PSA_CIPHER=y</div>
 <div class="line">CONFIG_MODULE_PSA_CIPHER_AES_128_CBC=y</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md2132"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md2135"></a>
 Makefiles</h2>
 <p>If you don't want to use Kconfig, you can use the traditional way in RIOT of selecting modules in your application Makefile.</p>
 <p>Here you need to set the base module and individual modules for each operation you need. The example below also chooses a default backend depending on your board. </p><div class="fragment"><div class="line"><span class="comment">// Base module: this is required!</span></div>
@@ -283,17 +283,17 @@ hardware protected memory   </td></tr>
 Available Modules</h2>
 <p>Below are the currently available modules. No matter which operation you need, you always have to choose the base module. If you want to specify a backend other than the default, you need to select <code>psa_&lt;operation&gt;_custom_backend</code> in addition to the actual backend module.</p>
 <p>The names listed are are the version used in makefiles with the <code>USEMODULE += &lt;modulename&gt;</code> syntax. In Kconfig you don't need to know the exact names, you can simply choose the features in <code>menuconfig</code>. When using <code>app.config.test</code> files in your application directory, you need to write the names in uppercase and add the prefix <code>CONFIG_MODULE_</code> to all of them.</p>
-<h3><a class="anchor" id="autotoc_md2133"></a>
+<h3><a class="anchor" id="autotoc_md2136"></a>
 Key Storage</h3>
 <ul>
 <li>Persistent Key Storage: psa_persistent_storage</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md2134"></a>
+<h3><a class="anchor" id="autotoc_md2137"></a>
 Asymmetric Crypto</h3>
 <ul>
 <li>Base: psa_asymmetric</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md2135"></a>
+<h4><a class="anchor" id="autotoc_md2138"></a>
 NIST ECC P192</h4>
 <ul>
 <li>psa_asymmetric_ecc_p192r1</li>
@@ -301,7 +301,7 @@ NIST ECC P192</h4>
 <li>psa_asymmetric_ecc_p192r1_custom_backend</li>
 <li>psa_asymmetric_ecc_p192r1_backend_microecc</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md2136"></a>
+<h4><a class="anchor" id="autotoc_md2139"></a>
 NIST ECC P192</h4>
 <ul>
 <li>psa_asymmetric_ecc_p256r1</li>
@@ -309,7 +309,7 @@ NIST ECC P192</h4>
 <li>psa_asymmetric_ecc_p256r1_custom_backend</li>
 <li>psa_asymmetric_ecc_p256r1_backend_microecc</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md2137"></a>
+<h4><a class="anchor" id="autotoc_md2140"></a>
 Ed25519</h4>
 <ul>
 <li>psa_asymmetric_ecc_ed25519</li>
@@ -317,18 +317,18 @@ Ed25519</h4>
 <li>psa_asymmetric_ecc_ed25519_custom_backend</li>
 <li>psa_asymmetric_ecc_ed25519_backend_c25519</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md2138"></a>
+<h3><a class="anchor" id="autotoc_md2141"></a>
 Ciphers</h3>
 <ul>
 <li>Base: psa_cipher</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md2139"></a>
+<h4><a class="anchor" id="autotoc_md2142"></a>
 AES ECB</h4>
 <ul>
 <li>psa_cipher_aes_128_ecb</li>
 <li>psa_cipher_aes_128_ecb_backend_riot</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md2140"></a>
+<h4><a class="anchor" id="autotoc_md2143"></a>
 AES CBC</h4>
 <ul>
 <li>psa_cipher_aes_128_cbc</li>
@@ -342,19 +342,19 @@ AES CBC</h4>
 <li>psa_cipher_aes_256_cbc_custom_backend</li>
 <li>psa_cipher_aes_256_cbc_backend_riot</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md2141"></a>
+<h3><a class="anchor" id="autotoc_md2144"></a>
 Hashes</h3>
 <ul>
 <li>Base: psa_hash</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md2142"></a>
+<h4><a class="anchor" id="autotoc_md2145"></a>
 MD5</h4>
 <ul>
 <li>psa_hash_md5</li>
 <li>psa_hash_md5_custom_backend</li>
 <li>psa_hash_md5_backend_riot</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md2143"></a>
+<h4><a class="anchor" id="autotoc_md2146"></a>
 SHA 1</h4>
 <ul>
 <li>psa_hash_sha_1</li>
@@ -362,7 +362,7 @@ SHA 1</h4>
 <li>psa_hash_sha_1_custom_backend</li>
 <li>psa_hash_sha_1_backend_riot</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md2144"></a>
+<h4><a class="anchor" id="autotoc_md2147"></a>
 SHA 224</h4>
 <ul>
 <li>psa_hash_sha_224</li>
@@ -370,7 +370,7 @@ SHA 224</h4>
 <li>psa_hash_sha_224_custom_backend</li>
 <li>psa_hash_sha_224_backend_riot</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md2145"></a>
+<h4><a class="anchor" id="autotoc_md2148"></a>
 SHA 256</h4>
 <ul>
 <li>psa_hash_sha_256</li>
@@ -378,7 +378,7 @@ SHA 256</h4>
 <li>psa_hash_sha_256_custom_backend</li>
 <li>psa_hash_sha_256_backend_riot</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md2146"></a>
+<h4><a class="anchor" id="autotoc_md2149"></a>
 SHA 384</h4>
 <ul>
 <li>psa_hash_sha_384</li>
@@ -386,7 +386,7 @@ SHA 384</h4>
 <li>psa_hash_sha_384_custom_backend</li>
 <li>psa_hash_sha_384_backend_riot</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md2147"></a>
+<h4><a class="anchor" id="autotoc_md2150"></a>
 SHA 512</h4>
 <ul>
 <li>psa_hash_sha_512</li>
@@ -394,7 +394,7 @@ SHA 512</h4>
 <li>psa_hash_sha_512_custom_backend</li>
 <li>psa_hash_sha_512_backend_riot</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md2148"></a>
+<h4><a class="anchor" id="autotoc_md2151"></a>
 SHA 512/224</h4>
 <ul>
 <li>psa_hash_sha_512_224</li>
@@ -402,7 +402,7 @@ SHA 512/224</h4>
 <li>psa_hash_sha_512_224_custom_backend</li>
 <li>psa_hash_sha_512_224_backend_riot</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md2149"></a>
+<h4><a class="anchor" id="autotoc_md2152"></a>
 SHA 512/256</h4>
 <ul>
 <li>psa_hash_sha_512_256</li>
@@ -410,7 +410,7 @@ SHA 512/256</h4>
 <li>psa_hash_sha_512_256_custom_backend</li>
 <li>psa_hash_sha_512_256_backend_riot</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md2150"></a>
+<h4><a class="anchor" id="autotoc_md2153"></a>
 SHA 3/256</h4>
 <ul>
 <li>psa_hash_sha3_256</li>
@@ -418,7 +418,7 @@ SHA 3/256</h4>
 <li>psa_hash_sha3_256_custom_backend</li>
 <li>psa_hash_sha3_256_backend_riot</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md2151"></a>
+<h4><a class="anchor" id="autotoc_md2154"></a>
 SHA 3/384</h4>
 <ul>
 <li>psa_hash_sha3_384</li>
@@ -426,7 +426,7 @@ SHA 3/384</h4>
 <li>psa_hash_sha3_384_custom_backend</li>
 <li>psa_hash_sha3_384_backend_riot</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md2152"></a>
+<h4><a class="anchor" id="autotoc_md2155"></a>
 SHA 3/512</h4>
 <ul>
 <li>psa_hash_sha3_512</li>
@@ -434,12 +434,12 @@ SHA 3/512</h4>
 <li>psa_hash_sha3_512_custom_backend</li>
 <li>psa_hash_sha3_512_backend_riot</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md2153"></a>
+<h3><a class="anchor" id="autotoc_md2156"></a>
 MAC</h3>
 <ul>
 <li>Base: psa_mac</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md2154"></a>
+<h4><a class="anchor" id="autotoc_md2157"></a>
 HMAC SHA 256</h4>
 <ul>
 <li>psa_mac_hmac_sha_256</li>
@@ -447,13 +447,13 @@ HMAC SHA 256</h4>
 <li>psa_mac_hmac_sha_256_custom_backend</li>
 <li>psa_mac_hmac_sha_256_backend_riot</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md2155"></a>
+<h3><a class="anchor" id="autotoc_md2158"></a>
 Secure Elements</h3>
 <p>Base:</p><ul>
 <li>psa_secure_element</li>
 <li>psa_secure_element_multiple</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md2156"></a>
+<h4><a class="anchor" id="autotoc_md2159"></a>
 SE Types</h4>
 <ul>
 <li>psa_secure_element_ateccx08a</li>
@@ -478,12 +478,12 @@ Secure Elements</h1>
 </div><!-- fragment --><p>Some secure elements come with their own key management and device configurations. In this case the configuration parameters must be passed to PSA Crypto during the registration. For this, you need to define a <code><a class="el" href="unionpsa__se__config__t.html" title="Structure containing device specific configuration data.">psa_se_config_t</a></code> structure containing the configuration. PSA Crypto will use this structure to keep track of what types of keys are allowed on the device and how much storage is available. Where this structure should be placed, how it looks and what parameters are required depends on the type of your device.</p>
 <p>A good place to define that structure and the location values is a drivers <code>&lt;driver&gt;_params.h</code> file, but this may vary depending on how your device is integrated in RIOT.</p>
 <p>For detailed, device specific information, please check the device driver documentation or the example.</p>
-<h2><a class="anchor" id="autotoc_md2157"></a>
+<h2><a class="anchor" id="autotoc_md2160"></a>
 Available Devices and Drivers</h2>
 <ul>
 <li>ATECCX08A: <a class="el" href="group__pkg__cryptoauthlib.html#psa-cryptoauthlib">Microchip Cryptoauthlib as a PSA backend</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md2158"></a>
+<h2><a class="anchor" id="autotoc_md2161"></a>
 Main SE Configuration</h2>
 <p>To use SEs, the appropriate modules must be chosen in Kconfig: </p><div class="fragment"><div class="line">CONFIG_PSA_SECURE_ELEMENT=y</div>
 <div class="line">CONFIG_PSA_SECURE_ELEMENT_ATECCX08A=y        <span class="comment">// device example</span></div>
@@ -513,10 +513,10 @@ Porting Guide</h1>
 <p>An example integrating a secure element can be found in the <a class="el" href="group__pkg__cryptoauthlib.html">Cryptoauthlib Package</a>.</p>
 <h2><a class="anchor" id="porting-general"></a>
 General Information</h2>
-<h3><a class="anchor" id="autotoc_md2159"></a>
+<h3><a class="anchor" id="autotoc_md2162"></a>
 Error Values</h3>
 <p>You should always check the status of your function calls and translate your library's or driver's errors to PSA error values (please be as thorough as possible). The PSA Crypto specification describes exactly what kind of error values should be returned by which function. Please read the API documentation and comply with the instructions. We recommend writing a<code>&lt;mylibrary&gt;_to_psa_error()</code> function right in the beginning (see for example <code><a class="el" href="psa__error_8h.html#ab307f06eca19636806ea2895c9b49652" title="Convert CryptoCell CRYS errors to PSA status values.">CRYS_to_psa_error()</a></code> in <code>pkg/driver_cryptocell_310/psa_cryptocell_310/error_conversion.c</code>).</p>
-<h3><a class="anchor" id="autotoc_md2160"></a>
+<h3><a class="anchor" id="autotoc_md2163"></a>
 The Build System</h3>
 <p>As mentioned before, there are two ways of selecting build time configurations in RIOT: Kconfig and Makefiles. Kconfig dependency resolution is currently an experimental feature and will at some point replace Makefiles. Until then, our implementation needs to support both, which means we need to define features and symbols in multiple places. Luckily, the modules have the exact same names in both systems, which makes the transfer easier. The examples below show both ways.</p>
 <h3><a class="anchor" id="module-names"></a>
@@ -562,7 +562,7 @@ Adding Glue Code</h3>
 <div class="ttc" id="acrypto__types_8h_html_ac2e4d47f1300d73c2f829a6d99252d69"><div class="ttname"><a href="crypto__types_8h.html#ac2e4d47f1300d73c2f829a6d99252d69">psa_algorithm_t</a></div><div class="ttdeci">uint32_t psa_algorithm_t</div><div class="ttdoc">Encoding of a cryptographic algorithm.</div><div class="ttdef"><b>Definition</b> crypto_types.h:48</div></div>
 <div class="ttc" id="agroup__sys__psa__crypto__ecc_html_ga999306493c27f60e83d71e2cf567b5b8"><div class="ttname"><a href="group__sys__psa__crypto__ecc.html#ga999306493c27f60e83d71e2cf567b5b8">psa_ecc_p256r1_sign_hash</a></div><div class="ttdeci">psa_status_t psa_ecc_p256r1_sign_hash(const psa_key_attributes_t *attributes, psa_algorithm_t alg, const uint8_t *key_buffer, size_t key_buffer_size, const uint8_t *hash, size_t hash_length, uint8_t *signature, size_t signature_size, size_t *signature_length)</div><div class="ttdoc">Low level wrapper function to call a driver for an ECC hash signature with a SECP 256 R1 key.</div></div>
 <div class="ttc" id="apsa__crypto_2psa_2error_8h_html_a4cc859e2c66ca381c7418db3527a65e1"><div class="ttname"><a href="psa__crypto_2psa_2error_8h.html#a4cc859e2c66ca381c7418db3527a65e1">PSA_SUCCESS</a></div><div class="ttdeci">#define PSA_SUCCESS</div><div class="ttdoc">Status code to indicate general success.</div><div class="ttdef"><b>Definition</b> error.h:47</div></div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md2161"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md2164"></a>
 Operation Contexts</h3>
 <p>Some cryptographic operations use driver specific context to store the operation state in between function calls. These must be defined somewhere. Examples can be found in <code><a class="el" href="psa__periph__hashes__ctx_8h.html" title="CryptoCell 310 driver specific hash contexts.">pkg/driver_cryptocell_310/include/psa_periph_hashes_ctx.h</a></code> and <code>sys/include/hashes/psa/riot_hashes.h</code>.</p>
 <p>When defining the contexts for a hardware driver, all you need to do is add a file called <code>psa_periph_&lt;algorithm&gt;_ctx.h</code> to your driver's include folder and define the available types (see supported <a class="el" href="#supported-types">types</a> below). Those files are automatically included in <code>crypto_includes.h</code> and it is important that they always have the same name for each algorithm.</p>
@@ -587,7 +587,7 @@ Hashes</h4>
 <li><code>psa_hashes_sha512_224_ctx_t</code></li>
 <li><code>psa_hashes_sha512_256_ctx_t</code></li>
 </ul>
-<h4><a class="anchor" id="autotoc_md2162"></a>
+<h4><a class="anchor" id="autotoc_md2165"></a>
 Ciphers</h4>
 <ul>
 <li><code>psa_cipher_aes_128_ctx_t</code></li>
@@ -595,7 +595,7 @@ Ciphers</h4>
 <li><code>psa_cipher_aes_256_ctx_t</code></li>
 </ul>
 <p>Secure Elements need their own contexts. For this, see <a class="el" href="#porting-secure-elements">Case Example – Secure Elements</a>.</p>
-<h2><a class="anchor" id="autotoc_md2163"></a>
+<h2><a class="anchor" id="autotoc_md2166"></a>
 Adding a Backend</h2>
 <p>The integration of hardware drivers, software libraries and secure element drivers differs a bit. Below we describe the necessary steps for each of them.</p>
 <h3><a class="anchor" id="porting-software"></a>
@@ -604,7 +604,7 @@ Case Example – A Software Library</h3>
 <p>Let's say we have an imaginary software library called <code>FancyCrypt</code> and want to use it as a backend of PSA. We've already added it to RIOT as a third party package in <code>pkg/fancycrypt</code>. Our library provides hashes and elliptic curve operations and to make it accessible to PSA Crypto we need to write wrappers for our API calls.</p>
 <p>First we create a folder called <code>psa_fancycrypt</code> in the package directory. Inside we create a file with the name of each operation you want to integrate, e.g. <code>p256.c</code> and <code>hashes_sha_224.c</code> (when adding operations, remember that the path of the files will also be the <a class="el" href="#module-names">module name</a>, so please comply with the current naming scheme).</p>
 <p>In these files we need to implement the methods that are called by PSA as described <a class="el" href="#glue-code">above</a>.</p>
-<h4><a class="anchor" id="autotoc_md2164"></a>
+<h4><a class="anchor" id="autotoc_md2167"></a>
 Adding Makefiles</h4>
 <p>We add a Makefile to the <code>psa_fancycrypt</code> folder with the following content: </p><div class="fragment"><div class="line">BASE_MODULE := psa_fancycrypt</div>
 <div class="line">SUBMODULES := 1</div>
@@ -624,7 +624,7 @@ Adding Makefiles</h4>
 <div class="line">ifneq (,$(filter psa_fancycrypt_hashes_sha1,$(USEMODULE)))</div>
 <div class="line">  USEMODULE += psa_fancycrypt_hashes_common</div>
 <div class="line">endif</div>
-</div><!-- fragment --><h4><a class="anchor" id="autotoc_md2165"></a>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md2168"></a>
 Adding a Kconfig file</h4>
 <p>We add a file called <code>Kconfig</code> to the <code>psa_fancycrypt</code> folder. Here we declare the modules for Kconfig like so: </p><div class="fragment"><div class="line">config MODULE_PSA_FANCYCRYPT_HASHES_SHA_256</div>
 <div class="line">    <span class="keywordtype">bool</span></div>
@@ -647,7 +647,7 @@ Adding a Kconfig file</h4>
 <div class="line">    <a class="code hl_function" href="group__posix__select.html#ga7ffa34f8c9a12e7fd43f5ef65bf889fa">select</a> MODULE_PSA_FANCYCRYPT_ERROR_CONVERSION</div>
 </div><!-- fragment --><p>In <code>pkg/fancycrypt/Kconfig</code> we need to add the line </p><div class="fragment"><div class="line">rsource <span class="stringliteral">&quot;psa_fancycrypt/Kconfig&quot;</span></div>
 </div><!-- fragment --><p> at the bottom.</p>
-<h4><a class="anchor" id="autotoc_md2166"></a>
+<h4><a class="anchor" id="autotoc_md2169"></a>
 Telling PSA Crypto about it</h4>
 <p>To be able to choose <code>fancycrypt</code> as a PSA backend, we need to add the option to the Kconfig and Makefiles of the PSA Crypto Module.</p>
 <p>In <code>sys/psa_crypto/</code> we need to modify <code>Kconfig.asymmetric</code>, <code>sys/psa_crypto/Kconfig.hashes</code>, <code>Makefile.dep</code> and <code>Makefile.include</code>.</p>
@@ -672,7 +672,7 @@ Case Example – A Hardware Driver</h3>
 <p>The first steps of porting a hardware driver are the same as for the software library. Only we skip the last part where we add the modules to the PSA Crypto Kconfig and Makefiles and do something else instead.</p>
 <p>Hardware drivers are treated a little differently, mostly because they are tied to a specific platform and users can not just choose a different driver for their accelerator. Therefore we just want PSA Crypto to automatically use this driver whenever it runs on the corresponding platform, which means that we have to add some additional options and features, not only to the driver but also to the CPU it belongs to. A good example for this is the <a class="el" href="group__pkg__driver__cryptocell__310.html">CryptoCell 310 driver</a> for the accelerator on the <a class="el" href="group__cpu__nrf52.html">nRF52840 CPU</a>.</p>
 <p>Now, let's say we have a CPU called <code>myCPU</code> with an on-chip accelerator called <code>speedycrypt</code>. Let's say that <code>speedycrypt</code> provides hashes and ECC curves. The vendor provides a driver, which we already have included in RIOT as a package. Also we've followed the steps in the <a class="el" href="#glue-code">glue code section</a> and provide a folder called <code>pkg/driver_speedycrypt/psa_speedycrypt</code> with the required wrapper files. We have also added the module names in a Kconfig file and in the Makefiles.</p>
-<h4><a class="anchor" id="autotoc_md2167"></a>
+<h4><a class="anchor" id="autotoc_md2170"></a>
 Telling PSA Crypto about it</h4>
 <p>This is where we diverge from the software library example. If you take a look at the available backends in PSA, you'll notice one with the postfix <code>*_BACKEND_PERIPH</code> for each available algorithm. <b>Periph</b> here is short for <em>peripheral hardware accelerator</em>. The <code>*_BACKEND_PERIPH</code> modules depend on the presence of such an accelerator. They are a generic module for all crypto hardware accelerators and will automatically resolve to the driver that is associated with the available accelerator.</p>
 <p>Before we're able to use it we need to tell RIOT that those hardware features exist for our <code>myCPU</code> (see <code>cpu/nrf52/Kconfig</code> and <code>cpu/nrf52/Makefile.features</code> as an example). In <code>cpu/myCPU</code> we add all the provided features as shown below.</p>
@@ -719,11 +719,11 @@ Case Example – A Secure Element Driver</h3>
 <p>PSA Crypto has an integrated SE driver registry, which stores all registered drivers in a list. When an application calls a cryptographic operation that's supposed to be performed by a secure element, the registry will find the correct driver in the list and PSA will invoke the operation. Each driver is stored with a context that contains persistent as well as transient driver data. Transient driver data can be anything the driver needs to function. Persistent data is supposed to be used to keep track of how many keys are stored on the device and if there is still some free space available.</p>
 <dl class="section note"><dt>Note</dt><dd>Currently PSA does not support persistent storage, so the persistent driver data is not really persistent, yet. Once persistent storage is implemented, this data will be stored, so the implementation can find already existing keys again after a reboot.</dd></dl>
 <p>For this example we integrate an imaginary SE called <code>superSE</code>, which comes with a driver called <code>superSE_lib</code>. Again, we assume that we have already added the driver as a package in RIOT and it can be found at <code>pkg/superse_lib</code>.</p>
-<h4><a class="anchor" id="autotoc_md2168"></a>
+<h4><a class="anchor" id="autotoc_md2171"></a>
 Adding the Glue Code</h4>
 <p>Secure element drivers need to implement a different API than the other backends. It is defined <a class="el" href="group__sys__psa__crypto__se__driver.html">here</a>. In our package folder we now create a new folder called <code>psa_superse_driver</code> and add a source file called <code>psa_superse_lib_driver.c</code>. Here we now implement glue code for all the cryptographic operations our SE supports.</p>
 <p>You will notice that the SE interface also provides some key management functions. This is because keys are stored on the device and PSA can not access the memory and key data itself, but needs to tell the driver to do it.</p>
-<h3><a class="anchor" id="autotoc_md2169"></a>
+<h3><a class="anchor" id="autotoc_md2172"></a>
 Operation Contexts</h3>
 <p>Some operations need driver specific contexts. For secure elements these are wrapped in types defined in <code><a class="el" href="crypto__contexts_8h.html" title="Context definitions for PSA Crypto.">crypto_contexts.h</a></code> (currently only <code>psa_se_cipher_context_t</code> is supported). In this header file add operation contexts that belong to your driver to the available SE context unions as shown in the example below:</p>
 <div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
@@ -737,14 +737,14 @@ Operation Contexts</h3>
 <div class="line"><span class="preprocessor">    #endif</span></div>
 <div class="line">    } drv_ctx;</div>
 <div class="line">} psa_se_cipher_context_t;</div>
-</div><!-- fragment --><h4><a class="anchor" id="autotoc_md2170"></a>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md2173"></a>
 Allocation</h4>
 <p>The first thing PSA will do, when an application creates a key on an SE, is ask the driver to find a free key slot on the device. This is what the <code>allocate</code> function is for. How exactly the slot is allocated, depends on the driver. It may be possible to query that information directly from the device. If that is not possible, we can use the persistent data stored in the driver context. An example for this can be found in <code>pkg/cryptoauthlib/psa_atca_driver/psa_atca_se_driver.c</code>. This example requires the user to provide information about the configurations for each key slot, which is then stored in the persistent driver data and used for key management (for a better description read <a class="el" href="group__pkg__cryptoauthlib.html#psa-cryptoauthlib">Using Cryptoauthlib as a backend for PSA Crypto</a>). At this point you can decide what the best approach for your device is.</p>
 <p>The <code>allocate</code> function should then return some reference to the slot it has allocated for the key (possibly a pointer or a slot number). Next PSA Crypto will invoke the <code>import</code> or <code>generate</code> function to store a key.</p>
-<h4><a class="anchor" id="autotoc_md2171"></a>
+<h4><a class="anchor" id="autotoc_md2174"></a>
 Using Persistent Data</h4>
 <p>When you want to use persistent data to keep track of keys, you should utilize the <code><a class="el" href="unionpsa__se__config__t.html" title="Structure containing device specific configuration data.">psa_se_config_t</a></code> structure, which is declared in <code><a class="el" href="crypto__se__config_8h.html" title="Define structures für SE slot configurations.">crypto_se_config.h</a></code>. You can define a structure that can hold your device configuration and make sure it is available then your SE is used.</p>
-<h4><a class="anchor" id="autotoc_md2172"></a>
+<h4><a class="anchor" id="autotoc_md2175"></a>
 Making the Methods Available</h4>
 <p>At the bottom of the wrapper code, define structures with pointers to the available methods. For example if you have implemented a <code>superse_allocate</code> and <code>superse_generate_key</code> function, you need to add a <code><a class="el" href="structpsa__drv__se__key__management__t.html" title="A struct containing all of the function pointers needed to for secure element key management.">psa_drv_se_key_management_t</a></code> structure as shown below. Fill the unimplemented methods with <code>NULL</code> pointers. The last structure should be a <code><a class="el" href="structpsa__drv__se__t.html" title="A structure containing pointers to all the entry points of a secure element driver.">psa_drv_se_t</a></code> struct containing pointers to the other structures. That one will be stored during driver registration to get access to all the implemented functions.</p>
 <div class="fragment"><div class="line"><span class="keyword">static</span> <a class="code hl_struct" href="structpsa__drv__se__key__management__t.html">psa_drv_se_key_management_t</a> superse_key_management = {</div>
@@ -772,10 +772,10 @@ Making the Methods Available</h4>
 <div class="ttc" id="astructpsa__drv__se__key__management__t_html"><div class="ttname"><a href="structpsa__drv__se__key__management__t.html">psa_drv_se_key_management_t</a></div><div class="ttdoc">A struct containing all of the function pointers needed to for secure element key management.</div><div class="ttdef"><b>Definition</b> psa_crypto_se_driver.h:1085</div></div>
 <div class="ttc" id="astructpsa__drv__se__t_html"><div class="ttname"><a href="structpsa__drv__se__t.html">psa_drv_se_t</a></div><div class="ttdoc">A structure containing pointers to all the entry points of a secure element driver.</div><div class="ttdef"><b>Definition</b> psa_crypto_se_driver.h:1262</div></div>
 </div><!-- fragment --><p>You should do this for all available functions. The structures for the functions are declared in <code><a class="el" href="psa__crypto__se__driver_8h.html" title="PSA external cryptoprocessor driver module.">sys/psa_crypto/include/psa_crypto_se_driver.h</a></code>.</p>
-<h4><a class="anchor" id="autotoc_md2173"></a>
+<h4><a class="anchor" id="autotoc_md2176"></a>
 Driver Registration</h4>
 <p>At start-up all secure element drivers need to be registered with the PSA SE management module. This happens by calling <code><a class="el" href="group__psa__crypto__se__mgmt.html#ga8c311a8c2fbf766df233237569b6cc34" title="Register a secure element driver with the SE management.">psa_register_secure_element()</a></code> during the automatic driver initialization in RIOT. When you added support for our device to RIOT, you should have implemented an <code>auto_init_&lt;device&gt;</code> function, which initializes the connected devices. In this function, after initializing a device, you should call <code><a class="el" href="group__psa__crypto__se__mgmt.html#ga8c311a8c2fbf766df233237569b6cc34" title="Register a secure element driver with the SE management.">psa_register_secure_element()</a></code> and pass the device's location value, and pointers to the <code><a class="el" href="structpsa__drv__se__t.html" title="A structure containing pointers to all the entry points of a secure element driver.">psa_drv_se_t</a></code> structure, the persistent data and some device specific context. An example implementation of this can be seen in <code>sys/auto_init/security/auto_init_atca.c</code>.</p>
-<h4><a class="anchor" id="autotoc_md2174"></a>
+<h4><a class="anchor" id="autotoc_md2177"></a>
 Telling PSA Crypto about it</h4>
 <p>To be able to choose our <code>superSE</code> during configuration, we need to define the corresponding modules in the Kconfig files and Makefiles.</p>
 <p>To <code>pkg/super_se_lib/Kconfig</code> we add something like </p><div class="fragment"><div class="line">config MODULE_PSA_SUPERSE_DRIVER</div>
@@ -793,7 +793,7 @@ Telling PSA Crypto about it</h4>
 </div><!-- fragment --><p> This makes our driver selectable whenever an application configuration selects the PSA secure element module.</p>
 <p>As described in the <a class="el" href="#configuration-keys">Configuration Section</a>, references to keys on secure elements are stored by PSA in a different type of key slot than other keys. The slot for protected keys usually only contains a slot number or address and not the actual key, which requires a lot less memory space.</p>
 <p><b>BUT:</b> If your secure element supports asymmetric cryptography and exports a public key part during key generation, that key part must be stored somewhere. So when you choose an asymmetric operation, the protected key slots will have the space to store a public key.</p>
-<h4><a class="anchor" id="autotoc_md2175"></a>
+<h4><a class="anchor" id="autotoc_md2178"></a>
 Dependencies</h4>
 <p>Secure Element operations also depend on the PSA modules. E.g. when you want to use an ECC operation, you need to make sure that you also build the asymmetric PSA functions.</p>
 <p>For this we need to add the following to the <code>superSE</code> menu: </p><div class="fragment"><div class="line">config MODULE_PSA_SECURE_ELEMENT_SUPERSE_ECC_P256</div>
@@ -890,7 +890,7 @@ Files</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 10:09:06 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

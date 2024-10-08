@@ -153,10 +153,10 @@ $(function(){initNavTree('group__net__gnrc__ipv6.html',''); initResizable(true);
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>GNRC's IPv6 implementation </p>
 <p>This module is for usage with the <a class="el" href="group__net__gnrc__netapi.html">GNRC communication interface</a></p>
-<h1><a class="anchor" id="autotoc_md2021"></a>
+<h1><a class="anchor" id="autotoc_md2024"></a>
 Supported NETAPI commands</h1>
 <p>This module handles the following <a class="el" href="group__net__gnrc__netapi.html">GNRC communication interface</a> message types:</p>
-<h2><a class="anchor" id="autotoc_md2022"></a>
+<h2><a class="anchor" id="autotoc_md2025"></a>
 <code>GNRC_NETAPI_MSG_TYPE_RCV</code></h2>
 <p><a class="el" href="group__net__gnrc__netapi.html#ga57b7e8cf32c12beecc9b84ca2cc073b5">GNRC_NETAPI_MSG_TYPE_RCV</a> expects a <a class="el" href="group__net__gnrc__pkt.html">Packet</a> (referred to as "packet" in the following) in receive order (payload first, headers ordered down the stack). It must at least contain a link-layer payload starting with a valid <a class="el" href="group__net__ipv6__hdr.html">IPv6 header</a>. If it contains a <a class="el" href="group__net__gnrc__netif__hdr.html">Generic network interface header</a> this header will be taken into account.</p>
 <p>If the link-layer payload is not an IPv6 packet (starting with a 0x6 half-byte) or the module is not able to parse it correctly it will be dropped. If the packet can't be forwarded (either to another node or an upper layer) it will be dropped. Otherwise, there are two scenarios of success:</p>
@@ -182,7 +182,7 @@ Supported NETAPI commands</h1>
    the (if necessary prepended) gnrc_netif_hdr_t::if_pid has the appropriate
    link-layer destination addresses to the next hop towards the destination.
 
-@subsection autotoc_md2023 &lt;tt&gt;GNRC_NETAPI_MSG_TYPE_SND&lt;/tt&gt;
+@subsection autotoc_md2026 &lt;tt&gt;GNRC_NETAPI_MSG_TYPE_SND&lt;/tt&gt;
 
 @ref GNRC_NETAPI_MSG_TYPE_SND expects a @ref net_gnrc_pkt (referred to as
 "packet" in the following) in send order (headers ordered up the stack,
@@ -199,10 +199,10 @@ from a network interface. It will then be handled as a received packet
 </li>
 </ol>
 <p>Otherwise, if a route (or neighbor cache entry) to the IPv6 destination address exists, the IPv6 header will be filled for fields that were not set by upper layers and handed over to the link-layer (L2) with the L2 destination address set to the L2 address associated to that IPv6 destination address.</p>
-<h2><a class="anchor" id="autotoc_md2024"></a>
+<h2><a class="anchor" id="autotoc_md2027"></a>
 <code>GNRC_NETAPI_MSG_TYPE_SET</code></h2>
 <p><code>GNRC_NETAPI_MSG_TYPE_SET</code> is not supported.</p>
-<h2><a class="anchor" id="autotoc_md2025"></a>
+<h2><a class="anchor" id="autotoc_md2028"></a>
 <code>GNRC_NETAPI_MSG_TYPE_GET</code></h2>
 <p><code>GNRC_NETAPI_MSG_TYPE_GET</code> is not supported. </p>
 <table class="memberdecls">
@@ -397,7 +397,7 @@ a negative errno on error. </dd>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 10:09:06 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

@@ -146,35 +146,35 @@ $(function(){initNavTree('group__pkg__wamr.html',''); initResizable(true); });
 </p>
 <p>Provides WebAssembly support for RIOT </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://github.com/bytecodealliance/wasm-micro-runtime">https://github.com/bytecodealliance/wasm-micro-runtime</a></dd></dl>
-<h1><a class="anchor" id="autotoc_md1949"></a>
+<h1><a class="anchor" id="autotoc_md1952"></a>
 WebAssembly Micro Runtime Riot Package</h1>
 <p>"WebAssembly Micro Runtime (WAMR) is a standalone WebAssembly (WASM)
 runtime with a small footprint."</p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://github.com/bytecodealliance/wasm-micro-runtime">https://github.com/bytecodealliance/wasm-micro-runtime</a></dd></dl>
-<h2><a class="anchor" id="autotoc_md1950"></a>
+<h2><a class="anchor" id="autotoc_md1953"></a>
 Status</h2>
 <p>WAMR integration into RIOT should be considered experimental. Changes that had to be done in WAMR are send to and integrated into upstream. WAMR provides support for numerous architectures: "X86_32/64", "AARCH64", "ARM", "THUMB", "XTENSA" and "RISCV" this Package will build for native (x86,arm, aarch(using arm)), cortex-m, esp32 and riscv</p>
 <p>support for other architectures might provideable using the generic <code>core/iwasm/common/arch/invokeNative_general.c</code> this is not tested</p>
 <p>tested : Cortex-M - "THUMB", native - "X86_32"</p>
-<h2><a class="anchor" id="autotoc_md1951"></a>
+<h2><a class="anchor" id="autotoc_md1954"></a>
 Memory usage</h2>
 <p>WebAssembly defines its pages to be 64kB -&gt; WAMR needs a good amount of RAM to run.</p>
 <p>WASM files can be linked to use just a part of the first page. In this case the VM can be run with less ram. (see <code>wasm_sample/Makefile</code> in <code>examples/wasm</code> for linker options to help with this) While running the example configured with 8KiB Heap and 8KiB Stack, ~24KiB of System Heap are used. The thread, the WAMR interpreter (iwasm) is executed in, should be configured to have more than 3KiB of Stack, this also depend on the architecture and the native functions that are called.</p>
-<h2><a class="anchor" id="autotoc_md1952"></a>
+<h2><a class="anchor" id="autotoc_md1955"></a>
 building wasm-bytecode</h2>
 <p><code>clang</code> and <code>wasm-ld</code> of the <em>same version</em> must be used The Makefile in <code>examples/wasm/wasm_sample/Makefile</code> will try to guess a matching clang, wasm-ld pair, if they do not match linking will fail.</p>
-<h2><a class="anchor" id="autotoc_md1953"></a>
+<h2><a class="anchor" id="autotoc_md1956"></a>
 Configuration</h2>
 <p>WAMR compilation is configured using a CMAKE config file (see <code>pkg/wamr/config.cmake</code>) Add <code>export WAMR_CONFIG := $(abspath config.cmake)</code> to Makefile to apply a specific config. Most options (e.g. WASI) are not supported in RIOT since they have OS requirements, that are no yet fulfilled.</p>
-<h2><a class="anchor" id="autotoc_md1954"></a>
+<h2><a class="anchor" id="autotoc_md1957"></a>
 Usage Details</h2>
 <p>WAMR should be used using the functions provided by the WAMR project their API-headers they can be found in <code>&lt;RIOT&gt;/build/pkg/wamr/core/iwasm/include/</code>. pkg/wamr adds no RIOT specific API to that. For simple usages like in the example <code>iwasm.c</code> in <code>examples/wasm</code> might be useful and if used should be copied and adapt to the application need.</p>
 <p>While WebAssembly does not define a set native functions. WAMR provides its own builtin-libc. Other native functions may be provided by registering native_api to WAMR. </p><dl class="section see"><dt>See also</dt><dd><a href="https://github.com/bytecodealliance/wasm-micro-runtime/blob/main/doc/export_native_api.md">https://github.com/bytecodealliance/wasm-micro-runtime/blob/main/doc/export_native_api.md</a></dd></dl>
-<h3><a class="anchor" id="autotoc_md1955"></a>
+<h3><a class="anchor" id="autotoc_md1958"></a>
 Why is there no RIOT specific API?</h3>
 <p>many use cases more complex than: take that Bytecode and run its main would require a application specific usage pattern of the WAMR-API (memory setup, function search, parameter, module-loading/unloading) the WAMR-API does this well and they provide a second wasm-c-api compatible API.</p>
 <p><code>iwasm.c</code> might therefore be a good starting point (copy) but it is no good generic interface to WAMR. Making it good and generic would lead to the API provided by WAMR.</p>
-<h2><a class="anchor" id="autotoc_md1956"></a>
+<h2><a class="anchor" id="autotoc_md1959"></a>
 Upstream Documentation</h2>
 <dl class="section see"><dt>See also</dt><dd><a href="https://github.com/bytecodealliance/wasm-micro-runtime/blob/main/README.md">https://github.com/bytecodealliance/wasm-micro-runtime/blob/main/README.md</a> </dd>
 <dd>
@@ -192,7 +192,7 @@ Upstream Documentation</h2>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 10:09:07 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

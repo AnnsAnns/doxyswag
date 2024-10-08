@@ -145,16 +145,16 @@ $(function(){initNavTree('group__pkg__micro__ecc.html',''); initResizable(true);
 <p>Micro-ECC for RIOT  
 </p>
 <p>Micro-ECC for RIOT </p>
-<h1><a class="anchor" id="autotoc_md1825"></a>
+<h1><a class="anchor" id="autotoc_md1828"></a>
 Micro-ECC for RIOT</h1>
 <p>This port of Micro-ECC to RIOT is based on the Micro-ECC <a href="https://github.com/kmackay/micro-ecc">upstream</a> and adds <code>hwrng_read</code> (provided by RIOT) as the default RNG function if it is available on the target platform. This port also fixes a minor issue with unused variables in the upstream code.</p>
-<h1><a class="anchor" id="autotoc_md1826"></a>
+<h1><a class="anchor" id="autotoc_md1829"></a>
 Usage</h1>
-<h2><a class="anchor" id="autotoc_md1827"></a>
+<h2><a class="anchor" id="autotoc_md1830"></a>
 Build</h2>
 <p>Add </p><div class="fragment"><div class="line">USEPKG += micro-ecc</div>
 </div><!-- fragment --><p> to your Makefile.</p>
-<h2><a class="anchor" id="autotoc_md1828"></a>
+<h2><a class="anchor" id="autotoc_md1831"></a>
 Choosing the right API</h2>
 <p>Before using the Micro-ECC library, you need to check the <code>Makefile.features</code> of your target board to see if <code>periph_hwrng</code> is provided.</p>
 <p>If it is provided, you may safely use <code>uECC_make_key</code> to generate ECDSA key pairs and call <code>uECC_sign</code>/<code>uECC_verify</code> to sign/verify the ECDSA signatures.</p>
@@ -169,7 +169,7 @@ Choosing the right API</h2>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 16:54:10 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 10:09:06 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>

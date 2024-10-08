@@ -170,7 +170,7 @@ $(function(){initNavTree('group__drivers__apds99xx.html',''); initResizable(true
  APDS9960:     USEMODULE=apds9960
 </pre></dd></dl>
 <p>This driver provides <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> capabilities.</p>
-<h1><a class="anchor" id="autotoc_md1617"></a>
+<h1><a class="anchor" id="autotoc_md1620"></a>
 Measurement Cycle</h1>
 <p>APDS99XX sensor <b>measurement cycles</b> consists of the following <b>three steps</b> in the given order:</p>
 <ul>
@@ -251,7 +251,7 @@ APDS99XX_CNTS_P_STEP   </th><th class="markdownTableHeadNone">t_als_int<br  />
 </ul>
 <p>The overall measurement cycle time is given by: </p><pre class="fragment">t_cycle = t_prx + t_wait + t_als_int
 </pre><p>For a given ALS integration time and a given proximity sensing time, the waiting time can be used to tune the overall measurement cycle time.</p>
-<h1><a class="anchor" id="autotoc_md1618"></a>
+<h1><a class="anchor" id="autotoc_md1621"></a>
 Interrupts</h1>
 <p>With the <code>apds99xx_full</code> driver, interrupts can be used either to fetch ALS and proximity data or to detect when these data exceed defined thresholds.</p>
 <p>To use interrupts, the application must call the <a class="el" href="#ga49cf8d6e99d38576697d504ad4b37923" title="Configure the interrupts of the sensor.">apds99xx_int_config</a> function to specify an <a class="el" href="structapds99xx__int__config__t.html" title="Interrupt configuration.">apds99xx_int_config_t</a> interrupt configuration and an ISR with an optional argument that is invoked when an interrupt is raised. For details about configuring and enabling the interrupts, see <a class="el" href="structapds99xx__int__config__t.html" title="Interrupt configuration.">apds99xx_int_config_t</a>.</p>
@@ -259,7 +259,7 @@ Interrupts</h1>
 <p>While an interrupt is being serviced, the application can use the <a class="el" href="#ga280bcc8343239cd8712f57b1f578afbb" title="Get the source of an interrupt.">apds99xx_int_source</a> function to query the type of interrupts triggered by the sensor. In addition, the function resets the interrupt signal.</p>
 <dl class="section note"><dt>Note</dt><dd>Since the interrupt signal is only reset by the function <a class="el" href="#ga280bcc8343239cd8712f57b1f578afbb" title="Get the source of an interrupt.">apds99xx_int_source</a>, this function <a class="el" href="#ga280bcc8343239cd8712f57b1f578afbb" title="Get the source of an interrupt.">apds99xx_int_source</a> must be executed by application, even if the type of the triggered interrupt is not of interest.</dd></dl>
 <p>For using interrupts, the GPIO to which the sensor's <b>INT</b> output pin is connected has to be defined by the application in configuration parameters. The GPIO is initialized by the driver as soon as the interrupt configuration with the function # apds99xx_int_config is specified.</p>
-<h1><a class="anchor" id="autotoc_md1619"></a>
+<h1><a class="anchor" id="autotoc_md1622"></a>
 Illuminance in Lux and RGB count values</h1>
 <p>For all sensors, the clear channel and the RGB channels provide only count values. APDS9900, APDS9901, and APDS9930 have an IR photodiode in addition to the clear channel photodiode, which can be used to determine the illuminance in Lux with an algorithm described in their datasheets.</p>
 <p>Unfortunately, APDS9950 and APDS9960 do not have such an additional IR photodiode, and there is no document which describes an approach to calculate the illuminance from the RGB channels. Therefore, it is not possible to determine the illuminance for these sensors.</p>
@@ -956,7 +956,7 @@ Functions</h2></td></tr>
 <div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 2 2024 16:54:09 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+    <li class="footer">Generated on Tue Oct 8 2024 10:09:05 for RIOT OS by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
 </div>
