@@ -1,0 +1,55 @@
+<map id="sys/include/vfs.h" name="sys/include/vfs.h">
+<area shape="rect" id="Node000001" title="VFS layer API declarations." alt="" coords="543,5,673,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="120,384,190,411"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="543,27,314,46,198,62,151,72,116,84,75,99,40,113,27,122,17,134,10,149,8,169,8,247,11,295,18,313,33,334,49,349,67,362,106,380,104,385,64,366,45,353,29,337,14,316,6,296,3,248,3,169,5,148,12,131,23,118,37,108,73,94,114,78,150,67,197,57,313,41,543,21"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="526,81,610,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="603,35,585,69,580,66,599,32"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="677,157,772,184"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="619,32,676,107,705,143,701,146,671,110,615,35"/>
+<area shape="rect" id="Node000005" href="$statvfs_8h.html" title="POSIX compatible sys/statvfs.h definitions." alt="" coords="685,81,790,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="633,31,703,71,700,75,630,36"/>
+<area shape="rect" id="Node000006" href="$sched_8h.html" title="Scheduler API definition." alt="" coords="379,81,451,109"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="575,36,464,78,462,73,573,31"/>
+<area shape="rect" id="Node000016" href="$clist_8h.html" title="Circular linked list." alt="" coords="567,157,628,184"/>
+<area shape="poly" id="edge25_Node000001_Node000016" title=" " alt="" coords="573,36,541,55,527,67,516,82,513,100,521,117,537,133,557,147,554,151,533,137,516,120,507,101,511,80,523,64,538,50,570,31"/>
+<area shape="rect" id="Node000019" href="$iolist_8h.html" title="iolist scatter / gather IO" alt="" coords="814,81,880,109"/>
+<area shape="poly" id="edge26_Node000001_Node000019" title=" " alt="" coords="652,31,800,76,799,82,650,36"/>
+<area shape="rect" id="Node000020" href="$core_2lib_2include_2macros_2utils_8h.html" title="Various helper macros." alt="" coords="904,81,1017,109"/>
+<area shape="poly" id="edge27_Node000001_Node000020" title=" " alt="" coords="672,31,889,76,888,81,671,36"/>
+<area shape="rect" id="Node000021" title=" " alt="" coords="1041,81,1101,109"/>
+<area shape="poly" id="edge28_Node000001_Node000021" title=" " alt="" coords="674,24,831,44,1026,78,1026,83,830,49,673,29"/>
+<area shape="rect" id="Node000022" href="$xfa_8h.html" title="Cross File Arrays." alt="" coords="126,81,181,109"/>
+<area shape="poly" id="edge29_Node000001_Node000022" title=" " alt="" coords="543,34,197,89,196,84,542,28"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="738,110,732,142,727,141,733,109"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="493,308,566,336"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="447,107,479,126,506,155,522,190,531,227,534,292,529,292,526,227,517,191,502,158,476,131,445,111"/>
+<area shape="rect" id="Node000008" href="$inttypes_8h.html" title="Adds include for missing inttype definitions." alt="" coords="110,157,197,184"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="380,109,212,156,211,150,378,104"/>
+<area shape="rect" id="Node000009" href="$kernel__defines_8h.html" title="Common macros and compiler attributes/pragmas configuration." alt="" coords="364,157,492,184"/>
+<area shape="poly" id="edge9_Node000006_Node000009" title=" " alt="" coords="420,109,426,141,421,142,415,110"/>
+<area shape="rect" id="Node000015" href="$native__sched_8h.html" title="Add definitions required on the native board." alt="" coords="221,157,340,184"/>
+<area shape="poly" id="edge20_Node000006_Node000015" title=" " alt="" coords="392,112,318,152,316,147,390,107"/>
+<area shape="poly" id="edge21_Node000006_Node000016" title=" " alt="" coords="449,107,554,149,552,154,447,112"/>
+<area shape="rect" id="Node000010" href="$modules_8h.html" title="Common macros and compiler attributes/pragmas configuration." alt="" coords="402,232,492,260"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="434,184,442,216,437,218,429,186"/>
+<area shape="rect" id="Node000011" href="$riot__version_8h.html" title="Common macros and compiler attributes/pragmas configuration." alt="" coords="192,308,302,336"/>
+<area shape="poly" id="edge11_Node000009_Node000011" title=" " alt="" coords="365,185,316,203,294,217,274,234,258,262,251,293,246,292,253,260,270,231,290,213,314,199,363,180"/>
+<area shape="rect" id="Node000012" href="$compiler__hints_8h.html" title="Common macros and compiler attributes/pragmas configuration." alt="" coords="62,232,192,260"/>
+<area shape="poly" id="edge13_Node000009_Node000012" title=" " alt="" coords="375,188,196,231,195,226,373,182"/>
+<area shape="rect" id="Node000014" href="$container_8h.html" title="Common macros and compiler attributes/pragmas configuration." alt="" coords="284,232,378,260"/>
+<area shape="poly" id="edge17_Node000009_Node000014" title=" " alt="" coords="412,187,362,225,358,221,409,183"/>
+<area shape="poly" id="edge12_Node000011_Node000002" title=" " alt="" coords="232,338,184,376,181,372,229,334"/>
+<area shape="poly" id="edge16_Node000012_Node000002" title=" " alt="" coords="132,260,152,368,147,369,127,261"/>
+<area shape="rect" id="Node000013" href="$assert_8h.html" title="POSIX.1&#45;2008 compliant version of the assert macro." alt="" coords="44,308,117,336"/>
+<area shape="poly" id="edge14_Node000012_Node000013" title=" " alt="" coords="121,262,99,296,94,294,116,259"/>
+<area shape="poly" id="edge15_Node000013_Node000002" title=" " alt="" coords="95,334,133,371,129,374,92,338"/>
+<area shape="poly" id="edge19_Node000014_Node000002" title=" " alt="" coords="335,261,333,298,327,319,316,337,292,359,264,374,206,392,205,387,262,370,289,354,311,334,322,316,327,297,329,260"/>
+<area shape="poly" id="edge18_Node000014_Node000007" title=" " alt="" coords="367,258,481,300,479,305,365,263"/>
+<area shape="poly" id="edge23_Node000016_Node000007" title=" " alt="" coords="594,186,544,295,539,293,589,183"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="618,232,700,260"/>
+<area shape="poly" id="edge22_Node000016_Node000017" title=" " alt="" coords="611,183,640,219,636,222,606,187"/>
+<area shape="rect" id="Node000018" href="$list_8h.html" title="Intrusive linked list." alt="" coords="724,232,778,260"/>
+<area shape="poly" id="edge24_Node000016_Node000018" title=" " alt="" coords="626,182,711,223,709,228,624,187"/>
+<area shape="poly" id="edge30_Node000022_Node000008" title=" " alt="" coords="156,109,156,141,151,141,151,109"/>
+<area shape="poly" id="edge31_Node000022_Node000012" title=" " alt="" coords="138,111,118,131,101,158,98,173,100,189,112,218,107,220,95,190,93,173,96,156,114,128,135,107"/>
+</map>

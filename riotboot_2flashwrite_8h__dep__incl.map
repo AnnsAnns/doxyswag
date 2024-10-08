@@ -1,0 +1,5 @@
+<map id="sys/include/riotboot/flashwrite.h" name="sys/include/riotboot/flashwrite.h">
+<area shape="rect" id="Node000001" title="riotboot flash writing module" alt="" coords="17,5,167,50"/>
+<area shape="rect" id="Node000002" href="$tinyusb__dfu_8h.html" title="TinyUSB specific DFU definitions." alt="" coords="5,98,179,143"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,66,95,98,89,98,89,66"/>
+</map>

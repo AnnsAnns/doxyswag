@@ -1,0 +1,33 @@
+<map id="sys/posix/include/arpa/inet.h" name="sys/posix/include/arpa/inet.h">
+<area shape="rect" id="Node000001" title="Definitions for internet operations." alt="" coords="441,5,607,50"/>
+<area shape="rect" id="Node000002" href="$nanocoap_8h.html" title="nanocoap API" alt="" coords="322,98,520,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="486,62,439,99,436,95,483,58"/>
+<area shape="rect" id="Node000015" href="$uhcp_8h.html" title="UHCP header." alt="" coords="545,98,711,126"/>
+<area shape="poly" id="edge16_Node000001_Node000015" title=" " alt="" coords="564,57,613,95,609,99,561,62"/>
+<area shape="rect" id="Node000003" href="$lc_8h.html" title="CoRE Resource Directory lookup interface." alt="" coords="9,182,188,210"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="355,133,151,184,150,179,354,127"/>
+<area shape="rect" id="Node000004" href="$gcoap_8h.html" title="gcoap definition" alt="" coords="199,275,374,302"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="310,134,278,151,253,175,247,187,245,200,251,227,263,252,278,273,273,276,259,255,245,228,240,200,242,185,248,172,275,146,307,129"/>
+<area shape="rect" id="Node000007" href="$forward__proxy_8h.html" title="Definitions for the GCoAP forward proxy." alt="" coords="405,368,568,412"/>
+<area shape="poly" id="edge8_Node000002_Node000007" title=" " alt="" coords="444,137,464,173,478,226,486,281,490,367,485,367,481,281,473,227,459,175,439,140"/>
+<area shape="rect" id="Node000009" href="$nanocoap_2cache_8h.html" title="nanocoap&#45;cache API" alt="" coords="263,174,449,218"/>
+<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="403,140,375,175,371,171,399,137"/>
+<area shape="rect" id="Node000010" href="$fileserver_8h.html" title="Resource handler for the CoAP file system server." alt="" coords="524,174,710,218"/>
+<area shape="poly" id="edge11_Node000002_Node000010" title=" " alt="" coords="468,130,566,171,564,175,466,135"/>
+<area shape="rect" id="Node000011" href="$nanocoap__sock_8h.html" title="nanocoap high&#45;level API" alt="" coords="748,174,934,218"/>
+<area shape="poly" id="edge12_Node000002_Node000011" title=" " alt="" coords="504,127,748,174,747,179,503,132"/>
+<area shape="rect" id="Node000005" href="$gcoap_2dns_8h.html" title="gcoap_dns definitions" alt="" coords="5,368,168,412"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="248,312,132,369,129,364,245,307"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="328,307,444,364,441,369,325,312"/>
+<area shape="rect" id="Node000008" href="$forward__proxy__internal_8h.html" title="Definitions for the GCoAP forward proxy internal communication." alt="" coords="192,359,381,421"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="289,318,289,359,284,359,284,318"/>
+<area shape="rect" id="Node000006" href="$dns_8h.html" title="Generic DNS values." alt="" coords="7,469,166,496"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="89,428,89,468,84,468,84,428"/>
+<area shape="poly" id="edge10_Node000009_Node000004" title=" " alt="" coords="332,232,299,276,294,273,328,229"/>
+<area shape="rect" id="Node000012" href="$fs_8h.html" title="nanoCoAP virtual file system" alt="" coords="523,275,738,302"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="778,227,662,277,660,272,776,222"/>
+<area shape="rect" id="Node000013" href="$link__format_8h.html" title="NanoCoAP Link Format helper functions." alt="" coords="761,266,948,311"/>
+<area shape="poly" id="edge14_Node000011_Node000013" title=" " alt="" coords="849,233,854,266,849,267,844,234"/>
+<area shape="rect" id="Node000014" href="$nanocoap__vfs_8h.html" title="VFS NanoCoAP helper functions." alt="" coords="972,266,1158,311"/>
+<area shape="poly" id="edge15_Node000011_Node000014" title=" " alt="" coords="910,222,1013,263,1011,268,908,227"/>
+</map>

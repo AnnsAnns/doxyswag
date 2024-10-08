@@ -1,0 +1,58 @@
+<map id="sys/include/net/netif.h" name="sys/include/net/netif.h">
+<area shape="rect" id="Node000001" title="Common network interface API definitions." alt="" coords="901,5,1066,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="372,535,443,563"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="994,32,1020,90,1032,129,1037,169,1037,399,1032,421,1017,441,995,458,966,473,892,499,803,518,706,531,611,540,458,549,458,544,611,535,706,526,802,512,891,494,964,469,992,454,1014,437,1027,419,1032,399,1032,169,1027,130,1016,92,989,35"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="739,459,809,487"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="986,34,986,169,986,248,981,284,968,317,948,348,924,376,868,422,816,454,813,449,865,417,920,372,944,345,963,315,976,282,981,247,981,169,981,34"/>
+<area shape="rect" id="Node000004" href="$list_8h.html" title="Intrusive linked list." alt="" coords="1072,81,1125,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1005,31,1067,70,1064,75,1003,36"/>
+<area shape="rect" id="Node000005" href="$netopt_8h.html" title="Definition of global configuration options." alt="" coords="5,308,106,336"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="901,28,657,49,536,64,450,84,393,106,338,132,233,193,146,253,84,300,81,296,143,249,231,188,335,127,391,101,448,78,535,59,657,43,901,23"/>
+<area shape="rect" id="Node000007" href="$ipv6_8h.html" title="IPv6 include gathering header." alt="" coords="460,81,547,109"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="901,36,562,87,561,82,901,30"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="58,336,60,367,67,407,83,450,94,469,109,485,127,496,152,506,218,522,292,534,357,541,357,546,291,539,217,527,150,511,124,501,106,489,90,472,78,452,62,409,55,367,53,336"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="368,384,450,411"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="107,331,353,382,352,387,106,336"/>
+<area shape="rect" id="Node000008" href="$ipv6_2addr_8h.html" title="Definitions for IPv6 addresses." alt="" coords="394,232,514,260"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="502,110,466,218,461,216,497,108"/>
+<area shape="rect" id="Node000014" href="$ipv6_2ext_8h.html" title="IPv6 extension header definitions." alt="" coords="220,232,331,260"/>
+<area shape="poly" id="edge23_Node000007_Node000014" title=" " alt="" coords="485,111,309,226,306,222,482,107"/>
+<area shape="rect" id="Node000017" href="$net_2ipv6_2hdr_8h.html" title="IPv6 header type and helper function definitions." alt="" coords="496,157,607,184"/>
+<area shape="poly" id="edge31_Node000007_Node000017" title=" " alt="" coords="514,108,537,142,532,145,510,111"/>
+<area shape="poly" id="edge10_Node000008_Node000003" title=" " alt="" coords="515,248,558,254,606,265,654,281,698,306,729,336,750,373,764,411,772,444,767,445,759,412,745,375,724,339,695,310,652,286,604,270,557,259,514,253"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="453,261,420,369,415,368,448,259"/>
+<area shape="rect" id="Node000009" href="$byteorder_8h.html" title="Functions to work with different byte orders." alt="" coords="474,384,570,411"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="462,259,512,368,508,371,458,261"/>
+<area shape="rect" id="Node000012" href="$ipv4_2addr_8h.html" title="IPv4 address type and helper functions definitions." alt="" coords="565,308,684,336"/>
+<area shape="poly" id="edge18_Node000008_Node000012" title=" " alt="" coords="486,258,582,299,580,304,484,263"/>
+<area shape="poly" id="edge13_Node000009_Node000002" title=" " alt="" coords="483,414,429,436,407,449,394,461,388,475,388,490,396,520,391,522,383,490,383,474,389,458,404,445,427,432,481,409"/>
+<area shape="poly" id="edge12_Node000009_Node000003" title=" " alt="" coords="568,409,725,455,723,460,566,414"/>
+<area shape="rect" id="Node000010" href="$endian_8h.html" title="libc header for endian conversion" alt="" coords="525,459,602,487"/>
+<area shape="poly" id="edge14_Node000009_Node000010" title=" " alt="" coords="532,411,551,444,546,447,527,413"/>
+<area shape="rect" id="Node000011" href="$unaligned_8h.html" title="Unaligned but safe memory access functions." alt="" coords="403,459,500,487"/>
+<area shape="poly" id="edge16_Node000009_Node000011" title=" " alt="" coords="511,414,476,450,472,446,508,410"/>
+<area shape="poly" id="edge15_Node000010_Node000002" title=" " alt="" coords="537,490,450,530,448,526,534,485"/>
+<area shape="poly" id="edge17_Node000011_Node000002" title=" " alt="" coords="446,489,425,523,421,520,441,486"/>
+<area shape="poly" id="edge20_Node000012_Node000002" title=" " alt="" coords="631,335,637,366,640,406,635,449,628,470,616,489,600,505,582,518,541,537,498,547,458,551,458,545,497,541,539,531,579,513,597,501,612,485,623,468,630,448,635,406,632,366,626,336"/>
+<area shape="poly" id="edge19_Node000012_Node000006" title=" " alt="" coords="587,339,462,381,461,376,585,334"/>
+<area shape="poly" id="edge22_Node000012_Node000009" title=" " alt="" coords="608,338,554,377,551,372,605,334"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="663,384,736,411"/>
+<area shape="poly" id="edge21_Node000012_Node000013" title=" " alt="" coords="640,334,677,371,673,374,636,338"/>
+<area shape="poly" id="edge24_Node000014_Node000002" title=" " alt="" coords="254,263,215,289,175,325,160,345,150,366,147,388,154,410,172,437,194,459,220,479,248,496,305,520,358,535,356,541,304,525,245,500,217,483,190,463,167,440,149,412,142,389,145,365,155,342,171,321,211,285,251,258"/>
+<area shape="rect" id="Node000015" href="$ipv6_2ext_2frag_8h.html" title="Fragmentation extension definitions." alt="" coords="248,308,389,336"/>
+<area shape="poly" id="edge25_Node000014_Node000015" title=" " alt="" coords="285,259,305,293,301,296,281,262"/>
+<area shape="rect" id="Node000016" href="$ipv6_2ext_2rh_8h.html" title="Routing extension header definitions." alt="" coords="163,384,292,411"/>
+<area shape="poly" id="edge29_Node000014_Node000016" title=" " alt="" coords="266,262,251,283,238,309,231,339,229,368,224,368,226,338,233,307,246,280,262,259"/>
+<area shape="poly" id="edge27_Node000015_Node000002" title=" " alt="" coords="325,335,382,486,397,520,392,522,377,488,320,337"/>
+<area shape="poly" id="edge26_Node000015_Node000006" title=" " alt="" coords="336,334,383,372,379,376,333,338"/>
+<area shape="poly" id="edge28_Node000015_Node000009" title=" " alt="" coords="356,334,472,375,471,381,354,339"/>
+<area shape="poly" id="edge30_Node000016_Node000002" title=" " alt="" coords="237,410,262,446,297,485,329,508,363,526,361,531,327,512,294,489,257,449,233,413"/>
+<area shape="poly" id="edge32_Node000017_Node000002" title=" " alt="" coords="608,171,661,176,723,186,788,204,849,230,882,247,910,264,929,286,934,302,935,320,935,399,933,420,926,437,914,450,900,460,864,474,822,490,774,507,724,521,624,540,531,549,458,551,458,546,531,543,623,535,723,516,772,502,820,484,862,469,897,455,911,446,921,434,928,419,930,399,930,321,929,303,924,289,906,268,880,252,846,235,786,209,722,191,660,181,608,176"/>
+<area shape="poly" id="edge37_Node000017_Node000008" title=" " alt="" coords="536,187,485,225,482,221,532,183"/>
+<area shape="poly" id="edge33_Node000017_Node000009" title=" " alt="" coords="552,185,528,368,523,368,547,184"/>
+<area shape="rect" id="Node000018" href="$inet__csum_8h.html" title="Internet Checksum definitions." alt="" coords="710,232,836,260"/>
+<area shape="poly" id="edge34_Node000017_Node000018" title=" " alt="" coords="592,182,720,224,718,230,590,187"/>
+<area shape="poly" id="edge36_Node000018_Node000013" title=" " alt="" coords="769,261,715,371,710,368,764,259"/>
+<area shape="rect" id="Node000019" href="$inttypes_8h.html" title="Adds include for missing inttype definitions." alt="" coords="810,308,896,336"/>
+<area shape="poly" id="edge35_Node000018_Node000019" title=" " alt="" coords="789,259,829,295,826,299,785,263"/>
+</map>
