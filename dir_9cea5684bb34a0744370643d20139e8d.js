@@ -1,4 +1,0 @@
-var dir_9cea5684bb34a0744370643d20139e8d =
-[
-    [ "libschc", "dir_833514f18e2acbd532c09a005a561447.html", "dir_833514f18e2acbd532c09a005a561447" ]
-];
